@@ -11,6 +11,25 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
  org.eclipse.emf.codegen.ecore;resolution:=optional,
  org.eclipse.emf.mwe.utils;resolution:=optional,
- org.eclipse.emf.mwe2.launch;resolution:=optional
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.processus.ecleek,
+ org.processus.ecleek.services,
+ org.processus.ecleek.leek,
+ org.processus.ecleek.leek.impl,
+ org.processus.ecleek.leek.util,
+ org.processus.ecleek.serializer,
+ org.processus.ecleek.parser.antlr,
+ org.processus.ecleek.parser.antlr.internal,
+ org.processus.ecleek.validation,
+ org.processus.ecleek.scoping,
+ org.processus.ecleek.generator,
+ org.processus.ecleek.formatting

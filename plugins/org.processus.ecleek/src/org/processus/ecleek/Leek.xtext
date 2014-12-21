@@ -9,39 +9,107 @@ Model:
 Statement:
 	Include
 	| GlobalDeclaration
-	| VariableDeclaration
+	| LocalDeclaration
 	| FunctionDeclaration
 	| FunctionCall ';'
 	| For
 	| While
 	| If
-	| 
-	
+	| Affectation ';'
+	| StatementBlock
+;
+
+StatementBlock:
+	'{' {StatementBlock} statements+=Statement* '}'
+;
+
+Affectation:
+	variable=VariableReference '=' value=Expression
+;
+
+If:
+	'if' '(' condition=Expression ')' then=Statement (=> 'else' else=Statement)?
+;
+
+While:
+	'while' '(' condition=Expression ')' statement=Statement
+;
+
+For:
+	'for' iterator=(EachKeyIterator | EachValueIterator | VariableIterator) statement=Statement
+;
+
+EachKeyIterator returns ForIterator:
+	'(' key=LocalDeclaration ':' value=LocalDeclaration 'in' array=Expression ')'
+;
+
+EachValueIterator returns ForIterator:
+	'(' value=LocalDeclaration 'in' array=Expression ')'
+;
+
+VariableIterator returns ForIterator:
+	'(' initialization=Affectation  ';' condition=Expression ';' increment=Expression ')'
+;
+
+FunctionDeclaration:
+	'function' name=ID '(' (parameter+=ParameterDeclaration (',' parameter+=ParameterDeclaration)*)? ')'
+;
+
+ParameterDeclaration:
+	byAdress?='@' name=ID
+;
+
+VariableDeclaration:
+	LocalDeclaration
+	| GlobalDeclaration
+;
+
+LocalDeclaration:
+	'var' name=ID (value=Expression)? ';'
+;
+
+GlobalDeclaration:
+	'global' name=ID (value=Expression)? ';'
 ;
 
 Expression:
-	Addition;
+	Comparison;
+
+Comparison returns Expression:
+	Or (({TypedEquals.left=current} '===' | {Equals.left=current} '==' | {TypedDifferent.left=current} '!==' | {Different.left=current} '!=' | {LessOrEquals.left=current} '<=' | {Less.left=current} '<' | {MoreOrEquals.left=current} '>=' | {More.left=current} '>') right=Or)*;
+
+Or returns Expression:
+	And (({TypedEquals.left=current} ('or'|'||')) right=And)*;
+
+And returns Expression:
+	Addition (({TypedEquals.left=current} ('and'|'&&')) right=Addition)*;
 
 Addition returns Expression:
 	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*;
 
 Multiplication returns Expression:
-	PrimaryExpression (({Multi.left=current} '*' | {Div.left=current} '/'| {Modulo.left=current} '%') right=PrimaryExpression)*;
+	PrimaryExpression (({Multi.left=current} '*' | {Div.left=current} '/') right=PrimaryExpression)*;
 
 PrimaryExpression returns Expression:
 	'(' Expression ')'
-	| {IntLiteral} value=INT
 	| {RealLiteral} value=REAL
+	| {IntLiteral} value=INT
 	| FunctionCall
 	| VariableReference
+	| {StringLiteral} value = STRING
+	| ArrayLiteral
 	;
 
+ArrayLiteral:
+	'[' '(' values+=Expression (',' values+=Expression)* ']'
+;
+
 VariableReference:
-	variable=([GlobalDeclaration] | [FunctionDeclaration])
+	variable=[VariableDeclaration] ('[' dimensions+=Expression ']')*
 ;
 
 FunctionCall:
-	{FunctionCall} function=[FunctionDeclaration] ('(' args+=Expression (',' args+=Expression)* ')')
+	{FunctionCall} function=[FunctionDeclaration] '(' args+=Expression (',' args+=Expression)* ')'
 ;
 
 Include:
@@ -49,5 +117,5 @@ Include:
 ;
 
 terminal REAL returns ecore::EDouble:
-	('0'..'9')* ('.' ('0'..'9')+)?
+	('0'..'9')* '.' ('0'..'9')+
 ;

@@ -8,6 +8,19 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.processus.ecleek;visibility:=reexport,
  org.eclipse.xtext.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
- org.eclipse.ui.ide;bundle-version="3.5.0"
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.ui,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types.ui,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.compare
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.processus.ecleek.ui.quickfix,
+ org.processus.ecleek.ui.contentassist,
+ org.processus.ecleek.ui.contentassist.antlr,
+ org.processus.ecleek.ui.internal
+Bundle-Activator: org.processus.ecleek.ui.internal.LeekActivator
