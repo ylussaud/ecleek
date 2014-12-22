@@ -59,7 +59,7 @@ VariableIterator:
 ;
 
 FunctionDeclaration:
-	'function' name=ID '(' (parameter+=ParameterDeclaration (',' parameter+=ParameterDeclaration)*)? ')' body=Statement
+	'function' name=ID '(' (parameter+=ParameterDeclaration (',' parameter+=ParameterDeclaration)*)? ')' body=StatementBlock
 ;
 
 ParameterDeclaration:
