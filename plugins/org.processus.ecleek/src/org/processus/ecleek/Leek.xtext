@@ -8,13 +8,14 @@ Script:
 
 ToplevelStatement:
 	Include ';'
-	| GlobalDeclaration
+	| GlobalDeclaration ';'
 	| FunctionDeclaration
 	| Statement	
 ;
 
 Statement:
-	LocalDeclaration
+	{EmptyStatement} ';'
+	| LocalDeclaration ';'
 	| Return ';'
 	| FunctionCall ';'
 	| For
@@ -58,7 +59,7 @@ VariableIterator:
 ;
 
 FunctionDeclaration:
-	'function' name=ID '(' (parameter+=ParameterDeclaration (',' parameter+=ParameterDeclaration)*)? ')'
+	'function' name=ID '(' (parameter+=ParameterDeclaration (',' parameter+=ParameterDeclaration)*)? ')' body=StatementBlock
 ;
 
 ParameterDeclaration:
@@ -66,11 +67,11 @@ ParameterDeclaration:
 ;
 
 LocalDeclaration:
-	'var' variables+=VariableDeclaration (',' variables+=VariableDeclaration)* ';'
+	'var' variables+=VariableDeclaration (',' variables+=VariableDeclaration)*
 ;
 
 GlobalDeclaration:
-	'global' variables+=VariableDeclaration (',' variables+=VariableDeclaration)* ';'
+	'global' variables+=VariableDeclaration (',' variables+=VariableDeclaration)*
 ;
 VariableDeclaration:
 	name=ID ('=' value=Expression)?
@@ -102,10 +103,11 @@ PrimaryExpression returns Expression:
 	| VariableReference
 	| {StringLiteral} value = STRING
 	| ArrayLiteral
-	;
+	| FunctionDeclaration
+;
 
 ArrayLiteral:
-	'[' '(' values+=Expression (',' values+=Expression)* ']'
+	{ArrayLiteral} '[' (values+=Expression (',' values+=Expression)*)? ']'
 ;
 
 VariableReference:
@@ -122,7 +124,7 @@ Return:
 
 
 Include:
-	'include' '(' importURI=STRING ')' ';'
+	'include' '(' importURI=STRING ')'
 ;
 
 terminal REAL returns ecore::EDouble:
