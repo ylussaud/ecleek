@@ -25,7 +25,7 @@ public class LeekParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrPars
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Model";
+		return "Script";
 	}
 	
 	public LeekGrammarAccess getGrammarAccess() {

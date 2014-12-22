@@ -7,8 +7,8 @@
     editorPluginID="org.processus.ecleek.editor" runtimeVersion="2.10">
   <genPackages prefix="Leek" basePackage="org.processus.ecleek" disposableProviderFactory="true"
       fileExtensions="leek" ecorePackage="Leek.ecore#/">
-    <genClasses ecoreClass="Leek.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//Model/statements"/>
+    <genClasses ecoreClass="Leek.ecore#//Script">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//Script/statements"/>
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//Statement"/>
     <genClasses ecoreClass="Leek.ecore#//StatementBlock">
@@ -31,13 +31,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//For/iterator"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//For/statement"/>
     </genClasses>
-    <genClasses ecoreClass="Leek.ecore#//ForIterator">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//ForIterator/key"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//ForIterator/value"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//ForIterator/array"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//ForIterator/initialization"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//ForIterator/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//ForIterator/increment"/>
+    <genClasses ecoreClass="Leek.ecore#//ForIterator"/>
+    <genClasses ecoreClass="Leek.ecore#//EachIterator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//EachIterator/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//EachIterator/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//EachIterator/array"/>
+    </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//VariableIterator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//VariableIterator/initialization"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//VariableIterator/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//VariableIterator/increment"/>
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//FunctionDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//FunctionDeclaration/name"/>
@@ -47,14 +50,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//ParameterDeclaration/byAdress"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//ParameterDeclaration/name"/>
     </genClasses>
-    <genClasses ecoreClass="Leek.ecore#//VariableDeclaration"/>
     <genClasses ecoreClass="Leek.ecore#//LocalDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//LocalDeclaration/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//LocalDeclaration/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//LocalDeclaration/variables"/>
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//GlobalDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//GlobalDeclaration/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//GlobalDeclaration/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//GlobalDeclaration/variables"/>
+    </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//VariableDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//VariableDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//VariableDeclaration/value"/>
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//Expression"/>
     <genClasses ecoreClass="Leek.ecore#//ArrayLiteral">

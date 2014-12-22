@@ -17,23 +17,23 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.Model;
+import org.processus.ecleek.leek.Script;
 import org.processus.ecleek.leek.Statement;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model</b></em>'.
+ * An implementation of the model object '<em><b>Script</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.ModelImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.ScriptImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ModelImpl extends MinimalEObjectImpl.Container implements Model
+public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
 {
   /**
    * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
@@ -50,7 +50,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModelImpl()
+  protected ScriptImpl()
   {
     super();
   }
@@ -63,7 +63,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.MODEL;
+    return LeekPackage.Literals.SCRIPT;
   }
 
   /**
@@ -75,7 +75,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     if (statements == null)
     {
-      statements = new EObjectContainmentEList<Statement>(Statement.class, this, LeekPackage.MODEL__STATEMENTS);
+      statements = new EObjectContainmentEList<Statement>(Statement.class, this, LeekPackage.SCRIPT__STATEMENTS);
     }
     return statements;
   }
@@ -90,7 +90,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LeekPackage.MODEL__STATEMENTS:
+      case LeekPackage.SCRIPT__STATEMENTS:
         return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -106,7 +106,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LeekPackage.MODEL__STATEMENTS:
+      case LeekPackage.SCRIPT__STATEMENTS:
         return getStatements();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -123,7 +123,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LeekPackage.MODEL__STATEMENTS:
+      case LeekPackage.SCRIPT__STATEMENTS:
         getStatements().clear();
         getStatements().addAll((Collection<? extends Statement>)newValue);
         return;
@@ -141,7 +141,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LeekPackage.MODEL__STATEMENTS:
+      case LeekPackage.SCRIPT__STATEMENTS:
         getStatements().clear();
         return;
     }
@@ -158,10 +158,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LeekPackage.MODEL__STATEMENTS:
+      case LeekPackage.SCRIPT__STATEMENTS:
         return statements != null && !statements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ModelImpl
+} //ScriptImpl

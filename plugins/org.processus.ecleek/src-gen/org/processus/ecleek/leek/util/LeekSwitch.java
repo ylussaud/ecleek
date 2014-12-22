@@ -72,10 +72,10 @@ public class LeekSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case LeekPackage.MODEL:
+      case LeekPackage.SCRIPT:
       {
-        Model model = (Model)theEObject;
-        T result = caseModel(model);
+        Script script = (Script)theEObject;
+        T result = caseScript(script);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -133,6 +133,22 @@ public class LeekSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LeekPackage.EACH_ITERATOR:
+      {
+        EachIterator eachIterator = (EachIterator)theEObject;
+        T result = caseEachIterator(eachIterator);
+        if (result == null) result = caseForIterator(eachIterator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.VARIABLE_ITERATOR:
+      {
+        VariableIterator variableIterator = (VariableIterator)theEObject;
+        T result = caseVariableIterator(variableIterator);
+        if (result == null) result = caseForIterator(variableIterator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LeekPackage.FUNCTION_DECLARATION:
       {
         FunctionDeclaration functionDeclaration = (FunctionDeclaration)theEObject;
@@ -148,19 +164,11 @@ public class LeekSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LeekPackage.VARIABLE_DECLARATION:
-      {
-        VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
-        T result = caseVariableDeclaration(variableDeclaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case LeekPackage.LOCAL_DECLARATION:
       {
         LocalDeclaration localDeclaration = (LocalDeclaration)theEObject;
         T result = caseLocalDeclaration(localDeclaration);
         if (result == null) result = caseStatement(localDeclaration);
-        if (result == null) result = caseVariableDeclaration(localDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -169,7 +177,13 @@ public class LeekSwitch<T> extends Switch<T>
         GlobalDeclaration globalDeclaration = (GlobalDeclaration)theEObject;
         T result = caseGlobalDeclaration(globalDeclaration);
         if (result == null) result = caseStatement(globalDeclaration);
-        if (result == null) result = caseVariableDeclaration(globalDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.VARIABLE_DECLARATION:
+      {
+        VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
+        T result = caseVariableDeclaration(variableDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -330,17 +344,17 @@ public class LeekSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Script</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Model</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Script</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseModel(Model object)
+  public T caseScript(Script object)
   {
     return null;
   }
@@ -458,6 +472,38 @@ public class LeekSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Each Iterator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Each Iterator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEachIterator(EachIterator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Iterator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Iterator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableIterator(VariableIterator object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Function Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -490,22 +536,6 @@ public class LeekSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVariableDeclaration(VariableDeclaration object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Local Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -533,6 +563,22 @@ public class LeekSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGlobalDeclaration(GlobalDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableDeclaration(VariableDeclaration object)
   {
     return null;
   }

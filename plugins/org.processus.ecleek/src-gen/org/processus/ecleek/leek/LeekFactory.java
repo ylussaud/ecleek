@@ -23,13 +23,13 @@ public interface LeekFactory extends EFactory
   LeekFactory eINSTANCE = org.processus.ecleek.leek.impl.LeekFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
+   * Returns a new object of class '<em>Script</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
+   * @return a new object of class '<em>Script</em>'.
    * @generated
    */
-  Model createModel();
+  Script createScript();
 
   /**
    * Returns a new object of class '<em>Statement</em>'.
@@ -95,6 +95,24 @@ public interface LeekFactory extends EFactory
   ForIterator createForIterator();
 
   /**
+   * Returns a new object of class '<em>Each Iterator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Each Iterator</em>'.
+   * @generated
+   */
+  EachIterator createEachIterator();
+
+  /**
+   * Returns a new object of class '<em>Variable Iterator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Iterator</em>'.
+   * @generated
+   */
+  VariableIterator createVariableIterator();
+
+  /**
    * Returns a new object of class '<em>Function Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -113,15 +131,6 @@ public interface LeekFactory extends EFactory
   ParameterDeclaration createParameterDeclaration();
 
   /**
-   * Returns a new object of class '<em>Variable Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Declaration</em>'.
-   * @generated
-   */
-  VariableDeclaration createVariableDeclaration();
-
-  /**
    * Returns a new object of class '<em>Local Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -138,6 +147,15 @@ public interface LeekFactory extends EFactory
    * @generated
    */
   GlobalDeclaration createGlobalDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Variable Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Declaration</em>'.
+   * @generated
+   */
+  VariableDeclaration createVariableDeclaration();
 
   /**
    * Returns a new object of class '<em>Expression</em>'.

@@ -75,9 +75,9 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
     new LeekSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
+      public Adapter caseScript(Script object)
       {
-        return createModelAdapter();
+        return createScriptAdapter();
       }
       @Override
       public Adapter caseStatement(Statement object)
@@ -115,6 +115,16 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createForIteratorAdapter();
       }
       @Override
+      public Adapter caseEachIterator(EachIterator object)
+      {
+        return createEachIteratorAdapter();
+      }
+      @Override
+      public Adapter caseVariableIterator(VariableIterator object)
+      {
+        return createVariableIteratorAdapter();
+      }
+      @Override
       public Adapter caseFunctionDeclaration(FunctionDeclaration object)
       {
         return createFunctionDeclarationAdapter();
@@ -125,11 +135,6 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createParameterDeclarationAdapter();
       }
       @Override
-      public Adapter caseVariableDeclaration(VariableDeclaration object)
-      {
-        return createVariableDeclarationAdapter();
-      }
-      @Override
       public Adapter caseLocalDeclaration(LocalDeclaration object)
       {
         return createLocalDeclarationAdapter();
@@ -138,6 +143,11 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
       public Adapter caseGlobalDeclaration(GlobalDeclaration object)
       {
         return createGlobalDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseVariableDeclaration(VariableDeclaration object)
+      {
+        return createVariableDeclarationAdapter();
       }
       @Override
       public Adapter caseExpression(Expression object)
@@ -257,16 +267,16 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.Script <em>Script</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.processus.ecleek.leek.Model
+   * @see org.processus.ecleek.leek.Script
    * @generated
    */
-  public Adapter createModelAdapter()
+  public Adapter createScriptAdapter()
   {
     return null;
   }
@@ -377,6 +387,36 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.EachIterator <em>Each Iterator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.EachIterator
+   * @generated
+   */
+  public Adapter createEachIteratorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.VariableIterator <em>Variable Iterator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.VariableIterator
+   * @generated
+   */
+  public Adapter createVariableIteratorAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.FunctionDeclaration <em>Function Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -407,21 +447,6 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.VariableDeclaration <em>Variable Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.processus.ecleek.leek.VariableDeclaration
-   * @generated
-   */
-  public Adapter createVariableDeclarationAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.LocalDeclaration <em>Local Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -447,6 +472,21 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGlobalDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.VariableDeclaration <em>Variable Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.VariableDeclaration
+   * @generated
+   */
+  public Adapter createVariableDeclarationAdapter()
   {
     return null;
   }

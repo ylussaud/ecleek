@@ -64,7 +64,7 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
   {
     switch (eClass.getClassifierID())
     {
-      case LeekPackage.MODEL: return createModel();
+      case LeekPackage.SCRIPT: return createScript();
       case LeekPackage.STATEMENT: return createStatement();
       case LeekPackage.STATEMENT_BLOCK: return createStatementBlock();
       case LeekPackage.AFFECTATION: return createAffectation();
@@ -72,11 +72,13 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
       case LeekPackage.WHILE: return createWhile();
       case LeekPackage.FOR: return createFor();
       case LeekPackage.FOR_ITERATOR: return createForIterator();
+      case LeekPackage.EACH_ITERATOR: return createEachIterator();
+      case LeekPackage.VARIABLE_ITERATOR: return createVariableIterator();
       case LeekPackage.FUNCTION_DECLARATION: return createFunctionDeclaration();
       case LeekPackage.PARAMETER_DECLARATION: return createParameterDeclaration();
-      case LeekPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
       case LeekPackage.LOCAL_DECLARATION: return createLocalDeclaration();
       case LeekPackage.GLOBAL_DECLARATION: return createGlobalDeclaration();
+      case LeekPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
       case LeekPackage.EXPRESSION: return createExpression();
       case LeekPackage.ARRAY_LITERAL: return createArrayLiteral();
       case LeekPackage.VARIABLE_REFERENCE: return createVariableReference();
@@ -106,10 +108,10 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Model createModel()
+  public Script createScript()
   {
-    ModelImpl model = new ModelImpl();
-    return model;
+    ScriptImpl script = new ScriptImpl();
+    return script;
   }
 
   /**
@@ -194,6 +196,28 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public EachIterator createEachIterator()
+  {
+    EachIteratorImpl eachIterator = new EachIteratorImpl();
+    return eachIterator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableIterator createVariableIterator()
+  {
+    VariableIteratorImpl variableIterator = new VariableIteratorImpl();
+    return variableIterator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public FunctionDeclaration createFunctionDeclaration()
   {
     FunctionDeclarationImpl functionDeclaration = new FunctionDeclarationImpl();
@@ -216,17 +240,6 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDeclaration createVariableDeclaration()
-  {
-    VariableDeclarationImpl variableDeclaration = new VariableDeclarationImpl();
-    return variableDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public LocalDeclaration createLocalDeclaration()
   {
     LocalDeclarationImpl localDeclaration = new LocalDeclarationImpl();
@@ -242,6 +255,17 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
   {
     GlobalDeclarationImpl globalDeclaration = new GlobalDeclarationImpl();
     return globalDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableDeclaration createVariableDeclaration()
+  {
+    VariableDeclarationImpl variableDeclaration = new VariableDeclarationImpl();
+    return variableDeclaration;
   }
 
   /**

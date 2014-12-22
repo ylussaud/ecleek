@@ -2,17 +2,21 @@
  */
 package org.processus.ecleek.leek.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.processus.ecleek.leek.Expression;
 import org.processus.ecleek.leek.GlobalDeclaration;
 import org.processus.ecleek.leek.LeekPackage;
+import org.processus.ecleek.leek.VariableDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,8 +25,7 @@ import org.processus.ecleek.leek.LeekPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.GlobalDeclarationImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.impl.GlobalDeclarationImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.GlobalDeclarationImpl#getVariables <em>Variables</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,34 +34,14 @@ import org.processus.ecleek.leek.LeekPackage;
 public class GlobalDeclarationImpl extends StatementImpl implements GlobalDeclaration
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getVariables()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected Expression value;
+  protected EList<VariableDeclaration> variables;
 
   /**
    * <!-- begin-user-doc -->
@@ -86,70 +69,13 @@ public class GlobalDeclarationImpl extends StatementImpl implements GlobalDeclar
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public EList<VariableDeclaration> getVariables()
   {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.GLOBAL_DECLARATION__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Expression getValue()
-  {
-    return value;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetValue(Expression newValue, NotificationChain msgs)
-  {
-    Expression oldValue = value;
-    value = newValue;
-    if (eNotificationRequired())
+    if (variables == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.GLOBAL_DECLARATION__VALUE, oldValue, newValue);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      variables = new EObjectContainmentEList<VariableDeclaration>(VariableDeclaration.class, this, LeekPackage.GLOBAL_DECLARATION__VARIABLES);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setValue(Expression newValue)
-  {
-    if (newValue != value)
-    {
-      NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.GLOBAL_DECLARATION__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.GLOBAL_DECLARATION__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.GLOBAL_DECLARATION__VALUE, newValue, newValue));
+    return variables;
   }
 
   /**
@@ -162,8 +88,8 @@ public class GlobalDeclarationImpl extends StatementImpl implements GlobalDeclar
   {
     switch (featureID)
     {
-      case LeekPackage.GLOBAL_DECLARATION__VALUE:
-        return basicSetValue(null, msgs);
+      case LeekPackage.GLOBAL_DECLARATION__VARIABLES:
+        return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -178,10 +104,8 @@ public class GlobalDeclarationImpl extends StatementImpl implements GlobalDeclar
   {
     switch (featureID)
     {
-      case LeekPackage.GLOBAL_DECLARATION__NAME:
-        return getName();
-      case LeekPackage.GLOBAL_DECLARATION__VALUE:
-        return getValue();
+      case LeekPackage.GLOBAL_DECLARATION__VARIABLES:
+        return getVariables();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -191,16 +115,15 @@ public class GlobalDeclarationImpl extends StatementImpl implements GlobalDeclar
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case LeekPackage.GLOBAL_DECLARATION__NAME:
-        setName((String)newValue);
-        return;
-      case LeekPackage.GLOBAL_DECLARATION__VALUE:
-        setValue((Expression)newValue);
+      case LeekPackage.GLOBAL_DECLARATION__VARIABLES:
+        getVariables().clear();
+        getVariables().addAll((Collection<? extends VariableDeclaration>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -216,11 +139,8 @@ public class GlobalDeclarationImpl extends StatementImpl implements GlobalDeclar
   {
     switch (featureID)
     {
-      case LeekPackage.GLOBAL_DECLARATION__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case LeekPackage.GLOBAL_DECLARATION__VALUE:
-        setValue((Expression)null);
+      case LeekPackage.GLOBAL_DECLARATION__VARIABLES:
+        getVariables().clear();
         return;
     }
     super.eUnset(featureID);
@@ -236,29 +156,10 @@ public class GlobalDeclarationImpl extends StatementImpl implements GlobalDeclar
   {
     switch (featureID)
     {
-      case LeekPackage.GLOBAL_DECLARATION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case LeekPackage.GLOBAL_DECLARATION__VALUE:
-        return value != null;
+      case LeekPackage.GLOBAL_DECLARATION__VARIABLES:
+        return variables != null && !variables.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //GlobalDeclarationImpl

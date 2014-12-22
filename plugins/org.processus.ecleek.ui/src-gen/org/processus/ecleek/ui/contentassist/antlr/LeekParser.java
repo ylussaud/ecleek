@@ -38,8 +38,7 @@ public class LeekParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
-					put(grammarAccess.getForAccess().getIteratorAlternatives_1_0(), "rule__For__IteratorAlternatives_1_0");
-					put(grammarAccess.getVariableDeclarationAccess().getAlternatives(), "rule__VariableDeclaration__Alternatives");
+					put(grammarAccess.getForIteratorAccess().getAlternatives(), "rule__ForIterator__Alternatives");
 					put(grammarAccess.getComparisonAccess().getAlternatives_1_0(), "rule__Comparison__Alternatives_1_0");
 					put(grammarAccess.getOrAccess().getAlternatives_1_0_1(), "rule__Or__Alternatives_1_0_1");
 					put(grammarAccess.getAndAccess().getAlternatives_1_0_1(), "rule__And__Alternatives_1_0_1");
@@ -54,15 +53,19 @@ public class LeekParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIfAccess().getGroup_5(), "rule__If__Group_5__0");
 					put(grammarAccess.getWhileAccess().getGroup(), "rule__While__Group__0");
 					put(grammarAccess.getForAccess().getGroup(), "rule__For__Group__0");
-					put(grammarAccess.getEachKeyIteratorAccess().getGroup(), "rule__EachKeyIterator__Group__0");
-					put(grammarAccess.getEachValueIteratorAccess().getGroup(), "rule__EachValueIterator__Group__0");
+					put(grammarAccess.getEachIteratorAccess().getGroup(), "rule__EachIterator__Group__0");
+					put(grammarAccess.getEachIteratorAccess().getGroup_0(), "rule__EachIterator__Group_0__0");
 					put(grammarAccess.getVariableIteratorAccess().getGroup(), "rule__VariableIterator__Group__0");
 					put(grammarAccess.getFunctionDeclarationAccess().getGroup(), "rule__FunctionDeclaration__Group__0");
 					put(grammarAccess.getFunctionDeclarationAccess().getGroup_3(), "rule__FunctionDeclaration__Group_3__0");
 					put(grammarAccess.getFunctionDeclarationAccess().getGroup_3_1(), "rule__FunctionDeclaration__Group_3_1__0");
 					put(grammarAccess.getParameterDeclarationAccess().getGroup(), "rule__ParameterDeclaration__Group__0");
 					put(grammarAccess.getLocalDeclarationAccess().getGroup(), "rule__LocalDeclaration__Group__0");
+					put(grammarAccess.getLocalDeclarationAccess().getGroup_2(), "rule__LocalDeclaration__Group_2__0");
 					put(grammarAccess.getGlobalDeclarationAccess().getGroup(), "rule__GlobalDeclaration__Group__0");
+					put(grammarAccess.getGlobalDeclarationAccess().getGroup_2(), "rule__GlobalDeclaration__Group_2__0");
+					put(grammarAccess.getVariableDeclarationAccess().getGroup(), "rule__VariableDeclaration__Group__0");
+					put(grammarAccess.getVariableDeclarationAccess().getGroup_1(), "rule__VariableDeclaration__Group_1__0");
 					put(grammarAccess.getComparisonAccess().getGroup(), "rule__Comparison__Group__0");
 					put(grammarAccess.getComparisonAccess().getGroup_1(), "rule__Comparison__Group_1__0");
 					put(grammarAccess.getComparisonAccess().getGroup_1_0_0(), "rule__Comparison__Group_1_0_0__0");
@@ -98,7 +101,7 @@ public class LeekParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionCallAccess().getGroup(), "rule__FunctionCall__Group__0");
 					put(grammarAccess.getFunctionCallAccess().getGroup_4(), "rule__FunctionCall__Group_4__0");
 					put(grammarAccess.getIncludeAccess().getGroup(), "rule__Include__Group__0");
-					put(grammarAccess.getModelAccess().getStatementsAssignment(), "rule__Model__StatementsAssignment");
+					put(grammarAccess.getScriptAccess().getStatementsAssignment(), "rule__Script__StatementsAssignment");
 					put(grammarAccess.getStatementBlockAccess().getStatementsAssignment_2(), "rule__StatementBlock__StatementsAssignment_2");
 					put(grammarAccess.getAffectationAccess().getVariableAssignment_0(), "rule__Affectation__VariableAssignment_0");
 					put(grammarAccess.getAffectationAccess().getValueAssignment_2(), "rule__Affectation__ValueAssignment_2");
@@ -107,25 +110,25 @@ public class LeekParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIfAccess().getElseAssignment_5_1(), "rule__If__ElseAssignment_5_1");
 					put(grammarAccess.getWhileAccess().getConditionAssignment_2(), "rule__While__ConditionAssignment_2");
 					put(grammarAccess.getWhileAccess().getStatementAssignment_4(), "rule__While__StatementAssignment_4");
-					put(grammarAccess.getForAccess().getIteratorAssignment_1(), "rule__For__IteratorAssignment_1");
-					put(grammarAccess.getForAccess().getStatementAssignment_2(), "rule__For__StatementAssignment_2");
-					put(grammarAccess.getEachKeyIteratorAccess().getKeyAssignment_1(), "rule__EachKeyIterator__KeyAssignment_1");
-					put(grammarAccess.getEachKeyIteratorAccess().getValueAssignment_3(), "rule__EachKeyIterator__ValueAssignment_3");
-					put(grammarAccess.getEachKeyIteratorAccess().getArrayAssignment_5(), "rule__EachKeyIterator__ArrayAssignment_5");
-					put(grammarAccess.getEachValueIteratorAccess().getValueAssignment_1(), "rule__EachValueIterator__ValueAssignment_1");
-					put(grammarAccess.getEachValueIteratorAccess().getArrayAssignment_3(), "rule__EachValueIterator__ArrayAssignment_3");
-					put(grammarAccess.getVariableIteratorAccess().getInitializationAssignment_1(), "rule__VariableIterator__InitializationAssignment_1");
-					put(grammarAccess.getVariableIteratorAccess().getConditionAssignment_3(), "rule__VariableIterator__ConditionAssignment_3");
-					put(grammarAccess.getVariableIteratorAccess().getIncrementAssignment_5(), "rule__VariableIterator__IncrementAssignment_5");
+					put(grammarAccess.getForAccess().getIteratorAssignment_2(), "rule__For__IteratorAssignment_2");
+					put(grammarAccess.getForAccess().getStatementAssignment_4(), "rule__For__StatementAssignment_4");
+					put(grammarAccess.getEachIteratorAccess().getKeyAssignment_0_1(), "rule__EachIterator__KeyAssignment_0_1");
+					put(grammarAccess.getEachIteratorAccess().getValueAssignment_2(), "rule__EachIterator__ValueAssignment_2");
+					put(grammarAccess.getEachIteratorAccess().getArrayAssignment_4(), "rule__EachIterator__ArrayAssignment_4");
+					put(grammarAccess.getVariableIteratorAccess().getInitializationAssignment_0(), "rule__VariableIterator__InitializationAssignment_0");
+					put(grammarAccess.getVariableIteratorAccess().getConditionAssignment_2(), "rule__VariableIterator__ConditionAssignment_2");
+					put(grammarAccess.getVariableIteratorAccess().getIncrementAssignment_4(), "rule__VariableIterator__IncrementAssignment_4");
 					put(grammarAccess.getFunctionDeclarationAccess().getNameAssignment_1(), "rule__FunctionDeclaration__NameAssignment_1");
 					put(grammarAccess.getFunctionDeclarationAccess().getParameterAssignment_3_0(), "rule__FunctionDeclaration__ParameterAssignment_3_0");
 					put(grammarAccess.getFunctionDeclarationAccess().getParameterAssignment_3_1_1(), "rule__FunctionDeclaration__ParameterAssignment_3_1_1");
 					put(grammarAccess.getParameterDeclarationAccess().getByAdressAssignment_0(), "rule__ParameterDeclaration__ByAdressAssignment_0");
 					put(grammarAccess.getParameterDeclarationAccess().getNameAssignment_1(), "rule__ParameterDeclaration__NameAssignment_1");
-					put(grammarAccess.getLocalDeclarationAccess().getNameAssignment_1(), "rule__LocalDeclaration__NameAssignment_1");
-					put(grammarAccess.getLocalDeclarationAccess().getValueAssignment_2(), "rule__LocalDeclaration__ValueAssignment_2");
-					put(grammarAccess.getGlobalDeclarationAccess().getNameAssignment_1(), "rule__GlobalDeclaration__NameAssignment_1");
-					put(grammarAccess.getGlobalDeclarationAccess().getValueAssignment_2(), "rule__GlobalDeclaration__ValueAssignment_2");
+					put(grammarAccess.getLocalDeclarationAccess().getVariablesAssignment_1(), "rule__LocalDeclaration__VariablesAssignment_1");
+					put(grammarAccess.getLocalDeclarationAccess().getVariablesAssignment_2_1(), "rule__LocalDeclaration__VariablesAssignment_2_1");
+					put(grammarAccess.getGlobalDeclarationAccess().getVariablesAssignment_1(), "rule__GlobalDeclaration__VariablesAssignment_1");
+					put(grammarAccess.getGlobalDeclarationAccess().getVariablesAssignment_2_1(), "rule__GlobalDeclaration__VariablesAssignment_2_1");
+					put(grammarAccess.getVariableDeclarationAccess().getNameAssignment_0(), "rule__VariableDeclaration__NameAssignment_0");
+					put(grammarAccess.getVariableDeclarationAccess().getValueAssignment_1_1(), "rule__VariableDeclaration__ValueAssignment_1_1");
 					put(grammarAccess.getComparisonAccess().getRightAssignment_1_1(), "rule__Comparison__RightAssignment_1_1");
 					put(grammarAccess.getOrAccess().getRightAssignment_1_1(), "rule__Or__RightAssignment_1_1");
 					put(grammarAccess.getAndAccess().getRightAssignment_1_1(), "rule__And__RightAssignment_1_1");
@@ -151,7 +154,7 @@ public class LeekParser extends AbstractContentAssistParser {
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			org.processus.ecleek.ui.contentassist.antlr.internal.InternalLeekParser typedParser = (org.processus.ecleek.ui.contentassist.antlr.internal.InternalLeekParser) parser;
-			typedParser.entryRuleModel();
+			typedParser.entryRuleScript();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);
