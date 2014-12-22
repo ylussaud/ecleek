@@ -59,7 +59,7 @@ VariableIterator:
 ;
 
 FunctionDeclaration:
-	'function' name=ID '(' (parameter+=ParameterDeclaration (',' parameter+=ParameterDeclaration)*)? ')'
+	'function' name=ID '(' (parameter+=ParameterDeclaration (',' parameter+=ParameterDeclaration)*)? ')' body=Statement
 ;
 
 ParameterDeclaration:
@@ -104,10 +104,10 @@ PrimaryExpression returns Expression:
 	| {StringLiteral} value = STRING
 	| ArrayLiteral
 	| FunctionDeclaration
-	;
+;
 
 ArrayLiteral:
-	'[' '(' values+=Expression (',' values+=Expression)* ']'
+	{ArrayLiteral} '[' (values+=Expression (',' values+=Expression)*)? ']'
 ;
 
 VariableReference:
