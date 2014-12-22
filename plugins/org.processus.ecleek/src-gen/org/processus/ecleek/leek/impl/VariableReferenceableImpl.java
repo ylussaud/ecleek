@@ -7,51 +7,52 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.ParameterDeclaration;
+import org.processus.ecleek.leek.VariableReferenceable;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Parameter Declaration</b></em>'.
+ * An implementation of the model object '<em><b>Variable Referenceable</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.ParameterDeclarationImpl#isByAdress <em>By Adress</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.VariableReferenceableImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ParameterDeclarationImpl extends VariableReferenceableImpl implements ParameterDeclaration
+public class VariableReferenceableImpl extends MinimalEObjectImpl.Container implements VariableReferenceable
 {
   /**
-   * The default value of the '{@link #isByAdress() <em>By Adress</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isByAdress()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final boolean BY_ADRESS_EDEFAULT = false;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #isByAdress() <em>By Adress</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isByAdress()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected boolean byAdress = BY_ADRESS_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ParameterDeclarationImpl()
+  protected VariableReferenceableImpl()
   {
     super();
   }
@@ -64,7 +65,7 @@ public class ParameterDeclarationImpl extends VariableReferenceableImpl implemen
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.PARAMETER_DECLARATION;
+    return LeekPackage.Literals.VARIABLE_REFERENCEABLE;
   }
 
   /**
@@ -72,9 +73,9 @@ public class ParameterDeclarationImpl extends VariableReferenceableImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isByAdress()
+  public String getName()
   {
-    return byAdress;
+    return name;
   }
 
   /**
@@ -82,12 +83,12 @@ public class ParameterDeclarationImpl extends VariableReferenceableImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setByAdress(boolean newByAdress)
+  public void setName(String newName)
   {
-    boolean oldByAdress = byAdress;
-    byAdress = newByAdress;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.PARAMETER_DECLARATION__BY_ADRESS, oldByAdress, byAdress));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.VARIABLE_REFERENCEABLE__NAME, oldName, name));
   }
 
   /**
@@ -100,8 +101,8 @@ public class ParameterDeclarationImpl extends VariableReferenceableImpl implemen
   {
     switch (featureID)
     {
-      case LeekPackage.PARAMETER_DECLARATION__BY_ADRESS:
-        return isByAdress();
+      case LeekPackage.VARIABLE_REFERENCEABLE__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -116,8 +117,8 @@ public class ParameterDeclarationImpl extends VariableReferenceableImpl implemen
   {
     switch (featureID)
     {
-      case LeekPackage.PARAMETER_DECLARATION__BY_ADRESS:
-        setByAdress((Boolean)newValue);
+      case LeekPackage.VARIABLE_REFERENCEABLE__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -133,8 +134,8 @@ public class ParameterDeclarationImpl extends VariableReferenceableImpl implemen
   {
     switch (featureID)
     {
-      case LeekPackage.PARAMETER_DECLARATION__BY_ADRESS:
-        setByAdress(BY_ADRESS_EDEFAULT);
+      case LeekPackage.VARIABLE_REFERENCEABLE__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -150,8 +151,8 @@ public class ParameterDeclarationImpl extends VariableReferenceableImpl implemen
   {
     switch (featureID)
     {
-      case LeekPackage.PARAMETER_DECLARATION__BY_ADRESS:
-        return byAdress != BY_ADRESS_EDEFAULT;
+      case LeekPackage.VARIABLE_REFERENCEABLE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -167,10 +168,10 @@ public class ParameterDeclarationImpl extends VariableReferenceableImpl implemen
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (byAdress: ");
-    result.append(byAdress);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }
 
-} //ParameterDeclarationImpl
+} //VariableReferenceableImpl

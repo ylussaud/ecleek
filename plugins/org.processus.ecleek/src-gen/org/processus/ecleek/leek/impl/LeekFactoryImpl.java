@@ -82,6 +82,7 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
       case LeekPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
       case LeekPackage.EXPRESSION: return createExpression();
       case LeekPackage.ARRAY_LITERAL: return createArrayLiteral();
+      case LeekPackage.VARIABLE_REFERENCEABLE: return createVariableReferenceable();
       case LeekPackage.VARIABLE_REFERENCE: return createVariableReference();
       case LeekPackage.FUNCTION_CALL: return createFunctionCall();
       case LeekPackage.RETURN: return createReturn();
@@ -303,6 +304,17 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
   {
     ArrayLiteralImpl arrayLiteral = new ArrayLiteralImpl();
     return arrayLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableReferenceable createVariableReferenceable()
+  {
+    VariableReferenceableImpl variableReferenceable = new VariableReferenceableImpl();
+    return variableReferenceable;
   }
 
   /**

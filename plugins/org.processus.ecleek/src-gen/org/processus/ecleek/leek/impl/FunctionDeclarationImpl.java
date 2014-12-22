@@ -30,7 +30,7 @@ import org.processus.ecleek.leek.StatementBlock;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.processus.ecleek.leek.impl.FunctionDeclarationImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.impl.FunctionDeclarationImpl#getParameter <em>Parameter</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.FunctionDeclarationImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.processus.ecleek.leek.impl.FunctionDeclarationImpl#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
@@ -60,14 +60,14 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference list.
+   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParameter()
+   * @see #getParameters()
    * @generated
    * @ordered
    */
-  protected EList<ParameterDeclaration> parameter;
+  protected EList<ParameterDeclaration> parameters;
 
   /**
    * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
@@ -128,13 +128,13 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ParameterDeclaration> getParameter()
+  public EList<ParameterDeclaration> getParameters()
   {
-    if (parameter == null)
+    if (parameters == null)
     {
-      parameter = new EObjectContainmentEList<ParameterDeclaration>(ParameterDeclaration.class, this, LeekPackage.FUNCTION_DECLARATION__PARAMETER);
+      parameters = new EObjectContainmentEList<ParameterDeclaration>(ParameterDeclaration.class, this, LeekPackage.FUNCTION_DECLARATION__PARAMETERS);
     }
-    return parameter;
+    return parameters;
   }
 
   /**
@@ -195,8 +195,8 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
   {
     switch (featureID)
     {
-      case LeekPackage.FUNCTION_DECLARATION__PARAMETER:
-        return ((InternalEList<?>)getParameter()).basicRemove(otherEnd, msgs);
+      case LeekPackage.FUNCTION_DECLARATION__PARAMETERS:
+        return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
       case LeekPackage.FUNCTION_DECLARATION__BODY:
         return basicSetBody(null, msgs);
     }
@@ -215,8 +215,8 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
     {
       case LeekPackage.FUNCTION_DECLARATION__NAME:
         return getName();
-      case LeekPackage.FUNCTION_DECLARATION__PARAMETER:
-        return getParameter();
+      case LeekPackage.FUNCTION_DECLARATION__PARAMETERS:
+        return getParameters();
       case LeekPackage.FUNCTION_DECLARATION__BODY:
         return getBody();
     }
@@ -237,9 +237,9 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
       case LeekPackage.FUNCTION_DECLARATION__NAME:
         setName((String)newValue);
         return;
-      case LeekPackage.FUNCTION_DECLARATION__PARAMETER:
-        getParameter().clear();
-        getParameter().addAll((Collection<? extends ParameterDeclaration>)newValue);
+      case LeekPackage.FUNCTION_DECLARATION__PARAMETERS:
+        getParameters().clear();
+        getParameters().addAll((Collection<? extends ParameterDeclaration>)newValue);
         return;
       case LeekPackage.FUNCTION_DECLARATION__BODY:
         setBody((StatementBlock)newValue);
@@ -261,8 +261,8 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
       case LeekPackage.FUNCTION_DECLARATION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case LeekPackage.FUNCTION_DECLARATION__PARAMETER:
-        getParameter().clear();
+      case LeekPackage.FUNCTION_DECLARATION__PARAMETERS:
+        getParameters().clear();
         return;
       case LeekPackage.FUNCTION_DECLARATION__BODY:
         setBody((StatementBlock)null);
@@ -283,8 +283,8 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
     {
       case LeekPackage.FUNCTION_DECLARATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case LeekPackage.FUNCTION_DECLARATION__PARAMETER:
-        return parameter != null && !parameter.isEmpty();
+      case LeekPackage.FUNCTION_DECLARATION__PARAMETERS:
+        return parameters != null && !parameters.isEmpty();
       case LeekPackage.FUNCTION_DECLARATION__BODY:
         return body != null;
     }

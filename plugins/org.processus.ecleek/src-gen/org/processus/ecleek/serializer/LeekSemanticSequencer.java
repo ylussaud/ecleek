@@ -463,7 +463,8 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case LeekPackage.PARAMETER_DECLARATION:
-				if(context == grammarAccess.getParameterDeclarationRule()) {
+				if(context == grammarAccess.getParameterDeclarationRule() ||
+				   context == grammarAccess.getVariableReferenceableRule()) {
 					sequence_ParameterDeclaration(context, (ParameterDeclaration) semanticObject); 
 					return; 
 				}
@@ -621,7 +622,8 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case LeekPackage.VARIABLE_DECLARATION:
-				if(context == grammarAccess.getVariableDeclarationRule()) {
+				if(context == grammarAccess.getVariableDeclarationRule() ||
+				   context == grammarAccess.getVariableReferenceableRule()) {
 					sequence_VariableDeclaration(context, (VariableDeclaration) semanticObject); 
 					return; 
 				}
@@ -910,7 +912,7 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (function=[FunctionDeclaration|ID] args+=Expression args+=Expression*)
+	 *     (function=[FunctionDeclaration|ID] (args+=Expression args+=Expression*)?)
 	 */
 	protected void sequence_FunctionCall(EObject context, FunctionCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -919,7 +921,7 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (parameter+=ParameterDeclaration parameter+=ParameterDeclaration*)? body=StatementBlock)
+	 *     (name=ID (parameters+=ParameterDeclaration parameters+=ParameterDeclaration*)? body=StatementBlock)
 	 */
 	protected void sequence_FunctionDeclaration(EObject context, FunctionDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1009,20 +1011,10 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (byAdress?='@' name=ID)
+	 *     (byAdress?='@'? name=ID)
 	 */
 	protected void sequence_ParameterDeclaration(EObject context, ParameterDeclaration semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.PARAMETER_DECLARATION__BY_ADRESS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.PARAMETER_DECLARATION__BY_ADRESS));
-			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.PARAMETER_DECLARATION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.PARAMETER_DECLARATION__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getParameterDeclarationAccess().getByAdressCommercialAtKeyword_0_0(), semanticObject.isByAdress());
-		feeder.accept(grammarAccess.getParameterDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1150,7 +1142,7 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (variable=[VariableDeclaration|ID] dimensions+=Expression*)
+	 *     (variable=[VariableReferenceable|ID] dimensions+=Expression*)
 	 */
 	protected void sequence_VariableReference(EObject context, VariableReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -46,6 +46,7 @@ public class LeekParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAdditionAccess().getAlternatives_1_0(), "rule__Addition__Alternatives_1_0");
 					put(grammarAccess.getMultiplicationAccess().getAlternatives_1_0(), "rule__Multiplication__Alternatives_1_0");
 					put(grammarAccess.getPrimaryExpressionAccess().getAlternatives(), "rule__PrimaryExpression__Alternatives");
+					put(grammarAccess.getVariableReferenceableAccess().getAlternatives(), "rule__VariableReferenceable__Alternatives");
 					put(grammarAccess.getToplevelStatementAccess().getGroup_0(), "rule__ToplevelStatement__Group_0__0");
 					put(grammarAccess.getToplevelStatementAccess().getGroup_1(), "rule__ToplevelStatement__Group_1__0");
 					put(grammarAccess.getStatementAccess().getGroup_0(), "rule__Statement__Group_0__0");
@@ -106,7 +107,8 @@ public class LeekParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableReferenceAccess().getGroup(), "rule__VariableReference__Group__0");
 					put(grammarAccess.getVariableReferenceAccess().getGroup_1(), "rule__VariableReference__Group_1__0");
 					put(grammarAccess.getFunctionCallAccess().getGroup(), "rule__FunctionCall__Group__0");
-					put(grammarAccess.getFunctionCallAccess().getGroup_4(), "rule__FunctionCall__Group_4__0");
+					put(grammarAccess.getFunctionCallAccess().getGroup_3(), "rule__FunctionCall__Group_3__0");
+					put(grammarAccess.getFunctionCallAccess().getGroup_3_1(), "rule__FunctionCall__Group_3_1__0");
 					put(grammarAccess.getReturnAccess().getGroup(), "rule__Return__Group__0");
 					put(grammarAccess.getIncludeAccess().getGroup(), "rule__Include__Group__0");
 					put(grammarAccess.getScriptAccess().getStatementsAssignment(), "rule__Script__StatementsAssignment");
@@ -127,8 +129,8 @@ public class LeekParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableIteratorAccess().getConditionAssignment_2(), "rule__VariableIterator__ConditionAssignment_2");
 					put(grammarAccess.getVariableIteratorAccess().getIncrementAssignment_4(), "rule__VariableIterator__IncrementAssignment_4");
 					put(grammarAccess.getFunctionDeclarationAccess().getNameAssignment_1(), "rule__FunctionDeclaration__NameAssignment_1");
-					put(grammarAccess.getFunctionDeclarationAccess().getParameterAssignment_3_0(), "rule__FunctionDeclaration__ParameterAssignment_3_0");
-					put(grammarAccess.getFunctionDeclarationAccess().getParameterAssignment_3_1_1(), "rule__FunctionDeclaration__ParameterAssignment_3_1_1");
+					put(grammarAccess.getFunctionDeclarationAccess().getParametersAssignment_3_0(), "rule__FunctionDeclaration__ParametersAssignment_3_0");
+					put(grammarAccess.getFunctionDeclarationAccess().getParametersAssignment_3_1_1(), "rule__FunctionDeclaration__ParametersAssignment_3_1_1");
 					put(grammarAccess.getFunctionDeclarationAccess().getBodyAssignment_5(), "rule__FunctionDeclaration__BodyAssignment_5");
 					put(grammarAccess.getParameterDeclarationAccess().getByAdressAssignment_0(), "rule__ParameterDeclaration__ByAdressAssignment_0");
 					put(grammarAccess.getParameterDeclarationAccess().getNameAssignment_1(), "rule__ParameterDeclaration__NameAssignment_1");
@@ -151,8 +153,8 @@ public class LeekParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableReferenceAccess().getVariableAssignment_0(), "rule__VariableReference__VariableAssignment_0");
 					put(grammarAccess.getVariableReferenceAccess().getDimensionsAssignment_1_1(), "rule__VariableReference__DimensionsAssignment_1_1");
 					put(grammarAccess.getFunctionCallAccess().getFunctionAssignment_1(), "rule__FunctionCall__FunctionAssignment_1");
-					put(grammarAccess.getFunctionCallAccess().getArgsAssignment_3(), "rule__FunctionCall__ArgsAssignment_3");
-					put(grammarAccess.getFunctionCallAccess().getArgsAssignment_4_1(), "rule__FunctionCall__ArgsAssignment_4_1");
+					put(grammarAccess.getFunctionCallAccess().getArgsAssignment_3_0(), "rule__FunctionCall__ArgsAssignment_3_0");
+					put(grammarAccess.getFunctionCallAccess().getArgsAssignment_3_1_1(), "rule__FunctionCall__ArgsAssignment_3_1_1");
 					put(grammarAccess.getReturnAccess().getValueAssignment_1(), "rule__Return__ValueAssignment_1");
 					put(grammarAccess.getIncludeAccess().getImportURIAssignment_2(), "rule__Include__ImportURIAssignment_2");
 				}

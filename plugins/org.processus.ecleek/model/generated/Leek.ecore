@@ -56,14 +56,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionDeclaration" eSuperTypes="#//ToplevelStatement #//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//ParameterDeclaration" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//StatementBlock"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterDeclaration" eSuperTypes="#//VariableReferenceable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="byAdress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LocalDeclaration" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
@@ -73,8 +72,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
         eType="#//VariableDeclaration" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VariableDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableDeclaration" eSuperTypes="#//VariableReferenceable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
@@ -83,8 +81,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableReferenceable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableReference" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//VariableDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//VariableReferenceable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dimensions" upperBound="-1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>

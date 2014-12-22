@@ -48,6 +48,7 @@ import org.processus.ecleek.leek.TypedEquals;
 import org.processus.ecleek.leek.VariableDeclaration;
 import org.processus.ecleek.leek.VariableIterator;
 import org.processus.ecleek.leek.VariableReference;
+import org.processus.ecleek.leek.VariableReferenceable;
 import org.processus.ecleek.leek.While;
 
 /**
@@ -183,6 +184,13 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * @generated
    */
   private EClass arrayLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variableReferenceableEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -692,7 +700,7 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionDeclaration_Parameter()
+  public EReference getFunctionDeclaration_Parameters()
   {
     return (EReference)functionDeclarationEClass.getEStructuralFeatures().get(1);
   }
@@ -725,16 +733,6 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
   public EAttribute getParameterDeclaration_ByAdress()
   {
     return (EAttribute)parameterDeclarationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getParameterDeclaration_Name()
-  {
-    return (EAttribute)parameterDeclarationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -792,19 +790,9 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariableDeclaration_Name()
-  {
-    return (EAttribute)variableDeclarationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getVariableDeclaration_Value()
   {
-    return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(1);
+    return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -835,6 +823,26 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
   public EReference getArrayLiteral_Values()
   {
     return (EReference)arrayLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVariableReferenceable()
+  {
+    return variableReferenceableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getVariableReferenceable_Name()
+  {
+    return (EAttribute)variableReferenceableEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1438,12 +1446,11 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
 
     functionDeclarationEClass = createEClass(FUNCTION_DECLARATION);
     createEAttribute(functionDeclarationEClass, FUNCTION_DECLARATION__NAME);
-    createEReference(functionDeclarationEClass, FUNCTION_DECLARATION__PARAMETER);
+    createEReference(functionDeclarationEClass, FUNCTION_DECLARATION__PARAMETERS);
     createEReference(functionDeclarationEClass, FUNCTION_DECLARATION__BODY);
 
     parameterDeclarationEClass = createEClass(PARAMETER_DECLARATION);
     createEAttribute(parameterDeclarationEClass, PARAMETER_DECLARATION__BY_ADRESS);
-    createEAttribute(parameterDeclarationEClass, PARAMETER_DECLARATION__NAME);
 
     localDeclarationEClass = createEClass(LOCAL_DECLARATION);
     createEReference(localDeclarationEClass, LOCAL_DECLARATION__VARIABLES);
@@ -1452,13 +1459,15 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     createEReference(globalDeclarationEClass, GLOBAL_DECLARATION__VARIABLES);
 
     variableDeclarationEClass = createEClass(VARIABLE_DECLARATION);
-    createEAttribute(variableDeclarationEClass, VARIABLE_DECLARATION__NAME);
     createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__VALUE);
 
     expressionEClass = createEClass(EXPRESSION);
 
     arrayLiteralEClass = createEClass(ARRAY_LITERAL);
     createEReference(arrayLiteralEClass, ARRAY_LITERAL__VALUES);
+
+    variableReferenceableEClass = createEClass(VARIABLE_REFERENCEABLE);
+    createEAttribute(variableReferenceableEClass, VARIABLE_REFERENCEABLE__NAME);
 
     variableReferenceEClass = createEClass(VARIABLE_REFERENCE);
     createEReference(variableReferenceEClass, VARIABLE_REFERENCE__VARIABLE);
@@ -1573,8 +1582,10 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     variableIteratorEClass.getESuperTypes().add(this.getForIterator());
     functionDeclarationEClass.getESuperTypes().add(this.getToplevelStatement());
     functionDeclarationEClass.getESuperTypes().add(this.getExpression());
+    parameterDeclarationEClass.getESuperTypes().add(this.getVariableReferenceable());
     localDeclarationEClass.getESuperTypes().add(this.getStatement());
     globalDeclarationEClass.getESuperTypes().add(this.getToplevelStatement());
+    variableDeclarationEClass.getESuperTypes().add(this.getVariableReferenceable());
     arrayLiteralEClass.getESuperTypes().add(this.getExpression());
     variableReferenceEClass.getESuperTypes().add(this.getExpression());
     functionCallEClass.getESuperTypes().add(this.getStatement());
@@ -1640,12 +1651,11 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
 
     initEClass(functionDeclarationEClass, FunctionDeclaration.class, "FunctionDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunctionDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionDeclaration_Parameter(), this.getParameterDeclaration(), null, "parameter", null, 0, -1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionDeclaration_Parameters(), this.getParameterDeclaration(), null, "parameters", null, 0, -1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionDeclaration_Body(), this.getStatementBlock(), null, "body", null, 0, 1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterDeclarationEClass, ParameterDeclaration.class, "ParameterDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParameterDeclaration_ByAdress(), ecorePackage.getEBoolean(), "byAdress", null, 0, 1, ParameterDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getParameterDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, ParameterDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(localDeclarationEClass, LocalDeclaration.class, "LocalDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLocalDeclaration_Variables(), this.getVariableDeclaration(), null, "variables", null, 0, -1, LocalDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1654,7 +1664,6 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     initEReference(getGlobalDeclaration_Variables(), this.getVariableDeclaration(), null, "variables", null, 0, -1, GlobalDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableDeclarationEClass, VariableDeclaration.class, "VariableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVariableDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariableDeclaration_Value(), this.getExpression(), null, "value", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1662,8 +1671,11 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     initEClass(arrayLiteralEClass, ArrayLiteral.class, "ArrayLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getArrayLiteral_Values(), this.getExpression(), null, "values", null, 0, -1, ArrayLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(variableReferenceableEClass, VariableReferenceable.class, "VariableReferenceable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVariableReferenceable_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableReferenceable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(variableReferenceEClass, VariableReference.class, "VariableReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVariableReference_Variable(), this.getVariableDeclaration(), null, "variable", null, 0, 1, VariableReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariableReference_Variable(), this.getVariableReferenceable(), null, "variable", null, 0, 1, VariableReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariableReference_Dimensions(), this.getExpression(), null, "dimensions", null, 0, -1, VariableReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

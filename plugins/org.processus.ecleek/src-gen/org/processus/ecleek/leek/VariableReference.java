@@ -32,12 +32,12 @@ public interface VariableReference extends Expression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Variable</em>' reference.
-   * @see #setVariable(VariableDeclaration)
+   * @see #setVariable(VariableReferenceable)
    * @see org.processus.ecleek.leek.LeekPackage#getVariableReference_Variable()
    * @model
    * @generated
    */
-  VariableDeclaration getVariable();
+  VariableReferenceable getVariable();
 
   /**
    * Sets the value of the '{@link org.processus.ecleek.leek.VariableReference#getVariable <em>Variable</em>}' reference.
@@ -47,7 +47,7 @@ public interface VariableReference extends Expression
    * @see #getVariable()
    * @generated
    */
-  void setVariable(VariableDeclaration value);
+  void setVariable(VariableReferenceable value);
 
   /**
    * Returns the value of the '<em><b>Dimensions</b></em>' containment reference list.

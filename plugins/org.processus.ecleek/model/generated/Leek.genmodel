@@ -45,12 +45,11 @@
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//FunctionDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//FunctionDeclaration/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//FunctionDeclaration/parameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//FunctionDeclaration/parameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//FunctionDeclaration/body"/>
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//ParameterDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//ParameterDeclaration/byAdress"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//ParameterDeclaration/name"/>
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//LocalDeclaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//LocalDeclaration/variables"/>
@@ -59,12 +58,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//GlobalDeclaration/variables"/>
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//VariableDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//VariableDeclaration/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//VariableDeclaration/value"/>
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//Expression"/>
     <genClasses ecoreClass="Leek.ecore#//ArrayLiteral">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//ArrayLiteral/values"/>
+    </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//VariableReferenceable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//VariableReferenceable/name"/>
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//VariableReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Leek.ecore#//VariableReference/variable"/>

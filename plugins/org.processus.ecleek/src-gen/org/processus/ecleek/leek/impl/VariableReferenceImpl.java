@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.processus.ecleek.leek.Expression;
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.VariableDeclaration;
 import org.processus.ecleek.leek.VariableReference;
+import org.processus.ecleek.leek.VariableReferenceable;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,7 +46,7 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
    * @generated
    * @ordered
    */
-  protected VariableDeclaration variable;
+  protected VariableReferenceable variable;
 
   /**
    * The cached value of the '{@link #getDimensions() <em>Dimensions</em>}' containment reference list.
@@ -84,12 +84,12 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDeclaration getVariable()
+  public VariableReferenceable getVariable()
   {
     if (variable != null && variable.eIsProxy())
     {
       InternalEObject oldVariable = (InternalEObject)variable;
-      variable = (VariableDeclaration)eResolveProxy(oldVariable);
+      variable = (VariableReferenceable)eResolveProxy(oldVariable);
       if (variable != oldVariable)
       {
         if (eNotificationRequired())
@@ -104,7 +104,7 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDeclaration basicGetVariable()
+  public VariableReferenceable basicGetVariable()
   {
     return variable;
   }
@@ -114,9 +114,9 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariable(VariableDeclaration newVariable)
+  public void setVariable(VariableReferenceable newVariable)
   {
-    VariableDeclaration oldVariable = variable;
+    VariableReferenceable oldVariable = variable;
     variable = newVariable;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.VARIABLE_REFERENCE__VARIABLE, oldVariable, variable));
@@ -183,7 +183,7 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
     switch (featureID)
     {
       case LeekPackage.VARIABLE_REFERENCE__VARIABLE:
-        setVariable((VariableDeclaration)newValue);
+        setVariable((VariableReferenceable)newValue);
         return;
       case LeekPackage.VARIABLE_REFERENCE__DIMENSIONS:
         getDimensions().clear();
@@ -204,7 +204,7 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
     switch (featureID)
     {
       case LeekPackage.VARIABLE_REFERENCE__VARIABLE:
-        setVariable((VariableDeclaration)null);
+        setVariable((VariableReferenceable)null);
         return;
       case LeekPackage.VARIABLE_REFERENCE__DIMENSIONS:
         getDimensions().clear();

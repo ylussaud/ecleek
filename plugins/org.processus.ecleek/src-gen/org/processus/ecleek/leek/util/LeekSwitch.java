@@ -175,6 +175,7 @@ public class LeekSwitch<T> extends Switch<T>
       {
         ParameterDeclaration parameterDeclaration = (ParameterDeclaration)theEObject;
         T result = caseParameterDeclaration(parameterDeclaration);
+        if (result == null) result = caseVariableReferenceable(parameterDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -199,6 +200,7 @@ public class LeekSwitch<T> extends Switch<T>
       {
         VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
         T result = caseVariableDeclaration(variableDeclaration);
+        if (result == null) result = caseVariableReferenceable(variableDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -214,6 +216,13 @@ public class LeekSwitch<T> extends Switch<T>
         ArrayLiteral arrayLiteral = (ArrayLiteral)theEObject;
         T result = caseArrayLiteral(arrayLiteral);
         if (result == null) result = caseExpression(arrayLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.VARIABLE_REFERENCEABLE:
+      {
+        VariableReferenceable variableReferenceable = (VariableReferenceable)theEObject;
+        T result = caseVariableReferenceable(variableReferenceable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -669,6 +678,22 @@ public class LeekSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseArrayLiteral(ArrayLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Referenceable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Referenceable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableReferenceable(VariableReferenceable object)
   {
     return null;
   }

@@ -165,6 +165,11 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createArrayLiteralAdapter();
       }
       @Override
+      public Adapter caseVariableReferenceable(VariableReferenceable object)
+      {
+        return createVariableReferenceableAdapter();
+      }
+      @Override
       public Adapter caseVariableReference(VariableReference object)
       {
         return createVariableReferenceAdapter();
@@ -552,6 +557,21 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createArrayLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.VariableReferenceable <em>Variable Referenceable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.VariableReferenceable
+   * @generated
+   */
+  public Adapter createVariableReferenceableAdapter()
   {
     return null;
   }

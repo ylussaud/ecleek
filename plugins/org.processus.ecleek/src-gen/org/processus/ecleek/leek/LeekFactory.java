@@ -185,6 +185,15 @@ public interface LeekFactory extends EFactory
   ArrayLiteral createArrayLiteral();
 
   /**
+   * Returns a new object of class '<em>Variable Referenceable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Referenceable</em>'.
+   * @generated
+   */
+  VariableReferenceable createVariableReferenceable();
+
+  /**
    * Returns a new object of class '<em>Variable Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

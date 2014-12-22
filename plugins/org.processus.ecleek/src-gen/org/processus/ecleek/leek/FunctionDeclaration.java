@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.processus.ecleek.leek.FunctionDeclaration#getName <em>Name</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.FunctionDeclaration#getParameter <em>Parameter</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.FunctionDeclaration#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.processus.ecleek.leek.FunctionDeclaration#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
@@ -51,20 +51,20 @@ public interface FunctionDeclaration extends ToplevelStatement, Expression
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Parameter</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
    * The list contents are of type {@link org.processus.ecleek.leek.ParameterDeclaration}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Parameter</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Parameter</em>' containment reference list.
-   * @see org.processus.ecleek.leek.LeekPackage#getFunctionDeclaration_Parameter()
+   * @return the value of the '<em>Parameters</em>' containment reference list.
+   * @see org.processus.ecleek.leek.LeekPackage#getFunctionDeclaration_Parameters()
    * @model containment="true"
    * @generated
    */
-  EList<ParameterDeclaration> getParameter();
+  EList<ParameterDeclaration> getParameters();
 
   /**
    * Returns the value of the '<em><b>Body</b></em>' containment reference.

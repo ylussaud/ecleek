@@ -59,11 +59,11 @@ VariableIterator:
 ;
 
 FunctionDeclaration:
-	'function' name=ID '(' (parameter+=ParameterDeclaration (',' parameter+=ParameterDeclaration)*)? ')' body=StatementBlock
+	'function' name=ID '(' (parameters+=ParameterDeclaration (',' parameters+=ParameterDeclaration)*)? ')' body=StatementBlock
 ;
 
 ParameterDeclaration:
-	byAdress?='@' name=ID
+	(byAdress?='@')? name=ID
 ;
 
 LocalDeclaration:
@@ -110,12 +110,17 @@ ArrayLiteral:
 	{ArrayLiteral} '[' (values+=Expression (',' values+=Expression)*)? ']'
 ;
 
+VariableReferenceable:
+	VariableDeclaration
+	| ParameterDeclaration
+;
+
 VariableReference:
-	variable=[VariableDeclaration] ('[' dimensions+=Expression ']')*
+	variable=[VariableReferenceable] ('[' dimensions+=Expression ']')*
 ;
 
 FunctionCall:
-	{FunctionCall} function=[FunctionDeclaration] '(' args+=Expression (',' args+=Expression)* ')'
+	{FunctionCall} function=[FunctionDeclaration] '(' (args+=Expression (',' args+=Expression)*)? ')'
 ;
 
 Return:

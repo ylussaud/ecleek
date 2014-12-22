@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.processus.ecleek.leek.Expression;
 import org.processus.ecleek.leek.LeekPackage;
@@ -22,35 +21,14 @@ import org.processus.ecleek.leek.VariableDeclaration;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.VariableDeclarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.processus.ecleek.leek.impl.VariableDeclarationImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class VariableDeclarationImpl extends MinimalEObjectImpl.Container implements VariableDeclaration
+public class VariableDeclarationImpl extends VariableReferenceableImpl implements VariableDeclaration
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -80,29 +58,6 @@ public class VariableDeclarationImpl extends MinimalEObjectImpl.Container implem
   protected EClass eStaticClass()
   {
     return LeekPackage.Literals.VARIABLE_DECLARATION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.VARIABLE_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -179,8 +134,6 @@ public class VariableDeclarationImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case LeekPackage.VARIABLE_DECLARATION__NAME:
-        return getName();
       case LeekPackage.VARIABLE_DECLARATION__VALUE:
         return getValue();
     }
@@ -197,9 +150,6 @@ public class VariableDeclarationImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case LeekPackage.VARIABLE_DECLARATION__NAME:
-        setName((String)newValue);
-        return;
       case LeekPackage.VARIABLE_DECLARATION__VALUE:
         setValue((Expression)newValue);
         return;
@@ -217,9 +167,6 @@ public class VariableDeclarationImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case LeekPackage.VARIABLE_DECLARATION__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case LeekPackage.VARIABLE_DECLARATION__VALUE:
         setValue((Expression)null);
         return;
@@ -237,29 +184,10 @@ public class VariableDeclarationImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case LeekPackage.VARIABLE_DECLARATION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case LeekPackage.VARIABLE_DECLARATION__VALUE:
         return value != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //VariableDeclarationImpl
