@@ -31,7 +31,7 @@ import org.processus.ecleek.leek.VariableDeclaration;
  *
  * @generated
  */
-public class GlobalDeclarationImpl extends StatementImpl implements GlobalDeclaration
+public class GlobalDeclarationImpl extends ToplevelStatementImpl implements GlobalDeclaration
 {
   /**
    * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.

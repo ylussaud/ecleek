@@ -3,6 +3,7 @@ package org.processus.ecleek.tests;
 import org.eclipse.xtext.junit4.AbstractXtextTests;
 import org.junit.Test;
 import org.processus.ecleek.LeekStandaloneSetup;
+import org.processus.ecleek.leek.ArrayLiteral;
 import org.processus.ecleek.leek.GlobalDeclaration;
 import org.processus.ecleek.leek.IntLiteral;
 import org.processus.ecleek.leek.LocalDeclaration;
@@ -84,10 +85,10 @@ public class ParsingTests extends AbstractXtextTests {
 
 		assertEquals(1, script.getStatements().size());
 		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
-		final LocalDeclaration global = (LocalDeclaration) script.getStatements().get(0);
-		assertEquals(1, global.getVariables().size());
-		assertEquals("aGlobal", global.getVariables().get(0).getName());
-		assertEquals(null, global.getVariables().get(0).getValue());
+		final LocalDeclaration local = (LocalDeclaration) script.getStatements().get(0);
+		assertEquals(1, local.getVariables().size());
+		assertEquals("aGlobal", local.getVariables().get(0).getName());
+		assertEquals(null, local.getVariables().get(0).getValue());
 	}
 
 	@Test
@@ -96,11 +97,11 @@ public class ParsingTests extends AbstractXtextTests {
 
 		assertEquals(1, script.getStatements().size());
 		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
-		final LocalDeclaration global = (LocalDeclaration) script.getStatements().get(0);
-		assertEquals(1, global.getVariables().size());
-		assertEquals("aGlobal", global.getVariables().get(0).getName());
-		assertTrue(global.getVariables().get(0).getValue() instanceof IntLiteral);
-		assertEquals(1,((IntLiteral)global.getVariables().get(0).getValue()).getValue());
+		final LocalDeclaration local = (LocalDeclaration) script.getStatements().get(0);
+		assertEquals(1, local.getVariables().size());
+		assertEquals("aGlobal", local.getVariables().get(0).getName());
+		assertTrue(local.getVariables().get(0).getValue() instanceof IntLiteral);
+		assertEquals(1,((IntLiteral)local.getVariables().get(0).getValue()).getValue());
 	}
 
 	@Test
@@ -109,12 +110,12 @@ public class ParsingTests extends AbstractXtextTests {
 
 		assertEquals(1, script.getStatements().size());
 		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
-		final LocalDeclaration global = (LocalDeclaration) script.getStatements().get(0);
-		assertEquals(2, global.getVariables().size());
-		assertEquals("aGlobal", global.getVariables().get(0).getName());
-		assertEquals(null, global.getVariables().get(0).getValue());
-		assertEquals("anotherGlobal", global.getVariables().get(1).getName());
-		assertEquals(null, global.getVariables().get(1).getValue());
+		final LocalDeclaration local = (LocalDeclaration) script.getStatements().get(0);
+		assertEquals(2, local.getVariables().size());
+		assertEquals("aGlobal", local.getVariables().get(0).getName());
+		assertEquals(null, local.getVariables().get(0).getValue());
+		assertEquals("anotherGlobal", local.getVariables().get(1).getName());
+		assertEquals(null, local.getVariables().get(1).getValue());
 	}
 
 	@Test
@@ -123,14 +124,14 @@ public class ParsingTests extends AbstractXtextTests {
 
 		assertEquals(1, script.getStatements().size());
 		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
-		final LocalDeclaration global = (LocalDeclaration) script.getStatements().get(0);
-		assertEquals(2, global.getVariables().size());
-		assertEquals("aGlobal", global.getVariables().get(0).getName());
-		assertTrue(global.getVariables().get(0).getValue() instanceof IntLiteral);
-		assertEquals(1,((IntLiteral)global.getVariables().get(0).getValue()).getValue());
-		assertEquals("anotherGlobal", global.getVariables().get(1).getName());
-		assertTrue(global.getVariables().get(1).getValue() instanceof IntLiteral);
-		assertEquals(2,((IntLiteral)global.getVariables().get(1).getValue()).getValue());
+		final LocalDeclaration local = (LocalDeclaration) script.getStatements().get(0);
+		assertEquals(2, local.getVariables().size());
+		assertEquals("aGlobal", local.getVariables().get(0).getName());
+		assertTrue(local.getVariables().get(0).getValue() instanceof IntLiteral);
+		assertEquals(1,((IntLiteral)local.getVariables().get(0).getValue()).getValue());
+		assertEquals("anotherGlobal", local.getVariables().get(1).getName());
+		assertTrue(local.getVariables().get(1).getValue() instanceof IntLiteral);
+		assertEquals(2,((IntLiteral)local.getVariables().get(1).getValue()).getValue());
 	}
 
 	@Test
@@ -154,12 +155,12 @@ public class ParsingTests extends AbstractXtextTests {
 
 		assertEquals(1, script.getStatements().size());
 		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
-		final LocalDeclaration global = (LocalDeclaration) script.getStatements().get(0);
-		assertEquals(1, global.getVariables().size());
-		assertEquals("a", global.getVariables().get(0).getName());
-		assertTrue(global.getVariables().get(0).getValue() instanceof VariableReference);
-		final VariableReference varRef = (VariableReference) global.getVariables().get(0).getValue();
-		assertEquals(global.getVariables().get(0), varRef.getVariable());
+		final LocalDeclaration local = (LocalDeclaration) script.getStatements().get(0);
+		assertEquals(1, local.getVariables().size());
+		assertEquals("a", local.getVariables().get(0).getName());
+		assertTrue(local.getVariables().get(0).getValue() instanceof VariableReference);
+		final VariableReference varRef = (VariableReference) local.getVariables().get(0).getValue();
+		assertEquals(local.getVariables().get(0), varRef.getVariable());
 		assertEquals(0, varRef.getDimensions().size());
 	}
 	
@@ -197,12 +198,12 @@ public class ParsingTests extends AbstractXtextTests {
 
 		assertEquals(1, script.getStatements().size());
 		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
-		final LocalDeclaration global = (LocalDeclaration) script.getStatements().get(0);
-		assertEquals(1, global.getVariables().size());
-		assertEquals("a", global.getVariables().get(0).getName());
-		assertTrue(global.getVariables().get(0).getValue() instanceof VariableReference);
-		final VariableReference varRef = (VariableReference) global.getVariables().get(0).getValue();
-		assertEquals(global.getVariables().get(0), varRef.getVariable());
+		final LocalDeclaration local = (LocalDeclaration) script.getStatements().get(0);
+		assertEquals(1, local.getVariables().size());
+		assertEquals("a", local.getVariables().get(0).getName());
+		assertTrue(local.getVariables().get(0).getValue() instanceof VariableReference);
+		final VariableReference varRef = (VariableReference) local.getVariables().get(0).getValue();
+		assertEquals(local.getVariables().get(0), varRef.getVariable());
 		assertEquals(1, varRef.getDimensions().size());
 		assertTrue(varRef.getDimensions().get(0) instanceof IntLiteral);
 		final IntLiteral dim = (IntLiteral) varRef.getDimensions().get(0);
@@ -236,19 +237,69 @@ public class ParsingTests extends AbstractXtextTests {
 
 		assertEquals(1, script.getStatements().size());
 		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
-		final LocalDeclaration global = (LocalDeclaration) script.getStatements().get(0);
-		assertEquals(1, global.getVariables().size());
-		assertEquals("a", global.getVariables().get(0).getName());
-		assertTrue(global.getVariables().get(0).getValue() instanceof VariableReference);
-		final VariableReference varRef = (VariableReference) global.getVariables().get(0).getValue();
-		assertEquals(global.getVariables().get(0), varRef.getVariable());
+		final LocalDeclaration local = (LocalDeclaration) script.getStatements().get(0);
+		assertEquals(1, local.getVariables().size());
+		assertEquals("a", local.getVariables().get(0).getName());
+		assertTrue(local.getVariables().get(0).getValue() instanceof VariableReference);
+		final VariableReference varRef = (VariableReference) local.getVariables().get(0).getValue();
+		assertEquals(local.getVariables().get(0), varRef.getVariable());
 		assertEquals(2, varRef.getDimensions().size());
 		assertTrue(varRef.getDimensions().get(0) instanceof IntLiteral);
 		IntLiteral dim = (IntLiteral) varRef.getDimensions().get(0);
 		assertEquals(1, dim.getValue());
 		assertTrue(varRef.getDimensions().get(1) instanceof IntLiteral);
-		dim = (IntLiteral) varRef.getDimensions().get(0);
+		dim = (IntLiteral) varRef.getDimensions().get(1);
 		assertEquals(2, dim.getValue());
+	}
+
+	@Test
+	public void arrayLiteralEmpty() throws Exception {
+		final Script script = getScript("var a = [];");
+
+		assertEquals(1, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
+		final LocalDeclaration local = (LocalDeclaration) script.getStatements().get(0);
+		assertEquals(1, local.getVariables().size());
+		assertEquals("a", local.getVariables().get(0).getName());
+		assertTrue(local.getVariables().get(0).getValue() instanceof ArrayLiteral);
+		final ArrayLiteral literal = (ArrayLiteral) local.getVariables().get(0).getValue();
+		assertEquals(0, literal.getValues().size());
+	}
+
+	@Test
+	public void arrayLiteralOneValue() throws Exception {
+		final Script script = getScript("var a = [1];");
+
+		assertEquals(1, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
+		final LocalDeclaration local = (LocalDeclaration) script.getStatements().get(0);
+		assertEquals(1, local.getVariables().size());
+		assertEquals("a", local.getVariables().get(0).getName());
+		assertTrue(local.getVariables().get(0).getValue() instanceof ArrayLiteral);
+		final ArrayLiteral literal = (ArrayLiteral) local.getVariables().get(0).getValue();
+		assertEquals(1, literal.getValues().size());
+		assertTrue(literal.getValues().get(0) instanceof IntLiteral);
+		final IntLiteral value = (IntLiteral) literal.getValues().get(0);
+		assertEquals(1, value.getValue());
+	}
+
+	@Test
+	public void arrayLiteralTwoValue() throws Exception {
+		final Script script = getScript("var a = [1, 2];");
+
+		assertEquals(1, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
+		final LocalDeclaration local = (LocalDeclaration) script.getStatements().get(0);
+		assertEquals(1, local.getVariables().size());
+		assertEquals("a", local.getVariables().get(0).getName());
+		assertTrue(local.getVariables().get(0).getValue() instanceof ArrayLiteral);
+		final ArrayLiteral literal = (ArrayLiteral) local.getVariables().get(0).getValue();
+		assertEquals(2, literal.getValues().size());
+		assertTrue(literal.getValues().get(0) instanceof IntLiteral);
+		IntLiteral value = (IntLiteral) literal.getValues().get(0);
+		assertEquals(1, value.getValue());
+		value = (IntLiteral) literal.getValues().get(1);
+		assertEquals(2, value.getValue());
 	}
 
 }

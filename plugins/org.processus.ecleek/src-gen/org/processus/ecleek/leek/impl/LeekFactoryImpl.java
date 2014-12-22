@@ -65,6 +65,7 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
     switch (eClass.getClassifierID())
     {
       case LeekPackage.SCRIPT: return createScript();
+      case LeekPackage.TOPLEVEL_STATEMENT: return createToplevelStatement();
       case LeekPackage.STATEMENT: return createStatement();
       case LeekPackage.STATEMENT_BLOCK: return createStatementBlock();
       case LeekPackage.AFFECTATION: return createAffectation();
@@ -83,6 +84,9 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
       case LeekPackage.ARRAY_LITERAL: return createArrayLiteral();
       case LeekPackage.VARIABLE_REFERENCE: return createVariableReference();
       case LeekPackage.FUNCTION_CALL: return createFunctionCall();
+      case LeekPackage.RETURN: return createReturn();
+      case LeekPackage.INCLUDE: return createInclude();
+      case LeekPackage.EMPTY_STATEMENT: return createEmptyStatement();
       case LeekPackage.TYPED_EQUALS: return createTypedEquals();
       case LeekPackage.EQUALS: return createEquals();
       case LeekPackage.TYPED_DIFFERENT: return createTypedDifferent();
@@ -112,6 +116,17 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
   {
     ScriptImpl script = new ScriptImpl();
     return script;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ToplevelStatement createToplevelStatement()
+  {
+    ToplevelStatementImpl toplevelStatement = new ToplevelStatementImpl();
+    return toplevelStatement;
   }
 
   /**
@@ -310,6 +325,39 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
   {
     FunctionCallImpl functionCall = new FunctionCallImpl();
     return functionCall;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Return createReturn()
+  {
+    ReturnImpl return_ = new ReturnImpl();
+    return return_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Include createInclude()
+  {
+    IncludeImpl include = new IncludeImpl();
+    return include;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EmptyStatement createEmptyStatement()
+  {
+    EmptyStatementImpl emptyStatement = new EmptyStatementImpl();
+    return emptyStatement;
   }
 
   /**

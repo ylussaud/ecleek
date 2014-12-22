@@ -10,6 +10,7 @@
     <genClasses ecoreClass="Leek.ecore#//Script">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//Script/statements"/>
     </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//ToplevelStatement"/>
     <genClasses ecoreClass="Leek.ecore#//Statement"/>
     <genClasses ecoreClass="Leek.ecore#//StatementBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//StatementBlock/statements"/>
@@ -45,6 +46,7 @@
     <genClasses ecoreClass="Leek.ecore#//FunctionDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//FunctionDeclaration/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//FunctionDeclaration/parameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//FunctionDeclaration/body"/>
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//ParameterDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//ParameterDeclaration/byAdress"/>
@@ -72,6 +74,13 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Leek.ecore#//FunctionCall/function"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//FunctionCall/args"/>
     </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//Return">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//Return/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//Include">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//Include/importURI"/>
+    </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//EmptyStatement"/>
     <genClasses ecoreClass="Leek.ecore#//TypedEquals">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//TypedEquals/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//TypedEquals/right"/>

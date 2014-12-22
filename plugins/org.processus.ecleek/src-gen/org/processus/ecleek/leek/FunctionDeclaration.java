@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.processus.ecleek.leek.FunctionDeclaration#getName <em>Name</em>}</li>
  *   <li>{@link org.processus.ecleek.leek.FunctionDeclaration#getParameter <em>Parameter</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.FunctionDeclaration#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
  *
@@ -21,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface FunctionDeclaration extends Statement
+public interface FunctionDeclaration extends ToplevelStatement, Expression
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -64,5 +65,31 @@ public interface FunctionDeclaration extends Statement
    * @generated
    */
   EList<ParameterDeclaration> getParameter();
+
+  /**
+   * Returns the value of the '<em><b>Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Body</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Body</em>' containment reference.
+   * @see #setBody(StatementBlock)
+   * @see org.processus.ecleek.leek.LeekPackage#getFunctionDeclaration_Body()
+   * @model containment="true"
+   * @generated
+   */
+  StatementBlock getBody();
+
+  /**
+   * Sets the value of the '{@link org.processus.ecleek.leek.FunctionDeclaration#getBody <em>Body</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Body</em>' containment reference.
+   * @see #getBody()
+   * @generated
+   */
+  void setBody(StatementBlock value);
 
 } // FunctionDeclaration

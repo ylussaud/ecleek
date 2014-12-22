@@ -4,26 +4,28 @@ package org.processus.ecleek.leek.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.Statement;
+import org.processus.ecleek.leek.ToplevelStatement;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Statement</b></em>'.
+ * An implementation of the model object '<em><b>Toplevel Statement</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class StatementImpl extends ToplevelStatementImpl implements Statement
+public class ToplevelStatementImpl extends MinimalEObjectImpl.Container implements ToplevelStatement
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected StatementImpl()
+  protected ToplevelStatementImpl()
   {
     super();
   }
@@ -36,7 +38,7 @@ public class StatementImpl extends ToplevelStatementImpl implements Statement
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.STATEMENT;
+    return LeekPackage.Literals.TOPLEVEL_STATEMENT;
   }
 
-} //StatementImpl
+} //ToplevelStatementImpl

@@ -79,10 +79,18 @@ public class LeekSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LeekPackage.TOPLEVEL_STATEMENT:
+      {
+        ToplevelStatement toplevelStatement = (ToplevelStatement)theEObject;
+        T result = caseToplevelStatement(toplevelStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LeekPackage.STATEMENT:
       {
         Statement statement = (Statement)theEObject;
         T result = caseStatement(statement);
+        if (result == null) result = caseToplevelStatement(statement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -91,6 +99,7 @@ public class LeekSwitch<T> extends Switch<T>
         StatementBlock statementBlock = (StatementBlock)theEObject;
         T result = caseStatementBlock(statementBlock);
         if (result == null) result = caseStatement(statementBlock);
+        if (result == null) result = caseToplevelStatement(statementBlock);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -99,6 +108,7 @@ public class LeekSwitch<T> extends Switch<T>
         Affectation affectation = (Affectation)theEObject;
         T result = caseAffectation(affectation);
         if (result == null) result = caseStatement(affectation);
+        if (result == null) result = caseToplevelStatement(affectation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -107,6 +117,7 @@ public class LeekSwitch<T> extends Switch<T>
         If if_ = (If)theEObject;
         T result = caseIf(if_);
         if (result == null) result = caseStatement(if_);
+        if (result == null) result = caseToplevelStatement(if_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -115,6 +126,7 @@ public class LeekSwitch<T> extends Switch<T>
         While while_ = (While)theEObject;
         T result = caseWhile(while_);
         if (result == null) result = caseStatement(while_);
+        if (result == null) result = caseToplevelStatement(while_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -123,6 +135,7 @@ public class LeekSwitch<T> extends Switch<T>
         For for_ = (For)theEObject;
         T result = caseFor(for_);
         if (result == null) result = caseStatement(for_);
+        if (result == null) result = caseToplevelStatement(for_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -153,7 +166,8 @@ public class LeekSwitch<T> extends Switch<T>
       {
         FunctionDeclaration functionDeclaration = (FunctionDeclaration)theEObject;
         T result = caseFunctionDeclaration(functionDeclaration);
-        if (result == null) result = caseStatement(functionDeclaration);
+        if (result == null) result = caseToplevelStatement(functionDeclaration);
+        if (result == null) result = caseExpression(functionDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -169,6 +183,7 @@ public class LeekSwitch<T> extends Switch<T>
         LocalDeclaration localDeclaration = (LocalDeclaration)theEObject;
         T result = caseLocalDeclaration(localDeclaration);
         if (result == null) result = caseStatement(localDeclaration);
+        if (result == null) result = caseToplevelStatement(localDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -176,7 +191,7 @@ public class LeekSwitch<T> extends Switch<T>
       {
         GlobalDeclaration globalDeclaration = (GlobalDeclaration)theEObject;
         T result = caseGlobalDeclaration(globalDeclaration);
-        if (result == null) result = caseStatement(globalDeclaration);
+        if (result == null) result = caseToplevelStatement(globalDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -216,6 +231,33 @@ public class LeekSwitch<T> extends Switch<T>
         T result = caseFunctionCall(functionCall);
         if (result == null) result = caseStatement(functionCall);
         if (result == null) result = caseExpression(functionCall);
+        if (result == null) result = caseToplevelStatement(functionCall);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.RETURN:
+      {
+        Return return_ = (Return)theEObject;
+        T result = caseReturn(return_);
+        if (result == null) result = caseStatement(return_);
+        if (result == null) result = caseToplevelStatement(return_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.INCLUDE:
+      {
+        Include include = (Include)theEObject;
+        T result = caseInclude(include);
+        if (result == null) result = caseToplevelStatement(include);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.EMPTY_STATEMENT:
+      {
+        EmptyStatement emptyStatement = (EmptyStatement)theEObject;
+        T result = caseEmptyStatement(emptyStatement);
+        if (result == null) result = caseStatement(emptyStatement);
+        if (result == null) result = caseToplevelStatement(emptyStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -355,6 +397,22 @@ public class LeekSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseScript(Script object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Toplevel Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Toplevel Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseToplevelStatement(ToplevelStatement object)
   {
     return null;
   }
@@ -643,6 +701,54 @@ public class LeekSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseFunctionCall(FunctionCall object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Return</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Return</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturn(Return object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Include</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Include</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInclude(Include object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Empty Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Empty Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEmptyStatement(EmptyStatement object)
   {
     return null;
   }

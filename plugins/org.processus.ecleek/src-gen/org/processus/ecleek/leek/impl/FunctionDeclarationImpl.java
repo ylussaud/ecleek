@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.processus.ecleek.leek.FunctionDeclaration;
 import org.processus.ecleek.leek.LeekPackage;
 import org.processus.ecleek.leek.ParameterDeclaration;
+import org.processus.ecleek.leek.StatementBlock;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,12 +31,13 @@ import org.processus.ecleek.leek.ParameterDeclaration;
  * <ul>
  *   <li>{@link org.processus.ecleek.leek.impl.FunctionDeclarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.processus.ecleek.leek.impl.FunctionDeclarationImpl#getParameter <em>Parameter</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.FunctionDeclarationImpl#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FunctionDeclarationImpl extends StatementImpl implements FunctionDeclaration
+public class FunctionDeclarationImpl extends ToplevelStatementImpl implements FunctionDeclaration
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -66,6 +68,16 @@ public class FunctionDeclarationImpl extends StatementImpl implements FunctionDe
    * @ordered
    */
   protected EList<ParameterDeclaration> parameter;
+
+  /**
+   * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBody()
+   * @generated
+   * @ordered
+   */
+  protected StatementBlock body;
 
   /**
    * <!-- begin-user-doc -->
@@ -130,6 +142,54 @@ public class FunctionDeclarationImpl extends StatementImpl implements FunctionDe
    * <!-- end-user-doc -->
    * @generated
    */
+  public StatementBlock getBody()
+  {
+    return body;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBody(StatementBlock newBody, NotificationChain msgs)
+  {
+    StatementBlock oldBody = body;
+    body = newBody;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.FUNCTION_DECLARATION__BODY, oldBody, newBody);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBody(StatementBlock newBody)
+  {
+    if (newBody != body)
+    {
+      NotificationChain msgs = null;
+      if (body != null)
+        msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FUNCTION_DECLARATION__BODY, null, msgs);
+      if (newBody != null)
+        msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FUNCTION_DECLARATION__BODY, null, msgs);
+      msgs = basicSetBody(newBody, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.FUNCTION_DECLARATION__BODY, newBody, newBody));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -137,6 +197,8 @@ public class FunctionDeclarationImpl extends StatementImpl implements FunctionDe
     {
       case LeekPackage.FUNCTION_DECLARATION__PARAMETER:
         return ((InternalEList<?>)getParameter()).basicRemove(otherEnd, msgs);
+      case LeekPackage.FUNCTION_DECLARATION__BODY:
+        return basicSetBody(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -155,6 +217,8 @@ public class FunctionDeclarationImpl extends StatementImpl implements FunctionDe
         return getName();
       case LeekPackage.FUNCTION_DECLARATION__PARAMETER:
         return getParameter();
+      case LeekPackage.FUNCTION_DECLARATION__BODY:
+        return getBody();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -177,6 +241,9 @@ public class FunctionDeclarationImpl extends StatementImpl implements FunctionDe
         getParameter().clear();
         getParameter().addAll((Collection<? extends ParameterDeclaration>)newValue);
         return;
+      case LeekPackage.FUNCTION_DECLARATION__BODY:
+        setBody((StatementBlock)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -197,6 +264,9 @@ public class FunctionDeclarationImpl extends StatementImpl implements FunctionDe
       case LeekPackage.FUNCTION_DECLARATION__PARAMETER:
         getParameter().clear();
         return;
+      case LeekPackage.FUNCTION_DECLARATION__BODY:
+        setBody((StatementBlock)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -215,6 +285,8 @@ public class FunctionDeclarationImpl extends StatementImpl implements FunctionDe
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case LeekPackage.FUNCTION_DECLARATION__PARAMETER:
         return parameter != null && !parameter.isEmpty();
+      case LeekPackage.FUNCTION_DECLARATION__BODY:
+        return body != null;
     }
     return super.eIsSet(featureID);
   }

@@ -34,21 +34,9 @@ public class LeekSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getIncludeRule())
-			return getIncludeToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * Include:
-	 * 	'include' '(' '"' ID '"' ')' ';'
-	 * ;
-	 */
-	protected String getIncludeToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "include(\"\");";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

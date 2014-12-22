@@ -80,6 +80,11 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createScriptAdapter();
       }
       @Override
+      public Adapter caseToplevelStatement(ToplevelStatement object)
+      {
+        return createToplevelStatementAdapter();
+      }
+      @Override
       public Adapter caseStatement(Statement object)
       {
         return createStatementAdapter();
@@ -168,6 +173,21 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
       public Adapter caseFunctionCall(FunctionCall object)
       {
         return createFunctionCallAdapter();
+      }
+      @Override
+      public Adapter caseReturn(Return object)
+      {
+        return createReturnAdapter();
+      }
+      @Override
+      public Adapter caseInclude(Include object)
+      {
+        return createIncludeAdapter();
+      }
+      @Override
+      public Adapter caseEmptyStatement(EmptyStatement object)
+      {
+        return createEmptyStatementAdapter();
       }
       @Override
       public Adapter caseTypedEquals(TypedEquals object)
@@ -277,6 +297,21 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createScriptAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.ToplevelStatement <em>Toplevel Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.ToplevelStatement
+   * @generated
+   */
+  public Adapter createToplevelStatementAdapter()
   {
     return null;
   }
@@ -547,6 +582,51 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFunctionCallAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.Return <em>Return</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.Return
+   * @generated
+   */
+  public Adapter createReturnAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.Include <em>Include</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.Include
+   * @generated
+   */
+  public Adapter createIncludeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.EmptyStatement <em>Empty Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.EmptyStatement
+   * @generated
+   */
+  public Adapter createEmptyStatementAdapter()
   {
     return null;
   }

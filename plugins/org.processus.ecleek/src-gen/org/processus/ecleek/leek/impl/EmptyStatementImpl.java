@@ -4,26 +4,26 @@ package org.processus.ecleek.leek.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.processus.ecleek.leek.EmptyStatement;
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.Statement;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Statement</b></em>'.
+ * An implementation of the model object '<em><b>Empty Statement</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class StatementImpl extends ToplevelStatementImpl implements Statement
+public class EmptyStatementImpl extends StatementImpl implements EmptyStatement
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected StatementImpl()
+  protected EmptyStatementImpl()
   {
     super();
   }
@@ -36,7 +36,7 @@ public class StatementImpl extends ToplevelStatementImpl implements Statement
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.STATEMENT;
+    return LeekPackage.Literals.EMPTY_STATEMENT;
   }
 
-} //StatementImpl
+} //EmptyStatementImpl

@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.processus.ecleek.leek.LeekPackage;
 import org.processus.ecleek.leek.Script;
-import org.processus.ecleek.leek.Statement;
+import org.processus.ecleek.leek.ToplevelStatement;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +43,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
    * @generated
    * @ordered
    */
-  protected EList<Statement> statements;
+  protected EList<ToplevelStatement> statements;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,11 +71,11 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Statement> getStatements()
+  public EList<ToplevelStatement> getStatements()
   {
     if (statements == null)
     {
-      statements = new EObjectContainmentEList<Statement>(Statement.class, this, LeekPackage.SCRIPT__STATEMENTS);
+      statements = new EObjectContainmentEList<ToplevelStatement>(ToplevelStatement.class, this, LeekPackage.SCRIPT__STATEMENTS);
     }
     return statements;
   }
@@ -125,7 +125,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
     {
       case LeekPackage.SCRIPT__STATEMENTS:
         getStatements().clear();
-        getStatements().addAll((Collection<? extends Statement>)newValue);
+        getStatements().addAll((Collection<? extends ToplevelStatement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
