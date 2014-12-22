@@ -14,7 +14,7 @@ ToplevelStatement:
 ;
 
 Statement:
-	{Statement} ';'
+	{EmptyStatement} ';'
 	| LocalDeclaration ';'
 	| Return ';'
 	| FunctionCall ';'
@@ -103,6 +103,7 @@ PrimaryExpression returns Expression:
 	| VariableReference
 	| {StringLiteral} value = STRING
 	| ArrayLiteral
+	| FunctionDeclaration
 	;
 
 ArrayLiteral:
