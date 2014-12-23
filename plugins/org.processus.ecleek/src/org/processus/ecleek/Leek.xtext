@@ -125,6 +125,10 @@ Multiplication returns Expression:
 
 PrimaryExpression returns Expression:
 	'(' Expression ')'
+	//| {UnaryPlus} '+' expression=Expression
+	//| {UnaryMinus} '-' expression=Expression
+	//| {PostfixIncrement} variable=VariableReference '++'
+	//| {PostfixDecrement} variable=VariableReference '--'
 	| {RealLiteral} value=REAL
 	| {IntLiteral} value=INT
 	| FunctionCall
