@@ -5,23 +5,23 @@ package org.processus.ecleek.leek;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Each Iterator</b></em>'.
+ * A representation of the model object '<em><b>For In</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.EachIterator#getKey <em>Key</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.EachIterator#getValue <em>Value</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.EachIterator#getArray <em>Array</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.ForIn#getKey <em>Key</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.ForIn#getValue <em>Value</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.ForIn#getArray <em>Array</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.processus.ecleek.leek.LeekPackage#getEachIterator()
+ * @see org.processus.ecleek.leek.LeekPackage#getForIn()
  * @model
  * @generated
  */
-public interface EachIterator extends ForIterator
+public interface ForIn extends Iteration
 {
   /**
    * Returns the value of the '<em><b>Key</b></em>' containment reference.
@@ -32,22 +32,22 @@ public interface EachIterator extends ForIterator
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Key</em>' containment reference.
-   * @see #setKey(VariableDeclaration)
-   * @see org.processus.ecleek.leek.LeekPackage#getEachIterator_Key()
+   * @see #setKey(VariableReference)
+   * @see org.processus.ecleek.leek.LeekPackage#getForIn_Key()
    * @model containment="true"
    * @generated
    */
-  VariableDeclaration getKey();
+  VariableReference getKey();
 
   /**
-   * Sets the value of the '{@link org.processus.ecleek.leek.EachIterator#getKey <em>Key</em>}' containment reference.
+   * Sets the value of the '{@link org.processus.ecleek.leek.ForIn#getKey <em>Key</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Key</em>' containment reference.
    * @see #getKey()
    * @generated
    */
-  void setKey(VariableDeclaration value);
+  void setKey(VariableReference value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.
@@ -58,22 +58,22 @@ public interface EachIterator extends ForIterator
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' containment reference.
-   * @see #setValue(VariableDeclaration)
-   * @see org.processus.ecleek.leek.LeekPackage#getEachIterator_Value()
+   * @see #setValue(VariableReference)
+   * @see org.processus.ecleek.leek.LeekPackage#getForIn_Value()
    * @model containment="true"
    * @generated
    */
-  VariableDeclaration getValue();
+  VariableReference getValue();
 
   /**
-   * Sets the value of the '{@link org.processus.ecleek.leek.EachIterator#getValue <em>Value</em>}' containment reference.
+   * Sets the value of the '{@link org.processus.ecleek.leek.ForIn#getValue <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' containment reference.
    * @see #getValue()
    * @generated
    */
-  void setValue(VariableDeclaration value);
+  void setValue(VariableReference value);
 
   /**
    * Returns the value of the '<em><b>Array</b></em>' containment reference.
@@ -85,14 +85,14 @@ public interface EachIterator extends ForIterator
    * <!-- end-user-doc -->
    * @return the value of the '<em>Array</em>' containment reference.
    * @see #setArray(Expression)
-   * @see org.processus.ecleek.leek.LeekPackage#getEachIterator_Array()
+   * @see org.processus.ecleek.leek.LeekPackage#getForIn_Array()
    * @model containment="true"
    * @generated
    */
   Expression getArray();
 
   /**
-   * Sets the value of the '{@link org.processus.ecleek.leek.EachIterator#getArray <em>Array</em>}' containment reference.
+   * Sets the value of the '{@link org.processus.ecleek.leek.ForIn#getArray <em>Array</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Array</em>' containment reference.
@@ -101,4 +101,4 @@ public interface EachIterator extends ForIterator
    */
   void setArray(Expression value);
 
-} // EachIterator
+} // ForIn

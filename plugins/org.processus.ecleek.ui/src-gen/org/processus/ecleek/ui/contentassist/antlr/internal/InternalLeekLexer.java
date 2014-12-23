@@ -27,7 +27,10 @@ public class InternalLeekLexer extends Lexer {
     public static final int EOF=-1;
     public static final int T__19=19;
     public static final int T__16=16;
+    public static final int T__51=51;
+    public static final int T__52=52;
     public static final int T__15=15;
+    public static final int T__53=53;
     public static final int T__18=18;
     public static final int T__17=17;
     public static final int T__12=12;
@@ -35,6 +38,7 @@ public class InternalLeekLexer extends Lexer {
     public static final int T__13=13;
     public static final int RULE_INT=6;
     public static final int RULE_REAL=5;
+    public static final int T__50=50;
     public static final int T__42=42;
     public static final int T__43=43;
     public static final int T__40=40;
@@ -44,12 +48,13 @@ public class InternalLeekLexer extends Lexer {
     public static final int T__44=44;
     public static final int T__45=45;
     public static final int T__48=48;
+    public static final int T__49=49;
     public static final int RULE_SL_COMMENT=9;
     public static final int RULE_ML_COMMENT=8;
     public static final int T__30=30;
     public static final int T__31=31;
-    public static final int RULE_STRING=7;
     public static final int T__32=32;
+    public static final int RULE_STRING=7;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
@@ -221,10 +226,11 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:18:7: ( '=' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:18:9: '='
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:18:7: ( 'break' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:18:9: 'break'
             {
-            match('='); 
+            match("break"); 
+
 
             }
 
@@ -241,10 +247,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:19:7: ( 'if' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:19:9: 'if'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:19:7: ( 'continue' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:19:9: 'continue'
             {
-            match("if"); 
+            match("continue"); 
 
 
             }
@@ -262,10 +268,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:20:7: ( '(' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:20:9: '('
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:20:7: ( '=' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:20:9: '='
             {
-            match('('); 
+            match('='); 
 
             }
 
@@ -282,10 +288,11 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:21:7: ( ')' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:21:9: ')'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:21:7: ( 'if' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:21:9: 'if'
             {
-            match(')'); 
+            match("if"); 
+
 
             }
 
@@ -302,11 +309,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:22:7: ( 'else' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:22:9: 'else'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:22:7: ( '(' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:22:9: '('
             {
-            match("else"); 
-
+            match('('); 
 
             }
 
@@ -323,11 +329,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:23:7: ( 'while' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:23:9: 'while'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:23:7: ( ')' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:23:9: ')'
             {
-            match("while"); 
-
+            match(')'); 
 
             }
 
@@ -344,10 +349,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:24:7: ( 'for' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:24:9: 'for'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:24:7: ( 'else' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:24:9: 'else'
             {
-            match("for"); 
+            match("else"); 
 
 
             }
@@ -365,10 +370,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:25:7: ( 'var' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:25:9: 'var'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:25:7: ( 'while' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:25:9: 'while'
             {
-            match("var"); 
+            match("while"); 
 
 
             }
@@ -386,10 +391,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:26:7: ( 'in' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:26:9: 'in'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:26:7: ( 'for' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:26:9: 'for'
             {
-            match("in"); 
+            match("for"); 
 
 
             }
@@ -407,10 +412,11 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:27:7: ( ':' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:27:9: ':'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:27:7: ( 'in' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:27:9: 'in'
             {
-            match(':'); 
+            match("in"); 
+
 
             }
 
@@ -427,11 +433,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:28:7: ( 'function' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:28:9: 'function'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:28:7: ( ':' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:28:9: ':'
             {
-            match("function"); 
-
+            match(':'); 
 
             }
 
@@ -448,10 +453,11 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:29:7: ( ',' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:29:9: ','
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:29:7: ( 'var' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:29:9: 'var'
             {
-            match(','); 
+            match("var"); 
+
 
             }
 
@@ -468,10 +474,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:30:7: ( 'global' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:30:9: 'global'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:30:7: ( 'function' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:30:9: 'function'
             {
-            match("global"); 
+            match("function"); 
 
 
             }
@@ -489,11 +495,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:31:7: ( '===' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:31:9: '==='
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:31:7: ( ',' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:31:9: ','
             {
-            match("==="); 
-
+            match(','); 
 
             }
 
@@ -510,10 +515,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:32:7: ( '==' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:32:9: '=='
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:32:7: ( 'global' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:32:9: 'global'
             {
-            match("=="); 
+            match("global"); 
 
 
             }
@@ -531,10 +536,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:33:7: ( '!==' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:33:9: '!=='
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:33:7: ( '===' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:33:9: '==='
             {
-            match("!=="); 
+            match("==="); 
 
 
             }
@@ -552,10 +557,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:34:7: ( '!=' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:34:9: '!='
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:34:7: ( '==' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:34:9: '=='
             {
-            match("!="); 
+            match("=="); 
 
 
             }
@@ -573,10 +578,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:35:7: ( '<=' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:35:9: '<='
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:35:7: ( '!==' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:35:9: '!=='
             {
-            match("<="); 
+            match("!=="); 
 
 
             }
@@ -594,10 +599,11 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:36:7: ( '<' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:36:9: '<'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:36:7: ( '!=' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:36:9: '!='
             {
-            match('<'); 
+            match("!="); 
+
 
             }
 
@@ -614,10 +620,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:37:7: ( '>=' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:37:9: '>='
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:37:7: ( '<=' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:37:9: '<='
             {
-            match(">="); 
+            match("<="); 
 
 
             }
@@ -635,10 +641,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:38:7: ( '>' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:38:9: '>'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:38:7: ( '<' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:38:9: '<'
             {
-            match('>'); 
+            match('<'); 
 
             }
 
@@ -655,10 +661,11 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:39:7: ( '+' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:39:9: '+'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:39:7: ( '>=' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:39:9: '>='
             {
-            match('+'); 
+            match(">="); 
+
 
             }
 
@@ -675,10 +682,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:40:7: ( '-' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:40:9: '-'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:40:7: ( '>' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:40:9: '>'
             {
-            match('-'); 
+            match('>'); 
 
             }
 
@@ -695,10 +702,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:41:7: ( '*' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:41:9: '*'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:41:7: ( '+' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:41:9: '+'
             {
-            match('*'); 
+            match('+'); 
 
             }
 
@@ -715,10 +722,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:42:7: ( '/' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:42:9: '/'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:42:7: ( '-' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:42:9: '-'
             {
-            match('/'); 
+            match('-'); 
 
             }
 
@@ -735,10 +742,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:43:7: ( '[' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:43:9: '['
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:43:7: ( '*' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:43:9: '*'
             {
-            match('['); 
+            match('*'); 
 
             }
 
@@ -755,10 +762,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:44:7: ( ']' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:44:9: ']'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:44:7: ( '/' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:44:9: '/'
             {
-            match(']'); 
+            match('/'); 
 
             }
 
@@ -775,10 +782,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:45:7: ( 'return' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:45:9: 'return'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:45:7: ( 'null' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:45:9: 'null'
             {
-            match("return"); 
+            match("null"); 
 
 
             }
@@ -796,10 +803,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:46:7: ( 'include' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:46:9: 'include'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:46:7: ( 'false' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:46:9: 'false'
             {
-            match("include"); 
+            match("false"); 
 
 
             }
@@ -817,10 +824,11 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:47:7: ( '@' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:47:9: '@'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:47:7: ( 'true' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:47:9: 'true'
             {
-            match('@'); 
+            match("true"); 
+
 
             }
 
@@ -832,15 +840,117 @@ public class InternalLeekLexer extends Lexer {
     }
     // $ANTLR end "T__48"
 
+    // $ANTLR start "T__49"
+    public final void mT__49() throws RecognitionException {
+        try {
+            int _type = T__49;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:48:7: ( '[' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:48:9: '['
+            {
+            match('['); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__49"
+
+    // $ANTLR start "T__50"
+    public final void mT__50() throws RecognitionException {
+        try {
+            int _type = T__50;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:49:7: ( ']' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:49:9: ']'
+            {
+            match(']'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__50"
+
+    // $ANTLR start "T__51"
+    public final void mT__51() throws RecognitionException {
+        try {
+            int _type = T__51;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:50:7: ( 'return' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:50:9: 'return'
+            {
+            match("return"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__51"
+
+    // $ANTLR start "T__52"
+    public final void mT__52() throws RecognitionException {
+        try {
+            int _type = T__52;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:51:7: ( 'include' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:51:9: 'include'
+            {
+            match("include"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__52"
+
+    // $ANTLR start "T__53"
+    public final void mT__53() throws RecognitionException {
+        try {
+            int _type = T__53;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:52:7: ( '@' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:52:9: '@'
+            {
+            match('@'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__53"
+
     // $ANTLR start "RULE_REAL"
     public final void mRULE_REAL() throws RecognitionException {
         try {
             int _type = RULE_REAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7043:11: ( ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7043:13: ( '0' .. '9' )* '.' ( '0' .. '9' )+
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8021:11: ( ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8021:13: ( '0' .. '9' )* '.' ( '0' .. '9' )+
             {
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7043:13: ( '0' .. '9' )*
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8021:13: ( '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -853,7 +963,7 @@ public class InternalLeekLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7043:14: '0' .. '9'
+            	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8021:14: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -866,7 +976,7 @@ public class InternalLeekLexer extends Lexer {
             } while (true);
 
             match('.'); 
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7043:29: ( '0' .. '9' )+
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8021:29: ( '0' .. '9' )+
             int cnt2=0;
             loop2:
             do {
@@ -880,7 +990,7 @@ public class InternalLeekLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7043:30: '0' .. '9'
+            	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8021:30: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -912,10 +1022,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7045:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7045:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8023:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8023:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7045:11: ( '^' )?
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8023:11: ( '^' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -924,7 +1034,7 @@ public class InternalLeekLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7045:11: '^'
+                    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8023:11: '^'
                     {
                     match('^'); 
 
@@ -942,7 +1052,7 @@ public class InternalLeekLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7045:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8023:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -991,10 +1101,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7047:10: ( ( '0' .. '9' )+ )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7047:12: ( '0' .. '9' )+
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8025:10: ( ( '0' .. '9' )+ )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8025:12: ( '0' .. '9' )+
             {
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7047:12: ( '0' .. '9' )+
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8025:12: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -1008,7 +1118,7 @@ public class InternalLeekLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7047:13: '0' .. '9'
+            	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8025:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1040,10 +1150,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7049:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7049:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8027:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8027:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7049:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8027:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1061,10 +1171,10 @@ public class InternalLeekLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7049:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8027:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7049:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8027:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1080,7 +1190,7 @@ public class InternalLeekLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7049:21: '\\\\' .
+                    	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8027:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1088,7 +1198,7 @@ public class InternalLeekLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7049:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8027:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1113,10 +1223,10 @@ public class InternalLeekLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7049:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8027:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7049:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8027:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -1132,7 +1242,7 @@ public class InternalLeekLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7049:54: '\\\\' .
+                    	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8027:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1140,7 +1250,7 @@ public class InternalLeekLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7049:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8027:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1183,12 +1293,12 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7051:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7051:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8029:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8029:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7051:24: ( options {greedy=false; } : . )*
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8029:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -1213,7 +1323,7 @@ public class InternalLeekLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7051:52: .
+            	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8029:52: .
             	    {
             	    matchAny(); 
 
@@ -1243,12 +1353,12 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7053:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7053:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8031:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8031:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7053:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8031:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -1261,7 +1371,7 @@ public class InternalLeekLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7053:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8031:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1281,7 +1391,7 @@ public class InternalLeekLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7053:40: ( ( '\\r' )? '\\n' )?
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8031:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1290,9 +1400,9 @@ public class InternalLeekLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7053:41: ( '\\r' )? '\\n'
+                    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8031:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7053:41: ( '\\r' )?
+                    // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8031:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -1301,7 +1411,7 @@ public class InternalLeekLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7053:41: '\\r'
+                            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8031:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1333,10 +1443,10 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7055:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7055:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8033:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8033:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7055:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8033:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -1390,8 +1500,8 @@ public class InternalLeekLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7057:16: ( . )
-            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:7057:18: .
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8035:16: ( . )
+            // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:8035:18: .
             {
             matchAny(); 
 
@@ -1406,8 +1516,8 @@ public class InternalLeekLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | RULE_REAL | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt14=45;
+        // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | RULE_REAL | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt14=50;
         alt14 = dfa14.predict(input);
         switch (alt14) {
             case 1 :
@@ -1670,56 +1780,91 @@ public class InternalLeekLexer extends Lexer {
                 }
                 break;
             case 38 :
-                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:232: RULE_REAL
+                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:232: T__49
+                {
+                mT__49(); 
+
+                }
+                break;
+            case 39 :
+                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:238: T__50
+                {
+                mT__50(); 
+
+                }
+                break;
+            case 40 :
+                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:244: T__51
+                {
+                mT__51(); 
+
+                }
+                break;
+            case 41 :
+                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:250: T__52
+                {
+                mT__52(); 
+
+                }
+                break;
+            case 42 :
+                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:256: T__53
+                {
+                mT__53(); 
+
+                }
+                break;
+            case 43 :
+                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:262: RULE_REAL
                 {
                 mRULE_REAL(); 
 
                 }
                 break;
-            case 39 :
-                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:242: RULE_ID
+            case 44 :
+                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:272: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 40 :
-                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:250: RULE_INT
+            case 45 :
+                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:280: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 41 :
-                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:259: RULE_STRING
+            case 46 :
+                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:289: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 42 :
-                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:271: RULE_ML_COMMENT
+            case 47 :
+                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:301: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 43 :
-                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:287: RULE_SL_COMMENT
+            case 48 :
+                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:317: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 44 :
-                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:303: RULE_WS
+            case 49 :
+                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:333: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 45 :
-                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:311: RULE_ANY_OTHER
+            case 50 :
+                // ../org.processus.ecleek.ui/src-gen/org/processus/ecleek/ui/contentassist/antlr/internal/InternalLeek.g:1:341: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1733,140 +1878,170 @@ public class InternalLeekLexer extends Lexer {
 
     protected DFA14 dfa14 = new DFA14(this);
     static final String DFA14_eotS =
-        "\1\uffff\1\47\1\45\1\47\1\45\3\uffff\1\57\1\47\2\uffff\4\47\2\uffff\1\47\1\45\1\76\1\100\3\uffff\1\106\2\uffff\1\47\1\uffff\1\113\2\45\1\uffff\2\45\2\uffff\1\120\2\uffff\1\47\4\uffff\1\123\1\uffff\1\124\1\126\2\uffff\5\47\2\uffff\1\47\1\136\14\uffff\1\47\2\uffff\1\113\4\uffff\1\140\3\uffff\1\47\1\uffff\2\47\1\144\1\47\1\146\1\47\2\uffff\1\47\1\uffff\1\47\1\152\1\47\1\uffff\1\47\1\uffff\3\47\1\uffff\1\160\4\47\1\uffff\1\47\1\166\1\167\1\170\1\47\3\uffff\1\172\1\uffff";
+        "\1\uffff\1\53\1\51\1\53\1\51\3\uffff\2\53\1\65\1\53\2\uffff\3\53\1\uffff\1\53\1\uffff\1\53\1\51\1\105\1\107\3\uffff\1\115\2\53\2\uffff\1\53\1\uffff\1\124\2\51\1\uffff\2\51\2\uffff\1\131\2\uffff\1\53\4\uffff\2\53\1\136\1\uffff\1\137\1\141\2\uffff\5\53\1\uffff\1\53\1\uffff\1\53\1\152\12\uffff\2\53\2\uffff\1\53\2\uffff\1\124\4\uffff\1\156\2\53\3\uffff\1\53\1\uffff\2\53\1\164\2\53\1\167\1\53\2\uffff\3\53\1\uffff\3\53\1\177\1\53\1\uffff\2\53\1\uffff\1\53\1\u0084\1\u0085\1\53\1\u0087\2\53\1\uffff\1\u008a\1\53\1\u008c\1\53\2\uffff\1\53\1\uffff\2\53\1\uffff\1\53\1\uffff\1\u0092\1\u0093\1\53\1\u0095\1\53\2\uffff\1\u0097\1\uffff\1\u0098\2\uffff";
     static final String DFA14_eofS =
-        "\173\uffff";
+        "\u0099\uffff";
     static final String DFA14_minS =
-        "\1\0\1\162\1\174\1\156\1\46\3\uffff\1\75\1\146\2\uffff\1\154\1\150\1\157\1\141\2\uffff\1\154\3\75\3\uffff\1\52\2\uffff\1\145\1\uffff\1\56\1\60\1\101\1\uffff\2\0\2\uffff\1\60\2\uffff\1\144\4\uffff\1\75\1\uffff\2\60\2\uffff\1\163\1\151\1\162\1\156\1\162\2\uffff\1\157\1\75\14\uffff\1\164\2\uffff\1\56\4\uffff\1\60\3\uffff\1\154\1\uffff\1\145\1\154\1\60\1\143\1\60\1\142\2\uffff\1\165\1\uffff\1\165\1\60\1\145\1\uffff\1\164\1\uffff\1\141\1\162\1\144\1\uffff\1\60\1\151\1\154\1\156\1\145\1\uffff\1\157\3\60\1\156\3\uffff\1\60\1\uffff";
+        "\1\0\1\162\1\174\1\156\1\46\3\uffff\1\162\1\157\1\75\1\146\2\uffff\1\154\1\150\1\141\1\uffff\1\141\1\uffff\1\154\3\75\3\uffff\1\52\1\165\1\162\2\uffff\1\145\1\uffff\1\56\1\60\1\101\1\uffff\2\0\2\uffff\1\60\2\uffff\1\144\4\uffff\1\145\1\156\1\75\1\uffff\2\60\2\uffff\1\163\1\151\1\162\1\156\1\154\1\uffff\1\162\1\uffff\1\157\1\75\12\uffff\1\154\1\165\2\uffff\1\164\2\uffff\1\56\4\uffff\1\60\1\141\1\164\3\uffff\1\154\1\uffff\1\145\1\154\1\60\1\143\1\163\1\60\1\142\2\uffff\1\154\1\145\1\165\1\uffff\1\153\1\151\1\165\1\60\1\145\1\uffff\1\164\1\145\1\uffff\1\141\2\60\1\162\1\60\1\156\1\144\1\uffff\1\60\1\151\1\60\1\154\2\uffff\1\156\1\uffff\1\165\1\145\1\uffff\1\157\1\uffff\2\60\1\145\1\60\1\156\2\uffff\1\60\1\uffff\1\60\2\uffff";
     static final String DFA14_maxS =
-        "\1\uffff\1\162\1\174\1\156\1\46\3\uffff\1\75\1\156\2\uffff\1\154\1\150\1\165\1\141\2\uffff\1\154\3\75\3\uffff\1\57\2\uffff\1\145\1\uffff\2\71\1\172\1\uffff\2\uffff\2\uffff\1\172\2\uffff\1\144\4\uffff\1\75\1\uffff\2\172\2\uffff\1\163\1\151\1\162\1\156\1\162\2\uffff\1\157\1\75\14\uffff\1\164\2\uffff\1\71\4\uffff\1\172\3\uffff\1\154\1\uffff\1\145\1\154\1\172\1\143\1\172\1\142\2\uffff\1\165\1\uffff\1\165\1\172\1\145\1\uffff\1\164\1\uffff\1\141\1\162\1\144\1\uffff\1\172\1\151\1\154\1\156\1\145\1\uffff\1\157\3\172\1\156\3\uffff\1\172\1\uffff";
+        "\1\uffff\1\162\1\174\1\156\1\46\3\uffff\1\162\1\157\1\75\1\156\2\uffff\1\154\1\150\1\165\1\uffff\1\141\1\uffff\1\154\3\75\3\uffff\1\57\1\165\1\162\2\uffff\1\145\1\uffff\2\71\1\172\1\uffff\2\uffff\2\uffff\1\172\2\uffff\1\144\4\uffff\1\145\1\156\1\75\1\uffff\2\172\2\uffff\1\163\1\151\1\162\1\156\1\154\1\uffff\1\162\1\uffff\1\157\1\75\12\uffff\1\154\1\165\2\uffff\1\164\2\uffff\1\71\4\uffff\1\172\1\141\1\164\3\uffff\1\154\1\uffff\1\145\1\154\1\172\1\143\1\163\1\172\1\142\2\uffff\1\154\1\145\1\165\1\uffff\1\153\1\151\1\165\1\172\1\145\1\uffff\1\164\1\145\1\uffff\1\141\2\172\1\162\1\172\1\156\1\144\1\uffff\1\172\1\151\1\172\1\154\2\uffff\1\156\1\uffff\1\165\1\145\1\uffff\1\157\1\uffff\2\172\1\145\1\172\1\156\2\uffff\1\172\1\uffff\1\172\2\uffff";
     static final String DFA14_acceptS =
-        "\5\uffff\1\5\1\6\1\7\2\uffff\1\12\1\13\4\uffff\1\21\1\23\4\uffff\1\35\1\36\1\37\1\uffff\1\41\1\42\1\uffff\1\45\3\uffff\1\47\2\uffff\1\54\1\55\1\uffff\1\47\1\2\1\uffff\1\4\1\5\1\6\1\7\1\uffff\1\10\2\uffff\1\12\1\13\5\uffff\1\21\1\23\2\uffff\1\31\1\32\1\33\1\34\1\35\1\36\1\37\1\52\1\53\1\40\1\41\1\42\1\uffff\1\45\1\50\1\uffff\1\46\1\51\1\54\1\1\1\uffff\1\25\1\26\1\11\1\uffff\1\20\6\uffff\1\27\1\30\1\uffff\1\3\3\uffff\1\16\1\uffff\1\17\3\uffff\1\14\5\uffff\1\15\5\uffff\1\24\1\43\1\44\1\uffff\1\22";
+        "\5\uffff\1\5\1\6\1\7\4\uffff\1\14\1\15\3\uffff\1\22\1\uffff\1\25\4\uffff\1\37\1\40\1\41\3\uffff\1\46\1\47\1\uffff\1\52\3\uffff\1\54\2\uffff\1\61\1\62\1\uffff\1\54\1\2\1\uffff\1\4\1\5\1\6\1\7\3\uffff\1\12\2\uffff\1\14\1\15\5\uffff\1\22\1\uffff\1\25\2\uffff\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\57\1\60\1\42\2\uffff\1\46\1\47\1\uffff\1\52\1\55\1\uffff\1\53\1\56\1\61\1\1\3\uffff\1\27\1\30\1\13\1\uffff\1\21\7\uffff\1\31\1\32\3\uffff\1\3\5\uffff\1\20\2\uffff\1\23\7\uffff\1\16\4\uffff\1\43\1\45\1\uffff\1\10\2\uffff\1\17\1\uffff\1\44\5\uffff\1\26\1\50\1\uffff\1\51\1\uffff\1\11\1\24";
     static final String DFA14_specialS =
-        "\1\2\41\uffff\1\0\1\1\127\uffff}>";
+        "\1\2\45\uffff\1\1\1\0\161\uffff}>";
     static final String[] DFA14_transitionS = {
-            "\11\45\2\44\2\45\1\44\22\45\1\44\1\23\1\42\3\45\1\4\1\43\1\12\1\13\1\30\1\26\1\21\1\27\1\37\1\31\12\36\1\20\1\5\1\24\1\10\1\25\1\45\1\35\32\41\1\32\1\45\1\33\1\40\1\41\1\45\1\3\3\41\1\14\1\16\1\22\1\41\1\11\5\41\1\1\2\41\1\34\3\41\1\17\1\15\3\41\1\6\1\2\1\7\uff82\45",
-            "\1\46",
-            "\1\50",
-            "\1\51",
+            "\11\51\2\50\2\51\1\50\22\51\1\50\1\25\1\46\3\51\1\4\1\47\1\14\1\15\1\32\1\30\1\23\1\31\1\43\1\33\12\42\1\21\1\5\1\26\1\12\1\27\1\51\1\41\32\45\1\36\1\51\1\37\1\44\1\45\1\51\1\3\1\10\1\11\1\45\1\16\1\20\1\24\1\45\1\13\4\45\1\34\1\1\2\45\1\40\1\45\1\35\1\45\1\22\1\17\3\45\1\6\1\2\1\7\uff82\51",
             "\1\52",
-            "",
-            "",
-            "",
+            "\1\54",
+            "\1\55",
             "\1\56",
-            "\1\60\7\uffff\1\61",
             "",
             "",
+            "",
+            "\1\62",
+            "\1\63",
             "\1\64",
-            "\1\65",
-            "\1\66\5\uffff\1\67",
-            "\1\70",
+            "\1\66\7\uffff\1\67",
             "",
             "",
+            "\1\72",
             "\1\73",
-            "\1\74",
-            "\1\75",
-            "\1\77",
+            "\1\76\15\uffff\1\74\5\uffff\1\75",
+            "",
+            "\1\100",
+            "",
+            "\1\102",
+            "\1\103",
+            "\1\104",
+            "\1\106",
             "",
             "",
             "",
-            "\1\104\4\uffff\1\105",
-            "",
-            "",
-            "\1\111",
-            "",
-            "\1\115\1\uffff\12\114",
-            "\12\115",
-            "\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
-            "\0\116",
-            "\0\116",
-            "",
-            "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
-            "",
-            "\1\121",
-            "",
-            "",
+            "\1\113\4\uffff\1\114",
+            "\1\116",
+            "\1\117",
             "",
             "",
             "\1\122",
             "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\2\47\1\125\27\47",
+            "\1\126\1\uffff\12\125",
+            "\12\126",
+            "\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "\0\127",
+            "\0\127",
             "",
             "",
-            "\1\127",
-            "\1\130",
-            "\1\131",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "",
             "\1\132",
+            "",
+            "",
+            "",
+            "",
             "\1\133",
-            "",
-            "",
             "\1\134",
             "\1\135",
             "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\2\53\1\140\27\53",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\137",
-            "",
-            "",
-            "\1\115\1\uffff\12\114",
-            "",
-            "",
-            "",
-            "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
-            "",
-            "",
-            "\1\141",
             "",
             "\1\142",
             "\1\143",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\144",
             "\1\145",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\146",
+            "",
             "\1\147",
             "",
-            "",
             "\1\150",
-            "",
             "\1\151",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\153",
             "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\153",
             "\1\154",
             "",
-            "\1\155",
-            "\1\156",
-            "\1\157",
             "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\155",
+            "",
+            "",
+            "\1\126\1\uffff\12\125",
+            "",
+            "",
+            "",
+            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\157",
+            "\1\160",
+            "",
+            "",
+            "",
             "\1\161",
+            "",
             "\1\162",
             "\1\163",
-            "\1\164",
-            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\165",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\166",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\170",
+            "",
+            "",
             "\1\171",
+            "\1\172",
+            "\1\173",
+            "",
+            "\1\174",
+            "\1\175",
+            "\1\176",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0080",
+            "",
+            "\1\u0081",
+            "\1\u0082",
+            "",
+            "\1\u0083",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0086",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0088",
+            "\1\u0089",
+            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u008b",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u008d",
             "",
             "",
+            "\1\u008e",
             "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u008f",
+            "\1\u0090",
+            "",
+            "\1\u0091",
+            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0094",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0096",
+            "",
+            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
             ""
     };
 
@@ -1900,29 +2075,29 @@ public class InternalLeekLexer extends Lexer {
             this.transition = DFA14_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | RULE_REAL | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | RULE_REAL | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA14_34 = input.LA(1);
+                        int LA14_39 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA14_34>='\u0000' && LA14_34<='\uFFFF')) ) {s = 78;}
+                        if ( ((LA14_39>='\u0000' && LA14_39<='\uFFFF')) ) {s = 87;}
 
-                        else s = 37;
+                        else s = 41;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA14_35 = input.LA(1);
+                        int LA14_38 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA14_35>='\u0000' && LA14_35<='\uFFFF')) ) {s = 78;}
+                        if ( ((LA14_38>='\u0000' && LA14_38<='\uFFFF')) ) {s = 87;}
 
-                        else s = 37;
+                        else s = 41;
 
                         if ( s>=0 ) return s;
                         break;
@@ -1944,65 +2119,73 @@ public class InternalLeekLexer extends Lexer {
 
                         else if ( (LA14_0=='}') ) {s = 7;}
 
-                        else if ( (LA14_0=='=') ) {s = 8;}
+                        else if ( (LA14_0=='b') ) {s = 8;}
 
-                        else if ( (LA14_0=='i') ) {s = 9;}
+                        else if ( (LA14_0=='c') ) {s = 9;}
 
-                        else if ( (LA14_0=='(') ) {s = 10;}
+                        else if ( (LA14_0=='=') ) {s = 10;}
 
-                        else if ( (LA14_0==')') ) {s = 11;}
+                        else if ( (LA14_0=='i') ) {s = 11;}
 
-                        else if ( (LA14_0=='e') ) {s = 12;}
+                        else if ( (LA14_0=='(') ) {s = 12;}
 
-                        else if ( (LA14_0=='w') ) {s = 13;}
+                        else if ( (LA14_0==')') ) {s = 13;}
 
-                        else if ( (LA14_0=='f') ) {s = 14;}
+                        else if ( (LA14_0=='e') ) {s = 14;}
 
-                        else if ( (LA14_0=='v') ) {s = 15;}
+                        else if ( (LA14_0=='w') ) {s = 15;}
 
-                        else if ( (LA14_0==':') ) {s = 16;}
+                        else if ( (LA14_0=='f') ) {s = 16;}
 
-                        else if ( (LA14_0==',') ) {s = 17;}
+                        else if ( (LA14_0==':') ) {s = 17;}
 
-                        else if ( (LA14_0=='g') ) {s = 18;}
+                        else if ( (LA14_0=='v') ) {s = 18;}
 
-                        else if ( (LA14_0=='!') ) {s = 19;}
+                        else if ( (LA14_0==',') ) {s = 19;}
 
-                        else if ( (LA14_0=='<') ) {s = 20;}
+                        else if ( (LA14_0=='g') ) {s = 20;}
 
-                        else if ( (LA14_0=='>') ) {s = 21;}
+                        else if ( (LA14_0=='!') ) {s = 21;}
 
-                        else if ( (LA14_0=='+') ) {s = 22;}
+                        else if ( (LA14_0=='<') ) {s = 22;}
 
-                        else if ( (LA14_0=='-') ) {s = 23;}
+                        else if ( (LA14_0=='>') ) {s = 23;}
 
-                        else if ( (LA14_0=='*') ) {s = 24;}
+                        else if ( (LA14_0=='+') ) {s = 24;}
 
-                        else if ( (LA14_0=='/') ) {s = 25;}
+                        else if ( (LA14_0=='-') ) {s = 25;}
 
-                        else if ( (LA14_0=='[') ) {s = 26;}
+                        else if ( (LA14_0=='*') ) {s = 26;}
 
-                        else if ( (LA14_0==']') ) {s = 27;}
+                        else if ( (LA14_0=='/') ) {s = 27;}
 
-                        else if ( (LA14_0=='r') ) {s = 28;}
+                        else if ( (LA14_0=='n') ) {s = 28;}
 
-                        else if ( (LA14_0=='@') ) {s = 29;}
+                        else if ( (LA14_0=='t') ) {s = 29;}
 
-                        else if ( ((LA14_0>='0' && LA14_0<='9')) ) {s = 30;}
+                        else if ( (LA14_0=='[') ) {s = 30;}
 
-                        else if ( (LA14_0=='.') ) {s = 31;}
+                        else if ( (LA14_0==']') ) {s = 31;}
 
-                        else if ( (LA14_0=='^') ) {s = 32;}
+                        else if ( (LA14_0=='r') ) {s = 32;}
 
-                        else if ( ((LA14_0>='A' && LA14_0<='Z')||LA14_0=='_'||(LA14_0>='b' && LA14_0<='d')||LA14_0=='h'||(LA14_0>='j' && LA14_0<='n')||(LA14_0>='p' && LA14_0<='q')||(LA14_0>='s' && LA14_0<='u')||(LA14_0>='x' && LA14_0<='z')) ) {s = 33;}
+                        else if ( (LA14_0=='@') ) {s = 33;}
 
-                        else if ( (LA14_0=='\"') ) {s = 34;}
+                        else if ( ((LA14_0>='0' && LA14_0<='9')) ) {s = 34;}
 
-                        else if ( (LA14_0=='\'') ) {s = 35;}
+                        else if ( (LA14_0=='.') ) {s = 35;}
 
-                        else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 36;}
+                        else if ( (LA14_0=='^') ) {s = 36;}
 
-                        else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||(LA14_0>='#' && LA14_0<='%')||LA14_0=='?'||LA14_0=='\\'||LA14_0=='`'||(LA14_0>='~' && LA14_0<='\uFFFF')) ) {s = 37;}
+                        else if ( ((LA14_0>='A' && LA14_0<='Z')||LA14_0=='_'||LA14_0=='d'||LA14_0=='h'||(LA14_0>='j' && LA14_0<='m')||(LA14_0>='p' && LA14_0<='q')||LA14_0=='s'||LA14_0=='u'||(LA14_0>='x' && LA14_0<='z')) ) {s = 37;}
+
+                        else if ( (LA14_0=='\"') ) {s = 38;}
+
+                        else if ( (LA14_0=='\'') ) {s = 39;}
+
+                        else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 40;}
+
+                        else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||(LA14_0>='#' && LA14_0<='%')||LA14_0=='?'||LA14_0=='\\'||LA14_0=='`'||(LA14_0>='~' && LA14_0<='\uFFFF')) ) {s = 41;}
 
                         if ( s>=0 ) return s;
                         break;

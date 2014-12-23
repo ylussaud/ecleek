@@ -4,6 +4,8 @@ package org.processus.ecleek.leek;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Variable Reference</b></em>'.
@@ -12,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.processus.ecleek.leek.VariableReference#getName <em>Name</em>}</li>
  *   <li>{@link org.processus.ecleek.leek.VariableReference#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.processus.ecleek.leek.VariableReference#getDimensions <em>Dimensions</em>}</li>
  * </ul>
@@ -21,8 +24,34 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface VariableReference extends Expression
+public interface VariableReference extends ForInitializer, Expression
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.processus.ecleek.leek.LeekPackage#getVariableReference_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link org.processus.ecleek.leek.VariableReference#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
   /**
    * Returns the value of the '<em><b>Variable</b></em>' reference.
    * <!-- begin-user-doc -->
@@ -32,12 +61,12 @@ public interface VariableReference extends Expression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Variable</em>' reference.
-   * @see #setVariable(VariableReferenceable)
+   * @see #setVariable(EObject)
    * @see org.processus.ecleek.leek.LeekPackage#getVariableReference_Variable()
    * @model
    * @generated
    */
-  VariableReferenceable getVariable();
+  EObject getVariable();
 
   /**
    * Sets the value of the '{@link org.processus.ecleek.leek.VariableReference#getVariable <em>Variable</em>}' reference.
@@ -47,7 +76,7 @@ public interface VariableReference extends Expression
    * @see #getVariable()
    * @generated
    */
-  void setVariable(VariableReferenceable value);
+  void setVariable(EObject value);
 
   /**
    * Returns the value of the '<em><b>Dimensions</b></em>' containment reference list.

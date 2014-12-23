@@ -12,22 +12,22 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.processus.ecleek.leek.Expression;
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.Return;
+import org.processus.ecleek.leek.ReturnStatement;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Return</b></em>'.
+ * An implementation of the model object '<em><b>Return Statement</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.ReturnImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.ReturnStatementImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ReturnImpl extends StatementImpl implements Return
+public class ReturnStatementImpl extends FunctionStatementImpl implements ReturnStatement
 {
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
@@ -44,7 +44,7 @@ public class ReturnImpl extends StatementImpl implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ReturnImpl()
+  protected ReturnStatementImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class ReturnImpl extends StatementImpl implements Return
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.RETURN;
+    return LeekPackage.Literals.RETURN_STATEMENT;
   }
 
   /**
@@ -81,7 +81,7 @@ public class ReturnImpl extends StatementImpl implements Return
     value = newValue;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.RETURN__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.RETURN_STATEMENT__VALUE, oldValue, newValue);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -98,14 +98,14 @@ public class ReturnImpl extends StatementImpl implements Return
     {
       NotificationChain msgs = null;
       if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.RETURN__VALUE, null, msgs);
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.RETURN_STATEMENT__VALUE, null, msgs);
       if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.RETURN__VALUE, null, msgs);
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.RETURN_STATEMENT__VALUE, null, msgs);
       msgs = basicSetValue(newValue, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.RETURN__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.RETURN_STATEMENT__VALUE, newValue, newValue));
   }
 
   /**
@@ -118,7 +118,7 @@ public class ReturnImpl extends StatementImpl implements Return
   {
     switch (featureID)
     {
-      case LeekPackage.RETURN__VALUE:
+      case LeekPackage.RETURN_STATEMENT__VALUE:
         return basicSetValue(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -134,7 +134,7 @@ public class ReturnImpl extends StatementImpl implements Return
   {
     switch (featureID)
     {
-      case LeekPackage.RETURN__VALUE:
+      case LeekPackage.RETURN_STATEMENT__VALUE:
         return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -150,7 +150,7 @@ public class ReturnImpl extends StatementImpl implements Return
   {
     switch (featureID)
     {
-      case LeekPackage.RETURN__VALUE:
+      case LeekPackage.RETURN_STATEMENT__VALUE:
         setValue((Expression)newValue);
         return;
     }
@@ -167,7 +167,7 @@ public class ReturnImpl extends StatementImpl implements Return
   {
     switch (featureID)
     {
-      case LeekPackage.RETURN__VALUE:
+      case LeekPackage.RETURN_STATEMENT__VALUE:
         setValue((Expression)null);
         return;
     }
@@ -184,10 +184,10 @@ public class ReturnImpl extends StatementImpl implements Return
   {
     switch (featureID)
     {
-      case LeekPackage.RETURN__VALUE:
+      case LeekPackage.RETURN_STATEMENT__VALUE:
         return value != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ReturnImpl
+} //ReturnStatementImpl

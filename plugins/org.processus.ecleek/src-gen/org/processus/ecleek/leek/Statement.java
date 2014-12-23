@@ -13,6 +13,6 @@ package org.processus.ecleek.leek;
  * @model
  * @generated
  */
-public interface Statement extends ToplevelStatement
+public interface Statement extends ToplevelStatement, IterationStatement, FunctionStatement
 {
 } // Statement

@@ -67,25 +67,29 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
       case LeekPackage.SCRIPT: return createScript();
       case LeekPackage.TOPLEVEL_STATEMENT: return createToplevelStatement();
       case LeekPackage.STATEMENT: return createStatement();
+      case LeekPackage.ITERATION_STATEMENT: return createIterationStatement();
+      case LeekPackage.FUNCTION_STATEMENT: return createFunctionStatement();
+      case LeekPackage.FUNCTION_STATEMENT_BLOCK: return createFunctionStatementBlock();
+      case LeekPackage.BREAK_STATEMENT: return createBreakStatement();
+      case LeekPackage.CONTINUE_STATEMENT: return createContinueStatement();
       case LeekPackage.STATEMENT_BLOCK: return createStatementBlock();
       case LeekPackage.AFFECTATION: return createAffectation();
       case LeekPackage.IF: return createIf();
+      case LeekPackage.ITERATION: return createIteration();
       case LeekPackage.WHILE: return createWhile();
       case LeekPackage.FOR: return createFor();
-      case LeekPackage.FOR_ITERATOR: return createForIterator();
-      case LeekPackage.EACH_ITERATOR: return createEachIterator();
-      case LeekPackage.VARIABLE_ITERATOR: return createVariableIterator();
+      case LeekPackage.FOR_IN: return createForIn();
+      case LeekPackage.VARIABLE_REFERENCE: return createVariableReference();
+      case LeekPackage.FOR_INITIALIZER: return createForInitializer();
       case LeekPackage.FUNCTION_DECLARATION: return createFunctionDeclaration();
-      case LeekPackage.PARAMETER_DECLARATION: return createParameterDeclaration();
+      case LeekPackage.VARIABLE_REFERENCEABLE: return createVariableReferenceable();
       case LeekPackage.LOCAL_DECLARATION: return createLocalDeclaration();
       case LeekPackage.GLOBAL_DECLARATION: return createGlobalDeclaration();
       case LeekPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
       case LeekPackage.EXPRESSION: return createExpression();
       case LeekPackage.ARRAY_LITERAL: return createArrayLiteral();
-      case LeekPackage.VARIABLE_REFERENCEABLE: return createVariableReferenceable();
-      case LeekPackage.VARIABLE_REFERENCE: return createVariableReference();
       case LeekPackage.FUNCTION_CALL: return createFunctionCall();
-      case LeekPackage.RETURN: return createReturn();
+      case LeekPackage.RETURN_STATEMENT: return createReturnStatement();
       case LeekPackage.INCLUDE: return createInclude();
       case LeekPackage.EMPTY_STATEMENT: return createEmptyStatement();
       case LeekPackage.TYPED_EQUALS: return createTypedEquals();
@@ -103,6 +107,9 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
       case LeekPackage.REAL_LITERAL: return createRealLiteral();
       case LeekPackage.INT_LITERAL: return createIntLiteral();
       case LeekPackage.STRING_LITERAL: return createStringLiteral();
+      case LeekPackage.NULL_LITERAL: return createNullLiteral();
+      case LeekPackage.FALSE_LITERAL: return createFalseLiteral();
+      case LeekPackage.TRUE_LITERAL: return createTrueLiteral();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -146,6 +153,61 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public IterationStatement createIterationStatement()
+  {
+    IterationStatementImpl iterationStatement = new IterationStatementImpl();
+    return iterationStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FunctionStatement createFunctionStatement()
+  {
+    FunctionStatementImpl functionStatement = new FunctionStatementImpl();
+    return functionStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FunctionStatementBlock createFunctionStatementBlock()
+  {
+    FunctionStatementBlockImpl functionStatementBlock = new FunctionStatementBlockImpl();
+    return functionStatementBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BreakStatement createBreakStatement()
+  {
+    BreakStatementImpl breakStatement = new BreakStatementImpl();
+    return breakStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ContinueStatement createContinueStatement()
+  {
+    ContinueStatementImpl continueStatement = new ContinueStatementImpl();
+    return continueStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public StatementBlock createStatementBlock()
   {
     StatementBlockImpl statementBlock = new StatementBlockImpl();
@@ -179,6 +241,17 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Iteration createIteration()
+  {
+    IterationImpl iteration = new IterationImpl();
+    return iteration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public While createWhile()
   {
     WhileImpl while_ = new WhileImpl();
@@ -201,10 +274,10 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ForIterator createForIterator()
+  public ForIn createForIn()
   {
-    ForIteratorImpl forIterator = new ForIteratorImpl();
-    return forIterator;
+    ForInImpl forIn = new ForInImpl();
+    return forIn;
   }
 
   /**
@@ -212,10 +285,10 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public EachIterator createEachIterator()
+  public VariableReference createVariableReference()
   {
-    EachIteratorImpl eachIterator = new EachIteratorImpl();
-    return eachIterator;
+    VariableReferenceImpl variableReference = new VariableReferenceImpl();
+    return variableReference;
   }
 
   /**
@@ -223,10 +296,10 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableIterator createVariableIterator()
+  public ForInitializer createForInitializer()
   {
-    VariableIteratorImpl variableIterator = new VariableIteratorImpl();
-    return variableIterator;
+    ForInitializerImpl forInitializer = new ForInitializerImpl();
+    return forInitializer;
   }
 
   /**
@@ -245,10 +318,10 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ParameterDeclaration createParameterDeclaration()
+  public VariableReferenceable createVariableReferenceable()
   {
-    ParameterDeclarationImpl parameterDeclaration = new ParameterDeclarationImpl();
-    return parameterDeclaration;
+    VariableReferenceableImpl variableReferenceable = new VariableReferenceableImpl();
+    return variableReferenceable;
   }
 
   /**
@@ -311,28 +384,6 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableReferenceable createVariableReferenceable()
-  {
-    VariableReferenceableImpl variableReferenceable = new VariableReferenceableImpl();
-    return variableReferenceable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VariableReference createVariableReference()
-  {
-    VariableReferenceImpl variableReference = new VariableReferenceImpl();
-    return variableReference;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public FunctionCall createFunctionCall()
   {
     FunctionCallImpl functionCall = new FunctionCallImpl();
@@ -344,10 +395,10 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Return createReturn()
+  public ReturnStatement createReturnStatement()
   {
-    ReturnImpl return_ = new ReturnImpl();
-    return return_;
+    ReturnStatementImpl returnStatement = new ReturnStatementImpl();
+    return returnStatement;
   }
 
   /**
@@ -535,6 +586,39 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
   {
     StringLiteralImpl stringLiteral = new StringLiteralImpl();
     return stringLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NullLiteral createNullLiteral()
+  {
+    NullLiteralImpl nullLiteral = new NullLiteralImpl();
+    return nullLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FalseLiteral createFalseLiteral()
+  {
+    FalseLiteralImpl falseLiteral = new FalseLiteralImpl();
+    return falseLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TrueLiteral createTrueLiteral()
+  {
+    TrueLiteralImpl trueLiteral = new TrueLiteralImpl();
+    return trueLiteral;
   }
 
   /**

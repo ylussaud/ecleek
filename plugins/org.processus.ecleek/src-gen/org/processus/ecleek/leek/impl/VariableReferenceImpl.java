@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -20,7 +21,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.processus.ecleek.leek.Expression;
 import org.processus.ecleek.leek.LeekPackage;
 import org.processus.ecleek.leek.VariableReference;
-import org.processus.ecleek.leek.VariableReferenceable;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +29,7 @@ import org.processus.ecleek.leek.VariableReferenceable;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.processus.ecleek.leek.impl.VariableReferenceImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.processus.ecleek.leek.impl.VariableReferenceImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.processus.ecleek.leek.impl.VariableReferenceImpl#getDimensions <em>Dimensions</em>}</li>
  * </ul>
@@ -36,8 +37,28 @@ import org.processus.ecleek.leek.VariableReferenceable;
  *
  * @generated
  */
-public class VariableReferenceImpl extends ExpressionImpl implements VariableReference
+public class VariableReferenceImpl extends ForInitializerImpl implements VariableReference
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference.
    * <!-- begin-user-doc -->
@@ -46,7 +67,7 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
    * @generated
    * @ordered
    */
-  protected VariableReferenceable variable;
+  protected EObject variable;
 
   /**
    * The cached value of the '{@link #getDimensions() <em>Dimensions</em>}' containment reference list.
@@ -84,12 +105,35 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableReferenceable getVariable()
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.VARIABLE_REFERENCE__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EObject getVariable()
   {
     if (variable != null && variable.eIsProxy())
     {
       InternalEObject oldVariable = (InternalEObject)variable;
-      variable = (VariableReferenceable)eResolveProxy(oldVariable);
+      variable = eResolveProxy(oldVariable);
       if (variable != oldVariable)
       {
         if (eNotificationRequired())
@@ -104,7 +148,7 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableReferenceable basicGetVariable()
+  public EObject basicGetVariable()
   {
     return variable;
   }
@@ -114,9 +158,9 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariable(VariableReferenceable newVariable)
+  public void setVariable(EObject newVariable)
   {
-    VariableReferenceable oldVariable = variable;
+    EObject oldVariable = variable;
     variable = newVariable;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.VARIABLE_REFERENCE__VARIABLE, oldVariable, variable));
@@ -162,6 +206,8 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
   {
     switch (featureID)
     {
+      case LeekPackage.VARIABLE_REFERENCE__NAME:
+        return getName();
       case LeekPackage.VARIABLE_REFERENCE__VARIABLE:
         if (resolve) return getVariable();
         return basicGetVariable();
@@ -182,8 +228,11 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
   {
     switch (featureID)
     {
+      case LeekPackage.VARIABLE_REFERENCE__NAME:
+        setName((String)newValue);
+        return;
       case LeekPackage.VARIABLE_REFERENCE__VARIABLE:
-        setVariable((VariableReferenceable)newValue);
+        setVariable((EObject)newValue);
         return;
       case LeekPackage.VARIABLE_REFERENCE__DIMENSIONS:
         getDimensions().clear();
@@ -203,8 +252,11 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
   {
     switch (featureID)
     {
+      case LeekPackage.VARIABLE_REFERENCE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case LeekPackage.VARIABLE_REFERENCE__VARIABLE:
-        setVariable((VariableReferenceable)null);
+        setVariable((EObject)null);
         return;
       case LeekPackage.VARIABLE_REFERENCE__DIMENSIONS:
         getDimensions().clear();
@@ -223,12 +275,31 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
   {
     switch (featureID)
     {
+      case LeekPackage.VARIABLE_REFERENCE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case LeekPackage.VARIABLE_REFERENCE__VARIABLE:
         return variable != null;
       case LeekPackage.VARIABLE_REFERENCE__DIMENSIONS:
         return dimensions != null && !dimensions.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //VariableReferenceImpl

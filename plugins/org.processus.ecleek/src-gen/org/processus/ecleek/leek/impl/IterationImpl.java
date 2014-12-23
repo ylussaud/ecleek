@@ -10,41 +10,41 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.processus.ecleek.leek.Expression;
+import org.processus.ecleek.leek.Iteration;
+import org.processus.ecleek.leek.IterationStatement;
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.While;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>While</b></em>'.
+ * An implementation of the model object '<em><b>Iteration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.WhileImpl#getCondition <em>Condition</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.IterationImpl#getStatement <em>Statement</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class WhileImpl extends IterationImpl implements While
+public class IterationImpl extends StatementImpl implements Iteration
 {
   /**
-   * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
+   * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCondition()
+   * @see #getStatement()
    * @generated
    * @ordered
    */
-  protected Expression condition;
+  protected IterationStatement statement;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected WhileImpl()
+  protected IterationImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class WhileImpl extends IterationImpl implements While
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.WHILE;
+    return LeekPackage.Literals.ITERATION;
   }
 
   /**
@@ -65,9 +65,9 @@ public class WhileImpl extends IterationImpl implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getCondition()
+  public IterationStatement getStatement()
   {
-    return condition;
+    return statement;
   }
 
   /**
@@ -75,13 +75,13 @@ public class WhileImpl extends IterationImpl implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCondition(Expression newCondition, NotificationChain msgs)
+  public NotificationChain basicSetStatement(IterationStatement newStatement, NotificationChain msgs)
   {
-    Expression oldCondition = condition;
-    condition = newCondition;
+    IterationStatement oldStatement = statement;
+    statement = newStatement;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.WHILE__CONDITION, oldCondition, newCondition);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.ITERATION__STATEMENT, oldStatement, newStatement);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +92,20 @@ public class WhileImpl extends IterationImpl implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCondition(Expression newCondition)
+  public void setStatement(IterationStatement newStatement)
   {
-    if (newCondition != condition)
+    if (newStatement != statement)
     {
       NotificationChain msgs = null;
-      if (condition != null)
-        msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.WHILE__CONDITION, null, msgs);
-      if (newCondition != null)
-        msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.WHILE__CONDITION, null, msgs);
-      msgs = basicSetCondition(newCondition, msgs);
+      if (statement != null)
+        msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.ITERATION__STATEMENT, null, msgs);
+      if (newStatement != null)
+        msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.ITERATION__STATEMENT, null, msgs);
+      msgs = basicSetStatement(newStatement, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.WHILE__CONDITION, newCondition, newCondition));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.ITERATION__STATEMENT, newStatement, newStatement));
   }
 
   /**
@@ -118,8 +118,8 @@ public class WhileImpl extends IterationImpl implements While
   {
     switch (featureID)
     {
-      case LeekPackage.WHILE__CONDITION:
-        return basicSetCondition(null, msgs);
+      case LeekPackage.ITERATION__STATEMENT:
+        return basicSetStatement(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +134,8 @@ public class WhileImpl extends IterationImpl implements While
   {
     switch (featureID)
     {
-      case LeekPackage.WHILE__CONDITION:
-        return getCondition();
+      case LeekPackage.ITERATION__STATEMENT:
+        return getStatement();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,8 +150,8 @@ public class WhileImpl extends IterationImpl implements While
   {
     switch (featureID)
     {
-      case LeekPackage.WHILE__CONDITION:
-        setCondition((Expression)newValue);
+      case LeekPackage.ITERATION__STATEMENT:
+        setStatement((IterationStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +167,8 @@ public class WhileImpl extends IterationImpl implements While
   {
     switch (featureID)
     {
-      case LeekPackage.WHILE__CONDITION:
-        setCondition((Expression)null);
+      case LeekPackage.ITERATION__STATEMENT:
+        setStatement((IterationStatement)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,10 +184,10 @@ public class WhileImpl extends IterationImpl implements While
   {
     switch (featureID)
     {
-      case LeekPackage.WHILE__CONDITION:
-        return condition != null;
+      case LeekPackage.ITERATION__STATEMENT:
+        return statement != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //WhileImpl
+} //IterationImpl

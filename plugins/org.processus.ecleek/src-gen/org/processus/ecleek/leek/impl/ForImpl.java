@@ -10,10 +10,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.processus.ecleek.leek.Expression;
 import org.processus.ecleek.leek.For;
-import org.processus.ecleek.leek.ForIterator;
+import org.processus.ecleek.leek.ForInitializer;
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.Statement;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,34 +22,45 @@ import org.processus.ecleek.leek.Statement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.ForImpl#getIterator <em>Iterator</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.impl.ForImpl#getStatement <em>Statement</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.ForImpl#getInitializer <em>Initializer</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.ForImpl#getCondition <em>Condition</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.ForImpl#getIncrement <em>Increment</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ForImpl extends StatementImpl implements For
+public class ForImpl extends IterationImpl implements For
 {
   /**
-   * The cached value of the '{@link #getIterator() <em>Iterator</em>}' containment reference.
+   * The cached value of the '{@link #getInitializer() <em>Initializer</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIterator()
+   * @see #getInitializer()
    * @generated
    * @ordered
    */
-  protected ForIterator iterator;
+  protected ForInitializer initializer;
 
   /**
-   * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
+   * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatement()
+   * @see #getCondition()
    * @generated
    * @ordered
    */
-  protected Statement statement;
+  protected Expression condition;
+
+  /**
+   * The cached value of the '{@link #getIncrement() <em>Increment</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIncrement()
+   * @generated
+   * @ordered
+   */
+  protected Expression increment;
 
   /**
    * <!-- begin-user-doc -->
@@ -77,9 +88,9 @@ public class ForImpl extends StatementImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public ForIterator getIterator()
+  public ForInitializer getInitializer()
   {
-    return iterator;
+    return initializer;
   }
 
   /**
@@ -87,13 +98,13 @@ public class ForImpl extends StatementImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetIterator(ForIterator newIterator, NotificationChain msgs)
+  public NotificationChain basicSetInitializer(ForInitializer newInitializer, NotificationChain msgs)
   {
-    ForIterator oldIterator = iterator;
-    iterator = newIterator;
+    ForInitializer oldInitializer = initializer;
+    initializer = newInitializer;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.FOR__ITERATOR, oldIterator, newIterator);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.FOR__INITIALIZER, oldInitializer, newInitializer);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -104,20 +115,20 @@ public class ForImpl extends StatementImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIterator(ForIterator newIterator)
+  public void setInitializer(ForInitializer newInitializer)
   {
-    if (newIterator != iterator)
+    if (newInitializer != initializer)
     {
       NotificationChain msgs = null;
-      if (iterator != null)
-        msgs = ((InternalEObject)iterator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR__ITERATOR, null, msgs);
-      if (newIterator != null)
-        msgs = ((InternalEObject)newIterator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR__ITERATOR, null, msgs);
-      msgs = basicSetIterator(newIterator, msgs);
+      if (initializer != null)
+        msgs = ((InternalEObject)initializer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR__INITIALIZER, null, msgs);
+      if (newInitializer != null)
+        msgs = ((InternalEObject)newInitializer).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR__INITIALIZER, null, msgs);
+      msgs = basicSetInitializer(newInitializer, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.FOR__ITERATOR, newIterator, newIterator));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.FOR__INITIALIZER, newInitializer, newInitializer));
   }
 
   /**
@@ -125,9 +136,9 @@ public class ForImpl extends StatementImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public Statement getStatement()
+  public Expression getCondition()
   {
-    return statement;
+    return condition;
   }
 
   /**
@@ -135,13 +146,13 @@ public class ForImpl extends StatementImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetStatement(Statement newStatement, NotificationChain msgs)
+  public NotificationChain basicSetCondition(Expression newCondition, NotificationChain msgs)
   {
-    Statement oldStatement = statement;
-    statement = newStatement;
+    Expression oldCondition = condition;
+    condition = newCondition;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.FOR__STATEMENT, oldStatement, newStatement);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.FOR__CONDITION, oldCondition, newCondition);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -152,20 +163,68 @@ public class ForImpl extends StatementImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setStatement(Statement newStatement)
+  public void setCondition(Expression newCondition)
   {
-    if (newStatement != statement)
+    if (newCondition != condition)
     {
       NotificationChain msgs = null;
-      if (statement != null)
-        msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR__STATEMENT, null, msgs);
-      if (newStatement != null)
-        msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR__STATEMENT, null, msgs);
-      msgs = basicSetStatement(newStatement, msgs);
+      if (condition != null)
+        msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR__CONDITION, null, msgs);
+      if (newCondition != null)
+        msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR__CONDITION, null, msgs);
+      msgs = basicSetCondition(newCondition, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.FOR__STATEMENT, newStatement, newStatement));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.FOR__CONDITION, newCondition, newCondition));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression getIncrement()
+  {
+    return increment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetIncrement(Expression newIncrement, NotificationChain msgs)
+  {
+    Expression oldIncrement = increment;
+    increment = newIncrement;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.FOR__INCREMENT, oldIncrement, newIncrement);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIncrement(Expression newIncrement)
+  {
+    if (newIncrement != increment)
+    {
+      NotificationChain msgs = null;
+      if (increment != null)
+        msgs = ((InternalEObject)increment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR__INCREMENT, null, msgs);
+      if (newIncrement != null)
+        msgs = ((InternalEObject)newIncrement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR__INCREMENT, null, msgs);
+      msgs = basicSetIncrement(newIncrement, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.FOR__INCREMENT, newIncrement, newIncrement));
   }
 
   /**
@@ -178,10 +237,12 @@ public class ForImpl extends StatementImpl implements For
   {
     switch (featureID)
     {
-      case LeekPackage.FOR__ITERATOR:
-        return basicSetIterator(null, msgs);
-      case LeekPackage.FOR__STATEMENT:
-        return basicSetStatement(null, msgs);
+      case LeekPackage.FOR__INITIALIZER:
+        return basicSetInitializer(null, msgs);
+      case LeekPackage.FOR__CONDITION:
+        return basicSetCondition(null, msgs);
+      case LeekPackage.FOR__INCREMENT:
+        return basicSetIncrement(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -196,10 +257,12 @@ public class ForImpl extends StatementImpl implements For
   {
     switch (featureID)
     {
-      case LeekPackage.FOR__ITERATOR:
-        return getIterator();
-      case LeekPackage.FOR__STATEMENT:
-        return getStatement();
+      case LeekPackage.FOR__INITIALIZER:
+        return getInitializer();
+      case LeekPackage.FOR__CONDITION:
+        return getCondition();
+      case LeekPackage.FOR__INCREMENT:
+        return getIncrement();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -214,11 +277,14 @@ public class ForImpl extends StatementImpl implements For
   {
     switch (featureID)
     {
-      case LeekPackage.FOR__ITERATOR:
-        setIterator((ForIterator)newValue);
+      case LeekPackage.FOR__INITIALIZER:
+        setInitializer((ForInitializer)newValue);
         return;
-      case LeekPackage.FOR__STATEMENT:
-        setStatement((Statement)newValue);
+      case LeekPackage.FOR__CONDITION:
+        setCondition((Expression)newValue);
+        return;
+      case LeekPackage.FOR__INCREMENT:
+        setIncrement((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -234,11 +300,14 @@ public class ForImpl extends StatementImpl implements For
   {
     switch (featureID)
     {
-      case LeekPackage.FOR__ITERATOR:
-        setIterator((ForIterator)null);
+      case LeekPackage.FOR__INITIALIZER:
+        setInitializer((ForInitializer)null);
         return;
-      case LeekPackage.FOR__STATEMENT:
-        setStatement((Statement)null);
+      case LeekPackage.FOR__CONDITION:
+        setCondition((Expression)null);
+        return;
+      case LeekPackage.FOR__INCREMENT:
+        setIncrement((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -254,10 +323,12 @@ public class ForImpl extends StatementImpl implements For
   {
     switch (featureID)
     {
-      case LeekPackage.FOR__ITERATOR:
-        return iterator != null;
-      case LeekPackage.FOR__STATEMENT:
-        return statement != null;
+      case LeekPackage.FOR__INITIALIZER:
+        return initializer != null;
+      case LeekPackage.FOR__CONDITION:
+        return condition != null;
+      case LeekPackage.FOR__INCREMENT:
+        return increment != null;
     }
     return super.eIsSet(featureID);
   }

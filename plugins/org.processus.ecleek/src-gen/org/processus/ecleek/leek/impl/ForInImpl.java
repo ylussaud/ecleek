@@ -10,27 +10,27 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.processus.ecleek.leek.EachIterator;
 import org.processus.ecleek.leek.Expression;
+import org.processus.ecleek.leek.ForIn;
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.VariableDeclaration;
+import org.processus.ecleek.leek.VariableReference;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Each Iterator</b></em>'.
+ * An implementation of the model object '<em><b>For In</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.EachIteratorImpl#getKey <em>Key</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.impl.EachIteratorImpl#getValue <em>Value</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.impl.EachIteratorImpl#getArray <em>Array</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.ForInImpl#getKey <em>Key</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.ForInImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.ForInImpl#getArray <em>Array</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
+public class ForInImpl extends IterationImpl implements ForIn
 {
   /**
    * The cached value of the '{@link #getKey() <em>Key</em>}' containment reference.
@@ -40,7 +40,7 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
    * @generated
    * @ordered
    */
-  protected VariableDeclaration key;
+  protected VariableReference key;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
@@ -50,7 +50,7 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
    * @generated
    * @ordered
    */
-  protected VariableDeclaration value;
+  protected VariableReference value;
 
   /**
    * The cached value of the '{@link #getArray() <em>Array</em>}' containment reference.
@@ -67,7 +67,7 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EachIteratorImpl()
+  protected ForInImpl()
   {
     super();
   }
@@ -80,7 +80,7 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.EACH_ITERATOR;
+    return LeekPackage.Literals.FOR_IN;
   }
 
   /**
@@ -88,7 +88,7 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDeclaration getKey()
+  public VariableReference getKey()
   {
     return key;
   }
@@ -98,13 +98,13 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetKey(VariableDeclaration newKey, NotificationChain msgs)
+  public NotificationChain basicSetKey(VariableReference newKey, NotificationChain msgs)
   {
-    VariableDeclaration oldKey = key;
+    VariableReference oldKey = key;
     key = newKey;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.EACH_ITERATOR__KEY, oldKey, newKey);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.FOR_IN__KEY, oldKey, newKey);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -115,20 +115,20 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setKey(VariableDeclaration newKey)
+  public void setKey(VariableReference newKey)
   {
     if (newKey != key)
     {
       NotificationChain msgs = null;
       if (key != null)
-        msgs = ((InternalEObject)key).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.EACH_ITERATOR__KEY, null, msgs);
+        msgs = ((InternalEObject)key).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR_IN__KEY, null, msgs);
       if (newKey != null)
-        msgs = ((InternalEObject)newKey).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.EACH_ITERATOR__KEY, null, msgs);
+        msgs = ((InternalEObject)newKey).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR_IN__KEY, null, msgs);
       msgs = basicSetKey(newKey, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.EACH_ITERATOR__KEY, newKey, newKey));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.FOR_IN__KEY, newKey, newKey));
   }
 
   /**
@@ -136,7 +136,7 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDeclaration getValue()
+  public VariableReference getValue()
   {
     return value;
   }
@@ -146,13 +146,13 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(VariableDeclaration newValue, NotificationChain msgs)
+  public NotificationChain basicSetValue(VariableReference newValue, NotificationChain msgs)
   {
-    VariableDeclaration oldValue = value;
+    VariableReference oldValue = value;
     value = newValue;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.EACH_ITERATOR__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.FOR_IN__VALUE, oldValue, newValue);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -163,20 +163,20 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(VariableDeclaration newValue)
+  public void setValue(VariableReference newValue)
   {
     if (newValue != value)
     {
       NotificationChain msgs = null;
       if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.EACH_ITERATOR__VALUE, null, msgs);
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR_IN__VALUE, null, msgs);
       if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.EACH_ITERATOR__VALUE, null, msgs);
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR_IN__VALUE, null, msgs);
       msgs = basicSetValue(newValue, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.EACH_ITERATOR__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.FOR_IN__VALUE, newValue, newValue));
   }
 
   /**
@@ -200,7 +200,7 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
     array = newArray;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.EACH_ITERATOR__ARRAY, oldArray, newArray);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.FOR_IN__ARRAY, oldArray, newArray);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -217,14 +217,14 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
     {
       NotificationChain msgs = null;
       if (array != null)
-        msgs = ((InternalEObject)array).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.EACH_ITERATOR__ARRAY, null, msgs);
+        msgs = ((InternalEObject)array).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR_IN__ARRAY, null, msgs);
       if (newArray != null)
-        msgs = ((InternalEObject)newArray).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.EACH_ITERATOR__ARRAY, null, msgs);
+        msgs = ((InternalEObject)newArray).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR_IN__ARRAY, null, msgs);
       msgs = basicSetArray(newArray, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.EACH_ITERATOR__ARRAY, newArray, newArray));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.FOR_IN__ARRAY, newArray, newArray));
   }
 
   /**
@@ -237,11 +237,11 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
   {
     switch (featureID)
     {
-      case LeekPackage.EACH_ITERATOR__KEY:
+      case LeekPackage.FOR_IN__KEY:
         return basicSetKey(null, msgs);
-      case LeekPackage.EACH_ITERATOR__VALUE:
+      case LeekPackage.FOR_IN__VALUE:
         return basicSetValue(null, msgs);
-      case LeekPackage.EACH_ITERATOR__ARRAY:
+      case LeekPackage.FOR_IN__ARRAY:
         return basicSetArray(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -257,11 +257,11 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
   {
     switch (featureID)
     {
-      case LeekPackage.EACH_ITERATOR__KEY:
+      case LeekPackage.FOR_IN__KEY:
         return getKey();
-      case LeekPackage.EACH_ITERATOR__VALUE:
+      case LeekPackage.FOR_IN__VALUE:
         return getValue();
-      case LeekPackage.EACH_ITERATOR__ARRAY:
+      case LeekPackage.FOR_IN__ARRAY:
         return getArray();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -277,13 +277,13 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
   {
     switch (featureID)
     {
-      case LeekPackage.EACH_ITERATOR__KEY:
-        setKey((VariableDeclaration)newValue);
+      case LeekPackage.FOR_IN__KEY:
+        setKey((VariableReference)newValue);
         return;
-      case LeekPackage.EACH_ITERATOR__VALUE:
-        setValue((VariableDeclaration)newValue);
+      case LeekPackage.FOR_IN__VALUE:
+        setValue((VariableReference)newValue);
         return;
-      case LeekPackage.EACH_ITERATOR__ARRAY:
+      case LeekPackage.FOR_IN__ARRAY:
         setArray((Expression)newValue);
         return;
     }
@@ -300,13 +300,13 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
   {
     switch (featureID)
     {
-      case LeekPackage.EACH_ITERATOR__KEY:
-        setKey((VariableDeclaration)null);
+      case LeekPackage.FOR_IN__KEY:
+        setKey((VariableReference)null);
         return;
-      case LeekPackage.EACH_ITERATOR__VALUE:
-        setValue((VariableDeclaration)null);
+      case LeekPackage.FOR_IN__VALUE:
+        setValue((VariableReference)null);
         return;
-      case LeekPackage.EACH_ITERATOR__ARRAY:
+      case LeekPackage.FOR_IN__ARRAY:
         setArray((Expression)null);
         return;
     }
@@ -323,14 +323,14 @@ public class EachIteratorImpl extends ForIteratorImpl implements EachIterator
   {
     switch (featureID)
     {
-      case LeekPackage.EACH_ITERATOR__KEY:
+      case LeekPackage.FOR_IN__KEY:
         return key != null;
-      case LeekPackage.EACH_ITERATOR__VALUE:
+      case LeekPackage.FOR_IN__VALUE:
         return value != null;
-      case LeekPackage.EACH_ITERATOR__ARRAY:
+      case LeekPackage.FOR_IN__ARRAY:
         return array != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //EachIteratorImpl
+} //ForInImpl

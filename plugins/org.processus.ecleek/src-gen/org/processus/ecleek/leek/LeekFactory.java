@@ -50,6 +50,51 @@ public interface LeekFactory extends EFactory
   Statement createStatement();
 
   /**
+   * Returns a new object of class '<em>Iteration Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Iteration Statement</em>'.
+   * @generated
+   */
+  IterationStatement createIterationStatement();
+
+  /**
+   * Returns a new object of class '<em>Function Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Statement</em>'.
+   * @generated
+   */
+  FunctionStatement createFunctionStatement();
+
+  /**
+   * Returns a new object of class '<em>Function Statement Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Statement Block</em>'.
+   * @generated
+   */
+  FunctionStatementBlock createFunctionStatementBlock();
+
+  /**
+   * Returns a new object of class '<em>Break Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Break Statement</em>'.
+   * @generated
+   */
+  BreakStatement createBreakStatement();
+
+  /**
+   * Returns a new object of class '<em>Continue Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Continue Statement</em>'.
+   * @generated
+   */
+  ContinueStatement createContinueStatement();
+
+  /**
    * Returns a new object of class '<em>Statement Block</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -77,6 +122,15 @@ public interface LeekFactory extends EFactory
   If createIf();
 
   /**
+   * Returns a new object of class '<em>Iteration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Iteration</em>'.
+   * @generated
+   */
+  Iteration createIteration();
+
+  /**
    * Returns a new object of class '<em>While</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -95,31 +149,31 @@ public interface LeekFactory extends EFactory
   For createFor();
 
   /**
-   * Returns a new object of class '<em>For Iterator</em>'.
+   * Returns a new object of class '<em>For In</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>For Iterator</em>'.
+   * @return a new object of class '<em>For In</em>'.
    * @generated
    */
-  ForIterator createForIterator();
+  ForIn createForIn();
 
   /**
-   * Returns a new object of class '<em>Each Iterator</em>'.
+   * Returns a new object of class '<em>Variable Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Each Iterator</em>'.
+   * @return a new object of class '<em>Variable Reference</em>'.
    * @generated
    */
-  EachIterator createEachIterator();
+  VariableReference createVariableReference();
 
   /**
-   * Returns a new object of class '<em>Variable Iterator</em>'.
+   * Returns a new object of class '<em>For Initializer</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Iterator</em>'.
+   * @return a new object of class '<em>For Initializer</em>'.
    * @generated
    */
-  VariableIterator createVariableIterator();
+  ForInitializer createForInitializer();
 
   /**
    * Returns a new object of class '<em>Function Declaration</em>'.
@@ -131,13 +185,13 @@ public interface LeekFactory extends EFactory
   FunctionDeclaration createFunctionDeclaration();
 
   /**
-   * Returns a new object of class '<em>Parameter Declaration</em>'.
+   * Returns a new object of class '<em>Variable Referenceable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Parameter Declaration</em>'.
+   * @return a new object of class '<em>Variable Referenceable</em>'.
    * @generated
    */
-  ParameterDeclaration createParameterDeclaration();
+  VariableReferenceable createVariableReferenceable();
 
   /**
    * Returns a new object of class '<em>Local Declaration</em>'.
@@ -185,24 +239,6 @@ public interface LeekFactory extends EFactory
   ArrayLiteral createArrayLiteral();
 
   /**
-   * Returns a new object of class '<em>Variable Referenceable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Referenceable</em>'.
-   * @generated
-   */
-  VariableReferenceable createVariableReferenceable();
-
-  /**
-   * Returns a new object of class '<em>Variable Reference</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Reference</em>'.
-   * @generated
-   */
-  VariableReference createVariableReference();
-
-  /**
    * Returns a new object of class '<em>Function Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -212,13 +248,13 @@ public interface LeekFactory extends EFactory
   FunctionCall createFunctionCall();
 
   /**
-   * Returns a new object of class '<em>Return</em>'.
+   * Returns a new object of class '<em>Return Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Return</em>'.
+   * @return a new object of class '<em>Return Statement</em>'.
    * @generated
    */
-  Return createReturn();
+  ReturnStatement createReturnStatement();
 
   /**
    * Returns a new object of class '<em>Include</em>'.
@@ -372,6 +408,33 @@ public interface LeekFactory extends EFactory
    * @generated
    */
   StringLiteral createStringLiteral();
+
+  /**
+   * Returns a new object of class '<em>Null Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Null Literal</em>'.
+   * @generated
+   */
+  NullLiteral createNullLiteral();
+
+  /**
+   * Returns a new object of class '<em>False Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>False Literal</em>'.
+   * @generated
+   */
+  FalseLiteral createFalseLiteral();
+
+  /**
+   * Returns a new object of class '<em>True Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>True Literal</em>'.
+   * @generated
+   */
+  TrueLiteral createTrueLiteral();
 
   /**
    * Returns the package supported by this factory.
