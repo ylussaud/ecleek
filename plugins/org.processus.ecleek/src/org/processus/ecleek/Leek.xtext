@@ -16,13 +16,34 @@ ToplevelStatement:
 Statement:
 	{EmptyStatement} ';'
 	| LocalDeclaration ';'
-	| Return ';'
 	| FunctionCall ';'
-	| For
-	| While
+	| Iteration
 	| If
 	| Affectation ';'
 	| StatementBlock
+;
+
+IterationStatement:
+	Statement
+	| BreakStatement ';'
+	| ContinueStatement ';'
+;
+
+FunctionStatement:
+	Statement
+	| ReturnStatement ';'
+;
+
+FunctionStatementBlock:
+	'{' {FunctionStatementBlock} statements+=FunctionStatement* '}'
+;
+
+BreakStatement:
+	{BreakStatement} 'break'
+;
+
+ContinueStatement:
+	{ContinueStatement} 'continue'
 ;
 
 StatementBlock:
@@ -37,32 +58,38 @@ If:
 	'if' '(' condition=Expression ')' then=Statement (=> 'else' else=Statement)?
 ;
 
+Iteration:
+	While
+	| ForIn
+	| For
+;
+
 While:
-	'while' '(' condition=Expression ')' statement=Statement
+	'while' '(' condition=Expression ')' statement=IterationStatement
 ;
 
 For:
-	'for''(' iterator=ForIterator')' statement=Statement
+	'for' '(' initializer=ForInitializer ';' condition=Expression ';' increment=Expression ')' statement=IterationStatement
 ;
 
-ForIterator:
-	EachIterator
-	| VariableIterator
+ForIn:
+	'for' '(' (key=ForInVariableReference ':')? value=ForInVariableReference 'in' array=Expression ')' statement=IterationStatement
 ;
 
-EachIterator:
-	(=>'var' key=VariableDeclaration ':')? 'var' value=VariableDeclaration 'in' array=Expression
+ForInVariableReference returns VariableReference:
+	'var' name=ID
+	| variable=[VariableReference]
 ;
 
-VariableIterator:
-	initialization=Affectation  ';' condition=Expression ';' increment=Expression
+ForInitializer:
+	VariableReference
 ;
 
 FunctionDeclaration:
-	'function' name=ID '(' (parameters+=ParameterDeclaration (',' parameters+=ParameterDeclaration)*)? ')' body=StatementBlock
+	'function' name=ID '(' (parameters+=ParameterDeclaration (',' parameters+=ParameterDeclaration)*)? ')' body=FunctionStatementBlock
 ;
 
-ParameterDeclaration:
+ParameterDeclaration returns VariableReferenceable:
 	(byAdress?='@')? name=ID
 ;
 
@@ -73,6 +100,7 @@ LocalDeclaration:
 GlobalDeclaration:
 	'global' variables+=VariableDeclaration (',' variables+=VariableDeclaration)*
 ;
+
 VariableDeclaration:
 	name=ID ('=' value=Expression)?
 ;
@@ -97,13 +125,20 @@ Multiplication returns Expression:
 
 PrimaryExpression returns Expression:
 	'(' Expression ')'
+	//| {UnaryPlus} '+' expression=Expression
+	//| {UnaryMinus} '-' expression=Expression
+	//| {PostfixIncrement} variable=VariableReference '++'
+	//| {PostfixDecrement} variable=VariableReference '--'
 	| {RealLiteral} value=REAL
 	| {IntLiteral} value=INT
 	| FunctionCall
 	| VariableReference
-	| {StringLiteral} value = STRING
+	| {StringLiteral} value=STRING
 	| ArrayLiteral
 	| FunctionDeclaration
+	| {NullLiteral} 'null'
+	| {FalseLiteral} 'false'
+	| {TrueLiteral} 'true'
 ;
 
 ArrayLiteral:
@@ -111,7 +146,8 @@ ArrayLiteral:
 ;
 
 VariableReferenceable:
-	VariableDeclaration
+	LocalDeclaration
+	| GlobalDeclaration
 	| ParameterDeclaration
 ;
 
@@ -123,10 +159,9 @@ FunctionCall:
 	{FunctionCall} function=[FunctionDeclaration] '(' (args+=Expression (',' args+=Expression)*)? ')'
 ;
 
-Return:
+ReturnStatement:
 	'return' value=Expression
 ;
-
 
 Include:
 	'include' '(' importURI=STRING ')'
