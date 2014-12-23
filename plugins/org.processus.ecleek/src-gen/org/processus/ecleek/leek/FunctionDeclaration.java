@@ -52,7 +52,7 @@ public interface FunctionDeclaration extends ToplevelStatement, Expression
 
   /**
    * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-   * The list contents are of type {@link org.processus.ecleek.leek.ParameterDeclaration}.
+   * The list contents are of type {@link org.processus.ecleek.leek.VariableReferenceable}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
@@ -64,7 +64,7 @@ public interface FunctionDeclaration extends ToplevelStatement, Expression
    * @model containment="true"
    * @generated
    */
-  EList<ParameterDeclaration> getParameters();
+  EList<VariableReferenceable> getParameters();
 
   /**
    * Returns the value of the '<em><b>Body</b></em>' containment reference.
@@ -75,12 +75,12 @@ public interface FunctionDeclaration extends ToplevelStatement, Expression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Body</em>' containment reference.
-   * @see #setBody(StatementBlock)
+   * @see #setBody(FunctionStatementBlock)
    * @see org.processus.ecleek.leek.LeekPackage#getFunctionDeclaration_Body()
    * @model containment="true"
    * @generated
    */
-  StatementBlock getBody();
+  FunctionStatementBlock getBody();
 
   /**
    * Sets the value of the '{@link org.processus.ecleek.leek.FunctionDeclaration#getBody <em>Body</em>}' containment reference.
@@ -90,6 +90,6 @@ public interface FunctionDeclaration extends ToplevelStatement, Expression
    * @see #getBody()
    * @generated
    */
-  void setBody(StatementBlock value);
+  void setBody(FunctionStatementBlock value);
 
 } // FunctionDeclaration

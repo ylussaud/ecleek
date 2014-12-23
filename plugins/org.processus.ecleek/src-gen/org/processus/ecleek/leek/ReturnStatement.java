@@ -5,21 +5,21 @@ package org.processus.ecleek.leek;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Return</b></em>'.
+ * A representation of the model object '<em><b>Return Statement</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.Return#getValue <em>Value</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.ReturnStatement#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.processus.ecleek.leek.LeekPackage#getReturn()
+ * @see org.processus.ecleek.leek.LeekPackage#getReturnStatement()
  * @model
  * @generated
  */
-public interface Return extends Statement
+public interface ReturnStatement extends FunctionStatement
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.
@@ -31,14 +31,14 @@ public interface Return extends Statement
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' containment reference.
    * @see #setValue(Expression)
-   * @see org.processus.ecleek.leek.LeekPackage#getReturn_Value()
+   * @see org.processus.ecleek.leek.LeekPackage#getReturnStatement_Value()
    * @model containment="true"
    * @generated
    */
   Expression getValue();
 
   /**
-   * Sets the value of the '{@link org.processus.ecleek.leek.Return#getValue <em>Value</em>}' containment reference.
+   * Sets the value of the '{@link org.processus.ecleek.leek.ReturnStatement#getValue <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' containment reference.
@@ -47,4 +47,4 @@ public interface Return extends Statement
    */
   void setValue(Expression value);
 
-} // Return
+} // ReturnStatement

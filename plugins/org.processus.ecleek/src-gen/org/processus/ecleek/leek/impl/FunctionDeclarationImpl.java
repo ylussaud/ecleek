@@ -18,9 +18,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.processus.ecleek.leek.FunctionDeclaration;
+import org.processus.ecleek.leek.FunctionStatementBlock;
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.ParameterDeclaration;
-import org.processus.ecleek.leek.StatementBlock;
+import org.processus.ecleek.leek.VariableReferenceable;
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +67,7 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
    * @generated
    * @ordered
    */
-  protected EList<ParameterDeclaration> parameters;
+  protected EList<VariableReferenceable> parameters;
 
   /**
    * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
@@ -77,7 +77,7 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
    * @generated
    * @ordered
    */
-  protected StatementBlock body;
+  protected FunctionStatementBlock body;
 
   /**
    * <!-- begin-user-doc -->
@@ -128,11 +128,11 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ParameterDeclaration> getParameters()
+  public EList<VariableReferenceable> getParameters()
   {
     if (parameters == null)
     {
-      parameters = new EObjectContainmentEList<ParameterDeclaration>(ParameterDeclaration.class, this, LeekPackage.FUNCTION_DECLARATION__PARAMETERS);
+      parameters = new EObjectContainmentEList<VariableReferenceable>(VariableReferenceable.class, this, LeekPackage.FUNCTION_DECLARATION__PARAMETERS);
     }
     return parameters;
   }
@@ -142,7 +142,7 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public StatementBlock getBody()
+  public FunctionStatementBlock getBody()
   {
     return body;
   }
@@ -152,9 +152,9 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBody(StatementBlock newBody, NotificationChain msgs)
+  public NotificationChain basicSetBody(FunctionStatementBlock newBody, NotificationChain msgs)
   {
-    StatementBlock oldBody = body;
+    FunctionStatementBlock oldBody = body;
     body = newBody;
     if (eNotificationRequired())
     {
@@ -169,7 +169,7 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBody(StatementBlock newBody)
+  public void setBody(FunctionStatementBlock newBody)
   {
     if (newBody != body)
     {
@@ -239,10 +239,10 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
         return;
       case LeekPackage.FUNCTION_DECLARATION__PARAMETERS:
         getParameters().clear();
-        getParameters().addAll((Collection<? extends ParameterDeclaration>)newValue);
+        getParameters().addAll((Collection<? extends VariableReferenceable>)newValue);
         return;
       case LeekPackage.FUNCTION_DECLARATION__BODY:
-        setBody((StatementBlock)newValue);
+        setBody((FunctionStatementBlock)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -265,7 +265,7 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
         getParameters().clear();
         return;
       case LeekPackage.FUNCTION_DECLARATION__BODY:
-        setBody((StatementBlock)null);
+        setBody((FunctionStatementBlock)null);
         return;
     }
     super.eUnset(featureID);

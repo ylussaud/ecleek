@@ -8,11 +8,9 @@ import org.processus.ecleek.leek.FunctionDeclaration;
 import org.processus.ecleek.leek.GlobalDeclaration;
 import org.processus.ecleek.leek.IntLiteral;
 import org.processus.ecleek.leek.LocalDeclaration;
-import org.processus.ecleek.leek.Return;
+import org.processus.ecleek.leek.ReturnStatement;
 import org.processus.ecleek.leek.Script;
-import org.processus.ecleek.leek.VariableDeclaration;
 import org.processus.ecleek.leek.VariableReference;
-import org.processus.ecleek.leek.VariableReferenceable;
 
 public class ParsingTests extends AbstractXtextTests {
 
@@ -374,8 +372,8 @@ public class ParsingTests extends AbstractXtextTests {
 		assertEquals("a", declaration.getParameters().get(0).getName());
 		assertEquals(false, declaration.getParameters().get(0).isByAdress());
 		assertEquals(1, declaration.getBody().getStatements().size());
-		assertTrue(declaration.getBody().getStatements().get(0) instanceof Return);
-		Return statement = (Return) declaration.getBody().getStatements().get(0);
+		assertTrue(declaration.getBody().getStatements().get(0) instanceof ReturnStatement);
+		ReturnStatement statement = (ReturnStatement) declaration.getBody().getStatements().get(0);
 		assertTrue(statement.getValue() instanceof IntLiteral);
 		assertEquals(1, ((IntLiteral)statement.getValue()).getValue());
 	}
@@ -392,8 +390,8 @@ public class ParsingTests extends AbstractXtextTests {
 		assertEquals("a", declaration.getParameters().get(0).getName());
 		assertEquals(false, declaration.getParameters().get(0).isByAdress());
 		assertEquals(1, declaration.getBody().getStatements().size());
-		assertTrue(declaration.getBody().getStatements().get(0) instanceof Return);
-		Return statement = (Return) declaration.getBody().getStatements().get(0);
+		assertTrue(declaration.getBody().getStatements().get(0) instanceof ReturnStatement);
+		ReturnStatement statement = (ReturnStatement) declaration.getBody().getStatements().get(0);
 		assertTrue(statement.getValue() instanceof VariableReference);
 		assertEquals(declaration.getParameters().get(0), ((VariableReference)statement.getValue()).getVariable());
 	}

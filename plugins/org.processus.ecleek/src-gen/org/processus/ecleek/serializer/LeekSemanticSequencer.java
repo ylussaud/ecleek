@@ -15,14 +15,18 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.processus.ecleek.leek.Affectation;
 import org.processus.ecleek.leek.ArrayLiteral;
+import org.processus.ecleek.leek.BreakStatement;
+import org.processus.ecleek.leek.ContinueStatement;
 import org.processus.ecleek.leek.Different;
 import org.processus.ecleek.leek.Div;
-import org.processus.ecleek.leek.EachIterator;
 import org.processus.ecleek.leek.EmptyStatement;
 import org.processus.ecleek.leek.Equals;
+import org.processus.ecleek.leek.FalseLiteral;
 import org.processus.ecleek.leek.For;
+import org.processus.ecleek.leek.ForIn;
 import org.processus.ecleek.leek.FunctionCall;
 import org.processus.ecleek.leek.FunctionDeclaration;
+import org.processus.ecleek.leek.FunctionStatementBlock;
 import org.processus.ecleek.leek.GlobalDeclaration;
 import org.processus.ecleek.leek.If;
 import org.processus.ecleek.leek.Include;
@@ -35,18 +39,19 @@ import org.processus.ecleek.leek.Minus;
 import org.processus.ecleek.leek.More;
 import org.processus.ecleek.leek.MoreOrEquals;
 import org.processus.ecleek.leek.Multi;
-import org.processus.ecleek.leek.ParameterDeclaration;
+import org.processus.ecleek.leek.NullLiteral;
 import org.processus.ecleek.leek.Plus;
 import org.processus.ecleek.leek.RealLiteral;
-import org.processus.ecleek.leek.Return;
+import org.processus.ecleek.leek.ReturnStatement;
 import org.processus.ecleek.leek.Script;
 import org.processus.ecleek.leek.StatementBlock;
 import org.processus.ecleek.leek.StringLiteral;
+import org.processus.ecleek.leek.TrueLiteral;
 import org.processus.ecleek.leek.TypedDifferent;
 import org.processus.ecleek.leek.TypedEquals;
 import org.processus.ecleek.leek.VariableDeclaration;
-import org.processus.ecleek.leek.VariableIterator;
 import org.processus.ecleek.leek.VariableReference;
+import org.processus.ecleek.leek.VariableReferenceable;
 import org.processus.ecleek.leek.While;
 import org.processus.ecleek.services.LeekGrammarAccess;
 
@@ -60,6 +65,8 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		if(semanticObject.eClass().getEPackage() == LeekPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case LeekPackage.AFFECTATION:
 				if(context == grammarAccess.getAffectationRule() ||
+				   context == grammarAccess.getFunctionStatementRule() ||
+				   context == grammarAccess.getIterationStatementRule() ||
 				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getToplevelStatementRule()) {
 					sequence_Affectation(context, (Affectation) semanticObject); 
@@ -90,6 +97,20 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getOrAccess().getTypedEqualsLeftAction_1_0_0() ||
 				   context == grammarAccess.getPrimaryExpressionRule()) {
 					sequence_ArrayLiteral(context, (ArrayLiteral) semanticObject); 
+					return; 
+				}
+				else break;
+			case LeekPackage.BREAK_STATEMENT:
+				if(context == grammarAccess.getBreakStatementRule() ||
+				   context == grammarAccess.getIterationStatementRule()) {
+					sequence_BreakStatement(context, (BreakStatement) semanticObject); 
+					return; 
+				}
+				else break;
+			case LeekPackage.CONTINUE_STATEMENT:
+				if(context == grammarAccess.getContinueStatementRule() ||
+				   context == grammarAccess.getIterationStatementRule()) {
+					sequence_ContinueStatement(context, (ContinueStatement) semanticObject); 
 					return; 
 				}
 				else break;
@@ -145,15 +166,10 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LeekPackage.EACH_ITERATOR:
-				if(context == grammarAccess.getEachIteratorRule() ||
-				   context == grammarAccess.getForIteratorRule()) {
-					sequence_EachIterator(context, (EachIterator) semanticObject); 
-					return; 
-				}
-				else break;
 			case LeekPackage.EMPTY_STATEMENT:
-				if(context == grammarAccess.getStatementRule() ||
+				if(context == grammarAccess.getFunctionStatementRule() ||
+				   context == grammarAccess.getIterationStatementRule() ||
+				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getToplevelStatementRule()) {
 					sequence_Statement(context, (EmptyStatement) semanticObject); 
 					return; 
@@ -185,11 +201,51 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case LeekPackage.FALSE_LITERAL:
+				if(context == grammarAccess.getAdditionRule() ||
+				   context == grammarAccess.getAdditionAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getAdditionAccess().getPlusLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAndRule() ||
+				   context == grammarAccess.getAndAccess().getTypedEqualsLeftAction_1_0_0() ||
+				   context == grammarAccess.getComparisonRule() ||
+				   context == grammarAccess.getComparisonAccess().getDifferentLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getComparisonAccess().getEqualsLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getComparisonAccess().getLessOrEqualsLeftAction_1_0_4_0() ||
+				   context == grammarAccess.getComparisonAccess().getLessLeftAction_1_0_5_0() ||
+				   context == grammarAccess.getComparisonAccess().getMoreOrEqualsLeftAction_1_0_6_0() ||
+				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
+				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getComparisonAccess().getTypedEqualsLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getMultiplicationRule() ||
+				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getOrRule() ||
+				   context == grammarAccess.getOrAccess().getTypedEqualsLeftAction_1_0_0() ||
+				   context == grammarAccess.getPrimaryExpressionRule()) {
+					sequence_PrimaryExpression(context, (FalseLiteral) semanticObject); 
+					return; 
+				}
+				else break;
 			case LeekPackage.FOR:
 				if(context == grammarAccess.getForRule() ||
+				   context == grammarAccess.getFunctionStatementRule() ||
+				   context == grammarAccess.getIterationRule() ||
+				   context == grammarAccess.getIterationStatementRule() ||
 				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getToplevelStatementRule()) {
 					sequence_For(context, (For) semanticObject); 
+					return; 
+				}
+				else break;
+			case LeekPackage.FOR_IN:
+				if(context == grammarAccess.getForInRule() ||
+				   context == grammarAccess.getFunctionStatementRule() ||
+				   context == grammarAccess.getIterationRule() ||
+				   context == grammarAccess.getIterationStatementRule() ||
+				   context == grammarAccess.getStatementRule() ||
+				   context == grammarAccess.getToplevelStatementRule()) {
+					sequence_ForIn(context, (ForIn) semanticObject); 
 					return; 
 				}
 				else break;
@@ -210,6 +266,8 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getTypedEqualsLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getFunctionCallRule() ||
+				   context == grammarAccess.getFunctionStatementRule() ||
+				   context == grammarAccess.getIterationStatementRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
@@ -250,15 +308,24 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case LeekPackage.FUNCTION_STATEMENT_BLOCK:
+				if(context == grammarAccess.getFunctionStatementBlockRule()) {
+					sequence_FunctionStatementBlock(context, (FunctionStatementBlock) semanticObject); 
+					return; 
+				}
+				else break;
 			case LeekPackage.GLOBAL_DECLARATION:
 				if(context == grammarAccess.getGlobalDeclarationRule() ||
-				   context == grammarAccess.getToplevelStatementRule()) {
+				   context == grammarAccess.getToplevelStatementRule() ||
+				   context == grammarAccess.getVariableReferenceableRule()) {
 					sequence_GlobalDeclaration(context, (GlobalDeclaration) semanticObject); 
 					return; 
 				}
 				else break;
 			case LeekPackage.IF:
-				if(context == grammarAccess.getIfRule() ||
+				if(context == grammarAccess.getFunctionStatementRule() ||
+				   context == grammarAccess.getIfRule() ||
+				   context == grammarAccess.getIterationStatementRule() ||
 				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getToplevelStatementRule()) {
 					sequence_If(context, (If) semanticObject); 
@@ -351,9 +418,12 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case LeekPackage.LOCAL_DECLARATION:
-				if(context == grammarAccess.getLocalDeclarationRule() ||
+				if(context == grammarAccess.getFunctionStatementRule() ||
+				   context == grammarAccess.getIterationStatementRule() ||
+				   context == grammarAccess.getLocalDeclarationRule() ||
 				   context == grammarAccess.getStatementRule() ||
-				   context == grammarAccess.getToplevelStatementRule()) {
+				   context == grammarAccess.getToplevelStatementRule() ||
+				   context == grammarAccess.getVariableReferenceableRule()) {
 					sequence_LocalDeclaration(context, (LocalDeclaration) semanticObject); 
 					return; 
 				}
@@ -462,10 +532,29 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LeekPackage.PARAMETER_DECLARATION:
-				if(context == grammarAccess.getParameterDeclarationRule() ||
-				   context == grammarAccess.getVariableReferenceableRule()) {
-					sequence_ParameterDeclaration(context, (ParameterDeclaration) semanticObject); 
+			case LeekPackage.NULL_LITERAL:
+				if(context == grammarAccess.getAdditionRule() ||
+				   context == grammarAccess.getAdditionAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getAdditionAccess().getPlusLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAndRule() ||
+				   context == grammarAccess.getAndAccess().getTypedEqualsLeftAction_1_0_0() ||
+				   context == grammarAccess.getComparisonRule() ||
+				   context == grammarAccess.getComparisonAccess().getDifferentLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getComparisonAccess().getEqualsLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getComparisonAccess().getLessOrEqualsLeftAction_1_0_4_0() ||
+				   context == grammarAccess.getComparisonAccess().getLessLeftAction_1_0_5_0() ||
+				   context == grammarAccess.getComparisonAccess().getMoreOrEqualsLeftAction_1_0_6_0() ||
+				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
+				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getComparisonAccess().getTypedEqualsLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getMultiplicationRule() ||
+				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getOrRule() ||
+				   context == grammarAccess.getOrAccess().getTypedEqualsLeftAction_1_0_0() ||
+				   context == grammarAccess.getPrimaryExpressionRule()) {
+					sequence_PrimaryExpression(context, (NullLiteral) semanticObject); 
 					return; 
 				}
 				else break;
@@ -521,11 +610,10 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LeekPackage.RETURN:
-				if(context == grammarAccess.getReturnRule() ||
-				   context == grammarAccess.getStatementRule() ||
-				   context == grammarAccess.getToplevelStatementRule()) {
-					sequence_Return(context, (Return) semanticObject); 
+			case LeekPackage.RETURN_STATEMENT:
+				if(context == grammarAccess.getFunctionStatementRule() ||
+				   context == grammarAccess.getReturnStatementRule()) {
+					sequence_ReturnStatement(context, (ReturnStatement) semanticObject); 
 					return; 
 				}
 				else break;
@@ -536,7 +624,9 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case LeekPackage.STATEMENT_BLOCK:
-				if(context == grammarAccess.getStatementRule() ||
+				if(context == grammarAccess.getFunctionStatementRule() ||
+				   context == grammarAccess.getIterationStatementRule() ||
+				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getStatementBlockRule() ||
 				   context == grammarAccess.getToplevelStatementRule()) {
 					sequence_StatementBlock(context, (StatementBlock) semanticObject); 
@@ -566,6 +656,32 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getOrAccess().getTypedEqualsLeftAction_1_0_0() ||
 				   context == grammarAccess.getPrimaryExpressionRule()) {
 					sequence_PrimaryExpression(context, (StringLiteral) semanticObject); 
+					return; 
+				}
+				else break;
+			case LeekPackage.TRUE_LITERAL:
+				if(context == grammarAccess.getAdditionRule() ||
+				   context == grammarAccess.getAdditionAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getAdditionAccess().getPlusLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAndRule() ||
+				   context == grammarAccess.getAndAccess().getTypedEqualsLeftAction_1_0_0() ||
+				   context == grammarAccess.getComparisonRule() ||
+				   context == grammarAccess.getComparisonAccess().getDifferentLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getComparisonAccess().getEqualsLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getComparisonAccess().getLessOrEqualsLeftAction_1_0_4_0() ||
+				   context == grammarAccess.getComparisonAccess().getLessLeftAction_1_0_5_0() ||
+				   context == grammarAccess.getComparisonAccess().getMoreOrEqualsLeftAction_1_0_6_0() ||
+				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
+				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getComparisonAccess().getTypedEqualsLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getMultiplicationRule() ||
+				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getOrRule() ||
+				   context == grammarAccess.getOrAccess().getTypedEqualsLeftAction_1_0_0() ||
+				   context == grammarAccess.getPrimaryExpressionRule()) {
+					sequence_PrimaryExpression(context, (TrueLiteral) semanticObject); 
 					return; 
 				}
 				else break;
@@ -622,21 +738,17 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case LeekPackage.VARIABLE_DECLARATION:
-				if(context == grammarAccess.getVariableDeclarationRule() ||
-				   context == grammarAccess.getVariableReferenceableRule()) {
+				if(context == grammarAccess.getVariableDeclarationRule()) {
 					sequence_VariableDeclaration(context, (VariableDeclaration) semanticObject); 
 					return; 
 				}
 				else break;
-			case LeekPackage.VARIABLE_ITERATOR:
-				if(context == grammarAccess.getForIteratorRule() ||
-				   context == grammarAccess.getVariableIteratorRule()) {
-					sequence_VariableIterator(context, (VariableIterator) semanticObject); 
+			case LeekPackage.VARIABLE_REFERENCE:
+				if(context == grammarAccess.getForInVariableReferenceRule()) {
+					sequence_ForInVariableReference(context, (VariableReference) semanticObject); 
 					return; 
 				}
-				else break;
-			case LeekPackage.VARIABLE_REFERENCE:
-				if(context == grammarAccess.getAdditionRule() ||
+				else if(context == grammarAccess.getAdditionRule() ||
 				   context == grammarAccess.getAdditionAccess().getMinusLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getAdditionAccess().getPlusLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getAndRule() ||
@@ -651,6 +763,7 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedEqualsLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForInitializerRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
@@ -662,8 +775,18 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case LeekPackage.VARIABLE_REFERENCEABLE:
+				if(context == grammarAccess.getParameterDeclarationRule() ||
+				   context == grammarAccess.getVariableReferenceableRule()) {
+					sequence_ParameterDeclaration(context, (VariableReferenceable) semanticObject); 
+					return; 
+				}
+				else break;
 			case LeekPackage.WHILE:
-				if(context == grammarAccess.getStatementRule() ||
+				if(context == grammarAccess.getFunctionStatementRule() ||
+				   context == grammarAccess.getIterationRule() ||
+				   context == grammarAccess.getIterationStatementRule() ||
+				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getToplevelStatementRule() ||
 				   context == grammarAccess.getWhileRule()) {
 					sequence_While(context, (While) semanticObject); 
@@ -745,6 +868,15 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ((values+=Expression values+=Expression*)?)
 	 */
 	protected void sequence_ArrayLiteral(EObject context, ArrayLiteral semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {BreakStatement}
+	 */
+	protected void sequence_BreakStatement(EObject context, BreakStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -884,28 +1016,52 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (key=VariableDeclaration? value=VariableDeclaration array=Expression)
+	 *     {ContinueStatement}
 	 */
-	protected void sequence_EachIterator(EObject context, EachIterator semanticObject) {
+	protected void sequence_ContinueStatement(EObject context, ContinueStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (iterator=ForIterator statement=Statement)
+	 *     (name=ID | variable=[VariableReference|ID])
+	 */
+	protected void sequence_ForInVariableReference(EObject context, VariableReference semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (key=ForInVariableReference? value=ForInVariableReference array=Expression statement=IterationStatement)
+	 */
+	protected void sequence_ForIn(EObject context, ForIn semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (initializer=ForInitializer condition=Expression increment=Expression statement=IterationStatement)
 	 */
 	protected void sequence_For(EObject context, For semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.FOR__ITERATOR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.FOR__ITERATOR));
-			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.FOR__STATEMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.FOR__STATEMENT));
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.ITERATION__STATEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.ITERATION__STATEMENT));
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.FOR__INITIALIZER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.FOR__INITIALIZER));
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.FOR__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.FOR__CONDITION));
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.FOR__INCREMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.FOR__INCREMENT));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getForAccess().getIteratorForIteratorParserRuleCall_2_0(), semanticObject.getIterator());
-		feeder.accept(grammarAccess.getForAccess().getStatementStatementParserRuleCall_4_0(), semanticObject.getStatement());
+		feeder.accept(grammarAccess.getForAccess().getInitializerForInitializerParserRuleCall_2_0(), semanticObject.getInitializer());
+		feeder.accept(grammarAccess.getForAccess().getConditionExpressionParserRuleCall_4_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getForAccess().getIncrementExpressionParserRuleCall_6_0(), semanticObject.getIncrement());
+		feeder.accept(grammarAccess.getForAccess().getStatementIterationStatementParserRuleCall_8_0(), semanticObject.getStatement());
 		feeder.finish();
 	}
 	
@@ -921,9 +1077,18 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (parameters+=ParameterDeclaration parameters+=ParameterDeclaration*)? body=StatementBlock)
+	 *     (name=ID (parameters+=ParameterDeclaration parameters+=ParameterDeclaration*)? body=FunctionStatementBlock)
 	 */
 	protected void sequence_FunctionDeclaration(EObject context, FunctionDeclaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (statements+=FunctionStatement*)
+	 */
+	protected void sequence_FunctionStatementBlock(EObject context, FunctionStatementBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1013,7 +1178,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (byAdress?='@'? name=ID)
 	 */
-	protected void sequence_ParameterDeclaration(EObject context, ParameterDeclaration semanticObject) {
+	protected void sequence_ParameterDeclaration(EObject context, VariableReferenceable semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {FalseLiteral}
+	 */
+	protected void sequence_PrimaryExpression(EObject context, FalseLiteral semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1031,6 +1205,15 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getPrimaryExpressionAccess().getValueINTTerminalRuleCall_2_1_0(), semanticObject.getValue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {NullLiteral}
+	 */
+	protected void sequence_PrimaryExpression(EObject context, NullLiteral semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1068,16 +1251,25 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     {TrueLiteral}
+	 */
+	protected void sequence_PrimaryExpression(EObject context, TrueLiteral semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     value=Expression
 	 */
-	protected void sequence_Return(EObject context, Return semanticObject) {
+	protected void sequence_ReturnStatement(EObject context, ReturnStatement semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.RETURN__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.RETURN__VALUE));
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.RETURN_STATEMENT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.RETURN_STATEMENT__VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getReturnAccess().getValueExpressionParserRuleCall_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getReturnStatementAccess().getValueExpressionParserRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -1120,28 +1312,6 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (initialization=Affectation condition=Expression increment=Expression)
-	 */
-	protected void sequence_VariableIterator(EObject context, VariableIterator semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.VARIABLE_ITERATOR__INITIALIZATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.VARIABLE_ITERATOR__INITIALIZATION));
-			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.VARIABLE_ITERATOR__CONDITION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.VARIABLE_ITERATOR__CONDITION));
-			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.VARIABLE_ITERATOR__INCREMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.VARIABLE_ITERATOR__INCREMENT));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVariableIteratorAccess().getInitializationAffectationParserRuleCall_0_0(), semanticObject.getInitialization());
-		feeder.accept(grammarAccess.getVariableIteratorAccess().getConditionExpressionParserRuleCall_2_0(), semanticObject.getCondition());
-		feeder.accept(grammarAccess.getVariableIteratorAccess().getIncrementExpressionParserRuleCall_4_0(), semanticObject.getIncrement());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (variable=[VariableReferenceable|ID] dimensions+=Expression*)
 	 */
 	protected void sequence_VariableReference(EObject context, VariableReference semanticObject) {
@@ -1151,19 +1321,19 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (condition=Expression statement=Statement)
+	 *     (condition=Expression statement=IterationStatement)
 	 */
 	protected void sequence_While(EObject context, While semanticObject) {
 		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.ITERATION__STATEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.ITERATION__STATEMENT));
 			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.WHILE__CONDITION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.WHILE__CONDITION));
-			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.WHILE__STATEMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.WHILE__STATEMENT));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getWhileAccess().getConditionExpressionParserRuleCall_2_0(), semanticObject.getCondition());
-		feeder.accept(grammarAccess.getWhileAccess().getStatementStatementParserRuleCall_4_0(), semanticObject.getStatement());
+		feeder.accept(grammarAccess.getWhileAccess().getStatementIterationStatementParserRuleCall_4_0(), semanticObject.getStatement());
 		feeder.finish();
 	}
 }

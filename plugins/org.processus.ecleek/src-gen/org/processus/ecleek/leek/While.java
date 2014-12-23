@@ -12,7 +12,6 @@ package org.processus.ecleek.leek;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.processus.ecleek.leek.While#getCondition <em>Condition</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.While#getStatement <em>Statement</em>}</li>
  * </ul>
  * </p>
  *
@@ -20,7 +19,7 @@ package org.processus.ecleek.leek;
  * @model
  * @generated
  */
-public interface While extends Statement
+public interface While extends Iteration
 {
   /**
    * Returns the value of the '<em><b>Condition</b></em>' containment reference.
@@ -47,31 +46,5 @@ public interface While extends Statement
    * @generated
    */
   void setCondition(Expression value);
-
-  /**
-   * Returns the value of the '<em><b>Statement</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Statement</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Statement</em>' containment reference.
-   * @see #setStatement(Statement)
-   * @see org.processus.ecleek.leek.LeekPackage#getWhile_Statement()
-   * @model containment="true"
-   * @generated
-   */
-  Statement getStatement();
-
-  /**
-   * Sets the value of the '{@link org.processus.ecleek.leek.While#getStatement <em>Statement</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Statement</em>' containment reference.
-   * @see #getStatement()
-   * @generated
-   */
-  void setStatement(Statement value);
 
 } // While

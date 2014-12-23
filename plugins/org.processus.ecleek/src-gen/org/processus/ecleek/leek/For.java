@@ -11,8 +11,9 @@ package org.processus.ecleek.leek;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.For#getIterator <em>Iterator</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.For#getStatement <em>Statement</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.For#getInitializer <em>Initializer</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.For#getCondition <em>Condition</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.For#getIncrement <em>Increment</em>}</li>
  * </ul>
  * </p>
  *
@@ -20,58 +21,84 @@ package org.processus.ecleek.leek;
  * @model
  * @generated
  */
-public interface For extends Statement
+public interface For extends Iteration
 {
   /**
-   * Returns the value of the '<em><b>Iterator</b></em>' containment reference.
+   * Returns the value of the '<em><b>Initializer</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Iterator</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Initializer</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Iterator</em>' containment reference.
-   * @see #setIterator(ForIterator)
-   * @see org.processus.ecleek.leek.LeekPackage#getFor_Iterator()
+   * @return the value of the '<em>Initializer</em>' containment reference.
+   * @see #setInitializer(ForInitializer)
+   * @see org.processus.ecleek.leek.LeekPackage#getFor_Initializer()
    * @model containment="true"
    * @generated
    */
-  ForIterator getIterator();
+  ForInitializer getInitializer();
 
   /**
-   * Sets the value of the '{@link org.processus.ecleek.leek.For#getIterator <em>Iterator</em>}' containment reference.
+   * Sets the value of the '{@link org.processus.ecleek.leek.For#getInitializer <em>Initializer</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Iterator</em>' containment reference.
-   * @see #getIterator()
+   * @param value the new value of the '<em>Initializer</em>' containment reference.
+   * @see #getInitializer()
    * @generated
    */
-  void setIterator(ForIterator value);
+  void setInitializer(ForInitializer value);
 
   /**
-   * Returns the value of the '<em><b>Statement</b></em>' containment reference.
+   * Returns the value of the '<em><b>Condition</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Statement</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Condition</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Statement</em>' containment reference.
-   * @see #setStatement(Statement)
-   * @see org.processus.ecleek.leek.LeekPackage#getFor_Statement()
+   * @return the value of the '<em>Condition</em>' containment reference.
+   * @see #setCondition(Expression)
+   * @see org.processus.ecleek.leek.LeekPackage#getFor_Condition()
    * @model containment="true"
    * @generated
    */
-  Statement getStatement();
+  Expression getCondition();
 
   /**
-   * Sets the value of the '{@link org.processus.ecleek.leek.For#getStatement <em>Statement</em>}' containment reference.
+   * Sets the value of the '{@link org.processus.ecleek.leek.For#getCondition <em>Condition</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Statement</em>' containment reference.
-   * @see #getStatement()
+   * @param value the new value of the '<em>Condition</em>' containment reference.
+   * @see #getCondition()
    * @generated
    */
-  void setStatement(Statement value);
+  void setCondition(Expression value);
+
+  /**
+   * Returns the value of the '<em><b>Increment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Increment</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Increment</em>' containment reference.
+   * @see #setIncrement(Expression)
+   * @see org.processus.ecleek.leek.LeekPackage#getFor_Increment()
+   * @model containment="true"
+   * @generated
+   */
+  Expression getIncrement();
+
+  /**
+   * Sets the value of the '{@link org.processus.ecleek.leek.For#getIncrement <em>Increment</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Increment</em>' containment reference.
+   * @see #getIncrement()
+   * @generated
+   */
+  void setIncrement(Expression value);
 
 } // For
