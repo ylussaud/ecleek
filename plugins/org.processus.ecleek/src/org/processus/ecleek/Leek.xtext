@@ -18,8 +18,7 @@ Statement:
 	| LocalDeclaration ';'
 	| Return ';'
 	| FunctionCall ';'
-	| For
-	| While
+	| Iteration
 	| If
 	| Affectation ';'
 	| StatementBlock
@@ -37,32 +36,38 @@ If:
 	'if' '(' condition=Expression ')' then=Statement (=> 'else' else=Statement)?
 ;
 
+Iteration:
+	While
+	| ForIn
+	| For
+;
+
 While:
 	'while' '(' condition=Expression ')' statement=Statement
 ;
 
 For:
-	'for''(' iterator=ForIterator')' statement=Statement
+	'for' '(' initializer=ForInitializer ';' condition=Expression ';' increment=Expression ')' statement=Statement
 ;
 
-ForIterator:
-	EachIterator
-	| VariableIterator
+ForIn:
+	'for' '(' (key=ForInVariableReference ':')? value=ForInVariableReference 'in' array=Expression ')' statement=Statement
 ;
 
-EachIterator:
-	(=>'var' key=VariableDeclaration ':')? 'var' value=VariableDeclaration 'in' array=Expression
+ForInVariableReference returns VariableDeclaration:
+	'var' name=ID
+	| variable=[VariableDeclaration]
 ;
 
-VariableIterator:
-	initialization=Affectation  ';' condition=Expression ';' increment=Expression
+ForInitializer:
+	VariableDeclaration
 ;
 
 FunctionDeclaration:
 	'function' name=ID '(' (parameters+=ParameterDeclaration (',' parameters+=ParameterDeclaration)*)? ')' body=StatementBlock
 ;
 
-ParameterDeclaration:
+ParameterDeclaration returns VariableDeclaration:
 	(byAdress?='@')? name=ID
 ;
 
@@ -73,6 +78,7 @@ LocalDeclaration:
 GlobalDeclaration:
 	'global' variables+=VariableDeclaration (',' variables+=VariableDeclaration)*
 ;
+
 VariableDeclaration:
 	name=ID ('=' value=Expression)?
 ;
