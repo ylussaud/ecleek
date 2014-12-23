@@ -16,12 +16,34 @@ ToplevelStatement:
 Statement:
 	{EmptyStatement} ';'
 	| LocalDeclaration ';'
-	| Return ';'
 	| FunctionCall ';'
 	| Iteration
 	| If
 	| Affectation ';'
 	| StatementBlock
+;
+
+IterationStatement:
+	Statement
+	| BreakStatement ';'
+	| ContinueStatement ';'
+;
+
+FunctionStatement:
+	Statement
+	| ReturnStatement ';'
+;
+
+FunctionStatementBlock:
+	'{' {FunctionStatementBlock} statements+=FunctionStatement* '}'
+;
+
+BreakStatement:
+	{BreakStatement} 'break'
+;
+
+ContinueStatement:
+	{ContinueStatement} 'continue'
 ;
 
 StatementBlock:
@@ -43,15 +65,15 @@ Iteration:
 ;
 
 While:
-	'while' '(' condition=Expression ')' statement=Statement
+	'while' '(' condition=Expression ')' statement=IterationStatement
 ;
 
 For:
-	'for' '(' initializer=ForInitializer ';' condition=Expression ';' increment=Expression ')' statement=Statement
+	'for' '(' initializer=ForInitializer ';' condition=Expression ';' increment=Expression ')' statement=IterationStatement
 ;
 
 ForIn:
-	'for' '(' (key=ForInVariableReference ':')? value=ForInVariableReference 'in' array=Expression ')' statement=Statement
+	'for' '(' (key=ForInVariableReference ':')? value=ForInVariableReference 'in' array=Expression ')' statement=IterationStatement
 ;
 
 ForInVariableReference returns VariableDeclaration:
@@ -64,7 +86,7 @@ ForInitializer:
 ;
 
 FunctionDeclaration:
-	'function' name=ID '(' (parameters+=ParameterDeclaration (',' parameters+=ParameterDeclaration)*)? ')' body=StatementBlock
+	'function' name=ID '(' (parameters+=ParameterDeclaration (',' parameters+=ParameterDeclaration)*)? ')' body=FunctionStatementBlock
 ;
 
 ParameterDeclaration returns VariableDeclaration:
@@ -107,9 +129,12 @@ PrimaryExpression returns Expression:
 	| {IntLiteral} value=INT
 	| FunctionCall
 	| VariableReference
-	| {StringLiteral} value = STRING
+	| {StringLiteral} value=STRING
 	| ArrayLiteral
 	| FunctionDeclaration
+	| {NullLiteral} value='null'
+	| {FalseLiteral} value='false'
+	| {TrueLiteral} value='true'
 ;
 
 ArrayLiteral:
@@ -129,10 +154,9 @@ FunctionCall:
 	{FunctionCall} function=[FunctionDeclaration] '(' (args+=Expression (',' args+=Expression)*)? ')'
 ;
 
-Return:
+ReturnStatement:
 	'return' value=Expression
 ;
-
 
 Include:
 	'include' '(' importURI=STRING ')'
