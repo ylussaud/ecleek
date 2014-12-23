@@ -4,13 +4,17 @@ import org.eclipse.xtext.junit4.AbstractXtextTests;
 import org.junit.Test;
 import org.processus.ecleek.LeekStandaloneSetup;
 import org.processus.ecleek.leek.ArrayLiteral;
+import org.processus.ecleek.leek.FunctionCall;
 import org.processus.ecleek.leek.FunctionDeclaration;
 import org.processus.ecleek.leek.GlobalDeclaration;
+import org.processus.ecleek.leek.If;
 import org.processus.ecleek.leek.IntLiteral;
 import org.processus.ecleek.leek.LocalDeclaration;
 import org.processus.ecleek.leek.ReturnStatement;
 import org.processus.ecleek.leek.Script;
+import org.processus.ecleek.leek.TrueLiteral;
 import org.processus.ecleek.leek.VariableReference;
+import org.processus.ecleek.leek.While;
 
 public class ParsingTests extends AbstractXtextTests {
 
@@ -394,6 +398,94 @@ public class ParsingTests extends AbstractXtextTests {
 		ReturnStatement statement = (ReturnStatement) declaration.getBody().getStatements().get(0);
 		assertTrue(statement.getValue() instanceof VariableReference);
 		assertEquals(declaration.getParameters().get(0), ((VariableReference)statement.getValue()).getVariable());
+	}
+
+	@Test
+	public void ifNoElse() throws Exception {
+		final Script script = getScript("if(true) var a;");
+
+		assertEquals(1, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof If);
+		final If ifStatement = (If) script.getStatements().get(0);
+		assertTrue(ifStatement.getCondition() instanceof TrueLiteral);
+		assertTrue(ifStatement.getThen() instanceof LocalDeclaration);
+		final LocalDeclaration thenStatement = (LocalDeclaration) ifStatement.getThen();
+		assertEquals(1, thenStatement.getVariables().size());
+		assertEquals("a", thenStatement.getVariables().get(0).getName());
+		assertEquals(null, ifStatement.getElse());
+	}
+
+	@Test
+	public void ifWithElse() throws Exception {
+		final Script script = getScript("if(true) var a; else var b;");
+
+		assertEquals(1, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof If);
+		final If ifStatement = (If) script.getStatements().get(0);
+		assertTrue(ifStatement.getCondition() instanceof TrueLiteral);
+		final LocalDeclaration thenStatement = (LocalDeclaration) ifStatement.getThen();
+		assertEquals(1, thenStatement.getVariables().size());
+		assertEquals("a", thenStatement.getVariables().get(0).getName());
+		assertTrue(ifStatement.getElse()instanceof LocalDeclaration);
+		final LocalDeclaration elseStatement = (LocalDeclaration) ifStatement.getElse();
+		assertEquals(1, elseStatement.getVariables().size());
+		assertEquals("b", elseStatement.getVariables().get(0).getName());
+	}
+
+	@Test
+	public void whileTest() throws Exception {
+		final Script script = getScript("while(true) var a;");
+
+		assertEquals(1, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof While);
+		final While whileStatement = (While) script.getStatements().get(0);
+		assertTrue(whileStatement.getCondition() instanceof TrueLiteral);
+		assertTrue(whileStatement.getStatement() instanceof LocalDeclaration);
+		final LocalDeclaration statement = (LocalDeclaration) whileStatement.getStatement();
+		assertEquals(1, statement.getVariables().size());
+		assertEquals("a", statement.getVariables().get(0).getName());
+	}
+
+	@Test
+	public void functionCallNoArgs() throws Exception {
+		final Script script = getScript("function aFunction(){} aFunction();");
+
+		assertEquals(2, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof FunctionDeclaration);
+		assertTrue(script.getStatements().get(1) instanceof FunctionCall);
+		FunctionCall functionCall = (FunctionCall) script.getStatements().get(1);
+		assertEquals(0, functionCall.getArgs().size());
+	}
+
+	@Test
+	public void functionCallOneArg() throws Exception {
+		final Script script = getScript("function aFunction(a){} aFunction(1);");
+
+		assertEquals(2, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof FunctionDeclaration);
+		assertTrue(script.getStatements().get(1) instanceof FunctionCall);
+		FunctionCall functionCall = (FunctionCall) script.getStatements().get(1);
+		assertEquals(1, functionCall.getArgs().size());
+		assertTrue(functionCall.getArgs().get(0) instanceof IntLiteral);
+		IntLiteral arg = (IntLiteral) functionCall.getArgs().get(0);
+		assertEquals(1, arg.getValue());
+	}
+
+	@Test
+	public void functionCallTwoArgs() throws Exception {
+		final Script script = getScript("function aFunction(a, b){} aFunction(1, 2);");
+
+		assertEquals(2, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof FunctionDeclaration);
+		assertTrue(script.getStatements().get(1) instanceof FunctionCall);
+		FunctionCall functionCall = (FunctionCall) script.getStatements().get(1);
+		assertEquals(2, functionCall.getArgs().size());
+		assertTrue(functionCall.getArgs().get(0) instanceof IntLiteral);
+		IntLiteral arg = (IntLiteral) functionCall.getArgs().get(0);
+		assertEquals(1, arg.getValue());
+		assertTrue(functionCall.getArgs().get(1) instanceof IntLiteral);
+		arg = (IntLiteral) functionCall.getArgs().get(1);
+		assertEquals(2, arg.getValue());
 	}
 
 }
