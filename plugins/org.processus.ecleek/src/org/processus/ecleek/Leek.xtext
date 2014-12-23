@@ -132,9 +132,9 @@ PrimaryExpression returns Expression:
 	| {StringLiteral} value=STRING
 	| ArrayLiteral
 	| FunctionDeclaration
-	| {NullLiteral}
-	| {FalseLiteral}
-	| {TrueLiteral}
+	| {NullLiteral} 'null'
+	| {FalseLiteral} 'false'
+	| {TrueLiteral} 'true'
 ;
 
 ArrayLiteral:
