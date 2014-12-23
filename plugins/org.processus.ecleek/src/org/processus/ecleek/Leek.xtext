@@ -76,20 +76,20 @@ ForIn:
 	'for' '(' (key=ForInVariableReference ':')? value=ForInVariableReference 'in' array=Expression ')' statement=IterationStatement
 ;
 
-ForInVariableReference returns VariableDeclaration:
+ForInVariableReference returns VariableReference:
 	'var' name=ID
-	| variable=[VariableDeclaration]
+	| variable=[VariableReference]
 ;
 
 ForInitializer:
-	VariableDeclaration
+	VariableReference
 ;
 
 FunctionDeclaration:
 	'function' name=ID '(' (parameters+=ParameterDeclaration (',' parameters+=ParameterDeclaration)*)? ')' body=FunctionStatementBlock
 ;
 
-ParameterDeclaration returns VariableDeclaration:
+ParameterDeclaration returns VariableReferenceable:
 	(byAdress?='@')? name=ID
 ;
 
@@ -142,7 +142,8 @@ ArrayLiteral:
 ;
 
 VariableReferenceable:
-	VariableDeclaration
+	LocalDeclaration
+	| GlobalDeclaration
 	| ParameterDeclaration
 ;
 
