@@ -65,11 +65,7 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
     switch (eClass.getClassifierID())
     {
       case LeekPackage.SCRIPT: return createScript();
-      case LeekPackage.TOPLEVEL_STATEMENT: return createToplevelStatement();
       case LeekPackage.STATEMENT: return createStatement();
-      case LeekPackage.ITERATION_STATEMENT: return createIterationStatement();
-      case LeekPackage.FUNCTION_STATEMENT: return createFunctionStatement();
-      case LeekPackage.FUNCTION_STATEMENT_BLOCK: return createFunctionStatementBlock();
       case LeekPackage.BREAK_STATEMENT: return createBreakStatement();
       case LeekPackage.CONTINUE_STATEMENT: return createContinueStatement();
       case LeekPackage.STATEMENT_BLOCK: return createStatementBlock();
@@ -88,11 +84,12 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
       case LeekPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
       case LeekPackage.EXPRESSION: return createExpression();
       case LeekPackage.ARRAY_LITERAL: return createArrayLiteral();
+      case LeekPackage.POSTFIX: return createPostfix();
       case LeekPackage.FUNCTION_CALL: return createFunctionCall();
       case LeekPackage.RETURN_STATEMENT: return createReturnStatement();
       case LeekPackage.INCLUDE: return createInclude();
       case LeekPackage.EMPTY_STATEMENT: return createEmptyStatement();
-      case LeekPackage.TYPED_EQUALS: return createTypedEquals();
+      case LeekPackage.COMPARISON: return createComparison();
       case LeekPackage.EQUALS: return createEquals();
       case LeekPackage.TYPED_DIFFERENT: return createTypedDifferent();
       case LeekPackage.DIFFERENT: return createDifferent();
@@ -100,6 +97,8 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
       case LeekPackage.LESS: return createLess();
       case LeekPackage.MORE_OR_EQUALS: return createMoreOrEquals();
       case LeekPackage.MORE: return createMore();
+      case LeekPackage.OR: return createOr();
+      case LeekPackage.AND: return createAnd();
       case LeekPackage.PLUS: return createPlus();
       case LeekPackage.MINUS: return createMinus();
       case LeekPackage.MULTI: return createMulti();
@@ -110,6 +109,8 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
       case LeekPackage.NULL_LITERAL: return createNullLiteral();
       case LeekPackage.FALSE_LITERAL: return createFalseLiteral();
       case LeekPackage.TRUE_LITERAL: return createTrueLiteral();
+      case LeekPackage.POSTFIX_DECREMENT: return createPostfixDecrement();
+      case LeekPackage.POSTFIX_INCREMENT: return createPostfixIncrement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -131,54 +132,10 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ToplevelStatement createToplevelStatement()
-  {
-    ToplevelStatementImpl toplevelStatement = new ToplevelStatementImpl();
-    return toplevelStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Statement createStatement()
   {
     StatementImpl statement = new StatementImpl();
     return statement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public IterationStatement createIterationStatement()
-  {
-    IterationStatementImpl iterationStatement = new IterationStatementImpl();
-    return iterationStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FunctionStatement createFunctionStatement()
-  {
-    FunctionStatementImpl functionStatement = new FunctionStatementImpl();
-    return functionStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FunctionStatementBlock createFunctionStatementBlock()
-  {
-    FunctionStatementBlockImpl functionStatementBlock = new FunctionStatementBlockImpl();
-    return functionStatementBlock;
   }
 
   /**
@@ -384,6 +341,17 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Postfix createPostfix()
+  {
+    PostfixImpl postfix = new PostfixImpl();
+    return postfix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public FunctionCall createFunctionCall()
   {
     FunctionCallImpl functionCall = new FunctionCallImpl();
@@ -428,10 +396,10 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypedEquals createTypedEquals()
+  public Comparison createComparison()
   {
-    TypedEqualsImpl typedEquals = new TypedEqualsImpl();
-    return typedEquals;
+    ComparisonImpl comparison = new ComparisonImpl();
+    return comparison;
   }
 
   /**
@@ -509,6 +477,28 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
   {
     MoreImpl more = new MoreImpl();
     return more;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Or createOr()
+  {
+    OrImpl or = new OrImpl();
+    return or;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public And createAnd()
+  {
+    AndImpl and = new AndImpl();
+    return and;
   }
 
   /**
@@ -619,6 +609,28 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
   {
     TrueLiteralImpl trueLiteral = new TrueLiteralImpl();
     return trueLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PostfixDecrement createPostfixDecrement()
+  {
+    PostfixDecrementImpl postfixDecrement = new PostfixDecrementImpl();
+    return postfixDecrement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PostfixIncrement createPostfixIncrement()
+  {
+    PostfixIncrementImpl postfixIncrement = new PostfixIncrementImpl();
+    return postfixIncrement;
   }
 
   /**

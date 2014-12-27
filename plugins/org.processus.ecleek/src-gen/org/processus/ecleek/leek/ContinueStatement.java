@@ -13,6 +13,6 @@ package org.processus.ecleek.leek;
  * @model
  * @generated
  */
-public interface ContinueStatement extends IterationStatement
+public interface ContinueStatement extends Statement
 {
 } // ContinueStatement

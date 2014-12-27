@@ -4,28 +4,26 @@ package org.processus.ecleek.leek.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.ToplevelStatement;
+import org.processus.ecleek.leek.Postfix;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Toplevel Statement</b></em>'.
+ * An implementation of the model object '<em><b>Postfix</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ToplevelStatementImpl extends MinimalEObjectImpl.Container implements ToplevelStatement
+public class PostfixImpl extends ExpressionImpl implements Postfix
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ToplevelStatementImpl()
+  protected PostfixImpl()
   {
     super();
   }
@@ -38,7 +36,7 @@ public class ToplevelStatementImpl extends MinimalEObjectImpl.Container implemen
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.TOPLEVEL_STATEMENT;
+    return LeekPackage.Literals.POSTFIX;
   }
 
-} //ToplevelStatementImpl
+} //PostfixImpl

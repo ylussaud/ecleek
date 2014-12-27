@@ -1,6 +1,7 @@
 package org.processus.ecleek.tests;
 
 import org.eclipse.xtext.junit4.AbstractXtextTests;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.processus.ecleek.LeekStandaloneSetup;
 import org.processus.ecleek.leek.ArrayLiteral;
@@ -10,6 +11,8 @@ import org.processus.ecleek.leek.GlobalDeclaration;
 import org.processus.ecleek.leek.If;
 import org.processus.ecleek.leek.IntLiteral;
 import org.processus.ecleek.leek.LocalDeclaration;
+import org.processus.ecleek.leek.PostfixDecrement;
+import org.processus.ecleek.leek.PostfixIncrement;
 import org.processus.ecleek.leek.ReturnStatement;
 import org.processus.ecleek.leek.Script;
 import org.processus.ecleek.leek.TrueLiteral;
@@ -23,7 +26,6 @@ public class ParsingTests extends AbstractXtextTests {
 		super.setUp();
 		with(new LeekStandaloneSetup());
 	}
-
 
 	protected Script getScript(String string) throws Exception {
 		Script res = (Script) getModel(string);
@@ -486,6 +488,48 @@ public class ParsingTests extends AbstractXtextTests {
 		assertTrue(functionCall.getArgs().get(1) instanceof IntLiteral);
 		arg = (IntLiteral) functionCall.getArgs().get(1);
 		assertEquals(2, arg.getValue());
+	}
+
+	@Test
+	public void postfixDecrementExpression() throws Exception {
+		final Script script = getScript("var a = a--;");
+
+		assertEquals(1, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
+		final LocalDeclaration local = (LocalDeclaration) script.getStatements().get(0);
+		assertEquals(1, local.getVariables().size());
+		assertTrue(local.getVariables().get(0).getValue() instanceof PostfixDecrement);
+	}
+
+	@Test
+	public void postfixIncrementExpression() throws Exception {
+		final Script script = getScript("var a = a++;");
+
+		assertEquals(1, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
+		final LocalDeclaration local = (LocalDeclaration) script.getStatements().get(0);
+		assertEquals(1, local.getVariables().size());
+		assertTrue(local.getVariables().get(0).getValue() instanceof PostfixIncrement);
+	}
+
+	@Test
+	@Ignore
+	public void postfixDecrementStatement() throws Exception {
+		final Script script = getScript("var a; a--;");
+
+		assertEquals(2, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
+		assertTrue(script.getStatements().get(1) instanceof LocalDeclaration);
+	}
+
+	@Test
+	@Ignore
+	public void postfixIncrementStatement() throws Exception {
+		final Script script = getScript("var a; a++;");
+
+		assertEquals(2, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
+		assertTrue(script.getStatements().get(1) instanceof LocalDeclaration);
 	}
 
 }

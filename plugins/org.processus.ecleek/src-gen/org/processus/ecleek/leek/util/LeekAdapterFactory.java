@@ -80,29 +80,9 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createScriptAdapter();
       }
       @Override
-      public Adapter caseToplevelStatement(ToplevelStatement object)
-      {
-        return createToplevelStatementAdapter();
-      }
-      @Override
       public Adapter caseStatement(Statement object)
       {
         return createStatementAdapter();
-      }
-      @Override
-      public Adapter caseIterationStatement(IterationStatement object)
-      {
-        return createIterationStatementAdapter();
-      }
-      @Override
-      public Adapter caseFunctionStatement(FunctionStatement object)
-      {
-        return createFunctionStatementAdapter();
-      }
-      @Override
-      public Adapter caseFunctionStatementBlock(FunctionStatementBlock object)
-      {
-        return createFunctionStatementBlockAdapter();
       }
       @Override
       public Adapter caseBreakStatement(BreakStatement object)
@@ -195,6 +175,11 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createArrayLiteralAdapter();
       }
       @Override
+      public Adapter casePostfix(Postfix object)
+      {
+        return createPostfixAdapter();
+      }
+      @Override
       public Adapter caseFunctionCall(FunctionCall object)
       {
         return createFunctionCallAdapter();
@@ -215,9 +200,9 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createEmptyStatementAdapter();
       }
       @Override
-      public Adapter caseTypedEquals(TypedEquals object)
+      public Adapter caseComparison(Comparison object)
       {
-        return createTypedEqualsAdapter();
+        return createComparisonAdapter();
       }
       @Override
       public Adapter caseEquals(Equals object)
@@ -253,6 +238,16 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
       public Adapter caseMore(More object)
       {
         return createMoreAdapter();
+      }
+      @Override
+      public Adapter caseOr(Or object)
+      {
+        return createOrAdapter();
+      }
+      @Override
+      public Adapter caseAnd(And object)
+      {
+        return createAndAdapter();
       }
       @Override
       public Adapter casePlus(Plus object)
@@ -305,6 +300,16 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createTrueLiteralAdapter();
       }
       @Override
+      public Adapter casePostfixDecrement(PostfixDecrement object)
+      {
+        return createPostfixDecrementAdapter();
+      }
+      @Override
+      public Adapter casePostfixIncrement(PostfixIncrement object)
+      {
+        return createPostfixIncrementAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -342,21 +347,6 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.ToplevelStatement <em>Toplevel Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.processus.ecleek.leek.ToplevelStatement
-   * @generated
-   */
-  public Adapter createToplevelStatementAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.Statement <em>Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -367,51 +357,6 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStatementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.IterationStatement <em>Iteration Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.processus.ecleek.leek.IterationStatement
-   * @generated
-   */
-  public Adapter createIterationStatementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.FunctionStatement <em>Function Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.processus.ecleek.leek.FunctionStatement
-   * @generated
-   */
-  public Adapter createFunctionStatementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.FunctionStatementBlock <em>Function Statement Block</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.processus.ecleek.leek.FunctionStatementBlock
-   * @generated
-   */
-  public Adapter createFunctionStatementBlockAdapter()
   {
     return null;
   }
@@ -687,6 +632,21 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.Postfix <em>Postfix</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.Postfix
+   * @generated
+   */
+  public Adapter createPostfixAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.FunctionCall <em>Function Call</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -747,16 +707,16 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.TypedEquals <em>Typed Equals</em>}'.
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.Comparison <em>Comparison</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.processus.ecleek.leek.TypedEquals
+   * @see org.processus.ecleek.leek.Comparison
    * @generated
    */
-  public Adapter createTypedEqualsAdapter()
+  public Adapter createComparisonAdapter()
   {
     return null;
   }
@@ -862,6 +822,36 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMoreAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.Or <em>Or</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.Or
+   * @generated
+   */
+  public Adapter createOrAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.And <em>And</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.And
+   * @generated
+   */
+  public Adapter createAndAdapter()
   {
     return null;
   }
@@ -1012,6 +1002,36 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTrueLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.PostfixDecrement <em>Postfix Decrement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.PostfixDecrement
+   * @generated
+   */
+  public Adapter createPostfixDecrementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.PostfixIncrement <em>Postfix Increment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.PostfixIncrement
+   * @generated
+   */
+  public Adapter createPostfixIncrementAdapter()
   {
     return null;
   }

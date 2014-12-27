@@ -13,6 +13,6 @@ package org.processus.ecleek.leek;
  * @model
  * @generated
  */
-public interface BreakStatement extends IterationStatement
+public interface BreakStatement extends Statement
 {
 } // BreakStatement

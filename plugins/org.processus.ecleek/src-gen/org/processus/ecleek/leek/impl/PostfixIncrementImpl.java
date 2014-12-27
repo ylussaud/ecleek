@@ -10,41 +10,41 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.processus.ecleek.leek.Iteration;
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.Statement;
+import org.processus.ecleek.leek.PostfixIncrement;
+import org.processus.ecleek.leek.VariableReference;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Iteration</b></em>'.
+ * An implementation of the model object '<em><b>Postfix Increment</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.IterationImpl#getStatement <em>Statement</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.PostfixIncrementImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class IterationImpl extends StatementImpl implements Iteration
+public class PostfixIncrementImpl extends PostfixImpl implements PostfixIncrement
 {
   /**
-   * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatement()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected Statement statement;
+  protected VariableReference value;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected IterationImpl()
+  protected PostfixIncrementImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class IterationImpl extends StatementImpl implements Iteration
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.ITERATION;
+    return LeekPackage.Literals.POSTFIX_INCREMENT;
   }
 
   /**
@@ -65,9 +65,9 @@ public class IterationImpl extends StatementImpl implements Iteration
    * <!-- end-user-doc -->
    * @generated
    */
-  public Statement getStatement()
+  public VariableReference getValue()
   {
-    return statement;
+    return value;
   }
 
   /**
@@ -75,13 +75,13 @@ public class IterationImpl extends StatementImpl implements Iteration
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetStatement(Statement newStatement, NotificationChain msgs)
+  public NotificationChain basicSetValue(VariableReference newValue, NotificationChain msgs)
   {
-    Statement oldStatement = statement;
-    statement = newStatement;
+    VariableReference oldValue = value;
+    value = newValue;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.ITERATION__STATEMENT, oldStatement, newStatement);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.POSTFIX_INCREMENT__VALUE, oldValue, newValue);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +92,20 @@ public class IterationImpl extends StatementImpl implements Iteration
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setStatement(Statement newStatement)
+  public void setValue(VariableReference newValue)
   {
-    if (newStatement != statement)
+    if (newValue != value)
     {
       NotificationChain msgs = null;
-      if (statement != null)
-        msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.ITERATION__STATEMENT, null, msgs);
-      if (newStatement != null)
-        msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.ITERATION__STATEMENT, null, msgs);
-      msgs = basicSetStatement(newStatement, msgs);
+      if (value != null)
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.POSTFIX_INCREMENT__VALUE, null, msgs);
+      if (newValue != null)
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.POSTFIX_INCREMENT__VALUE, null, msgs);
+      msgs = basicSetValue(newValue, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.ITERATION__STATEMENT, newStatement, newStatement));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.POSTFIX_INCREMENT__VALUE, newValue, newValue));
   }
 
   /**
@@ -118,8 +118,8 @@ public class IterationImpl extends StatementImpl implements Iteration
   {
     switch (featureID)
     {
-      case LeekPackage.ITERATION__STATEMENT:
-        return basicSetStatement(null, msgs);
+      case LeekPackage.POSTFIX_INCREMENT__VALUE:
+        return basicSetValue(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +134,8 @@ public class IterationImpl extends StatementImpl implements Iteration
   {
     switch (featureID)
     {
-      case LeekPackage.ITERATION__STATEMENT:
-        return getStatement();
+      case LeekPackage.POSTFIX_INCREMENT__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,8 +150,8 @@ public class IterationImpl extends StatementImpl implements Iteration
   {
     switch (featureID)
     {
-      case LeekPackage.ITERATION__STATEMENT:
-        setStatement((Statement)newValue);
+      case LeekPackage.POSTFIX_INCREMENT__VALUE:
+        setValue((VariableReference)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +167,8 @@ public class IterationImpl extends StatementImpl implements Iteration
   {
     switch (featureID)
     {
-      case LeekPackage.ITERATION__STATEMENT:
-        setStatement((Statement)null);
+      case LeekPackage.POSTFIX_INCREMENT__VALUE:
+        setValue((VariableReference)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,10 +184,10 @@ public class IterationImpl extends StatementImpl implements Iteration
   {
     switch (featureID)
     {
-      case LeekPackage.ITERATION__STATEMENT:
-        return statement != null;
+      case LeekPackage.POSTFIX_INCREMENT__VALUE:
+        return value != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //IterationImpl
+} //PostfixIncrementImpl

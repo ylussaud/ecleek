@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.processus.ecleek.leek.FunctionDeclaration;
-import org.processus.ecleek.leek.FunctionStatementBlock;
 import org.processus.ecleek.leek.LeekPackage;
+import org.processus.ecleek.leek.StatementBlock;
 import org.processus.ecleek.leek.VariableReferenceable;
 
 /**
@@ -37,7 +37,7 @@ import org.processus.ecleek.leek.VariableReferenceable;
  *
  * @generated
  */
-public class FunctionDeclarationImpl extends ToplevelStatementImpl implements FunctionDeclaration
+public class FunctionDeclarationImpl extends StatementImpl implements FunctionDeclaration
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -77,7 +77,7 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
    * @generated
    * @ordered
    */
-  protected FunctionStatementBlock body;
+  protected StatementBlock body;
 
   /**
    * <!-- begin-user-doc -->
@@ -142,7 +142,7 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public FunctionStatementBlock getBody()
+  public StatementBlock getBody()
   {
     return body;
   }
@@ -152,9 +152,9 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBody(FunctionStatementBlock newBody, NotificationChain msgs)
+  public NotificationChain basicSetBody(StatementBlock newBody, NotificationChain msgs)
   {
-    FunctionStatementBlock oldBody = body;
+    StatementBlock oldBody = body;
     body = newBody;
     if (eNotificationRequired())
     {
@@ -169,7 +169,7 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBody(FunctionStatementBlock newBody)
+  public void setBody(StatementBlock newBody)
   {
     if (newBody != body)
     {
@@ -242,7 +242,7 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
         getParameters().addAll((Collection<? extends VariableReferenceable>)newValue);
         return;
       case LeekPackage.FUNCTION_DECLARATION__BODY:
-        setBody((FunctionStatementBlock)newValue);
+        setBody((StatementBlock)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -265,7 +265,7 @@ public class FunctionDeclarationImpl extends ToplevelStatementImpl implements Fu
         getParameters().clear();
         return;
       case LeekPackage.FUNCTION_DECLARATION__BODY:
-        setBody((FunctionStatementBlock)null);
+        setBody((StatementBlock)null);
         return;
     }
     super.eUnset(featureID);

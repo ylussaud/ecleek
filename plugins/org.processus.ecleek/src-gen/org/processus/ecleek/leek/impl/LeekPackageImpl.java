@@ -10,8 +10,10 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.processus.ecleek.leek.Affectation;
+import org.processus.ecleek.leek.And;
 import org.processus.ecleek.leek.ArrayLiteral;
 import org.processus.ecleek.leek.BreakStatement;
+import org.processus.ecleek.leek.Comparison;
 import org.processus.ecleek.leek.ContinueStatement;
 import org.processus.ecleek.leek.Different;
 import org.processus.ecleek.leek.Div;
@@ -24,14 +26,11 @@ import org.processus.ecleek.leek.ForIn;
 import org.processus.ecleek.leek.ForInitializer;
 import org.processus.ecleek.leek.FunctionCall;
 import org.processus.ecleek.leek.FunctionDeclaration;
-import org.processus.ecleek.leek.FunctionStatement;
-import org.processus.ecleek.leek.FunctionStatementBlock;
 import org.processus.ecleek.leek.GlobalDeclaration;
 import org.processus.ecleek.leek.If;
 import org.processus.ecleek.leek.Include;
 import org.processus.ecleek.leek.IntLiteral;
 import org.processus.ecleek.leek.Iteration;
-import org.processus.ecleek.leek.IterationStatement;
 import org.processus.ecleek.leek.LeekFactory;
 import org.processus.ecleek.leek.LeekPackage;
 import org.processus.ecleek.leek.Less;
@@ -42,17 +41,19 @@ import org.processus.ecleek.leek.More;
 import org.processus.ecleek.leek.MoreOrEquals;
 import org.processus.ecleek.leek.Multi;
 import org.processus.ecleek.leek.NullLiteral;
+import org.processus.ecleek.leek.Or;
 import org.processus.ecleek.leek.Plus;
+import org.processus.ecleek.leek.Postfix;
+import org.processus.ecleek.leek.PostfixDecrement;
+import org.processus.ecleek.leek.PostfixIncrement;
 import org.processus.ecleek.leek.RealLiteral;
 import org.processus.ecleek.leek.ReturnStatement;
 import org.processus.ecleek.leek.Script;
 import org.processus.ecleek.leek.Statement;
 import org.processus.ecleek.leek.StatementBlock;
 import org.processus.ecleek.leek.StringLiteral;
-import org.processus.ecleek.leek.ToplevelStatement;
 import org.processus.ecleek.leek.TrueLiteral;
 import org.processus.ecleek.leek.TypedDifferent;
-import org.processus.ecleek.leek.TypedEquals;
 import org.processus.ecleek.leek.VariableDeclaration;
 import org.processus.ecleek.leek.VariableReference;
 import org.processus.ecleek.leek.VariableReferenceable;
@@ -78,35 +79,7 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass toplevelStatementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass statementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass iterationStatementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass functionStatementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass functionStatementBlockEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -239,6 +212,13 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass postfixEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass functionCallEClass = null;
 
   /**
@@ -267,7 +247,7 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass typedEqualsEClass = null;
+  private EClass comparisonEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -317,6 +297,20 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * @generated
    */
   private EClass moreEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass orEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass andEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -387,6 +381,20 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * @generated
    */
   private EClass trueLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass postfixDecrementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass postfixIncrementEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -476,59 +484,9 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getToplevelStatement()
-  {
-    return toplevelStatementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getStatement()
   {
     return statementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getIterationStatement()
-  {
-    return iterationStatementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFunctionStatement()
-  {
-    return functionStatementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFunctionStatementBlock()
-  {
-    return functionStatementBlockEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionStatementBlock_Statements()
-  {
-    return (EReference)functionStatementBlockEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -986,6 +944,16 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getPostfix()
+  {
+    return postfixEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getFunctionCall()
   {
     return functionCallEClass;
@@ -1066,9 +1034,9 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTypedEquals()
+  public EClass getComparison()
   {
-    return typedEqualsEClass;
+    return comparisonEClass;
   }
 
   /**
@@ -1076,9 +1044,9 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTypedEquals_Left()
+  public EReference getComparison_Left()
   {
-    return (EReference)typedEqualsEClass.getEStructuralFeatures().get(0);
+    return (EReference)comparisonEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1086,9 +1054,9 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTypedEquals_Right()
+  public EReference getComparison_Right()
   {
-    return (EReference)typedEqualsEClass.getEStructuralFeatures().get(1);
+    return (EReference)comparisonEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1306,6 +1274,66 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getOr()
+  {
+    return orEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOr_Left()
+  {
+    return (EReference)orEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOr_Right()
+  {
+    return (EReference)orEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAnd()
+  {
+    return andEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAnd_Left()
+  {
+    return (EReference)andEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAnd_Right()
+  {
+    return (EReference)andEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getPlus()
   {
     return plusEClass;
@@ -1516,6 +1544,46 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getPostfixDecrement()
+  {
+    return postfixDecrementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPostfixDecrement_Value()
+  {
+    return (EReference)postfixDecrementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPostfixIncrement()
+  {
+    return postfixIncrementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPostfixIncrement_Value()
+  {
+    return (EReference)postfixIncrementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public LeekFactory getLeekFactory()
   {
     return (LeekFactory)getEFactoryInstance();
@@ -1544,16 +1612,7 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     scriptEClass = createEClass(SCRIPT);
     createEReference(scriptEClass, SCRIPT__STATEMENTS);
 
-    toplevelStatementEClass = createEClass(TOPLEVEL_STATEMENT);
-
     statementEClass = createEClass(STATEMENT);
-
-    iterationStatementEClass = createEClass(ITERATION_STATEMENT);
-
-    functionStatementEClass = createEClass(FUNCTION_STATEMENT);
-
-    functionStatementBlockEClass = createEClass(FUNCTION_STATEMENT_BLOCK);
-    createEReference(functionStatementBlockEClass, FUNCTION_STATEMENT_BLOCK__STATEMENTS);
 
     breakStatementEClass = createEClass(BREAK_STATEMENT);
 
@@ -1618,6 +1677,8 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     arrayLiteralEClass = createEClass(ARRAY_LITERAL);
     createEReference(arrayLiteralEClass, ARRAY_LITERAL__VALUES);
 
+    postfixEClass = createEClass(POSTFIX);
+
     functionCallEClass = createEClass(FUNCTION_CALL);
     createEReference(functionCallEClass, FUNCTION_CALL__FUNCTION);
     createEReference(functionCallEClass, FUNCTION_CALL__ARGS);
@@ -1630,9 +1691,9 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
 
     emptyStatementEClass = createEClass(EMPTY_STATEMENT);
 
-    typedEqualsEClass = createEClass(TYPED_EQUALS);
-    createEReference(typedEqualsEClass, TYPED_EQUALS__LEFT);
-    createEReference(typedEqualsEClass, TYPED_EQUALS__RIGHT);
+    comparisonEClass = createEClass(COMPARISON);
+    createEReference(comparisonEClass, COMPARISON__LEFT);
+    createEReference(comparisonEClass, COMPARISON__RIGHT);
 
     equalsEClass = createEClass(EQUALS);
     createEReference(equalsEClass, EQUALS__LEFT);
@@ -1661,6 +1722,14 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     moreEClass = createEClass(MORE);
     createEReference(moreEClass, MORE__LEFT);
     createEReference(moreEClass, MORE__RIGHT);
+
+    orEClass = createEClass(OR);
+    createEReference(orEClass, OR__LEFT);
+    createEReference(orEClass, OR__RIGHT);
+
+    andEClass = createEClass(AND);
+    createEReference(andEClass, AND__LEFT);
+    createEReference(andEClass, AND__RIGHT);
 
     plusEClass = createEClass(PLUS);
     createEReference(plusEClass, PLUS__LEFT);
@@ -1692,6 +1761,12 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     falseLiteralEClass = createEClass(FALSE_LITERAL);
 
     trueLiteralEClass = createEClass(TRUE_LITERAL);
+
+    postfixDecrementEClass = createEClass(POSTFIX_DECREMENT);
+    createEReference(postfixDecrementEClass, POSTFIX_DECREMENT__VALUE);
+
+    postfixIncrementEClass = createEClass(POSTFIX_INCREMENT);
+    createEReference(postfixIncrementEClass, POSTFIX_INCREMENT__VALUE);
   }
 
   /**
@@ -1723,11 +1798,8 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    statementEClass.getESuperTypes().add(this.getToplevelStatement());
-    statementEClass.getESuperTypes().add(this.getIterationStatement());
-    statementEClass.getESuperTypes().add(this.getFunctionStatement());
-    breakStatementEClass.getESuperTypes().add(this.getIterationStatement());
-    continueStatementEClass.getESuperTypes().add(this.getIterationStatement());
+    breakStatementEClass.getESuperTypes().add(this.getStatement());
+    continueStatementEClass.getESuperTypes().add(this.getStatement());
     statementBlockEClass.getESuperTypes().add(this.getStatement());
     affectationEClass.getESuperTypes().add(this.getStatement());
     ifEClass.getESuperTypes().add(this.getStatement());
@@ -1736,20 +1808,21 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     forEClass.getESuperTypes().add(this.getIteration());
     forInEClass.getESuperTypes().add(this.getIteration());
     variableReferenceEClass.getESuperTypes().add(this.getForInitializer());
-    variableReferenceEClass.getESuperTypes().add(this.getExpression());
-    functionDeclarationEClass.getESuperTypes().add(this.getToplevelStatement());
+    variableReferenceEClass.getESuperTypes().add(this.getPostfix());
+    functionDeclarationEClass.getESuperTypes().add(this.getStatement());
     functionDeclarationEClass.getESuperTypes().add(this.getExpression());
     localDeclarationEClass.getESuperTypes().add(this.getStatement());
     localDeclarationEClass.getESuperTypes().add(this.getVariableReferenceable());
-    globalDeclarationEClass.getESuperTypes().add(this.getToplevelStatement());
+    globalDeclarationEClass.getESuperTypes().add(this.getStatement());
     globalDeclarationEClass.getESuperTypes().add(this.getVariableReferenceable());
     arrayLiteralEClass.getESuperTypes().add(this.getExpression());
+    postfixEClass.getESuperTypes().add(this.getExpression());
     functionCallEClass.getESuperTypes().add(this.getStatement());
     functionCallEClass.getESuperTypes().add(this.getExpression());
-    returnStatementEClass.getESuperTypes().add(this.getFunctionStatement());
-    includeEClass.getESuperTypes().add(this.getToplevelStatement());
+    returnStatementEClass.getESuperTypes().add(this.getStatement());
+    includeEClass.getESuperTypes().add(this.getStatement());
     emptyStatementEClass.getESuperTypes().add(this.getStatement());
-    typedEqualsEClass.getESuperTypes().add(this.getExpression());
+    comparisonEClass.getESuperTypes().add(this.getExpression());
     equalsEClass.getESuperTypes().add(this.getExpression());
     typedDifferentEClass.getESuperTypes().add(this.getExpression());
     differentEClass.getESuperTypes().add(this.getExpression());
@@ -1757,6 +1830,8 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     lessEClass.getESuperTypes().add(this.getExpression());
     moreOrEqualsEClass.getESuperTypes().add(this.getExpression());
     moreEClass.getESuperTypes().add(this.getExpression());
+    orEClass.getESuperTypes().add(this.getExpression());
+    andEClass.getESuperTypes().add(this.getExpression());
     plusEClass.getESuperTypes().add(this.getExpression());
     minusEClass.getESuperTypes().add(this.getExpression());
     multiEClass.getESuperTypes().add(this.getExpression());
@@ -1767,21 +1842,14 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     nullLiteralEClass.getESuperTypes().add(this.getExpression());
     falseLiteralEClass.getESuperTypes().add(this.getExpression());
     trueLiteralEClass.getESuperTypes().add(this.getExpression());
+    postfixDecrementEClass.getESuperTypes().add(this.getPostfix());
+    postfixIncrementEClass.getESuperTypes().add(this.getPostfix());
 
     // Initialize classes and features; add operations and parameters
     initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getScript_Statements(), this.getToplevelStatement(), null, "statements", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(toplevelStatementEClass, ToplevelStatement.class, "ToplevelStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getScript_Statements(), this.getStatement(), null, "statements", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(iterationStatementEClass, IterationStatement.class, "IterationStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(functionStatementEClass, FunctionStatement.class, "FunctionStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(functionStatementBlockEClass, FunctionStatementBlock.class, "FunctionStatementBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFunctionStatementBlock_Statements(), this.getFunctionStatement(), null, "statements", null, 0, -1, FunctionStatementBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(breakStatementEClass, BreakStatement.class, "BreakStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1800,7 +1868,7 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     initEReference(getIf_Else(), this.getStatement(), null, "else", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(iterationEClass, Iteration.class, "Iteration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIteration_Statement(), this.getIterationStatement(), null, "statement", null, 0, 1, Iteration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIteration_Statement(), this.getStatement(), null, "statement", null, 0, 1, Iteration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whileEClass, While.class, "While", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getWhile_Condition(), this.getExpression(), null, "condition", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1825,7 +1893,7 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     initEClass(functionDeclarationEClass, FunctionDeclaration.class, "FunctionDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunctionDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionDeclaration_Parameters(), this.getVariableReferenceable(), null, "parameters", null, 0, -1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionDeclaration_Body(), this.getFunctionStatementBlock(), null, "body", null, 0, 1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionDeclaration_Body(), this.getStatementBlock(), null, "body", null, 0, 1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableReferenceableEClass, VariableReferenceable.class, "VariableReferenceable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariableReferenceable_ByAdress(), ecorePackage.getEBoolean(), "byAdress", null, 0, 1, VariableReferenceable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1846,6 +1914,8 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     initEClass(arrayLiteralEClass, ArrayLiteral.class, "ArrayLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getArrayLiteral_Values(), this.getExpression(), null, "values", null, 0, -1, ArrayLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(postfixEClass, Postfix.class, "Postfix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFunctionCall_Function(), this.getFunctionDeclaration(), null, "function", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionCall_Args(), this.getExpression(), null, "args", null, 0, -1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1858,9 +1928,9 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
 
     initEClass(emptyStatementEClass, EmptyStatement.class, "EmptyStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(typedEqualsEClass, TypedEquals.class, "TypedEquals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTypedEquals_Left(), this.getExpression(), null, "left", null, 0, 1, TypedEquals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTypedEquals_Right(), this.getExpression(), null, "right", null, 0, 1, TypedEquals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(comparisonEClass, Comparison.class, "Comparison", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getComparison_Left(), this.getExpression(), null, "left", null, 0, 1, Comparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComparison_Right(), this.getExpression(), null, "right", null, 0, 1, Comparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(equalsEClass, Equals.class, "Equals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEquals_Left(), this.getExpression(), null, "left", null, 0, 1, Equals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1889,6 +1959,14 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     initEClass(moreEClass, More.class, "More", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMore_Left(), this.getExpression(), null, "left", null, 0, 1, More.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMore_Right(), this.getExpression(), null, "right", null, 0, 1, More.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOr_Left(), this.getExpression(), null, "left", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOr_Right(), this.getExpression(), null, "right", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(andEClass, And.class, "And", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAnd_Left(), this.getExpression(), null, "left", null, 0, 1, And.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAnd_Right(), this.getExpression(), null, "right", null, 0, 1, And.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(plusEClass, Plus.class, "Plus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPlus_Left(), this.getExpression(), null, "left", null, 0, 1, Plus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1920,6 +1998,12 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     initEClass(falseLiteralEClass, FalseLiteral.class, "FalseLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(trueLiteralEClass, TrueLiteral.class, "TrueLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(postfixDecrementEClass, PostfixDecrement.class, "PostfixDecrement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPostfixDecrement_Value(), this.getVariableReference(), null, "value", null, 0, 1, PostfixDecrement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(postfixIncrementEClass, PostfixIncrement.class, "PostfixIncrement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPostfixIncrement_Value(), this.getVariableReference(), null, "value", null, 0, 1, PostfixIncrement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

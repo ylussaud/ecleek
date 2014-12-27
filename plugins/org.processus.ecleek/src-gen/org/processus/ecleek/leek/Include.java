@@ -19,7 +19,7 @@ package org.processus.ecleek.leek;
  * @model
  * @generated
  */
-public interface Include extends ToplevelStatement
+public interface Include extends Statement
 {
   /**
    * Returns the value of the '<em><b>Import URI</b></em>' attribute.

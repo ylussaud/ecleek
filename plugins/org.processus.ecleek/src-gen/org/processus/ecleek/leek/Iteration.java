@@ -30,12 +30,12 @@ public interface Iteration extends Statement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Statement</em>' containment reference.
-   * @see #setStatement(IterationStatement)
+   * @see #setStatement(Statement)
    * @see org.processus.ecleek.leek.LeekPackage#getIteration_Statement()
    * @model containment="true"
    * @generated
    */
-  IterationStatement getStatement();
+  Statement getStatement();
 
   /**
    * Sets the value of the '{@link org.processus.ecleek.leek.Iteration#getStatement <em>Statement</em>}' containment reference.
@@ -45,6 +45,6 @@ public interface Iteration extends Statement
    * @see #getStatement()
    * @generated
    */
-  void setStatement(IterationStatement value);
+  void setStatement(Statement value);
 
 } // Iteration

@@ -24,7 +24,7 @@ import org.processus.ecleek.leek.LeekPackage;
  *
  * @generated
  */
-public class IncludeImpl extends ToplevelStatementImpl implements Include
+public class IncludeImpl extends StatementImpl implements Include
 {
   /**
    * The default value of the '{@link #getImportURI() <em>Import URI</em>}' attribute.

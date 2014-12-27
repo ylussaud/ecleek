@@ -4,6 +4,8 @@ package org.processus.ecleek.leek.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.processus.ecleek.leek.LeekPackage;
 import org.processus.ecleek.leek.Statement;
 
@@ -16,7 +18,7 @@ import org.processus.ecleek.leek.Statement;
  *
  * @generated
  */
-public class StatementImpl extends ToplevelStatementImpl implements Statement
+public class StatementImpl extends MinimalEObjectImpl.Container implements Statement
 {
   /**
    * <!-- begin-user-doc -->

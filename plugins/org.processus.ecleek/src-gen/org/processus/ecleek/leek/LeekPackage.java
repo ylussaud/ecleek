@@ -85,25 +85,6 @@ public interface LeekPackage extends EPackage
   int SCRIPT_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.processus.ecleek.leek.impl.ToplevelStatementImpl <em>Toplevel Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.processus.ecleek.leek.impl.ToplevelStatementImpl
-   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getToplevelStatement()
-   * @generated
-   */
-  int TOPLEVEL_STATEMENT = 1;
-
-  /**
-   * The number of structural features of the '<em>Toplevel Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TOPLEVEL_STATEMENT_FEATURE_COUNT = 0;
-
-  /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.StatementImpl <em>Statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -111,7 +92,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getStatement()
    * @generated
    */
-  int STATEMENT = 2;
+  int STATEMENT = 1;
 
   /**
    * The number of structural features of the '<em>Statement</em>' class.
@@ -120,73 +101,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT_FEATURE_COUNT = TOPLEVEL_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.processus.ecleek.leek.impl.IterationStatementImpl <em>Iteration Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.processus.ecleek.leek.impl.IterationStatementImpl
-   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getIterationStatement()
-   * @generated
-   */
-  int ITERATION_STATEMENT = 3;
-
-  /**
-   * The number of structural features of the '<em>Iteration Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATION_STATEMENT_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link org.processus.ecleek.leek.impl.FunctionStatementImpl <em>Function Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.processus.ecleek.leek.impl.FunctionStatementImpl
-   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getFunctionStatement()
-   * @generated
-   */
-  int FUNCTION_STATEMENT = 4;
-
-  /**
-   * The number of structural features of the '<em>Function Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_STATEMENT_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link org.processus.ecleek.leek.impl.FunctionStatementBlockImpl <em>Function Statement Block</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.processus.ecleek.leek.impl.FunctionStatementBlockImpl
-   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getFunctionStatementBlock()
-   * @generated
-   */
-  int FUNCTION_STATEMENT_BLOCK = 5;
-
-  /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_STATEMENT_BLOCK__STATEMENTS = 0;
-
-  /**
-   * The number of structural features of the '<em>Function Statement Block</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_STATEMENT_BLOCK_FEATURE_COUNT = 1;
+  int STATEMENT_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.BreakStatementImpl <em>Break Statement</em>}' class.
@@ -196,7 +111,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getBreakStatement()
    * @generated
    */
-  int BREAK_STATEMENT = 6;
+  int BREAK_STATEMENT = 2;
 
   /**
    * The number of structural features of the '<em>Break Statement</em>' class.
@@ -205,7 +120,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BREAK_STATEMENT_FEATURE_COUNT = ITERATION_STATEMENT_FEATURE_COUNT + 0;
+  int BREAK_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.ContinueStatementImpl <em>Continue Statement</em>}' class.
@@ -215,7 +130,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getContinueStatement()
    * @generated
    */
-  int CONTINUE_STATEMENT = 7;
+  int CONTINUE_STATEMENT = 3;
 
   /**
    * The number of structural features of the '<em>Continue Statement</em>' class.
@@ -224,7 +139,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTINUE_STATEMENT_FEATURE_COUNT = ITERATION_STATEMENT_FEATURE_COUNT + 0;
+  int CONTINUE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.StatementBlockImpl <em>Statement Block</em>}' class.
@@ -234,7 +149,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getStatementBlock()
    * @generated
    */
-  int STATEMENT_BLOCK = 8;
+  int STATEMENT_BLOCK = 4;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -262,7 +177,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getAffectation()
    * @generated
    */
-  int AFFECTATION = 9;
+  int AFFECTATION = 5;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference.
@@ -299,7 +214,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getIf()
    * @generated
    */
-  int IF = 10;
+  int IF = 6;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -345,7 +260,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getIteration()
    * @generated
    */
-  int ITERATION = 11;
+  int ITERATION = 7;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -373,7 +288,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getWhile()
    * @generated
    */
-  int WHILE = 12;
+  int WHILE = 8;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -410,7 +325,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getFor()
    * @generated
    */
-  int FOR = 13;
+  int FOR = 9;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -465,7 +380,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getForIn()
    * @generated
    */
-  int FOR_IN = 14;
+  int FOR_IN = 10;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -520,7 +435,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getForInitializer()
    * @generated
    */
-  int FOR_INITIALIZER = 16;
+  int FOR_INITIALIZER = 12;
 
   /**
    * The number of structural features of the '<em>For Initializer</em>' class.
@@ -539,7 +454,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getVariableReference()
    * @generated
    */
-  int VARIABLE_REFERENCE = 15;
+  int VARIABLE_REFERENCE = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -585,7 +500,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getFunctionDeclaration()
    * @generated
    */
-  int FUNCTION_DECLARATION = 17;
+  int FUNCTION_DECLARATION = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -594,7 +509,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_DECLARATION__NAME = TOPLEVEL_STATEMENT_FEATURE_COUNT + 0;
+  int FUNCTION_DECLARATION__NAME = STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -603,7 +518,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_DECLARATION__PARAMETERS = TOPLEVEL_STATEMENT_FEATURE_COUNT + 1;
+  int FUNCTION_DECLARATION__PARAMETERS = STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -612,7 +527,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_DECLARATION__BODY = TOPLEVEL_STATEMENT_FEATURE_COUNT + 2;
+  int FUNCTION_DECLARATION__BODY = STATEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Function Declaration</em>' class.
@@ -621,7 +536,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_DECLARATION_FEATURE_COUNT = TOPLEVEL_STATEMENT_FEATURE_COUNT + 3;
+  int FUNCTION_DECLARATION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.VariableReferenceableImpl <em>Variable Referenceable</em>}' class.
@@ -631,7 +546,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getVariableReferenceable()
    * @generated
    */
-  int VARIABLE_REFERENCEABLE = 18;
+  int VARIABLE_REFERENCEABLE = 14;
 
   /**
    * The feature id for the '<em><b>By Adress</b></em>' attribute.
@@ -668,7 +583,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getLocalDeclaration()
    * @generated
    */
-  int LOCAL_DECLARATION = 19;
+  int LOCAL_DECLARATION = 15;
 
   /**
    * The feature id for the '<em><b>By Adress</b></em>' attribute.
@@ -714,7 +629,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getGlobalDeclaration()
    * @generated
    */
-  int GLOBAL_DECLARATION = 20;
+  int GLOBAL_DECLARATION = 16;
 
   /**
    * The feature id for the '<em><b>By Adress</b></em>' attribute.
@@ -723,7 +638,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_DECLARATION__BY_ADRESS = TOPLEVEL_STATEMENT_FEATURE_COUNT + 0;
+  int GLOBAL_DECLARATION__BY_ADRESS = STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -732,7 +647,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_DECLARATION__NAME = TOPLEVEL_STATEMENT_FEATURE_COUNT + 1;
+  int GLOBAL_DECLARATION__NAME = STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -741,7 +656,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_DECLARATION__VARIABLES = TOPLEVEL_STATEMENT_FEATURE_COUNT + 2;
+  int GLOBAL_DECLARATION__VARIABLES = STATEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Global Declaration</em>' class.
@@ -750,7 +665,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_DECLARATION_FEATURE_COUNT = TOPLEVEL_STATEMENT_FEATURE_COUNT + 3;
+  int GLOBAL_DECLARATION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.VariableDeclarationImpl <em>Variable Declaration</em>}' class.
@@ -760,7 +675,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getVariableDeclaration()
    * @generated
    */
-  int VARIABLE_DECLARATION = 21;
+  int VARIABLE_DECLARATION = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -797,7 +712,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 22;
+  int EXPRESSION = 18;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -816,7 +731,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getArrayLiteral()
    * @generated
    */
-  int ARRAY_LITERAL = 23;
+  int ARRAY_LITERAL = 19;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -837,6 +752,25 @@ public interface LeekPackage extends EPackage
   int ARRAY_LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.processus.ecleek.leek.impl.PostfixImpl <em>Postfix</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.processus.ecleek.leek.impl.PostfixImpl
+   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPostfix()
+   * @generated
+   */
+  int POSTFIX = 20;
+
+  /**
+   * The number of structural features of the '<em>Postfix</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSTFIX_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.FunctionCallImpl <em>Function Call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -844,7 +778,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getFunctionCall()
    * @generated
    */
-  int FUNCTION_CALL = 24;
+  int FUNCTION_CALL = 21;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' reference.
@@ -881,7 +815,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getReturnStatement()
    * @generated
    */
-  int RETURN_STATEMENT = 25;
+  int RETURN_STATEMENT = 22;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -890,7 +824,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RETURN_STATEMENT__VALUE = FUNCTION_STATEMENT_FEATURE_COUNT + 0;
+  int RETURN_STATEMENT__VALUE = STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Return Statement</em>' class.
@@ -899,7 +833,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RETURN_STATEMENT_FEATURE_COUNT = FUNCTION_STATEMENT_FEATURE_COUNT + 1;
+  int RETURN_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.IncludeImpl <em>Include</em>}' class.
@@ -909,7 +843,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getInclude()
    * @generated
    */
-  int INCLUDE = 26;
+  int INCLUDE = 23;
 
   /**
    * The feature id for the '<em><b>Import URI</b></em>' attribute.
@@ -918,7 +852,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE__IMPORT_URI = TOPLEVEL_STATEMENT_FEATURE_COUNT + 0;
+  int INCLUDE__IMPORT_URI = STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Include</em>' class.
@@ -927,7 +861,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_FEATURE_COUNT = TOPLEVEL_STATEMENT_FEATURE_COUNT + 1;
+  int INCLUDE_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.EmptyStatementImpl <em>Empty Statement</em>}' class.
@@ -937,7 +871,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getEmptyStatement()
    * @generated
    */
-  int EMPTY_STATEMENT = 27;
+  int EMPTY_STATEMENT = 24;
 
   /**
    * The number of structural features of the '<em>Empty Statement</em>' class.
@@ -949,14 +883,14 @@ public interface LeekPackage extends EPackage
   int EMPTY_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.processus.ecleek.leek.impl.TypedEqualsImpl <em>Typed Equals</em>}' class.
+   * The meta object id for the '{@link org.processus.ecleek.leek.impl.ComparisonImpl <em>Comparison</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.processus.ecleek.leek.impl.TypedEqualsImpl
-   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getTypedEquals()
+   * @see org.processus.ecleek.leek.impl.ComparisonImpl
+   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getComparison()
    * @generated
    */
-  int TYPED_EQUALS = 28;
+  int COMPARISON = 25;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -965,7 +899,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPED_EQUALS__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+  int COMPARISON__LEFT = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -974,16 +908,16 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPED_EQUALS__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+  int COMPARISON__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Typed Equals</em>' class.
+   * The number of structural features of the '<em>Comparison</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPED_EQUALS_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+  int COMPARISON_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.EqualsImpl <em>Equals</em>}' class.
@@ -993,7 +927,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getEquals()
    * @generated
    */
-  int EQUALS = 29;
+  int EQUALS = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1030,7 +964,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getTypedDifferent()
    * @generated
    */
-  int TYPED_DIFFERENT = 30;
+  int TYPED_DIFFERENT = 27;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1067,7 +1001,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getDifferent()
    * @generated
    */
-  int DIFFERENT = 31;
+  int DIFFERENT = 28;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1104,7 +1038,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getLessOrEquals()
    * @generated
    */
-  int LESS_OR_EQUALS = 32;
+  int LESS_OR_EQUALS = 29;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1141,7 +1075,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getLess()
    * @generated
    */
-  int LESS = 33;
+  int LESS = 30;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1178,7 +1112,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getMoreOrEquals()
    * @generated
    */
-  int MORE_OR_EQUALS = 34;
+  int MORE_OR_EQUALS = 31;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1215,7 +1149,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getMore()
    * @generated
    */
-  int MORE = 35;
+  int MORE = 32;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1245,6 +1179,80 @@ public interface LeekPackage extends EPackage
   int MORE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link org.processus.ecleek.leek.impl.OrImpl <em>Or</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.processus.ecleek.leek.impl.OrImpl
+   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getOr()
+   * @generated
+   */
+  int OR = 33;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Or</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.processus.ecleek.leek.impl.AndImpl <em>And</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.processus.ecleek.leek.impl.AndImpl
+   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getAnd()
+   * @generated
+   */
+  int AND = 34;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AND__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AND__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>And</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AND_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.PlusImpl <em>Plus</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1252,7 +1260,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 36;
+  int PLUS = 35;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1289,7 +1297,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 37;
+  int MINUS = 36;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1326,7 +1334,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getMulti()
    * @generated
    */
-  int MULTI = 38;
+  int MULTI = 37;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1363,7 +1371,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 39;
+  int DIV = 38;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1400,7 +1408,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getRealLiteral()
    * @generated
    */
-  int REAL_LITERAL = 40;
+  int REAL_LITERAL = 39;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1428,7 +1436,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getIntLiteral()
    * @generated
    */
-  int INT_LITERAL = 41;
+  int INT_LITERAL = 40;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1456,7 +1464,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 42;
+  int STRING_LITERAL = 41;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1484,7 +1492,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getNullLiteral()
    * @generated
    */
-  int NULL_LITERAL = 43;
+  int NULL_LITERAL = 42;
 
   /**
    * The number of structural features of the '<em>Null Literal</em>' class.
@@ -1503,7 +1511,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getFalseLiteral()
    * @generated
    */
-  int FALSE_LITERAL = 44;
+  int FALSE_LITERAL = 43;
 
   /**
    * The number of structural features of the '<em>False Literal</em>' class.
@@ -1522,7 +1530,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getTrueLiteral()
    * @generated
    */
-  int TRUE_LITERAL = 45;
+  int TRUE_LITERAL = 44;
 
   /**
    * The number of structural features of the '<em>True Literal</em>' class.
@@ -1532,6 +1540,62 @@ public interface LeekPackage extends EPackage
    * @ordered
    */
   int TRUE_LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.processus.ecleek.leek.impl.PostfixDecrementImpl <em>Postfix Decrement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.processus.ecleek.leek.impl.PostfixDecrementImpl
+   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPostfixDecrement()
+   * @generated
+   */
+  int POSTFIX_DECREMENT = 45;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSTFIX_DECREMENT__VALUE = POSTFIX_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Postfix Decrement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSTFIX_DECREMENT_FEATURE_COUNT = POSTFIX_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.processus.ecleek.leek.impl.PostfixIncrementImpl <em>Postfix Increment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.processus.ecleek.leek.impl.PostfixIncrementImpl
+   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPostfixIncrement()
+   * @generated
+   */
+  int POSTFIX_INCREMENT = 46;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSTFIX_INCREMENT__VALUE = POSTFIX_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Postfix Increment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSTFIX_INCREMENT_FEATURE_COUNT = POSTFIX_FEATURE_COUNT + 1;
 
 
   /**
@@ -1556,16 +1620,6 @@ public interface LeekPackage extends EPackage
   EReference getScript_Statements();
 
   /**
-   * Returns the meta object for class '{@link org.processus.ecleek.leek.ToplevelStatement <em>Toplevel Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Toplevel Statement</em>'.
-   * @see org.processus.ecleek.leek.ToplevelStatement
-   * @generated
-   */
-  EClass getToplevelStatement();
-
-  /**
    * Returns the meta object for class '{@link org.processus.ecleek.leek.Statement <em>Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1574,47 +1628,6 @@ public interface LeekPackage extends EPackage
    * @generated
    */
   EClass getStatement();
-
-  /**
-   * Returns the meta object for class '{@link org.processus.ecleek.leek.IterationStatement <em>Iteration Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Iteration Statement</em>'.
-   * @see org.processus.ecleek.leek.IterationStatement
-   * @generated
-   */
-  EClass getIterationStatement();
-
-  /**
-   * Returns the meta object for class '{@link org.processus.ecleek.leek.FunctionStatement <em>Function Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Statement</em>'.
-   * @see org.processus.ecleek.leek.FunctionStatement
-   * @generated
-   */
-  EClass getFunctionStatement();
-
-  /**
-   * Returns the meta object for class '{@link org.processus.ecleek.leek.FunctionStatementBlock <em>Function Statement Block</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Statement Block</em>'.
-   * @see org.processus.ecleek.leek.FunctionStatementBlock
-   * @generated
-   */
-  EClass getFunctionStatementBlock();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.processus.ecleek.leek.FunctionStatementBlock#getStatements <em>Statements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see org.processus.ecleek.leek.FunctionStatementBlock#getStatements()
-   * @see #getFunctionStatementBlock()
-   * @generated
-   */
-  EReference getFunctionStatementBlock_Statements();
 
   /**
    * Returns the meta object for class '{@link org.processus.ecleek.leek.BreakStatement <em>Break Statement</em>}'.
@@ -2094,6 +2107,16 @@ public interface LeekPackage extends EPackage
   EReference getArrayLiteral_Values();
 
   /**
+   * Returns the meta object for class '{@link org.processus.ecleek.leek.Postfix <em>Postfix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Postfix</em>'.
+   * @see org.processus.ecleek.leek.Postfix
+   * @generated
+   */
+  EClass getPostfix();
+
+  /**
    * Returns the meta object for class '{@link org.processus.ecleek.leek.FunctionCall <em>Function Call</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2178,36 +2201,36 @@ public interface LeekPackage extends EPackage
   EClass getEmptyStatement();
 
   /**
-   * Returns the meta object for class '{@link org.processus.ecleek.leek.TypedEquals <em>Typed Equals</em>}'.
+   * Returns the meta object for class '{@link org.processus.ecleek.leek.Comparison <em>Comparison</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Typed Equals</em>'.
-   * @see org.processus.ecleek.leek.TypedEquals
+   * @return the meta object for class '<em>Comparison</em>'.
+   * @see org.processus.ecleek.leek.Comparison
    * @generated
    */
-  EClass getTypedEquals();
+  EClass getComparison();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.TypedEquals#getLeft <em>Left</em>}'.
+   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.Comparison#getLeft <em>Left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see org.processus.ecleek.leek.TypedEquals#getLeft()
-   * @see #getTypedEquals()
+   * @see org.processus.ecleek.leek.Comparison#getLeft()
+   * @see #getComparison()
    * @generated
    */
-  EReference getTypedEquals_Left();
+  EReference getComparison_Left();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.TypedEquals#getRight <em>Right</em>}'.
+   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.Comparison#getRight <em>Right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see org.processus.ecleek.leek.TypedEquals#getRight()
-   * @see #getTypedEquals()
+   * @see org.processus.ecleek.leek.Comparison#getRight()
+   * @see #getComparison()
    * @generated
    */
-  EReference getTypedEquals_Right();
+  EReference getComparison_Right();
 
   /**
    * Returns the meta object for class '{@link org.processus.ecleek.leek.Equals <em>Equals</em>}'.
@@ -2434,6 +2457,70 @@ public interface LeekPackage extends EPackage
   EReference getMore_Right();
 
   /**
+   * Returns the meta object for class '{@link org.processus.ecleek.leek.Or <em>Or</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Or</em>'.
+   * @see org.processus.ecleek.leek.Or
+   * @generated
+   */
+  EClass getOr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.Or#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.processus.ecleek.leek.Or#getLeft()
+   * @see #getOr()
+   * @generated
+   */
+  EReference getOr_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.Or#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.processus.ecleek.leek.Or#getRight()
+   * @see #getOr()
+   * @generated
+   */
+  EReference getOr_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.processus.ecleek.leek.And <em>And</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>And</em>'.
+   * @see org.processus.ecleek.leek.And
+   * @generated
+   */
+  EClass getAnd();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.And#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.processus.ecleek.leek.And#getLeft()
+   * @see #getAnd()
+   * @generated
+   */
+  EReference getAnd_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.And#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.processus.ecleek.leek.And#getRight()
+   * @see #getAnd()
+   * @generated
+   */
+  EReference getAnd_Right();
+
+  /**
    * Returns the meta object for class '{@link org.processus.ecleek.leek.Plus <em>Plus</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2655,6 +2742,48 @@ public interface LeekPackage extends EPackage
   EClass getTrueLiteral();
 
   /**
+   * Returns the meta object for class '{@link org.processus.ecleek.leek.PostfixDecrement <em>Postfix Decrement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Postfix Decrement</em>'.
+   * @see org.processus.ecleek.leek.PostfixDecrement
+   * @generated
+   */
+  EClass getPostfixDecrement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.PostfixDecrement#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see org.processus.ecleek.leek.PostfixDecrement#getValue()
+   * @see #getPostfixDecrement()
+   * @generated
+   */
+  EReference getPostfixDecrement_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.processus.ecleek.leek.PostfixIncrement <em>Postfix Increment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Postfix Increment</em>'.
+   * @see org.processus.ecleek.leek.PostfixIncrement
+   * @generated
+   */
+  EClass getPostfixIncrement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.PostfixIncrement#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see org.processus.ecleek.leek.PostfixIncrement#getValue()
+   * @see #getPostfixIncrement()
+   * @generated
+   */
+  EReference getPostfixIncrement_Value();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2696,16 +2825,6 @@ public interface LeekPackage extends EPackage
     EReference SCRIPT__STATEMENTS = eINSTANCE.getScript_Statements();
 
     /**
-     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.ToplevelStatementImpl <em>Toplevel Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.processus.ecleek.leek.impl.ToplevelStatementImpl
-     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getToplevelStatement()
-     * @generated
-     */
-    EClass TOPLEVEL_STATEMENT = eINSTANCE.getToplevelStatement();
-
-    /**
      * The meta object literal for the '{@link org.processus.ecleek.leek.impl.StatementImpl <em>Statement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2714,44 +2833,6 @@ public interface LeekPackage extends EPackage
      * @generated
      */
     EClass STATEMENT = eINSTANCE.getStatement();
-
-    /**
-     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.IterationStatementImpl <em>Iteration Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.processus.ecleek.leek.impl.IterationStatementImpl
-     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getIterationStatement()
-     * @generated
-     */
-    EClass ITERATION_STATEMENT = eINSTANCE.getIterationStatement();
-
-    /**
-     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.FunctionStatementImpl <em>Function Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.processus.ecleek.leek.impl.FunctionStatementImpl
-     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getFunctionStatement()
-     * @generated
-     */
-    EClass FUNCTION_STATEMENT = eINSTANCE.getFunctionStatement();
-
-    /**
-     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.FunctionStatementBlockImpl <em>Function Statement Block</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.processus.ecleek.leek.impl.FunctionStatementBlockImpl
-     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getFunctionStatementBlock()
-     * @generated
-     */
-    EClass FUNCTION_STATEMENT_BLOCK = eINSTANCE.getFunctionStatementBlock();
-
-    /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_STATEMENT_BLOCK__STATEMENTS = eINSTANCE.getFunctionStatementBlock_Statements();
 
     /**
      * The meta object literal for the '{@link org.processus.ecleek.leek.impl.BreakStatementImpl <em>Break Statement</em>}' class.
@@ -3150,6 +3231,16 @@ public interface LeekPackage extends EPackage
     EReference ARRAY_LITERAL__VALUES = eINSTANCE.getArrayLiteral_Values();
 
     /**
+     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.PostfixImpl <em>Postfix</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.processus.ecleek.leek.impl.PostfixImpl
+     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPostfix()
+     * @generated
+     */
+    EClass POSTFIX = eINSTANCE.getPostfix();
+
+    /**
      * The meta object literal for the '{@link org.processus.ecleek.leek.impl.FunctionCallImpl <em>Function Call</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3222,14 +3313,14 @@ public interface LeekPackage extends EPackage
     EClass EMPTY_STATEMENT = eINSTANCE.getEmptyStatement();
 
     /**
-     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.TypedEqualsImpl <em>Typed Equals</em>}' class.
+     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.ComparisonImpl <em>Comparison</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.processus.ecleek.leek.impl.TypedEqualsImpl
-     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getTypedEquals()
+     * @see org.processus.ecleek.leek.impl.ComparisonImpl
+     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getComparison()
      * @generated
      */
-    EClass TYPED_EQUALS = eINSTANCE.getTypedEquals();
+    EClass COMPARISON = eINSTANCE.getComparison();
 
     /**
      * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
@@ -3237,7 +3328,7 @@ public interface LeekPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TYPED_EQUALS__LEFT = eINSTANCE.getTypedEquals_Left();
+    EReference COMPARISON__LEFT = eINSTANCE.getComparison_Left();
 
     /**
      * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
@@ -3245,7 +3336,7 @@ public interface LeekPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TYPED_EQUALS__RIGHT = eINSTANCE.getTypedEquals_Right();
+    EReference COMPARISON__RIGHT = eINSTANCE.getComparison_Right();
 
     /**
      * The meta object literal for the '{@link org.processus.ecleek.leek.impl.EqualsImpl <em>Equals</em>}' class.
@@ -3428,6 +3519,58 @@ public interface LeekPackage extends EPackage
      * @generated
      */
     EReference MORE__RIGHT = eINSTANCE.getMore_Right();
+
+    /**
+     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.OrImpl <em>Or</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.processus.ecleek.leek.impl.OrImpl
+     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getOr()
+     * @generated
+     */
+    EClass OR = eINSTANCE.getOr();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR__LEFT = eINSTANCE.getOr_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR__RIGHT = eINSTANCE.getOr_Right();
+
+    /**
+     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.AndImpl <em>And</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.processus.ecleek.leek.impl.AndImpl
+     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getAnd()
+     * @generated
+     */
+    EClass AND = eINSTANCE.getAnd();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AND__LEFT = eINSTANCE.getAnd_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AND__RIGHT = eINSTANCE.getAnd_Right();
 
     /**
      * The meta object literal for the '{@link org.processus.ecleek.leek.impl.PlusImpl <em>Plus</em>}' class.
@@ -3616,6 +3759,42 @@ public interface LeekPackage extends EPackage
      * @generated
      */
     EClass TRUE_LITERAL = eINSTANCE.getTrueLiteral();
+
+    /**
+     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.PostfixDecrementImpl <em>Postfix Decrement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.processus.ecleek.leek.impl.PostfixDecrementImpl
+     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPostfixDecrement()
+     * @generated
+     */
+    EClass POSTFIX_DECREMENT = eINSTANCE.getPostfixDecrement();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POSTFIX_DECREMENT__VALUE = eINSTANCE.getPostfixDecrement_Value();
+
+    /**
+     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.PostfixIncrementImpl <em>Postfix Increment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.processus.ecleek.leek.impl.PostfixIncrementImpl
+     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPostfixIncrement()
+     * @generated
+     */
+    EClass POSTFIX_INCREMENT = eINSTANCE.getPostfixIncrement();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POSTFIX_INCREMENT__VALUE = eINSTANCE.getPostfixIncrement_Value();
 
   }
 

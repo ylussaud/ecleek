@@ -2,6 +2,7 @@
  */
 package org.processus.ecleek.leek;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,6 @@ package org.processus.ecleek.leek;
  * @model
  * @generated
  */
-public interface Statement extends ToplevelStatement, IterationStatement, FunctionStatement
+public interface Statement extends EObject
 {
 } // Statement

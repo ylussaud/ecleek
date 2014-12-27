@@ -16,7 +16,7 @@ import org.processus.ecleek.leek.LeekPackage;
  *
  * @generated
  */
-public class BreakStatementImpl extends IterationStatementImpl implements BreakStatement
+public class BreakStatementImpl extends StatementImpl implements BreakStatement
 {
   /**
    * <!-- begin-user-doc -->

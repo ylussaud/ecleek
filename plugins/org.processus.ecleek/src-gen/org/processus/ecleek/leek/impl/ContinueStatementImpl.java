@@ -16,7 +16,7 @@ import org.processus.ecleek.leek.LeekPackage;
  *
  * @generated
  */
-public class ContinueStatementImpl extends IterationStatementImpl implements ContinueStatement
+public class ContinueStatementImpl extends StatementImpl implements ContinueStatement
 {
   /**
    * <!-- begin-user-doc -->

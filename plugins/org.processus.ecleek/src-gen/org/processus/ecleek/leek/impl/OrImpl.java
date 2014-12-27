@@ -12,23 +12,23 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.processus.ecleek.leek.Expression;
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.TypedEquals;
+import org.processus.ecleek.leek.Or;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Typed Equals</b></em>'.
+ * An implementation of the model object '<em><b>Or</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.TypedEqualsImpl#getLeft <em>Left</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.impl.TypedEqualsImpl#getRight <em>Right</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.OrImpl#getLeft <em>Left</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.OrImpl#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TypedEqualsImpl extends ExpressionImpl implements TypedEquals
+public class OrImpl extends ExpressionImpl implements Or
 {
   /**
    * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
@@ -55,7 +55,7 @@ public class TypedEqualsImpl extends ExpressionImpl implements TypedEquals
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TypedEqualsImpl()
+  protected OrImpl()
   {
     super();
   }
@@ -68,7 +68,7 @@ public class TypedEqualsImpl extends ExpressionImpl implements TypedEquals
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.TYPED_EQUALS;
+    return LeekPackage.Literals.OR;
   }
 
   /**
@@ -92,7 +92,7 @@ public class TypedEqualsImpl extends ExpressionImpl implements TypedEquals
     left = newLeft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.TYPED_EQUALS__LEFT, oldLeft, newLeft);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.OR__LEFT, oldLeft, newLeft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -109,14 +109,14 @@ public class TypedEqualsImpl extends ExpressionImpl implements TypedEquals
     {
       NotificationChain msgs = null;
       if (left != null)
-        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.TYPED_EQUALS__LEFT, null, msgs);
+        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.OR__LEFT, null, msgs);
       if (newLeft != null)
-        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.TYPED_EQUALS__LEFT, null, msgs);
+        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.OR__LEFT, null, msgs);
       msgs = basicSetLeft(newLeft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.TYPED_EQUALS__LEFT, newLeft, newLeft));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.OR__LEFT, newLeft, newLeft));
   }
 
   /**
@@ -140,7 +140,7 @@ public class TypedEqualsImpl extends ExpressionImpl implements TypedEquals
     right = newRight;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.TYPED_EQUALS__RIGHT, oldRight, newRight);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.OR__RIGHT, oldRight, newRight);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -157,14 +157,14 @@ public class TypedEqualsImpl extends ExpressionImpl implements TypedEquals
     {
       NotificationChain msgs = null;
       if (right != null)
-        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.TYPED_EQUALS__RIGHT, null, msgs);
+        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.OR__RIGHT, null, msgs);
       if (newRight != null)
-        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.TYPED_EQUALS__RIGHT, null, msgs);
+        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.OR__RIGHT, null, msgs);
       msgs = basicSetRight(newRight, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.TYPED_EQUALS__RIGHT, newRight, newRight));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.OR__RIGHT, newRight, newRight));
   }
 
   /**
@@ -177,9 +177,9 @@ public class TypedEqualsImpl extends ExpressionImpl implements TypedEquals
   {
     switch (featureID)
     {
-      case LeekPackage.TYPED_EQUALS__LEFT:
+      case LeekPackage.OR__LEFT:
         return basicSetLeft(null, msgs);
-      case LeekPackage.TYPED_EQUALS__RIGHT:
+      case LeekPackage.OR__RIGHT:
         return basicSetRight(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -195,9 +195,9 @@ public class TypedEqualsImpl extends ExpressionImpl implements TypedEquals
   {
     switch (featureID)
     {
-      case LeekPackage.TYPED_EQUALS__LEFT:
+      case LeekPackage.OR__LEFT:
         return getLeft();
-      case LeekPackage.TYPED_EQUALS__RIGHT:
+      case LeekPackage.OR__RIGHT:
         return getRight();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -213,10 +213,10 @@ public class TypedEqualsImpl extends ExpressionImpl implements TypedEquals
   {
     switch (featureID)
     {
-      case LeekPackage.TYPED_EQUALS__LEFT:
+      case LeekPackage.OR__LEFT:
         setLeft((Expression)newValue);
         return;
-      case LeekPackage.TYPED_EQUALS__RIGHT:
+      case LeekPackage.OR__RIGHT:
         setRight((Expression)newValue);
         return;
     }
@@ -233,10 +233,10 @@ public class TypedEqualsImpl extends ExpressionImpl implements TypedEquals
   {
     switch (featureID)
     {
-      case LeekPackage.TYPED_EQUALS__LEFT:
+      case LeekPackage.OR__LEFT:
         setLeft((Expression)null);
         return;
-      case LeekPackage.TYPED_EQUALS__RIGHT:
+      case LeekPackage.OR__RIGHT:
         setRight((Expression)null);
         return;
     }
@@ -253,12 +253,12 @@ public class TypedEqualsImpl extends ExpressionImpl implements TypedEquals
   {
     switch (featureID)
     {
-      case LeekPackage.TYPED_EQUALS__LEFT:
+      case LeekPackage.OR__LEFT:
         return left != null;
-      case LeekPackage.TYPED_EQUALS__RIGHT:
+      case LeekPackage.OR__RIGHT:
         return right != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //TypedEqualsImpl
+} //OrImpl

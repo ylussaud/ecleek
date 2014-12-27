@@ -32,15 +32,6 @@ public interface LeekFactory extends EFactory
   Script createScript();
 
   /**
-   * Returns a new object of class '<em>Toplevel Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Toplevel Statement</em>'.
-   * @generated
-   */
-  ToplevelStatement createToplevelStatement();
-
-  /**
    * Returns a new object of class '<em>Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -48,33 +39,6 @@ public interface LeekFactory extends EFactory
    * @generated
    */
   Statement createStatement();
-
-  /**
-   * Returns a new object of class '<em>Iteration Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Iteration Statement</em>'.
-   * @generated
-   */
-  IterationStatement createIterationStatement();
-
-  /**
-   * Returns a new object of class '<em>Function Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Statement</em>'.
-   * @generated
-   */
-  FunctionStatement createFunctionStatement();
-
-  /**
-   * Returns a new object of class '<em>Function Statement Block</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Statement Block</em>'.
-   * @generated
-   */
-  FunctionStatementBlock createFunctionStatementBlock();
 
   /**
    * Returns a new object of class '<em>Break Statement</em>'.
@@ -239,6 +203,15 @@ public interface LeekFactory extends EFactory
   ArrayLiteral createArrayLiteral();
 
   /**
+   * Returns a new object of class '<em>Postfix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Postfix</em>'.
+   * @generated
+   */
+  Postfix createPostfix();
+
+  /**
    * Returns a new object of class '<em>Function Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -275,13 +248,13 @@ public interface LeekFactory extends EFactory
   EmptyStatement createEmptyStatement();
 
   /**
-   * Returns a new object of class '<em>Typed Equals</em>'.
+   * Returns a new object of class '<em>Comparison</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Typed Equals</em>'.
+   * @return a new object of class '<em>Comparison</em>'.
    * @generated
    */
-  TypedEquals createTypedEquals();
+  Comparison createComparison();
 
   /**
    * Returns a new object of class '<em>Equals</em>'.
@@ -345,6 +318,24 @@ public interface LeekFactory extends EFactory
    * @generated
    */
   More createMore();
+
+  /**
+   * Returns a new object of class '<em>Or</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Or</em>'.
+   * @generated
+   */
+  Or createOr();
+
+  /**
+   * Returns a new object of class '<em>And</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>And</em>'.
+   * @generated
+   */
+  And createAnd();
 
   /**
    * Returns a new object of class '<em>Plus</em>'.
@@ -435,6 +426,24 @@ public interface LeekFactory extends EFactory
    * @generated
    */
   TrueLiteral createTrueLiteral();
+
+  /**
+   * Returns a new object of class '<em>Postfix Decrement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Postfix Decrement</em>'.
+   * @generated
+   */
+  PostfixDecrement createPostfixDecrement();
+
+  /**
+   * Returns a new object of class '<em>Postfix Increment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Postfix Increment</em>'.
+   * @generated
+   */
+  PostfixIncrement createPostfixIncrement();
 
   /**
    * Returns the package supported by this factory.

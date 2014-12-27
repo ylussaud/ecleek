@@ -27,7 +27,7 @@ import org.processus.ecleek.leek.ReturnStatement;
  *
  * @generated
  */
-public class ReturnStatementImpl extends FunctionStatementImpl implements ReturnStatement
+public class ReturnStatementImpl extends StatementImpl implements ReturnStatement
 {
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.

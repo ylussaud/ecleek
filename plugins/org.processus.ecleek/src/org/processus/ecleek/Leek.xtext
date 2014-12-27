@@ -4,38 +4,23 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate leek "http://www.processus.org/ecleek/Leek"
 
 Script:
-	statements+=ToplevelStatement*;
+	statements+=Statement*;
 
-ToplevelStatement:
+Statement:
 	Include ';'
 	| GlobalDeclaration ';'
 	| FunctionDeclaration
-	| Statement	
-;
-
-Statement:
-	{EmptyStatement} ';'
 	| LocalDeclaration ';'
 	| FunctionCall ';'
 	| Iteration
 	| If
 	| Affectation ';'
 	| StatementBlock
-;
-
-IterationStatement:
-	Statement
+	| ReturnStatement ';'
 	| BreakStatement ';'
 	| ContinueStatement ';'
-;
-
-FunctionStatement:
-	Statement
-	| ReturnStatement ';'
-;
-
-FunctionStatementBlock:
-	'{' {FunctionStatementBlock} statements+=FunctionStatement* '}'
+//	| Postfix ';'
+	| {EmptyStatement} ';'
 ;
 
 BreakStatement:
@@ -65,15 +50,15 @@ Iteration:
 ;
 
 While:
-	'while' '(' condition=Expression ')' statement=IterationStatement
+	'while' '(' condition=Expression ')' statement=Statement
 ;
 
 For:
-	'for' '(' initializer=ForInitializer ';' condition=Expression ';' increment=Expression ')' statement=IterationStatement
+	'for' '(' initializer=ForInitializer ';' condition=Expression ';' increment=Expression ')' statement=Statement
 ;
 
 ForIn:
-	'for' '(' (key=ForInVariableReference ':')? value=ForInVariableReference 'in' array=Expression ')' statement=IterationStatement
+	'for' '(' (key=ForInVariableReference ':')? value=ForInVariableReference 'in' array=Expression ')' statement=Statement
 ;
 
 ForInVariableReference returns VariableReference:
@@ -86,7 +71,7 @@ ForInitializer:
 ;
 
 FunctionDeclaration:
-	'function' name=ID '(' (parameters+=ParameterDeclaration (',' parameters+=ParameterDeclaration)*)? ')' body=FunctionStatementBlock
+	'function' name=ID '(' (parameters+=ParameterDeclaration (',' parameters+=ParameterDeclaration)*)? ')' body=StatementBlock
 ;
 
 ParameterDeclaration returns VariableReferenceable:
@@ -109,13 +94,13 @@ Expression:
 	Comparison;
 
 Comparison returns Expression:
-	Or (({TypedEquals.left=current} '===' | {Equals.left=current} '==' | {TypedDifferent.left=current} '!==' | {Different.left=current} '!=' | {LessOrEquals.left=current} '<=' | {Less.left=current} '<' | {MoreOrEquals.left=current} '>=' | {More.left=current} '>') right=Or)*;
+	Or (({Comparison.left=current} '===' | {Equals.left=current} '==' | {TypedDifferent.left=current} '!==' | {Different.left=current} '!=' | {LessOrEquals.left=current} '<=' | {Less.left=current} '<' | {MoreOrEquals.left=current} '>=' | {More.left=current} '>') right=Or)*;
 
 Or returns Expression:
-	And (({TypedEquals.left=current} ('or'|'||')) right=And)*;
+	And (({Or.left=current} ('or'|'||')) right=And)*;
 
 And returns Expression:
-	Addition (({TypedEquals.left=current} ('and'|'&&')) right=Addition)*;
+	Addition (({And.left=current} ('and'|'&&')) right=Addition)*;
 
 Addition returns Expression:
 	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*;
@@ -125,14 +110,12 @@ Multiplication returns Expression:
 
 PrimaryExpression returns Expression:
 	'(' Expression ')'
-	//| {UnaryPlus} '+' expression=Expression
-	//| {UnaryMinus} '-' expression=Expression
-	//| {PostfixIncrement} variable=VariableReference '++'
-	//| {PostfixDecrement} variable=VariableReference '--'
+//	| {UnaryPlus} '+' expression=Expression
+//	| {UnaryMinus} '-' expression=Expression
 	| {RealLiteral} value=REAL
 	| {IntLiteral} value=INT
 	| FunctionCall
-	| VariableReference
+	| Postfix
 	| {StringLiteral} value=STRING
 	| ArrayLiteral
 	| FunctionDeclaration
@@ -149,6 +132,10 @@ VariableReferenceable:
 	LocalDeclaration
 	| GlobalDeclaration
 	| ParameterDeclaration
+;
+
+Postfix:
+	VariableReference (({PostfixDecrement.value=current} '--' | {PostfixIncrement.value=current} '++'))?
 ;
 
 VariableReference:

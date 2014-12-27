@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface VariableReference extends ForInitializer, Expression
+public interface VariableReference extends ForInitializer, Postfix
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

@@ -37,7 +37,7 @@ import org.processus.ecleek.leek.VariableReferenceable;
  *
  * @generated
  */
-public class GlobalDeclarationImpl extends ToplevelStatementImpl implements GlobalDeclaration
+public class GlobalDeclarationImpl extends StatementImpl implements GlobalDeclaration
 {
   /**
    * The default value of the '{@link #isByAdress() <em>By Adress</em>}' attribute.

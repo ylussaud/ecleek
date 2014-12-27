@@ -3,6 +3,17 @@
  */
 package org.processus.ecleek.validation;
 
+import com.google.common.base.Objects;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.validation.Check;
+import org.processus.ecleek.leek.BreakStatement;
+import org.processus.ecleek.leek.ContinueStatement;
+import org.processus.ecleek.leek.FunctionDeclaration;
+import org.processus.ecleek.leek.GlobalDeclaration;
+import org.processus.ecleek.leek.Include;
+import org.processus.ecleek.leek.LeekPackage;
+import org.processus.ecleek.leek.ReturnStatement;
 import org.processus.ecleek.validation.AbstractLeekValidator;
 
 /**
@@ -12,4 +23,145 @@ import org.processus.ecleek.validation.AbstractLeekValidator;
  */
 @SuppressWarnings("all")
 public class LeekValidator extends AbstractLeekValidator {
+  public final static String RETURN_STATEMENT_IS_IN_FUNCTION_DECLARATION = "ReturnStatementIsInFunctionDeclaration";
+  
+  public final static String BREAK_STATEMENT_IS_IN_LOOP = "BreakStatementIsInLoop";
+  
+  public final static String CONTINUE_STATEMENT_IS_IN_LOOP = "ContinueStatementIsInLoop";
+  
+  public final static String INCLUDE_IS_IN_SCRIPT = "IncludeIsInScript";
+  
+  public final static String GLOBAL_DECLARATION_IS_IN_SCRIPT = "GlobalDeclarationIsInScript";
+  
+  public final static String FUNCTION_DECLARATION_IS_IN_SCRIPT = "FunctionDeclarationIsInScript";
+  
+  @Check
+  public void checkReturnStatementIsInFunctionDeclaration(final ReturnStatement returnStatement) {
+    EClass _functionDeclaration = LeekPackage.eINSTANCE.getFunctionDeclaration();
+    boolean _hasContainer = this.hasContainer(returnStatement, _functionDeclaration);
+    boolean _not = (!_hasContainer);
+    if (_not) {
+      this.error("ReturnStatement must be in a FunctionDeclaration", null, LeekValidator.RETURN_STATEMENT_IS_IN_FUNCTION_DECLARATION);
+    }
+  }
+  
+  @Check
+  public void checkBreakStatementIsInLoop(final BreakStatement breakStatement) {
+    boolean _and = false;
+    EClass _while = LeekPackage.eINSTANCE.getWhile();
+    boolean _hasContainer = this.hasContainer(breakStatement, _while);
+    boolean _not = (!_hasContainer);
+    if (!_not) {
+      _and = false;
+    } else {
+      EClass _for = LeekPackage.eINSTANCE.getFor();
+      boolean _hasContainer_1 = this.hasContainer(breakStatement, _for);
+      boolean _not_1 = (!_hasContainer_1);
+      _and = _not_1;
+    }
+    if (_and) {
+      this.error("BreakStatement must be in a For or a While", null, LeekValidator.BREAK_STATEMENT_IS_IN_LOOP);
+    }
+  }
+  
+  @Check
+  public void checkContinueStatementIsInLoop(final ContinueStatement continueStatement) {
+    boolean _and = false;
+    EClass _while = LeekPackage.eINSTANCE.getWhile();
+    boolean _hasContainer = this.hasContainer(continueStatement, _while);
+    boolean _not = (!_hasContainer);
+    if (!_not) {
+      _and = false;
+    } else {
+      EClass _for = LeekPackage.eINSTANCE.getFor();
+      boolean _hasContainer_1 = this.hasContainer(continueStatement, _for);
+      boolean _not_1 = (!_hasContainer_1);
+      _and = _not_1;
+    }
+    if (_and) {
+      this.error("ContinueStatement must be in a For or a While", null, LeekValidator.CONTINUE_STATEMENT_IS_IN_LOOP);
+    }
+  }
+  
+  @Check
+  public void checkIncludeIsInScript(final Include include) {
+    boolean _or = false;
+    EObject _eContainer = include.eContainer();
+    boolean _equals = Objects.equal(_eContainer, null);
+    if (_equals) {
+      _or = true;
+    } else {
+      EObject _eContainer_1 = include.eContainer();
+      EClass _eClass = _eContainer_1.eClass();
+      EClass _script = LeekPackage.eINSTANCE.getScript();
+      boolean _equals_1 = _eClass.equals(_script);
+      boolean _not = (!_equals_1);
+      _or = _not;
+    }
+    if (_or) {
+      this.error("Include must be at Script top level.", null, LeekValidator.INCLUDE_IS_IN_SCRIPT);
+    }
+  }
+  
+  @Check
+  public void checkGlobalDeclarationIsInScript(final GlobalDeclaration global) {
+    boolean _or = false;
+    EObject _eContainer = global.eContainer();
+    boolean _equals = Objects.equal(_eContainer, null);
+    if (_equals) {
+      _or = true;
+    } else {
+      EObject _eContainer_1 = global.eContainer();
+      EClass _eClass = _eContainer_1.eClass();
+      EClass _script = LeekPackage.eINSTANCE.getScript();
+      boolean _equals_1 = _eClass.equals(_script);
+      boolean _not = (!_equals_1);
+      _or = _not;
+    }
+    if (_or) {
+      this.error("GlobalDeclaration must be at Script top level.", null, LeekValidator.GLOBAL_DECLARATION_IS_IN_SCRIPT);
+    }
+  }
+  
+  @Check
+  public void checkFunctionDeclarationIsInScript(final FunctionDeclaration function) {
+    boolean _or = false;
+    EObject _eContainer = function.eContainer();
+    boolean _equals = Objects.equal(_eContainer, null);
+    if (_equals) {
+      _or = true;
+    } else {
+      EObject _eContainer_1 = function.eContainer();
+      EClass _eClass = _eContainer_1.eClass();
+      EClass _script = LeekPackage.eINSTANCE.getScript();
+      boolean _equals_1 = _eClass.equals(_script);
+      boolean _not = (!_equals_1);
+      _or = _not;
+    }
+    if (_or) {
+      this.error("FunctionDeclaration must be at Script top level.", null, LeekValidator.FUNCTION_DECLARATION_IS_IN_SCRIPT);
+    }
+  }
+  
+  public boolean hasContainer(final EObject eObj, final EClass eCls) {
+    boolean _or = false;
+    EClass _eClass = eObj.eClass();
+    boolean _isSuperTypeOf = eCls.isSuperTypeOf(_eClass);
+    if (_isSuperTypeOf) {
+      _or = true;
+    } else {
+      boolean _and = false;
+      EObject _eContainer = eObj.eContainer();
+      boolean _notEquals = (!Objects.equal(_eContainer, null));
+      if (!_notEquals) {
+        _and = false;
+      } else {
+        EObject _eContainer_1 = eObj.eContainer();
+        boolean _hasContainer = this.hasContainer(_eContainer_1, eCls);
+        _and = _hasContainer;
+      }
+      _or = _and;
+    }
+    return _or;
+  }
 }

@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface GlobalDeclaration extends ToplevelStatement, VariableReferenceable
+public interface GlobalDeclaration extends Statement, VariableReferenceable
 {
   /**
    * Returns the value of the '<em><b>Variables</b></em>' containment reference list.

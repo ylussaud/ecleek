@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface FunctionDeclaration extends ToplevelStatement, Expression
+public interface FunctionDeclaration extends Statement, Expression
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -75,12 +75,12 @@ public interface FunctionDeclaration extends ToplevelStatement, Expression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Body</em>' containment reference.
-   * @see #setBody(FunctionStatementBlock)
+   * @see #setBody(StatementBlock)
    * @see org.processus.ecleek.leek.LeekPackage#getFunctionDeclaration_Body()
    * @model containment="true"
    * @generated
    */
-  FunctionStatementBlock getBody();
+  StatementBlock getBody();
 
   /**
    * Sets the value of the '{@link org.processus.ecleek.leek.FunctionDeclaration#getBody <em>Body</em>}' containment reference.
@@ -90,6 +90,6 @@ public interface FunctionDeclaration extends ToplevelStatement, Expression
    * @see #getBody()
    * @generated
    */
-  void setBody(FunctionStatementBlock value);
+  void setBody(StatementBlock value);
 
 } // FunctionDeclaration

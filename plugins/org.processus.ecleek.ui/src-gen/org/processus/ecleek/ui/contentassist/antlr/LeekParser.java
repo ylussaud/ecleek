@@ -37,10 +37,7 @@ public class LeekParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getToplevelStatementAccess().getAlternatives(), "rule__ToplevelStatement__Alternatives");
 					put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
-					put(grammarAccess.getIterationStatementAccess().getAlternatives(), "rule__IterationStatement__Alternatives");
-					put(grammarAccess.getFunctionStatementAccess().getAlternatives(), "rule__FunctionStatement__Alternatives");
 					put(grammarAccess.getIterationAccess().getAlternatives(), "rule__Iteration__Alternatives");
 					put(grammarAccess.getForInVariableReferenceAccess().getAlternatives(), "rule__ForInVariableReference__Alternatives");
 					put(grammarAccess.getComparisonAccess().getAlternatives_1_0(), "rule__Comparison__Alternatives_1_0");
@@ -50,16 +47,16 @@ public class LeekParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicationAccess().getAlternatives_1_0(), "rule__Multiplication__Alternatives_1_0");
 					put(grammarAccess.getPrimaryExpressionAccess().getAlternatives(), "rule__PrimaryExpression__Alternatives");
 					put(grammarAccess.getVariableReferenceableAccess().getAlternatives(), "rule__VariableReferenceable__Alternatives");
-					put(grammarAccess.getToplevelStatementAccess().getGroup_0(), "rule__ToplevelStatement__Group_0__0");
-					put(grammarAccess.getToplevelStatementAccess().getGroup_1(), "rule__ToplevelStatement__Group_1__0");
+					put(grammarAccess.getPostfixAccess().getAlternatives_1(), "rule__Postfix__Alternatives_1");
 					put(grammarAccess.getStatementAccess().getGroup_0(), "rule__Statement__Group_0__0");
 					put(grammarAccess.getStatementAccess().getGroup_1(), "rule__Statement__Group_1__0");
-					put(grammarAccess.getStatementAccess().getGroup_2(), "rule__Statement__Group_2__0");
-					put(grammarAccess.getStatementAccess().getGroup_5(), "rule__Statement__Group_5__0");
-					put(grammarAccess.getIterationStatementAccess().getGroup_1(), "rule__IterationStatement__Group_1__0");
-					put(grammarAccess.getIterationStatementAccess().getGroup_2(), "rule__IterationStatement__Group_2__0");
-					put(grammarAccess.getFunctionStatementAccess().getGroup_1(), "rule__FunctionStatement__Group_1__0");
-					put(grammarAccess.getFunctionStatementBlockAccess().getGroup(), "rule__FunctionStatementBlock__Group__0");
+					put(grammarAccess.getStatementAccess().getGroup_3(), "rule__Statement__Group_3__0");
+					put(grammarAccess.getStatementAccess().getGroup_4(), "rule__Statement__Group_4__0");
+					put(grammarAccess.getStatementAccess().getGroup_7(), "rule__Statement__Group_7__0");
+					put(grammarAccess.getStatementAccess().getGroup_9(), "rule__Statement__Group_9__0");
+					put(grammarAccess.getStatementAccess().getGroup_10(), "rule__Statement__Group_10__0");
+					put(grammarAccess.getStatementAccess().getGroup_11(), "rule__Statement__Group_11__0");
+					put(grammarAccess.getStatementAccess().getGroup_12(), "rule__Statement__Group_12__0");
 					put(grammarAccess.getBreakStatementAccess().getGroup(), "rule__BreakStatement__Group__0");
 					put(grammarAccess.getContinueStatementAccess().getGroup(), "rule__ContinueStatement__Group__0");
 					put(grammarAccess.getStatementBlockAccess().getGroup(), "rule__StatementBlock__Group__0");
@@ -115,6 +112,9 @@ public class LeekParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArrayLiteralAccess().getGroup(), "rule__ArrayLiteral__Group__0");
 					put(grammarAccess.getArrayLiteralAccess().getGroup_2(), "rule__ArrayLiteral__Group_2__0");
 					put(grammarAccess.getArrayLiteralAccess().getGroup_2_1(), "rule__ArrayLiteral__Group_2_1__0");
+					put(grammarAccess.getPostfixAccess().getGroup(), "rule__Postfix__Group__0");
+					put(grammarAccess.getPostfixAccess().getGroup_1_0(), "rule__Postfix__Group_1_0__0");
+					put(grammarAccess.getPostfixAccess().getGroup_1_1(), "rule__Postfix__Group_1_1__0");
 					put(grammarAccess.getVariableReferenceAccess().getGroup(), "rule__VariableReference__Group__0");
 					put(grammarAccess.getVariableReferenceAccess().getGroup_1(), "rule__VariableReference__Group_1__0");
 					put(grammarAccess.getFunctionCallAccess().getGroup(), "rule__FunctionCall__Group__0");
@@ -123,7 +123,6 @@ public class LeekParser extends AbstractContentAssistParser {
 					put(grammarAccess.getReturnStatementAccess().getGroup(), "rule__ReturnStatement__Group__0");
 					put(grammarAccess.getIncludeAccess().getGroup(), "rule__Include__Group__0");
 					put(grammarAccess.getScriptAccess().getStatementsAssignment(), "rule__Script__StatementsAssignment");
-					put(grammarAccess.getFunctionStatementBlockAccess().getStatementsAssignment_2(), "rule__FunctionStatementBlock__StatementsAssignment_2");
 					put(grammarAccess.getStatementBlockAccess().getStatementsAssignment_2(), "rule__StatementBlock__StatementsAssignment_2");
 					put(grammarAccess.getAffectationAccess().getVariableAssignment_0(), "rule__Affectation__VariableAssignment_0");
 					put(grammarAccess.getAffectationAccess().getValueAssignment_2(), "rule__Affectation__ValueAssignment_2");
