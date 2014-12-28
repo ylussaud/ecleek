@@ -42,14 +42,20 @@ class LeekValidator extends AbstractLeekValidator {
 
 	@Check
 	def checkBreakStatementIsInLoop(BreakStatement breakStatement) {
-		if (!hasContainer(breakStatement, LeekPackage.eINSTANCE.^while) && !hasContainer(breakStatement, LeekPackage.eINSTANCE.^for)) {
+		if (!hasContainer(breakStatement, LeekPackage.eINSTANCE.^while) &&
+			!hasContainer(breakStatement, LeekPackage.eINSTANCE.^for) &&
+			!hasContainer(breakStatement, LeekPackage.eINSTANCE.^forIn) 
+		) {
 			error('BreakStatement must be in a For or a While', null, BREAK_STATEMENT_IS_IN_LOOP);
 		}
 	}
 
 	@Check
 	def checkContinueStatementIsInLoop(ContinueStatement continueStatement) {
-		if (!hasContainer(continueStatement, LeekPackage.eINSTANCE.^while) && !hasContainer(continueStatement, LeekPackage.eINSTANCE.^for)) {
+		if (!hasContainer(continueStatement, LeekPackage.eINSTANCE.^while) &&
+			!hasContainer(continueStatement, LeekPackage.eINSTANCE.^for) &&
+			!hasContainer(continueStatement, LeekPackage.eINSTANCE.^forIn)
+		) {
 			error('ContinueStatement must be in a For or a While', null, CONTINUE_STATEMENT_IS_IN_LOOP);
 		}
 	}
