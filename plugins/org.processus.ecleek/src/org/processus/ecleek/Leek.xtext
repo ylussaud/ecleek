@@ -89,7 +89,7 @@ FunctionDeclaration:
 	'function' name=ID '(' (parameters+=ParameterDeclaration (',' parameters+=ParameterDeclaration)*)? ')' body=StatementBlock
 ;
 
-ParameterDeclaration returns VariableReference:
+ParameterDeclaration returns VariableDeclaration:
 	(byAdress?='@')? name=ID
 ;
 
@@ -101,16 +101,16 @@ GlobalDeclaration:
 	'global' variables+=VariableDeclaration (',' variables+=VariableDeclaration)*
 ;
 
-VariableDeclaration returns VariableReference:
+VariableDeclaration:
 	VariableDeclarationWithValue
 	| VariableDeclarationUnitialized
 ;
 
-VariableDeclarationWithValue returns VariableReference:
+VariableDeclarationWithValue returns VariableDeclaration:
 	name=ID '=' value=Expression
 ;
 
-VariableDeclarationUnitialized returns VariableReference:
+VariableDeclarationUnitialized returns VariableDeclaration:
 	name=ID
 ;
 
@@ -162,11 +162,11 @@ Postfix:
 ;
 
 VariableReferenceSimple returns VariableReference:
-	variable=[VariableReference]
+	variable=[VariableDeclaration]
 ;
 
 VariableReferenceArray returns VariableReference:
-	variable=[VariableReference] ('[' dimensions+=Expression ']')+
+	variable=[VariableDeclaration] ('[' dimensions+=Expression ']')+
 ;
 
 FunctionCall:
