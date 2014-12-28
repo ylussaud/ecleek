@@ -12,6 +12,7 @@ import org.processus.ecleek.leek.GlobalDeclaration;
 import org.processus.ecleek.leek.If;
 import org.processus.ecleek.leek.IntLiteral;
 import org.processus.ecleek.leek.LocalDeclaration;
+import org.processus.ecleek.leek.Not;
 import org.processus.ecleek.leek.PostfixDecrement;
 import org.processus.ecleek.leek.PostfixIncrement;
 import org.processus.ecleek.leek.ReturnStatement;
@@ -545,6 +546,19 @@ public class ParsingTests extends AbstractXtextTests {
 		assertTrue(local.getVariables().get(0).getValue() instanceof UnitaryMinus);
 		UnitaryMinus minus = (UnitaryMinus) local.getVariables().get(0).getValue();
 		assertTrue(minus.getExpression() instanceof IntLiteral);
+	}
+	
+	@Test
+	public void notTrue() throws Exception {
+		final Script script = getScript("var a = !true;");
+
+		assertEquals(1, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
+		final LocalDeclaration local = (LocalDeclaration) script.getStatements().get(0);
+		assertEquals(1, local.getVariables().size());
+		assertTrue(local.getVariables().get(0).getValue() instanceof Not);
+		Not not = (Not) local.getVariables().get(0).getValue();
+		assertTrue(not.getExpression() instanceof TrueLiteral);
 	}
 	
 }

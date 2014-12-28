@@ -135,6 +135,7 @@ Multiplication returns Expression:
 PrimaryExpression returns Expression:
 	'(' Expression ')'
 	| {UnitaryMinus} '-' expression=PrimaryExpression
+	| {Not} '!' expression=PrimaryExpression
 	| {RealLiteral} value=REAL
 	| {IntLiteral} value=INT
 	| FunctionCall

@@ -1467,6 +1467,34 @@ public interface LeekPackage extends EPackage
   int UNITARY_MINUS_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.processus.ecleek.leek.impl.NotImpl <em>Not</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.processus.ecleek.leek.impl.NotImpl
+   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getNot()
+   * @generated
+   */
+  int NOT = 42;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT__EXPRESSION = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Not</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.RealLiteralImpl <em>Real Literal</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1474,7 +1502,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getRealLiteral()
    * @generated
    */
-  int REAL_LITERAL = 42;
+  int REAL_LITERAL = 43;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1502,7 +1530,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getIntLiteral()
    * @generated
    */
-  int INT_LITERAL = 43;
+  int INT_LITERAL = 44;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1530,7 +1558,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 44;
+  int STRING_LITERAL = 45;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1558,7 +1586,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getNullLiteral()
    * @generated
    */
-  int NULL_LITERAL = 45;
+  int NULL_LITERAL = 46;
 
   /**
    * The number of structural features of the '<em>Null Literal</em>' class.
@@ -1577,7 +1605,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getFalseLiteral()
    * @generated
    */
-  int FALSE_LITERAL = 46;
+  int FALSE_LITERAL = 47;
 
   /**
    * The number of structural features of the '<em>False Literal</em>' class.
@@ -1596,7 +1624,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getTrueLiteral()
    * @generated
    */
-  int TRUE_LITERAL = 47;
+  int TRUE_LITERAL = 48;
 
   /**
    * The number of structural features of the '<em>True Literal</em>' class.
@@ -1615,7 +1643,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPostfixDecrement()
    * @generated
    */
-  int POSTFIX_DECREMENT = 48;
+  int POSTFIX_DECREMENT = 49;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1643,7 +1671,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPostfixIncrement()
    * @generated
    */
-  int POSTFIX_INCREMENT = 49;
+  int POSTFIX_INCREMENT = 50;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2745,6 +2773,27 @@ public interface LeekPackage extends EPackage
   EReference getUnitaryMinus_Expression();
 
   /**
+   * Returns the meta object for class '{@link org.processus.ecleek.leek.Not <em>Not</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Not</em>'.
+   * @see org.processus.ecleek.leek.Not
+   * @generated
+   */
+  EClass getNot();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.Not#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.processus.ecleek.leek.Not#getExpression()
+   * @see #getNot()
+   * @generated
+   */
+  EReference getNot_Expression();
+
+  /**
    * Returns the meta object for class '{@link org.processus.ecleek.leek.RealLiteral <em>Real Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3801,6 +3850,24 @@ public interface LeekPackage extends EPackage
      * @generated
      */
     EReference UNITARY_MINUS__EXPRESSION = eINSTANCE.getUnitaryMinus_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.NotImpl <em>Not</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.processus.ecleek.leek.impl.NotImpl
+     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getNot()
+     * @generated
+     */
+    EClass NOT = eINSTANCE.getNot();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NOT__EXPRESSION = eINSTANCE.getNot_Expression();
 
     /**
      * The meta object literal for the '{@link org.processus.ecleek.leek.impl.RealLiteralImpl <em>Real Literal</em>}' class.

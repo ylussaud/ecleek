@@ -401,6 +401,15 @@ public interface LeekFactory extends EFactory
   UnitaryMinus createUnitaryMinus();
 
   /**
+   * Returns a new object of class '<em>Not</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Not</em>'.
+   * @generated
+   */
+  Not createNot();
+
+  /**
    * Returns a new object of class '<em>Real Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

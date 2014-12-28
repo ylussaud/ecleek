@@ -285,6 +285,11 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createUnitaryMinusAdapter();
       }
       @Override
+      public Adapter caseNot(Not object)
+      {
+        return createNotAdapter();
+      }
+      @Override
       public Adapter caseRealLiteral(RealLiteral object)
       {
         return createRealLiteralAdapter();
@@ -972,6 +977,21 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createUnitaryMinusAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.Not <em>Not</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.Not
+   * @generated
+   */
+  public Adapter createNotAdapter()
   {
     return null;
   }

@@ -111,10 +111,11 @@ public class LeekParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrimaryExpressionAccess().getGroup_1(), "rule__PrimaryExpression__Group_1__0");
 					put(grammarAccess.getPrimaryExpressionAccess().getGroup_2(), "rule__PrimaryExpression__Group_2__0");
 					put(grammarAccess.getPrimaryExpressionAccess().getGroup_3(), "rule__PrimaryExpression__Group_3__0");
-					put(grammarAccess.getPrimaryExpressionAccess().getGroup_6(), "rule__PrimaryExpression__Group_6__0");
-					put(grammarAccess.getPrimaryExpressionAccess().getGroup_9(), "rule__PrimaryExpression__Group_9__0");
+					put(grammarAccess.getPrimaryExpressionAccess().getGroup_4(), "rule__PrimaryExpression__Group_4__0");
+					put(grammarAccess.getPrimaryExpressionAccess().getGroup_7(), "rule__PrimaryExpression__Group_7__0");
 					put(grammarAccess.getPrimaryExpressionAccess().getGroup_10(), "rule__PrimaryExpression__Group_10__0");
 					put(grammarAccess.getPrimaryExpressionAccess().getGroup_11(), "rule__PrimaryExpression__Group_11__0");
+					put(grammarAccess.getPrimaryExpressionAccess().getGroup_12(), "rule__PrimaryExpression__Group_12__0");
 					put(grammarAccess.getArrayLiteralAccess().getGroup(), "rule__ArrayLiteral__Group__0");
 					put(grammarAccess.getArrayLiteralAccess().getGroup_2(), "rule__ArrayLiteral__Group_2__0");
 					put(grammarAccess.getArrayLiteralAccess().getGroup_2_1(), "rule__ArrayLiteral__Group_2_1__0");
@@ -168,9 +169,10 @@ public class LeekParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAdditionAccess().getRightAssignment_1_1(), "rule__Addition__RightAssignment_1_1");
 					put(grammarAccess.getMultiplicationAccess().getRightAssignment_1_1(), "rule__Multiplication__RightAssignment_1_1");
 					put(grammarAccess.getPrimaryExpressionAccess().getExpressionAssignment_1_2(), "rule__PrimaryExpression__ExpressionAssignment_1_2");
-					put(grammarAccess.getPrimaryExpressionAccess().getValueAssignment_2_1(), "rule__PrimaryExpression__ValueAssignment_2_1");
+					put(grammarAccess.getPrimaryExpressionAccess().getExpressionAssignment_2_2(), "rule__PrimaryExpression__ExpressionAssignment_2_2");
 					put(grammarAccess.getPrimaryExpressionAccess().getValueAssignment_3_1(), "rule__PrimaryExpression__ValueAssignment_3_1");
-					put(grammarAccess.getPrimaryExpressionAccess().getValueAssignment_6_1(), "rule__PrimaryExpression__ValueAssignment_6_1");
+					put(grammarAccess.getPrimaryExpressionAccess().getValueAssignment_4_1(), "rule__PrimaryExpression__ValueAssignment_4_1");
+					put(grammarAccess.getPrimaryExpressionAccess().getValueAssignment_7_1(), "rule__PrimaryExpression__ValueAssignment_7_1");
 					put(grammarAccess.getArrayLiteralAccess().getValuesAssignment_2_0(), "rule__ArrayLiteral__ValuesAssignment_2_0");
 					put(grammarAccess.getArrayLiteralAccess().getValuesAssignment_2_1_1(), "rule__ArrayLiteral__ValuesAssignment_2_1_1");
 					put(grammarAccess.getVariableReferenceSimpleAccess().getVariableAssignment(), "rule__VariableReferenceSimple__VariableAssignment");
