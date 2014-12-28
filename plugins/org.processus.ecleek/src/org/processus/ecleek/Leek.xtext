@@ -139,7 +139,10 @@ Addition returns Expression:
 	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*;
 
 Multiplication returns Expression:
-	PrimaryExpression (({Multi.left=current} '*' | {Div.left=current} '/') right=PrimaryExpression)*;
+	TernaryIf (({Multi.left=current} '*' | {Div.left=current} '/') right=TernaryIf)*;
+
+TernaryIf returns Expression:
+	PrimaryExpression ({TernaryIf.left=current} '?' then=PrimaryExpression ':' else=PrimaryExpression)*;
 
 PrimaryExpression returns Expression:
 	'(' Expression ')'
