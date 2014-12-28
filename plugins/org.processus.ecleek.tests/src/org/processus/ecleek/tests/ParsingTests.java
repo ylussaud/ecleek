@@ -176,12 +176,12 @@ public class ParsingTests extends AbstractXtextTests {
 	
 	@Test
 	public void variableReferenceToGlobalVariableEmptyDimension() throws Exception {
-		getModelAndExpect("global a = a[];", 1);
+		getModelAndExpect("global a = a[];", 2);
 	}
 	
 	@Test
 	public void variableReferenceToLocalVariableEmptyDimension() throws Exception {
-		getModelAndExpect("var a = a[];", 1);
+		getModelAndExpect("var a = a[];", 2);
 	}
 	
 	@Test
