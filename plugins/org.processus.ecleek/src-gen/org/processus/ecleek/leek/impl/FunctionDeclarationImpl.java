@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.processus.ecleek.leek.FunctionDeclaration;
 import org.processus.ecleek.leek.LeekPackage;
 import org.processus.ecleek.leek.StatementBlock;
-import org.processus.ecleek.leek.VariableReferenceable;
+import org.processus.ecleek.leek.VariableReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +67,7 @@ public class FunctionDeclarationImpl extends StatementImpl implements FunctionDe
    * @generated
    * @ordered
    */
-  protected EList<VariableReferenceable> parameters;
+  protected EList<VariableReference> parameters;
 
   /**
    * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
@@ -128,11 +128,11 @@ public class FunctionDeclarationImpl extends StatementImpl implements FunctionDe
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VariableReferenceable> getParameters()
+  public EList<VariableReference> getParameters()
   {
     if (parameters == null)
     {
-      parameters = new EObjectContainmentEList<VariableReferenceable>(VariableReferenceable.class, this, LeekPackage.FUNCTION_DECLARATION__PARAMETERS);
+      parameters = new EObjectContainmentEList<VariableReference>(VariableReference.class, this, LeekPackage.FUNCTION_DECLARATION__PARAMETERS);
     }
     return parameters;
   }
@@ -239,7 +239,7 @@ public class FunctionDeclarationImpl extends StatementImpl implements FunctionDe
         return;
       case LeekPackage.FUNCTION_DECLARATION__PARAMETERS:
         getParameters().clear();
-        getParameters().addAll((Collection<? extends VariableReferenceable>)newValue);
+        getParameters().addAll((Collection<? extends VariableReference>)newValue);
         return;
       case LeekPackage.FUNCTION_DECLARATION__BODY:
         setBody((StatementBlock)newValue);

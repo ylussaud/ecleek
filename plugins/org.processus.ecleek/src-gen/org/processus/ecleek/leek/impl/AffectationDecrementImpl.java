@@ -9,43 +9,42 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.processus.ecleek.leek.AffectationDecrement;
 import org.processus.ecleek.leek.Expression;
-import org.processus.ecleek.leek.ForInitializer;
 import org.processus.ecleek.leek.LeekPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>For Initializer</b></em>'.
+ * An implementation of the model object '<em><b>Affectation Decrement</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.ForInitializerImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.AffectationDecrementImpl#getDecrement <em>Decrement</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ForInitializerImpl extends MinimalEObjectImpl.Container implements ForInitializer
+public class AffectationDecrementImpl extends AffectationStatementImpl implements AffectationDecrement
 {
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * The cached value of the '{@link #getDecrement() <em>Decrement</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getDecrement()
    * @generated
    * @ordered
    */
-  protected Expression value;
+  protected Expression decrement;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ForInitializerImpl()
+  protected AffectationDecrementImpl()
   {
     super();
   }
@@ -58,7 +57,7 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.FOR_INITIALIZER;
+    return LeekPackage.Literals.AFFECTATION_DECREMENT;
   }
 
   /**
@@ -66,9 +65,9 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getValue()
+  public Expression getDecrement()
   {
-    return value;
+    return decrement;
   }
 
   /**
@@ -76,13 +75,13 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(Expression newValue, NotificationChain msgs)
+  public NotificationChain basicSetDecrement(Expression newDecrement, NotificationChain msgs)
   {
-    Expression oldValue = value;
-    value = newValue;
+    Expression oldDecrement = decrement;
+    decrement = newDecrement;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.FOR_INITIALIZER__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.AFFECTATION_DECREMENT__DECREMENT, oldDecrement, newDecrement);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -93,20 +92,20 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(Expression newValue)
+  public void setDecrement(Expression newDecrement)
   {
-    if (newValue != value)
+    if (newDecrement != decrement)
     {
       NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR_INITIALIZER__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR_INITIALIZER__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
+      if (decrement != null)
+        msgs = ((InternalEObject)decrement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.AFFECTATION_DECREMENT__DECREMENT, null, msgs);
+      if (newDecrement != null)
+        msgs = ((InternalEObject)newDecrement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.AFFECTATION_DECREMENT__DECREMENT, null, msgs);
+      msgs = basicSetDecrement(newDecrement, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.FOR_INITIALIZER__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.AFFECTATION_DECREMENT__DECREMENT, newDecrement, newDecrement));
   }
 
   /**
@@ -119,8 +118,8 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LeekPackage.FOR_INITIALIZER__VALUE:
-        return basicSetValue(null, msgs);
+      case LeekPackage.AFFECTATION_DECREMENT__DECREMENT:
+        return basicSetDecrement(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,8 +134,8 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LeekPackage.FOR_INITIALIZER__VALUE:
-        return getValue();
+      case LeekPackage.AFFECTATION_DECREMENT__DECREMENT:
+        return getDecrement();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -151,8 +150,8 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LeekPackage.FOR_INITIALIZER__VALUE:
-        setValue((Expression)newValue);
+      case LeekPackage.AFFECTATION_DECREMENT__DECREMENT:
+        setDecrement((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,8 +167,8 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LeekPackage.FOR_INITIALIZER__VALUE:
-        setValue((Expression)null);
+      case LeekPackage.AFFECTATION_DECREMENT__DECREMENT:
+        setDecrement((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -185,10 +184,10 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LeekPackage.FOR_INITIALIZER__VALUE:
-        return value != null;
+      case LeekPackage.AFFECTATION_DECREMENT__DECREMENT:
+        return decrement != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ForInitializerImpl
+} //AffectationDecrementImpl

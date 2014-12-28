@@ -20,11 +20,11 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface LocalDeclaration extends Statement, VariableReferenceable
+public interface LocalDeclaration extends Statement
 {
   /**
    * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
-   * The list contents are of type {@link org.processus.ecleek.leek.VariableDeclaration}.
+   * The list contents are of type {@link org.processus.ecleek.leek.VariableReference}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Variables</em>' containment reference list isn't clear,
@@ -36,6 +36,6 @@ public interface LocalDeclaration extends Statement, VariableReferenceable
    * @model containment="true"
    * @generated
    */
-  EList<VariableDeclaration> getVariables();
+  EList<VariableReference> getVariables();
 
 } // LocalDeclaration
