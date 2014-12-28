@@ -1572,11 +1572,11 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
                     if ( (LA5_3==RULE_ID) ) {
                         int LA5_4 = input.LA(4);
 
-                        if ( (LA5_4==12||LA5_4==50) ) {
-                            alt5=3;
-                        }
-                        else if ( ((LA5_4>=24 && LA5_4<=25)) ) {
+                        if ( ((LA5_4>=24 && LA5_4<=25)) ) {
                             alt5=2;
+                        }
+                        else if ( (LA5_4==12||LA5_4==50) ) {
+                            alt5=3;
                         }
                         else {
                             if (state.backtracking>0) {state.failed=true; return current;}
@@ -5192,37 +5192,40 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrimaryExpression"
-    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1781:1: rulePrimaryExpression returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_REAL ) ) ) | ( () ( (lv_value_6_0= RULE_INT ) ) ) | this_FunctionCall_7= ruleFunctionCall | this_Postfix_8= rulePostfix | ( () ( (lv_value_10_0= RULE_STRING ) ) ) | this_ArrayLiteral_11= ruleArrayLiteral | this_FunctionDeclaration_12= ruleFunctionDeclaration | ( () otherlv_14= 'null' ) | ( () otherlv_16= 'false' ) | ( () otherlv_18= 'true' ) ) ;
+    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1781:1: rulePrimaryExpression returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '-' ( (lv_expression_5_0= rulePrimaryExpression ) ) ) | ( () ( (lv_value_7_0= RULE_REAL ) ) ) | ( () ( (lv_value_9_0= RULE_INT ) ) ) | this_FunctionCall_10= ruleFunctionCall | this_Postfix_11= rulePostfix | ( () ( (lv_value_13_0= RULE_STRING ) ) ) | this_ArrayLiteral_14= ruleArrayLiteral | this_FunctionDeclaration_15= ruleFunctionDeclaration | ( () otherlv_17= 'null' ) | ( () otherlv_19= 'false' ) | ( () otherlv_21= 'true' ) ) ;
     public final EObject rulePrimaryExpression() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
-        Token lv_value_4_0=null;
-        Token lv_value_6_0=null;
-        Token lv_value_10_0=null;
-        Token otherlv_14=null;
-        Token otherlv_16=null;
-        Token otherlv_18=null;
+        Token otherlv_4=null;
+        Token lv_value_7_0=null;
+        Token lv_value_9_0=null;
+        Token lv_value_13_0=null;
+        Token otherlv_17=null;
+        Token otherlv_19=null;
+        Token otherlv_21=null;
         EObject this_Expression_1 = null;
 
-        EObject this_FunctionCall_7 = null;
+        EObject lv_expression_5_0 = null;
 
-        EObject this_Postfix_8 = null;
+        EObject this_FunctionCall_10 = null;
 
-        EObject this_ArrayLiteral_11 = null;
+        EObject this_Postfix_11 = null;
 
-        EObject this_FunctionDeclaration_12 = null;
+        EObject this_ArrayLiteral_14 = null;
+
+        EObject this_FunctionDeclaration_15 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1784:28: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_REAL ) ) ) | ( () ( (lv_value_6_0= RULE_INT ) ) ) | this_FunctionCall_7= ruleFunctionCall | this_Postfix_8= rulePostfix | ( () ( (lv_value_10_0= RULE_STRING ) ) ) | this_ArrayLiteral_11= ruleArrayLiteral | this_FunctionDeclaration_12= ruleFunctionDeclaration | ( () otherlv_14= 'null' ) | ( () otherlv_16= 'false' ) | ( () otherlv_18= 'true' ) ) )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1785:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_REAL ) ) ) | ( () ( (lv_value_6_0= RULE_INT ) ) ) | this_FunctionCall_7= ruleFunctionCall | this_Postfix_8= rulePostfix | ( () ( (lv_value_10_0= RULE_STRING ) ) ) | this_ArrayLiteral_11= ruleArrayLiteral | this_FunctionDeclaration_12= ruleFunctionDeclaration | ( () otherlv_14= 'null' ) | ( () otherlv_16= 'false' ) | ( () otherlv_18= 'true' ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1784:28: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '-' ( (lv_expression_5_0= rulePrimaryExpression ) ) ) | ( () ( (lv_value_7_0= RULE_REAL ) ) ) | ( () ( (lv_value_9_0= RULE_INT ) ) ) | this_FunctionCall_10= ruleFunctionCall | this_Postfix_11= rulePostfix | ( () ( (lv_value_13_0= RULE_STRING ) ) ) | this_ArrayLiteral_14= ruleArrayLiteral | this_FunctionDeclaration_15= ruleFunctionDeclaration | ( () otherlv_17= 'null' ) | ( () otherlv_19= 'false' ) | ( () otherlv_21= 'true' ) ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1785:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '-' ( (lv_expression_5_0= rulePrimaryExpression ) ) ) | ( () ( (lv_value_7_0= RULE_REAL ) ) ) | ( () ( (lv_value_9_0= RULE_INT ) ) ) | this_FunctionCall_10= ruleFunctionCall | this_Postfix_11= rulePostfix | ( () ( (lv_value_13_0= RULE_STRING ) ) ) | this_ArrayLiteral_14= ruleArrayLiteral | this_FunctionDeclaration_15= ruleFunctionDeclaration | ( () otherlv_17= 'null' ) | ( () otherlv_19= 'false' ) | ( () otherlv_21= 'true' ) )
             {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1785:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_REAL ) ) ) | ( () ( (lv_value_6_0= RULE_INT ) ) ) | this_FunctionCall_7= ruleFunctionCall | this_Postfix_8= rulePostfix | ( () ( (lv_value_10_0= RULE_STRING ) ) ) | this_ArrayLiteral_11= ruleArrayLiteral | this_FunctionDeclaration_12= ruleFunctionDeclaration | ( () otherlv_14= 'null' ) | ( () otherlv_16= 'false' ) | ( () otherlv_18= 'true' ) )
-            int alt24=11;
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1785:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '-' ( (lv_expression_5_0= rulePrimaryExpression ) ) ) | ( () ( (lv_value_7_0= RULE_REAL ) ) ) | ( () ( (lv_value_9_0= RULE_INT ) ) ) | this_FunctionCall_10= ruleFunctionCall | this_Postfix_11= rulePostfix | ( () ( (lv_value_13_0= RULE_STRING ) ) ) | this_ArrayLiteral_14= ruleArrayLiteral | this_FunctionDeclaration_15= ruleFunctionDeclaration | ( () otherlv_17= 'null' ) | ( () otherlv_19= 'false' ) | ( () otherlv_21= 'true' ) )
+            int alt24=12;
             alt24 = dfa24.predict(input);
             switch (alt24) {
                 case 1 :
@@ -5266,10 +5269,10 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1803:6: ( () ( (lv_value_4_0= RULE_REAL ) ) )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1803:6: ( () otherlv_4= '-' ( (lv_expression_5_0= rulePrimaryExpression ) ) )
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1803:6: ( () ( (lv_value_4_0= RULE_REAL ) ) )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1803:7: () ( (lv_value_4_0= RULE_REAL ) )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1803:6: ( () otherlv_4= '-' ( (lv_expression_5_0= rulePrimaryExpression ) ) )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1803:7: () otherlv_4= '-' ( (lv_expression_5_0= rulePrimaryExpression ) )
                     {
                     // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1803:7: ()
                     // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1804:5: 
@@ -5277,35 +5280,46 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
                     if ( state.backtracking==0 ) {
 
                               current = forceCreateModelElement(
-                                  grammarAccess.getPrimaryExpressionAccess().getRealLiteralAction_1_0(),
+                                  grammarAccess.getPrimaryExpressionAccess().getUnitaryMinusAction_1_0(),
                                   current);
                           
                     }
 
                     }
 
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1809:2: ( (lv_value_4_0= RULE_REAL ) )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1810:1: (lv_value_4_0= RULE_REAL )
-                    {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1810:1: (lv_value_4_0= RULE_REAL )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1811:3: lv_value_4_0= RULE_REAL
-                    {
-                    lv_value_4_0=(Token)match(input,RULE_REAL,FOLLOW_RULE_REAL_in_rulePrimaryExpression4227); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,44,FOLLOW_44_in_rulePrimaryExpression4222); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			newLeafNode(lv_value_4_0, grammarAccess.getPrimaryExpressionAccess().getValueREALTerminalRuleCall_1_1_0()); 
-                      		
+                          	newLeafNode(otherlv_4, grammarAccess.getPrimaryExpressionAccess().getHyphenMinusKeyword_1_1());
+                          
                     }
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1813:1: ( (lv_expression_5_0= rulePrimaryExpression ) )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1814:1: (lv_expression_5_0= rulePrimaryExpression )
+                    {
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1814:1: (lv_expression_5_0= rulePrimaryExpression )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1815:3: lv_expression_5_0= rulePrimaryExpression
+                    {
+                    if ( state.backtracking==0 ) {
+                       
+                      	        newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getExpressionPrimaryExpressionParserRuleCall_1_2_0()); 
+                      	    
+                    }
+                    pushFollow(FOLLOW_rulePrimaryExpression_in_rulePrimaryExpression4243);
+                    lv_expression_5_0=rulePrimaryExpression();
+
+                    state._fsp--;
+                    if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       	        if (current==null) {
-                      	            current = createModelElement(grammarAccess.getPrimaryExpressionRule());
+                      	            current = createModelElementForParent(grammarAccess.getPrimaryExpressionRule());
                       	        }
-                             		setWithLastConsumed(
+                             		set(
                              			current, 
-                             			"value",
-                              		lv_value_4_0, 
-                              		"REAL");
+                             			"expression",
+                              		lv_expression_5_0, 
+                              		"PrimaryExpression");
+                      	        afterParserOrEnumRuleCall();
                       	    
                     }
 
@@ -5321,34 +5335,34 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1828:6: ( () ( (lv_value_6_0= RULE_INT ) ) )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1832:6: ( () ( (lv_value_7_0= RULE_REAL ) ) )
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1828:6: ( () ( (lv_value_6_0= RULE_INT ) ) )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1828:7: () ( (lv_value_6_0= RULE_INT ) )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1832:6: ( () ( (lv_value_7_0= RULE_REAL ) ) )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1832:7: () ( (lv_value_7_0= RULE_REAL ) )
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1828:7: ()
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1829:5: 
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1832:7: ()
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1833:5: 
                     {
                     if ( state.backtracking==0 ) {
 
                               current = forceCreateModelElement(
-                                  grammarAccess.getPrimaryExpressionAccess().getIntLiteralAction_2_0(),
+                                  grammarAccess.getPrimaryExpressionAccess().getRealLiteralAction_2_0(),
                                   current);
                           
                     }
 
                     }
 
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1834:2: ( (lv_value_6_0= RULE_INT ) )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1835:1: (lv_value_6_0= RULE_INT )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1838:2: ( (lv_value_7_0= RULE_REAL ) )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1839:1: (lv_value_7_0= RULE_REAL )
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1835:1: (lv_value_6_0= RULE_INT )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1836:3: lv_value_6_0= RULE_INT
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1839:1: (lv_value_7_0= RULE_REAL )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1840:3: lv_value_7_0= RULE_REAL
                     {
-                    lv_value_6_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_rulePrimaryExpression4266); if (state.failed) return current;
+                    lv_value_7_0=(Token)match(input,RULE_REAL,FOLLOW_RULE_REAL_in_rulePrimaryExpression4277); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			newLeafNode(lv_value_6_0, grammarAccess.getPrimaryExpressionAccess().getValueINTTerminalRuleCall_2_1_0()); 
+                      			newLeafNode(lv_value_7_0, grammarAccess.getPrimaryExpressionAccess().getValueREALTerminalRuleCall_2_1_0()); 
                       		
                     }
                     if ( state.backtracking==0 ) {
@@ -5359,8 +5373,8 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
                              		setWithLastConsumed(
                              			current, 
                              			"value",
-                              		lv_value_6_0, 
-                              		"INT");
+                              		lv_value_7_0, 
+                              		"REAL");
                       	    
                     }
 
@@ -5376,78 +5390,34 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1854:5: this_FunctionCall_7= ruleFunctionCall
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1857:6: ( () ( (lv_value_9_0= RULE_INT ) ) )
                     {
-                    if ( state.backtracking==0 ) {
-                       
-                              newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getFunctionCallParserRuleCall_3()); 
-                          
-                    }
-                    pushFollow(FOLLOW_ruleFunctionCall_in_rulePrimaryExpression4300);
-                    this_FunctionCall_7=ruleFunctionCall();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-                       
-                              current = this_FunctionCall_7; 
-                              afterParserOrEnumRuleCall();
-                          
-                    }
-
-                    }
-                    break;
-                case 5 :
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1864:5: this_Postfix_8= rulePostfix
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1857:6: ( () ( (lv_value_9_0= RULE_INT ) ) )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1857:7: () ( (lv_value_9_0= RULE_INT ) )
                     {
-                    if ( state.backtracking==0 ) {
-                       
-                              newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getPostfixParserRuleCall_4()); 
-                          
-                    }
-                    pushFollow(FOLLOW_rulePostfix_in_rulePrimaryExpression4327);
-                    this_Postfix_8=rulePostfix();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-                       
-                              current = this_Postfix_8; 
-                              afterParserOrEnumRuleCall();
-                          
-                    }
-
-                    }
-                    break;
-                case 6 :
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1873:6: ( () ( (lv_value_10_0= RULE_STRING ) ) )
-                    {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1873:6: ( () ( (lv_value_10_0= RULE_STRING ) ) )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1873:7: () ( (lv_value_10_0= RULE_STRING ) )
-                    {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1873:7: ()
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1874:5: 
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1857:7: ()
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1858:5: 
                     {
                     if ( state.backtracking==0 ) {
 
                               current = forceCreateModelElement(
-                                  grammarAccess.getPrimaryExpressionAccess().getStringLiteralAction_5_0(),
+                                  grammarAccess.getPrimaryExpressionAccess().getIntLiteralAction_3_0(),
                                   current);
                           
                     }
 
                     }
 
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1879:2: ( (lv_value_10_0= RULE_STRING ) )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1880:1: (lv_value_10_0= RULE_STRING )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1863:2: ( (lv_value_9_0= RULE_INT ) )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1864:1: (lv_value_9_0= RULE_INT )
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1880:1: (lv_value_10_0= RULE_STRING )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1881:3: lv_value_10_0= RULE_STRING
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1864:1: (lv_value_9_0= RULE_INT )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1865:3: lv_value_9_0= RULE_INT
                     {
-                    lv_value_10_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rulePrimaryExpression4359); if (state.failed) return current;
+                    lv_value_9_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_rulePrimaryExpression4316); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			newLeafNode(lv_value_10_0, grammarAccess.getPrimaryExpressionAccess().getValueSTRINGTerminalRuleCall_5_1_0()); 
+                      			newLeafNode(lv_value_9_0, grammarAccess.getPrimaryExpressionAccess().getValueINTTerminalRuleCall_3_1_0()); 
                       		
                     }
                     if ( state.backtracking==0 ) {
@@ -5458,7 +5428,106 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
                              		setWithLastConsumed(
                              			current, 
                              			"value",
-                              		lv_value_10_0, 
+                              		lv_value_9_0, 
+                              		"INT");
+                      	    
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1883:5: this_FunctionCall_10= ruleFunctionCall
+                    {
+                    if ( state.backtracking==0 ) {
+                       
+                              newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getFunctionCallParserRuleCall_4()); 
+                          
+                    }
+                    pushFollow(FOLLOW_ruleFunctionCall_in_rulePrimaryExpression4350);
+                    this_FunctionCall_10=ruleFunctionCall();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+                       
+                              current = this_FunctionCall_10; 
+                              afterParserOrEnumRuleCall();
+                          
+                    }
+
+                    }
+                    break;
+                case 6 :
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1893:5: this_Postfix_11= rulePostfix
+                    {
+                    if ( state.backtracking==0 ) {
+                       
+                              newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getPostfixParserRuleCall_5()); 
+                          
+                    }
+                    pushFollow(FOLLOW_rulePostfix_in_rulePrimaryExpression4377);
+                    this_Postfix_11=rulePostfix();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+                       
+                              current = this_Postfix_11; 
+                              afterParserOrEnumRuleCall();
+                          
+                    }
+
+                    }
+                    break;
+                case 7 :
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1902:6: ( () ( (lv_value_13_0= RULE_STRING ) ) )
+                    {
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1902:6: ( () ( (lv_value_13_0= RULE_STRING ) ) )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1902:7: () ( (lv_value_13_0= RULE_STRING ) )
+                    {
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1902:7: ()
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1903:5: 
+                    {
+                    if ( state.backtracking==0 ) {
+
+                              current = forceCreateModelElement(
+                                  grammarAccess.getPrimaryExpressionAccess().getStringLiteralAction_6_0(),
+                                  current);
+                          
+                    }
+
+                    }
+
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1908:2: ( (lv_value_13_0= RULE_STRING ) )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1909:1: (lv_value_13_0= RULE_STRING )
+                    {
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1909:1: (lv_value_13_0= RULE_STRING )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1910:3: lv_value_13_0= RULE_STRING
+                    {
+                    lv_value_13_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rulePrimaryExpression4409); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      			newLeafNode(lv_value_13_0, grammarAccess.getPrimaryExpressionAccess().getValueSTRINGTerminalRuleCall_6_1_0()); 
+                      		
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = createModelElement(grammarAccess.getPrimaryExpressionRule());
+                      	        }
+                             		setWithLastConsumed(
+                             			current, 
+                             			"value",
+                              		lv_value_13_0, 
                               		"STRING");
                       	    
                     }
@@ -5474,44 +5543,22 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 7 :
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1899:5: this_ArrayLiteral_11= ruleArrayLiteral
-                    {
-                    if ( state.backtracking==0 ) {
-                       
-                              newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getArrayLiteralParserRuleCall_6()); 
-                          
-                    }
-                    pushFollow(FOLLOW_ruleArrayLiteral_in_rulePrimaryExpression4393);
-                    this_ArrayLiteral_11=ruleArrayLiteral();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-                       
-                              current = this_ArrayLiteral_11; 
-                              afterParserOrEnumRuleCall();
-                          
-                    }
-
-                    }
-                    break;
                 case 8 :
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1909:5: this_FunctionDeclaration_12= ruleFunctionDeclaration
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1928:5: this_ArrayLiteral_14= ruleArrayLiteral
                     {
                     if ( state.backtracking==0 ) {
                        
-                              newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getFunctionDeclarationParserRuleCall_7()); 
+                              newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getArrayLiteralParserRuleCall_7()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleFunctionDeclaration_in_rulePrimaryExpression4420);
-                    this_FunctionDeclaration_12=ruleFunctionDeclaration();
+                    pushFollow(FOLLOW_ruleArrayLiteral_in_rulePrimaryExpression4443);
+                    this_ArrayLiteral_14=ruleArrayLiteral();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
-                              current = this_FunctionDeclaration_12; 
+                              current = this_ArrayLiteral_14; 
                               afterParserOrEnumRuleCall();
                           
                     }
@@ -5519,59 +5566,50 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1918:6: ( () otherlv_14= 'null' )
-                    {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1918:6: ( () otherlv_14= 'null' )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1918:7: () otherlv_14= 'null'
-                    {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1918:7: ()
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1919:5: 
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1938:5: this_FunctionDeclaration_15= ruleFunctionDeclaration
                     {
                     if ( state.backtracking==0 ) {
-
-                              current = forceCreateModelElement(
-                                  grammarAccess.getPrimaryExpressionAccess().getNullLiteralAction_8_0(),
-                                  current);
+                       
+                              newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getFunctionDeclarationParserRuleCall_8()); 
                           
                     }
+                    pushFollow(FOLLOW_ruleFunctionDeclaration_in_rulePrimaryExpression4470);
+                    this_FunctionDeclaration_15=ruleFunctionDeclaration();
 
-                    }
-
-                    otherlv_14=(Token)match(input,47,FOLLOW_47_in_rulePrimaryExpression4447); if (state.failed) return current;
+                    state._fsp--;
+                    if (state.failed) return current;
                     if ( state.backtracking==0 ) {
-
-                          	newLeafNode(otherlv_14, grammarAccess.getPrimaryExpressionAccess().getNullKeyword_8_1());
+                       
+                              current = this_FunctionDeclaration_15; 
+                              afterParserOrEnumRuleCall();
                           
                     }
-
-                    }
-
 
                     }
                     break;
                 case 10 :
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1929:6: ( () otherlv_16= 'false' )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1947:6: ( () otherlv_17= 'null' )
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1929:6: ( () otherlv_16= 'false' )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1929:7: () otherlv_16= 'false'
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1947:6: ( () otherlv_17= 'null' )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1947:7: () otherlv_17= 'null'
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1929:7: ()
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1930:5: 
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1947:7: ()
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1948:5: 
                     {
                     if ( state.backtracking==0 ) {
 
                               current = forceCreateModelElement(
-                                  grammarAccess.getPrimaryExpressionAccess().getFalseLiteralAction_9_0(),
+                                  grammarAccess.getPrimaryExpressionAccess().getNullLiteralAction_9_0(),
                                   current);
                           
                     }
 
                     }
 
-                    otherlv_16=(Token)match(input,48,FOLLOW_48_in_rulePrimaryExpression4476); if (state.failed) return current;
+                    otherlv_17=(Token)match(input,47,FOLLOW_47_in_rulePrimaryExpression4497); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_16, grammarAccess.getPrimaryExpressionAccess().getFalseKeyword_9_1());
+                          	newLeafNode(otherlv_17, grammarAccess.getPrimaryExpressionAccess().getNullKeyword_9_1());
                           
                     }
 
@@ -5581,28 +5619,59 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1940:6: ( () otherlv_18= 'true' )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1958:6: ( () otherlv_19= 'false' )
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1940:6: ( () otherlv_18= 'true' )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1940:7: () otherlv_18= 'true'
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1958:6: ( () otherlv_19= 'false' )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1958:7: () otherlv_19= 'false'
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1940:7: ()
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1941:5: 
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1958:7: ()
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1959:5: 
                     {
                     if ( state.backtracking==0 ) {
 
                               current = forceCreateModelElement(
-                                  grammarAccess.getPrimaryExpressionAccess().getTrueLiteralAction_10_0(),
+                                  grammarAccess.getPrimaryExpressionAccess().getFalseLiteralAction_10_0(),
                                   current);
                           
                     }
 
                     }
 
-                    otherlv_18=(Token)match(input,49,FOLLOW_49_in_rulePrimaryExpression4505); if (state.failed) return current;
+                    otherlv_19=(Token)match(input,48,FOLLOW_48_in_rulePrimaryExpression4526); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_18, grammarAccess.getPrimaryExpressionAccess().getTrueKeyword_10_1());
+                          	newLeafNode(otherlv_19, grammarAccess.getPrimaryExpressionAccess().getFalseKeyword_10_1());
+                          
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 12 :
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1969:6: ( () otherlv_21= 'true' )
+                    {
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1969:6: ( () otherlv_21= 'true' )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1969:7: () otherlv_21= 'true'
+                    {
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1969:7: ()
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1970:5: 
+                    {
+                    if ( state.backtracking==0 ) {
+
+                              current = forceCreateModelElement(
+                                  grammarAccess.getPrimaryExpressionAccess().getTrueLiteralAction_11_0(),
+                                  current);
+                          
+                    }
+
+                    }
+
+                    otherlv_21=(Token)match(input,49,FOLLOW_49_in_rulePrimaryExpression4555); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_21, grammarAccess.getPrimaryExpressionAccess().getTrueKeyword_11_1());
                           
                     }
 
@@ -5634,7 +5703,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArrayLiteral"
-    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1958:1: entryRuleArrayLiteral returns [EObject current=null] : iv_ruleArrayLiteral= ruleArrayLiteral EOF ;
+    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1987:1: entryRuleArrayLiteral returns [EObject current=null] : iv_ruleArrayLiteral= ruleArrayLiteral EOF ;
     public final EObject entryRuleArrayLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -5642,13 +5711,13 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1959:2: (iv_ruleArrayLiteral= ruleArrayLiteral EOF )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1960:2: iv_ruleArrayLiteral= ruleArrayLiteral EOF
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1988:2: (iv_ruleArrayLiteral= ruleArrayLiteral EOF )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1989:2: iv_ruleArrayLiteral= ruleArrayLiteral EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getArrayLiteralRule()); 
             }
-            pushFollow(FOLLOW_ruleArrayLiteral_in_entryRuleArrayLiteral4542);
+            pushFollow(FOLLOW_ruleArrayLiteral_in_entryRuleArrayLiteral4592);
             iv_ruleArrayLiteral=ruleArrayLiteral();
 
             state._fsp--;
@@ -5656,7 +5725,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleArrayLiteral; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleArrayLiteral4552); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleArrayLiteral4602); if (state.failed) return current;
 
             }
 
@@ -5674,7 +5743,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArrayLiteral"
-    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1967:1: ruleArrayLiteral returns [EObject current=null] : ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )* )? otherlv_5= ']' ) ;
+    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1996:1: ruleArrayLiteral returns [EObject current=null] : ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )* )? otherlv_5= ']' ) ;
     public final EObject ruleArrayLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -5689,14 +5758,14 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1970:28: ( ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )* )? otherlv_5= ']' ) )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1971:1: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )* )? otherlv_5= ']' )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1999:28: ( ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )* )? otherlv_5= ']' ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2000:1: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )* )? otherlv_5= ']' )
             {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1971:1: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )* )? otherlv_5= ']' )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1971:2: () otherlv_1= '[' ( ( (lv_values_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )* )? otherlv_5= ']'
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2000:1: ( () otherlv_1= '[' ( ( (lv_values_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )* )? otherlv_5= ']' )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2000:2: () otherlv_1= '[' ( ( (lv_values_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )* )? otherlv_5= ']'
             {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1971:2: ()
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1972:5: 
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2000:2: ()
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2001:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -5708,35 +5777,35 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,50,FOLLOW_50_in_ruleArrayLiteral4598); if (state.failed) return current;
+            otherlv_1=(Token)match(input,50,FOLLOW_50_in_ruleArrayLiteral4648); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getArrayLiteralAccess().getLeftSquareBracketKeyword_1());
                   
             }
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1981:1: ( ( (lv_values_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )* )?
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2010:1: ( ( (lv_values_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )* )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
-            if ( ((LA26_0>=RULE_ID && LA26_0<=RULE_STRING)||LA26_0==19||LA26_0==27||(LA26_0>=47 && LA26_0<=50)) ) {
+            if ( ((LA26_0>=RULE_ID && LA26_0<=RULE_STRING)||LA26_0==19||LA26_0==27||LA26_0==44||(LA26_0>=47 && LA26_0<=50)) ) {
                 alt26=1;
             }
             switch (alt26) {
                 case 1 :
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1981:2: ( (lv_values_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )*
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2010:2: ( (lv_values_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )*
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1981:2: ( (lv_values_2_0= ruleExpression ) )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1982:1: (lv_values_2_0= ruleExpression )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2010:2: ( (lv_values_2_0= ruleExpression ) )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2011:1: (lv_values_2_0= ruleExpression )
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1982:1: (lv_values_2_0= ruleExpression )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1983:3: lv_values_2_0= ruleExpression
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2011:1: (lv_values_2_0= ruleExpression )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2012:3: lv_values_2_0= ruleExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getArrayLiteralAccess().getValuesExpressionParserRuleCall_2_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpression_in_ruleArrayLiteral4620);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleArrayLiteral4670);
                     lv_values_2_0=ruleExpression();
 
                     state._fsp--;
@@ -5760,7 +5829,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1999:2: (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )*
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2028:2: (otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) ) )*
                     loop25:
                     do {
                         int alt25=2;
@@ -5773,26 +5842,26 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
                         switch (alt25) {
                     	case 1 :
-                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:1999:4: otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) )
+                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2028:4: otherlv_3= ',' ( (lv_values_4_0= ruleExpression ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,28,FOLLOW_28_in_ruleArrayLiteral4633); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,28,FOLLOW_28_in_ruleArrayLiteral4683); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getArrayLiteralAccess().getCommaKeyword_2_1_0());
                     	          
                     	    }
-                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2003:1: ( (lv_values_4_0= ruleExpression ) )
-                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2004:1: (lv_values_4_0= ruleExpression )
+                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2032:1: ( (lv_values_4_0= ruleExpression ) )
+                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2033:1: (lv_values_4_0= ruleExpression )
                     	    {
-                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2004:1: (lv_values_4_0= ruleExpression )
-                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2005:3: lv_values_4_0= ruleExpression
+                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2033:1: (lv_values_4_0= ruleExpression )
+                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2034:3: lv_values_4_0= ruleExpression
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getArrayLiteralAccess().getValuesExpressionParserRuleCall_2_1_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleExpression_in_ruleArrayLiteral4654);
+                    	    pushFollow(FOLLOW_ruleExpression_in_ruleArrayLiteral4704);
                     	    lv_values_4_0=ruleExpression();
 
                     	    state._fsp--;
@@ -5831,7 +5900,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,51,FOLLOW_51_in_ruleArrayLiteral4670); if (state.failed) return current;
+            otherlv_5=(Token)match(input,51,FOLLOW_51_in_ruleArrayLiteral4720); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getArrayLiteralAccess().getRightSquareBracketKeyword_3());
@@ -5860,7 +5929,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePostfix"
-    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2035:1: entryRulePostfix returns [EObject current=null] : iv_rulePostfix= rulePostfix EOF ;
+    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2064:1: entryRulePostfix returns [EObject current=null] : iv_rulePostfix= rulePostfix EOF ;
     public final EObject entryRulePostfix() throws RecognitionException {
         EObject current = null;
 
@@ -5868,13 +5937,13 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2036:2: (iv_rulePostfix= rulePostfix EOF )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2037:2: iv_rulePostfix= rulePostfix EOF
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2065:2: (iv_rulePostfix= rulePostfix EOF )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2066:2: iv_rulePostfix= rulePostfix EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPostfixRule()); 
             }
-            pushFollow(FOLLOW_rulePostfix_in_entryRulePostfix4708);
+            pushFollow(FOLLOW_rulePostfix_in_entryRulePostfix4758);
             iv_rulePostfix=rulePostfix();
 
             state._fsp--;
@@ -5882,7 +5951,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_rulePostfix; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRulePostfix4718); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRulePostfix4768); if (state.failed) return current;
 
             }
 
@@ -5900,7 +5969,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePostfix"
-    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2044:1: rulePostfix returns [EObject current=null] : (this_VariableReference_0= ruleVariableReference ( ( () otherlv_2= '--' ) | ( () otherlv_4= '++' ) )? ) ;
+    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2073:1: rulePostfix returns [EObject current=null] : (this_VariableReference_0= ruleVariableReference ( ( () otherlv_2= '--' ) | ( () otherlv_4= '++' ) )? ) ;
     public final EObject rulePostfix() throws RecognitionException {
         EObject current = null;
 
@@ -5912,18 +5981,18 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2047:28: ( (this_VariableReference_0= ruleVariableReference ( ( () otherlv_2= '--' ) | ( () otherlv_4= '++' ) )? ) )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2048:1: (this_VariableReference_0= ruleVariableReference ( ( () otherlv_2= '--' ) | ( () otherlv_4= '++' ) )? )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2076:28: ( (this_VariableReference_0= ruleVariableReference ( ( () otherlv_2= '--' ) | ( () otherlv_4= '++' ) )? ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2077:1: (this_VariableReference_0= ruleVariableReference ( ( () otherlv_2= '--' ) | ( () otherlv_4= '++' ) )? )
             {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2048:1: (this_VariableReference_0= ruleVariableReference ( ( () otherlv_2= '--' ) | ( () otherlv_4= '++' ) )? )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2049:5: this_VariableReference_0= ruleVariableReference ( ( () otherlv_2= '--' ) | ( () otherlv_4= '++' ) )?
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2077:1: (this_VariableReference_0= ruleVariableReference ( ( () otherlv_2= '--' ) | ( () otherlv_4= '++' ) )? )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2078:5: this_VariableReference_0= ruleVariableReference ( ( () otherlv_2= '--' ) | ( () otherlv_4= '++' ) )?
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getPostfixAccess().getVariableReferenceParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleVariableReference_in_rulePostfix4765);
+            pushFollow(FOLLOW_ruleVariableReference_in_rulePostfix4815);
             this_VariableReference_0=ruleVariableReference();
 
             state._fsp--;
@@ -5934,7 +6003,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2057:1: ( ( () otherlv_2= '--' ) | ( () otherlv_4= '++' ) )?
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2086:1: ( ( () otherlv_2= '--' ) | ( () otherlv_4= '++' ) )?
             int alt27=3;
             int LA27_0 = input.LA(1);
 
@@ -5946,13 +6015,13 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
             }
             switch (alt27) {
                 case 1 :
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2057:2: ( () otherlv_2= '--' )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2086:2: ( () otherlv_2= '--' )
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2057:2: ( () otherlv_2= '--' )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2057:3: () otherlv_2= '--'
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2086:2: ( () otherlv_2= '--' )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2086:3: () otherlv_2= '--'
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2057:3: ()
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2058:5: 
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2086:3: ()
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2087:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5964,7 +6033,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,52,FOLLOW_52_in_rulePostfix4787); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,52,FOLLOW_52_in_rulePostfix4837); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getPostfixAccess().getHyphenMinusHyphenMinusKeyword_1_0_1());
@@ -5977,13 +6046,13 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2068:6: ( () otherlv_4= '++' )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2097:6: ( () otherlv_4= '++' )
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2068:6: ( () otherlv_4= '++' )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2068:7: () otherlv_4= '++'
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2097:6: ( () otherlv_4= '++' )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2097:7: () otherlv_4= '++'
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2068:7: ()
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2069:5: 
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2097:7: ()
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2098:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5995,7 +6064,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,53,FOLLOW_53_in_rulePostfix4816); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,53,FOLLOW_53_in_rulePostfix4866); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_4, grammarAccess.getPostfixAccess().getPlusSignPlusSignKeyword_1_1_1());
@@ -6033,7 +6102,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVariableReference"
-    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2086:1: entryRuleVariableReference returns [EObject current=null] : iv_ruleVariableReference= ruleVariableReference EOF ;
+    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2115:1: entryRuleVariableReference returns [EObject current=null] : iv_ruleVariableReference= ruleVariableReference EOF ;
     public final EObject entryRuleVariableReference() throws RecognitionException {
         EObject current = null;
 
@@ -6041,13 +6110,13 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2087:2: (iv_ruleVariableReference= ruleVariableReference EOF )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2088:2: iv_ruleVariableReference= ruleVariableReference EOF
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2116:2: (iv_ruleVariableReference= ruleVariableReference EOF )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2117:2: iv_ruleVariableReference= ruleVariableReference EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getVariableReferenceRule()); 
             }
-            pushFollow(FOLLOW_ruleVariableReference_in_entryRuleVariableReference4855);
+            pushFollow(FOLLOW_ruleVariableReference_in_entryRuleVariableReference4905);
             iv_ruleVariableReference=ruleVariableReference();
 
             state._fsp--;
@@ -6055,7 +6124,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleVariableReference; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVariableReference4865); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVariableReference4915); if (state.failed) return current;
 
             }
 
@@ -6073,7 +6142,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariableReference"
-    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2095:1: ruleVariableReference returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_dimensions_2_0= ruleExpression ) ) otherlv_3= ']' )* ) ;
+    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2124:1: ruleVariableReference returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_dimensions_2_0= ruleExpression ) ) otherlv_3= ']' )* ) ;
     public final EObject ruleVariableReference() throws RecognitionException {
         EObject current = null;
 
@@ -6086,17 +6155,17 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2098:28: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_dimensions_2_0= ruleExpression ) ) otherlv_3= ']' )* ) )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2099:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_dimensions_2_0= ruleExpression ) ) otherlv_3= ']' )* )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2127:28: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_dimensions_2_0= ruleExpression ) ) otherlv_3= ']' )* ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2128:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_dimensions_2_0= ruleExpression ) ) otherlv_3= ']' )* )
             {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2099:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_dimensions_2_0= ruleExpression ) ) otherlv_3= ']' )* )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2099:2: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_dimensions_2_0= ruleExpression ) ) otherlv_3= ']' )*
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2128:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_dimensions_2_0= ruleExpression ) ) otherlv_3= ']' )* )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2128:2: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_dimensions_2_0= ruleExpression ) ) otherlv_3= ']' )*
             {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2099:2: ( (otherlv_0= RULE_ID ) )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2100:1: (otherlv_0= RULE_ID )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2128:2: ( (otherlv_0= RULE_ID ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2129:1: (otherlv_0= RULE_ID )
             {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2100:1: (otherlv_0= RULE_ID )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2101:3: otherlv_0= RULE_ID
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2129:1: (otherlv_0= RULE_ID )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2130:3: otherlv_0= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -6105,7 +6174,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
               	        }
                       
             }
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariableReference4910); if (state.failed) return current;
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariableReference4960); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_0, grammarAccess.getVariableReferenceAccess().getVariableVariableReferenceableCrossReference_0_0()); 
@@ -6117,7 +6186,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2112:2: (otherlv_1= '[' ( (lv_dimensions_2_0= ruleExpression ) ) otherlv_3= ']' )*
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2141:2: (otherlv_1= '[' ( (lv_dimensions_2_0= ruleExpression ) ) otherlv_3= ']' )*
             loop28:
             do {
                 int alt28=2;
@@ -6130,26 +6199,26 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
                 switch (alt28) {
             	case 1 :
-            	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2112:4: otherlv_1= '[' ( (lv_dimensions_2_0= ruleExpression ) ) otherlv_3= ']'
+            	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2141:4: otherlv_1= '[' ( (lv_dimensions_2_0= ruleExpression ) ) otherlv_3= ']'
             	    {
-            	    otherlv_1=(Token)match(input,50,FOLLOW_50_in_ruleVariableReference4923); if (state.failed) return current;
+            	    otherlv_1=(Token)match(input,50,FOLLOW_50_in_ruleVariableReference4973); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_1, grammarAccess.getVariableReferenceAccess().getLeftSquareBracketKeyword_1_0());
             	          
             	    }
-            	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2116:1: ( (lv_dimensions_2_0= ruleExpression ) )
-            	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2117:1: (lv_dimensions_2_0= ruleExpression )
+            	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2145:1: ( (lv_dimensions_2_0= ruleExpression ) )
+            	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2146:1: (lv_dimensions_2_0= ruleExpression )
             	    {
-            	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2117:1: (lv_dimensions_2_0= ruleExpression )
-            	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2118:3: lv_dimensions_2_0= ruleExpression
+            	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2146:1: (lv_dimensions_2_0= ruleExpression )
+            	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2147:3: lv_dimensions_2_0= ruleExpression
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getVariableReferenceAccess().getDimensionsExpressionParserRuleCall_1_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleExpression_in_ruleVariableReference4944);
+            	    pushFollow(FOLLOW_ruleExpression_in_ruleVariableReference4994);
             	    lv_dimensions_2_0=ruleExpression();
 
             	    state._fsp--;
@@ -6173,7 +6242,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_3=(Token)match(input,51,FOLLOW_51_in_ruleVariableReference4956); if (state.failed) return current;
+            	    otherlv_3=(Token)match(input,51,FOLLOW_51_in_ruleVariableReference5006); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_3, grammarAccess.getVariableReferenceAccess().getRightSquareBracketKeyword_1_2());
@@ -6211,7 +6280,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFunctionCall"
-    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2146:1: entryRuleFunctionCall returns [EObject current=null] : iv_ruleFunctionCall= ruleFunctionCall EOF ;
+    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2175:1: entryRuleFunctionCall returns [EObject current=null] : iv_ruleFunctionCall= ruleFunctionCall EOF ;
     public final EObject entryRuleFunctionCall() throws RecognitionException {
         EObject current = null;
 
@@ -6219,13 +6288,13 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2147:2: (iv_ruleFunctionCall= ruleFunctionCall EOF )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2148:2: iv_ruleFunctionCall= ruleFunctionCall EOF
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2176:2: (iv_ruleFunctionCall= ruleFunctionCall EOF )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2177:2: iv_ruleFunctionCall= ruleFunctionCall EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFunctionCallRule()); 
             }
-            pushFollow(FOLLOW_ruleFunctionCall_in_entryRuleFunctionCall4994);
+            pushFollow(FOLLOW_ruleFunctionCall_in_entryRuleFunctionCall5044);
             iv_ruleFunctionCall=ruleFunctionCall();
 
             state._fsp--;
@@ -6233,7 +6302,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleFunctionCall; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionCall5004); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionCall5054); if (state.failed) return current;
 
             }
 
@@ -6251,7 +6320,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionCall"
-    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2155:1: ruleFunctionCall returns [EObject current=null] : ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= '(' ( ( (lv_args_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )* )? otherlv_6= ')' ) ;
+    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2184:1: ruleFunctionCall returns [EObject current=null] : ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= '(' ( ( (lv_args_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )* )? otherlv_6= ')' ) ;
     public final EObject ruleFunctionCall() throws RecognitionException {
         EObject current = null;
 
@@ -6267,14 +6336,14 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2158:28: ( ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= '(' ( ( (lv_args_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )* )? otherlv_6= ')' ) )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2159:1: ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= '(' ( ( (lv_args_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )* )? otherlv_6= ')' )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2187:28: ( ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= '(' ( ( (lv_args_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )* )? otherlv_6= ')' ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2188:1: ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= '(' ( ( (lv_args_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )* )? otherlv_6= ')' )
             {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2159:1: ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= '(' ( ( (lv_args_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )* )? otherlv_6= ')' )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2159:2: () ( (otherlv_1= RULE_ID ) ) otherlv_2= '(' ( ( (lv_args_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )* )? otherlv_6= ')'
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2188:1: ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= '(' ( ( (lv_args_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )* )? otherlv_6= ')' )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2188:2: () ( (otherlv_1= RULE_ID ) ) otherlv_2= '(' ( ( (lv_args_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )* )? otherlv_6= ')'
             {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2159:2: ()
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2160:5: 
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2188:2: ()
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2189:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -6286,11 +6355,11 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2165:2: ( (otherlv_1= RULE_ID ) )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2166:1: (otherlv_1= RULE_ID )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2194:2: ( (otherlv_1= RULE_ID ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2195:1: (otherlv_1= RULE_ID )
             {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2166:1: (otherlv_1= RULE_ID )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2167:3: otherlv_1= RULE_ID
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2195:1: (otherlv_1= RULE_ID )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2196:3: otherlv_1= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -6299,7 +6368,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
               	        }
                       
             }
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFunctionCall5058); if (state.failed) return current;
+            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFunctionCall5108); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_1, grammarAccess.getFunctionCallAccess().getFunctionFunctionDeclarationCrossReference_1_0()); 
@@ -6311,35 +6380,35 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleFunctionCall5070); if (state.failed) return current;
+            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleFunctionCall5120); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getFunctionCallAccess().getLeftParenthesisKeyword_2());
                   
             }
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2182:1: ( ( (lv_args_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )* )?
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2211:1: ( ( (lv_args_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )* )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
-            if ( ((LA30_0>=RULE_ID && LA30_0<=RULE_STRING)||LA30_0==19||LA30_0==27||(LA30_0>=47 && LA30_0<=50)) ) {
+            if ( ((LA30_0>=RULE_ID && LA30_0<=RULE_STRING)||LA30_0==19||LA30_0==27||LA30_0==44||(LA30_0>=47 && LA30_0<=50)) ) {
                 alt30=1;
             }
             switch (alt30) {
                 case 1 :
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2182:2: ( (lv_args_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )*
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2211:2: ( (lv_args_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )*
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2182:2: ( (lv_args_3_0= ruleExpression ) )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2183:1: (lv_args_3_0= ruleExpression )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2211:2: ( (lv_args_3_0= ruleExpression ) )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2212:1: (lv_args_3_0= ruleExpression )
                     {
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2183:1: (lv_args_3_0= ruleExpression )
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2184:3: lv_args_3_0= ruleExpression
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2212:1: (lv_args_3_0= ruleExpression )
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2213:3: lv_args_3_0= ruleExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getFunctionCallAccess().getArgsExpressionParserRuleCall_3_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpression_in_ruleFunctionCall5092);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleFunctionCall5142);
                     lv_args_3_0=ruleExpression();
 
                     state._fsp--;
@@ -6363,7 +6432,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2200:2: (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )*
+                    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2229:2: (otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) ) )*
                     loop29:
                     do {
                         int alt29=2;
@@ -6376,26 +6445,26 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
                         switch (alt29) {
                     	case 1 :
-                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2200:4: otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) )
+                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2229:4: otherlv_4= ',' ( (lv_args_5_0= ruleExpression ) )
                     	    {
-                    	    otherlv_4=(Token)match(input,28,FOLLOW_28_in_ruleFunctionCall5105); if (state.failed) return current;
+                    	    otherlv_4=(Token)match(input,28,FOLLOW_28_in_ruleFunctionCall5155); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_4, grammarAccess.getFunctionCallAccess().getCommaKeyword_3_1_0());
                     	          
                     	    }
-                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2204:1: ( (lv_args_5_0= ruleExpression ) )
-                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2205:1: (lv_args_5_0= ruleExpression )
+                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2233:1: ( (lv_args_5_0= ruleExpression ) )
+                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2234:1: (lv_args_5_0= ruleExpression )
                     	    {
-                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2205:1: (lv_args_5_0= ruleExpression )
-                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2206:3: lv_args_5_0= ruleExpression
+                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2234:1: (lv_args_5_0= ruleExpression )
+                    	    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2235:3: lv_args_5_0= ruleExpression
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getFunctionCallAccess().getArgsExpressionParserRuleCall_3_1_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleExpression_in_ruleFunctionCall5126);
+                    	    pushFollow(FOLLOW_ruleExpression_in_ruleFunctionCall5176);
                     	    lv_args_5_0=ruleExpression();
 
                     	    state._fsp--;
@@ -6434,7 +6503,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,20,FOLLOW_20_in_ruleFunctionCall5142); if (state.failed) return current;
+            otherlv_6=(Token)match(input,20,FOLLOW_20_in_ruleFunctionCall5192); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_6, grammarAccess.getFunctionCallAccess().getRightParenthesisKeyword_4());
@@ -6463,7 +6532,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReturnStatement"
-    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2234:1: entryRuleReturnStatement returns [EObject current=null] : iv_ruleReturnStatement= ruleReturnStatement EOF ;
+    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2263:1: entryRuleReturnStatement returns [EObject current=null] : iv_ruleReturnStatement= ruleReturnStatement EOF ;
     public final EObject entryRuleReturnStatement() throws RecognitionException {
         EObject current = null;
 
@@ -6471,13 +6540,13 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2235:2: (iv_ruleReturnStatement= ruleReturnStatement EOF )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2236:2: iv_ruleReturnStatement= ruleReturnStatement EOF
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2264:2: (iv_ruleReturnStatement= ruleReturnStatement EOF )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2265:2: iv_ruleReturnStatement= ruleReturnStatement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getReturnStatementRule()); 
             }
-            pushFollow(FOLLOW_ruleReturnStatement_in_entryRuleReturnStatement5178);
+            pushFollow(FOLLOW_ruleReturnStatement_in_entryRuleReturnStatement5228);
             iv_ruleReturnStatement=ruleReturnStatement();
 
             state._fsp--;
@@ -6485,7 +6554,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleReturnStatement; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleReturnStatement5188); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleReturnStatement5238); if (state.failed) return current;
 
             }
 
@@ -6503,7 +6572,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReturnStatement"
-    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2243:1: ruleReturnStatement returns [EObject current=null] : (otherlv_0= 'return' ( (lv_value_1_0= ruleExpression ) ) ) ;
+    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2272:1: ruleReturnStatement returns [EObject current=null] : (otherlv_0= 'return' ( (lv_value_1_0= ruleExpression ) ) ) ;
     public final EObject ruleReturnStatement() throws RecognitionException {
         EObject current = null;
 
@@ -6514,30 +6583,30 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2246:28: ( (otherlv_0= 'return' ( (lv_value_1_0= ruleExpression ) ) ) )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2247:1: (otherlv_0= 'return' ( (lv_value_1_0= ruleExpression ) ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2275:28: ( (otherlv_0= 'return' ( (lv_value_1_0= ruleExpression ) ) ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2276:1: (otherlv_0= 'return' ( (lv_value_1_0= ruleExpression ) ) )
             {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2247:1: (otherlv_0= 'return' ( (lv_value_1_0= ruleExpression ) ) )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2247:3: otherlv_0= 'return' ( (lv_value_1_0= ruleExpression ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2276:1: (otherlv_0= 'return' ( (lv_value_1_0= ruleExpression ) ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2276:3: otherlv_0= 'return' ( (lv_value_1_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,54,FOLLOW_54_in_ruleReturnStatement5225); if (state.failed) return current;
+            otherlv_0=(Token)match(input,54,FOLLOW_54_in_ruleReturnStatement5275); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getReturnStatementAccess().getReturnKeyword_0());
                   
             }
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2251:1: ( (lv_value_1_0= ruleExpression ) )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2252:1: (lv_value_1_0= ruleExpression )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2280:1: ( (lv_value_1_0= ruleExpression ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2281:1: (lv_value_1_0= ruleExpression )
             {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2252:1: (lv_value_1_0= ruleExpression )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2253:3: lv_value_1_0= ruleExpression
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2281:1: (lv_value_1_0= ruleExpression )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2282:3: lv_value_1_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getReturnStatementAccess().getValueExpressionParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleExpression_in_ruleReturnStatement5246);
+            pushFollow(FOLLOW_ruleExpression_in_ruleReturnStatement5296);
             lv_value_1_0=ruleExpression();
 
             state._fsp--;
@@ -6584,7 +6653,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInclude"
-    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2277:1: entryRuleInclude returns [EObject current=null] : iv_ruleInclude= ruleInclude EOF ;
+    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2306:1: entryRuleInclude returns [EObject current=null] : iv_ruleInclude= ruleInclude EOF ;
     public final EObject entryRuleInclude() throws RecognitionException {
         EObject current = null;
 
@@ -6592,13 +6661,13 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2278:2: (iv_ruleInclude= ruleInclude EOF )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2279:2: iv_ruleInclude= ruleInclude EOF
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2307:2: (iv_ruleInclude= ruleInclude EOF )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2308:2: iv_ruleInclude= ruleInclude EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getIncludeRule()); 
             }
-            pushFollow(FOLLOW_ruleInclude_in_entryRuleInclude5282);
+            pushFollow(FOLLOW_ruleInclude_in_entryRuleInclude5332);
             iv_ruleInclude=ruleInclude();
 
             state._fsp--;
@@ -6606,7 +6675,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleInclude; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInclude5292); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInclude5342); if (state.failed) return current;
 
             }
 
@@ -6624,7 +6693,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInclude"
-    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2286:1: ruleInclude returns [EObject current=null] : (otherlv_0= 'include' otherlv_1= '(' ( (lv_importURI_2_0= RULE_STRING ) ) otherlv_3= ')' ) ;
+    // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2315:1: ruleInclude returns [EObject current=null] : (otherlv_0= 'include' otherlv_1= '(' ( (lv_importURI_2_0= RULE_STRING ) ) otherlv_3= ')' ) ;
     public final EObject ruleInclude() throws RecognitionException {
         EObject current = null;
 
@@ -6636,31 +6705,31 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2289:28: ( (otherlv_0= 'include' otherlv_1= '(' ( (lv_importURI_2_0= RULE_STRING ) ) otherlv_3= ')' ) )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2290:1: (otherlv_0= 'include' otherlv_1= '(' ( (lv_importURI_2_0= RULE_STRING ) ) otherlv_3= ')' )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2318:28: ( (otherlv_0= 'include' otherlv_1= '(' ( (lv_importURI_2_0= RULE_STRING ) ) otherlv_3= ')' ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2319:1: (otherlv_0= 'include' otherlv_1= '(' ( (lv_importURI_2_0= RULE_STRING ) ) otherlv_3= ')' )
             {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2290:1: (otherlv_0= 'include' otherlv_1= '(' ( (lv_importURI_2_0= RULE_STRING ) ) otherlv_3= ')' )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2290:3: otherlv_0= 'include' otherlv_1= '(' ( (lv_importURI_2_0= RULE_STRING ) ) otherlv_3= ')'
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2319:1: (otherlv_0= 'include' otherlv_1= '(' ( (lv_importURI_2_0= RULE_STRING ) ) otherlv_3= ')' )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2319:3: otherlv_0= 'include' otherlv_1= '(' ( (lv_importURI_2_0= RULE_STRING ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,55,FOLLOW_55_in_ruleInclude5329); if (state.failed) return current;
+            otherlv_0=(Token)match(input,55,FOLLOW_55_in_ruleInclude5379); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getIncludeAccess().getIncludeKeyword_0());
                   
             }
-            otherlv_1=(Token)match(input,19,FOLLOW_19_in_ruleInclude5341); if (state.failed) return current;
+            otherlv_1=(Token)match(input,19,FOLLOW_19_in_ruleInclude5391); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getIncludeAccess().getLeftParenthesisKeyword_1());
                   
             }
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2298:1: ( (lv_importURI_2_0= RULE_STRING ) )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2299:1: (lv_importURI_2_0= RULE_STRING )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2327:1: ( (lv_importURI_2_0= RULE_STRING ) )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2328:1: (lv_importURI_2_0= RULE_STRING )
             {
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2299:1: (lv_importURI_2_0= RULE_STRING )
-            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2300:3: lv_importURI_2_0= RULE_STRING
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2328:1: (lv_importURI_2_0= RULE_STRING )
+            // ../org.processus.ecleek/src-gen/org/processus/ecleek/parser/antlr/internal/InternalLeek.g:2329:3: lv_importURI_2_0= RULE_STRING
             {
-            lv_importURI_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInclude5358); if (state.failed) return current;
+            lv_importURI_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInclude5408); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_importURI_2_0, grammarAccess.getIncludeAccess().getImportURISTRINGTerminalRuleCall_2_0()); 
@@ -6684,7 +6753,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleInclude5375); if (state.failed) return current;
+            otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleInclude5425); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getIncludeAccess().getRightParenthesisKeyword_3());
@@ -6806,23 +6875,24 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
         }
     }
     static final String DFA24_eotS =
-        "\15\uffff";
+        "\16\uffff";
     static final String DFA24_eofS =
-        "\4\uffff\1\14\10\uffff";
+        "\5\uffff\1\14\10\uffff";
     static final String DFA24_minS =
-        "\1\4\3\uffff\1\14\10\uffff";
+        "\1\4\4\uffff\1\14\10\uffff";
     static final String DFA24_maxS =
-        "\1\62\3\uffff\1\65\10\uffff";
+        "\1\62\4\uffff\1\65\10\uffff";
     static final String DFA24_acceptS =
-        "\1\uffff\1\1\1\2\1\3\1\uffff\1\6\1\7\1\10\1\11\1\12\1\13\1\4\1\5";
+        "\1\uffff\1\1\1\2\1\3\1\4\1\uffff\1\7\1\10\1\11\1\12\1\13\1\14\1\6\1\5";
     static final String DFA24_specialS =
-        "\15\uffff}>";
+        "\16\uffff}>";
     static final String[] DFA24_transitionS = {
-            "\1\4\1\2\1\3\1\5\13\uffff\1\1\7\uffff\1\7\23\uffff\1\10\1\11\1\12\1\6",
+            "\1\5\1\3\1\4\1\6\13\uffff\1\1\7\uffff\1\10\20\uffff\1\2\2\uffff\1\11\1\12\1\13\1\7",
             "",
             "",
             "",
-            "\1\14\6\uffff\1\13\1\14\7\uffff\1\14\2\uffff\20\14\3\uffff\4\14",
+            "",
+            "\1\14\6\uffff\1\15\1\14\7\uffff\1\14\2\uffff\20\14\3\uffff\4\14",
             "",
             "",
             "",
@@ -6863,7 +6933,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
             this.transition = DFA24_transition;
         }
         public String getDescription() {
-            return "1785:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_REAL ) ) ) | ( () ( (lv_value_6_0= RULE_INT ) ) ) | this_FunctionCall_7= ruleFunctionCall | this_Postfix_8= rulePostfix | ( () ( (lv_value_10_0= RULE_STRING ) ) ) | this_ArrayLiteral_11= ruleArrayLiteral | this_FunctionDeclaration_12= ruleFunctionDeclaration | ( () otherlv_14= 'null' ) | ( () otherlv_16= 'false' ) | ( () otherlv_18= 'true' ) )";
+            return "1785:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '-' ( (lv_expression_5_0= rulePrimaryExpression ) ) ) | ( () ( (lv_value_7_0= RULE_REAL ) ) ) | ( () ( (lv_value_9_0= RULE_INT ) ) ) | this_FunctionCall_10= ruleFunctionCall | this_Postfix_11= rulePostfix | ( () ( (lv_value_13_0= RULE_STRING ) ) ) | this_ArrayLiteral_14= ruleArrayLiteral | this_FunctionDeclaration_15= ruleFunctionDeclaration | ( () otherlv_17= 'null' ) | ( () otherlv_19= 'false' ) | ( () otherlv_21= 'true' ) )";
         }
     }
  
@@ -6908,12 +6978,12 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleAffectation_in_entryRuleAffectation1006 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAffectation1016 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariableReference_in_ruleAffectation1062 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleAffectation1074 = new BitSet(new long[]{0x00078000080800F0L});
+    public static final BitSet FOLLOW_17_in_ruleAffectation1074 = new BitSet(new long[]{0x00079000080800F0L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleAffectation1095 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIf_in_entryRuleIf1131 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIf1141 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_18_in_ruleIf1178 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleIf1190 = new BitSet(new long[]{0x00078000080800F0L});
+    public static final BitSet FOLLOW_19_in_ruleIf1190 = new BitSet(new long[]{0x00079000080800F0L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleIf1211 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_20_in_ruleIf1223 = new BitSet(new long[]{0x00C000004CE4F010L});
     public static final BitSet FOLLOW_ruleStatement_in_ruleIf1244 = new BitSet(new long[]{0x0000000000200002L});
@@ -6927,7 +6997,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleWhile_in_entryRuleWhile1471 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleWhile1481 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_22_in_ruleWhile1518 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleWhile1530 = new BitSet(new long[]{0x00078000080800F0L});
+    public static final BitSet FOLLOW_19_in_ruleWhile1530 = new BitSet(new long[]{0x00079000080800F0L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleWhile1551 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_20_in_ruleWhile1563 = new BitSet(new long[]{0x00C000004CC4F010L});
     public static final BitSet FOLLOW_ruleStatement_in_ruleWhile1584 = new BitSet(new long[]{0x0000000000000002L});
@@ -6936,9 +7006,9 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_23_in_ruleFor1667 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_19_in_ruleFor1679 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleForInitializer_in_ruleFor1700 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleFor1712 = new BitSet(new long[]{0x00078000080800F0L});
+    public static final BitSet FOLLOW_12_in_ruleFor1712 = new BitSet(new long[]{0x00079000080800F0L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleFor1733 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleFor1745 = new BitSet(new long[]{0x00078000080800F0L});
+    public static final BitSet FOLLOW_12_in_ruleFor1745 = new BitSet(new long[]{0x00079000080800F0L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleFor1766 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_20_in_ruleFor1778 = new BitSet(new long[]{0x00C000004CC4F010L});
     public static final BitSet FOLLOW_ruleStatement_in_ruleFor1799 = new BitSet(new long[]{0x0000000000000002L});
@@ -6949,7 +7019,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleForInVariableReference_in_ruleForIn1916 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_24_in_ruleForIn1928 = new BitSet(new long[]{0x0000000004000010L});
     public static final BitSet FOLLOW_ruleForInVariableReference_in_ruleForIn1951 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleForIn1963 = new BitSet(new long[]{0x00078000080800F0L});
+    public static final BitSet FOLLOW_25_in_ruleForIn1963 = new BitSet(new long[]{0x00079000080800F0L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleForIn1984 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_20_in_ruleForIn1996 = new BitSet(new long[]{0x00C000004CC4F010L});
     public static final BitSet FOLLOW_ruleStatement_in_ruleForIn2017 = new BitSet(new long[]{0x0000000000000002L});
@@ -6990,7 +7060,7 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleVariableDeclaration_in_entryRuleVariableDeclaration2891 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleVariableDeclaration2901 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleVariableDeclaration2943 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_17_in_ruleVariableDeclaration2961 = new BitSet(new long[]{0x00078000080800F0L});
+    public static final BitSet FOLLOW_17_in_ruleVariableDeclaration2961 = new BitSet(new long[]{0x00079000080800F0L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleVariableDeclaration2982 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression3020 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleExpression3030 = new BitSet(new long[]{0x0000000000000002L});
@@ -6998,90 +7068,92 @@ public class InternalLeekParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleComparison_in_entryRuleComparison3110 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleComparison3120 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOr_in_ruleComparison3167 = new BitSet(new long[]{0x0000007F80000002L});
-    public static final BitSet FOLLOW_31_in_ruleComparison3190 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_32_in_ruleComparison3219 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_33_in_ruleComparison3248 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_34_in_ruleComparison3277 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_35_in_ruleComparison3306 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_36_in_ruleComparison3335 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_37_in_ruleComparison3364 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_38_in_ruleComparison3393 = new BitSet(new long[]{0x00078000080800F0L});
+    public static final BitSet FOLLOW_31_in_ruleComparison3190 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_32_in_ruleComparison3219 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_33_in_ruleComparison3248 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_34_in_ruleComparison3277 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_35_in_ruleComparison3306 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_36_in_ruleComparison3335 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_37_in_ruleComparison3364 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_38_in_ruleComparison3393 = new BitSet(new long[]{0x00079000080800F0L});
     public static final BitSet FOLLOW_ruleOr_in_ruleComparison3416 = new BitSet(new long[]{0x0000007F80000002L});
     public static final BitSet FOLLOW_ruleOr_in_entryRuleOr3454 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOr3464 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAnd_in_ruleOr3511 = new BitSet(new long[]{0x0000018000000002L});
-    public static final BitSet FOLLOW_39_in_ruleOr3534 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_40_in_ruleOr3552 = new BitSet(new long[]{0x00078000080800F0L});
+    public static final BitSet FOLLOW_39_in_ruleOr3534 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_40_in_ruleOr3552 = new BitSet(new long[]{0x00079000080800F0L});
     public static final BitSet FOLLOW_ruleAnd_in_ruleOr3575 = new BitSet(new long[]{0x0000018000000002L});
     public static final BitSet FOLLOW_ruleAnd_in_entryRuleAnd3613 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAnd3623 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAddition_in_ruleAnd3670 = new BitSet(new long[]{0x0000060000000002L});
-    public static final BitSet FOLLOW_41_in_ruleAnd3693 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_42_in_ruleAnd3711 = new BitSet(new long[]{0x00078000080800F0L});
+    public static final BitSet FOLLOW_41_in_ruleAnd3693 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_42_in_ruleAnd3711 = new BitSet(new long[]{0x00079000080800F0L});
     public static final BitSet FOLLOW_ruleAddition_in_ruleAnd3734 = new BitSet(new long[]{0x0000060000000002L});
     public static final BitSet FOLLOW_ruleAddition_in_entryRuleAddition3772 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAddition3782 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMultiplication_in_ruleAddition3829 = new BitSet(new long[]{0x0000180000000002L});
-    public static final BitSet FOLLOW_43_in_ruleAddition3852 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_44_in_ruleAddition3881 = new BitSet(new long[]{0x00078000080800F0L});
+    public static final BitSet FOLLOW_43_in_ruleAddition3852 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_44_in_ruleAddition3881 = new BitSet(new long[]{0x00079000080800F0L});
     public static final BitSet FOLLOW_ruleMultiplication_in_ruleAddition3904 = new BitSet(new long[]{0x0000180000000002L});
     public static final BitSet FOLLOW_ruleMultiplication_in_entryRuleMultiplication3942 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMultiplication3952 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePrimaryExpression_in_ruleMultiplication3999 = new BitSet(new long[]{0x0000600000000002L});
-    public static final BitSet FOLLOW_45_in_ruleMultiplication4022 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_46_in_ruleMultiplication4051 = new BitSet(new long[]{0x00078000080800F0L});
+    public static final BitSet FOLLOW_45_in_ruleMultiplication4022 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_46_in_ruleMultiplication4051 = new BitSet(new long[]{0x00079000080800F0L});
     public static final BitSet FOLLOW_rulePrimaryExpression_in_ruleMultiplication4074 = new BitSet(new long[]{0x0000600000000002L});
     public static final BitSet FOLLOW_rulePrimaryExpression_in_entryRulePrimaryExpression4112 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePrimaryExpression4122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rulePrimaryExpression4160 = new BitSet(new long[]{0x00078000080800F0L});
+    public static final BitSet FOLLOW_19_in_rulePrimaryExpression4160 = new BitSet(new long[]{0x00079000080800F0L});
     public static final BitSet FOLLOW_ruleExpression_in_rulePrimaryExpression4182 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_20_in_rulePrimaryExpression4193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_REAL_in_rulePrimaryExpression4227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rulePrimaryExpression4266 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionCall_in_rulePrimaryExpression4300 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePostfix_in_rulePrimaryExpression4327 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rulePrimaryExpression4359 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrayLiteral_in_rulePrimaryExpression4393 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionDeclaration_in_rulePrimaryExpression4420 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_rulePrimaryExpression4447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_rulePrimaryExpression4476 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_rulePrimaryExpression4505 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrayLiteral_in_entryRuleArrayLiteral4542 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleArrayLiteral4552 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_ruleArrayLiteral4598 = new BitSet(new long[]{0x000F8000080800F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleArrayLiteral4620 = new BitSet(new long[]{0x0008000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleArrayLiteral4633 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleArrayLiteral4654 = new BitSet(new long[]{0x0008000010000000L});
-    public static final BitSet FOLLOW_51_in_ruleArrayLiteral4670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePostfix_in_entryRulePostfix4708 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePostfix4718 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableReference_in_rulePostfix4765 = new BitSet(new long[]{0x0030000000000002L});
-    public static final BitSet FOLLOW_52_in_rulePostfix4787 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_rulePostfix4816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableReference_in_entryRuleVariableReference4855 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVariableReference4865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVariableReference4910 = new BitSet(new long[]{0x0004000000000002L});
-    public static final BitSet FOLLOW_50_in_ruleVariableReference4923 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleVariableReference4944 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51_in_ruleVariableReference4956 = new BitSet(new long[]{0x0004000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionCall_in_entryRuleFunctionCall4994 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionCall5004 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFunctionCall5058 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleFunctionCall5070 = new BitSet(new long[]{0x00078000081800F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleFunctionCall5092 = new BitSet(new long[]{0x0000000010100000L});
-    public static final BitSet FOLLOW_28_in_ruleFunctionCall5105 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleFunctionCall5126 = new BitSet(new long[]{0x0000000010100000L});
-    public static final BitSet FOLLOW_20_in_ruleFunctionCall5142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReturnStatement_in_entryRuleReturnStatement5178 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleReturnStatement5188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleReturnStatement5225 = new BitSet(new long[]{0x00078000080800F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleReturnStatement5246 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInclude_in_entryRuleInclude5282 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInclude5292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleInclude5329 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleInclude5341 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleInclude5358 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleInclude5375 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_rulePrimaryExpression4222 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_rulePrimaryExpression_in_rulePrimaryExpression4243 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_REAL_in_rulePrimaryExpression4277 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rulePrimaryExpression4316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionCall_in_rulePrimaryExpression4350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePostfix_in_rulePrimaryExpression4377 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rulePrimaryExpression4409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrayLiteral_in_rulePrimaryExpression4443 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionDeclaration_in_rulePrimaryExpression4470 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_rulePrimaryExpression4497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_rulePrimaryExpression4526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_rulePrimaryExpression4555 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrayLiteral_in_entryRuleArrayLiteral4592 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleArrayLiteral4602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleArrayLiteral4648 = new BitSet(new long[]{0x000F9000080800F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleArrayLiteral4670 = new BitSet(new long[]{0x0008000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleArrayLiteral4683 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleArrayLiteral4704 = new BitSet(new long[]{0x0008000010000000L});
+    public static final BitSet FOLLOW_51_in_ruleArrayLiteral4720 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePostfix_in_entryRulePostfix4758 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePostfix4768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableReference_in_rulePostfix4815 = new BitSet(new long[]{0x0030000000000002L});
+    public static final BitSet FOLLOW_52_in_rulePostfix4837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_rulePostfix4866 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableReference_in_entryRuleVariableReference4905 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVariableReference4915 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVariableReference4960 = new BitSet(new long[]{0x0004000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleVariableReference4973 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleVariableReference4994 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_ruleVariableReference5006 = new BitSet(new long[]{0x0004000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionCall_in_entryRuleFunctionCall5044 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionCall5054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFunctionCall5108 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleFunctionCall5120 = new BitSet(new long[]{0x00079000081800F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleFunctionCall5142 = new BitSet(new long[]{0x0000000010100000L});
+    public static final BitSet FOLLOW_28_in_ruleFunctionCall5155 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleFunctionCall5176 = new BitSet(new long[]{0x0000000010100000L});
+    public static final BitSet FOLLOW_20_in_ruleFunctionCall5192 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReturnStatement_in_entryRuleReturnStatement5228 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleReturnStatement5238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_ruleReturnStatement5275 = new BitSet(new long[]{0x00079000080800F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleReturnStatement5296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInclude_in_entryRuleInclude5332 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInclude5342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleInclude5379 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleInclude5391 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleInclude5408 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleInclude5425 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_21_in_synpred1_InternalLeek1257 = new BitSet(new long[]{0x0000000000000002L});
 
 }

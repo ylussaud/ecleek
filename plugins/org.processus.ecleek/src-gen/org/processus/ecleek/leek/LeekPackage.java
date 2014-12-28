@@ -1401,6 +1401,34 @@ public interface LeekPackage extends EPackage
   int DIV_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link org.processus.ecleek.leek.impl.UnitaryMinusImpl <em>Unitary Minus</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.processus.ecleek.leek.impl.UnitaryMinusImpl
+   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getUnitaryMinus()
+   * @generated
+   */
+  int UNITARY_MINUS = 39;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNITARY_MINUS__EXPRESSION = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Unitary Minus</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNITARY_MINUS_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.RealLiteralImpl <em>Real Literal</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1408,7 +1436,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getRealLiteral()
    * @generated
    */
-  int REAL_LITERAL = 39;
+  int REAL_LITERAL = 40;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1436,7 +1464,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getIntLiteral()
    * @generated
    */
-  int INT_LITERAL = 40;
+  int INT_LITERAL = 41;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1464,7 +1492,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 41;
+  int STRING_LITERAL = 42;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1492,7 +1520,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getNullLiteral()
    * @generated
    */
-  int NULL_LITERAL = 42;
+  int NULL_LITERAL = 43;
 
   /**
    * The number of structural features of the '<em>Null Literal</em>' class.
@@ -1511,7 +1539,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getFalseLiteral()
    * @generated
    */
-  int FALSE_LITERAL = 43;
+  int FALSE_LITERAL = 44;
 
   /**
    * The number of structural features of the '<em>False Literal</em>' class.
@@ -1530,7 +1558,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getTrueLiteral()
    * @generated
    */
-  int TRUE_LITERAL = 44;
+  int TRUE_LITERAL = 45;
 
   /**
    * The number of structural features of the '<em>True Literal</em>' class.
@@ -1549,7 +1577,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPostfixDecrement()
    * @generated
    */
-  int POSTFIX_DECREMENT = 45;
+  int POSTFIX_DECREMENT = 46;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1577,7 +1605,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPostfixIncrement()
    * @generated
    */
-  int POSTFIX_INCREMENT = 46;
+  int POSTFIX_INCREMENT = 47;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2649,6 +2677,27 @@ public interface LeekPackage extends EPackage
   EReference getDiv_Right();
 
   /**
+   * Returns the meta object for class '{@link org.processus.ecleek.leek.UnitaryMinus <em>Unitary Minus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unitary Minus</em>'.
+   * @see org.processus.ecleek.leek.UnitaryMinus
+   * @generated
+   */
+  EClass getUnitaryMinus();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.UnitaryMinus#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.processus.ecleek.leek.UnitaryMinus#getExpression()
+   * @see #getUnitaryMinus()
+   * @generated
+   */
+  EReference getUnitaryMinus_Expression();
+
+  /**
    * Returns the meta object for class '{@link org.processus.ecleek.leek.RealLiteral <em>Real Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3675,6 +3724,24 @@ public interface LeekPackage extends EPackage
      * @generated
      */
     EReference DIV__RIGHT = eINSTANCE.getDiv_Right();
+
+    /**
+     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.UnitaryMinusImpl <em>Unitary Minus</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.processus.ecleek.leek.impl.UnitaryMinusImpl
+     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getUnitaryMinus()
+     * @generated
+     */
+    EClass UNITARY_MINUS = eINSTANCE.getUnitaryMinus();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNITARY_MINUS__EXPRESSION = eINSTANCE.getUnitaryMinus_Expression();
 
     /**
      * The meta object literal for the '{@link org.processus.ecleek.leek.impl.RealLiteralImpl <em>Real Literal</em>}' class.

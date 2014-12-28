@@ -374,6 +374,15 @@ public interface LeekFactory extends EFactory
   Div createDiv();
 
   /**
+   * Returns a new object of class '<em>Unitary Minus</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unitary Minus</em>'.
+   * @generated
+   */
+  UnitaryMinus createUnitaryMinus();
+
+  /**
    * Returns a new object of class '<em>Real Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

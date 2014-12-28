@@ -110,8 +110,7 @@ Multiplication returns Expression:
 
 PrimaryExpression returns Expression:
 	'(' Expression ')'
-//	| {UnaryPlus} '+' expression=Expression
-//	| {UnaryMinus} '-' expression=Expression
+	| {UnitaryMinus} '-' expression=PrimaryExpression
 	| {RealLiteral} value=REAL
 	| {IntLiteral} value=INT
 	| FunctionCall

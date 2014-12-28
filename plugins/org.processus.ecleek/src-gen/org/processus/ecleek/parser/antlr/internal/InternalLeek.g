@@ -1803,14 +1803,43 @@ rulePrimaryExpression returns [EObject current=null]
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getPrimaryExpressionAccess().getRealLiteralAction_1_0(),
+            grammarAccess.getPrimaryExpressionAccess().getUnitaryMinusAction_1_0(),
+            $current);
+    }
+)	otherlv_4='-' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getPrimaryExpressionAccess().getHyphenMinusKeyword_1_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getExpressionPrimaryExpressionParserRuleCall_1_2_0()); 
+	    }
+		lv_expression_5_0=rulePrimaryExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPrimaryExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"expression",
+        		lv_expression_5_0, 
+        		"PrimaryExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+    |((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getPrimaryExpressionAccess().getRealLiteralAction_2_0(),
             $current);
     }
 )(
 (
-		lv_value_4_0=RULE_REAL
+		lv_value_7_0=RULE_REAL
 		{
-			newLeafNode(lv_value_4_0, grammarAccess.getPrimaryExpressionAccess().getValueREALTerminalRuleCall_1_1_0()); 
+			newLeafNode(lv_value_7_0, grammarAccess.getPrimaryExpressionAccess().getValueREALTerminalRuleCall_2_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1819,7 +1848,7 @@ rulePrimaryExpression returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"value",
-        		lv_value_4_0, 
+        		lv_value_7_0, 
         		"REAL");
 	    }
 
@@ -1828,14 +1857,14 @@ rulePrimaryExpression returns [EObject current=null]
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getPrimaryExpressionAccess().getIntLiteralAction_2_0(),
+            grammarAccess.getPrimaryExpressionAccess().getIntLiteralAction_3_0(),
             $current);
     }
 )(
 (
-		lv_value_6_0=RULE_INT
+		lv_value_9_0=RULE_INT
 		{
-			newLeafNode(lv_value_6_0, grammarAccess.getPrimaryExpressionAccess().getValueINTTerminalRuleCall_2_1_0()); 
+			newLeafNode(lv_value_9_0, grammarAccess.getPrimaryExpressionAccess().getValueINTTerminalRuleCall_3_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1844,7 +1873,7 @@ rulePrimaryExpression returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"value",
-        		lv_value_6_0, 
+        		lv_value_9_0, 
         		"INT");
 	    }
 
@@ -1852,35 +1881,35 @@ rulePrimaryExpression returns [EObject current=null]
 ))
     |
     { 
-        newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getFunctionCallParserRuleCall_3()); 
+        newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getFunctionCallParserRuleCall_4()); 
     }
-    this_FunctionCall_7=ruleFunctionCall
+    this_FunctionCall_10=ruleFunctionCall
     { 
-        $current = $this_FunctionCall_7.current; 
+        $current = $this_FunctionCall_10.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getPostfixParserRuleCall_4()); 
+        newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getPostfixParserRuleCall_5()); 
     }
-    this_Postfix_8=rulePostfix
+    this_Postfix_11=rulePostfix
     { 
-        $current = $this_Postfix_8.current; 
+        $current = $this_Postfix_11.current; 
         afterParserOrEnumRuleCall();
     }
 
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getPrimaryExpressionAccess().getStringLiteralAction_5_0(),
+            grammarAccess.getPrimaryExpressionAccess().getStringLiteralAction_6_0(),
             $current);
     }
 )(
 (
-		lv_value_10_0=RULE_STRING
+		lv_value_13_0=RULE_STRING
 		{
-			newLeafNode(lv_value_10_0, grammarAccess.getPrimaryExpressionAccess().getValueSTRINGTerminalRuleCall_5_1_0()); 
+			newLeafNode(lv_value_13_0, grammarAccess.getPrimaryExpressionAccess().getValueSTRINGTerminalRuleCall_6_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1889,7 +1918,7 @@ rulePrimaryExpression returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"value",
-        		lv_value_10_0, 
+        		lv_value_13_0, 
         		"STRING");
 	    }
 
@@ -1897,55 +1926,55 @@ rulePrimaryExpression returns [EObject current=null]
 ))
     |
     { 
-        newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getArrayLiteralParserRuleCall_6()); 
+        newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getArrayLiteralParserRuleCall_7()); 
     }
-    this_ArrayLiteral_11=ruleArrayLiteral
+    this_ArrayLiteral_14=ruleArrayLiteral
     { 
-        $current = $this_ArrayLiteral_11.current; 
+        $current = $this_ArrayLiteral_14.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getFunctionDeclarationParserRuleCall_7()); 
+        newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getFunctionDeclarationParserRuleCall_8()); 
     }
-    this_FunctionDeclaration_12=ruleFunctionDeclaration
+    this_FunctionDeclaration_15=ruleFunctionDeclaration
     { 
-        $current = $this_FunctionDeclaration_12.current; 
+        $current = $this_FunctionDeclaration_15.current; 
         afterParserOrEnumRuleCall();
     }
 
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getPrimaryExpressionAccess().getNullLiteralAction_8_0(),
+            grammarAccess.getPrimaryExpressionAccess().getNullLiteralAction_9_0(),
             $current);
     }
-)	otherlv_14='null' 
+)	otherlv_17='null' 
     {
-    	newLeafNode(otherlv_14, grammarAccess.getPrimaryExpressionAccess().getNullKeyword_8_1());
+    	newLeafNode(otherlv_17, grammarAccess.getPrimaryExpressionAccess().getNullKeyword_9_1());
     }
 )
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getPrimaryExpressionAccess().getFalseLiteralAction_9_0(),
+            grammarAccess.getPrimaryExpressionAccess().getFalseLiteralAction_10_0(),
             $current);
     }
-)	otherlv_16='false' 
+)	otherlv_19='false' 
     {
-    	newLeafNode(otherlv_16, grammarAccess.getPrimaryExpressionAccess().getFalseKeyword_9_1());
+    	newLeafNode(otherlv_19, grammarAccess.getPrimaryExpressionAccess().getFalseKeyword_10_1());
     }
 )
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getPrimaryExpressionAccess().getTrueLiteralAction_10_0(),
+            grammarAccess.getPrimaryExpressionAccess().getTrueLiteralAction_11_0(),
             $current);
     }
-)	otherlv_18='true' 
+)	otherlv_21='true' 
     {
-    	newLeafNode(otherlv_18, grammarAccess.getPrimaryExpressionAccess().getTrueKeyword_10_1());
+    	newLeafNode(otherlv_21, grammarAccess.getPrimaryExpressionAccess().getTrueKeyword_11_1());
     }
 ))
 ;

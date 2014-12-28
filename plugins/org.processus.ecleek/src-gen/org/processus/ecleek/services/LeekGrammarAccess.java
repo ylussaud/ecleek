@@ -1161,42 +1161,45 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpressionParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cRealLiteralAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cValueREALTerminalRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
+		private final Action cUnitaryMinusAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cExpressionPrimaryExpressionParserRuleCall_1_2_0 = (RuleCall)cExpressionAssignment_1_2.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cIntLiteralAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Action cRealLiteralAction_2_0 = (Action)cGroup_2.eContents().get(0);
 		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cValueINTTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
-		private final RuleCall cFunctionCallParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cPostfixParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final Action cStringLiteralAction_5_0 = (Action)cGroup_5.eContents().get(0);
-		private final Assignment cValueAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cValueSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cValueAssignment_5_1.eContents().get(0);
-		private final RuleCall cArrayLiteralParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cFunctionDeclarationParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
-		private final Action cNullLiteralAction_8_0 = (Action)cGroup_8.eContents().get(0);
-		private final Keyword cNullKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final RuleCall cValueREALTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Action cIntLiteralAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Assignment cValueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_3_1_0 = (RuleCall)cValueAssignment_3_1.eContents().get(0);
+		private final RuleCall cFunctionCallParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cPostfixParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
+		private final Action cStringLiteralAction_6_0 = (Action)cGroup_6.eContents().get(0);
+		private final Assignment cValueAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cValueAssignment_6_1.eContents().get(0);
+		private final RuleCall cArrayLiteralParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cFunctionDeclarationParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
 		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
-		private final Action cFalseLiteralAction_9_0 = (Action)cGroup_9.eContents().get(0);
-		private final Keyword cFalseKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Action cNullLiteralAction_9_0 = (Action)cGroup_9.eContents().get(0);
+		private final Keyword cNullKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
 		private final Group cGroup_10 = (Group)cAlternatives.eContents().get(10);
-		private final Action cTrueLiteralAction_10_0 = (Action)cGroup_10.eContents().get(0);
-		private final Keyword cTrueKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Action cFalseLiteralAction_10_0 = (Action)cGroup_10.eContents().get(0);
+		private final Keyword cFalseKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Group cGroup_11 = (Group)cAlternatives.eContents().get(11);
+		private final Action cTrueLiteralAction_11_0 = (Action)cGroup_11.eContents().get(0);
+		private final Keyword cTrueKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
 		
 		//PrimaryExpression returns Expression:
-		//	"(" Expression ")" //	| {UnaryPlus} '+' expression=Expression
-		//	//	| {UnaryMinus} '-' expression=Expression
-		//	| {RealLiteral} value=REAL | {IntLiteral} value=INT | FunctionCall | Postfix | {StringLiteral} value=STRING |
-		//	ArrayLiteral | FunctionDeclaration | {NullLiteral} "null" | {FalseLiteral} "false" | {TrueLiteral} "true";
+		//	"(" Expression ")" | {UnitaryMinus} "-" expression=PrimaryExpression | {RealLiteral} value=REAL | {IntLiteral}
+		//	value=INT | FunctionCall | Postfix | {StringLiteral} value=STRING | ArrayLiteral | FunctionDeclaration | {NullLiteral}
+		//	"null" | {FalseLiteral} "false" | {TrueLiteral} "true";
 		public ParserRule getRule() { return rule; }
 
-		//"(" Expression ")" //	| {UnaryPlus} '+' expression=Expression
-		////	| {UnaryMinus} '-' expression=Expression
-		//| {RealLiteral} value=REAL | {IntLiteral} value=INT | FunctionCall | Postfix | {StringLiteral} value=STRING |
-		//ArrayLiteral | FunctionDeclaration | {NullLiteral} "null" | {FalseLiteral} "false" | {TrueLiteral} "true"
+		//"(" Expression ")" | {UnitaryMinus} "-" expression=PrimaryExpression | {RealLiteral} value=REAL | {IntLiteral} value=INT
+		//| FunctionCall | Postfix | {StringLiteral} value=STRING | ArrayLiteral | FunctionDeclaration | {NullLiteral} "null" |
+		//{FalseLiteral} "false" | {TrueLiteral} "true"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"(" Expression ")"
@@ -1211,80 +1214,95 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
 
-		//{RealLiteral} value=REAL
+		//{UnitaryMinus} "-" expression=PrimaryExpression
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{RealLiteral}
-		public Action getRealLiteralAction_1_0() { return cRealLiteralAction_1_0; }
+		//{UnitaryMinus}
+		public Action getUnitaryMinusAction_1_0() { return cUnitaryMinusAction_1_0; }
 
-		//value=REAL
-		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
+		//"-"
+		public Keyword getHyphenMinusKeyword_1_1() { return cHyphenMinusKeyword_1_1; }
 
-		//REAL
-		public RuleCall getValueREALTerminalRuleCall_1_1_0() { return cValueREALTerminalRuleCall_1_1_0; }
+		//expression=PrimaryExpression
+		public Assignment getExpressionAssignment_1_2() { return cExpressionAssignment_1_2; }
 
-		//{IntLiteral} value=INT
+		//PrimaryExpression
+		public RuleCall getExpressionPrimaryExpressionParserRuleCall_1_2_0() { return cExpressionPrimaryExpressionParserRuleCall_1_2_0; }
+
+		//{RealLiteral} value=REAL
 		public Group getGroup_2() { return cGroup_2; }
 
-		//{IntLiteral}
-		public Action getIntLiteralAction_2_0() { return cIntLiteralAction_2_0; }
+		//{RealLiteral}
+		public Action getRealLiteralAction_2_0() { return cRealLiteralAction_2_0; }
 
-		//value=INT
+		//value=REAL
 		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
 
+		//REAL
+		public RuleCall getValueREALTerminalRuleCall_2_1_0() { return cValueREALTerminalRuleCall_2_1_0; }
+
+		//{IntLiteral} value=INT
+		public Group getGroup_3() { return cGroup_3; }
+
+		//{IntLiteral}
+		public Action getIntLiteralAction_3_0() { return cIntLiteralAction_3_0; }
+
+		//value=INT
+		public Assignment getValueAssignment_3_1() { return cValueAssignment_3_1; }
+
 		//INT
-		public RuleCall getValueINTTerminalRuleCall_2_1_0() { return cValueINTTerminalRuleCall_2_1_0; }
+		public RuleCall getValueINTTerminalRuleCall_3_1_0() { return cValueINTTerminalRuleCall_3_1_0; }
 
 		//FunctionCall
-		public RuleCall getFunctionCallParserRuleCall_3() { return cFunctionCallParserRuleCall_3; }
+		public RuleCall getFunctionCallParserRuleCall_4() { return cFunctionCallParserRuleCall_4; }
 
 		//Postfix
-		public RuleCall getPostfixParserRuleCall_4() { return cPostfixParserRuleCall_4; }
+		public RuleCall getPostfixParserRuleCall_5() { return cPostfixParserRuleCall_5; }
 
 		//{StringLiteral} value=STRING
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_6() { return cGroup_6; }
 
 		//{StringLiteral}
-		public Action getStringLiteralAction_5_0() { return cStringLiteralAction_5_0; }
+		public Action getStringLiteralAction_6_0() { return cStringLiteralAction_6_0; }
 
 		//value=STRING
-		public Assignment getValueAssignment_5_1() { return cValueAssignment_5_1; }
+		public Assignment getValueAssignment_6_1() { return cValueAssignment_6_1; }
 
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_5_1_0() { return cValueSTRINGTerminalRuleCall_5_1_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_6_1_0() { return cValueSTRINGTerminalRuleCall_6_1_0; }
 
 		//ArrayLiteral
-		public RuleCall getArrayLiteralParserRuleCall_6() { return cArrayLiteralParserRuleCall_6; }
+		public RuleCall getArrayLiteralParserRuleCall_7() { return cArrayLiteralParserRuleCall_7; }
 
 		//FunctionDeclaration
-		public RuleCall getFunctionDeclarationParserRuleCall_7() { return cFunctionDeclarationParserRuleCall_7; }
+		public RuleCall getFunctionDeclarationParserRuleCall_8() { return cFunctionDeclarationParserRuleCall_8; }
 
 		//{NullLiteral} "null"
-		public Group getGroup_8() { return cGroup_8; }
-
-		//{NullLiteral}
-		public Action getNullLiteralAction_8_0() { return cNullLiteralAction_8_0; }
-
-		//"null"
-		public Keyword getNullKeyword_8_1() { return cNullKeyword_8_1; }
-
-		//{FalseLiteral} "false"
 		public Group getGroup_9() { return cGroup_9; }
 
-		//{FalseLiteral}
-		public Action getFalseLiteralAction_9_0() { return cFalseLiteralAction_9_0; }
+		//{NullLiteral}
+		public Action getNullLiteralAction_9_0() { return cNullLiteralAction_9_0; }
 
-		//"false"
-		public Keyword getFalseKeyword_9_1() { return cFalseKeyword_9_1; }
+		//"null"
+		public Keyword getNullKeyword_9_1() { return cNullKeyword_9_1; }
 
-		//{TrueLiteral} "true"
+		//{FalseLiteral} "false"
 		public Group getGroup_10() { return cGroup_10; }
 
+		//{FalseLiteral}
+		public Action getFalseLiteralAction_10_0() { return cFalseLiteralAction_10_0; }
+
+		//"false"
+		public Keyword getFalseKeyword_10_1() { return cFalseKeyword_10_1; }
+
+		//{TrueLiteral} "true"
+		public Group getGroup_11() { return cGroup_11; }
+
 		//{TrueLiteral}
-		public Action getTrueLiteralAction_10_0() { return cTrueLiteralAction_10_0; }
+		public Action getTrueLiteralAction_11_0() { return cTrueLiteralAction_11_0; }
 
 		//"true"
-		public Keyword getTrueKeyword_10_1() { return cTrueKeyword_10_1; }
+		public Keyword getTrueKeyword_11_1() { return cTrueKeyword_11_1; }
 	}
 
 	public class ArrayLiteralElements extends AbstractParserRuleElementFinder {
@@ -1924,10 +1942,9 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PrimaryExpression returns Expression:
-	//	"(" Expression ")" //	| {UnaryPlus} '+' expression=Expression
-	//	//	| {UnaryMinus} '-' expression=Expression
-	//	| {RealLiteral} value=REAL | {IntLiteral} value=INT | FunctionCall | Postfix | {StringLiteral} value=STRING |
-	//	ArrayLiteral | FunctionDeclaration | {NullLiteral} "null" | {FalseLiteral} "false" | {TrueLiteral} "true";
+	//	"(" Expression ")" | {UnitaryMinus} "-" expression=PrimaryExpression | {RealLiteral} value=REAL | {IntLiteral}
+	//	value=INT | FunctionCall | Postfix | {StringLiteral} value=STRING | ArrayLiteral | FunctionDeclaration | {NullLiteral}
+	//	"null" | {FalseLiteral} "false" | {TrueLiteral} "true";
 	public PrimaryExpressionElements getPrimaryExpressionAccess() {
 		return pPrimaryExpression;
 	}

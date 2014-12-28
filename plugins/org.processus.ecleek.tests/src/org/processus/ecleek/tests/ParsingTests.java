@@ -1,6 +1,7 @@
 package org.processus.ecleek.tests;
 
 import org.eclipse.xtext.junit4.AbstractXtextTests;
+import org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor.UnassignedTextToken;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.processus.ecleek.LeekStandaloneSetup;
@@ -16,6 +17,7 @@ import org.processus.ecleek.leek.PostfixIncrement;
 import org.processus.ecleek.leek.ReturnStatement;
 import org.processus.ecleek.leek.Script;
 import org.processus.ecleek.leek.TrueLiteral;
+import org.processus.ecleek.leek.UnitaryMinus;
 import org.processus.ecleek.leek.VariableReference;
 import org.processus.ecleek.leek.While;
 
@@ -532,4 +534,17 @@ public class ParsingTests extends AbstractXtextTests {
 		assertTrue(script.getStatements().get(1) instanceof LocalDeclaration);
 	}
 
+	@Test
+	public void unitaryMinusIntLiteral() throws Exception {
+		final Script script = getScript("var a = -3;");
+
+		assertEquals(1, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
+		final LocalDeclaration local = (LocalDeclaration) script.getStatements().get(0);
+		assertEquals(1, local.getVariables().size());
+		assertTrue(local.getVariables().get(0).getValue() instanceof UnitaryMinus);
+		UnitaryMinus minus = (UnitaryMinus) local.getVariables().get(0).getValue();
+		assertTrue(minus.getExpression() instanceof IntLiteral);
+	}
+	
 }

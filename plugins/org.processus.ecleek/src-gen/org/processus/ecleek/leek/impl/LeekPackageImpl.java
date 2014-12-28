@@ -54,6 +54,7 @@ import org.processus.ecleek.leek.StatementBlock;
 import org.processus.ecleek.leek.StringLiteral;
 import org.processus.ecleek.leek.TrueLiteral;
 import org.processus.ecleek.leek.TypedDifferent;
+import org.processus.ecleek.leek.UnitaryMinus;
 import org.processus.ecleek.leek.VariableDeclaration;
 import org.processus.ecleek.leek.VariableReference;
 import org.processus.ecleek.leek.VariableReferenceable;
@@ -339,6 +340,13 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * @generated
    */
   private EClass divEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass unitaryMinusEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1454,6 +1462,26 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getUnitaryMinus()
+  {
+    return unitaryMinusEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnitaryMinus_Expression()
+  {
+    return (EReference)unitaryMinusEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getRealLiteral()
   {
     return realLiteralEClass;
@@ -1747,6 +1775,9 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     createEReference(divEClass, DIV__LEFT);
     createEReference(divEClass, DIV__RIGHT);
 
+    unitaryMinusEClass = createEClass(UNITARY_MINUS);
+    createEReference(unitaryMinusEClass, UNITARY_MINUS__EXPRESSION);
+
     realLiteralEClass = createEClass(REAL_LITERAL);
     createEAttribute(realLiteralEClass, REAL_LITERAL__VALUE);
 
@@ -1836,6 +1867,7 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     minusEClass.getESuperTypes().add(this.getExpression());
     multiEClass.getESuperTypes().add(this.getExpression());
     divEClass.getESuperTypes().add(this.getExpression());
+    unitaryMinusEClass.getESuperTypes().add(this.getExpression());
     realLiteralEClass.getESuperTypes().add(this.getExpression());
     intLiteralEClass.getESuperTypes().add(this.getExpression());
     stringLiteralEClass.getESuperTypes().add(this.getExpression());
@@ -1983,6 +2015,9 @@ public class LeekPackageImpl extends EPackageImpl implements LeekPackage
     initEClass(divEClass, Div.class, "Div", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDiv_Left(), this.getExpression(), null, "left", null, 0, 1, Div.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDiv_Right(), this.getExpression(), null, "right", null, 0, 1, Div.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(unitaryMinusEClass, UnitaryMinus.class, "UnitaryMinus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUnitaryMinus_Expression(), this.getExpression(), null, "expression", null, 0, 1, UnitaryMinus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(realLiteralEClass, RealLiteral.class, "RealLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRealLiteral_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, RealLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

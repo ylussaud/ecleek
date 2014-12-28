@@ -138,6 +138,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//Div/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//Div/right"/>
     </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//UnitaryMinus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//UnitaryMinus/expression"/>
+    </genClasses>
     <genClasses ecoreClass="Leek.ecore#//RealLiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//RealLiteral/value"/>
     </genClasses>

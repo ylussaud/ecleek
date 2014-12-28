@@ -103,6 +103,7 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
       case LeekPackage.MINUS: return createMinus();
       case LeekPackage.MULTI: return createMulti();
       case LeekPackage.DIV: return createDiv();
+      case LeekPackage.UNITARY_MINUS: return createUnitaryMinus();
       case LeekPackage.REAL_LITERAL: return createRealLiteral();
       case LeekPackage.INT_LITERAL: return createIntLiteral();
       case LeekPackage.STRING_LITERAL: return createStringLiteral();
@@ -543,6 +544,17 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
   {
     DivImpl div = new DivImpl();
     return div;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UnitaryMinus createUnitaryMinus()
+  {
+    UnitaryMinusImpl unitaryMinus = new UnitaryMinusImpl();
+    return unitaryMinus;
   }
 
   /**
