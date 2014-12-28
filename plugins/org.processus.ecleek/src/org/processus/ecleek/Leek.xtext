@@ -19,7 +19,6 @@ Statement:
 	| ReturnStatement ';'
 	| BreakStatement ';'
 	| ContinueStatement ';'
-//	| Postfix ';'
 	| {EmptyStatement} ';'
 ;
 
@@ -37,7 +36,8 @@ StatementBlock:
 
 AffectationStatement:
 	=> AffectationDecrement
-	| =>  AffectationIncrement
+	| => AffectationIncrement
+	| => AffectationPostfixStatement
 	| Affectation
 ;
 
@@ -51,6 +51,10 @@ AffectationDecrement:
 
 AffectationIncrement:
 	variable=VariableReference '+=' increment=Expression
+;
+
+AffectationPostfixStatement:
+	VariableReference ('--' | '++')
 ;
 
 If:
