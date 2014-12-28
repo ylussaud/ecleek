@@ -5,6 +5,9 @@ import org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor.Un
 import org.junit.Ignore;
 import org.junit.Test;
 import org.processus.ecleek.LeekStandaloneSetup;
+import org.processus.ecleek.leek.Affectation;
+import org.processus.ecleek.leek.AffectationDecrement;
+import org.processus.ecleek.leek.AffectationIncrement;
 import org.processus.ecleek.leek.ArrayLiteral;
 import org.processus.ecleek.leek.FunctionCall;
 import org.processus.ecleek.leek.FunctionDeclaration;
@@ -560,5 +563,41 @@ public class ParsingTests extends AbstractXtextTests {
 		Not not = (Not) local.getVariables().get(0).getValue();
 		assertTrue(not.getExpression() instanceof TrueLiteral);
 	}
-	
+
+	@Test
+	public void affectation() throws Exception {
+		final Script script = getScript("var a; a = 1;");
+		
+		assertEquals(2, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
+		assertTrue(script.getStatements().get(1) instanceof Affectation);
+		Affectation affectation = (Affectation) script.getStatements().get(1);
+		assertEquals("a", affectation.getVariable().getVariable().getName());
+		assertTrue(affectation.getValue() instanceof IntLiteral);
+	}
+
+	@Test
+	public void affectationDecrement() throws Exception {
+		final Script script = getScript("var a; a -= 1;");
+		
+		assertEquals(2, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
+		assertTrue(script.getStatements().get(1) instanceof AffectationDecrement);
+		AffectationDecrement affectation = (AffectationDecrement) script.getStatements().get(1);
+		assertEquals("a", affectation.getVariable().getVariable().getName());
+		assertTrue(affectation.getDecrement() instanceof IntLiteral);
+	}
+
+	@Test
+	public void affectationIncrement() throws Exception {
+		final Script script = getScript("var a; a += 1;");
+		
+		assertEquals(2, script.getStatements().size());
+		assertTrue(script.getStatements().get(0) instanceof LocalDeclaration);
+		assertTrue(script.getStatements().get(1) instanceof AffectationIncrement);
+		AffectationIncrement affectation = (AffectationIncrement) script.getStatements().get(1);
+		assertEquals("a", affectation.getVariable().getVariable().getName());
+		assertTrue(affectation.getIncrement() instanceof IntLiteral);
+	}
+
 }
