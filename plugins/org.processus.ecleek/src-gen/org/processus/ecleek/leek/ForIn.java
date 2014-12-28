@@ -32,12 +32,12 @@ public interface ForIn extends Iteration
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Key</em>' containment reference.
-   * @see #setKey(VariableReference)
+   * @see #setKey(ForInVariableReference)
    * @see org.processus.ecleek.leek.LeekPackage#getForIn_Key()
    * @model containment="true"
    * @generated
    */
-  VariableReference getKey();
+  ForInVariableReference getKey();
 
   /**
    * Sets the value of the '{@link org.processus.ecleek.leek.ForIn#getKey <em>Key</em>}' containment reference.
@@ -47,7 +47,7 @@ public interface ForIn extends Iteration
    * @see #getKey()
    * @generated
    */
-  void setKey(VariableReference value);
+  void setKey(ForInVariableReference value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.
@@ -58,12 +58,12 @@ public interface ForIn extends Iteration
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' containment reference.
-   * @see #setValue(VariableReference)
+   * @see #setValue(ForInVariableReference)
    * @see org.processus.ecleek.leek.LeekPackage#getForIn_Value()
    * @model containment="true"
    * @generated
    */
-  VariableReference getValue();
+  ForInVariableReference getValue();
 
   /**
    * Sets the value of the '{@link org.processus.ecleek.leek.ForIn#getValue <em>Value</em>}' containment reference.
@@ -73,7 +73,7 @@ public interface ForIn extends Iteration
    * @see #getValue()
    * @generated
    */
-  void setValue(VariableReference value);
+  void setValue(ForInVariableReference value);
 
   /**
    * Returns the value of the '<em><b>Array</b></em>' containment reference.

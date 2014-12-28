@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.processus.ecleek.leek.Affectation;
 import org.processus.ecleek.leek.Expression;
+import org.processus.ecleek.leek.ForInitializer;
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.VariableReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,25 +22,14 @@ import org.processus.ecleek.leek.VariableReference;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.AffectationImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.processus.ecleek.leek.impl.AffectationImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class AffectationImpl extends StatementImpl implements Affectation
+public class AffectationImpl extends AffectationStatementImpl implements Affectation
 {
-  /**
-   * The cached value of the '{@link #getVariable() <em>Variable</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVariable()
-   * @generated
-   * @ordered
-   */
-  protected VariableReference variable;
-
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -70,54 +59,6 @@ public class AffectationImpl extends StatementImpl implements Affectation
   protected EClass eStaticClass()
   {
     return LeekPackage.Literals.AFFECTATION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VariableReference getVariable()
-  {
-    return variable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetVariable(VariableReference newVariable, NotificationChain msgs)
-  {
-    VariableReference oldVariable = variable;
-    variable = newVariable;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.AFFECTATION__VARIABLE, oldVariable, newVariable);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setVariable(VariableReference newVariable)
-  {
-    if (newVariable != variable)
-    {
-      NotificationChain msgs = null;
-      if (variable != null)
-        msgs = ((InternalEObject)variable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.AFFECTATION__VARIABLE, null, msgs);
-      if (newVariable != null)
-        msgs = ((InternalEObject)newVariable).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.AFFECTATION__VARIABLE, null, msgs);
-      msgs = basicSetVariable(newVariable, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.AFFECTATION__VARIABLE, newVariable, newVariable));
   }
 
   /**
@@ -178,8 +119,6 @@ public class AffectationImpl extends StatementImpl implements Affectation
   {
     switch (featureID)
     {
-      case LeekPackage.AFFECTATION__VARIABLE:
-        return basicSetVariable(null, msgs);
       case LeekPackage.AFFECTATION__VALUE:
         return basicSetValue(null, msgs);
     }
@@ -196,8 +135,6 @@ public class AffectationImpl extends StatementImpl implements Affectation
   {
     switch (featureID)
     {
-      case LeekPackage.AFFECTATION__VARIABLE:
-        return getVariable();
       case LeekPackage.AFFECTATION__VALUE:
         return getValue();
     }
@@ -214,9 +151,6 @@ public class AffectationImpl extends StatementImpl implements Affectation
   {
     switch (featureID)
     {
-      case LeekPackage.AFFECTATION__VARIABLE:
-        setVariable((VariableReference)newValue);
-        return;
       case LeekPackage.AFFECTATION__VALUE:
         setValue((Expression)newValue);
         return;
@@ -234,9 +168,6 @@ public class AffectationImpl extends StatementImpl implements Affectation
   {
     switch (featureID)
     {
-      case LeekPackage.AFFECTATION__VARIABLE:
-        setVariable((VariableReference)null);
-        return;
       case LeekPackage.AFFECTATION__VALUE:
         setValue((Expression)null);
         return;
@@ -254,12 +185,48 @@ public class AffectationImpl extends StatementImpl implements Affectation
   {
     switch (featureID)
     {
-      case LeekPackage.AFFECTATION__VARIABLE:
-        return variable != null;
       case LeekPackage.AFFECTATION__VALUE:
         return value != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == ForInitializer.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case LeekPackage.AFFECTATION__VALUE: return LeekPackage.FOR_INITIALIZER__VALUE;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == ForInitializer.class)
+    {
+      switch (baseFeatureID)
+      {
+        case LeekPackage.FOR_INITIALIZER__VALUE: return LeekPackage.AFFECTATION__VALUE;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
 } //AffectationImpl

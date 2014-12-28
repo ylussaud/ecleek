@@ -68,6 +68,15 @@ public interface LeekFactory extends EFactory
   StatementBlock createStatementBlock();
 
   /**
+   * Returns a new object of class '<em>Affectation Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Affectation Statement</em>'.
+   * @generated
+   */
+  AffectationStatement createAffectationStatement();
+
+  /**
    * Returns a new object of class '<em>Affectation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -75,6 +84,24 @@ public interface LeekFactory extends EFactory
    * @generated
    */
   Affectation createAffectation();
+
+  /**
+   * Returns a new object of class '<em>Affectation Decrement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Affectation Decrement</em>'.
+   * @generated
+   */
+  AffectationDecrement createAffectationDecrement();
+
+  /**
+   * Returns a new object of class '<em>Affectation Increment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Affectation Increment</em>'.
+   * @generated
+   */
+  AffectationIncrement createAffectationIncrement();
 
   /**
    * Returns a new object of class '<em>If</em>'.
@@ -122,13 +149,13 @@ public interface LeekFactory extends EFactory
   ForIn createForIn();
 
   /**
-   * Returns a new object of class '<em>Variable Reference</em>'.
+   * Returns a new object of class '<em>For In Variable Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Reference</em>'.
+   * @return a new object of class '<em>For In Variable Reference</em>'.
    * @generated
    */
-  VariableReference createVariableReference();
+  ForInVariableReference createForInVariableReference();
 
   /**
    * Returns a new object of class '<em>For Initializer</em>'.
@@ -149,13 +176,13 @@ public interface LeekFactory extends EFactory
   FunctionDeclaration createFunctionDeclaration();
 
   /**
-   * Returns a new object of class '<em>Variable Referenceable</em>'.
+   * Returns a new object of class '<em>Variable Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Referenceable</em>'.
+   * @return a new object of class '<em>Variable Reference</em>'.
    * @generated
    */
-  VariableReferenceable createVariableReferenceable();
+  VariableReference createVariableReference();
 
   /**
    * Returns a new object of class '<em>Local Declaration</em>'.
@@ -174,15 +201,6 @@ public interface LeekFactory extends EFactory
    * @generated
    */
   GlobalDeclaration createGlobalDeclaration();
-
-  /**
-   * Returns a new object of class '<em>Variable Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Declaration</em>'.
-   * @generated
-   */
-  VariableDeclaration createVariableDeclaration();
 
   /**
    * Returns a new object of class '<em>Expression</em>'.

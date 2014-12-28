@@ -170,14 +170,14 @@ public interface LeekPackage extends EPackage
   int STATEMENT_BLOCK_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link org.processus.ecleek.leek.impl.AffectationImpl <em>Affectation</em>}' class.
+   * The meta object id for the '{@link org.processus.ecleek.leek.impl.AffectationStatementImpl <em>Affectation Statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.processus.ecleek.leek.impl.AffectationImpl
-   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getAffectation()
+   * @see org.processus.ecleek.leek.impl.AffectationStatementImpl
+   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getAffectationStatement()
    * @generated
    */
-  int AFFECTATION = 5;
+  int AFFECTATION_STATEMENT = 5;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference.
@@ -186,7 +186,35 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AFFECTATION__VARIABLE = STATEMENT_FEATURE_COUNT + 0;
+  int AFFECTATION_STATEMENT__VARIABLE = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Affectation Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AFFECTATION_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.processus.ecleek.leek.impl.AffectationImpl <em>Affectation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.processus.ecleek.leek.impl.AffectationImpl
+   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getAffectation()
+   * @generated
+   */
+  int AFFECTATION = 6;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AFFECTATION__VARIABLE = AFFECTATION_STATEMENT__VARIABLE;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -195,7 +223,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AFFECTATION__VALUE = STATEMENT_FEATURE_COUNT + 1;
+  int AFFECTATION__VALUE = AFFECTATION_STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Affectation</em>' class.
@@ -204,7 +232,81 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AFFECTATION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+  int AFFECTATION_FEATURE_COUNT = AFFECTATION_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.processus.ecleek.leek.impl.AffectationDecrementImpl <em>Affectation Decrement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.processus.ecleek.leek.impl.AffectationDecrementImpl
+   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getAffectationDecrement()
+   * @generated
+   */
+  int AFFECTATION_DECREMENT = 7;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AFFECTATION_DECREMENT__VARIABLE = AFFECTATION_STATEMENT__VARIABLE;
+
+  /**
+   * The feature id for the '<em><b>Decrement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AFFECTATION_DECREMENT__DECREMENT = AFFECTATION_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Affectation Decrement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AFFECTATION_DECREMENT_FEATURE_COUNT = AFFECTATION_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.processus.ecleek.leek.impl.AffectationIncrementImpl <em>Affectation Increment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.processus.ecleek.leek.impl.AffectationIncrementImpl
+   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getAffectationIncrement()
+   * @generated
+   */
+  int AFFECTATION_INCREMENT = 8;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AFFECTATION_INCREMENT__VARIABLE = AFFECTATION_STATEMENT__VARIABLE;
+
+  /**
+   * The feature id for the '<em><b>Increment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AFFECTATION_INCREMENT__INCREMENT = AFFECTATION_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Affectation Increment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AFFECTATION_INCREMENT_FEATURE_COUNT = AFFECTATION_STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.IfImpl <em>If</em>}' class.
@@ -214,7 +316,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getIf()
    * @generated
    */
-  int IF = 6;
+  int IF = 9;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -260,7 +362,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getIteration()
    * @generated
    */
-  int ITERATION = 7;
+  int ITERATION = 10;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -288,7 +390,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getWhile()
    * @generated
    */
-  int WHILE = 8;
+  int WHILE = 11;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -325,7 +427,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getFor()
    * @generated
    */
-  int FOR = 9;
+  int FOR = 12;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -380,7 +482,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getForIn()
    * @generated
    */
-  int FOR_IN = 10;
+  int FOR_IN = 13;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -428,6 +530,25 @@ public interface LeekPackage extends EPackage
   int FOR_IN_FEATURE_COUNT = ITERATION_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link org.processus.ecleek.leek.impl.ForInVariableReferenceImpl <em>For In Variable Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.processus.ecleek.leek.impl.ForInVariableReferenceImpl
+   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getForInVariableReference()
+   * @generated
+   */
+  int FOR_IN_VARIABLE_REFERENCE = 14;
+
+  /**
+   * The number of structural features of the '<em>For In Variable Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_IN_VARIABLE_REFERENCE_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.ForInitializerImpl <em>For Initializer</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -435,7 +556,16 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getForInitializer()
    * @generated
    */
-  int FOR_INITIALIZER = 12;
+  int FOR_INITIALIZER = 15;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_INITIALIZER__VALUE = 0;
 
   /**
    * The number of structural features of the '<em>For Initializer</em>' class.
@@ -444,53 +574,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOR_INITIALIZER_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link org.processus.ecleek.leek.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.processus.ecleek.leek.impl.VariableReferenceImpl
-   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getVariableReference()
-   * @generated
-   */
-  int VARIABLE_REFERENCE = 11;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_REFERENCE__NAME = FOR_INITIALIZER_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Variable</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_REFERENCE__VARIABLE = FOR_INITIALIZER_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Dimensions</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_REFERENCE__DIMENSIONS = FOR_INITIALIZER_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Variable Reference</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_REFERENCE_FEATURE_COUNT = FOR_INITIALIZER_FEATURE_COUNT + 3;
+  int FOR_INITIALIZER_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.FunctionDeclarationImpl <em>Function Declaration</em>}' class.
@@ -500,7 +584,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getFunctionDeclaration()
    * @generated
    */
-  int FUNCTION_DECLARATION = 13;
+  int FUNCTION_DECLARATION = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -539,14 +623,23 @@ public interface LeekPackage extends EPackage
   int FUNCTION_DECLARATION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link org.processus.ecleek.leek.impl.VariableReferenceableImpl <em>Variable Referenceable</em>}' class.
+   * The meta object id for the '{@link org.processus.ecleek.leek.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.processus.ecleek.leek.impl.VariableReferenceableImpl
-   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getVariableReferenceable()
+   * @see org.processus.ecleek.leek.impl.VariableReferenceImpl
+   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getVariableReference()
    * @generated
    */
-  int VARIABLE_REFERENCEABLE = 14;
+  int VARIABLE_REFERENCE = 17;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_REFERENCE__VALUE = FOR_IN_VARIABLE_REFERENCE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>By Adress</b></em>' attribute.
@@ -555,7 +648,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_REFERENCEABLE__BY_ADRESS = 0;
+  int VARIABLE_REFERENCE__BY_ADRESS = FOR_IN_VARIABLE_REFERENCE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -564,16 +657,34 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_REFERENCEABLE__NAME = 1;
+  int VARIABLE_REFERENCE__NAME = FOR_IN_VARIABLE_REFERENCE_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Variable Referenceable</em>' class.
+   * The feature id for the '<em><b>Variable</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_REFERENCEABLE_FEATURE_COUNT = 2;
+  int VARIABLE_REFERENCE__VARIABLE = FOR_IN_VARIABLE_REFERENCE_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Dimensions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_REFERENCE__DIMENSIONS = FOR_IN_VARIABLE_REFERENCE_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>Variable Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_REFERENCE_FEATURE_COUNT = FOR_IN_VARIABLE_REFERENCE_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.LocalDeclarationImpl <em>Local Declaration</em>}' class.
@@ -583,25 +694,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getLocalDeclaration()
    * @generated
    */
-  int LOCAL_DECLARATION = 15;
-
-  /**
-   * The feature id for the '<em><b>By Adress</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_DECLARATION__BY_ADRESS = STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_DECLARATION__NAME = STATEMENT_FEATURE_COUNT + 1;
+  int LOCAL_DECLARATION = 18;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -610,7 +703,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LOCAL_DECLARATION__VARIABLES = STATEMENT_FEATURE_COUNT + 2;
+  int LOCAL_DECLARATION__VARIABLES = STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Local Declaration</em>' class.
@@ -619,7 +712,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LOCAL_DECLARATION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
+  int LOCAL_DECLARATION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.GlobalDeclarationImpl <em>Global Declaration</em>}' class.
@@ -629,25 +722,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getGlobalDeclaration()
    * @generated
    */
-  int GLOBAL_DECLARATION = 16;
-
-  /**
-   * The feature id for the '<em><b>By Adress</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GLOBAL_DECLARATION__BY_ADRESS = STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GLOBAL_DECLARATION__NAME = STATEMENT_FEATURE_COUNT + 1;
+  int GLOBAL_DECLARATION = 19;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -656,7 +731,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_DECLARATION__VARIABLES = STATEMENT_FEATURE_COUNT + 2;
+  int GLOBAL_DECLARATION__VARIABLES = STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Global Declaration</em>' class.
@@ -665,44 +740,7 @@ public interface LeekPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_DECLARATION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link org.processus.ecleek.leek.impl.VariableDeclarationImpl <em>Variable Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.processus.ecleek.leek.impl.VariableDeclarationImpl
-   * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getVariableDeclaration()
-   * @generated
-   */
-  int VARIABLE_DECLARATION = 17;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION__VALUE = 1;
-
-  /**
-   * The number of structural features of the '<em>Variable Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_FEATURE_COUNT = 2;
+  int GLOBAL_DECLARATION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.processus.ecleek.leek.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -712,7 +750,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 18;
+  int EXPRESSION = 20;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -731,7 +769,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getArrayLiteral()
    * @generated
    */
-  int ARRAY_LITERAL = 19;
+  int ARRAY_LITERAL = 21;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -759,7 +797,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPostfix()
    * @generated
    */
-  int POSTFIX = 20;
+  int POSTFIX = 22;
 
   /**
    * The number of structural features of the '<em>Postfix</em>' class.
@@ -778,7 +816,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getFunctionCall()
    * @generated
    */
-  int FUNCTION_CALL = 21;
+  int FUNCTION_CALL = 23;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' reference.
@@ -815,7 +853,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getReturnStatement()
    * @generated
    */
-  int RETURN_STATEMENT = 22;
+  int RETURN_STATEMENT = 24;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -843,7 +881,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getInclude()
    * @generated
    */
-  int INCLUDE = 23;
+  int INCLUDE = 25;
 
   /**
    * The feature id for the '<em><b>Import URI</b></em>' attribute.
@@ -871,7 +909,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getEmptyStatement()
    * @generated
    */
-  int EMPTY_STATEMENT = 24;
+  int EMPTY_STATEMENT = 26;
 
   /**
    * The number of structural features of the '<em>Empty Statement</em>' class.
@@ -890,7 +928,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getComparison()
    * @generated
    */
-  int COMPARISON = 25;
+  int COMPARISON = 27;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -927,7 +965,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getEquals()
    * @generated
    */
-  int EQUALS = 26;
+  int EQUALS = 28;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -964,7 +1002,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getTypedDifferent()
    * @generated
    */
-  int TYPED_DIFFERENT = 27;
+  int TYPED_DIFFERENT = 29;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1001,7 +1039,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getDifferent()
    * @generated
    */
-  int DIFFERENT = 28;
+  int DIFFERENT = 30;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1038,7 +1076,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getLessOrEquals()
    * @generated
    */
-  int LESS_OR_EQUALS = 29;
+  int LESS_OR_EQUALS = 31;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1075,7 +1113,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getLess()
    * @generated
    */
-  int LESS = 30;
+  int LESS = 32;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1112,7 +1150,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getMoreOrEquals()
    * @generated
    */
-  int MORE_OR_EQUALS = 31;
+  int MORE_OR_EQUALS = 33;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1149,7 +1187,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getMore()
    * @generated
    */
-  int MORE = 32;
+  int MORE = 34;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1186,7 +1224,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getOr()
    * @generated
    */
-  int OR = 33;
+  int OR = 35;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1223,7 +1261,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getAnd()
    * @generated
    */
-  int AND = 34;
+  int AND = 36;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1260,7 +1298,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 35;
+  int PLUS = 37;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1297,7 +1335,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 36;
+  int MINUS = 38;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1334,7 +1372,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getMulti()
    * @generated
    */
-  int MULTI = 37;
+  int MULTI = 39;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1371,7 +1409,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 38;
+  int DIV = 40;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1408,7 +1446,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getUnitaryMinus()
    * @generated
    */
-  int UNITARY_MINUS = 39;
+  int UNITARY_MINUS = 41;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1436,7 +1474,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getRealLiteral()
    * @generated
    */
-  int REAL_LITERAL = 40;
+  int REAL_LITERAL = 42;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1464,7 +1502,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getIntLiteral()
    * @generated
    */
-  int INT_LITERAL = 41;
+  int INT_LITERAL = 43;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1492,7 +1530,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 42;
+  int STRING_LITERAL = 44;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1520,7 +1558,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getNullLiteral()
    * @generated
    */
-  int NULL_LITERAL = 43;
+  int NULL_LITERAL = 45;
 
   /**
    * The number of structural features of the '<em>Null Literal</em>' class.
@@ -1539,7 +1577,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getFalseLiteral()
    * @generated
    */
-  int FALSE_LITERAL = 44;
+  int FALSE_LITERAL = 46;
 
   /**
    * The number of structural features of the '<em>False Literal</em>' class.
@@ -1558,7 +1596,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getTrueLiteral()
    * @generated
    */
-  int TRUE_LITERAL = 45;
+  int TRUE_LITERAL = 47;
 
   /**
    * The number of structural features of the '<em>True Literal</em>' class.
@@ -1577,7 +1615,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPostfixDecrement()
    * @generated
    */
-  int POSTFIX_DECREMENT = 46;
+  int POSTFIX_DECREMENT = 48;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1605,7 +1643,7 @@ public interface LeekPackage extends EPackage
    * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getPostfixIncrement()
    * @generated
    */
-  int POSTFIX_INCREMENT = 47;
+  int POSTFIX_INCREMENT = 49;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1699,6 +1737,27 @@ public interface LeekPackage extends EPackage
   EReference getStatementBlock_Statements();
 
   /**
+   * Returns the meta object for class '{@link org.processus.ecleek.leek.AffectationStatement <em>Affectation Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Affectation Statement</em>'.
+   * @see org.processus.ecleek.leek.AffectationStatement
+   * @generated
+   */
+  EClass getAffectationStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.AffectationStatement#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable</em>'.
+   * @see org.processus.ecleek.leek.AffectationStatement#getVariable()
+   * @see #getAffectationStatement()
+   * @generated
+   */
+  EReference getAffectationStatement_Variable();
+
+  /**
    * Returns the meta object for class '{@link org.processus.ecleek.leek.Affectation <em>Affectation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1709,26 +1768,46 @@ public interface LeekPackage extends EPackage
   EClass getAffectation();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.Affectation#getVariable <em>Variable</em>}'.
+   * Returns the meta object for class '{@link org.processus.ecleek.leek.AffectationDecrement <em>Affectation Decrement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Variable</em>'.
-   * @see org.processus.ecleek.leek.Affectation#getVariable()
-   * @see #getAffectation()
+   * @return the meta object for class '<em>Affectation Decrement</em>'.
+   * @see org.processus.ecleek.leek.AffectationDecrement
    * @generated
    */
-  EReference getAffectation_Variable();
+  EClass getAffectationDecrement();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.Affectation#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.AffectationDecrement#getDecrement <em>Decrement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see org.processus.ecleek.leek.Affectation#getValue()
-   * @see #getAffectation()
+   * @return the meta object for the containment reference '<em>Decrement</em>'.
+   * @see org.processus.ecleek.leek.AffectationDecrement#getDecrement()
+   * @see #getAffectationDecrement()
    * @generated
    */
-  EReference getAffectation_Value();
+  EReference getAffectationDecrement_Decrement();
+
+  /**
+   * Returns the meta object for class '{@link org.processus.ecleek.leek.AffectationIncrement <em>Affectation Increment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Affectation Increment</em>'.
+   * @see org.processus.ecleek.leek.AffectationIncrement
+   * @generated
+   */
+  EClass getAffectationIncrement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.AffectationIncrement#getIncrement <em>Increment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Increment</em>'.
+   * @see org.processus.ecleek.leek.AffectationIncrement#getIncrement()
+   * @see #getAffectationIncrement()
+   * @generated
+   */
+  EReference getAffectationIncrement_Increment();
 
   /**
    * Returns the meta object for class '{@link org.processus.ecleek.leek.If <em>If</em>}'.
@@ -1902,47 +1981,14 @@ public interface LeekPackage extends EPackage
   EReference getForIn_Array();
 
   /**
-   * Returns the meta object for class '{@link org.processus.ecleek.leek.VariableReference <em>Variable Reference</em>}'.
+   * Returns the meta object for class '{@link org.processus.ecleek.leek.ForInVariableReference <em>For In Variable Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Reference</em>'.
-   * @see org.processus.ecleek.leek.VariableReference
+   * @return the meta object for class '<em>For In Variable Reference</em>'.
+   * @see org.processus.ecleek.leek.ForInVariableReference
    * @generated
    */
-  EClass getVariableReference();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.processus.ecleek.leek.VariableReference#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.processus.ecleek.leek.VariableReference#getName()
-   * @see #getVariableReference()
-   * @generated
-   */
-  EAttribute getVariableReference_Name();
-
-  /**
-   * Returns the meta object for the reference '{@link org.processus.ecleek.leek.VariableReference#getVariable <em>Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Variable</em>'.
-   * @see org.processus.ecleek.leek.VariableReference#getVariable()
-   * @see #getVariableReference()
-   * @generated
-   */
-  EReference getVariableReference_Variable();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.processus.ecleek.leek.VariableReference#getDimensions <em>Dimensions</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Dimensions</em>'.
-   * @see org.processus.ecleek.leek.VariableReference#getDimensions()
-   * @see #getVariableReference()
-   * @generated
-   */
-  EReference getVariableReference_Dimensions();
+  EClass getForInVariableReference();
 
   /**
    * Returns the meta object for class '{@link org.processus.ecleek.leek.ForInitializer <em>For Initializer</em>}'.
@@ -1953,6 +1999,17 @@ public interface LeekPackage extends EPackage
    * @generated
    */
   EClass getForInitializer();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.ForInitializer#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see org.processus.ecleek.leek.ForInitializer#getValue()
+   * @see #getForInitializer()
+   * @generated
+   */
+  EReference getForInitializer_Value();
 
   /**
    * Returns the meta object for class '{@link org.processus.ecleek.leek.FunctionDeclaration <em>Function Declaration</em>}'.
@@ -1998,36 +2055,58 @@ public interface LeekPackage extends EPackage
   EReference getFunctionDeclaration_Body();
 
   /**
-   * Returns the meta object for class '{@link org.processus.ecleek.leek.VariableReferenceable <em>Variable Referenceable</em>}'.
+   * Returns the meta object for class '{@link org.processus.ecleek.leek.VariableReference <em>Variable Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Referenceable</em>'.
-   * @see org.processus.ecleek.leek.VariableReferenceable
+   * @return the meta object for class '<em>Variable Reference</em>'.
+   * @see org.processus.ecleek.leek.VariableReference
    * @generated
    */
-  EClass getVariableReferenceable();
+  EClass getVariableReference();
 
   /**
-   * Returns the meta object for the attribute '{@link org.processus.ecleek.leek.VariableReferenceable#isByAdress <em>By Adress</em>}'.
+   * Returns the meta object for the attribute '{@link org.processus.ecleek.leek.VariableReference#isByAdress <em>By Adress</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>By Adress</em>'.
-   * @see org.processus.ecleek.leek.VariableReferenceable#isByAdress()
-   * @see #getVariableReferenceable()
+   * @see org.processus.ecleek.leek.VariableReference#isByAdress()
+   * @see #getVariableReference()
    * @generated
    */
-  EAttribute getVariableReferenceable_ByAdress();
+  EAttribute getVariableReference_ByAdress();
 
   /**
-   * Returns the meta object for the attribute '{@link org.processus.ecleek.leek.VariableReferenceable#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.processus.ecleek.leek.VariableReference#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.processus.ecleek.leek.VariableReferenceable#getName()
-   * @see #getVariableReferenceable()
+   * @see org.processus.ecleek.leek.VariableReference#getName()
+   * @see #getVariableReference()
    * @generated
    */
-  EAttribute getVariableReferenceable_Name();
+  EAttribute getVariableReference_Name();
+
+  /**
+   * Returns the meta object for the reference '{@link org.processus.ecleek.leek.VariableReference#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Variable</em>'.
+   * @see org.processus.ecleek.leek.VariableReference#getVariable()
+   * @see #getVariableReference()
+   * @generated
+   */
+  EReference getVariableReference_Variable();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.processus.ecleek.leek.VariableReference#getDimensions <em>Dimensions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Dimensions</em>'.
+   * @see org.processus.ecleek.leek.VariableReference#getDimensions()
+   * @see #getVariableReference()
+   * @generated
+   */
+  EReference getVariableReference_Dimensions();
 
   /**
    * Returns the meta object for class '{@link org.processus.ecleek.leek.LocalDeclaration <em>Local Declaration</em>}'.
@@ -2070,38 +2149,6 @@ public interface LeekPackage extends EPackage
    * @generated
    */
   EReference getGlobalDeclaration_Variables();
-
-  /**
-   * Returns the meta object for class '{@link org.processus.ecleek.leek.VariableDeclaration <em>Variable Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Declaration</em>'.
-   * @see org.processus.ecleek.leek.VariableDeclaration
-   * @generated
-   */
-  EClass getVariableDeclaration();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.processus.ecleek.leek.VariableDeclaration#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.processus.ecleek.leek.VariableDeclaration#getName()
-   * @see #getVariableDeclaration()
-   * @generated
-   */
-  EAttribute getVariableDeclaration_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.processus.ecleek.leek.VariableDeclaration#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see org.processus.ecleek.leek.VariableDeclaration#getValue()
-   * @see #getVariableDeclaration()
-   * @generated
-   */
-  EReference getVariableDeclaration_Value();
 
   /**
    * Returns the meta object for class '{@link org.processus.ecleek.leek.Expression <em>Expression</em>}'.
@@ -2922,6 +2969,24 @@ public interface LeekPackage extends EPackage
     EReference STATEMENT_BLOCK__STATEMENTS = eINSTANCE.getStatementBlock_Statements();
 
     /**
+     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.AffectationStatementImpl <em>Affectation Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.processus.ecleek.leek.impl.AffectationStatementImpl
+     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getAffectationStatement()
+     * @generated
+     */
+    EClass AFFECTATION_STATEMENT = eINSTANCE.getAffectationStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AFFECTATION_STATEMENT__VARIABLE = eINSTANCE.getAffectationStatement_Variable();
+
+    /**
      * The meta object literal for the '{@link org.processus.ecleek.leek.impl.AffectationImpl <em>Affectation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2932,20 +2997,40 @@ public interface LeekPackage extends EPackage
     EClass AFFECTATION = eINSTANCE.getAffectation();
 
     /**
-     * The meta object literal for the '<em><b>Variable</b></em>' containment reference feature.
+     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.AffectationDecrementImpl <em>Affectation Decrement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see org.processus.ecleek.leek.impl.AffectationDecrementImpl
+     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getAffectationDecrement()
      * @generated
      */
-    EReference AFFECTATION__VARIABLE = eINSTANCE.getAffectation_Variable();
+    EClass AFFECTATION_DECREMENT = eINSTANCE.getAffectationDecrement();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Decrement</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference AFFECTATION__VALUE = eINSTANCE.getAffectation_Value();
+    EReference AFFECTATION_DECREMENT__DECREMENT = eINSTANCE.getAffectationDecrement_Decrement();
+
+    /**
+     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.AffectationIncrementImpl <em>Affectation Increment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.processus.ecleek.leek.impl.AffectationIncrementImpl
+     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getAffectationIncrement()
+     * @generated
+     */
+    EClass AFFECTATION_INCREMENT = eINSTANCE.getAffectationIncrement();
+
+    /**
+     * The meta object literal for the '<em><b>Increment</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AFFECTATION_INCREMENT__INCREMENT = eINSTANCE.getAffectationIncrement_Increment();
 
     /**
      * The meta object literal for the '{@link org.processus.ecleek.leek.impl.IfImpl <em>If</em>}' class.
@@ -3086,38 +3171,14 @@ public interface LeekPackage extends EPackage
     EReference FOR_IN__ARRAY = eINSTANCE.getForIn_Array();
 
     /**
-     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
+     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.ForInVariableReferenceImpl <em>For In Variable Reference</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.processus.ecleek.leek.impl.VariableReferenceImpl
-     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getVariableReference()
+     * @see org.processus.ecleek.leek.impl.ForInVariableReferenceImpl
+     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getForInVariableReference()
      * @generated
      */
-    EClass VARIABLE_REFERENCE = eINSTANCE.getVariableReference();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE_REFERENCE__NAME = eINSTANCE.getVariableReference_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_REFERENCE__VARIABLE = eINSTANCE.getVariableReference_Variable();
-
-    /**
-     * The meta object literal for the '<em><b>Dimensions</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_REFERENCE__DIMENSIONS = eINSTANCE.getVariableReference_Dimensions();
+    EClass FOR_IN_VARIABLE_REFERENCE = eINSTANCE.getForInVariableReference();
 
     /**
      * The meta object literal for the '{@link org.processus.ecleek.leek.impl.ForInitializerImpl <em>For Initializer</em>}' class.
@@ -3128,6 +3189,14 @@ public interface LeekPackage extends EPackage
      * @generated
      */
     EClass FOR_INITIALIZER = eINSTANCE.getForInitializer();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_INITIALIZER__VALUE = eINSTANCE.getForInitializer_Value();
 
     /**
      * The meta object literal for the '{@link org.processus.ecleek.leek.impl.FunctionDeclarationImpl <em>Function Declaration</em>}' class.
@@ -3164,14 +3233,14 @@ public interface LeekPackage extends EPackage
     EReference FUNCTION_DECLARATION__BODY = eINSTANCE.getFunctionDeclaration_Body();
 
     /**
-     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.VariableReferenceableImpl <em>Variable Referenceable</em>}' class.
+     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.processus.ecleek.leek.impl.VariableReferenceableImpl
-     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getVariableReferenceable()
+     * @see org.processus.ecleek.leek.impl.VariableReferenceImpl
+     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getVariableReference()
      * @generated
      */
-    EClass VARIABLE_REFERENCEABLE = eINSTANCE.getVariableReferenceable();
+    EClass VARIABLE_REFERENCE = eINSTANCE.getVariableReference();
 
     /**
      * The meta object literal for the '<em><b>By Adress</b></em>' attribute feature.
@@ -3179,7 +3248,7 @@ public interface LeekPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE_REFERENCEABLE__BY_ADRESS = eINSTANCE.getVariableReferenceable_ByAdress();
+    EAttribute VARIABLE_REFERENCE__BY_ADRESS = eINSTANCE.getVariableReference_ByAdress();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3187,7 +3256,23 @@ public interface LeekPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE_REFERENCEABLE__NAME = eINSTANCE.getVariableReferenceable_Name();
+    EAttribute VARIABLE_REFERENCE__NAME = eINSTANCE.getVariableReference_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_REFERENCE__VARIABLE = eINSTANCE.getVariableReference_Variable();
+
+    /**
+     * The meta object literal for the '<em><b>Dimensions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_REFERENCE__DIMENSIONS = eINSTANCE.getVariableReference_Dimensions();
 
     /**
      * The meta object literal for the '{@link org.processus.ecleek.leek.impl.LocalDeclarationImpl <em>Local Declaration</em>}' class.
@@ -3224,32 +3309,6 @@ public interface LeekPackage extends EPackage
      * @generated
      */
     EReference GLOBAL_DECLARATION__VARIABLES = eINSTANCE.getGlobalDeclaration_Variables();
-
-    /**
-     * The meta object literal for the '{@link org.processus.ecleek.leek.impl.VariableDeclarationImpl <em>Variable Declaration</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.processus.ecleek.leek.impl.VariableDeclarationImpl
-     * @see org.processus.ecleek.leek.impl.LeekPackageImpl#getVariableDeclaration()
-     * @generated
-     */
-    EClass VARIABLE_DECLARATION = eINSTANCE.getVariableDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE_DECLARATION__NAME = eINSTANCE.getVariableDeclaration_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_DECLARATION__VALUE = eINSTANCE.getVariableDeclaration_Value();
 
     /**
      * The meta object literal for the '{@link org.processus.ecleek.leek.impl.ExpressionImpl <em>Expression</em>}' class.

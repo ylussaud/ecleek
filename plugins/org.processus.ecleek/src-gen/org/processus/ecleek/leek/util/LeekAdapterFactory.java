@@ -100,9 +100,24 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createStatementBlockAdapter();
       }
       @Override
+      public Adapter caseAffectationStatement(AffectationStatement object)
+      {
+        return createAffectationStatementAdapter();
+      }
+      @Override
       public Adapter caseAffectation(Affectation object)
       {
         return createAffectationAdapter();
+      }
+      @Override
+      public Adapter caseAffectationDecrement(AffectationDecrement object)
+      {
+        return createAffectationDecrementAdapter();
+      }
+      @Override
+      public Adapter caseAffectationIncrement(AffectationIncrement object)
+      {
+        return createAffectationIncrementAdapter();
       }
       @Override
       public Adapter caseIf(If object)
@@ -130,9 +145,9 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createForInAdapter();
       }
       @Override
-      public Adapter caseVariableReference(VariableReference object)
+      public Adapter caseForInVariableReference(ForInVariableReference object)
       {
-        return createVariableReferenceAdapter();
+        return createForInVariableReferenceAdapter();
       }
       @Override
       public Adapter caseForInitializer(ForInitializer object)
@@ -145,9 +160,9 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createFunctionDeclarationAdapter();
       }
       @Override
-      public Adapter caseVariableReferenceable(VariableReferenceable object)
+      public Adapter caseVariableReference(VariableReference object)
       {
-        return createVariableReferenceableAdapter();
+        return createVariableReferenceAdapter();
       }
       @Override
       public Adapter caseLocalDeclaration(LocalDeclaration object)
@@ -158,11 +173,6 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
       public Adapter caseGlobalDeclaration(GlobalDeclaration object)
       {
         return createGlobalDeclarationAdapter();
-      }
-      @Override
-      public Adapter caseVariableDeclaration(VariableDeclaration object)
-      {
-        return createVariableDeclarationAdapter();
       }
       @Override
       public Adapter caseExpression(Expression object)
@@ -412,6 +422,21 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.AffectationStatement <em>Affectation Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.AffectationStatement
+   * @generated
+   */
+  public Adapter createAffectationStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.Affectation <em>Affectation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -422,6 +447,36 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAffectationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.AffectationDecrement <em>Affectation Decrement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.AffectationDecrement
+   * @generated
+   */
+  public Adapter createAffectationDecrementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.AffectationIncrement <em>Affectation Increment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.AffectationIncrement
+   * @generated
+   */
+  public Adapter createAffectationIncrementAdapter()
   {
     return null;
   }
@@ -502,16 +557,16 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.VariableReference <em>Variable Reference</em>}'.
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.ForInVariableReference <em>For In Variable Reference</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.processus.ecleek.leek.VariableReference
+   * @see org.processus.ecleek.leek.ForInVariableReference
    * @generated
    */
-  public Adapter createVariableReferenceAdapter()
+  public Adapter createForInVariableReferenceAdapter()
   {
     return null;
   }
@@ -547,16 +602,16 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.VariableReferenceable <em>Variable Referenceable</em>}'.
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.VariableReference <em>Variable Reference</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.processus.ecleek.leek.VariableReferenceable
+   * @see org.processus.ecleek.leek.VariableReference
    * @generated
    */
-  public Adapter createVariableReferenceableAdapter()
+  public Adapter createVariableReferenceAdapter()
   {
     return null;
   }
@@ -587,21 +642,6 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGlobalDeclarationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.VariableDeclaration <em>Variable Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.processus.ecleek.leek.VariableDeclaration
-   * @generated
-   */
-  public Adapter createVariableDeclarationAdapter()
   {
     return null;
   }

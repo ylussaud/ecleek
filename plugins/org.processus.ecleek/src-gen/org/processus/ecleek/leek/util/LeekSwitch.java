@@ -110,11 +110,39 @@ public class LeekSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LeekPackage.AFFECTATION_STATEMENT:
+      {
+        AffectationStatement affectationStatement = (AffectationStatement)theEObject;
+        T result = caseAffectationStatement(affectationStatement);
+        if (result == null) result = caseStatement(affectationStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LeekPackage.AFFECTATION:
       {
         Affectation affectation = (Affectation)theEObject;
         T result = caseAffectation(affectation);
+        if (result == null) result = caseAffectationStatement(affectation);
+        if (result == null) result = caseForInitializer(affectation);
         if (result == null) result = caseStatement(affectation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.AFFECTATION_DECREMENT:
+      {
+        AffectationDecrement affectationDecrement = (AffectationDecrement)theEObject;
+        T result = caseAffectationDecrement(affectationDecrement);
+        if (result == null) result = caseAffectationStatement(affectationDecrement);
+        if (result == null) result = caseStatement(affectationDecrement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.AFFECTATION_INCREMENT:
+      {
+        AffectationIncrement affectationIncrement = (AffectationIncrement)theEObject;
+        T result = caseAffectationIncrement(affectationIncrement);
+        if (result == null) result = caseAffectationStatement(affectationIncrement);
+        if (result == null) result = caseStatement(affectationIncrement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -161,13 +189,10 @@ public class LeekSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LeekPackage.VARIABLE_REFERENCE:
+      case LeekPackage.FOR_IN_VARIABLE_REFERENCE:
       {
-        VariableReference variableReference = (VariableReference)theEObject;
-        T result = caseVariableReference(variableReference);
-        if (result == null) result = caseForInitializer(variableReference);
-        if (result == null) result = casePostfix(variableReference);
-        if (result == null) result = caseExpression(variableReference);
+        ForInVariableReference forInVariableReference = (ForInVariableReference)theEObject;
+        T result = caseForInVariableReference(forInVariableReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -187,10 +212,14 @@ public class LeekSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LeekPackage.VARIABLE_REFERENCEABLE:
+      case LeekPackage.VARIABLE_REFERENCE:
       {
-        VariableReferenceable variableReferenceable = (VariableReferenceable)theEObject;
-        T result = caseVariableReferenceable(variableReferenceable);
+        VariableReference variableReference = (VariableReference)theEObject;
+        T result = caseVariableReference(variableReference);
+        if (result == null) result = caseForInVariableReference(variableReference);
+        if (result == null) result = caseForInitializer(variableReference);
+        if (result == null) result = casePostfix(variableReference);
+        if (result == null) result = caseExpression(variableReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -199,7 +228,6 @@ public class LeekSwitch<T> extends Switch<T>
         LocalDeclaration localDeclaration = (LocalDeclaration)theEObject;
         T result = caseLocalDeclaration(localDeclaration);
         if (result == null) result = caseStatement(localDeclaration);
-        if (result == null) result = caseVariableReferenceable(localDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -208,14 +236,6 @@ public class LeekSwitch<T> extends Switch<T>
         GlobalDeclaration globalDeclaration = (GlobalDeclaration)theEObject;
         T result = caseGlobalDeclaration(globalDeclaration);
         if (result == null) result = caseStatement(globalDeclaration);
-        if (result == null) result = caseVariableReferenceable(globalDeclaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LeekPackage.VARIABLE_DECLARATION:
-      {
-        VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
-        T result = caseVariableDeclaration(variableDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -546,6 +566,22 @@ public class LeekSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Affectation Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Affectation Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAffectationStatement(AffectationStatement object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Affectation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -557,6 +593,38 @@ public class LeekSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAffectation(Affectation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Affectation Decrement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Affectation Decrement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAffectationDecrement(AffectationDecrement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Affectation Increment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Affectation Increment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAffectationIncrement(AffectationIncrement object)
   {
     return null;
   }
@@ -642,17 +710,17 @@ public class LeekSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Reference</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>For In Variable Reference</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Reference</em>'.
+   * @return the result of interpreting the object as an instance of '<em>For In Variable Reference</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVariableReference(VariableReference object)
+  public T caseForInVariableReference(ForInVariableReference object)
   {
     return null;
   }
@@ -690,17 +758,17 @@ public class LeekSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Referenceable</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Variable Reference</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Referenceable</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Variable Reference</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVariableReferenceable(VariableReferenceable object)
+  public T caseVariableReference(VariableReference object)
   {
     return null;
   }
@@ -733,22 +801,6 @@ public class LeekSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGlobalDeclaration(GlobalDeclaration object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVariableDeclaration(VariableDeclaration object)
   {
     return null;
   }

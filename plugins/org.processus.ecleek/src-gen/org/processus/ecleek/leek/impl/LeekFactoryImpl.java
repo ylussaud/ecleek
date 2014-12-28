@@ -69,19 +69,21 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
       case LeekPackage.BREAK_STATEMENT: return createBreakStatement();
       case LeekPackage.CONTINUE_STATEMENT: return createContinueStatement();
       case LeekPackage.STATEMENT_BLOCK: return createStatementBlock();
+      case LeekPackage.AFFECTATION_STATEMENT: return createAffectationStatement();
       case LeekPackage.AFFECTATION: return createAffectation();
+      case LeekPackage.AFFECTATION_DECREMENT: return createAffectationDecrement();
+      case LeekPackage.AFFECTATION_INCREMENT: return createAffectationIncrement();
       case LeekPackage.IF: return createIf();
       case LeekPackage.ITERATION: return createIteration();
       case LeekPackage.WHILE: return createWhile();
       case LeekPackage.FOR: return createFor();
       case LeekPackage.FOR_IN: return createForIn();
-      case LeekPackage.VARIABLE_REFERENCE: return createVariableReference();
+      case LeekPackage.FOR_IN_VARIABLE_REFERENCE: return createForInVariableReference();
       case LeekPackage.FOR_INITIALIZER: return createForInitializer();
       case LeekPackage.FUNCTION_DECLARATION: return createFunctionDeclaration();
-      case LeekPackage.VARIABLE_REFERENCEABLE: return createVariableReferenceable();
+      case LeekPackage.VARIABLE_REFERENCE: return createVariableReference();
       case LeekPackage.LOCAL_DECLARATION: return createLocalDeclaration();
       case LeekPackage.GLOBAL_DECLARATION: return createGlobalDeclaration();
-      case LeekPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
       case LeekPackage.EXPRESSION: return createExpression();
       case LeekPackage.ARRAY_LITERAL: return createArrayLiteral();
       case LeekPackage.POSTFIX: return createPostfix();
@@ -177,10 +179,43 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public AffectationStatement createAffectationStatement()
+  {
+    AffectationStatementImpl affectationStatement = new AffectationStatementImpl();
+    return affectationStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Affectation createAffectation()
   {
     AffectationImpl affectation = new AffectationImpl();
     return affectation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AffectationDecrement createAffectationDecrement()
+  {
+    AffectationDecrementImpl affectationDecrement = new AffectationDecrementImpl();
+    return affectationDecrement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AffectationIncrement createAffectationIncrement()
+  {
+    AffectationIncrementImpl affectationIncrement = new AffectationIncrementImpl();
+    return affectationIncrement;
   }
 
   /**
@@ -243,10 +278,10 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableReference createVariableReference()
+  public ForInVariableReference createForInVariableReference()
   {
-    VariableReferenceImpl variableReference = new VariableReferenceImpl();
-    return variableReference;
+    ForInVariableReferenceImpl forInVariableReference = new ForInVariableReferenceImpl();
+    return forInVariableReference;
   }
 
   /**
@@ -276,10 +311,10 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableReferenceable createVariableReferenceable()
+  public VariableReference createVariableReference()
   {
-    VariableReferenceableImpl variableReferenceable = new VariableReferenceableImpl();
-    return variableReferenceable;
+    VariableReferenceImpl variableReference = new VariableReferenceImpl();
+    return variableReference;
   }
 
   /**
@@ -302,17 +337,6 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
   {
     GlobalDeclarationImpl globalDeclaration = new GlobalDeclarationImpl();
     return globalDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VariableDeclaration createVariableDeclaration()
-  {
-    VariableDeclarationImpl variableDeclaration = new VariableDeclarationImpl();
-    return variableDeclaration;
   }
 
   /**

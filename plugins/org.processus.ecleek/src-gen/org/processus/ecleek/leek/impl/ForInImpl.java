@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.processus.ecleek.leek.Expression;
 import org.processus.ecleek.leek.ForIn;
+import org.processus.ecleek.leek.ForInVariableReference;
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.VariableReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +40,7 @@ public class ForInImpl extends IterationImpl implements ForIn
    * @generated
    * @ordered
    */
-  protected VariableReference key;
+  protected ForInVariableReference key;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
@@ -50,7 +50,7 @@ public class ForInImpl extends IterationImpl implements ForIn
    * @generated
    * @ordered
    */
-  protected VariableReference value;
+  protected ForInVariableReference value;
 
   /**
    * The cached value of the '{@link #getArray() <em>Array</em>}' containment reference.
@@ -88,7 +88,7 @@ public class ForInImpl extends IterationImpl implements ForIn
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableReference getKey()
+  public ForInVariableReference getKey()
   {
     return key;
   }
@@ -98,9 +98,9 @@ public class ForInImpl extends IterationImpl implements ForIn
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetKey(VariableReference newKey, NotificationChain msgs)
+  public NotificationChain basicSetKey(ForInVariableReference newKey, NotificationChain msgs)
   {
-    VariableReference oldKey = key;
+    ForInVariableReference oldKey = key;
     key = newKey;
     if (eNotificationRequired())
     {
@@ -115,7 +115,7 @@ public class ForInImpl extends IterationImpl implements ForIn
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setKey(VariableReference newKey)
+  public void setKey(ForInVariableReference newKey)
   {
     if (newKey != key)
     {
@@ -136,7 +136,7 @@ public class ForInImpl extends IterationImpl implements ForIn
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableReference getValue()
+  public ForInVariableReference getValue()
   {
     return value;
   }
@@ -146,9 +146,9 @@ public class ForInImpl extends IterationImpl implements ForIn
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(VariableReference newValue, NotificationChain msgs)
+  public NotificationChain basicSetValue(ForInVariableReference newValue, NotificationChain msgs)
   {
-    VariableReference oldValue = value;
+    ForInVariableReference oldValue = value;
     value = newValue;
     if (eNotificationRequired())
     {
@@ -163,7 +163,7 @@ public class ForInImpl extends IterationImpl implements ForIn
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(VariableReference newValue)
+  public void setValue(ForInVariableReference newValue)
   {
     if (newValue != value)
     {
@@ -278,10 +278,10 @@ public class ForInImpl extends IterationImpl implements ForIn
     switch (featureID)
     {
       case LeekPackage.FOR_IN__KEY:
-        setKey((VariableReference)newValue);
+        setKey((ForInVariableReference)newValue);
         return;
       case LeekPackage.FOR_IN__VALUE:
-        setValue((VariableReference)newValue);
+        setValue((ForInVariableReference)newValue);
         return;
       case LeekPackage.FOR_IN__ARRAY:
         setArray((Expression)newValue);
@@ -301,10 +301,10 @@ public class ForInImpl extends IterationImpl implements ForIn
     switch (featureID)
     {
       case LeekPackage.FOR_IN__KEY:
-        setKey((VariableReference)null);
+        setKey((ForInVariableReference)null);
         return;
       case LeekPackage.FOR_IN__VALUE:
-        setValue((VariableReference)null);
+        setValue((ForInVariableReference)null);
         return;
       case LeekPackage.FOR_IN__ARRAY:
         setArray((Expression)null);

@@ -14,7 +14,7 @@ Statement:
 	| FunctionCall ';'
 	| Iteration
 	| If
-	| Affectation ';'
+	| AffectationStatement ';'
 	| StatementBlock
 	| ReturnStatement ';'
 	| BreakStatement ';'
@@ -35,8 +35,22 @@ StatementBlock:
 	'{' {StatementBlock} statements+=Statement* '}'
 ;
 
+AffectationStatement:
+	=> AffectationDecrement
+	| =>  AffectationIncrement
+	| Affectation
+;
+
 Affectation:
 	variable=VariableReference '=' value=Expression
+;
+
+AffectationDecrement:
+	variable=VariableReference '-=' decrement=Expression
+;
+
+AffectationIncrement:
+	variable=VariableReference '+=' increment=Expression
 ;
 
 If:
@@ -61,20 +75,21 @@ ForIn:
 	'for' '(' (key=ForInVariableReference ':')? value=ForInVariableReference 'in' array=Expression ')' statement=Statement
 ;
 
-ForInVariableReference returns VariableReference:
-	'var' name=ID
-	| variable=[VariableReference]
+ForInVariableReference:
+	'var' VariableDeclarationUnitialized
+	| VariableReferenceSimple
 ;
 
 ForInitializer:
-	VariableReference
+	'var' VariableDeclarationWithValue
+	| Affectation
 ;
 
 FunctionDeclaration:
 	'function' name=ID '(' (parameters+=ParameterDeclaration (',' parameters+=ParameterDeclaration)*)? ')' body=StatementBlock
 ;
 
-ParameterDeclaration returns VariableReferenceable:
+ParameterDeclaration returns VariableReference:
 	(byAdress?='@')? name=ID
 ;
 
@@ -86,8 +101,17 @@ GlobalDeclaration:
 	'global' variables+=VariableDeclaration (',' variables+=VariableDeclaration)*
 ;
 
-VariableDeclaration:
-	name=ID ('=' value=Expression)?
+VariableDeclaration returns VariableReference:
+	VariableDeclarationWithValue
+	| VariableDeclarationUnitialized
+;
+
+VariableDeclarationWithValue returns VariableReference:
+	name=ID '=' value=Expression
+;
+
+VariableDeclarationUnitialized returns VariableReference:
+	name=ID
 ;
 
 Expression:
@@ -127,18 +151,21 @@ ArrayLiteral:
 	{ArrayLiteral} '[' (values+=Expression (',' values+=Expression)*)? ']'
 ;
 
-VariableReferenceable:
-	LocalDeclaration
-	| GlobalDeclaration
-	| ParameterDeclaration
+VariableReference:
+	=> VariableReferenceArray
+	| VariableReferenceSimple
 ;
 
 Postfix:
 	VariableReference (({PostfixDecrement.value=current} '--' | {PostfixIncrement.value=current} '++'))?
 ;
 
-VariableReference:
-	variable=[VariableReferenceable] ('[' dimensions+=Expression ']')*
+VariableReferenceSimple returns VariableReference:
+	variable=[VariableReference]
+;
+
+VariableReferenceArray returns VariableReference:
+	variable=[VariableReference] ('[' dimensions+=Expression ']')+
 ;
 
 FunctionCall:

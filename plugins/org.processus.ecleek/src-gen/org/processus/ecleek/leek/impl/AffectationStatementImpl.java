@@ -9,43 +9,42 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.processus.ecleek.leek.Expression;
-import org.processus.ecleek.leek.ForInitializer;
+import org.processus.ecleek.leek.AffectationStatement;
 import org.processus.ecleek.leek.LeekPackage;
+import org.processus.ecleek.leek.VariableReference;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>For Initializer</b></em>'.
+ * An implementation of the model object '<em><b>Affectation Statement</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.ForInitializerImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.AffectationStatementImpl#getVariable <em>Variable</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ForInitializerImpl extends MinimalEObjectImpl.Container implements ForInitializer
+public class AffectationStatementImpl extends StatementImpl implements AffectationStatement
 {
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * The cached value of the '{@link #getVariable() <em>Variable</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getVariable()
    * @generated
    * @ordered
    */
-  protected Expression value;
+  protected VariableReference variable;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ForInitializerImpl()
+  protected AffectationStatementImpl()
   {
     super();
   }
@@ -58,7 +57,7 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.FOR_INITIALIZER;
+    return LeekPackage.Literals.AFFECTATION_STATEMENT;
   }
 
   /**
@@ -66,9 +65,9 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getValue()
+  public VariableReference getVariable()
   {
-    return value;
+    return variable;
   }
 
   /**
@@ -76,13 +75,13 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(Expression newValue, NotificationChain msgs)
+  public NotificationChain basicSetVariable(VariableReference newVariable, NotificationChain msgs)
   {
-    Expression oldValue = value;
-    value = newValue;
+    VariableReference oldVariable = variable;
+    variable = newVariable;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.FOR_INITIALIZER__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.AFFECTATION_STATEMENT__VARIABLE, oldVariable, newVariable);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -93,20 +92,20 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(Expression newValue)
+  public void setVariable(VariableReference newVariable)
   {
-    if (newValue != value)
+    if (newVariable != variable)
     {
       NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR_INITIALIZER__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.FOR_INITIALIZER__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
+      if (variable != null)
+        msgs = ((InternalEObject)variable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.AFFECTATION_STATEMENT__VARIABLE, null, msgs);
+      if (newVariable != null)
+        msgs = ((InternalEObject)newVariable).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.AFFECTATION_STATEMENT__VARIABLE, null, msgs);
+      msgs = basicSetVariable(newVariable, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.FOR_INITIALIZER__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.AFFECTATION_STATEMENT__VARIABLE, newVariable, newVariable));
   }
 
   /**
@@ -119,8 +118,8 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LeekPackage.FOR_INITIALIZER__VALUE:
-        return basicSetValue(null, msgs);
+      case LeekPackage.AFFECTATION_STATEMENT__VARIABLE:
+        return basicSetVariable(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,8 +134,8 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LeekPackage.FOR_INITIALIZER__VALUE:
-        return getValue();
+      case LeekPackage.AFFECTATION_STATEMENT__VARIABLE:
+        return getVariable();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -151,8 +150,8 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LeekPackage.FOR_INITIALIZER__VALUE:
-        setValue((Expression)newValue);
+      case LeekPackage.AFFECTATION_STATEMENT__VARIABLE:
+        setVariable((VariableReference)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,8 +167,8 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LeekPackage.FOR_INITIALIZER__VALUE:
-        setValue((Expression)null);
+      case LeekPackage.AFFECTATION_STATEMENT__VARIABLE:
+        setVariable((VariableReference)null);
         return;
     }
     super.eUnset(featureID);
@@ -185,10 +184,10 @@ public class ForInitializerImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case LeekPackage.FOR_INITIALIZER__VALUE:
-        return value != null;
+      case LeekPackage.AFFECTATION_STATEMENT__VARIABLE:
+        return variable != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ForInitializerImpl
+} //AffectationStatementImpl

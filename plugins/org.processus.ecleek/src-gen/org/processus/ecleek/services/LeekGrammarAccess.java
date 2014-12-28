@@ -53,7 +53,7 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIterationParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cIfParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
-		private final RuleCall cAffectationParserRuleCall_7_0 = (RuleCall)cGroup_7.eContents().get(0);
+		private final RuleCall cAffectationStatementParserRuleCall_7_0 = (RuleCall)cGroup_7.eContents().get(0);
 		private final Keyword cSemicolonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
 		private final RuleCall cStatementBlockParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
 		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
@@ -71,13 +71,15 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Statement:
 		//	Include ";" //	| Postfix ';'
-		//	| GlobalDeclaration ";" | FunctionDeclaration | LocalDeclaration ";" | FunctionCall ";" | Iteration | If | Affectation
-		//	";" | StatementBlock | ReturnStatement ";" | BreakStatement ";" | ContinueStatement ";" | {EmptyStatement} ";";
+		//	| GlobalDeclaration ";" | FunctionDeclaration | LocalDeclaration ";" | FunctionCall ";" | Iteration | If |
+		//	AffectationStatement ";" | StatementBlock | ReturnStatement ";" | BreakStatement ";" | ContinueStatement ";" |
+		//	{EmptyStatement} ";";
 		public ParserRule getRule() { return rule; }
 
 		//Include ";" //	| Postfix ';'
-		//| GlobalDeclaration ";" | FunctionDeclaration | LocalDeclaration ";" | FunctionCall ";" | Iteration | If | Affectation
-		//";" | StatementBlock | ReturnStatement ";" | BreakStatement ";" | ContinueStatement ";" | {EmptyStatement} ";"
+		//| GlobalDeclaration ";" | FunctionDeclaration | LocalDeclaration ";" | FunctionCall ";" | Iteration | If |
+		//AffectationStatement ";" | StatementBlock | ReturnStatement ";" | BreakStatement ";" | ContinueStatement ";" |
+		//{EmptyStatement} ";"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Include ";"
@@ -125,11 +127,11 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		//If
 		public RuleCall getIfParserRuleCall_6() { return cIfParserRuleCall_6; }
 
-		//Affectation ";"
+		//AffectationStatement ";"
 		public Group getGroup_7() { return cGroup_7; }
 
-		//Affectation
-		public RuleCall getAffectationParserRuleCall_7_0() { return cAffectationParserRuleCall_7_0; }
+		//AffectationStatement
+		public RuleCall getAffectationStatementParserRuleCall_7_0() { return cAffectationStatementParserRuleCall_7_0; }
 
 		//";"
 		public Keyword getSemicolonKeyword_7_1() { return cSemicolonKeyword_7_1; }
@@ -246,6 +248,30 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 
+	public class AffectationStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AffectationStatement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cAffectationDecrementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cAffectationIncrementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cAffectationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//AffectationStatement:
+		//	AffectationDecrement | => AffectationIncrement | Affectation;
+		public ParserRule getRule() { return rule; }
+
+		//=> AffectationDecrement | => AffectationIncrement | Affectation
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//=> AffectationDecrement
+		public RuleCall getAffectationDecrementParserRuleCall_0() { return cAffectationDecrementParserRuleCall_0; }
+
+		//=> AffectationIncrement
+		public RuleCall getAffectationIncrementParserRuleCall_1() { return cAffectationIncrementParserRuleCall_1; }
+
+		//Affectation
+		public RuleCall getAffectationParserRuleCall_2() { return cAffectationParserRuleCall_2; }
+	}
+
 	public class AffectationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Affectation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -276,6 +302,70 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Expression
 		public RuleCall getValueExpressionParserRuleCall_2_0() { return cValueExpressionParserRuleCall_2_0; }
+	}
+
+	public class AffectationDecrementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AffectationDecrement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cVariableAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cVariableVariableReferenceParserRuleCall_0_0 = (RuleCall)cVariableAssignment_0.eContents().get(0);
+		private final Keyword cHyphenMinusEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cDecrementAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDecrementExpressionParserRuleCall_2_0 = (RuleCall)cDecrementAssignment_2.eContents().get(0);
+		
+		//AffectationDecrement:
+		//	variable=VariableReference "-=" decrement=Expression;
+		public ParserRule getRule() { return rule; }
+
+		//variable=VariableReference "-=" decrement=Expression
+		public Group getGroup() { return cGroup; }
+
+		//variable=VariableReference
+		public Assignment getVariableAssignment_0() { return cVariableAssignment_0; }
+
+		//VariableReference
+		public RuleCall getVariableVariableReferenceParserRuleCall_0_0() { return cVariableVariableReferenceParserRuleCall_0_0; }
+
+		//"-="
+		public Keyword getHyphenMinusEqualsSignKeyword_1() { return cHyphenMinusEqualsSignKeyword_1; }
+
+		//decrement=Expression
+		public Assignment getDecrementAssignment_2() { return cDecrementAssignment_2; }
+
+		//Expression
+		public RuleCall getDecrementExpressionParserRuleCall_2_0() { return cDecrementExpressionParserRuleCall_2_0; }
+	}
+
+	public class AffectationIncrementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AffectationIncrement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cVariableAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cVariableVariableReferenceParserRuleCall_0_0 = (RuleCall)cVariableAssignment_0.eContents().get(0);
+		private final Keyword cPlusSignEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cIncrementAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cIncrementExpressionParserRuleCall_2_0 = (RuleCall)cIncrementAssignment_2.eContents().get(0);
+		
+		//AffectationIncrement:
+		//	variable=VariableReference "+=" increment=Expression;
+		public ParserRule getRule() { return rule; }
+
+		//variable=VariableReference "+=" increment=Expression
+		public Group getGroup() { return cGroup; }
+
+		//variable=VariableReference
+		public Assignment getVariableAssignment_0() { return cVariableAssignment_0; }
+
+		//VariableReference
+		public RuleCall getVariableVariableReferenceParserRuleCall_0_0() { return cVariableVariableReferenceParserRuleCall_0_0; }
+
+		//"+="
+		public Keyword getPlusSignEqualsSignKeyword_1() { return cPlusSignEqualsSignKeyword_1; }
+
+		//increment=Expression
+		public Assignment getIncrementAssignment_2() { return cIncrementAssignment_2; }
+
+		//Expression
+		public RuleCall getIncrementExpressionParserRuleCall_2_0() { return cIncrementExpressionParserRuleCall_2_0; }
 	}
 
 	public class IfElements extends AbstractParserRuleElementFinder {
@@ -536,51 +626,55 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cVarKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
-		private final Assignment cVariableAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final CrossReference cVariableVariableReferenceCrossReference_1_0 = (CrossReference)cVariableAssignment_1.eContents().get(0);
-		private final RuleCall cVariableVariableReferenceIDTerminalRuleCall_1_0_1 = (RuleCall)cVariableVariableReferenceCrossReference_1_0.eContents().get(1);
+		private final RuleCall cVariableDeclarationUnitializedParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final RuleCall cVariableReferenceSimpleParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//ForInVariableReference returns VariableReference:
-		//	"var" name=ID | variable=[VariableReference];
+		//ForInVariableReference:
+		//	"var" VariableDeclarationUnitialized | VariableReferenceSimple;
 		public ParserRule getRule() { return rule; }
 
-		//"var" name=ID | variable=[VariableReference]
+		//"var" VariableDeclarationUnitialized | VariableReferenceSimple
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"var" name=ID
+		//"var" VariableDeclarationUnitialized
 		public Group getGroup_0() { return cGroup_0; }
 
 		//"var"
 		public Keyword getVarKeyword_0_0() { return cVarKeyword_0_0; }
 
-		//name=ID
-		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
+		//VariableDeclarationUnitialized
+		public RuleCall getVariableDeclarationUnitializedParserRuleCall_0_1() { return cVariableDeclarationUnitializedParserRuleCall_0_1; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
-
-		//variable=[VariableReference]
-		public Assignment getVariableAssignment_1() { return cVariableAssignment_1; }
-
-		//[VariableReference]
-		public CrossReference getVariableVariableReferenceCrossReference_1_0() { return cVariableVariableReferenceCrossReference_1_0; }
-
-		//ID
-		public RuleCall getVariableVariableReferenceIDTerminalRuleCall_1_0_1() { return cVariableVariableReferenceIDTerminalRuleCall_1_0_1; }
+		//VariableReferenceSimple
+		public RuleCall getVariableReferenceSimpleParserRuleCall_1() { return cVariableReferenceSimpleParserRuleCall_1; }
 	}
 
 	public class ForInitializerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ForInitializer");
-		private final RuleCall cVariableReferenceParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cVarKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final RuleCall cVariableDeclarationWithValueParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final RuleCall cAffectationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//ForInitializer:
-		//	VariableReference;
+		//	"var" VariableDeclarationWithValue | Affectation;
 		public ParserRule getRule() { return rule; }
 
-		//VariableReference
-		public RuleCall getVariableReferenceParserRuleCall() { return cVariableReferenceParserRuleCall; }
+		//"var" VariableDeclarationWithValue | Affectation
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"var" VariableDeclarationWithValue
+		public Group getGroup_0() { return cGroup_0; }
+
+		//"var"
+		public Keyword getVarKeyword_0_0() { return cVarKeyword_0_0; }
+
+		//VariableDeclarationWithValue
+		public RuleCall getVariableDeclarationWithValueParserRuleCall_0_1() { return cVariableDeclarationWithValueParserRuleCall_0_1; }
+
+		//Affectation
+		public RuleCall getAffectationParserRuleCall_1() { return cAffectationParserRuleCall_1; }
 	}
 
 	public class FunctionDeclarationElements extends AbstractParserRuleElementFinder {
@@ -661,7 +755,7 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
-		//ParameterDeclaration returns VariableReferenceable:
+		//ParameterDeclaration returns VariableReference:
 		//	byAdress?="@"? name=ID;
 		public ParserRule getRule() { return rule; }
 
@@ -763,19 +857,38 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class VariableDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableDeclaration");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cVariableDeclarationWithValueParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cVariableDeclarationUnitializedParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//VariableDeclaration returns VariableReference:
+		//	VariableDeclarationWithValue | VariableDeclarationUnitialized;
+		public ParserRule getRule() { return rule; }
+
+		//VariableDeclarationWithValue | VariableDeclarationUnitialized
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//VariableDeclarationWithValue
+		public RuleCall getVariableDeclarationWithValueParserRuleCall_0() { return cVariableDeclarationWithValueParserRuleCall_0; }
+
+		//VariableDeclarationUnitialized
+		public RuleCall getVariableDeclarationUnitializedParserRuleCall_1() { return cVariableDeclarationUnitializedParserRuleCall_1; }
+	}
+
+	public class VariableDeclarationWithValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableDeclarationWithValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cEqualsSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cValueExpressionParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueExpressionParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
-		//VariableDeclaration:
-		//	name=ID ("=" value=Expression)?;
+		//VariableDeclarationWithValue returns VariableReference:
+		//	name=ID "=" value=Expression;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID ("=" value=Expression)?
+		//name=ID "=" value=Expression
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -784,17 +897,30 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 
-		//("=" value=Expression)?
-		public Group getGroup_1() { return cGroup_1; }
-
 		//"="
-		public Keyword getEqualsSignKeyword_1_0() { return cEqualsSignKeyword_1_0; }
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 
 		//value=Expression
-		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 
 		//Expression
-		public RuleCall getValueExpressionParserRuleCall_1_1_0() { return cValueExpressionParserRuleCall_1_1_0; }
+		public RuleCall getValueExpressionParserRuleCall_2_0() { return cValueExpressionParserRuleCall_2_0; }
+	}
+
+	public class VariableDeclarationUnitializedElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableDeclarationUnitialized");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//VariableDeclarationUnitialized returns VariableReference:
+		//	name=ID;
+		public ParserRule getRule() { return rule; }
+
+		//name=ID
+		public Assignment getNameAssignment() { return cNameAssignment; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
 	}
 
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
@@ -1357,28 +1483,24 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
 	}
 
-	public class VariableReferenceableElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableReferenceable");
+	public class VariableReferenceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableReference");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cLocalDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cGlobalDeclarationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cParameterDeclarationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cVariableReferenceArrayParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cVariableReferenceSimpleParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//VariableReferenceable:
-		//	LocalDeclaration | GlobalDeclaration | ParameterDeclaration;
+		//VariableReference:
+		//	VariableReferenceArray | VariableReferenceSimple;
 		public ParserRule getRule() { return rule; }
 
-		//LocalDeclaration | GlobalDeclaration | ParameterDeclaration
+		//=> VariableReferenceArray | VariableReferenceSimple
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//LocalDeclaration
-		public RuleCall getLocalDeclarationParserRuleCall_0() { return cLocalDeclarationParserRuleCall_0; }
+		//=> VariableReferenceArray
+		public RuleCall getVariableReferenceArrayParserRuleCall_0() { return cVariableReferenceArrayParserRuleCall_0; }
 
-		//GlobalDeclaration
-		public RuleCall getGlobalDeclarationParserRuleCall_1() { return cGlobalDeclarationParserRuleCall_1; }
-
-		//ParameterDeclaration
-		public RuleCall getParameterDeclarationParserRuleCall_2() { return cParameterDeclarationParserRuleCall_2; }
+		//VariableReferenceSimple
+		public RuleCall getVariableReferenceSimpleParserRuleCall_1() { return cVariableReferenceSimpleParserRuleCall_1; }
 	}
 
 	public class PostfixElements extends AbstractParserRuleElementFinder {
@@ -1425,35 +1547,55 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getPlusSignPlusSignKeyword_1_1_1() { return cPlusSignPlusSignKeyword_1_1_1; }
 	}
 
-	public class VariableReferenceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableReference");
+	public class VariableReferenceSimpleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableReferenceSimple");
+		private final Assignment cVariableAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cVariableVariableReferenceCrossReference_0 = (CrossReference)cVariableAssignment.eContents().get(0);
+		private final RuleCall cVariableVariableReferenceIDTerminalRuleCall_0_1 = (RuleCall)cVariableVariableReferenceCrossReference_0.eContents().get(1);
+		
+		//VariableReferenceSimple returns VariableReference:
+		//	variable=[VariableReference];
+		public ParserRule getRule() { return rule; }
+
+		//variable=[VariableReference]
+		public Assignment getVariableAssignment() { return cVariableAssignment; }
+
+		//[VariableReference]
+		public CrossReference getVariableVariableReferenceCrossReference_0() { return cVariableVariableReferenceCrossReference_0; }
+
+		//ID
+		public RuleCall getVariableVariableReferenceIDTerminalRuleCall_0_1() { return cVariableVariableReferenceIDTerminalRuleCall_0_1; }
+	}
+
+	public class VariableReferenceArrayElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableReferenceArray");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cVariableAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cVariableVariableReferenceableCrossReference_0_0 = (CrossReference)cVariableAssignment_0.eContents().get(0);
-		private final RuleCall cVariableVariableReferenceableIDTerminalRuleCall_0_0_1 = (RuleCall)cVariableVariableReferenceableCrossReference_0_0.eContents().get(1);
+		private final CrossReference cVariableVariableReferenceCrossReference_0_0 = (CrossReference)cVariableAssignment_0.eContents().get(0);
+		private final RuleCall cVariableVariableReferenceIDTerminalRuleCall_0_0_1 = (RuleCall)cVariableVariableReferenceCrossReference_0_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cDimensionsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cDimensionsExpressionParserRuleCall_1_1_0 = (RuleCall)cDimensionsAssignment_1_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
-		//VariableReference:
-		//	variable=[VariableReferenceable] ("[" dimensions+=Expression "]")*;
+		//VariableReferenceArray returns VariableReference:
+		//	variable=[VariableReference] ("[" dimensions+=Expression "]")+;
 		public ParserRule getRule() { return rule; }
 
-		//variable=[VariableReferenceable] ("[" dimensions+=Expression "]")*
+		//variable=[VariableReference] ("[" dimensions+=Expression "]")+
 		public Group getGroup() { return cGroup; }
 
-		//variable=[VariableReferenceable]
+		//variable=[VariableReference]
 		public Assignment getVariableAssignment_0() { return cVariableAssignment_0; }
 
-		//[VariableReferenceable]
-		public CrossReference getVariableVariableReferenceableCrossReference_0_0() { return cVariableVariableReferenceableCrossReference_0_0; }
+		//[VariableReference]
+		public CrossReference getVariableVariableReferenceCrossReference_0_0() { return cVariableVariableReferenceCrossReference_0_0; }
 
 		//ID
-		public RuleCall getVariableVariableReferenceableIDTerminalRuleCall_0_0_1() { return cVariableVariableReferenceableIDTerminalRuleCall_0_0_1; }
+		public RuleCall getVariableVariableReferenceIDTerminalRuleCall_0_0_1() { return cVariableVariableReferenceIDTerminalRuleCall_0_0_1; }
 
-		//("[" dimensions+=Expression "]")*
+		//("[" dimensions+=Expression "]")+
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"["
@@ -1595,7 +1737,10 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 	private final BreakStatementElements pBreakStatement;
 	private final ContinueStatementElements pContinueStatement;
 	private final StatementBlockElements pStatementBlock;
+	private final AffectationStatementElements pAffectationStatement;
 	private final AffectationElements pAffectation;
+	private final AffectationDecrementElements pAffectationDecrement;
+	private final AffectationIncrementElements pAffectationIncrement;
 	private final IfElements pIf;
 	private final IterationElements pIteration;
 	private final WhileElements pWhile;
@@ -1608,6 +1753,8 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 	private final LocalDeclarationElements pLocalDeclaration;
 	private final GlobalDeclarationElements pGlobalDeclaration;
 	private final VariableDeclarationElements pVariableDeclaration;
+	private final VariableDeclarationWithValueElements pVariableDeclarationWithValue;
+	private final VariableDeclarationUnitializedElements pVariableDeclarationUnitialized;
 	private final ExpressionElements pExpression;
 	private final ComparisonElements pComparison;
 	private final OrElements pOr;
@@ -1616,9 +1763,10 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 	private final MultiplicationElements pMultiplication;
 	private final PrimaryExpressionElements pPrimaryExpression;
 	private final ArrayLiteralElements pArrayLiteral;
-	private final VariableReferenceableElements pVariableReferenceable;
-	private final PostfixElements pPostfix;
 	private final VariableReferenceElements pVariableReference;
+	private final PostfixElements pPostfix;
+	private final VariableReferenceSimpleElements pVariableReferenceSimple;
+	private final VariableReferenceArrayElements pVariableReferenceArray;
 	private final FunctionCallElements pFunctionCall;
 	private final ReturnStatementElements pReturnStatement;
 	private final IncludeElements pInclude;
@@ -1638,7 +1786,10 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		this.pBreakStatement = new BreakStatementElements();
 		this.pContinueStatement = new ContinueStatementElements();
 		this.pStatementBlock = new StatementBlockElements();
+		this.pAffectationStatement = new AffectationStatementElements();
 		this.pAffectation = new AffectationElements();
+		this.pAffectationDecrement = new AffectationDecrementElements();
+		this.pAffectationIncrement = new AffectationIncrementElements();
 		this.pIf = new IfElements();
 		this.pIteration = new IterationElements();
 		this.pWhile = new WhileElements();
@@ -1651,6 +1802,8 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		this.pLocalDeclaration = new LocalDeclarationElements();
 		this.pGlobalDeclaration = new GlobalDeclarationElements();
 		this.pVariableDeclaration = new VariableDeclarationElements();
+		this.pVariableDeclarationWithValue = new VariableDeclarationWithValueElements();
+		this.pVariableDeclarationUnitialized = new VariableDeclarationUnitializedElements();
 		this.pExpression = new ExpressionElements();
 		this.pComparison = new ComparisonElements();
 		this.pOr = new OrElements();
@@ -1659,9 +1812,10 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		this.pMultiplication = new MultiplicationElements();
 		this.pPrimaryExpression = new PrimaryExpressionElements();
 		this.pArrayLiteral = new ArrayLiteralElements();
-		this.pVariableReferenceable = new VariableReferenceableElements();
-		this.pPostfix = new PostfixElements();
 		this.pVariableReference = new VariableReferenceElements();
+		this.pPostfix = new PostfixElements();
+		this.pVariableReferenceSimple = new VariableReferenceSimpleElements();
+		this.pVariableReferenceArray = new VariableReferenceArrayElements();
 		this.pFunctionCall = new FunctionCallElements();
 		this.pReturnStatement = new ReturnStatementElements();
 		this.pInclude = new IncludeElements();
@@ -1707,8 +1861,9 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Statement:
 	//	Include ";" //	| Postfix ';'
-	//	| GlobalDeclaration ";" | FunctionDeclaration | LocalDeclaration ";" | FunctionCall ";" | Iteration | If | Affectation
-	//	";" | StatementBlock | ReturnStatement ";" | BreakStatement ";" | ContinueStatement ";" | {EmptyStatement} ";";
+	//	| GlobalDeclaration ";" | FunctionDeclaration | LocalDeclaration ";" | FunctionCall ";" | Iteration | If |
+	//	AffectationStatement ";" | StatementBlock | ReturnStatement ";" | BreakStatement ";" | ContinueStatement ";" |
+	//	{EmptyStatement} ";";
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}
@@ -1747,6 +1902,16 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		return getStatementBlockAccess().getRule();
 	}
 
+	//AffectationStatement:
+	//	AffectationDecrement | => AffectationIncrement | Affectation;
+	public AffectationStatementElements getAffectationStatementAccess() {
+		return pAffectationStatement;
+	}
+	
+	public ParserRule getAffectationStatementRule() {
+		return getAffectationStatementAccess().getRule();
+	}
+
 	//Affectation:
 	//	variable=VariableReference "=" value=Expression;
 	public AffectationElements getAffectationAccess() {
@@ -1755,6 +1920,26 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getAffectationRule() {
 		return getAffectationAccess().getRule();
+	}
+
+	//AffectationDecrement:
+	//	variable=VariableReference "-=" decrement=Expression;
+	public AffectationDecrementElements getAffectationDecrementAccess() {
+		return pAffectationDecrement;
+	}
+	
+	public ParserRule getAffectationDecrementRule() {
+		return getAffectationDecrementAccess().getRule();
+	}
+
+	//AffectationIncrement:
+	//	variable=VariableReference "+=" increment=Expression;
+	public AffectationIncrementElements getAffectationIncrementAccess() {
+		return pAffectationIncrement;
+	}
+	
+	public ParserRule getAffectationIncrementRule() {
+		return getAffectationIncrementAccess().getRule();
 	}
 
 	//If:
@@ -1808,8 +1993,8 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		return getForInAccess().getRule();
 	}
 
-	//ForInVariableReference returns VariableReference:
-	//	"var" name=ID | variable=[VariableReference];
+	//ForInVariableReference:
+	//	"var" VariableDeclarationUnitialized | VariableReferenceSimple;
 	public ForInVariableReferenceElements getForInVariableReferenceAccess() {
 		return pForInVariableReference;
 	}
@@ -1819,7 +2004,7 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ForInitializer:
-	//	VariableReference;
+	//	"var" VariableDeclarationWithValue | Affectation;
 	public ForInitializerElements getForInitializerAccess() {
 		return pForInitializer;
 	}
@@ -1839,7 +2024,7 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		return getFunctionDeclarationAccess().getRule();
 	}
 
-	//ParameterDeclaration returns VariableReferenceable:
+	//ParameterDeclaration returns VariableReference:
 	//	byAdress?="@"? name=ID;
 	public ParameterDeclarationElements getParameterDeclarationAccess() {
 		return pParameterDeclaration;
@@ -1869,14 +2054,34 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		return getGlobalDeclarationAccess().getRule();
 	}
 
-	//VariableDeclaration:
-	//	name=ID ("=" value=Expression)?;
+	//VariableDeclaration returns VariableReference:
+	//	VariableDeclarationWithValue | VariableDeclarationUnitialized;
 	public VariableDeclarationElements getVariableDeclarationAccess() {
 		return pVariableDeclaration;
 	}
 	
 	public ParserRule getVariableDeclarationRule() {
 		return getVariableDeclarationAccess().getRule();
+	}
+
+	//VariableDeclarationWithValue returns VariableReference:
+	//	name=ID "=" value=Expression;
+	public VariableDeclarationWithValueElements getVariableDeclarationWithValueAccess() {
+		return pVariableDeclarationWithValue;
+	}
+	
+	public ParserRule getVariableDeclarationWithValueRule() {
+		return getVariableDeclarationWithValueAccess().getRule();
+	}
+
+	//VariableDeclarationUnitialized returns VariableReference:
+	//	name=ID;
+	public VariableDeclarationUnitializedElements getVariableDeclarationUnitializedAccess() {
+		return pVariableDeclarationUnitialized;
+	}
+	
+	public ParserRule getVariableDeclarationUnitializedRule() {
+		return getVariableDeclarationUnitializedAccess().getRule();
 	}
 
 	//Expression:
@@ -1963,14 +2168,14 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		return getArrayLiteralAccess().getRule();
 	}
 
-	//VariableReferenceable:
-	//	LocalDeclaration | GlobalDeclaration | ParameterDeclaration;
-	public VariableReferenceableElements getVariableReferenceableAccess() {
-		return pVariableReferenceable;
+	//VariableReference:
+	//	VariableReferenceArray | VariableReferenceSimple;
+	public VariableReferenceElements getVariableReferenceAccess() {
+		return pVariableReference;
 	}
 	
-	public ParserRule getVariableReferenceableRule() {
-		return getVariableReferenceableAccess().getRule();
+	public ParserRule getVariableReferenceRule() {
+		return getVariableReferenceAccess().getRule();
 	}
 
 	//Postfix:
@@ -1983,14 +2188,24 @@ public class LeekGrammarAccess extends AbstractGrammarElementFinder {
 		return getPostfixAccess().getRule();
 	}
 
-	//VariableReference:
-	//	variable=[VariableReferenceable] ("[" dimensions+=Expression "]")*;
-	public VariableReferenceElements getVariableReferenceAccess() {
-		return pVariableReference;
+	//VariableReferenceSimple returns VariableReference:
+	//	variable=[VariableReference];
+	public VariableReferenceSimpleElements getVariableReferenceSimpleAccess() {
+		return pVariableReferenceSimple;
 	}
 	
-	public ParserRule getVariableReferenceRule() {
-		return getVariableReferenceAccess().getRule();
+	public ParserRule getVariableReferenceSimpleRule() {
+		return getVariableReferenceSimpleAccess().getRule();
+	}
+
+	//VariableReferenceArray returns VariableReference:
+	//	variable=[VariableReference] ("[" dimensions+=Expression "]")+;
+	public VariableReferenceArrayElements getVariableReferenceArrayAccess() {
+		return pVariableReferenceArray;
+	}
+	
+	public ParserRule getVariableReferenceArrayRule() {
+		return getVariableReferenceArrayAccess().getRule();
 	}
 
 	//FunctionCall:
