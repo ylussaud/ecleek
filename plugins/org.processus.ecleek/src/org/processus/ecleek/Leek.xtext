@@ -186,7 +186,7 @@ FunctionCall:
 ;
 
 ReturnStatement:
-	'return' value=Expression
+	{ReturnStatement} 'return' (value=Expression)?
 ;
 
 Include:
