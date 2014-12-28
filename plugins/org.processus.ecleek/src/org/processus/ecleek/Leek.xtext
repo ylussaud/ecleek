@@ -14,7 +14,9 @@ Statement:
 	| FunctionCall ';'
 	| Iteration
 	| If
-	| Affectation ';'
+	| AffectationStatement ';'
+//	| Affectation ';'
+//	OperationStatement ';'
 	| StatementBlock
 	| ReturnStatement ';'
 	| BreakStatement ';'
@@ -35,8 +37,27 @@ StatementBlock:
 	'{' {StatementBlock} statements+=Statement* '}'
 ;
 
+//OperationStatement:
+//	AffectationStatement
+//	| Postfix
+//;
+
+AffectationStatement:
+	=> AffectationDecrement
+	| =>  AffectationIncrement
+	| Affectation
+;
+
 Affectation:
-	variable=VariableReference '=' value=Expression
+	variable=VariableReferenceable '=' value=Expression
+;
+
+AffectationDecrement:
+	variable=VariableReferenceable '-=' decrement=Expression
+;
+
+AffectationIncrement:
+	variable=VariableReferenceable '+=' increment=Expression
 ;
 
 If:
@@ -61,13 +82,14 @@ ForIn:
 	'for' '(' (key=ForInVariableReference ':')? value=ForInVariableReference 'in' array=Expression ')' statement=Statement
 ;
 
-ForInVariableReference returns VariableReference:
-	'var' name=ID
-	| variable=[VariableReference]
+ForInVariableReference:
+	'var' VariableDeclarationUnitialized
+	| VariableReference
 ;
 
 ForInitializer:
-	VariableReference
+	'var' VariableDeclarationWithValue
+	| Affectation
 ;
 
 FunctionDeclaration:
@@ -87,7 +109,16 @@ GlobalDeclaration:
 ;
 
 VariableDeclaration:
-	name=ID ('=' value=Expression)?
+	VariableDeclarationWithValue
+	| VariableDeclarationUnitialized
+;
+
+VariableDeclarationWithValue returns VariableReferenceable:
+	name=ID '=' value=Expression
+;
+
+VariableDeclarationUnitialized returns VariableReferenceable:
+	name=ID
 ;
 
 Expression:
@@ -129,17 +160,20 @@ ArrayLiteral:
 ;
 
 VariableReferenceable:
-	LocalDeclaration
-	| GlobalDeclaration
-	| ParameterDeclaration
+	=> VariableReferenceArray
+	| VariableReference
 ;
 
 Postfix:
-	VariableReference (({PostfixDecrement.value=current} '--' | {PostfixIncrement.value=current} '++'))?
+	VariableReferenceable (({PostfixDecrement.value=current} '--' | {PostfixIncrement.value=current} '++'))?
 ;
 
-VariableReference:
-	variable=[VariableReferenceable] ('[' dimensions+=Expression ']')*
+VariableReference returns VariableReferenceable:
+	variable=[VariableDeclaration]
+;
+
+VariableReferenceArray returns VariableReferenceable:
+	variable=[VariableDeclaration] ('[' dimensions+=Expression ']')+
 ;
 
 FunctionCall:
