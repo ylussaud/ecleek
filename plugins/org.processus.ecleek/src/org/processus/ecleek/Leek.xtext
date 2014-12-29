@@ -54,17 +54,22 @@ AffectationIncrement:
 	variable=VariableReference '+=' increment=Expression
 ;
 
-AffectationPostfixStatement:
-	VariableReference ('--' | '++')
-;
-
 AffectationPrefixStatement:
-	('--' | '++') VariableReference
+	({PrefixDecrement}'--' | {PrefixIncrement} '++') variable=VariableReference
 ;
 
+AffectationPostfixStatement:
+	variable=VariableReference ({PrefixDecrement.value=current} '--' | {PrefixIncrement.value=current} '++')
+;
 
 If:
-	'if' '(' condition=Expression ')' then=Statement (=> 'else' else=Statement)?
+	'if' '(' condition=IfCondition ')' then=Statement (=> 'else' else=Statement)?
+;
+
+// FIXME Affectation should be an Expression
+IfCondition:
+	=> Affectation
+	| Expression
 ;
 
 Iteration:
@@ -95,6 +100,7 @@ ForInitializer:
 	| Affectation
 ;
 
+// FIXME Affectation should be an Expression
 ForAffectation:
 	=> Affectation
 	| Expression
@@ -157,8 +163,8 @@ PrimaryExpression returns Expression:
 	| {RealLiteral} value=REAL
 	| {IntLiteral} value=INT
 	| FunctionCall
-	| Postfix
-	| {Prefix} ('--' | '++') variable=VariableReference
+	| AffectationPrefixStatement
+	| AffectationPostfixStatement
 	| {StringLiteral} value=STRING
 	| ArrayLiteral
 	| FunctionDeclaration
@@ -174,10 +180,6 @@ ArrayLiteral:
 VariableReference:
 	=> VariableReferenceArray
 	| VariableReferenceSimple
-;
-
-Postfix:
-	VariableReference (({PostfixDecrement.value=current} '--' | {PostfixIncrement.value=current} '++'))?
 ;
 
 VariableReferenceSimple returns VariableReference:
