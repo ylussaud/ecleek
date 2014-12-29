@@ -48,16 +48,25 @@ public class LeekValidator extends AbstractLeekValidator {
   @Check
   public void checkBreakStatementIsInLoop(final BreakStatement breakStatement) {
     boolean _and = false;
+    boolean _and_1 = false;
     EClass _while = LeekPackage.eINSTANCE.getWhile();
     boolean _hasContainer = this.hasContainer(breakStatement, _while);
     boolean _not = (!_hasContainer);
     if (!_not) {
-      _and = false;
+      _and_1 = false;
     } else {
       EClass _for = LeekPackage.eINSTANCE.getFor();
       boolean _hasContainer_1 = this.hasContainer(breakStatement, _for);
       boolean _not_1 = (!_hasContainer_1);
-      _and = _not_1;
+      _and_1 = _not_1;
+    }
+    if (!_and_1) {
+      _and = false;
+    } else {
+      EClass _forIn = LeekPackage.eINSTANCE.getForIn();
+      boolean _hasContainer_2 = this.hasContainer(breakStatement, _forIn);
+      boolean _not_2 = (!_hasContainer_2);
+      _and = _not_2;
     }
     if (_and) {
       this.error("BreakStatement must be in a For or a While", null, LeekValidator.BREAK_STATEMENT_IS_IN_LOOP);
@@ -67,16 +76,25 @@ public class LeekValidator extends AbstractLeekValidator {
   @Check
   public void checkContinueStatementIsInLoop(final ContinueStatement continueStatement) {
     boolean _and = false;
+    boolean _and_1 = false;
     EClass _while = LeekPackage.eINSTANCE.getWhile();
     boolean _hasContainer = this.hasContainer(continueStatement, _while);
     boolean _not = (!_hasContainer);
     if (!_not) {
-      _and = false;
+      _and_1 = false;
     } else {
       EClass _for = LeekPackage.eINSTANCE.getFor();
       boolean _hasContainer_1 = this.hasContainer(continueStatement, _for);
       boolean _not_1 = (!_hasContainer_1);
-      _and = _not_1;
+      _and_1 = _not_1;
+    }
+    if (!_and_1) {
+      _and = false;
+    } else {
+      EClass _forIn = LeekPackage.eINSTANCE.getForIn();
+      boolean _hasContainer_2 = this.hasContainer(continueStatement, _forIn);
+      boolean _not_2 = (!_hasContainer_2);
+      _and = _not_2;
     }
     if (_and) {
       this.error("ContinueStatement must be in a For or a While", null, LeekValidator.CONTINUE_STATEMENT_IS_IN_LOOP);

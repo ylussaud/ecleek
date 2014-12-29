@@ -4,26 +4,28 @@ package org.processus.ecleek.leek.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.processus.ecleek.leek.AffectationStatement;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.processus.ecleek.leek.ForAffectation;
 import org.processus.ecleek.leek.LeekPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Affectation Statement</b></em>'.
+ * An implementation of the model object '<em><b>For Affectation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class AffectationStatementImpl extends StatementImpl implements AffectationStatement
+public class ForAffectationImpl extends MinimalEObjectImpl.Container implements ForAffectation
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AffectationStatementImpl()
+  protected ForAffectationImpl()
   {
     super();
   }
@@ -36,7 +38,7 @@ public class AffectationStatementImpl extends StatementImpl implements Affectati
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.AFFECTATION_STATEMENT;
+    return LeekPackage.Literals.FOR_AFFECTATION;
   }
 
-} //AffectationStatementImpl
+} //ForAffectationImpl

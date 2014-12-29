@@ -123,7 +123,9 @@ public class LeekSwitch<T> extends Switch<T>
         Affectation affectation = (Affectation)theEObject;
         T result = caseAffectation(affectation);
         if (result == null) result = caseAffectationStatement(affectation);
+        if (result == null) result = caseIfCondition(affectation);
         if (result == null) result = caseForInitializer(affectation);
+        if (result == null) result = caseForAffectation(affectation);
         if (result == null) result = caseStatement(affectation);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -146,11 +148,36 @@ public class LeekSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LeekPackage.AFFECTATION_POSTFIX_STATEMENT:
+      {
+        AffectationPostfixStatement affectationPostfixStatement = (AffectationPostfixStatement)theEObject;
+        T result = caseAffectationPostfixStatement(affectationPostfixStatement);
+        if (result == null) result = caseAffectationStatement(affectationPostfixStatement);
+        if (result == null) result = caseStatement(affectationPostfixStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.AFFECTATION_PREFIX_STATEMENT:
+      {
+        AffectationPrefixStatement affectationPrefixStatement = (AffectationPrefixStatement)theEObject;
+        T result = caseAffectationPrefixStatement(affectationPrefixStatement);
+        if (result == null) result = caseAffectationStatement(affectationPrefixStatement);
+        if (result == null) result = caseStatement(affectationPrefixStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LeekPackage.IF:
       {
         If if_ = (If)theEObject;
         T result = caseIf(if_);
         if (result == null) result = caseStatement(if_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.IF_CONDITION:
+      {
+        IfCondition ifCondition = (IfCondition)theEObject;
+        T result = caseIfCondition(ifCondition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -203,23 +230,30 @@ public class LeekSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LeekPackage.FOR_AFFECTATION:
+      {
+        ForAffectation forAffectation = (ForAffectation)theEObject;
+        T result = caseForAffectation(forAffectation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LeekPackage.FUNCTION_DECLARATION:
       {
         FunctionDeclaration functionDeclaration = (FunctionDeclaration)theEObject;
         T result = caseFunctionDeclaration(functionDeclaration);
         if (result == null) result = caseStatement(functionDeclaration);
         if (result == null) result = caseExpression(functionDeclaration);
+        if (result == null) result = caseIfCondition(functionDeclaration);
+        if (result == null) result = caseForAffectation(functionDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LeekPackage.VARIABLE_REFERENCE:
+      case LeekPackage.VARIABLE_DECLARATION:
       {
-        VariableReference variableReference = (VariableReference)theEObject;
-        T result = caseVariableReference(variableReference);
-        if (result == null) result = caseForInVariableReference(variableReference);
-        if (result == null) result = caseForInitializer(variableReference);
-        if (result == null) result = casePostfix(variableReference);
-        if (result == null) result = caseExpression(variableReference);
+        VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
+        T result = caseVariableDeclaration(variableDeclaration);
+        if (result == null) result = caseForInVariableReference(variableDeclaration);
+        if (result == null) result = caseForInitializer(variableDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -243,6 +277,8 @@ public class LeekSwitch<T> extends Switch<T>
       {
         Expression expression = (Expression)theEObject;
         T result = caseExpression(expression);
+        if (result == null) result = caseIfCondition(expression);
+        if (result == null) result = caseForAffectation(expression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -251,6 +287,8 @@ public class LeekSwitch<T> extends Switch<T>
         ArrayLiteral arrayLiteral = (ArrayLiteral)theEObject;
         T result = caseArrayLiteral(arrayLiteral);
         if (result == null) result = caseExpression(arrayLiteral);
+        if (result == null) result = caseIfCondition(arrayLiteral);
+        if (result == null) result = caseForAffectation(arrayLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -259,6 +297,33 @@ public class LeekSwitch<T> extends Switch<T>
         Postfix postfix = (Postfix)theEObject;
         T result = casePostfix(postfix);
         if (result == null) result = caseExpression(postfix);
+        if (result == null) result = caseIfCondition(postfix);
+        if (result == null) result = caseForAffectation(postfix);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.PREFIX:
+      {
+        Prefix prefix = (Prefix)theEObject;
+        T result = casePrefix(prefix);
+        if (result == null) result = caseExpression(prefix);
+        if (result == null) result = caseIfCondition(prefix);
+        if (result == null) result = caseForAffectation(prefix);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.VARIABLE_REFERENCE:
+      {
+        VariableReference variableReference = (VariableReference)theEObject;
+        T result = caseVariableReference(variableReference);
+        if (result == null) result = caseAffectationPostfixStatement(variableReference);
+        if (result == null) result = caseForInVariableReference(variableReference);
+        if (result == null) result = casePostfix(variableReference);
+        if (result == null) result = caseAffectationStatement(variableReference);
+        if (result == null) result = caseExpression(variableReference);
+        if (result == null) result = caseStatement(variableReference);
+        if (result == null) result = caseIfCondition(variableReference);
+        if (result == null) result = caseForAffectation(variableReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -268,6 +333,8 @@ public class LeekSwitch<T> extends Switch<T>
         T result = caseFunctionCall(functionCall);
         if (result == null) result = caseStatement(functionCall);
         if (result == null) result = caseExpression(functionCall);
+        if (result == null) result = caseIfCondition(functionCall);
+        if (result == null) result = caseForAffectation(functionCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -295,11 +362,69 @@ public class LeekSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LeekPackage.POSTFIX_DECREMENT:
+      {
+        PostfixDecrement postfixDecrement = (PostfixDecrement)theEObject;
+        T result = casePostfixDecrement(postfixDecrement);
+        if (result == null) result = caseAffectationPostfixStatement(postfixDecrement);
+        if (result == null) result = casePostfix(postfixDecrement);
+        if (result == null) result = caseAffectationStatement(postfixDecrement);
+        if (result == null) result = caseExpression(postfixDecrement);
+        if (result == null) result = caseStatement(postfixDecrement);
+        if (result == null) result = caseIfCondition(postfixDecrement);
+        if (result == null) result = caseForAffectation(postfixDecrement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.POSTFIX_INCREMENT:
+      {
+        PostfixIncrement postfixIncrement = (PostfixIncrement)theEObject;
+        T result = casePostfixIncrement(postfixIncrement);
+        if (result == null) result = caseAffectationPostfixStatement(postfixIncrement);
+        if (result == null) result = casePostfix(postfixIncrement);
+        if (result == null) result = caseAffectationStatement(postfixIncrement);
+        if (result == null) result = caseExpression(postfixIncrement);
+        if (result == null) result = caseStatement(postfixIncrement);
+        if (result == null) result = caseIfCondition(postfixIncrement);
+        if (result == null) result = caseForAffectation(postfixIncrement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.PREFIX_DECREMENT:
+      {
+        PrefixDecrement prefixDecrement = (PrefixDecrement)theEObject;
+        T result = casePrefixDecrement(prefixDecrement);
+        if (result == null) result = caseAffectationPrefixStatement(prefixDecrement);
+        if (result == null) result = casePrefix(prefixDecrement);
+        if (result == null) result = caseAffectationStatement(prefixDecrement);
+        if (result == null) result = caseExpression(prefixDecrement);
+        if (result == null) result = caseStatement(prefixDecrement);
+        if (result == null) result = caseIfCondition(prefixDecrement);
+        if (result == null) result = caseForAffectation(prefixDecrement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.PREFIX_INCREMENT:
+      {
+        PrefixIncrement prefixIncrement = (PrefixIncrement)theEObject;
+        T result = casePrefixIncrement(prefixIncrement);
+        if (result == null) result = caseAffectationPrefixStatement(prefixIncrement);
+        if (result == null) result = casePrefix(prefixIncrement);
+        if (result == null) result = caseAffectationStatement(prefixIncrement);
+        if (result == null) result = caseExpression(prefixIncrement);
+        if (result == null) result = caseStatement(prefixIncrement);
+        if (result == null) result = caseIfCondition(prefixIncrement);
+        if (result == null) result = caseForAffectation(prefixIncrement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LeekPackage.COMPARISON:
       {
         Comparison comparison = (Comparison)theEObject;
         T result = caseComparison(comparison);
         if (result == null) result = caseExpression(comparison);
+        if (result == null) result = caseIfCondition(comparison);
+        if (result == null) result = caseForAffectation(comparison);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -308,6 +433,8 @@ public class LeekSwitch<T> extends Switch<T>
         Equals equals = (Equals)theEObject;
         T result = caseEquals(equals);
         if (result == null) result = caseExpression(equals);
+        if (result == null) result = caseIfCondition(equals);
+        if (result == null) result = caseForAffectation(equals);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -316,6 +443,8 @@ public class LeekSwitch<T> extends Switch<T>
         TypedDifferent typedDifferent = (TypedDifferent)theEObject;
         T result = caseTypedDifferent(typedDifferent);
         if (result == null) result = caseExpression(typedDifferent);
+        if (result == null) result = caseIfCondition(typedDifferent);
+        if (result == null) result = caseForAffectation(typedDifferent);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -324,6 +453,8 @@ public class LeekSwitch<T> extends Switch<T>
         Different different = (Different)theEObject;
         T result = caseDifferent(different);
         if (result == null) result = caseExpression(different);
+        if (result == null) result = caseIfCondition(different);
+        if (result == null) result = caseForAffectation(different);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -332,6 +463,8 @@ public class LeekSwitch<T> extends Switch<T>
         LessOrEquals lessOrEquals = (LessOrEquals)theEObject;
         T result = caseLessOrEquals(lessOrEquals);
         if (result == null) result = caseExpression(lessOrEquals);
+        if (result == null) result = caseIfCondition(lessOrEquals);
+        if (result == null) result = caseForAffectation(lessOrEquals);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -340,6 +473,8 @@ public class LeekSwitch<T> extends Switch<T>
         Less less = (Less)theEObject;
         T result = caseLess(less);
         if (result == null) result = caseExpression(less);
+        if (result == null) result = caseIfCondition(less);
+        if (result == null) result = caseForAffectation(less);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -348,6 +483,8 @@ public class LeekSwitch<T> extends Switch<T>
         MoreOrEquals moreOrEquals = (MoreOrEquals)theEObject;
         T result = caseMoreOrEquals(moreOrEquals);
         if (result == null) result = caseExpression(moreOrEquals);
+        if (result == null) result = caseIfCondition(moreOrEquals);
+        if (result == null) result = caseForAffectation(moreOrEquals);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -356,6 +493,8 @@ public class LeekSwitch<T> extends Switch<T>
         More more = (More)theEObject;
         T result = caseMore(more);
         if (result == null) result = caseExpression(more);
+        if (result == null) result = caseIfCondition(more);
+        if (result == null) result = caseForAffectation(more);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -364,6 +503,8 @@ public class LeekSwitch<T> extends Switch<T>
         Or or = (Or)theEObject;
         T result = caseOr(or);
         if (result == null) result = caseExpression(or);
+        if (result == null) result = caseIfCondition(or);
+        if (result == null) result = caseForAffectation(or);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -372,6 +513,8 @@ public class LeekSwitch<T> extends Switch<T>
         And and = (And)theEObject;
         T result = caseAnd(and);
         if (result == null) result = caseExpression(and);
+        if (result == null) result = caseIfCondition(and);
+        if (result == null) result = caseForAffectation(and);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -380,6 +523,8 @@ public class LeekSwitch<T> extends Switch<T>
         Plus plus = (Plus)theEObject;
         T result = casePlus(plus);
         if (result == null) result = caseExpression(plus);
+        if (result == null) result = caseIfCondition(plus);
+        if (result == null) result = caseForAffectation(plus);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -388,6 +533,8 @@ public class LeekSwitch<T> extends Switch<T>
         Minus minus = (Minus)theEObject;
         T result = caseMinus(minus);
         if (result == null) result = caseExpression(minus);
+        if (result == null) result = caseIfCondition(minus);
+        if (result == null) result = caseForAffectation(minus);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -396,6 +543,8 @@ public class LeekSwitch<T> extends Switch<T>
         Multi multi = (Multi)theEObject;
         T result = caseMulti(multi);
         if (result == null) result = caseExpression(multi);
+        if (result == null) result = caseIfCondition(multi);
+        if (result == null) result = caseForAffectation(multi);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -404,6 +553,18 @@ public class LeekSwitch<T> extends Switch<T>
         Div div = (Div)theEObject;
         T result = caseDiv(div);
         if (result == null) result = caseExpression(div);
+        if (result == null) result = caseIfCondition(div);
+        if (result == null) result = caseForAffectation(div);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LeekPackage.TERNARY_IF:
+      {
+        TernaryIf ternaryIf = (TernaryIf)theEObject;
+        T result = caseTernaryIf(ternaryIf);
+        if (result == null) result = caseExpression(ternaryIf);
+        if (result == null) result = caseIfCondition(ternaryIf);
+        if (result == null) result = caseForAffectation(ternaryIf);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -412,6 +573,8 @@ public class LeekSwitch<T> extends Switch<T>
         UnitaryMinus unitaryMinus = (UnitaryMinus)theEObject;
         T result = caseUnitaryMinus(unitaryMinus);
         if (result == null) result = caseExpression(unitaryMinus);
+        if (result == null) result = caseIfCondition(unitaryMinus);
+        if (result == null) result = caseForAffectation(unitaryMinus);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -420,6 +583,8 @@ public class LeekSwitch<T> extends Switch<T>
         Not not = (Not)theEObject;
         T result = caseNot(not);
         if (result == null) result = caseExpression(not);
+        if (result == null) result = caseIfCondition(not);
+        if (result == null) result = caseForAffectation(not);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -428,6 +593,8 @@ public class LeekSwitch<T> extends Switch<T>
         RealLiteral realLiteral = (RealLiteral)theEObject;
         T result = caseRealLiteral(realLiteral);
         if (result == null) result = caseExpression(realLiteral);
+        if (result == null) result = caseIfCondition(realLiteral);
+        if (result == null) result = caseForAffectation(realLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -436,6 +603,8 @@ public class LeekSwitch<T> extends Switch<T>
         IntLiteral intLiteral = (IntLiteral)theEObject;
         T result = caseIntLiteral(intLiteral);
         if (result == null) result = caseExpression(intLiteral);
+        if (result == null) result = caseIfCondition(intLiteral);
+        if (result == null) result = caseForAffectation(intLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -444,6 +613,8 @@ public class LeekSwitch<T> extends Switch<T>
         StringLiteral stringLiteral = (StringLiteral)theEObject;
         T result = caseStringLiteral(stringLiteral);
         if (result == null) result = caseExpression(stringLiteral);
+        if (result == null) result = caseIfCondition(stringLiteral);
+        if (result == null) result = caseForAffectation(stringLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -452,6 +623,8 @@ public class LeekSwitch<T> extends Switch<T>
         NullLiteral nullLiteral = (NullLiteral)theEObject;
         T result = caseNullLiteral(nullLiteral);
         if (result == null) result = caseExpression(nullLiteral);
+        if (result == null) result = caseIfCondition(nullLiteral);
+        if (result == null) result = caseForAffectation(nullLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -460,6 +633,8 @@ public class LeekSwitch<T> extends Switch<T>
         FalseLiteral falseLiteral = (FalseLiteral)theEObject;
         T result = caseFalseLiteral(falseLiteral);
         if (result == null) result = caseExpression(falseLiteral);
+        if (result == null) result = caseIfCondition(falseLiteral);
+        if (result == null) result = caseForAffectation(falseLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -468,24 +643,8 @@ public class LeekSwitch<T> extends Switch<T>
         TrueLiteral trueLiteral = (TrueLiteral)theEObject;
         T result = caseTrueLiteral(trueLiteral);
         if (result == null) result = caseExpression(trueLiteral);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LeekPackage.POSTFIX_DECREMENT:
-      {
-        PostfixDecrement postfixDecrement = (PostfixDecrement)theEObject;
-        T result = casePostfixDecrement(postfixDecrement);
-        if (result == null) result = casePostfix(postfixDecrement);
-        if (result == null) result = caseExpression(postfixDecrement);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LeekPackage.POSTFIX_INCREMENT:
-      {
-        PostfixIncrement postfixIncrement = (PostfixIncrement)theEObject;
-        T result = casePostfixIncrement(postfixIncrement);
-        if (result == null) result = casePostfix(postfixIncrement);
-        if (result == null) result = caseExpression(postfixIncrement);
+        if (result == null) result = caseIfCondition(trueLiteral);
+        if (result == null) result = caseForAffectation(trueLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -638,6 +797,38 @@ public class LeekSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Affectation Postfix Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Affectation Postfix Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAffectationPostfixStatement(AffectationPostfixStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Affectation Prefix Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Affectation Prefix Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAffectationPrefixStatement(AffectationPrefixStatement object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>If</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -649,6 +840,22 @@ public class LeekSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseIf(If object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If Condition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If Condition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIfCondition(IfCondition object)
   {
     return null;
   }
@@ -750,6 +957,22 @@ public class LeekSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>For Affectation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>For Affectation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseForAffectation(ForAffectation object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Function Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -766,17 +989,17 @@ public class LeekSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Reference</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Reference</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVariableReference(VariableReference object)
+  public T caseVariableDeclaration(VariableDeclaration object)
   {
     return null;
   }
@@ -862,6 +1085,38 @@ public class LeekSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Prefix</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrefix(Prefix object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableReference(VariableReference object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Function Call</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -921,6 +1176,70 @@ public class LeekSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEmptyStatement(EmptyStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Postfix Decrement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Postfix Decrement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePostfixDecrement(PostfixDecrement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Postfix Increment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Postfix Increment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePostfixIncrement(PostfixIncrement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Prefix Decrement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Prefix Decrement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrefixDecrement(PrefixDecrement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Prefix Increment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Prefix Increment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrefixIncrement(PrefixIncrement object)
   {
     return null;
   }
@@ -1150,6 +1469,22 @@ public class LeekSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Ternary If</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ternary If</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTernaryIf(TernaryIf object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Unitary Minus</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1273,38 +1608,6 @@ public class LeekSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTrueLiteral(TrueLiteral object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Postfix Decrement</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Postfix Decrement</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePostfixDecrement(PostfixDecrement object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Postfix Increment</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Postfix Increment</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePostfixIncrement(PostfixIncrement object)
   {
     return null;
   }

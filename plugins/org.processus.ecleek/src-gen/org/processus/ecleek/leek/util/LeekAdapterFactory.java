@@ -120,9 +120,24 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createAffectationIncrementAdapter();
       }
       @Override
+      public Adapter caseAffectationPostfixStatement(AffectationPostfixStatement object)
+      {
+        return createAffectationPostfixStatementAdapter();
+      }
+      @Override
+      public Adapter caseAffectationPrefixStatement(AffectationPrefixStatement object)
+      {
+        return createAffectationPrefixStatementAdapter();
+      }
+      @Override
       public Adapter caseIf(If object)
       {
         return createIfAdapter();
+      }
+      @Override
+      public Adapter caseIfCondition(IfCondition object)
+      {
+        return createIfConditionAdapter();
       }
       @Override
       public Adapter caseIteration(Iteration object)
@@ -155,14 +170,19 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createForInitializerAdapter();
       }
       @Override
+      public Adapter caseForAffectation(ForAffectation object)
+      {
+        return createForAffectationAdapter();
+      }
+      @Override
       public Adapter caseFunctionDeclaration(FunctionDeclaration object)
       {
         return createFunctionDeclarationAdapter();
       }
       @Override
-      public Adapter caseVariableReference(VariableReference object)
+      public Adapter caseVariableDeclaration(VariableDeclaration object)
       {
-        return createVariableReferenceAdapter();
+        return createVariableDeclarationAdapter();
       }
       @Override
       public Adapter caseLocalDeclaration(LocalDeclaration object)
@@ -190,6 +210,16 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createPostfixAdapter();
       }
       @Override
+      public Adapter casePrefix(Prefix object)
+      {
+        return createPrefixAdapter();
+      }
+      @Override
+      public Adapter caseVariableReference(VariableReference object)
+      {
+        return createVariableReferenceAdapter();
+      }
+      @Override
       public Adapter caseFunctionCall(FunctionCall object)
       {
         return createFunctionCallAdapter();
@@ -208,6 +238,26 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
       public Adapter caseEmptyStatement(EmptyStatement object)
       {
         return createEmptyStatementAdapter();
+      }
+      @Override
+      public Adapter casePostfixDecrement(PostfixDecrement object)
+      {
+        return createPostfixDecrementAdapter();
+      }
+      @Override
+      public Adapter casePostfixIncrement(PostfixIncrement object)
+      {
+        return createPostfixIncrementAdapter();
+      }
+      @Override
+      public Adapter casePrefixDecrement(PrefixDecrement object)
+      {
+        return createPrefixDecrementAdapter();
+      }
+      @Override
+      public Adapter casePrefixIncrement(PrefixIncrement object)
+      {
+        return createPrefixIncrementAdapter();
       }
       @Override
       public Adapter caseComparison(Comparison object)
@@ -280,6 +330,11 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
         return createDivAdapter();
       }
       @Override
+      public Adapter caseTernaryIf(TernaryIf object)
+      {
+        return createTernaryIfAdapter();
+      }
+      @Override
       public Adapter caseUnitaryMinus(UnitaryMinus object)
       {
         return createUnitaryMinusAdapter();
@@ -318,16 +373,6 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
       public Adapter caseTrueLiteral(TrueLiteral object)
       {
         return createTrueLiteralAdapter();
-      }
-      @Override
-      public Adapter casePostfixDecrement(PostfixDecrement object)
-      {
-        return createPostfixDecrementAdapter();
-      }
-      @Override
-      public Adapter casePostfixIncrement(PostfixIncrement object)
-      {
-        return createPostfixIncrementAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -487,6 +532,36 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.AffectationPostfixStatement <em>Affectation Postfix Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.AffectationPostfixStatement
+   * @generated
+   */
+  public Adapter createAffectationPostfixStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.AffectationPrefixStatement <em>Affectation Prefix Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.AffectationPrefixStatement
+   * @generated
+   */
+  public Adapter createAffectationPrefixStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.If <em>If</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -497,6 +572,21 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIfAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.IfCondition <em>If Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.IfCondition
+   * @generated
+   */
+  public Adapter createIfConditionAdapter()
   {
     return null;
   }
@@ -592,6 +682,21 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.ForAffectation <em>For Affectation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.ForAffectation
+   * @generated
+   */
+  public Adapter createForAffectationAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.FunctionDeclaration <em>Function Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -607,16 +712,16 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.VariableReference <em>Variable Reference</em>}'.
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.VariableDeclaration <em>Variable Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.processus.ecleek.leek.VariableReference
+   * @see org.processus.ecleek.leek.VariableDeclaration
    * @generated
    */
-  public Adapter createVariableReferenceAdapter()
+  public Adapter createVariableDeclarationAdapter()
   {
     return null;
   }
@@ -697,6 +802,36 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.Prefix <em>Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.Prefix
+   * @generated
+   */
+  public Adapter createPrefixAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.VariableReference <em>Variable Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.VariableReference
+   * @generated
+   */
+  public Adapter createVariableReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.FunctionCall <em>Function Call</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -752,6 +887,66 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEmptyStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.PostfixDecrement <em>Postfix Decrement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.PostfixDecrement
+   * @generated
+   */
+  public Adapter createPostfixDecrementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.PostfixIncrement <em>Postfix Increment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.PostfixIncrement
+   * @generated
+   */
+  public Adapter createPostfixIncrementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.PrefixDecrement <em>Prefix Decrement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.PrefixDecrement
+   * @generated
+   */
+  public Adapter createPrefixDecrementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.PrefixIncrement <em>Prefix Increment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.PrefixIncrement
+   * @generated
+   */
+  public Adapter createPrefixIncrementAdapter()
   {
     return null;
   }
@@ -967,6 +1162,21 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.TernaryIf <em>Ternary If</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.processus.ecleek.leek.TernaryIf
+   * @generated
+   */
+  public Adapter createTernaryIfAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.UnitaryMinus <em>Unitary Minus</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1082,36 +1292,6 @@ public class LeekAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTrueLiteralAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.PostfixDecrement <em>Postfix Decrement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.processus.ecleek.leek.PostfixDecrement
-   * @generated
-   */
-  public Adapter createPostfixDecrementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.processus.ecleek.leek.PostfixIncrement <em>Postfix Increment</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.processus.ecleek.leek.PostfixIncrement
-   * @generated
-   */
-  public Adapter createPostfixIncrementAdapter()
   {
     return null;
   }

@@ -5,49 +5,49 @@ package org.processus.ecleek.leek;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>If</b></em>'.
+ * A representation of the model object '<em><b>Ternary If</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.If#getCondition <em>Condition</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.If#getThen <em>Then</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.If#getElse <em>Else</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.TernaryIf#getLeft <em>Left</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.TernaryIf#getThen <em>Then</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.TernaryIf#getElse <em>Else</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.processus.ecleek.leek.LeekPackage#getIf()
+ * @see org.processus.ecleek.leek.LeekPackage#getTernaryIf()
  * @model
  * @generated
  */
-public interface If extends Statement
+public interface TernaryIf extends Expression
 {
   /**
-   * Returns the value of the '<em><b>Condition</b></em>' containment reference.
+   * Returns the value of the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Condition</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Left</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Condition</em>' containment reference.
-   * @see #setCondition(IfCondition)
-   * @see org.processus.ecleek.leek.LeekPackage#getIf_Condition()
+   * @return the value of the '<em>Left</em>' containment reference.
+   * @see #setLeft(Expression)
+   * @see org.processus.ecleek.leek.LeekPackage#getTernaryIf_Left()
    * @model containment="true"
    * @generated
    */
-  IfCondition getCondition();
+  Expression getLeft();
 
   /**
-   * Sets the value of the '{@link org.processus.ecleek.leek.If#getCondition <em>Condition</em>}' containment reference.
+   * Sets the value of the '{@link org.processus.ecleek.leek.TernaryIf#getLeft <em>Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Condition</em>' containment reference.
-   * @see #getCondition()
+   * @param value the new value of the '<em>Left</em>' containment reference.
+   * @see #getLeft()
    * @generated
    */
-  void setCondition(IfCondition value);
+  void setLeft(Expression value);
 
   /**
    * Returns the value of the '<em><b>Then</b></em>' containment reference.
@@ -58,22 +58,22 @@ public interface If extends Statement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Then</em>' containment reference.
-   * @see #setThen(Statement)
-   * @see org.processus.ecleek.leek.LeekPackage#getIf_Then()
+   * @see #setThen(Expression)
+   * @see org.processus.ecleek.leek.LeekPackage#getTernaryIf_Then()
    * @model containment="true"
    * @generated
    */
-  Statement getThen();
+  Expression getThen();
 
   /**
-   * Sets the value of the '{@link org.processus.ecleek.leek.If#getThen <em>Then</em>}' containment reference.
+   * Sets the value of the '{@link org.processus.ecleek.leek.TernaryIf#getThen <em>Then</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Then</em>' containment reference.
    * @see #getThen()
    * @generated
    */
-  void setThen(Statement value);
+  void setThen(Expression value);
 
   /**
    * Returns the value of the '<em><b>Else</b></em>' containment reference.
@@ -84,21 +84,21 @@ public interface If extends Statement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Else</em>' containment reference.
-   * @see #setElse(Statement)
-   * @see org.processus.ecleek.leek.LeekPackage#getIf_Else()
+   * @see #setElse(Expression)
+   * @see org.processus.ecleek.leek.LeekPackage#getTernaryIf_Else()
    * @model containment="true"
    * @generated
    */
-  Statement getElse();
+  Expression getElse();
 
   /**
-   * Sets the value of the '{@link org.processus.ecleek.leek.If#getElse <em>Else</em>}' containment reference.
+   * Sets the value of the '{@link org.processus.ecleek.leek.TernaryIf#getElse <em>Else</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Else</em>' containment reference.
    * @see #getElse()
    * @generated
    */
-  void setElse(Statement value);
+  void setElse(Expression value);
 
-} // If
+} // TernaryIf

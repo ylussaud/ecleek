@@ -104,6 +104,24 @@ public interface LeekFactory extends EFactory
   AffectationIncrement createAffectationIncrement();
 
   /**
+   * Returns a new object of class '<em>Affectation Postfix Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Affectation Postfix Statement</em>'.
+   * @generated
+   */
+  AffectationPostfixStatement createAffectationPostfixStatement();
+
+  /**
+   * Returns a new object of class '<em>Affectation Prefix Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Affectation Prefix Statement</em>'.
+   * @generated
+   */
+  AffectationPrefixStatement createAffectationPrefixStatement();
+
+  /**
    * Returns a new object of class '<em>If</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -111,6 +129,15 @@ public interface LeekFactory extends EFactory
    * @generated
    */
   If createIf();
+
+  /**
+   * Returns a new object of class '<em>If Condition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Condition</em>'.
+   * @generated
+   */
+  IfCondition createIfCondition();
 
   /**
    * Returns a new object of class '<em>Iteration</em>'.
@@ -167,6 +194,15 @@ public interface LeekFactory extends EFactory
   ForInitializer createForInitializer();
 
   /**
+   * Returns a new object of class '<em>For Affectation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Affectation</em>'.
+   * @generated
+   */
+  ForAffectation createForAffectation();
+
+  /**
    * Returns a new object of class '<em>Function Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -176,13 +212,13 @@ public interface LeekFactory extends EFactory
   FunctionDeclaration createFunctionDeclaration();
 
   /**
-   * Returns a new object of class '<em>Variable Reference</em>'.
+   * Returns a new object of class '<em>Variable Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Reference</em>'.
+   * @return a new object of class '<em>Variable Declaration</em>'.
    * @generated
    */
-  VariableReference createVariableReference();
+  VariableDeclaration createVariableDeclaration();
 
   /**
    * Returns a new object of class '<em>Local Declaration</em>'.
@@ -230,6 +266,24 @@ public interface LeekFactory extends EFactory
   Postfix createPostfix();
 
   /**
+   * Returns a new object of class '<em>Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Prefix</em>'.
+   * @generated
+   */
+  Prefix createPrefix();
+
+  /**
+   * Returns a new object of class '<em>Variable Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Reference</em>'.
+   * @generated
+   */
+  VariableReference createVariableReference();
+
+  /**
    * Returns a new object of class '<em>Function Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -264,6 +318,42 @@ public interface LeekFactory extends EFactory
    * @generated
    */
   EmptyStatement createEmptyStatement();
+
+  /**
+   * Returns a new object of class '<em>Postfix Decrement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Postfix Decrement</em>'.
+   * @generated
+   */
+  PostfixDecrement createPostfixDecrement();
+
+  /**
+   * Returns a new object of class '<em>Postfix Increment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Postfix Increment</em>'.
+   * @generated
+   */
+  PostfixIncrement createPostfixIncrement();
+
+  /**
+   * Returns a new object of class '<em>Prefix Decrement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Prefix Decrement</em>'.
+   * @generated
+   */
+  PrefixDecrement createPrefixDecrement();
+
+  /**
+   * Returns a new object of class '<em>Prefix Increment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Prefix Increment</em>'.
+   * @generated
+   */
+  PrefixIncrement createPrefixIncrement();
 
   /**
    * Returns a new object of class '<em>Comparison</em>'.
@@ -392,6 +482,15 @@ public interface LeekFactory extends EFactory
   Div createDiv();
 
   /**
+   * Returns a new object of class '<em>Ternary If</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ternary If</em>'.
+   * @generated
+   */
+  TernaryIf createTernaryIf();
+
+  /**
    * Returns a new object of class '<em>Unitary Minus</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -462,24 +561,6 @@ public interface LeekFactory extends EFactory
    * @generated
    */
   TrueLiteral createTrueLiteral();
-
-  /**
-   * Returns a new object of class '<em>Postfix Decrement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Postfix Decrement</em>'.
-   * @generated
-   */
-  PostfixDecrement createPostfixDecrement();
-
-  /**
-   * Returns a new object of class '<em>Postfix Increment</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Postfix Increment</em>'.
-   * @generated
-   */
-  PostfixIncrement createPostfixIncrement();
 
   /**
    * Returns the package supported by this factory.

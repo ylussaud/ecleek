@@ -73,24 +73,34 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
       case LeekPackage.AFFECTATION: return createAffectation();
       case LeekPackage.AFFECTATION_DECREMENT: return createAffectationDecrement();
       case LeekPackage.AFFECTATION_INCREMENT: return createAffectationIncrement();
+      case LeekPackage.AFFECTATION_POSTFIX_STATEMENT: return createAffectationPostfixStatement();
+      case LeekPackage.AFFECTATION_PREFIX_STATEMENT: return createAffectationPrefixStatement();
       case LeekPackage.IF: return createIf();
+      case LeekPackage.IF_CONDITION: return createIfCondition();
       case LeekPackage.ITERATION: return createIteration();
       case LeekPackage.WHILE: return createWhile();
       case LeekPackage.FOR: return createFor();
       case LeekPackage.FOR_IN: return createForIn();
       case LeekPackage.FOR_IN_VARIABLE_REFERENCE: return createForInVariableReference();
       case LeekPackage.FOR_INITIALIZER: return createForInitializer();
+      case LeekPackage.FOR_AFFECTATION: return createForAffectation();
       case LeekPackage.FUNCTION_DECLARATION: return createFunctionDeclaration();
-      case LeekPackage.VARIABLE_REFERENCE: return createVariableReference();
+      case LeekPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
       case LeekPackage.LOCAL_DECLARATION: return createLocalDeclaration();
       case LeekPackage.GLOBAL_DECLARATION: return createGlobalDeclaration();
       case LeekPackage.EXPRESSION: return createExpression();
       case LeekPackage.ARRAY_LITERAL: return createArrayLiteral();
       case LeekPackage.POSTFIX: return createPostfix();
+      case LeekPackage.PREFIX: return createPrefix();
+      case LeekPackage.VARIABLE_REFERENCE: return createVariableReference();
       case LeekPackage.FUNCTION_CALL: return createFunctionCall();
       case LeekPackage.RETURN_STATEMENT: return createReturnStatement();
       case LeekPackage.INCLUDE: return createInclude();
       case LeekPackage.EMPTY_STATEMENT: return createEmptyStatement();
+      case LeekPackage.POSTFIX_DECREMENT: return createPostfixDecrement();
+      case LeekPackage.POSTFIX_INCREMENT: return createPostfixIncrement();
+      case LeekPackage.PREFIX_DECREMENT: return createPrefixDecrement();
+      case LeekPackage.PREFIX_INCREMENT: return createPrefixIncrement();
       case LeekPackage.COMPARISON: return createComparison();
       case LeekPackage.EQUALS: return createEquals();
       case LeekPackage.TYPED_DIFFERENT: return createTypedDifferent();
@@ -105,6 +115,7 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
       case LeekPackage.MINUS: return createMinus();
       case LeekPackage.MULTI: return createMulti();
       case LeekPackage.DIV: return createDiv();
+      case LeekPackage.TERNARY_IF: return createTernaryIf();
       case LeekPackage.UNITARY_MINUS: return createUnitaryMinus();
       case LeekPackage.NOT: return createNot();
       case LeekPackage.REAL_LITERAL: return createRealLiteral();
@@ -113,8 +124,6 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
       case LeekPackage.NULL_LITERAL: return createNullLiteral();
       case LeekPackage.FALSE_LITERAL: return createFalseLiteral();
       case LeekPackage.TRUE_LITERAL: return createTrueLiteral();
-      case LeekPackage.POSTFIX_DECREMENT: return createPostfixDecrement();
-      case LeekPackage.POSTFIX_INCREMENT: return createPostfixIncrement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -224,10 +233,43 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public AffectationPostfixStatement createAffectationPostfixStatement()
+  {
+    AffectationPostfixStatementImpl affectationPostfixStatement = new AffectationPostfixStatementImpl();
+    return affectationPostfixStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AffectationPrefixStatement createAffectationPrefixStatement()
+  {
+    AffectationPrefixStatementImpl affectationPrefixStatement = new AffectationPrefixStatementImpl();
+    return affectationPrefixStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public If createIf()
   {
     IfImpl if_ = new IfImpl();
     return if_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IfCondition createIfCondition()
+  {
+    IfConditionImpl ifCondition = new IfConditionImpl();
+    return ifCondition;
   }
 
   /**
@@ -301,6 +343,17 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ForAffectation createForAffectation()
+  {
+    ForAffectationImpl forAffectation = new ForAffectationImpl();
+    return forAffectation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public FunctionDeclaration createFunctionDeclaration()
   {
     FunctionDeclarationImpl functionDeclaration = new FunctionDeclarationImpl();
@@ -312,10 +365,10 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableReference createVariableReference()
+  public VariableDeclaration createVariableDeclaration()
   {
-    VariableReferenceImpl variableReference = new VariableReferenceImpl();
-    return variableReference;
+    VariableDeclarationImpl variableDeclaration = new VariableDeclarationImpl();
+    return variableDeclaration;
   }
 
   /**
@@ -378,6 +431,28 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Prefix createPrefix()
+  {
+    PrefixImpl prefix = new PrefixImpl();
+    return prefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableReference createVariableReference()
+  {
+    VariableReferenceImpl variableReference = new VariableReferenceImpl();
+    return variableReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public FunctionCall createFunctionCall()
   {
     FunctionCallImpl functionCall = new FunctionCallImpl();
@@ -415,6 +490,50 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
   {
     EmptyStatementImpl emptyStatement = new EmptyStatementImpl();
     return emptyStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PostfixDecrement createPostfixDecrement()
+  {
+    PostfixDecrementImpl postfixDecrement = new PostfixDecrementImpl();
+    return postfixDecrement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PostfixIncrement createPostfixIncrement()
+  {
+    PostfixIncrementImpl postfixIncrement = new PostfixIncrementImpl();
+    return postfixIncrement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PrefixDecrement createPrefixDecrement()
+  {
+    PrefixDecrementImpl prefixDecrement = new PrefixDecrementImpl();
+    return prefixDecrement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PrefixIncrement createPrefixIncrement()
+  {
+    PrefixIncrementImpl prefixIncrement = new PrefixIncrementImpl();
+    return prefixIncrement;
   }
 
   /**
@@ -576,6 +695,17 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public TernaryIf createTernaryIf()
+  {
+    TernaryIfImpl ternaryIf = new TernaryIfImpl();
+    return ternaryIf;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public UnitaryMinus createUnitaryMinus()
   {
     UnitaryMinusImpl unitaryMinus = new UnitaryMinusImpl();
@@ -657,28 +787,6 @@ public class LeekFactoryImpl extends EFactoryImpl implements LeekFactory
   {
     TrueLiteralImpl trueLiteral = new TrueLiteralImpl();
     return trueLiteral;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PostfixDecrement createPostfixDecrement()
-  {
-    PostfixDecrementImpl postfixDecrement = new PostfixDecrementImpl();
-    return postfixDecrement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PostfixIncrement createPostfixIncrement()
-  {
-    PostfixIncrementImpl postfixIncrement = new PostfixIncrementImpl();
-    return postfixIncrement;
   }
 
   /**

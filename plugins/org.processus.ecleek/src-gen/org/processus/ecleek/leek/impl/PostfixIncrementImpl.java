@@ -27,7 +27,7 @@ import org.processus.ecleek.leek.VariableReference;
  *
  * @generated
  */
-public class PostfixIncrementImpl extends PostfixImpl implements PostfixIncrement
+public class PostfixIncrementImpl extends AffectationPostfixStatementImpl implements PostfixIncrement
 {
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.

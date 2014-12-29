@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.processus.ecleek.leek.AffectationIncrement;
 import org.processus.ecleek.leek.Expression;
 import org.processus.ecleek.leek.LeekPackage;
+import org.processus.ecleek.leek.VariableReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +22,7 @@ import org.processus.ecleek.leek.LeekPackage;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.processus.ecleek.leek.impl.AffectationIncrementImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.processus.ecleek.leek.impl.AffectationIncrementImpl#getIncrement <em>Increment</em>}</li>
  * </ul>
  * </p>
@@ -29,6 +31,16 @@ import org.processus.ecleek.leek.LeekPackage;
  */
 public class AffectationIncrementImpl extends AffectationStatementImpl implements AffectationIncrement
 {
+  /**
+   * The cached value of the '{@link #getVariable() <em>Variable</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVariable()
+   * @generated
+   * @ordered
+   */
+  protected VariableReference variable;
+
   /**
    * The cached value of the '{@link #getIncrement() <em>Increment</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -58,6 +70,54 @@ public class AffectationIncrementImpl extends AffectationStatementImpl implement
   protected EClass eStaticClass()
   {
     return LeekPackage.Literals.AFFECTATION_INCREMENT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableReference getVariable()
+  {
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetVariable(VariableReference newVariable, NotificationChain msgs)
+  {
+    VariableReference oldVariable = variable;
+    variable = newVariable;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.AFFECTATION_INCREMENT__VARIABLE, oldVariable, newVariable);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVariable(VariableReference newVariable)
+  {
+    if (newVariable != variable)
+    {
+      NotificationChain msgs = null;
+      if (variable != null)
+        msgs = ((InternalEObject)variable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.AFFECTATION_INCREMENT__VARIABLE, null, msgs);
+      if (newVariable != null)
+        msgs = ((InternalEObject)newVariable).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.AFFECTATION_INCREMENT__VARIABLE, null, msgs);
+      msgs = basicSetVariable(newVariable, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.AFFECTATION_INCREMENT__VARIABLE, newVariable, newVariable));
   }
 
   /**
@@ -118,6 +178,8 @@ public class AffectationIncrementImpl extends AffectationStatementImpl implement
   {
     switch (featureID)
     {
+      case LeekPackage.AFFECTATION_INCREMENT__VARIABLE:
+        return basicSetVariable(null, msgs);
       case LeekPackage.AFFECTATION_INCREMENT__INCREMENT:
         return basicSetIncrement(null, msgs);
     }
@@ -134,6 +196,8 @@ public class AffectationIncrementImpl extends AffectationStatementImpl implement
   {
     switch (featureID)
     {
+      case LeekPackage.AFFECTATION_INCREMENT__VARIABLE:
+        return getVariable();
       case LeekPackage.AFFECTATION_INCREMENT__INCREMENT:
         return getIncrement();
     }
@@ -150,6 +214,9 @@ public class AffectationIncrementImpl extends AffectationStatementImpl implement
   {
     switch (featureID)
     {
+      case LeekPackage.AFFECTATION_INCREMENT__VARIABLE:
+        setVariable((VariableReference)newValue);
+        return;
       case LeekPackage.AFFECTATION_INCREMENT__INCREMENT:
         setIncrement((Expression)newValue);
         return;
@@ -167,6 +234,9 @@ public class AffectationIncrementImpl extends AffectationStatementImpl implement
   {
     switch (featureID)
     {
+      case LeekPackage.AFFECTATION_INCREMENT__VARIABLE:
+        setVariable((VariableReference)null);
+        return;
       case LeekPackage.AFFECTATION_INCREMENT__INCREMENT:
         setIncrement((Expression)null);
         return;
@@ -184,6 +254,8 @@ public class AffectationIncrementImpl extends AffectationStatementImpl implement
   {
     switch (featureID)
     {
+      case LeekPackage.AFFECTATION_INCREMENT__VARIABLE:
+        return variable != null;
       case LeekPackage.AFFECTATION_INCREMENT__INCREMENT:
         return increment != null;
     }

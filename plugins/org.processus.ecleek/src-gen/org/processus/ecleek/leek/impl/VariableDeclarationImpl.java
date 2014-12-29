@@ -10,29 +10,27 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.processus.ecleek.leek.Affectation;
 import org.processus.ecleek.leek.Expression;
-import org.processus.ecleek.leek.ForAffectation;
 import org.processus.ecleek.leek.ForInitializer;
-import org.processus.ecleek.leek.IfCondition;
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.VariableReference;
+import org.processus.ecleek.leek.VariableDeclaration;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Affectation</b></em>'.
+ * An implementation of the model object '<em><b>Variable Declaration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.AffectationImpl#getValue <em>Value</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.impl.AffectationImpl#getVariable <em>Variable</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.VariableDeclarationImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.VariableDeclarationImpl#isByAdress <em>By Adress</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.VariableDeclarationImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class AffectationImpl extends AffectationStatementImpl implements Affectation
+public class VariableDeclarationImpl extends ForInVariableReferenceImpl implements VariableDeclaration
 {
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
@@ -45,21 +43,51 @@ public class AffectationImpl extends AffectationStatementImpl implements Affecta
   protected Expression value;
 
   /**
-   * The cached value of the '{@link #getVariable() <em>Variable</em>}' containment reference.
+   * The default value of the '{@link #isByAdress() <em>By Adress</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariable()
+   * @see #isByAdress()
    * @generated
    * @ordered
    */
-  protected VariableReference variable;
+  protected static final boolean BY_ADRESS_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isByAdress() <em>By Adress</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isByAdress()
+   * @generated
+   * @ordered
+   */
+  protected boolean byAdress = BY_ADRESS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AffectationImpl()
+  protected VariableDeclarationImpl()
   {
     super();
   }
@@ -72,7 +100,7 @@ public class AffectationImpl extends AffectationStatementImpl implements Affecta
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.AFFECTATION;
+    return LeekPackage.Literals.VARIABLE_DECLARATION;
   }
 
   /**
@@ -96,7 +124,7 @@ public class AffectationImpl extends AffectationStatementImpl implements Affecta
     value = newValue;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.AFFECTATION__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.VARIABLE_DECLARATION__VALUE, oldValue, newValue);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -113,14 +141,14 @@ public class AffectationImpl extends AffectationStatementImpl implements Affecta
     {
       NotificationChain msgs = null;
       if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.AFFECTATION__VALUE, null, msgs);
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.VARIABLE_DECLARATION__VALUE, null, msgs);
       if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.AFFECTATION__VALUE, null, msgs);
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.VARIABLE_DECLARATION__VALUE, null, msgs);
       msgs = basicSetValue(newValue, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.AFFECTATION__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.VARIABLE_DECLARATION__VALUE, newValue, newValue));
   }
 
   /**
@@ -128,9 +156,9 @@ public class AffectationImpl extends AffectationStatementImpl implements Affecta
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableReference getVariable()
+  public boolean isByAdress()
   {
-    return variable;
+    return byAdress;
   }
 
   /**
@@ -138,16 +166,12 @@ public class AffectationImpl extends AffectationStatementImpl implements Affecta
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVariable(VariableReference newVariable, NotificationChain msgs)
+  public void setByAdress(boolean newByAdress)
   {
-    VariableReference oldVariable = variable;
-    variable = newVariable;
+    boolean oldByAdress = byAdress;
+    byAdress = newByAdress;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.AFFECTATION__VARIABLE, oldVariable, newVariable);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.VARIABLE_DECLARATION__BY_ADRESS, oldByAdress, byAdress));
   }
 
   /**
@@ -155,20 +179,22 @@ public class AffectationImpl extends AffectationStatementImpl implements Affecta
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariable(VariableReference newVariable)
+  public String getName()
   {
-    if (newVariable != variable)
-    {
-      NotificationChain msgs = null;
-      if (variable != null)
-        msgs = ((InternalEObject)variable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.AFFECTATION__VARIABLE, null, msgs);
-      if (newVariable != null)
-        msgs = ((InternalEObject)newVariable).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.AFFECTATION__VARIABLE, null, msgs);
-      msgs = basicSetVariable(newVariable, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.AFFECTATION__VARIABLE, newVariable, newVariable));
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.VARIABLE_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -181,10 +207,8 @@ public class AffectationImpl extends AffectationStatementImpl implements Affecta
   {
     switch (featureID)
     {
-      case LeekPackage.AFFECTATION__VALUE:
+      case LeekPackage.VARIABLE_DECLARATION__VALUE:
         return basicSetValue(null, msgs);
-      case LeekPackage.AFFECTATION__VARIABLE:
-        return basicSetVariable(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -199,10 +223,12 @@ public class AffectationImpl extends AffectationStatementImpl implements Affecta
   {
     switch (featureID)
     {
-      case LeekPackage.AFFECTATION__VALUE:
+      case LeekPackage.VARIABLE_DECLARATION__VALUE:
         return getValue();
-      case LeekPackage.AFFECTATION__VARIABLE:
-        return getVariable();
+      case LeekPackage.VARIABLE_DECLARATION__BY_ADRESS:
+        return isByAdress();
+      case LeekPackage.VARIABLE_DECLARATION__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -217,11 +243,14 @@ public class AffectationImpl extends AffectationStatementImpl implements Affecta
   {
     switch (featureID)
     {
-      case LeekPackage.AFFECTATION__VALUE:
+      case LeekPackage.VARIABLE_DECLARATION__VALUE:
         setValue((Expression)newValue);
         return;
-      case LeekPackage.AFFECTATION__VARIABLE:
-        setVariable((VariableReference)newValue);
+      case LeekPackage.VARIABLE_DECLARATION__BY_ADRESS:
+        setByAdress((Boolean)newValue);
+        return;
+      case LeekPackage.VARIABLE_DECLARATION__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -237,11 +266,14 @@ public class AffectationImpl extends AffectationStatementImpl implements Affecta
   {
     switch (featureID)
     {
-      case LeekPackage.AFFECTATION__VALUE:
+      case LeekPackage.VARIABLE_DECLARATION__VALUE:
         setValue((Expression)null);
         return;
-      case LeekPackage.AFFECTATION__VARIABLE:
-        setVariable((VariableReference)null);
+      case LeekPackage.VARIABLE_DECLARATION__BY_ADRESS:
+        setByAdress(BY_ADRESS_EDEFAULT);
+        return;
+      case LeekPackage.VARIABLE_DECLARATION__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -257,10 +289,12 @@ public class AffectationImpl extends AffectationStatementImpl implements Affecta
   {
     switch (featureID)
     {
-      case LeekPackage.AFFECTATION__VALUE:
+      case LeekPackage.VARIABLE_DECLARATION__VALUE:
         return value != null;
-      case LeekPackage.AFFECTATION__VARIABLE:
-        return variable != null;
+      case LeekPackage.VARIABLE_DECLARATION__BY_ADRESS:
+        return byAdress != BY_ADRESS_EDEFAULT;
+      case LeekPackage.VARIABLE_DECLARATION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -273,25 +307,11 @@ public class AffectationImpl extends AffectationStatementImpl implements Affecta
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
-    if (baseClass == IfCondition.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
     if (baseClass == ForInitializer.class)
     {
       switch (derivedFeatureID)
       {
-        case LeekPackage.AFFECTATION__VALUE: return LeekPackage.FOR_INITIALIZER__VALUE;
-        default: return -1;
-      }
-    }
-    if (baseClass == ForAffectation.class)
-    {
-      switch (derivedFeatureID)
-      {
+        case LeekPackage.VARIABLE_DECLARATION__VALUE: return LeekPackage.FOR_INITIALIZER__VALUE;
         default: return -1;
       }
     }
@@ -306,29 +326,34 @@ public class AffectationImpl extends AffectationStatementImpl implements Affecta
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
-    if (baseClass == IfCondition.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
     if (baseClass == ForInitializer.class)
     {
       switch (baseFeatureID)
       {
-        case LeekPackage.FOR_INITIALIZER__VALUE: return LeekPackage.AFFECTATION__VALUE;
-        default: return -1;
-      }
-    }
-    if (baseClass == ForAffectation.class)
-    {
-      switch (baseFeatureID)
-      {
+        case LeekPackage.FOR_INITIALIZER__VALUE: return LeekPackage.VARIABLE_DECLARATION__VALUE;
         default: return -1;
       }
     }
     return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
-} //AffectationImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (byAdress: ");
+    result.append(byAdress);
+    result.append(", name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
+  }
+
+} //VariableDeclarationImpl

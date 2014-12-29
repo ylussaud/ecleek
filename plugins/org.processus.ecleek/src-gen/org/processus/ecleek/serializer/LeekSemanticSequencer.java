@@ -48,14 +48,18 @@ import org.processus.ecleek.leek.Or;
 import org.processus.ecleek.leek.Plus;
 import org.processus.ecleek.leek.PostfixDecrement;
 import org.processus.ecleek.leek.PostfixIncrement;
+import org.processus.ecleek.leek.PrefixDecrement;
+import org.processus.ecleek.leek.PrefixIncrement;
 import org.processus.ecleek.leek.RealLiteral;
 import org.processus.ecleek.leek.ReturnStatement;
 import org.processus.ecleek.leek.Script;
 import org.processus.ecleek.leek.StatementBlock;
 import org.processus.ecleek.leek.StringLiteral;
+import org.processus.ecleek.leek.TernaryIf;
 import org.processus.ecleek.leek.TrueLiteral;
 import org.processus.ecleek.leek.TypedDifferent;
 import org.processus.ecleek.leek.UnitaryMinus;
+import org.processus.ecleek.leek.VariableDeclaration;
 import org.processus.ecleek.leek.VariableReference;
 import org.processus.ecleek.leek.While;
 import org.processus.ecleek.services.LeekGrammarAccess;
@@ -71,7 +75,9 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LeekPackage.AFFECTATION:
 				if(context == grammarAccess.getAffectationRule() ||
 				   context == grammarAccess.getAffectationStatementRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
 				   context == grammarAccess.getForInitializerRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getStatementRule()) {
 					sequence_Affectation(context, (Affectation) semanticObject); 
 					return; 
@@ -109,12 +115,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_And(context, (And) semanticObject); 
 					return; 
 				}
@@ -136,12 +146,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_ArrayLiteral(context, (ArrayLiteral) semanticObject); 
 					return; 
 				}
@@ -169,12 +183,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Comparison(context, (Comparison) semanticObject); 
 					return; 
 				}
@@ -202,12 +220,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Comparison(context, (Different) semanticObject); 
 					return; 
 				}
@@ -228,12 +250,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Multiplication(context, (Div) semanticObject); 
 					return; 
 				}
@@ -260,12 +286,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Comparison(context, (Equals) semanticObject); 
 					return; 
 				}
@@ -286,12 +316,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_PrimaryExpression(context, (FalseLiteral) semanticObject); 
 					return; 
 				}
@@ -328,14 +362,18 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
 				   context == grammarAccess.getFunctionCallRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
 				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getStatementRule()) {
+				   context == grammarAccess.getStatementRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_FunctionCall(context, (FunctionCall) semanticObject); 
 					return; 
 				}
@@ -356,14 +394,18 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
 				   context == grammarAccess.getFunctionDeclarationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
 				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getStatementRule()) {
+				   context == grammarAccess.getStatementRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_FunctionDeclaration(context, (FunctionDeclaration) semanticObject); 
 					return; 
 				}
@@ -405,12 +447,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_PrimaryExpression(context, (IntLiteral) semanticObject); 
 					return; 
 				}
@@ -431,12 +477,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Comparison(context, (Less) semanticObject); 
 					return; 
 				}
@@ -457,12 +507,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Comparison(context, (LessOrEquals) semanticObject); 
 					return; 
 				}
@@ -490,12 +544,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Addition(context, (Minus) semanticObject); 
 					return; 
 				}
@@ -516,12 +574,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Comparison(context, (More) semanticObject); 
 					return; 
 				}
@@ -542,12 +604,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Comparison(context, (MoreOrEquals) semanticObject); 
 					return; 
 				}
@@ -568,12 +634,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Multiplication(context, (Multi) semanticObject); 
 					return; 
 				}
@@ -594,12 +664,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_PrimaryExpression(context, (Not) semanticObject); 
 					return; 
 				}
@@ -620,12 +694,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_PrimaryExpression(context, (NullLiteral) semanticObject); 
 					return; 
 				}
@@ -646,12 +724,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Or(context, (Or) semanticObject); 
 					return; 
 				}
@@ -672,18 +754,28 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Addition(context, (Plus) semanticObject); 
 					return; 
 				}
 				else break;
 			case LeekPackage.POSTFIX_DECREMENT:
-				if(context == grammarAccess.getAdditionRule() ||
+				if(context == grammarAccess.getAffectationPostfixStatementRule() ||
+				   context == grammarAccess.getAffectationStatementRule() ||
+				   context == grammarAccess.getStatementRule()) {
+					sequence_AffectationPostfixStatement(context, (PostfixDecrement) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAdditionRule() ||
 				   context == grammarAccess.getAdditionAccess().getMinusLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getAdditionAccess().getPlusLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getAndRule() ||
@@ -698,19 +790,29 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
 				   context == grammarAccess.getPostfixRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Postfix(context, (PostfixDecrement) semanticObject); 
 					return; 
 				}
 				else break;
 			case LeekPackage.POSTFIX_INCREMENT:
-				if(context == grammarAccess.getAdditionRule() ||
+				if(context == grammarAccess.getAffectationPostfixStatementRule() ||
+				   context == grammarAccess.getAffectationStatementRule() ||
+				   context == grammarAccess.getStatementRule()) {
+					sequence_AffectationPostfixStatement(context, (PostfixIncrement) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAdditionRule() ||
 				   context == grammarAccess.getAdditionAccess().getMinusLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getAdditionAccess().getPlusLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getAndRule() ||
@@ -725,14 +827,92 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
 				   context == grammarAccess.getPostfixRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Postfix(context, (PostfixIncrement) semanticObject); 
+					return; 
+				}
+				else break;
+			case LeekPackage.PREFIX_DECREMENT:
+				if(context == grammarAccess.getAffectationPrefixStatementRule() ||
+				   context == grammarAccess.getAffectationStatementRule() ||
+				   context == grammarAccess.getStatementRule()) {
+					sequence_AffectationPrefixStatement(context, (PrefixDecrement) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAdditionRule() ||
+				   context == grammarAccess.getAdditionAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getAdditionAccess().getPlusLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAndRule() ||
+				   context == grammarAccess.getAndAccess().getAndLeftAction_1_0_0() ||
+				   context == grammarAccess.getComparisonRule() ||
+				   context == grammarAccess.getComparisonAccess().getComparisonLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getComparisonAccess().getDifferentLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getComparisonAccess().getEqualsLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getComparisonAccess().getLessOrEqualsLeftAction_1_0_4_0() ||
+				   context == grammarAccess.getComparisonAccess().getLessLeftAction_1_0_5_0() ||
+				   context == grammarAccess.getComparisonAccess().getMoreOrEqualsLeftAction_1_0_6_0() ||
+				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
+				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
+				   context == grammarAccess.getMultiplicationRule() ||
+				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getOrRule() ||
+				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
+				   context == grammarAccess.getPrefixRule() ||
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
+					sequence_Prefix(context, (PrefixDecrement) semanticObject); 
+					return; 
+				}
+				else break;
+			case LeekPackage.PREFIX_INCREMENT:
+				if(context == grammarAccess.getAffectationPrefixStatementRule() ||
+				   context == grammarAccess.getAffectationStatementRule() ||
+				   context == grammarAccess.getStatementRule()) {
+					sequence_AffectationPrefixStatement(context, (PrefixIncrement) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAdditionRule() ||
+				   context == grammarAccess.getAdditionAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getAdditionAccess().getPlusLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAndRule() ||
+				   context == grammarAccess.getAndAccess().getAndLeftAction_1_0_0() ||
+				   context == grammarAccess.getComparisonRule() ||
+				   context == grammarAccess.getComparisonAccess().getComparisonLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getComparisonAccess().getDifferentLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getComparisonAccess().getEqualsLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getComparisonAccess().getLessOrEqualsLeftAction_1_0_4_0() ||
+				   context == grammarAccess.getComparisonAccess().getLessLeftAction_1_0_5_0() ||
+				   context == grammarAccess.getComparisonAccess().getMoreOrEqualsLeftAction_1_0_6_0() ||
+				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
+				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
+				   context == grammarAccess.getMultiplicationRule() ||
+				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getOrRule() ||
+				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
+				   context == grammarAccess.getPrefixRule() ||
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
+					sequence_Prefix(context, (PrefixIncrement) semanticObject); 
 					return; 
 				}
 				else break;
@@ -752,12 +932,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_PrimaryExpression(context, (RealLiteral) semanticObject); 
 					return; 
 				}
@@ -798,13 +982,47 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_PrimaryExpression(context, (StringLiteral) semanticObject); 
+					return; 
+				}
+				else break;
+			case LeekPackage.TERNARY_IF:
+				if(context == grammarAccess.getAdditionRule() ||
+				   context == grammarAccess.getAdditionAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getAdditionAccess().getPlusLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAndRule() ||
+				   context == grammarAccess.getAndAccess().getAndLeftAction_1_0_0() ||
+				   context == grammarAccess.getComparisonRule() ||
+				   context == grammarAccess.getComparisonAccess().getComparisonLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getComparisonAccess().getDifferentLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getComparisonAccess().getEqualsLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getComparisonAccess().getLessOrEqualsLeftAction_1_0_4_0() ||
+				   context == grammarAccess.getComparisonAccess().getLessLeftAction_1_0_5_0() ||
+				   context == grammarAccess.getComparisonAccess().getMoreOrEqualsLeftAction_1_0_6_0() ||
+				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
+				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
+				   context == grammarAccess.getMultiplicationRule() ||
+				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getOrRule() ||
+				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
+					sequence_TernaryIf(context, (TernaryIf) semanticObject); 
 					return; 
 				}
 				else break;
@@ -824,12 +1042,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_PrimaryExpression(context, (TrueLiteral) semanticObject); 
 					return; 
 				}
@@ -850,12 +1072,16 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_Comparison(context, (TypedDifferent) semanticObject); 
 					return; 
 				}
@@ -876,49 +1102,55 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0()) {
 					sequence_PrimaryExpression(context, (UnitaryMinus) semanticObject); 
 					return; 
 				}
 				else break;
-			case LeekPackage.VARIABLE_REFERENCE:
-				if(context == grammarAccess.getForInVariableReferenceRule()) {
-					sequence_ForInVariableReference_VariableDeclarationUnitialized_VariableReferenceSimple(context, (VariableReference) semanticObject); 
+			case LeekPackage.VARIABLE_DECLARATION:
+				if(context == grammarAccess.getParameterDeclarationRule()) {
+					sequence_ParameterDeclaration(context, (VariableDeclaration) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getParameterDeclarationRule()) {
-					sequence_ParameterDeclaration(context, (VariableReference) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getVariableDeclarationUnitializedRule()) {
-					sequence_VariableDeclarationUnitialized(context, (VariableReference) semanticObject); 
+				else if(context == grammarAccess.getForInVariableReferenceRule() ||
+				   context == grammarAccess.getVariableDeclarationUnitializedRule()) {
+					sequence_VariableDeclarationUnitialized(context, (VariableDeclaration) semanticObject); 
 					return; 
 				}
 				else if(context == grammarAccess.getForInitializerRule() ||
 				   context == grammarAccess.getVariableDeclarationWithValueRule()) {
-					sequence_VariableDeclarationWithValue(context, (VariableReference) semanticObject); 
+					sequence_VariableDeclarationWithValue(context, (VariableDeclaration) semanticObject); 
 					return; 
 				}
 				else if(context == grammarAccess.getVariableDeclarationRule()) {
-					sequence_VariableDeclaration_VariableDeclarationUnitialized_VariableDeclarationWithValue(context, (VariableReference) semanticObject); 
+					sequence_VariableDeclaration_VariableDeclarationUnitialized_VariableDeclarationWithValue(context, (VariableDeclaration) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getVariableReferenceArrayRule()) {
+				else break;
+			case LeekPackage.VARIABLE_REFERENCE:
+				if(context == grammarAccess.getVariableReferenceArrayRule()) {
 					sequence_VariableReferenceArray(context, (VariableReference) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getVariableReferenceSimpleRule()) {
+				else if(context == grammarAccess.getForInVariableReferenceRule() ||
+				   context == grammarAccess.getVariableReferenceSimpleRule()) {
 					sequence_VariableReferenceSimple(context, (VariableReference) semanticObject); 
 					return; 
 				}
 				else if(context == grammarAccess.getAdditionRule() ||
 				   context == grammarAccess.getAdditionAccess().getMinusLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getAdditionAccess().getPlusLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAffectationPostfixStatementAccess().getPostfixDecrementValueAction_1_0_0() ||
+				   context == grammarAccess.getAffectationPostfixStatementAccess().getPostfixIncrementValueAction_1_1_0() ||
 				   context == grammarAccess.getAndRule() ||
 				   context == grammarAccess.getAndAccess().getAndLeftAction_1_0_0() ||
 				   context == grammarAccess.getComparisonRule() ||
@@ -931,6 +1163,8 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getComparisonAccess().getMoreLeftAction_1_0_7_0() ||
 				   context == grammarAccess.getComparisonAccess().getTypedDifferentLeftAction_1_0_2_0() ||
 				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getForAffectationRule() ||
+				   context == grammarAccess.getIfConditionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
@@ -940,6 +1174,8 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getPostfixAccess().getPostfixDecrementValueAction_1_0_0() ||
 				   context == grammarAccess.getPostfixAccess().getPostfixIncrementValueAction_1_1_0() ||
 				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getTernaryIfRule() ||
+				   context == grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0() ||
 				   context == grammarAccess.getVariableReferenceRule()) {
 					sequence_VariableReference_VariableReferenceArray_VariableReferenceSimple(context, (VariableReference) semanticObject); 
 					return; 
@@ -1001,8 +1237,8 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_AffectationDecrement(EObject context, AffectationDecrement semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.AFFECTATION_STATEMENT__VARIABLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.AFFECTATION_STATEMENT__VARIABLE));
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.AFFECTATION_DECREMENT__VARIABLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.AFFECTATION_DECREMENT__VARIABLE));
 			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.AFFECTATION_DECREMENT__DECREMENT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.AFFECTATION_DECREMENT__DECREMENT));
 		}
@@ -1020,8 +1256,8 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_AffectationIncrement(EObject context, AffectationIncrement semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.AFFECTATION_STATEMENT__VARIABLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.AFFECTATION_STATEMENT__VARIABLE));
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.AFFECTATION_INCREMENT__VARIABLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.AFFECTATION_INCREMENT__VARIABLE));
 			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.AFFECTATION_INCREMENT__INCREMENT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.AFFECTATION_INCREMENT__INCREMENT));
 		}
@@ -1035,14 +1271,78 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     value=AffectationPostfixStatement_PostfixDecrement_1_0_0
+	 */
+	protected void sequence_AffectationPostfixStatement(EObject context, PostfixDecrement semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.POSTFIX_DECREMENT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.POSTFIX_DECREMENT__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAffectationPostfixStatementAccess().getPostfixDecrementValueAction_1_0_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=AffectationPostfixStatement_PostfixIncrement_1_1_0
+	 */
+	protected void sequence_AffectationPostfixStatement(EObject context, PostfixIncrement semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.POSTFIX_INCREMENT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.POSTFIX_INCREMENT__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAffectationPostfixStatementAccess().getPostfixIncrementValueAction_1_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     right=VariableReference
+	 */
+	protected void sequence_AffectationPrefixStatement(EObject context, PrefixDecrement semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.PREFIX_DECREMENT__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.PREFIX_DECREMENT__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAffectationPrefixStatementAccess().getRightVariableReferenceParserRuleCall_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     right=VariableReference
+	 */
+	protected void sequence_AffectationPrefixStatement(EObject context, PrefixIncrement semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.PREFIX_INCREMENT__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.PREFIX_INCREMENT__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAffectationPrefixStatementAccess().getRightVariableReferenceParserRuleCall_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (variable=VariableReference value=Expression)
 	 */
 	protected void sequence_Affectation(EObject context, Affectation semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.AFFECTATION_STATEMENT__VARIABLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.AFFECTATION_STATEMENT__VARIABLE));
 			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.FOR_INITIALIZER__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.FOR_INITIALIZER__VALUE));
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.AFFECTATION__VARIABLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.AFFECTATION__VARIABLE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
@@ -1252,15 +1552,6 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID | variable=[VariableReference|ID])
-	 */
-	protected void sequence_ForInVariableReference_VariableDeclarationUnitialized_VariableReferenceSimple(EObject context, VariableReference semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (key=ForInVariableReference? value=ForInVariableReference array=Expression statement=Statement)
 	 */
 	protected void sequence_ForIn(EObject context, ForIn semanticObject) {
@@ -1270,7 +1561,7 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (initializer=ForInitializer condition=Expression increment=Expression statement=Statement)
+	 *     (initializer=ForInitializer condition=Expression increment=ForAffectation statement=Statement)
 	 */
 	protected void sequence_For(EObject context, For semanticObject) {
 		if(errorAcceptor != null) {
@@ -1287,7 +1578,7 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getForAccess().getInitializerForInitializerParserRuleCall_2_0(), semanticObject.getInitializer());
 		feeder.accept(grammarAccess.getForAccess().getConditionExpressionParserRuleCall_4_0(), semanticObject.getCondition());
-		feeder.accept(grammarAccess.getForAccess().getIncrementExpressionParserRuleCall_6_0(), semanticObject.getIncrement());
+		feeder.accept(grammarAccess.getForAccess().getIncrementForAffectationParserRuleCall_6_0(), semanticObject.getIncrement());
 		feeder.accept(grammarAccess.getForAccess().getStatementStatementParserRuleCall_8_0(), semanticObject.getStatement());
 		feeder.finish();
 	}
@@ -1322,7 +1613,7 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (condition=Expression then=Statement else=Statement?)
+	 *     (condition=IfCondition then=Statement else=Statement?)
 	 */
 	protected void sequence_If(EObject context, If semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1356,7 +1647,7 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (left=Multiplication_Div_1_0_1_0 right=PrimaryExpression)
+	 *     (left=Multiplication_Div_1_0_1_0 right=TernaryIf)
 	 */
 	protected void sequence_Multiplication(EObject context, Div semanticObject) {
 		if(errorAcceptor != null) {
@@ -1368,14 +1659,14 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getMultiplicationAccess().getRightPrimaryExpressionParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getMultiplicationAccess().getRightTernaryIfParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (left=Multiplication_Multi_1_0_0_0 right=PrimaryExpression)
+	 *     (left=Multiplication_Multi_1_0_0_0 right=TernaryIf)
 	 */
 	protected void sequence_Multiplication(EObject context, Multi semanticObject) {
 		if(errorAcceptor != null) {
@@ -1387,7 +1678,7 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getMultiplicationAccess().getRightPrimaryExpressionParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getMultiplicationAccess().getRightTernaryIfParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -1415,7 +1706,7 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (byAdress?='@'? name=ID)
 	 */
-	protected void sequence_ParameterDeclaration(EObject context, VariableReference semanticObject) {
+	protected void sequence_ParameterDeclaration(EObject context, VariableDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1448,6 +1739,38 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getPostfixAccess().getPostfixIncrementValueAction_1_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     right=VariableReference
+	 */
+	protected void sequence_Prefix(EObject context, PrefixDecrement semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.PREFIX_DECREMENT__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.PREFIX_DECREMENT__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPrefixAccess().getRightVariableReferenceParserRuleCall_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     right=VariableReference
+	 */
+	protected void sequence_Prefix(EObject context, PrefixIncrement semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.PREFIX_INCREMENT__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.PREFIX_INCREMENT__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPrefixAccess().getRightVariableReferenceParserRuleCall_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -1529,7 +1852,7 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPrimaryExpressionAccess().getValueSTRINGTerminalRuleCall_7_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getPrimaryExpressionAccess().getValueSTRINGTerminalRuleCall_8_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -1561,17 +1884,10 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     value=Expression
+	 *     (value=Expression?)
 	 */
 	protected void sequence_ReturnStatement(EObject context, ReturnStatement semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.RETURN_STATEMENT__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.RETURN_STATEMENT__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getReturnStatementAccess().getValueExpressionParserRuleCall_1_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1604,9 +1920,31 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (left=TernaryIf_TernaryIf_1_0 then=PrimaryExpression else=PrimaryExpression)
+	 */
+	protected void sequence_TernaryIf(EObject context, TernaryIf semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.TERNARY_IF__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.TERNARY_IF__LEFT));
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.TERNARY_IF__THEN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.TERNARY_IF__THEN));
+			if(transientValues.isValueTransient(semanticObject, LeekPackage.Literals.TERNARY_IF__ELSE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LeekPackage.Literals.TERNARY_IF__ELSE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTernaryIfAccess().getTernaryIfLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getTernaryIfAccess().getThenPrimaryExpressionParserRuleCall_1_2_0(), semanticObject.getThen());
+		feeder.accept(grammarAccess.getTernaryIfAccess().getElsePrimaryExpressionParserRuleCall_1_4_0(), semanticObject.getElse());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     name=ID
 	 */
-	protected void sequence_VariableDeclarationUnitialized(EObject context, VariableReference semanticObject) {
+	protected void sequence_VariableDeclarationUnitialized(EObject context, VariableDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1615,7 +1953,7 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (name=ID value=Expression)
 	 */
-	protected void sequence_VariableDeclarationWithValue(EObject context, VariableReference semanticObject) {
+	protected void sequence_VariableDeclarationWithValue(EObject context, VariableDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1624,14 +1962,14 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     ((name=ID value=Expression) | name=ID)
 	 */
-	protected void sequence_VariableDeclaration_VariableDeclarationUnitialized_VariableDeclarationWithValue(EObject context, VariableReference semanticObject) {
+	protected void sequence_VariableDeclaration_VariableDeclarationUnitialized_VariableDeclarationWithValue(EObject context, VariableDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (variable=[VariableReference|ID] dimensions+=Expression+)
+	 *     (variable=[VariableDeclaration|ID] dimensions+=Expression+)
 	 */
 	protected void sequence_VariableReferenceArray(EObject context, VariableReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1640,7 +1978,7 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     variable=[VariableReference|ID]
+	 *     variable=[VariableDeclaration|ID]
 	 */
 	protected void sequence_VariableReferenceSimple(EObject context, VariableReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1649,7 +1987,7 @@ public class LeekSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((variable=[VariableReference|ID] dimensions+=Expression+) | variable=[VariableReference|ID])
+	 *     ((variable=[VariableDeclaration|ID] dimensions+=Expression+) | variable=[VariableDeclaration|ID])
 	 */
 	protected void sequence_VariableReference_VariableReferenceArray_VariableReferenceSimple(EObject context, VariableReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

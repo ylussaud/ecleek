@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.processus.ecleek.leek.Expression;
 import org.processus.ecleek.leek.For;
+import org.processus.ecleek.leek.ForAffectation;
 import org.processus.ecleek.leek.ForInitializer;
 import org.processus.ecleek.leek.LeekPackage;
 
@@ -60,7 +61,7 @@ public class ForImpl extends IterationImpl implements For
    * @generated
    * @ordered
    */
-  protected Expression increment;
+  protected ForAffectation increment;
 
   /**
    * <!-- begin-user-doc -->
@@ -184,7 +185,7 @@ public class ForImpl extends IterationImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getIncrement()
+  public ForAffectation getIncrement()
   {
     return increment;
   }
@@ -194,9 +195,9 @@ public class ForImpl extends IterationImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetIncrement(Expression newIncrement, NotificationChain msgs)
+  public NotificationChain basicSetIncrement(ForAffectation newIncrement, NotificationChain msgs)
   {
-    Expression oldIncrement = increment;
+    ForAffectation oldIncrement = increment;
     increment = newIncrement;
     if (eNotificationRequired())
     {
@@ -211,7 +212,7 @@ public class ForImpl extends IterationImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIncrement(Expression newIncrement)
+  public void setIncrement(ForAffectation newIncrement)
   {
     if (newIncrement != increment)
     {
@@ -284,7 +285,7 @@ public class ForImpl extends IterationImpl implements For
         setCondition((Expression)newValue);
         return;
       case LeekPackage.FOR__INCREMENT:
-        setIncrement((Expression)newValue);
+        setIncrement((ForAffectation)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -307,7 +308,7 @@ public class ForImpl extends IterationImpl implements For
         setCondition((Expression)null);
         return;
       case LeekPackage.FOR__INCREMENT:
-        setIncrement((Expression)null);
+        setIncrement((ForAffectation)null);
         return;
     }
     super.eUnset(featureID);

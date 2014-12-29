@@ -11,40 +11,40 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.PostfixDecrement;
+import org.processus.ecleek.leek.PrefixIncrement;
 import org.processus.ecleek.leek.VariableReference;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Postfix Decrement</b></em>'.
+ * An implementation of the model object '<em><b>Prefix Increment</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.PostfixDecrementImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.PrefixIncrementImpl#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class PostfixDecrementImpl extends AffectationPostfixStatementImpl implements PostfixDecrement
+public class PrefixIncrementImpl extends AffectationPrefixStatementImpl implements PrefixIncrement
 {
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getRight()
    * @generated
    * @ordered
    */
-  protected VariableReference value;
+  protected VariableReference right;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PostfixDecrementImpl()
+  protected PrefixIncrementImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class PostfixDecrementImpl extends AffectationPostfixStatementImpl implem
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.POSTFIX_DECREMENT;
+    return LeekPackage.Literals.PREFIX_INCREMENT;
   }
 
   /**
@@ -65,9 +65,9 @@ public class PostfixDecrementImpl extends AffectationPostfixStatementImpl implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableReference getValue()
+  public VariableReference getRight()
   {
-    return value;
+    return right;
   }
 
   /**
@@ -75,13 +75,13 @@ public class PostfixDecrementImpl extends AffectationPostfixStatementImpl implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(VariableReference newValue, NotificationChain msgs)
+  public NotificationChain basicSetRight(VariableReference newRight, NotificationChain msgs)
   {
-    VariableReference oldValue = value;
-    value = newValue;
+    VariableReference oldRight = right;
+    right = newRight;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.POSTFIX_DECREMENT__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.PREFIX_INCREMENT__RIGHT, oldRight, newRight);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +92,20 @@ public class PostfixDecrementImpl extends AffectationPostfixStatementImpl implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(VariableReference newValue)
+  public void setRight(VariableReference newRight)
   {
-    if (newValue != value)
+    if (newRight != right)
     {
       NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.POSTFIX_DECREMENT__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.POSTFIX_DECREMENT__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
+      if (right != null)
+        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.PREFIX_INCREMENT__RIGHT, null, msgs);
+      if (newRight != null)
+        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.PREFIX_INCREMENT__RIGHT, null, msgs);
+      msgs = basicSetRight(newRight, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.POSTFIX_DECREMENT__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.PREFIX_INCREMENT__RIGHT, newRight, newRight));
   }
 
   /**
@@ -118,8 +118,8 @@ public class PostfixDecrementImpl extends AffectationPostfixStatementImpl implem
   {
     switch (featureID)
     {
-      case LeekPackage.POSTFIX_DECREMENT__VALUE:
-        return basicSetValue(null, msgs);
+      case LeekPackage.PREFIX_INCREMENT__RIGHT:
+        return basicSetRight(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +134,8 @@ public class PostfixDecrementImpl extends AffectationPostfixStatementImpl implem
   {
     switch (featureID)
     {
-      case LeekPackage.POSTFIX_DECREMENT__VALUE:
-        return getValue();
+      case LeekPackage.PREFIX_INCREMENT__RIGHT:
+        return getRight();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,8 +150,8 @@ public class PostfixDecrementImpl extends AffectationPostfixStatementImpl implem
   {
     switch (featureID)
     {
-      case LeekPackage.POSTFIX_DECREMENT__VALUE:
-        setValue((VariableReference)newValue);
+      case LeekPackage.PREFIX_INCREMENT__RIGHT:
+        setRight((VariableReference)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +167,8 @@ public class PostfixDecrementImpl extends AffectationPostfixStatementImpl implem
   {
     switch (featureID)
     {
-      case LeekPackage.POSTFIX_DECREMENT__VALUE:
-        setValue((VariableReference)null);
+      case LeekPackage.PREFIX_INCREMENT__RIGHT:
+        setRight((VariableReference)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,10 +184,10 @@ public class PostfixDecrementImpl extends AffectationPostfixStatementImpl implem
   {
     switch (featureID)
     {
-      case LeekPackage.POSTFIX_DECREMENT__VALUE:
-        return value != null;
+      case LeekPackage.PREFIX_INCREMENT__RIGHT:
+        return right != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //PostfixDecrementImpl
+} //PrefixIncrementImpl

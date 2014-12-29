@@ -10,37 +10,36 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.processus.ecleek.leek.If;
-import org.processus.ecleek.leek.IfCondition;
+import org.processus.ecleek.leek.Expression;
 import org.processus.ecleek.leek.LeekPackage;
-import org.processus.ecleek.leek.Statement;
+import org.processus.ecleek.leek.TernaryIf;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>If</b></em>'.
+ * An implementation of the model object '<em><b>Ternary If</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.processus.ecleek.leek.impl.IfImpl#getCondition <em>Condition</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.impl.IfImpl#getThen <em>Then</em>}</li>
- *   <li>{@link org.processus.ecleek.leek.impl.IfImpl#getElse <em>Else</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.TernaryIfImpl#getLeft <em>Left</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.TernaryIfImpl#getThen <em>Then</em>}</li>
+ *   <li>{@link org.processus.ecleek.leek.impl.TernaryIfImpl#getElse <em>Else</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class IfImpl extends StatementImpl implements If
+public class TernaryIfImpl extends ExpressionImpl implements TernaryIf
 {
   /**
-   * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
+   * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCondition()
+   * @see #getLeft()
    * @generated
    * @ordered
    */
-  protected IfCondition condition;
+  protected Expression left;
 
   /**
    * The cached value of the '{@link #getThen() <em>Then</em>}' containment reference.
@@ -50,7 +49,7 @@ public class IfImpl extends StatementImpl implements If
    * @generated
    * @ordered
    */
-  protected Statement then;
+  protected Expression then;
 
   /**
    * The cached value of the '{@link #getElse() <em>Else</em>}' containment reference.
@@ -60,14 +59,14 @@ public class IfImpl extends StatementImpl implements If
    * @generated
    * @ordered
    */
-  protected Statement else_;
+  protected Expression else_;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected IfImpl()
+  protected TernaryIfImpl()
   {
     super();
   }
@@ -80,7 +79,7 @@ public class IfImpl extends StatementImpl implements If
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.IF;
+    return LeekPackage.Literals.TERNARY_IF;
   }
 
   /**
@@ -88,9 +87,9 @@ public class IfImpl extends StatementImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public IfCondition getCondition()
+  public Expression getLeft()
   {
-    return condition;
+    return left;
   }
 
   /**
@@ -98,13 +97,13 @@ public class IfImpl extends StatementImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCondition(IfCondition newCondition, NotificationChain msgs)
+  public NotificationChain basicSetLeft(Expression newLeft, NotificationChain msgs)
   {
-    IfCondition oldCondition = condition;
-    condition = newCondition;
+    Expression oldLeft = left;
+    left = newLeft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.IF__CONDITION, oldCondition, newCondition);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.TERNARY_IF__LEFT, oldLeft, newLeft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -115,20 +114,20 @@ public class IfImpl extends StatementImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCondition(IfCondition newCondition)
+  public void setLeft(Expression newLeft)
   {
-    if (newCondition != condition)
+    if (newLeft != left)
     {
       NotificationChain msgs = null;
-      if (condition != null)
-        msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.IF__CONDITION, null, msgs);
-      if (newCondition != null)
-        msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.IF__CONDITION, null, msgs);
-      msgs = basicSetCondition(newCondition, msgs);
+      if (left != null)
+        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.TERNARY_IF__LEFT, null, msgs);
+      if (newLeft != null)
+        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.TERNARY_IF__LEFT, null, msgs);
+      msgs = basicSetLeft(newLeft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.IF__CONDITION, newCondition, newCondition));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.TERNARY_IF__LEFT, newLeft, newLeft));
   }
 
   /**
@@ -136,7 +135,7 @@ public class IfImpl extends StatementImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public Statement getThen()
+  public Expression getThen()
   {
     return then;
   }
@@ -146,13 +145,13 @@ public class IfImpl extends StatementImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetThen(Statement newThen, NotificationChain msgs)
+  public NotificationChain basicSetThen(Expression newThen, NotificationChain msgs)
   {
-    Statement oldThen = then;
+    Expression oldThen = then;
     then = newThen;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.IF__THEN, oldThen, newThen);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.TERNARY_IF__THEN, oldThen, newThen);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -163,20 +162,20 @@ public class IfImpl extends StatementImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setThen(Statement newThen)
+  public void setThen(Expression newThen)
   {
     if (newThen != then)
     {
       NotificationChain msgs = null;
       if (then != null)
-        msgs = ((InternalEObject)then).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.IF__THEN, null, msgs);
+        msgs = ((InternalEObject)then).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.TERNARY_IF__THEN, null, msgs);
       if (newThen != null)
-        msgs = ((InternalEObject)newThen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.IF__THEN, null, msgs);
+        msgs = ((InternalEObject)newThen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.TERNARY_IF__THEN, null, msgs);
       msgs = basicSetThen(newThen, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.IF__THEN, newThen, newThen));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.TERNARY_IF__THEN, newThen, newThen));
   }
 
   /**
@@ -184,7 +183,7 @@ public class IfImpl extends StatementImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public Statement getElse()
+  public Expression getElse()
   {
     return else_;
   }
@@ -194,13 +193,13 @@ public class IfImpl extends StatementImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetElse(Statement newElse, NotificationChain msgs)
+  public NotificationChain basicSetElse(Expression newElse, NotificationChain msgs)
   {
-    Statement oldElse = else_;
+    Expression oldElse = else_;
     else_ = newElse;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.IF__ELSE, oldElse, newElse);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LeekPackage.TERNARY_IF__ELSE, oldElse, newElse);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -211,20 +210,20 @@ public class IfImpl extends StatementImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setElse(Statement newElse)
+  public void setElse(Expression newElse)
   {
     if (newElse != else_)
     {
       NotificationChain msgs = null;
       if (else_ != null)
-        msgs = ((InternalEObject)else_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.IF__ELSE, null, msgs);
+        msgs = ((InternalEObject)else_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LeekPackage.TERNARY_IF__ELSE, null, msgs);
       if (newElse != null)
-        msgs = ((InternalEObject)newElse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.IF__ELSE, null, msgs);
+        msgs = ((InternalEObject)newElse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LeekPackage.TERNARY_IF__ELSE, null, msgs);
       msgs = basicSetElse(newElse, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.IF__ELSE, newElse, newElse));
+      eNotify(new ENotificationImpl(this, Notification.SET, LeekPackage.TERNARY_IF__ELSE, newElse, newElse));
   }
 
   /**
@@ -237,11 +236,11 @@ public class IfImpl extends StatementImpl implements If
   {
     switch (featureID)
     {
-      case LeekPackage.IF__CONDITION:
-        return basicSetCondition(null, msgs);
-      case LeekPackage.IF__THEN:
+      case LeekPackage.TERNARY_IF__LEFT:
+        return basicSetLeft(null, msgs);
+      case LeekPackage.TERNARY_IF__THEN:
         return basicSetThen(null, msgs);
-      case LeekPackage.IF__ELSE:
+      case LeekPackage.TERNARY_IF__ELSE:
         return basicSetElse(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -257,11 +256,11 @@ public class IfImpl extends StatementImpl implements If
   {
     switch (featureID)
     {
-      case LeekPackage.IF__CONDITION:
-        return getCondition();
-      case LeekPackage.IF__THEN:
+      case LeekPackage.TERNARY_IF__LEFT:
+        return getLeft();
+      case LeekPackage.TERNARY_IF__THEN:
         return getThen();
-      case LeekPackage.IF__ELSE:
+      case LeekPackage.TERNARY_IF__ELSE:
         return getElse();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -277,14 +276,14 @@ public class IfImpl extends StatementImpl implements If
   {
     switch (featureID)
     {
-      case LeekPackage.IF__CONDITION:
-        setCondition((IfCondition)newValue);
+      case LeekPackage.TERNARY_IF__LEFT:
+        setLeft((Expression)newValue);
         return;
-      case LeekPackage.IF__THEN:
-        setThen((Statement)newValue);
+      case LeekPackage.TERNARY_IF__THEN:
+        setThen((Expression)newValue);
         return;
-      case LeekPackage.IF__ELSE:
-        setElse((Statement)newValue);
+      case LeekPackage.TERNARY_IF__ELSE:
+        setElse((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -300,14 +299,14 @@ public class IfImpl extends StatementImpl implements If
   {
     switch (featureID)
     {
-      case LeekPackage.IF__CONDITION:
-        setCondition((IfCondition)null);
+      case LeekPackage.TERNARY_IF__LEFT:
+        setLeft((Expression)null);
         return;
-      case LeekPackage.IF__THEN:
-        setThen((Statement)null);
+      case LeekPackage.TERNARY_IF__THEN:
+        setThen((Expression)null);
         return;
-      case LeekPackage.IF__ELSE:
-        setElse((Statement)null);
+      case LeekPackage.TERNARY_IF__ELSE:
+        setElse((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -323,14 +322,14 @@ public class IfImpl extends StatementImpl implements If
   {
     switch (featureID)
     {
-      case LeekPackage.IF__CONDITION:
-        return condition != null;
-      case LeekPackage.IF__THEN:
+      case LeekPackage.TERNARY_IF__LEFT:
+        return left != null;
+      case LeekPackage.TERNARY_IF__THEN:
         return then != null;
-      case LeekPackage.IF__ELSE:
+      case LeekPackage.TERNARY_IF__ELSE:
         return else_ != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //IfImpl
+} //TernaryIfImpl

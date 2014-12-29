@@ -4,8 +4,6 @@ package org.processus.ecleek.leek.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.processus.ecleek.leek.Expression;
 import org.processus.ecleek.leek.LeekPackage;
 
@@ -18,7 +16,7 @@ import org.processus.ecleek.leek.LeekPackage;
  *
  * @generated
  */
-public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expression
+public class ExpressionImpl extends IfConditionImpl implements Expression
 {
   /**
    * <!-- begin-user-doc -->

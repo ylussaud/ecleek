@@ -52,7 +52,7 @@ public interface FunctionDeclaration extends Statement, Expression
 
   /**
    * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-   * The list contents are of type {@link org.processus.ecleek.leek.VariableReference}.
+   * The list contents are of type {@link org.processus.ecleek.leek.VariableDeclaration}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
@@ -64,7 +64,7 @@ public interface FunctionDeclaration extends Statement, Expression
    * @model containment="true"
    * @generated
    */
-  EList<VariableReference> getParameters();
+  EList<VariableDeclaration> getParameters();
 
   /**
    * Returns the value of the '<em><b>Body</b></em>' containment reference.

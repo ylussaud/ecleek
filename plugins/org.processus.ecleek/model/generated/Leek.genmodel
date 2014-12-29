@@ -16,21 +16,26 @@
     <genClasses ecoreClass="Leek.ecore#//StatementBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//StatementBlock/statements"/>
     </genClasses>
-    <genClasses ecoreClass="Leek.ecore#//AffectationStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//AffectationStatement/variable"/>
+    <genClasses ecoreClass="Leek.ecore#//AffectationStatement"/>
+    <genClasses ecoreClass="Leek.ecore#//Affectation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//Affectation/variable"/>
     </genClasses>
-    <genClasses ecoreClass="Leek.ecore#//Affectation"/>
     <genClasses ecoreClass="Leek.ecore#//AffectationDecrement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//AffectationDecrement/variable"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//AffectationDecrement/decrement"/>
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//AffectationIncrement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//AffectationIncrement/variable"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//AffectationIncrement/increment"/>
     </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//AffectationPostfixStatement"/>
+    <genClasses ecoreClass="Leek.ecore#//AffectationPrefixStatement"/>
     <genClasses ecoreClass="Leek.ecore#//If">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//If/condition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//If/then"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//If/else"/>
     </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//IfCondition"/>
     <genClasses ecoreClass="Leek.ecore#//Iteration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//Iteration/statement"/>
     </genClasses>
@@ -51,16 +56,15 @@
     <genClasses ecoreClass="Leek.ecore#//ForInitializer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//ForInitializer/value"/>
     </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//ForAffectation"/>
     <genClasses ecoreClass="Leek.ecore#//FunctionDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//FunctionDeclaration/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//FunctionDeclaration/parameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//FunctionDeclaration/body"/>
     </genClasses>
-    <genClasses ecoreClass="Leek.ecore#//VariableReference">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//VariableReference/byAdress"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//VariableReference/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Leek.ecore#//VariableReference/variable"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//VariableReference/dimensions"/>
+    <genClasses ecoreClass="Leek.ecore#//VariableDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//VariableDeclaration/byAdress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//VariableDeclaration/name"/>
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//LocalDeclaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//LocalDeclaration/variables"/>
@@ -73,6 +77,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//ArrayLiteral/values"/>
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//Postfix"/>
+    <genClasses ecoreClass="Leek.ecore#//Prefix"/>
+    <genClasses ecoreClass="Leek.ecore#//VariableReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Leek.ecore#//VariableReference/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//VariableReference/dimensions"/>
+    </genClasses>
     <genClasses ecoreClass="Leek.ecore#//FunctionCall">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Leek.ecore#//FunctionCall/function"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//FunctionCall/args"/>
@@ -84,6 +93,18 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leek.ecore#//Include/importURI"/>
     </genClasses>
     <genClasses ecoreClass="Leek.ecore#//EmptyStatement"/>
+    <genClasses ecoreClass="Leek.ecore#//PostfixDecrement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//PostfixDecrement/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//PostfixIncrement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//PostfixIncrement/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//PrefixDecrement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//PrefixDecrement/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//PrefixIncrement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//PrefixIncrement/right"/>
+    </genClasses>
     <genClasses ecoreClass="Leek.ecore#//Comparison">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//Comparison/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//Comparison/right"/>
@@ -140,6 +161,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//Div/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//Div/right"/>
     </genClasses>
+    <genClasses ecoreClass="Leek.ecore#//TernaryIf">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//TernaryIf/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//TernaryIf/then"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//TernaryIf/else"/>
+    </genClasses>
     <genClasses ecoreClass="Leek.ecore#//UnitaryMinus">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//UnitaryMinus/expression"/>
     </genClasses>
@@ -158,11 +184,5 @@
     <genClasses ecoreClass="Leek.ecore#//NullLiteral"/>
     <genClasses ecoreClass="Leek.ecore#//FalseLiteral"/>
     <genClasses ecoreClass="Leek.ecore#//TrueLiteral"/>
-    <genClasses ecoreClass="Leek.ecore#//PostfixDecrement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//PostfixDecrement/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Leek.ecore#//PostfixIncrement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leek.ecore#//PostfixIncrement/value"/>
-    </genClasses>
   </genPackages>
 </genmodel:GenModel>

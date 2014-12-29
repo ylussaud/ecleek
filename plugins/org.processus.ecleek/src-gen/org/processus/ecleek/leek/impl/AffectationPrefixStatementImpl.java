@@ -4,26 +4,26 @@ package org.processus.ecleek.leek.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.processus.ecleek.leek.AffectationStatement;
+import org.processus.ecleek.leek.AffectationPrefixStatement;
 import org.processus.ecleek.leek.LeekPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Affectation Statement</b></em>'.
+ * An implementation of the model object '<em><b>Affectation Prefix Statement</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class AffectationStatementImpl extends StatementImpl implements AffectationStatement
+public class AffectationPrefixStatementImpl extends AffectationStatementImpl implements AffectationPrefixStatement
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AffectationStatementImpl()
+  protected AffectationPrefixStatementImpl()
   {
     super();
   }
@@ -36,7 +36,7 @@ public class AffectationStatementImpl extends StatementImpl implements Affectati
   @Override
   protected EClass eStaticClass()
   {
-    return LeekPackage.Literals.AFFECTATION_STATEMENT;
+    return LeekPackage.Literals.AFFECTATION_PREFIX_STATEMENT;
   }
 
-} //AffectationStatementImpl
+} //AffectationPrefixStatementImpl

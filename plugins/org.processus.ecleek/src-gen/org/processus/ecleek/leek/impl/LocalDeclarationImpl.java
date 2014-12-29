@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.processus.ecleek.leek.LeekPackage;
 import org.processus.ecleek.leek.LocalDeclaration;
-import org.processus.ecleek.leek.VariableReference;
+import org.processus.ecleek.leek.VariableDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +41,7 @@ public class LocalDeclarationImpl extends StatementImpl implements LocalDeclarat
    * @generated
    * @ordered
    */
-  protected EList<VariableReference> variables;
+  protected EList<VariableDeclaration> variables;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,11 +69,11 @@ public class LocalDeclarationImpl extends StatementImpl implements LocalDeclarat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VariableReference> getVariables()
+  public EList<VariableDeclaration> getVariables()
   {
     if (variables == null)
     {
-      variables = new EObjectContainmentEList<VariableReference>(VariableReference.class, this, LeekPackage.LOCAL_DECLARATION__VARIABLES);
+      variables = new EObjectContainmentEList<VariableDeclaration>(VariableDeclaration.class, this, LeekPackage.LOCAL_DECLARATION__VARIABLES);
     }
     return variables;
   }
@@ -123,7 +123,7 @@ public class LocalDeclarationImpl extends StatementImpl implements LocalDeclarat
     {
       case LeekPackage.LOCAL_DECLARATION__VARIABLES:
         getVariables().clear();
-        getVariables().addAll((Collection<? extends VariableReference>)newValue);
+        getVariables().addAll((Collection<? extends VariableDeclaration>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

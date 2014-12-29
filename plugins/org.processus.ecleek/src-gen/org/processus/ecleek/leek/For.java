@@ -84,12 +84,12 @@ public interface For extends Iteration
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Increment</em>' containment reference.
-   * @see #setIncrement(Expression)
+   * @see #setIncrement(ForAffectation)
    * @see org.processus.ecleek.leek.LeekPackage#getFor_Increment()
    * @model containment="true"
    * @generated
    */
-  Expression getIncrement();
+  ForAffectation getIncrement();
 
   /**
    * Sets the value of the '{@link org.processus.ecleek.leek.For#getIncrement <em>Increment</em>}' containment reference.
@@ -99,6 +99,6 @@ public interface For extends Iteration
    * @see #getIncrement()
    * @generated
    */
-  void setIncrement(Expression value);
+  void setIncrement(ForAffectation value);
 
 } // For

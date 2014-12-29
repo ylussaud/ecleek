@@ -19,7 +19,7 @@ package org.processus.ecleek.leek;
  * @model
  * @generated
  */
-public interface PostfixIncrement extends Postfix
+public interface PostfixIncrement extends AffectationPostfixStatement, Postfix
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.

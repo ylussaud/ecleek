@@ -73,15 +73,35 @@ public class ValidatingTests extends AbstractXtextTests {
 	}
 
 	@Test
-	@Ignore
 	public void checkBreakStatementIsInLoopInFor() throws Exception {
-		fail("Not implemented yet.");
+		final Script script = getScript("for(var i = 0; i < 10; i++){break;}");
+
+		final Diagnostic diagnostic = Diagnostician.INSTANCE.validate(script);
+		assertEquals(0, diagnostic.getChildren().size());
 	}
 
 	@Test
-	@Ignore
 	public void checkBreakStatementIsInLoopInForNested() throws Exception {
-		fail("Not implemented yet.");
+		final Script script = getScript("for(var i = 0; i < 10; i++){if(true){break;}}");
+
+		final Diagnostic diagnostic = Diagnostician.INSTANCE.validate(script);
+		assertEquals(0, diagnostic.getChildren().size());
+	}
+
+	@Test
+	public void checkBreakStatementIsInLoopInForIn() throws Exception {
+		final Script script = getScript("var a;for(var i in a){break;}");
+
+		final Diagnostic diagnostic = Diagnostician.INSTANCE.validate(script);
+		assertEquals(0, diagnostic.getChildren().size());
+	}
+
+	@Test
+	public void checkBreakStatementIsInLoopInForNestedIn() throws Exception {
+		final Script script = getScript("var a;for(var i in a){if(true){break;}}");
+
+		final Diagnostic diagnostic = Diagnostician.INSTANCE.validate(script);
+		assertEquals(0, diagnostic.getChildren().size());
 	}
 
 	@Test
@@ -110,15 +130,35 @@ public class ValidatingTests extends AbstractXtextTests {
 	}
 
 	@Test
-	@Ignore
 	public void checkContinueStatementIsInLoopNotInFor() throws Exception {
-		fail("Not implemented yet.");
+		final Script script = getScript("for(var i = 0; i < 10; i++){continue;}");
+
+		final Diagnostic diagnostic = Diagnostician.INSTANCE.validate(script);
+		assertEquals(0, diagnostic.getChildren().size());
 	}
 
 	@Test
-	@Ignore
 	public void checkContinueStatementIsInLoopNotInForNested() throws Exception {
-		fail("Not implemented yet.");
+		final Script script = getScript("for(var i = 0; i < 10; i++){if(true){continue;}}");
+
+		final Diagnostic diagnostic = Diagnostician.INSTANCE.validate(script);
+		assertEquals(0, diagnostic.getChildren().size());
+	}
+
+	@Test
+	public void checkContinueStatementIsInLoopNotInForIn() throws Exception {
+		final Script script = getScript("var a;for(var i in a){continue;}");
+
+		final Diagnostic diagnostic = Diagnostician.INSTANCE.validate(script);
+		assertEquals(0, diagnostic.getChildren().size());
+	}
+
+	@Test
+	public void checkContinueStatementIsInLoopNotInForInNested() throws Exception {
+		final Script script = getScript("var a;for(var i in a){if(true){continue;}}");
+
+		final Diagnostic diagnostic = Diagnostician.INSTANCE.validate(script);
+		assertEquals(0, diagnostic.getChildren().size());
 	}
 
 	@Test
