@@ -37,8 +37,8 @@ StatementBlock:
 AffectationStatement:
 	=> AffectationDecrement
 	| => AffectationIncrement
-	| => AffectationPostfixStatement
-	| => AffectationPrefixStatement
+	//| => AffectationPostfixStatement
+	// | => AffectationPrefixStatement
 	| Affectation
 ;
 
@@ -52,14 +52,6 @@ AffectationDecrement:
 
 AffectationIncrement:
 	variable=VariableReference '+=' increment=Expression
-;
-
-AffectationPrefixStatement:
-	({PrefixDecrement}'--' | {PrefixIncrement} '++') variable=VariableReference
-;
-
-AffectationPostfixStatement:
-	variable=VariableReference ({PostfixDecrement.value=current} '--' | {PostfixIncrement.value=current} '++')
 ;
 
 If:
@@ -163,8 +155,8 @@ PrimaryExpression returns Expression:
 	| {RealLiteral} value=REAL
 	| {IntLiteral} value=INT
 	| FunctionCall
-	| AffectationPrefixStatement
-	| AffectationPostfixStatement
+	| Prefix
+	| Postfix
 	| {StringLiteral} value=STRING
 	| ArrayLiteral
 	| FunctionDeclaration
@@ -175,6 +167,14 @@ PrimaryExpression returns Expression:
 
 ArrayLiteral:
 	{ArrayLiteral} '[' (values+=Expression (',' values+=Expression)*)? ']'
+;
+
+Postfix:
+	VariableReference ({PostfixDecrement.value=current} '--' | {PostfixIncrement.value=current} '++')?
+;
+
+Prefix:
+	({PrefixDecrement} '--' | {PrefixIncrement} '++') variable=VariableReference
 ;
 
 VariableReference:
