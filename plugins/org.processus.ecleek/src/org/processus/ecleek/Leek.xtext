@@ -37,8 +37,8 @@ StatementBlock:
 AffectationStatement:
 	=> AffectationDecrement
 	| => AffectationIncrement
-	| => AffectationPrefixStatement
 	| => AffectationPostfixStatement
+	| => AffectationPrefixStatement
 	| Affectation
 ;
 
@@ -59,7 +59,7 @@ AffectationPrefixStatement:
 ;
 
 AffectationPostfixStatement:
-	variable=VariableReference ({PrefixDecrement.value=current} '--' | {PrefixIncrement.value=current} '++')
+	variable=VariableReference ({PostfixDecrement.value=current} '--' | {PostfixIncrement.value=current} '++')
 ;
 
 If:
