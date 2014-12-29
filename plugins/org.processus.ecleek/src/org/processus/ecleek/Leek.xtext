@@ -37,6 +37,7 @@ StatementBlock:
 AffectationStatement:
 	=> AffectationDecrement
 	| => AffectationIncrement
+	| => AffectationPrefixStatement
 	| => AffectationPostfixStatement
 	| Affectation
 ;
@@ -56,6 +57,11 @@ AffectationIncrement:
 AffectationPostfixStatement:
 	VariableReference ('--' | '++')
 ;
+
+AffectationPrefixStatement:
+	('--' | '++') VariableReference
+;
+
 
 If:
 	'if' '(' condition=Expression ')' then=Statement (=> 'else' else=Statement)?
@@ -152,6 +158,7 @@ PrimaryExpression returns Expression:
 	| {IntLiteral} value=INT
 	| FunctionCall
 	| Postfix
+	| {Prefix} ('--' | '++') variable=VariableReference
 	| {StringLiteral} value=STRING
 	| ArrayLiteral
 	| FunctionDeclaration
