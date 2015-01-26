@@ -1,7 +1,5 @@
 package org.processus.ecleek.tests;
 
-import javax.annotation.PreDestroy;
-
 import org.eclipse.xtext.junit4.AbstractXtextTests;
 import org.junit.Test;
 import org.processus.ecleek.LeekStandaloneSetup;
