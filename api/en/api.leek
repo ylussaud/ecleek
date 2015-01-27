@@ -1,0 +1,5437 @@
+
+/**
+ * abs(Number number) : Number result
+ * Returns the absolute value of given number.
+ * A number.
+ * Given number's absolute value.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number number
+ *
+ * @return Number
+ *   result
+ */
+function abs(number) {}
+
+/**
+ * acos(Number argument) : Number result
+ * Computes the arccos of argument, within [0, PI].
+ * A number.
+ * Given number's arccos.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number argument
+ *
+ * @return Number
+ *   result
+ */
+function acos(argument) {}
+
+/**
+ * arrayConcat(Array array1, Array array2) : Array new_array
+ * documentation_func_arrayConcat
+ * documentation_func_arrayConcat_arg_1
+ * documentation_func_arrayConcat_arg_2
+ * documentation_func_arrayConcat_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array1
+ * @param Array array2
+ *
+ * @return Array
+ *   new_array
+ */
+function arrayConcat(array1, array2) {}
+
+/**
+ * arrayFilter(Array array, Function callback) : Array new_array
+ * documentation_func_arrayFilter
+ * documentation_func_arrayFilter_arg_1
+ * documentation_func_arrayFilter_arg_2
+ * documentation_func_arrayFilter_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param Function callback
+ *
+ * @return Array
+ *   new_array
+ */
+function arrayFilter(array, callback) {}
+
+/**
+ * arrayFlatten(Array array) : Array new_array
+ * documentation_func_arrayFlatten
+ * documentation_func_arrayFlatten_arg_1
+ * documentation_func_arrayFlatten_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ *
+ * @return Array
+ *   new_array
+ */
+function arrayFlatten(array) {}
+
+/**
+ * arrayFlatten(Array array, Number depth) : Array new_array
+ * documentation_func_arrayFlatten_2
+ * documentation_func_arrayFlatten_2_arg_1
+ * documentation_func_arrayFlatten_2_arg_2
+ * documentation_func_arrayFlatten_2_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param Number depth
+ *
+ * @return Array
+ *   new_array
+ */
+function arrayFlatten(array, depth) {}
+
+/**
+ * arrayFoldLeft(Array array, Function f, ? v0) : ? result
+ * documentation_func_arrayFoldLeft
+ * documentation_func_arrayFoldLeft_arg_1
+ * documentation_func_arrayFoldLeft_arg_2
+ * documentation_func_arrayFoldLeft_arg_3
+ * documentation_func_arrayFoldLeft_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param Function f
+ * @param ? v0
+ *
+ * @return ?
+ *   result
+ */
+function arrayFoldLeft(array, f, v0) {}
+
+/**
+ * arrayFoldRight(Array array, Function f, ? v0) : ? result
+ * documentation_func_arrayFoldRight
+ * documentation_func_arrayFoldRight_arg_1
+ * documentation_func_arrayFoldRight_arg_2
+ * documentation_func_arrayFoldRight_arg_3
+ * documentation_func_arrayFoldRight_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param Function f
+ * @param ? v0
+ *
+ * @return ?
+ *   result
+ */
+function arrayFoldRight(array, f, v0) {}
+
+/**
+ * arrayIter(Array array, Function callback)
+ * documentation_func_arrayIter
+ * documentation_func_arrayIter_arg_1
+ * documentation_func_arrayIter_arg_2
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param Function callback
+ */
+function arrayIter(array, callback) {}
+
+/**
+ * arrayMap(Array array, Function callback) : Array new_array
+ * documentation_func_arrayMap
+ * documentation_func_arrayMap_arg_1
+ * documentation_func_arrayMap_arg_2
+ * documentation_func_arrayMap_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param Function callback
+ *
+ * @return Array
+ *   new_array
+ */
+function arrayMap(array, callback) {}
+
+/**
+ * arrayMax(Array array) : ? element
+ * Finds the greatest value within given array.See also: sort.
+ * An array of numbers.
+ * The greatest value contained in given array.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ *
+ * @return ?
+ *   element
+ */
+function arrayMax(array) {}
+
+/**
+ * arrayMin(Array array) : ? element
+ * Finds the least value within given array.See also: sort.
+ * An array of numbers.
+ * The least value contained in given array.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ *
+ * @return ?
+ *   element
+ */
+function arrayMin(array) {}
+
+/**
+ * arrayPartition(Array array, Function callback) : ArrayOfArrays new_array
+ * documentation_func_arrayPartition
+ * documentation_func_arrayPartition_arg_1
+ * documentation_func_arrayPartition_arg_2
+ * documentation_func_arrayPartition_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param Function callback
+ *
+ * @return ArrayOfArrays
+ *   new_array
+ */
+function arrayPartition(array, callback) {}
+
+/**
+ * arraySort(Array array, Function callback) : Array sorted_array
+ * documentation_func_arraySort
+ * documentation_func_arraySort_arg_1
+ * documentation_func_arraySort_arg_2
+ * documentation_func_arraySort_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param Function callback
+ *
+ * @return Array
+ *   sorted_array
+ */
+function arraySort(array, callback) {}
+
+/**
+ * asin(Number argument) : Number result
+ * Computes the arcsin of argument, within [0, PI].
+ * A number.
+ * Given number's arcsin.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number argument
+ *
+ * @return Number
+ *   result
+ */
+function asin(argument) {}
+
+/**
+ * assocSort(Array array)
+ * Sorts an array, while keeping the key: value coupling.
+ * Array that needs sorting.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ */
+function assocSort(array) {}
+
+/**
+ * assocSort(Array array, Number order)
+ * Sorts an array, while keeping the key: value coupling, using given order.
+ * Array that needs sorting.
+ * Sorting order: SORT_ASC or SORT_DESC.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param Number order
+ */
+function assocSort(array, order) {}
+
+/**
+ * atan(Number argument) : Number result
+ * Computes the arctan of argument, within [0, PI].
+ * A number.
+ * Given number's arctan.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number argument
+ *
+ * @return Number
+ *   result
+ */
+function atan(argument) {}
+
+/**
+ * atan2(Number y, Number x) : Number result
+ * Computes the azimuth of given point (x, y) in polar coordinates. Return value is between - PI and PI, depending on parameters' signs.
+ * x coordinate.
+ * y coordinate.
+ * Azimuth of given point, in polar coordinates.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number y
+ * @param Number x
+ *
+ * @return Number
+ *   result
+ */
+function atan2(y, x) {}
+
+/**
+ * average(ArrayOfNumbers array) : Number averageValue
+ * Computes the average of an array's elements.
+ * An array.
+ * Average of given array's elements.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param ArrayOfNumbers array
+ *
+ * @return Number
+ *   averageValue
+ */
+function average(array) {}
+
+/**
+ * canUseChip(Number chip, Number leek) : Boolean canUse
+ * Checks whether your leek can use given chip, targetting given leek.
+ * The chip your leek wants to use.
+ * Targetted leek.
+ * true if your leek can use given chip, false otherwise.
+ *
+ * @level 29
+ * @cores 1
+ *
+ * @param Number chip
+ * @param Number leek
+ *
+ * @return Boolean
+ *   canUse
+ */
+function canUseChip(chip, leek) {}
+
+/**
+ * canUseChipOnCell(Number chip, Number cell) : Boolean canUse
+ * Checks whether your leek can use given chip, targetting given cell.
+ * The chip your leek wants to use.
+ * Targetted cell.
+ * true if your leek can use given chip, false otherwise.
+ *
+ * @level 40
+ * @cores 1
+ *
+ * @param Number chip
+ * @param Number cell
+ *
+ * @return Boolean
+ *   canUse
+ */
+function canUseChipOnCell(chip, cell) {}
+
+/**
+ * canUseWeapon(Number leek) : Boolean canUse
+ * Checks whether your leek can shoot its current weapon targetting given leek.
+ * Targetted leek.
+ * true if your leek can shoot, false otherwise.
+ *
+ * @level 29
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Boolean
+ *   canUse
+ */
+function canUseWeapon(leek) {}
+
+/**
+ * canUseWeapon(Number weapon, Number leek) : Boolean canUse
+ * Checks whether your leek can shoot given weapon, targetting given leek.
+ * The weapon your leek wants to use.
+ * Targetted leek.
+ * true if your leek can shoot given weapon, false otherwise.
+ *
+ * @level 29
+ * @cores 1
+ *
+ * @param Number weapon
+ * @param Number leek
+ *
+ * @return Boolean
+ *   canUse
+ */
+function canUseWeapon(weapon, leek) {}
+
+/**
+ * canUseWeaponOnCell(Number cell) : Boolean canUse
+ * Checks whether your leek can shoot its current weapon targetting given cell.
+ * Targetted cell.
+ * true if your leek can shoot, false otherwise.
+ *
+ * @level 40
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return Boolean
+ *   canUse
+ */
+function canUseWeaponOnCell(cell) {}
+
+/**
+ * canUseWeaponOnCell(Number weapon, Number cell) : Boolean canUse
+ * Checks whether your leek can shoot given weapon, targetting given cell.
+ * The weapon your leek wants to use.
+ * Targetted cell.
+ * true if your leek can shoot given weapon, false otherwise.
+ *
+ * @level 40
+ * @cores 1
+ *
+ * @param Number weapon
+ * @param Number cell
+ *
+ * @return Boolean
+ *   canUse
+ */
+function canUseWeaponOnCell(weapon, cell) {}
+
+/**
+ * cbrt(Number number) : Number result
+ * Computes the cubic root of given number.
+ * A number.
+ * Given number's cubic root.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number number
+ *
+ * @return Number
+ *   result
+ */
+function cbrt(number) {}
+
+/**
+ * ceil(Number number) : Number result
+ * Computes the rounded up value of given number.The rounded down value can be computed using floor and the closest integer using round.
+ * A number.
+ * Number's value as an integer, rounded up.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number number
+ *
+ * @return Number
+ *   result
+ */
+function ceil(number) {}
+
+/**
+ * charAt(String string, Number position) : String char
+ * Returns the character at given position within given string.First character is at position 0.
+ * A string.
+ * Position of the character to return.
+ * Character from given position. Empty string if position is invald.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String string
+ * @param Number position
+ *
+ * @return String
+ *   char
+ */
+function charAt(string, position) {}
+
+/**
+ * contains(String string, String search) : Boolean contains
+ * Checks whether search string is contained within string.
+ * String in which the search is performed.
+ * String to be loooked for.
+ * true if search string is contained in string, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String string
+ * @param String search
+ *
+ * @return Boolean
+ *   contains
+ */
+function contains(string, search) {}
+
+/**
+ * cos(Number angle) : Number cosine
+ * Computes an angle's cosine.
+ * A number.
+ * Given number's cosine, within [-1, 1].
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number angle
+ *
+ * @return Number
+ *   cosine
+ */
+function cos(angle) {}
+
+/**
+ * count(Array array) : Number numberOfElements
+ * Counts the elements contained within an array.
+ * An array.
+ * Given array's number of elements.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ *
+ * @return Number
+ *   numberOfElements
+ */
+function count(array) {}
+
+/**
+ * debug(? object)
+ * Logs an object message into your personnal log, available at the end of a fight.
+ * A message to log.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param ? object
+ */
+function debug(object) {}
+
+/**
+ * debugE(? object)
+ * Logs an object error message into your personnal log, available at the end of a fight.Error messages appear in red.
+ * A message to log.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param ? object
+ */
+function debugE(object) {}
+
+/**
+ * debugW(? object)
+ * Logs an object warning message into your personnal log, available at the end of a fight.Warning messages appear in orange.
+ * A message to log.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param ? object
+ */
+function debugW(object) {}
+
+/**
+ * deleteRegister(String key)
+ * documentation_func_deleteRegister
+ * documentation_func_deleteRegister_arg_1
+ *
+ * @level 32
+ * @cores 1
+ *
+ * @param String key
+ */
+function deleteRegister(key) {}
+
+/**
+ * endsWith(String string, String suffix) : Boolean endsWith
+ * Checks whether given string ends with given suffix
+ * String to be checked
+ * Suffix to be found
+ * true if string ends with suffix, false otherwise
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String string
+ * @param String suffix
+ *
+ * @return Boolean
+ *   endsWith
+ */
+function endsWith(string, suffix) {}
+
+/**
+ * exp(Number number) : Number result
+ * Computes the exponential of number, by exponentiation of E.
+ * A number.
+ * E ** number.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number number
+ *
+ * @return Number
+ *   result
+ */
+function exp(number) {}
+
+/**
+ * fill(Array array, ? value)
+ * Fills an array with value, i.e replaces all existing elements with value.
+ * Array to be filled.
+ * Value to fill array with.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param ? value
+ */
+function fill(array, value) {}
+
+/**
+ * fill(Array array, ? value, Number size)
+ * Resizes array to given size and fills it with value.
+ * Array to be filled.
+ * Value to fill array with.
+ * Size of final array.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param ? value
+ * @param Number size
+ */
+function fill(array, value, size) {}
+
+/**
+ * floor(Number number) : Number result
+ * Computes the rounded down value of given number.The rounded up value can be computed using ceil and the closest integer using round.
+ * A number.
+ * Number's value as an integer, rounded down.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number number
+ *
+ * @return Number
+ *   result
+ */
+function floor(number) {}
+
+/**
+ * getAbsoluteShield() : Number shield
+ * Returns your leek's absolute shield value.
+ * Your leek's absolute shield value.
+ *
+ * @level 30
+ * @cores 1
+ *
+ * @return Number
+ *   shield
+ */
+function getAbsoluteShield() {}
+
+/**
+ * getAbsoluteShield(Number leek) : Number shield
+ * Return a leek's absolute shield value.For your leek, prefer getAbsoluteShield() with no input.
+ * Leek whose absolute shield you want.
+ * Leek's absolute shield value.
+ *
+ * @level 38
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   shield
+ */
+function getAbsoluteShield(leek) {}
+
+/**
+ * getAgility() : Number agility
+ * Returns your leek's agility.
+ * Your leek's agility.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   agility
+ */
+function getAgility() {}
+
+/**
+ * getAgility(Number leek) : Number agility
+ * Returns given leek's agility.For your leek's agility, prefer getAgility() with no input.
+ * Leek whose agility you want.
+ * leek's agility.
+ *
+ * @level 5
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   agility
+ */
+function getAgility(leek) {}
+
+/**
+ * getAIID() : Number id
+ * Returns the id of your AI.
+ * The id of your leek's AI.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   id
+ */
+function getAIID() {}
+
+/**
+ * getAIID(Number leek) : Number id
+ * Returns the id of given leek's AI.
+ * Leek whose AI ID you want.
+ * The id of leek's AI.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   id
+ */
+function getAIID(leek) {}
+
+/**
+ * getAIName() : String name
+ * Returns the name of you AI.
+ * The name of you AI.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return String
+ *   name
+ */
+function getAIName() {}
+
+/**
+ * getAIName(Number leek) : String name
+ * Returns the name of given leek's AI.
+ * Leek whose AI name you want.
+ * The name of leek's AI.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return String
+ *   name
+ */
+function getAIName(leek) {}
+
+/**
+ * getAliveAllies() : ArrayOfNumbers allies
+ * Returns an array containing all of your alive allies in a fight.
+ * An array containing all of your alive allies in a fight.
+ *
+ * @level 14
+ * @cores 1
+ *
+ * @return ArrayOfNumbers
+ *   allies
+ */
+function getAliveAllies() {}
+
+/**
+ * getAliveEnemies() : ArrayOfNumbers enemies
+ * Returns an array containing all of your alive enemies in a fight.
+ * An array containing all all of your alive enemies in a fight.
+ *
+ * @level 16
+ * @cores 1
+ *
+ * @return ArrayOfNumbers
+ *   enemies
+ */
+function getAliveEnemies() {}
+
+/**
+ * getAliveEnemiesCount() : Number numAliveEnemies
+ * Counts the alive enemies in the fight.
+ * The number of alive enemies.
+ *
+ * @level 16
+ * @cores 1
+ *
+ * @return Number
+ *   numAliveEnemies
+ */
+function getAliveEnemiesCount() {}
+
+/**
+ * getAllies() : ArrayOfNumbers allies
+ * Returns an array containing all of your allies in a fight.
+ * An array containing all of your allies in a fight.
+ *
+ * @level 16
+ * @cores 1
+ *
+ * @return ArrayOfNumbers
+ *   allies
+ */
+function getAllies() {}
+
+/**
+ * getAlliesCount() : Number numAllies
+ * Returns the number of allies in the fight.
+ * Number of allies.
+ *
+ * @level 14
+ * @cores 1
+ *
+ * @return Number
+ *   numAllies
+ */
+function getAlliesCount() {}
+
+/**
+ * getAlliesLife() : Number life
+ * Returns the sum of all of your allies' HP
+ * Sum of all of your allies' HP.
+ *
+ * @level 14
+ * @cores 1
+ *
+ * @return Number
+ *   life
+ */
+function getAlliesLife() {}
+
+/**
+ * getBlue(Number color) : Number blue
+ * Returns the blue component of given color. For instance getBlue(COLOR_BLUE) = 255 and getBlue(COLOR_RED) = 0.
+ * Color whose blue component is to be returned.
+ * Blue component of given color
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number color
+ *
+ * @return Number
+ *   blue
+ */
+function getBlue(color) {}
+
+/**
+ * getCell() : Number cell
+ * Returns your leek's position, as a cell id.
+ * Cell id of your leek's position.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   cell
+ */
+function getCell() {}
+
+/**
+ * getCell(Number leek) : Number cell
+ * Returns given leek's position, as a cell id.
+ * Leek whose position is determined.
+ * Cell id of given leek's position.
+ *
+ * @level 5
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   cell
+ */
+function getCell(leek) {}
+
+/**
+ * getCellContent(Number cell) : Number content
+ * Determines the content of given cell.
+ * id of the cell to be tested.
+ * Content of cell.
+ *
+ * @level 21
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return Number
+ *   content
+ */
+function getCellContent(cell) {}
+
+/**
+ * getCellDistance(Number cell1, Number cell2) : Number distance
+ * Computes the distance between cells cell1 and cell2.Distance is in amount of cells and does not take obstacles into account.For as a crow's flies distance, see getDistance and for an actual path (taking obstacles into account), see getPathLength.
+ * Cell id of starting point.
+ * Cell id of destination.
+ * Distance between cell1 and cell2.
+ *
+ * @level 5
+ * @cores 1
+ *
+ * @param Number cell1
+ * @param Number cell2
+ *
+ * @return Number
+ *   distance
+ */
+function getCellDistance(cell1, cell2) {}
+
+/**
+ * getCellFromXY(Number x, Number y) : Number cell
+ * Returns the id of the cell at coordinates (x, y).
+ * x-coordinate of the desired cell.
+ * y-coordinate of the desired cell.
+ * id of the cell at coordinates (x, y). null if it does not exist.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number x
+ * @param Number y
+ *
+ * @return Number
+ *   cell
+ */
+function getCellFromXY(x, y) {}
+
+/**
+ * getCellsToUseChip(Number chip, Number leek) : ArrayOfNumbers cells
+ * Lists all cells that allow your leek to use a given chip, targetting given leek.
+ * The chip your leek wants to use.
+ * Targetted leek.
+ * List of all cells that allow using given chip.
+ *
+ * @level 31
+ * @cores 1
+ *
+ * @param Number chip
+ * @param Number leek
+ *
+ * @return ArrayOfNumbers
+ *   cells
+ */
+function getCellsToUseChip(chip, leek) {}
+
+/**
+ * getCellsToUseChip(Number chip, Number leek, ArrayOfNumbers ignoredCells) : ArrayOfNumbers cells
+ * Lists all cells that allow your leek to use a given chip, targetting given leek.
+ * The chip your leek wants to use.
+ * Targetted leek.
+ * Array of cells to ignore.
+ * List of all cells that allow using given chip.
+ *
+ * @level 31
+ * @cores 1
+ *
+ * @param Number chip
+ * @param Number leek
+ * @param ArrayOfNumbers ignoredCells
+ *
+ * @return ArrayOfNumbers
+ *   cells
+ */
+function getCellsToUseChip(chip, leek, ignoredCells) {}
+
+/**
+ * getCellsToUseChipOnCell(Number chip, Number cell) : ArrayOfNumbers cells
+ * Lists all cells that allow your leek to use a given chip, targetting given cell.
+ * The chip your leek wants to use.
+ * Targetted cell.
+ * List of all cells that allow using given chip.
+ *
+ * @level 31
+ * @cores 1
+ *
+ * @param Number chip
+ * @param Number cell
+ *
+ * @return ArrayOfNumbers
+ *   cells
+ */
+function getCellsToUseChipOnCell(chip, cell) {}
+
+/**
+ * getCellsToUseChipOnCell(Number chip, Number cell, ArrayOfNumbers ignoredCells) : ArrayOfNumbers cells
+ * Lists all cells that allow your leek to use a given chip, targetting given cell.
+ * The chip your leek wants to use.
+ * Targetted cell.
+ * Array of cells to ignore.
+ * List of all cells that allow using given chip.
+ *
+ * @level 31
+ * @cores 1
+ *
+ * @param Number chip
+ * @param Number cell
+ * @param ArrayOfNumbers ignoredCells
+ *
+ * @return ArrayOfNumbers
+ *   cells
+ */
+function getCellsToUseChipOnCell(chip, cell, ignoredCells) {}
+
+/**
+ * getCellsToUseWeapon(Number leek) : ArrayOfNumbers cells
+ * Lists all cells that allow your leek to shoot its current weapon, targetting given leek.
+ * Targetted leek.
+ * List of all cells that allow your leek to shoot.
+ *
+ * @level 31
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return ArrayOfNumbers
+ *   cells
+ */
+function getCellsToUseWeapon(leek) {}
+
+/**
+ * getCellsToUseWeapon(Number weapon, Number leek) : ArrayOfNumbers cells
+ * Lists all cells that allow your leek to shoot given weapon, targetting given leek.
+ * The weapon your leek wants to use.
+ * Targetted leek.
+ * List of all cells that allow your leek to shoot given weapon.
+ *
+ * @level 31
+ * @cores 1
+ *
+ * @param Number weapon
+ * @param Number leek
+ *
+ * @return ArrayOfNumbers
+ *   cells
+ */
+function getCellsToUseWeapon(weapon, leek) {}
+
+/**
+ * getCellsToUseWeapon(Number weapon, Number leek, ArrayOfNumbers ignoredCells) : ArrayOfNumbers cells
+ * Lists all cells that allow your leek to shoot a given weapon, targetting given leek.
+ * The weapon your leek wants to use.
+ * Targetted leek.
+ * Array of cells to ignore.
+ * List of all cells that allow your leek to shoot.
+ *
+ * @level 31
+ * @cores 1
+ *
+ * @param Number weapon
+ * @param Number leek
+ * @param ArrayOfNumbers ignoredCells
+ *
+ * @return ArrayOfNumbers
+ *   cells
+ */
+function getCellsToUseWeapon(weapon, leek, ignoredCells) {}
+
+/**
+ * getCellsToUseWeaponOnCell(Number cell) : ArrayOfNumbers cells
+ * Lists all cells that allow your leek to shoot its current weapon, targetting given cell.
+ * Targetted cell.
+ * List of all cells that allow your leek to shoot.
+ *
+ * @level 31
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return ArrayOfNumbers
+ *   cells
+ */
+function getCellsToUseWeaponOnCell(cell) {}
+
+/**
+ * getCellsToUseWeaponOnCell(Number weapon, Number cell) : ArrayOfNumbers cells
+ * Lists all cells that allow your leek to shoot given weapon, targetting given cell.
+ * The weapon your leek wants to use.
+ * Targetted cell.
+ * List of all cells that allow your leek to shoot.
+ *
+ * @level 31
+ * @cores 1
+ *
+ * @param Number weapon
+ * @param Number cell
+ *
+ * @return ArrayOfNumbers
+ *   cells
+ */
+function getCellsToUseWeaponOnCell(weapon, cell) {}
+
+/**
+ * getCellsToUseWeaponOnCell(Number weapon, Number cell, ArrayOfNumbers ignoredCells) : ArrayOfNumbers cell
+ * Lists all cells that allow your leek to shoot a given weapon, targetting given cell.
+ * The weapon your leek wants to use.
+ * Targetted cell.
+ * Array of cells to ignore.
+ * List of all cells that allow your leek to shoot.
+ *
+ * @level 31
+ * @cores 1
+ *
+ * @param Number weapon
+ * @param Number cell
+ * @param ArrayOfNumbers ignoredCells
+ *
+ * @return ArrayOfNumbers
+ *   cell
+ */
+function getCellsToUseWeaponOnCell(weapon, cell, ignoredCells) {}
+
+/**
+ * getCellToUseChip(Number chip, Number leek) : Number cell
+ * Finds a cell that allows your leek to use a given chip, targetting given leek.
+ * The chip your leek wants to use.
+ * Targetted leek.
+ * A cell that allows using given chip.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number chip
+ * @param Number leek
+ *
+ * @return Number
+ *   cell
+ */
+function getCellToUseChip(chip, leek) {}
+
+/**
+ * getCellToUseChip(Number chip, Number cell, ArrayOfNumbers ignoredCells) : Number cell
+ * Finds a cell that allows your leek to use a given chip, targetting given leek.
+ * The chip your leek wants to use.
+ * Targetted leek.
+ * Array of cells to ignore.
+ * A cell that allows using given chip.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number chip
+ * @param Number cell
+ * @param ArrayOfNumbers ignoredCells
+ *
+ * @return Number
+ *   cell
+ */
+function getCellToUseChip(chip, cell, ignoredCells) {}
+
+/**
+ * getCellToUseChipOnCell(Number chip, Number cell, ArrayOfNumbers ignoredCells) : Number cell
+ * Finds a cell that allows your leek to use a given chip, targetting given cell.
+ * The chip your leek wants to use.
+ * Targetted cell.
+ * Array of cells to ignore.
+ * A cell that allows using given chip.
+ *
+ * @level 25
+ * @cores 1
+ *
+ * @param Number chip
+ * @param Number cell
+ * @param ArrayOfNumbers ignoredCells
+ *
+ * @return Number
+ *   cell
+ */
+function getCellToUseChipOnCell(chip, cell, ignoredCells) {}
+
+/**
+ * getCellToUseChipOnCell(Number chip, Number cell) : Number cell
+ * Finds a cell that allows your leek to use a given chip, targetting given cell.
+ * The chip your leek wants to use.
+ * Targetted cell.
+ * A cell that allows using the given chip on targetted cell.
+ *
+ * @level 25
+ * @cores 1
+ *
+ * @param Number chip
+ * @param Number cell
+ *
+ * @return Number
+ *   cell
+ */
+function getCellToUseChipOnCell(chip, cell) {}
+
+/**
+ * getCellToUseWeapon(Number leek) : Number cell
+ * Finds a cell that allows your leek to shoot its current weapon, targetting given leek.
+ * Targetted leek.
+ * A cell that allows your leek to shoot.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   cell
+ */
+function getCellToUseWeapon(leek) {}
+
+/**
+ * getCellToUseWeapon(Number weapon, Number leek) : Number cell
+ * Finds a cell that allows your leek to shoot given weapon, targetting given leek.
+ * The weapon your leek wants to use.
+ * Targetted leek.
+ * A cell that allows your leek to shoot.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number weapon
+ * @param Number leek
+ *
+ * @return Number
+ *   cell
+ */
+function getCellToUseWeapon(weapon, leek) {}
+
+/**
+ * getCellToUseWeapon(Number weapon, Number leek, ArrayOfNumbers ignoredCells) : Number cell
+ * Finds a cell that allows your leek to shoot given weapon, targetting given leek.
+ * The weapon your leek wants to use.
+ * Targetted leek.
+ * Array of cells to ignore.
+ * A cell that allows using given weapon.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number weapon
+ * @param Number leek
+ * @param ArrayOfNumbers ignoredCells
+ *
+ * @return Number
+ *   cell
+ */
+function getCellToUseWeapon(weapon, leek, ignoredCells) {}
+
+/**
+ * getCellToUseWeaponOnCell(Number cell) : Number cell
+ * Finds a cell that allows your leek to shoot its current weapon, targetting given cell.
+ * Targetted cell.
+ * A cell that allows your leek to shoot.
+ *
+ * @level 25
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return Number
+ *   cell
+ */
+function getCellToUseWeaponOnCell(cell) {}
+
+/**
+ * getCellToUseWeaponOnCell(Number weapon, Number cell) : Number cell
+ * Finds a cell that allows your leek to shoot given weapon, targetting given leek.
+ * The weapon your leek wants to use.
+ * Targetted cell.
+ * A cell that allows your leek to shoot.
+ *
+ * @level 25
+ * @cores 1
+ *
+ * @param Number weapon
+ * @param Number cell
+ *
+ * @return Number
+ *   cell
+ */
+function getCellToUseWeaponOnCell(weapon, cell) {}
+
+/**
+ * getCellToUseWeaponOnCell(Number weapon, Number cell, ArrayOfNumbers ignoredCells) : Number cell
+ * Finds a cell that allows your leek to shoot given weapon, targetting given cell.
+ * The weapon your leek wants to use.
+ * Targetted cell.
+ * Array of cells to ignore.
+ * A cell that allows using given weapon on targetted cell.
+ *
+ * @level 25
+ * @cores 1
+ *
+ * @param Number weapon
+ * @param Number cell
+ * @param ArrayOfNumbers ignoredCells
+ *
+ * @return Number
+ *   cell
+ */
+function getCellToUseWeaponOnCell(weapon, cell, ignoredCells) {}
+
+/**
+ * getCellX(Number cell) : Number x
+ * Computes the x-coordinate of given cell.
+ * id of the cell.
+ * Its x-coordinate/
+ *
+ * @level 5
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return Number
+ *   x
+ */
+function getCellX(cell) {}
+
+/**
+ * getCellY(Number cell) : Number y
+ * Computes the y-coordinate of given cell.
+ * id of the cell.
+ * Its y-coordinate/
+ *
+ * @level 5
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return Number
+ *   y
+ */
+function getCellY(cell) {}
+
+/**
+ * getChipArea(Number chip) : Number area
+ * documentation_func_getChipArea
+ * documentation_func_getChipArea_arg_1
+ * documentation_func_getChipArea_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number chip
+ *
+ * @return Number
+ *   area
+ */
+function getChipArea(chip) {}
+
+/**
+ * getChipCooldown(Number chip) : Number cooldown
+ * Returns a chip's cooldown as shown in the market.
+ * Desired chip.
+ * Given chip's coolodwn
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number chip
+ *
+ * @return Number
+ *   cooldown
+ */
+function getChipCooldown(chip) {}
+
+/**
+ * getChipCost(Number chip) : Number cost
+ * Returns a chip's cost, in TP.
+ * Desired chip.
+ * Given chip's cost, in TP.
+ *
+ * @level 4
+ * @cores 1
+ *
+ * @param Number chip
+ *
+ * @return Number
+ *   cost
+ */
+function getChipCost(chip) {}
+
+/**
+ * getChipEffectiveArea(Number chip, Number cell) : ArrayOfNumbers cells
+ * Lists the cells affected if given chip were used on given cell.
+ * Chip to be used.
+ * Targetted cell.
+ * Array that contains the id of all affected cells.
+ *
+ * @level 31
+ * @cores 1
+ *
+ * @param Number chip
+ * @param Number cell
+ *
+ * @return ArrayOfNumbers
+ *   cells
+ */
+function getChipEffectiveArea(chip, cell) {}
+
+/**
+ * getChipEffectiveArea(Number chip, Number cell, Number from) : ArrayOfNumbers cells
+ * Lists the cells affected if given chip were used on given cell from from cell.
+ * Chip to be used.
+ * Targetted cell.
+ * Cell from which the chip is used.
+ * Array that contains the id of all affected cells.
+ *
+ * @level 31
+ * @cores 2
+ *
+ * @param Number chip
+ * @param Number cell
+ * @param Number from
+ *
+ * @return ArrayOfNumbers
+ *   cells
+ */
+function getChipEffectiveArea(chip, cell, from) {}
+
+/**
+ * getChipEffects(Number chip) : ArrayOfNumbers effects
+ * Lists a chip's effects.
+ * Desired chip.
+ * Given chip's effects. Format is the same as getWeaponEffects
+ *
+ * @level 9
+ * @cores 2
+ *
+ * @param Number chip
+ *
+ * @return ArrayOfNumbers
+ *   effects
+ */
+function getChipEffects(chip) {}
+
+/**
+ * getChipFailure(Number chip) : Number failure
+ * Returns a chip's failure rate.
+ * Desired chip.
+ * Given chip's failure rate, in percents, integer between 0 and 100.
+ *
+ * @level 4
+ * @cores 1
+ *
+ * @param Number chip
+ *
+ * @return Number
+ *   failure
+ */
+function getChipFailure(chip) {}
+
+/**
+ * getChipMaxScope(Number chip) : Number maxScope
+ * Returns a chip's max scope.
+ * Desired chip.
+ * Given chip's maximum scope.
+ *
+ * @level 9
+ * @cores 1
+ *
+ * @param Number chip
+ *
+ * @return Number
+ *   maxScope
+ */
+function getChipMaxScope(chip) {}
+
+/**
+ * getChipMinScope(Number chip) : Number minScope
+ * Returns a chip's min scope.
+ * Desired chip.
+ * Given chip's minimum scope.
+ *
+ * @level 9
+ * @cores 1
+ *
+ * @param Number chip
+ *
+ * @return Number
+ *   minScope
+ */
+function getChipMinScope(chip) {}
+
+/**
+ * getChipName(Number chip) : String name
+ * Returns a chip's name.
+ * Desired chip.
+ * Given chip's name
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number chip
+ *
+ * @return String
+ *   name
+ */
+function getChipName(chip) {}
+
+/**
+ * getChips() : ArrayOfNumbers chips
+ * Lists your leek's chips.
+ * Array containing all of your leek's chips.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return ArrayOfNumbers
+ *   chips
+ */
+function getChips() {}
+
+/**
+ * getChips(Number leek) : ArrayOfNumbers chips
+ * Lists given leek's chips.
+ * Desired leek.
+ * Array containing all of given leek's chips.
+ *
+ * @level 57
+ * @cores 2
+ *
+ * @param Number leek
+ *
+ * @return ArrayOfNumbers
+ *   chips
+ */
+function getChips(leek) {}
+
+/**
+ * getChipTargets(Number chip, Number cell) : ArrayOfNumbers targets
+ * Lists leeks that will be affected if given chip were used on given cell.
+ * Chip to be used.
+ * Targetted cell.
+ * Array containing the affected leeks.
+ *
+ * @level 39
+ * @cores 2
+ *
+ * @param Number chip
+ * @param Number cell
+ *
+ * @return ArrayOfNumbers
+ *   targets
+ */
+function getChipTargets(chip, cell) {}
+
+/**
+ * getColor(Number red, Number green, Number blue) : Number color
+ * Gives an integer that corresponds to given color on a (red, green, blue) scale. See mark on how to use given integer.
+ * Red value, between 0 and 255.
+ * Green value, between 0 and 255.
+ * Blue value, between 0 and 255.
+ * Integer that corresponds to given color.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number red
+ * @param Number green
+ * @param Number blue
+ *
+ * @return Number
+ *   color
+ */
+function getColor(red, green, blue) {}
+
+/**
+ * getCooldown(Number chip) : Number cooldown
+ * Returns the current cooldown of given chip for your leek.
+ * Desired chip.
+ * Given chip's current cooldown.
+ *
+ * @level 36
+ * @cores 1
+ *
+ * @param Number chip
+ *
+ * @return Number
+ *   cooldown
+ */
+function getCooldown(chip) {}
+
+/**
+ * getCooldown(Number chip, Number leek) : Number cooldown
+ * Returns the current cooldown of given chip for given leek.
+ * Desired chip.
+ * Desired leek.
+ * Given chip's current cooldown, i.e. the amount of turns owner must wait to cast it again.
+ *
+ * @level 36
+ * @cores 1
+ *
+ * @param Number chip
+ * @param Number leek
+ *
+ * @return Number
+ *   cooldown
+ */
+function getCooldown(chip, leek) {}
+
+/**
+ * getCores() : Number cores
+ * Returns your leek's number of cores.
+ * Your leek's number of cores.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   cores
+ */
+function getCores() {}
+
+/**
+ * getCores(Number leek) : Number cores
+ * Returns given leek's number of cores.
+ * Desired leek.
+ * Given leek's number of cores.
+ *
+ * @level 8
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   cores
+ */
+function getCores(leek) {}
+
+/**
+ * getDeadAllies() : ArrayOfNumbers deadAllies
+ * Lists dead allies.
+ * Array of dead allies.
+ *
+ * @level 14
+ * @cores 1
+ *
+ * @return ArrayOfNumbers
+ *   deadAllies
+ */
+function getDeadAllies() {}
+
+/**
+ * getDeadEnemies() : ArrayOfNumbers deadEnemies
+ * Lists dead enemies.
+ * Array of dead enemies.
+ *
+ * @level 16
+ * @cores 1
+ *
+ * @return ArrayOfNumbers
+ *   deadEnemies
+ */
+function getDeadEnemies() {}
+
+/**
+ * getDeadEnemiesCount() : Number numDeadEnemies
+ * Counts the dead enemies in the fight.
+ * The number of dead enemies.
+ *
+ * @level 16
+ * @cores 1
+ *
+ * @return Number
+ *   numDeadEnemies
+ */
+function getDeadEnemiesCount() {}
+
+/**
+ * getDistance(Number cell1, Number cell2) : Number distance
+ * Computes as a crow flies distance between cell1 and cell2.For distance in number of cells, see getCellDistance, and for an actual path (taking obstacles into account), see getPathLength.
+ * Cell id of starting point.
+ * Cell id of arrival.
+ * Crow's fly distance between given cells.
+ *
+ * @level 5
+ * @cores 1
+ *
+ * @param Number cell1
+ * @param Number cell2
+ *
+ * @return Number
+ *   distance
+ */
+function getDistance(cell1, cell2) {}
+
+/**
+ * getEffects() : ArrayOfArrays effects
+ * Lists the effects affecting your leek.
+ * Array of effects affecting your leek. More details in getEffects(leek).
+ *
+ * @level 51
+ * @cores 1
+ *
+ * @return ArrayOfArrays
+ *   effects
+ */
+function getEffects() {}
+
+/**
+ * getEffects(Number leek) : ArrayOfArrays effects
+ * Lists the effects affecting given leek. For your leek, prefer getEffects() with no input.
+ * Leek whose effects are listed.
+ * Array of effects affecting given leek.
+An effect itself is a 2-cell array of the following form: [type, value], with type describing the type of effect, among:
+
+		EFFECT_DAMAGE, value is the amount of damage
+		EFFECT_HEAL, value is the number of HP healed
+		EFFECT_BUFF_FORCE, value is the added strength
+		EFFECT_BUFF_AGILITY, value is the added agility
+		EFFECT_BUFF_TP, value is the number of added TP
+		EFFECT_BUFF_MP, valueis the number of added MP
+		EFFECT_ABSOLUTE_SHIELD, value is the absolute shield gained
+		EFFECT_RELATIVE_SHIELD, value is the relative shield gained
+		EFFECT_DEBUFF, indicates a debuff, value is not significant.
+	
+ *
+ * @level 61
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return ArrayOfArrays
+ *   effects
+ */
+function getEffects(leek) {}
+
+/**
+ * getEnemies() : ArrayOfNumbers enemies
+ * Lists all enemies (dead and alive) within a fight.
+ * Array containing leek ids of all enemies.
+ *
+ * @level 16
+ * @cores 1
+ *
+ * @return ArrayOfNumbers
+ *   enemies
+ */
+function getEnemies() {}
+
+/**
+ * getEnemiesCount() : Number numEnemies
+ * Counts the enemies in the fight.
+ * The number of enemies.
+ *
+ * @level 16
+ * @cores 1
+ *
+ * @return Number
+ *   numEnemies
+ */
+function getEnemiesCount() {}
+
+/**
+ * getEnemiesLife() : Number life
+ * Returns the sum of all of your enemies' HP
+ * Sum of all of your enemies' HP
+ *
+ * @level 16
+ * @cores 1
+ *
+ * @return Number
+ *   life
+ */
+function getEnemiesLife() {}
+
+/**
+ * getFarmerID() : Number id
+ * Returns your farmer's id.
+ * Your farmer's id.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   id
+ */
+function getFarmerID() {}
+
+/**
+ * getFarmerID(Number leek) : Number id
+ * Returns the id of given leek's farmer.
+ * Desired leek.
+ * The id of given leek's farmer.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   id
+ */
+function getFarmerID(leek) {}
+
+/**
+ * getFarmerName() : String name
+ * Returns your farmer's name.
+ * Your farmer's name.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return String
+ *   name
+ */
+function getFarmerName() {}
+
+/**
+ * getFarmerName(Number leek) : String name
+ * Returns the name of given leek's farmer.
+ * Desired leek.
+ * The name of given leek's farmer.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return String
+ *   name
+ */
+function getFarmerName(leek) {}
+
+/**
+ * getFarthestAlly() : Number farthestAlly
+ * Returns the farthest ally, using as a crow flies distance.
+ * Farthest ally's leek id.
+ *
+ * @level 14
+ * @cores 1
+ *
+ * @return Number
+ *   farthestAlly
+ */
+function getFarthestAlly() {}
+
+/**
+ * getFarthestEnemy() : Number farthestEnemy
+ * Returns the farthest enemy, using as a crow flies distance.
+ * Farthest enemy's leek id.
+ *
+ * @level 14
+ * @cores 1
+ *
+ * @return Number
+ *   farthestEnemy
+ */
+function getFarthestEnemy() {}
+
+/**
+ * getFightContext() : Number context
+ * Returns current fight's context
+ * Depending on fight's context: Test fight (FIGHT_CONTEXT_TEST), Garden fight (FIGHT_CONTEXT_GARDEN), Tournament fight (FIGHT_CONTEXT_TOURNAMENT), Challenge fight (FIGHT_CONTECT_CHALLENGE).
+ *
+ * @level 5
+ * @cores 1
+ *
+ * @return Number
+ *   context
+ */
+function getFightContext() {}
+
+/**
+ * getFightType() : Number fightType
+ * Returns current fight's type
+ * Depending on fight's type: Solo fight (FIGHT_TYPE_SOLO), Farmer fight (FIGHT_TYPE_FARMER), Team fight (FIGHT_TYPE_TEAM).
+ *
+ * @level 5
+ * @cores 1
+ *
+ * @return Number
+ *   fightType
+ */
+function getFightType() {}
+
+/**
+ * getForce() : Number force
+ * Returns your leek's strength.
+ * Your leek's strength.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   force
+ */
+function getForce() {}
+
+/**
+ * getForce(Number leek) : Number force
+ * Return's given leek's strength.
+ * Desired leek.
+ * Given leek's strength.
+ *
+ * @level 5
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   force
+ */
+function getForce(leek) {}
+
+/**
+ * getFrequency() : Number frequency
+ * Returns your leek's frequency.
+ * Your leek's frequency.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   frequency
+ */
+function getFrequency() {}
+
+/**
+ * getFrequency(Number leek) : Number frequency
+ * Return's given leek's frequency.
+ * Desired leek.
+ * Given leek's frequency.
+ *
+ * @level 8
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   frequency
+ */
+function getFrequency(leek) {}
+
+/**
+ * getGreen(Number color) : Number green
+ * Returns the green component of given color. For 
+instance getGreen(COLOR_GREEN) = 255 and getGreen(COLOR_BLUE) = 0.
+ * Color whose green component is to be returned.
+ * Green component of given color.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number color
+ *
+ * @return Number
+ *   green
+ */
+function getGreen(color) {}
+
+/**
+ * getInstructionsCount() : Number instructions
+ * Returns the number of instructions used by your leek this turn.
+ * The number of instructions used by your leek this turn.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   instructions
+ */
+function getInstructionsCount() {}
+
+/**
+ * getLeek() : Number leek
+ * Returns your leek's id.
+ * Your leek's id.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   leek
+ */
+function getLeek() {}
+
+/**
+ * getLeekID() : Number realID
+ * Returns your leek's absolute id (does not depend on fight).
+ * Your leek's absolute id.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   realID
+ */
+function getLeekID() {}
+
+/**
+ * getLeekID(Number leek) : Number realID
+ * Returns given leek's absolute id.
+ * Desired leek.
+ * Given leek's absolute id.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   realID
+ */
+function getLeekID(leek) {}
+
+/**
+ * getLeekOnCell(Number cell) : Number leek
+ * Returns the leek present on given cell, if any.
+ * Desired cell.
+ * The leek id of a leek that is currently occupying given cell, -1 if cell is not occupied by a leek.
+ *
+ * @level 11
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return Number
+ *   leek
+ */
+function getLeekOnCell(cell) {}
+
+/**
+ * getLevel() : Number level
+ * Returns your leek's level.
+ * Your leek's level.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   level
+ */
+function getLevel() {}
+
+/**
+ * getLevel(Number leek) : Number level
+ * Returns given leek's level.
+ * Desired leek.
+ * Given leek's level.
+ *
+ * @level 13
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   level
+ */
+function getLevel(leek) {}
+
+/**
+ * getLife() : Number life
+ * Returns your leek's HP count.
+ * Your leek's HP count.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   life
+ */
+function getLife() {}
+
+/**
+ * getLife(Number leek) : Number life
+ * Returns given leek's HP count.
+ * Desired leek.
+ * Given leek's HP count.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   life
+ */
+function getLife(leek) {}
+
+/**
+ * getMessageAuthor(Array message) : Number leek
+ * Returns given message's author (leek).
+ * Message whose author is desired.
+ * Given message's author.
+ *
+ * @level 41
+ * @cores 1
+ *
+ * @param Array message
+ *
+ * @return Number
+ *   leek
+ */
+function getMessageAuthor(message) {}
+
+/**
+ * getMessageParams(Array message) : ? params
+ * Returns given message's parameters.
+ * Message whose parameters are desired.
+ * Given message's parameters.
+ *
+ * @level 41
+ * @cores 1
+ *
+ * @param Array message
+ *
+ * @return ?
+ *   params
+ */
+function getMessageParams(message) {}
+
+/**
+ * getMessages() : ArrayOfArrays messages
+ * Lists all messages addressed to you.
+ * Array of messages.A message itself is a 3-cell array of the following form: [author, type, parameters]Message types are:
+
+		MESSAGE_HEAL: request for heal
+		MESSAGE_ATTACK: request for attack
+		MESSAGE_BUFF_FORCE: request for strength buff
+		...
+	
+ *
+ * @level 41
+ * @cores 1
+ *
+ * @return ArrayOfArrays
+ *   messages
+ */
+function getMessages() {}
+
+/**
+ * getMessages(Number leek) : ArrayOfArrays messages
+ * Lists all messages addressed to given leek.
+ * Leek whose messages are returned.
+ * Array of messages addressed to given leek.
+ *
+ * @level 201
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return ArrayOfArrays
+ *   messages
+ */
+function getMessages(leek) {}
+
+/**
+ * getMessageType(Array message) : Number type
+ * Returns given message's message type.
+ * Message whose type is desired.
+ * Given message's type.
+ *
+ * @level 41
+ * @cores 1
+ *
+ * @param Array message
+ *
+ * @return Number
+ *   type
+ */
+function getMessageType(message) {}
+
+/**
+ * getMP() : Number mp
+ * Returns your leek's MP count.
+ * Your leek's MP count.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   mp
+ */
+function getMP() {}
+
+/**
+ * getMP(Number leek) : Number mp
+ * Returns given leek's MP count.
+ * Desired leek.
+ * Given leek's name.
+ *
+ * @level 10
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   mp
+ */
+function getMP(leek) {}
+
+/**
+ * getName() : String name
+ * Returns your leek's name.
+ * Your leek's name.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return String
+ *   name
+ */
+function getName() {}
+
+/**
+ * getName(Number leek) : String name
+ * Returns given leek's name.
+ * Desired leek.
+ * Given leek's name.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return String
+ *   name
+ */
+function getName(leek) {}
+
+/**
+ * getNearestAlly() : Number nearestAlly
+ * Returns the allied leek closest to your leek.
+ * id of the nearest ally
+ *
+ * @level 14
+ * @cores 1
+ *
+ * @return Number
+ *   nearestAlly
+ */
+function getNearestAlly() {}
+
+/**
+ * getNearestAllyTo(Number leek) : Number ally
+ * Returns, among your allies, the closest one to given leek.
+ * Targetted leek.
+ * Leek id of your ally that is closest to given leek.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   ally
+ */
+function getNearestAllyTo(leek) {}
+
+/**
+ * getNearestAllyToCell(Number cell) : Number ally
+ * Returns, among your allies, the closest one to given cell.
+ * Targetted cell.
+ * Leek id of your ally that is closest to given cell.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return Number
+ *   ally
+ */
+function getNearestAllyToCell(cell) {}
+
+/**
+ * getNearestEnemy() : Number nearestEnemy
+ * Returns the enemy leek closest to your leek.
+ * id of the nearest enemy.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   nearestEnemy
+ */
+function getNearestEnemy() {}
+
+/**
+ * getNearestEnemyTo(Number leek) : Number enemy
+ * Returns, among your enemies, the closest one to given leek.
+ * Targetted leek.
+ * Leek id of your enemy that is closest to given leek.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   enemy
+ */
+function getNearestEnemyTo(leek) {}
+
+/**
+ * getNearestEnemyToCell(Number cell) : Number enemy
+ * Returns, among your enemies, the closest one to given cell.
+ * Targetted cell.
+ * Leek id of your enemy that is closest to given cell.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return Number
+ *   enemy
+ */
+function getNearestEnemyToCell(cell) {}
+
+/**
+ * getNextPlayer() : Number player
+ * Returns the leek id of the next leek to play.
+ * Leek id of the next player.
+ *
+ * @level 26
+ * @cores 1
+ *
+ * @return Number
+ *   player
+ */
+function getNextPlayer() {}
+
+/**
+ * getObstacles() : ArrayOfNumbers obstacles
+ * Lists all cells that are occupied by obstacles.
+ * Array of cells occupied by obstacles.
+ *
+ * @level 21
+ * @cores 1
+ *
+ * @return ArrayOfNumbers
+ *   obstacles
+ */
+function getObstacles() {}
+
+/**
+ * getPath(Number cell1, Number cell2) : ArrayOfNumbers path
+ * Finds a path between cell1 and cell2, avoiding occupied cells.
+ * Cell id of starting point.
+ * Cell id of destination.
+ * Array of empty cells that build a path between given cells. Empty array if no path is found.
+ *
+ * @level 37
+ * @cores 2
+ *
+ * @param Number cell1
+ * @param Number cell2
+ *
+ * @return ArrayOfNumbers
+ *   path
+ */
+function getPath(cell1, cell2) {}
+
+/**
+ * getPath(Number start, Number end, ArrayOfNumbers ignoredCells) : ArrayOfNumbers path
+ * Finds a path between cell1 and cell2, avoiding occupied cells, except ignoredCells, which are considered empty even when a leek occupies them.
+ * Cell id of starting point.
+ * Cell id of destination.
+ * Array of cells considered inoccupied even when a leek is present.
+ * Array of cells that build a path between given cells. Considering ignoredCells as empty.  Empty array if no path is found.
+ *
+ * @level 37
+ * @cores 2
+ *
+ * @param Number start
+ * @param Number end
+ * @param ArrayOfNumbers ignoredCells
+ *
+ * @return ArrayOfNumbers
+ *   path
+ */
+function getPath(start, end, ignoredCells) {}
+
+/**
+ * getPathLength(Number cell1, Number cell2) : Number length
+ * Returns the length of a path between cell1 and cell2 that avoids occupied cells. This function is equivalent to count(getPath(cell1, cell2)).For as a crow's flies distance, see getDistance and for distance in number of cells, see getCellDistance
+ * Cell id of starting point.
+ * Cell id of destination.
+ * Length of the path between cell1 and cell2. -1 if no path is found.
+ *
+ * @level 37
+ * @cores 2
+ *
+ * @param Number cell1
+ * @param Number cell2
+ *
+ * @return Number
+ *   length
+ */
+function getPathLength(cell1, cell2) {}
+
+/**
+ * getPathLength(Number cell1, Number cell2, ArrayOfNumbers ignoredCells) : ArrayOfNumbers length
+ * Returns the length of a path between cell1 and cell2 that avoids occupied cells, except ignoredCells which are considered empty even when a leek is present.
+ * Cell id of starting point.
+ * Cell id of destination.
+ * Array of cells considered inoccupied even when a leek is present.
+ * Length of the path between cell1 and cell2. -1 if no path is found.
+ *
+ * @level 37
+ * @cores 2
+ *
+ * @param Number cell1
+ * @param Number cell2
+ * @param ArrayOfNumbers ignoredCells
+ *
+ * @return ArrayOfNumbers
+ *   length
+ */
+function getPathLength(cell1, cell2, ignoredCells) {}
+
+/**
+ * getPreviousPlayer() : Number player
+ * Returns the leek id of the leek who just played.
+ * Leek id of the leek who just played.
+ *
+ * @level 26
+ * @cores 1
+ *
+ * @return Number
+ *   player
+ */
+function getPreviousPlayer() {}
+
+/**
+ * getRed(Number color) : Number red
+ * Returns the red component of given color. For 
+instance getRed(COLOR_RED) = 255 and getRed(COLOR_BLUE) = 0.
+ * Color whose red component is to be returned.
+ * Red component of given color.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number color
+ *
+ * @return Number
+ *   red
+ */
+function getRed(color) {}
+
+/**
+ * getRegister(String key) : String value
+ * documentation_func_getRegister
+ * documentation_func_getRegister_arg_1
+ * documentation_func_getRegister_return
+ *
+ * @level 32
+ * @cores 1
+ *
+ * @param String key
+ *
+ * @return String
+ *   value
+ */
+function getRegister(key) {}
+
+/**
+ * getRegisters() : ArrayOfStrings registers
+ * documentation_func_getRegisters
+ * documentation_func_getRegisters_return
+ *
+ * @level 32
+ * @cores 1
+ *
+ * @return ArrayOfStrings
+ *   registers
+ */
+function getRegisters() {}
+
+/**
+ * getRelativeShield() : Number shield
+ * Returns your leek's relative shield.
+ * Your leek's relative shield, in percents: integer between 0 and 100.
+ *
+ * @level 30
+ * @cores 1
+ *
+ * @return Number
+ *   shield
+ */
+function getRelativeShield() {}
+
+/**
+ * getRelativeShield(Number leek) : Number shield
+ * Returns given leek's relative shield. For your leek's relative shield, prefer getRelativeShield() with no input.
+ * Desired leek.
+ * Given leek's relative shield, in percents: integer between 0 and 100.
+ *
+ * @level 38
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   shield
+ */
+function getRelativeShield(leek) {}
+
+/**
+ * getTeamID() : Number id
+ * Returns your team's id.
+ * Your team's id.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   id
+ */
+function getTeamID() {}
+
+/**
+ * getTeamID(Number leek) : Number id
+ * Returns the id of given leek's team.
+ * Desired leek.
+ * The id of given leek's team.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   id
+ */
+function getTeamID(leek) {}
+
+/**
+ * getTeamName() : String name
+ * Returns your team's name.
+ * Your team's name.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return String
+ *   name
+ */
+function getTeamName() {}
+
+/**
+ * getTeamName(Number leek) : String name
+ * Returns the name of given leek's team.
+ * Desired leek.
+ * The name of given leek's team.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return String
+ *   name
+ */
+function getTeamName(leek) {}
+
+/**
+ * getTotalLife() : Number life
+ * Returns your leek's maximum life.
+ * Your leek's maximum life.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   life
+ */
+function getTotalLife() {}
+
+/**
+ * getTotalLife(Number leek) : Number life
+ * Returns given leek's maximum life.
+ * Desired leek.
+ * Given leek's maximum life.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   life
+ */
+function getTotalLife(leek) {}
+
+/**
+ * getTP() : Number tp
+ * Returns your leek's TP count.
+ * Your leek's TP count.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   tp
+ */
+function getTP() {}
+
+/**
+ * getTP(Number leek) : Number tp
+ * Returns given leek's TP count.
+ * Desired leek.
+ * Given leek's TP count.
+ *
+ * @level 10
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   tp
+ */
+function getTP(leek) {}
+
+/**
+ * getTurn() : Number turn
+ * Returns current turn's count. Maximum duration of a fight is MAX_TURNS.
+ * Current turn's count.
+ *
+ * @level 12
+ * @cores 1
+ *
+ * @return Number
+ *   turn
+ */
+function getTurn() {}
+
+/**
+ * getWeapon() : Number weapon
+ * Returns the weapon currently equipped by your leek.
+ * The weapon's id, null if your leek has no equipped weapon.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   weapon
+ */
+function getWeapon() {}
+
+/**
+ * getWeapon(Number leek) : Number weapon
+ * Returns the weapon currently equipped by given leek.
+ * Desired leek.
+ * The weapon's id, null if given leek has no equipped weapon.
+ *
+ * @level 7
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   weapon
+ */
+function getWeapon(leek) {}
+
+/**
+ * getWeaponArea(Number weapon) : Number area
+ * documentation_func_getWeaponArea
+ * documentation_func_getWeaponArea_arg_1
+ * documentation_func_getWeaponArea_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number weapon
+ *
+ * @return Number
+ *   area
+ */
+function getWeaponArea(weapon) {}
+
+/**
+ * getWeaponCost(Number weapon) : Number cost
+ * Returns a weapon's cost, in TP.
+ * Desired weapon.
+ * Given weapon's cost, in TP.
+ *
+ * @level 4
+ * @cores 1
+ *
+ * @param Number weapon
+ *
+ * @return Number
+ *   cost
+ */
+function getWeaponCost(weapon) {}
+
+/**
+ * getWeaponEffectiveArea(Number cell) : ArrayOfNumbers cells
+ * Lists the cells affected if your leek's current weapon were shot on given cell.
+ * Targetted cell.
+ * Array that contains the id of all affected cells.
+ *
+ * @level 31
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return ArrayOfNumbers
+ *   cells
+ */
+function getWeaponEffectiveArea(cell) {}
+
+/**
+ * getWeaponEffectiveArea(Number weapon, Number cell) : ArrayOfNumbers cells
+ * Lists the cells affected if given weapon were shot on given cell.
+ * Weapon to be used.
+ * Targetted cell.
+ * Array that contains the id of all affected cells.
+ *
+ * @level 31
+ * @cores 1
+ *
+ * @param Number weapon
+ * @param Number cell
+ *
+ * @return ArrayOfNumbers
+ *   cells
+ */
+function getWeaponEffectiveArea(weapon, cell) {}
+
+/**
+ * getWeaponEffectiveArea(Number weapon, Number cell, Number from) : ArrayOfNumbers cells
+ * Lists the cells affected if given weapon were shot on given cell, from from cell.
+ * Weapon to be used.
+ * Targetted cell.
+ * Cell from which the chip is used.
+ * Array that contains the id of all affected cells.
+ *
+ * @level 31
+ * @cores 2
+ *
+ * @param Number weapon
+ * @param Number cell
+ * @param Number from
+ *
+ * @return ArrayOfNumbers
+ *   cells
+ */
+function getWeaponEffectiveArea(weapon, cell, from) {}
+
+/**
+ * getWeaponEffects(Number weapon) : ArrayOfNumbers effects
+ * Lists a weapon's effects.
+ * Desired weapon.
+ * Array containing given's weapon effects. An effect itself if an array, in the following format: [type, min, max, turns, targets].
+
+	type is an effect type, among: EFFECT_DAMAGE, EFFECT_HEAL, 
+#EFFECT_ABSOLUTE_SHIELD, EFFECT_RELATIVE_SHIELD, EFFECT_DEBUFF, 
+#EFFECT_BUFF_FORCE, EFFECT_BUFF_AGILITY, EFFECT_BUFF_MP, 
+#EFFECT_BUFF_TP.
+	min and max are the min and max values of the effect (from the market).
+	turns is the duration of the effect, in turns.
+	targets gives which players can be affected. It is a binary construct of:
+		
+			 EFFECT_TARGET_ALLIES: Affects allies
+			 EFFECT_TARGET_ENEMIES: Affects enemies
+			 EFFECT_TARGET_CASTER: Always affects caster
+			 EFFECT_TARGET_NOT_CASTER: Cannot affect caster
+		
+It can be parsed with:
+		1234if (targets & EFFECT_TARGET_ALLIES) debug('Affects allies');
+if (targets & EFFECT_TARGET_ENEMIES) debug('Affects enemies');
+if (targets & EFFECT_TARGET_CASTER) debug('Always affects caster');
+if (targets & EFFECT_TARGET_NOT_CASTER) debug('Cannot affect caster');
+	
+	
+ *
+ * @level 9
+ * @cores 2
+ *
+ * @param Number weapon
+ *
+ * @return ArrayOfNumbers
+ *   effects
+ */
+function getWeaponEffects(weapon) {}
+
+/**
+ * getWeaponFailure(Number weapon) : Number failure
+ * Returns a weapon's failure rate.
+ * Desired weapon.
+ * Given chip's failure rate, in percents, integer between 0 and 100.
+ *
+ * @level 4
+ * @cores 1
+ *
+ * @param Number weapon
+ *
+ * @return Number
+ *   failure
+ */
+function getWeaponFailure(weapon) {}
+
+/**
+ * getWeaponMaxScope(Number weapon) : Number maxScope
+ * Returns a weapon's max scope.
+ * Desired weapon.
+ * Given weapon's maximum scope.
+ *
+ * @level 9
+ * @cores 1
+ *
+ * @param Number weapon
+ *
+ * @return Number
+ *   maxScope
+ */
+function getWeaponMaxScope(weapon) {}
+
+/**
+ * getWeaponMinScope(Number weapon) : Number minScope
+ * Returns a weapon's min scope.
+ * Desired weapon.
+ * Given weapon's minimum scope.
+ *
+ * @level 9
+ * @cores 1
+ *
+ * @param Number weapon
+ *
+ * @return Number
+ *   minScope
+ */
+function getWeaponMinScope(weapon) {}
+
+/**
+ * getWeaponName(Number weapon) : String name
+ * Returns a weapon's name.
+ * Desired weapon.
+ * Given weapon's name
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number weapon
+ *
+ * @return String
+ *   name
+ */
+function getWeaponName(weapon) {}
+
+/**
+ * getWeapons() : ArrayOfNumbers weapons
+ * Lists your leek's weapons.
+ * Array containing all of your leek's weapons.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return ArrayOfNumbers
+ *   weapons
+ */
+function getWeapons() {}
+
+/**
+ * getWeapons(Number leek) : ArrayOfNumbers weapon
+ * Lists given leek's weapons.
+ * Desired leek.
+ * Array containing all of given leek's weapons.
+ *
+ * @level 57
+ * @cores 2
+ *
+ * @param Number leek
+ *
+ * @return ArrayOfNumbers
+ *   weapon
+ */
+function getWeapons(leek) {}
+
+/**
+ * getWeaponTargets(Number cell) : ArrayOfNumbers targets
+ * Lists leeks that will be affected if your leek's current weapon were used on given cell.
+ * Targetted cell.
+ * Array containing the affected leeks.
+ *
+ * @level 39
+ * @cores 2
+ *
+ * @param Number cell
+ *
+ * @return ArrayOfNumbers
+ *   targets
+ */
+function getWeaponTargets(cell) {}
+
+/**
+ * getWeaponTargets(Number weapon, Number cell) : ArrayOfNumbers targets
+ * Lists leeks that will be affected if given weapon were used on given cell.
+ * Weapon to be used.
+ * Targetted cell.
+ * Array containing the affected leeks.
+ *
+ * @level 39
+ * @cores 2
+ *
+ * @param Number weapon
+ * @param Number cell
+ *
+ * @return ArrayOfNumbers
+ *   targets
+ */
+function getWeaponTargets(weapon, cell) {}
+
+/**
+ * hypot(Number x, Number y) : Number hypotenuse
+ * Returns the hypothenuse of a right-angled triangle with sides x and y. Equivalent to sqrt(x**2 + y**2).
+ * x value.
+ * y value.
+ * sqrt(x**2 + y**2).
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number x
+ * @param Number y
+ *
+ * @return Number
+ *   hypotenuse
+ */
+function hypot(x, y) {}
+
+/**
+ * inArray(Array array, ? element) : Boolean inArray
+ * Checks whether given element is inside given array.
+ * Array in which search is performed.
+ * Element to look for.
+ * true if given element is contained in array, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param ? element
+ *
+ * @return Boolean
+ *   inArray
+ */
+function inArray(array, element) {}
+
+/**
+ * include(String ai)
+ * Icludes the AI whose name is ai inside current AI.Warning: include function shall only be called inside the main AI block, and its parameter shall NOT be a variable. More information in the tutorial: http://leekwars.com/tutorial#includes.
+ * AI's name (hard-coded string only)
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String ai
+ */
+function __include(ai) {}
+
+/**
+ * indexOf(String string, String search) : Number index
+ * Finds the first occurrence of search string within given string.
+ * String to be looked into.
+ * String to be looked for.
+ * First matching substring's position , -1 if no match was found.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String string
+ * @param String search
+ *
+ * @return Number
+ *   index
+ */
+function indexOf(string, search) {}
+
+/**
+ * indexOf(String string, String search, Number start) : Number index
+ * Finds the first occurrence of search string within given string, starting at given position.
+ * String to be looked into.
+ * String to be looked for.
+ * Position within string where the search starts.
+ * First matching substring's position , -1 if no match was found.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String string
+ * @param String search
+ * @param Number start
+ *
+ * @return Number
+ *   index
+ */
+function indexOf(string, search, start) {}
+
+/**
+ * insert(Array array, ? element, Number position)
+ * Inserts an element in an array, at given position.
+ * Array in which element is added.
+ * Element to add.
+ * Insertion position.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param ? element
+ * @param Number position
+ */
+function insert(array, element, position) {}
+
+/**
+ * isAlive(Number leek) : Boolean alive
+ * Checks whether a leek is alive. Equivalent to getLife(leek) > 0.
+ * Desired leek.
+ * true if leek is alive, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Boolean
+ *   alive
+ */
+function isAlive(leek) {}
+
+/**
+ * isAlly(Number leek) : Boolean isAlly
+ * Checks whether a leek is your ally.
+ * Desired leek.
+ * true if leek is an ally (or you), false otherwise.
+ *
+ * @level 14
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Boolean
+ *   isAlly
+ */
+function isAlly(leek) {}
+
+/**
+ * isChip(Number value) : String chip
+ * Checks whether given value can represent a chip.isChip(CHIP_RAGE) = true;isChip(WEAPON_PISTOL) = false.
+ * Value to check.
+ * true if value is a chip, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number value
+ *
+ * @return String
+ *   chip
+ */
+function isChip(value) {}
+
+/**
+ * isDead(Number leek) : Boolean dead
+ * Checks whether a leek is dead. Equivalent to getLife(leek) == 0.
+ * Desired leek.
+ * true if leek is dead, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Boolean
+ *   dead
+ */
+function isDead(leek) {}
+
+/**
+ * isEmpty(Array array) : Boolean empty
+ * Checks whether given array is empty. Equivalent to count(array) == 0.
+ * Array to check.
+ * true if array is empty, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ *
+ * @return Boolean
+ *   empty
+ */
+function isEmpty(array) {}
+
+/**
+ * isEmptyCell(Number cell) : Boolean empty
+ * Checks whether given cell is empty.
+ * Cell to check.
+ * true if cell is empty, false otherwise.
+ *
+ * @level 21
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return Boolean
+ *   empty
+ */
+function isEmptyCell(cell) {}
+
+/**
+ * isEnemy(Number leek) : Boolean isEnemy
+ * Checks whether a leek is your enemy.
+ * Desired leek.
+ * true if leek is an enemy, false otherwise.
+ *
+ * @level 14
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Boolean
+ *   isEnemy
+ */
+function isEnemy(leek) {}
+
+/**
+ * isInlineChip(Number chip) : Boolean isInline
+ * Checks whether given chip is inline, i.e. only usable if the target is in the same line as the caster.
+ * Desired chip.
+ * true if chip is inline, false otherwise.
+ *
+ * @level 8
+ * @cores 1
+ *
+ * @param Number chip
+ *
+ * @return Boolean
+ *   isInline
+ */
+function isInlineChip(chip) {}
+
+/**
+ * isInlineWeapon(Number weapon) : Boolean isInline
+ * Checks whether given weapon is inline, i.e. only usable if the target is in the same line as the caster.
+ * Desired weapon.
+ * true if weapon is inline, false otherwise.
+ *
+ * @level 8
+ * @cores 1
+ *
+ * @param Number weapon
+ *
+ * @return Boolean
+ *   isInline
+ */
+function isInlineWeapon(weapon) {}
+
+/**
+ * isLeek(Number cell) : Boolean isLeek
+ * Checks whether given cell is occupied by a leek.
+ * Cell to check.
+ * true if cell is occupied by a leek, false otherwise.
+ *
+ * @level 21
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return Boolean
+ *   isLeek
+ */
+function isLeek(cell) {}
+
+/**
+ * isObstacle(Number cell) : Boolean isObstacle
+ * Checks whether given cell is occupied by an obstacle.
+ * Cell to check.
+ * true if cell is occupied by an obstacle, false otherwise.
+ *
+ * @level 21
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return Boolean
+ *   isObstacle
+ */
+function isObstacle(cell) {}
+
+/**
+ * isOnSameLine(Number cell1, Number cell2) : Boolean sameLine
+ * Checks whether cell1 and cell2 are on the same line.
+ * First cell.
+ * Second cell.
+ * true if cells are on the same line, false otherwise.
+ *
+ * @level 5
+ * @cores 1
+ *
+ * @param Number cell1
+ * @param Number cell2
+ *
+ * @return Boolean
+ *   sameLine
+ */
+function isOnSameLine(cell1, cell2) {}
+
+/**
+ * isWeapon(Number value) : String weapon
+ * Checks whether given value can represent a weapon.isWeapon(WEAPON_LASER) = true;isWeapon(CHIP_TELEPORTATION) = false.
+ * Value to check.
+ * true if value is a weapon, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number value
+ *
+ * @return String
+ *   weapon
+ */
+function isWeapon(value) {}
+
+/**
+ * join(Array array, String glue) : String string
+ * Creates a single string containing all elements of given array, separated by glue delimiters.
+ * An array of elements to be joined into a string.
+ * A string that is inserted between consecutive elements of the array.
+ * The resulting string.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param String glue
+ *
+ * @return String
+ *   string
+ */
+function join(array, glue) {}
+
+/**
+ * keySort(Array array)
+ * Sorts an array using key values.
+ * Array that is sorted.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ */
+function keySort(array) {}
+
+/**
+ * keySort(Array array, Number order)
+ * Sorts an array using key values, using given sorting order.
+ * Array that is sorted.
+ * Sorting order: SORT_ASC or SORT_DESC.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param Number order
+ */
+function keySort(array, order) {}
+
+/**
+ * length(String string) : Number length
+ * Returns given string's length.
+ * Desired string.
+ * Given string's length
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String string
+ *
+ * @return Number
+ *   length
+ */
+function length(string) {}
+
+/**
+ * lineOfSight(Number start, Number end) : Boolean los
+ * Checks whether a leek on start cell can see end cell.
+ * Cell id of starting point.
+ * Cell id of target.
+ * true if the line of sight is clear, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number start
+ * @param Number end
+ *
+ * @return Boolean
+ *   los
+ */
+function lineOfSight(start, end) {}
+
+/**
+ * lineOfSight(Number start, Number end, Number leekToIgnore) : Boolean los
+ * Checks whether a leek on start cell can see end cell, ignoring given leek.
+ * Cell id of starting point.
+ * Cell id of target.
+ * Ignored leek (this leek will not block a line of sight).Note: this input can also be an array containing several leeks.
+ * true if the line of sight is clear, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number start
+ * @param Number end
+ * @param Number leekToIgnore
+ *
+ * @return Boolean
+ *   los
+ */
+function lineOfSight(start, end, leekToIgnore) {}
+
+/**
+ * listen() : Array messages
+ * Lists say() performed by previous leeks, as [leek_id, message].
+ * Array containing previous say().
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Array
+ *   messages
+ */
+function listen() {}
+
+/**
+ * log(Number number) : Number log
+ * Computes the natural logarithm of given number.
+ * A positive number (within ]0 ; +ˆž[ ).
+ * Given number's natural logarithm.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number number
+ *
+ * @return Number
+ *   log
+ */
+function log(number) {}
+
+/**
+ * log10(Number number) : Number log10
+ * Computes the decimal logarithm of given number.
+ * A positive number (within ]0 ; +ˆž[ ).
+ * Given number's decimal logarithm.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number number
+ *
+ * @return Number
+ *   log10
+ */
+function log10(number) {}
+
+/**
+ * mark(? cells) : Boolean success
+ * Marks one or several cells on terrain in black, for one turn. The mark is only visible by the marking leek's farmer.
+ * A cell or array of cells.
+ * true if all went well, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param ? cells
+ *
+ * @return Boolean
+ *   success
+ */
+function mark(cells) {}
+
+/**
+ * mark(? cells, Number color) : Boolean success
+ * Marks one or several cells on terrain in given color for one turn. The mark is only visible by the marking leek's farmer.
+ * A cell or array of cells.
+ * Marking's color (see getColor()).
+ * true if all went well, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param ? cells
+ * @param Number color
+ *
+ * @return Boolean
+ *   success
+ */
+function mark(cells, color) {}
+
+/**
+ * mark(? cells, Number color, Number duration) : Boolean success
+ * Marks one or several cells on terrain in given color 
+for the given duration. The mark is only visible by the marking leek's farmer.
+ * A cell or array of cells.
+ * Marking's color (see getColor()).
+ * Duration of the marking.
+ * true if all went well, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param ? cells
+ * @param Number color
+ * @param Number duration
+ *
+ * @return Boolean
+ *   success
+ */
+function mark(cells, color, duration) {}
+
+/**
+ * max(Number a, Number b) : Number max
+ * Finds the greatest value among two numbers a and b.
+ * A number.
+ * Another number.
+ * The greatest of the two numbers.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number a
+ * @param Number b
+ *
+ * @return Number
+ *   max
+ */
+function max(a, b) {}
+
+/**
+ * min(Number a, Number b) : Number min
+ * Finds the least value among two numbers a and b.
+ * A number.
+ * Another number.
+ * The least of the two numbers.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number a
+ * @param Number b
+ *
+ * @return Number
+ *   min
+ */
+function min(a, b) {}
+
+/**
+ * moveAwayFrom(Number leek) : Number mp
+ * Moves your leek away from another leek.
+ * The leek from which you want to flee.
+ * The amount of MP spent doing so.
+ *
+ * @level 5
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   mp
+ */
+function moveAwayFrom(leek) {}
+
+/**
+ * moveAwayFrom(Number leek, Number mp) : Number mp
+ * Moves your leek away from another leek, using at most mp Movement Points.
+ * The leek from which you want to flee.
+ * The maximum amount of MP to spend.
+ * The actual amount of MP spent.
+ *
+ * @level 5
+ * @cores 1
+ *
+ * @param Number leek
+ * @param Number mp
+ *
+ * @return Number
+ *   mp
+ */
+function moveAwayFrom(leek, mp) {}
+
+/**
+ * moveAwayFromCell(Number cell) : Number mp
+ * Moves your leek away from given cell.
+ * The cell from which you want to flee.
+ * The amount of MP spent.
+ *
+ * @level 19
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return Number
+ *   mp
+ */
+function moveAwayFromCell(cell) {}
+
+/**
+ * moveAwayFromCell(Number cell, Number mp) : Number mp
+ * Moves your leek away from given cell, using at most mp Movement Points.
+ * The cell from which you want to flee.
+ * The maximum amount of MP to spend.
+ * The actual amount of MP spent.
+ *
+ * @level 19
+ * @cores 1
+ *
+ * @param Number cell
+ * @param Number mp
+ *
+ * @return Number
+ *   mp
+ */
+function moveAwayFromCell(cell, mp) {}
+
+/**
+ * moveAwayFromCells(ArrayOfNumbers cells) : Number mp
+ * Moves your leek away from a given group of cells.
+ * Array containig the cells from which you want to flee.
+ * The amount of MP spent.
+ *
+ * @level 35
+ * @cores 2
+ *
+ * @param ArrayOfNumbers cells
+ *
+ * @return Number
+ *   mp
+ */
+function moveAwayFromCells(cells) {}
+
+/**
+ * moveAwayFromCells(ArrayOfNumbers cells, Number mp) : Number mp
+ * Moves your leek away from a given group of cells, using at most mp Movement Points.
+ * Array containig the cells from which you want to flee.
+ * The maximum amount of MP to spend.
+ * The actual amount of MP spent.
+ *
+ * @level 35
+ * @cores 2
+ *
+ * @param ArrayOfNumbers cells
+ * @param Number mp
+ *
+ * @return Number
+ *   mp
+ */
+function moveAwayFromCells(cells, mp) {}
+
+/**
+ * moveAwayFromLeeks(ArrayOfNumbers leeks) : Number mp
+ * Moves your leek away from a given group of leeks.
+ * Array containig the leeks from which you want to flee.
+ * The amount of MP spent.
+ *
+ * @level 35
+ * @cores 2
+ *
+ * @param ArrayOfNumbers leeks
+ *
+ * @return Number
+ *   mp
+ */
+function moveAwayFromLeeks(leeks) {}
+
+/**
+ * moveAwayFromLeeks(ArrayOfNumbers leeks, Number mp) : Number mp
+ * Moves your leek away from a given group of leeks, using at most mp Movement Points.
+ * Array containig the leeks from which you want to flee.
+ * The maximum amount of MP to spend.
+ * The actual amount of MP spent.
+ *
+ * @level 35
+ * @cores 2
+ *
+ * @param ArrayOfNumbers leeks
+ * @param Number mp
+ *
+ * @return Number
+ *   mp
+ */
+function moveAwayFromLeeks(leeks, mp) {}
+
+/**
+ * moveAwayFromLine(Number cell1, Number cell2) : Number mp
+ * Moves your leek away from the line between cell1 and cell2.
+ * The first cell of the line.
+ * The final cell of the line.
+ * The amount of MP spent.
+ *
+ * @level 42
+ * @cores 3
+ *
+ * @param Number cell1
+ * @param Number cell2
+ *
+ * @return Number
+ *   mp
+ */
+function moveAwayFromLine(cell1, cell2) {}
+
+/**
+ * moveAwayFromLine(Number cell1, Number cell2, Number mp) : Number mp
+ * Moves your leek away from the line between cell1 
+and cell2, using at most mp 
+Movement Points.
+ * First cell of the line.
+ * Final cell of the line.
+ * The maximum amount of MP to spend.
+ * The actual amount of MP spent.
+ *
+ * @level 42
+ * @cores 3
+ *
+ * @param Number cell1
+ * @param Number cell2
+ * @param Number mp
+ *
+ * @return Number
+ *   mp
+ */
+function moveAwayFromLine(cell1, cell2, mp) {}
+
+/**
+ * moveToward(Number leek) : Number mp
+ * Moves your leek closer to another leek.
+ * The leek you want to get closer to.
+ * The amount of MP spent.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   mp
+ */
+function moveToward(leek) {}
+
+/**
+ * moveToward(Number leek, Number mp) : Number mp
+ * Moves your leek closer to another leek, using at most mp 
+Movement Points.
+ * The leek you want to get closer to.
+ * The maximum amount of MP to spend.
+ * The actual amount of MP spent.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ * @param Number mp
+ *
+ * @return Number
+ *   mp
+ */
+function moveToward(leek, mp) {}
+
+/**
+ * moveTowardCell(Number cell) : Number mp
+ * Moves your leek closer to given cell.
+ * The cell you want to get closer to.
+ * The amount of MP spent.
+ *
+ * @level 5
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return Number
+ *   mp
+ */
+function moveTowardCell(cell) {}
+
+/**
+ * moveTowardCell(Number cell, Number mp) : Number mp
+ * Moves your leek closer to given cell, using at most mp 
+Movement Points.
+ * The cell you want to get closer to.
+ * The maximum amount of MP to spend.
+ * The actual amount of MP spent.
+ *
+ * @level 5
+ * @cores 1
+ *
+ * @param Number cell
+ * @param Number mp
+ *
+ * @return Number
+ *   mp
+ */
+function moveTowardCell(cell, mp) {}
+
+/**
+ * moveTowardCells(ArrayOfNumbers cells) : Number mp
+ * Moves your leek closer to a given group of cells.
+ * Array containig the cells to which you want to get closer.
+ * The amount of MP spent.
+ *
+ * @level 28
+ * @cores 2
+ *
+ * @param ArrayOfNumbers cells
+ *
+ * @return Number
+ *   mp
+ */
+function moveTowardCells(cells) {}
+
+/**
+ * moveTowardCells(ArrayOfNumbers cells, Number mp) : Number mp
+ * Moves your leek closer to a given group of cells, using at most mp 
+Movement Points.
+ * Array containig the cells to which you want to get closer.
+ * The maximum amount of MP to spend.
+ * The actual amount of MP spent.
+ *
+ * @level 28
+ * @cores 2
+ *
+ * @param ArrayOfNumbers cells
+ * @param Number mp
+ *
+ * @return Number
+ *   mp
+ */
+function moveTowardCells(cells, mp) {}
+
+/**
+ * moveTowardLeeks(ArrayOfNumbers leeks) : Number mp
+ * Moves your leek closer to a given group of leeks.
+ * Array containig the leeks to which you want to get closer.
+ * The amount of MP spent.
+ *
+ * @level 28
+ * @cores 2
+ *
+ * @param ArrayOfNumbers leeks
+ *
+ * @return Number
+ *   mp
+ */
+function moveTowardLeeks(leeks) {}
+
+/**
+ * moveTowardLeeks(ArrayOfNumbers leeks, Number mp) : Number mp
+ * Moves your leek closer to a given group of leeks, using at most mp 
+Movement Points.
+ * Array containig the leeks to which you want to get closer.
+ * The maximum amount of MP to spend.
+ * The actual amount of MP spent.
+ *
+ * @level 28
+ * @cores 2
+ *
+ * @param ArrayOfNumbers leeks
+ * @param Number mp
+ *
+ * @return Number
+ *   mp
+ */
+function moveTowardLeeks(leeks, mp) {}
+
+/**
+ * moveTowardLine(Number cell1, Number cell2) : Number mp
+ * Moves your leek towards the line between cell1 
+and cell2.
+ * The first cell of the line.
+ * The final cell of the line.
+ * The amount of MP spent.
+ *
+ * @level 42
+ * @cores 3
+ *
+ * @param Number cell1
+ * @param Number cell2
+ *
+ * @return Number
+ *   mp
+ */
+function moveTowardLine(cell1, cell2) {}
+
+/**
+ * moveTowardLine(Number cell1, Number cell2, Number mp) : Number mp
+ * Moves your leek towards the line between cell1 
+and cell2, using at most mp 
+Movement Points.
+ * The first cell of the line.
+ * The final cell of the line.
+ * The maximum amount of MP to spend.
+ * The actual amount of MP spent.
+ *
+ * @level 42
+ * @cores 3
+ *
+ * @param Number cell1
+ * @param Number cell2
+ * @param Number mp
+ *
+ * @return Number
+ *   mp
+ */
+function moveTowardLine(cell1, cell2, mp) {}
+
+/**
+ * number(? value) : Number number
+ * Casts a value into a number. If the value is a string, this function attempts to convert it into a number. If the value is a number, this function returns the number. For any other type, this function returns null
+ * The value to convert.
+ * The resulting number.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param ? value
+ *
+ * @return Number
+ *   number
+ */
+function number(value) {}
+
+/**
+ * pause()
+ * Pauses the fight, only for the pausing leek's farmer.
+ *
+ * @level 1
+ * @cores 1
+ */
+function pause() {}
+
+/**
+ * pop(Array array) : ? element
+ * Removes the last element of an array, and returns this element.
+ * The array to truncate.
+ * The truncated element.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ *
+ * @return ?
+ *   element
+ */
+function pop(array) {}
+
+/**
+ * pow(Number base, Number exp) : Number result
+ * Exponentiates a base number to the exp power.
+ * Number to exponentiate.
+ * Exponant.
+ * base**exp.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number base
+ * @param Number exp
+ *
+ * @return Number
+ *   result
+ */
+function pow(base, exp) {}
+
+/**
+ * push(Array array, ? element)
+ * Adds given element at the end of given array.
+ * Array which will be prolonged.
+ * Additionnal element.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param ? element
+ */
+function push(array, element) {}
+
+/**
+ * pushAll(Array array, Array elements)
+ * Adds all elements from elements array at the end of given array.
+ * Array which will be prolonged.
+ * Array containing elements to add.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param Array elements
+ */
+function pushAll(array, elements) {}
+
+/**
+ * rand() : Number number
+ * Returns a random real number, between 0 (included) and 1 (excluded).
+ * A random number within [0;1).
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   number
+ */
+function rand() {}
+
+/**
+ * randFloat(Number a, Number b) : Number number
+ * Returns a random real number, between a (included) and b (excluded).
+ * The lower bound of the interval.
+ * The upper bound of the interval.
+ * A random number within [a;b).
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number a
+ * @param Number b
+ *
+ * @return Number
+ *   number
+ */
+function randFloat(a, b) {}
+
+/**
+ * randInt(Number a, Number b) : Number number
+ * Returns a random integer, between a (included) and b (excluded).
+ * The lower bound of the interval.
+ * The upper bound of the interval.
+ * A random integer within [a;b).
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number a
+ * @param Number b
+ *
+ * @return Number
+ *   number
+ */
+function randInt(a, b) {}
+
+/**
+ * remove(Array array, Number position) : ? element
+ * Removes the element at given position from given array, and returns this element.
+ * The array from which an element is removed.
+ * The position of the element to remove.
+ * documentation_func_remove_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param Number position
+ *
+ * @return ?
+ *   element
+ */
+function remove(array, position) {}
+
+/**
+ * removeElement(Array array, ? element)
+ * Removes the first occurrence of given element from given array. array is unchanged if element cannot be found.
+ * The array from which an element is removed.
+ * The element to look for and remove.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param ? element
+ */
+function removeElement(array, element) {}
+
+/**
+ * removeKey(Array array, ? key)
+ * Removes the element of given array associated with given key.
+ * The array from which an element is removed.
+ * The key of the element to remove.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param ? key
+ */
+function removeKey(array, key) {}
+
+/**
+ * replace(String string, String search, String replace) : String string
+ * Replaces all occurrence of search string with replace string, within given string.
+ * String inside which substitutions are performed.
+ * Substring to be replaced.
+ * Replacing substring.
+ * Resulting string.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String string
+ * @param String search
+ * @param String replace
+ *
+ * @return String
+ *   string
+ */
+function replace(string, search, replace) {}
+
+/**
+ * reverse(Array array)
+ * Reverses the given array.
+ * Array that is reversed.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ */
+function reverse(array) {}
+
+/**
+ * round(Number number) : Number number
+ * Computes the integer closest to a given number.The rounded down value can be computed using floor and the rounded up value using ceil.
+ * Number
+ * Rounded value of number, to the closest integer.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number number
+ *
+ * @return Number
+ *   number
+ */
+function round(number) {}
+
+/**
+ * say(String message)
+ * Allows your leek to talk. Costs one TP.
+ * Message your leek says, visible by all viewers of the fight.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String message
+ */
+function say(message) {}
+
+/**
+ * search(Array array, ? element) : Number pos
+ * Searches for given element inside given array.
+ * The array to look into.
+ * The element to look for.
+ * The position of the first occurrence of given element inside given array, null if no match was found.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param ? element
+ *
+ * @return Number
+ *   pos
+ */
+function search(array, element) {}
+
+/**
+ * search(Array array, ? element, Number start) : Number pos
+ * Searches for given element inside given array, starting at start position.
+ * The array to look into.
+ * The element to look for.
+ * The starting position.
+ * The position of the first occurrence of given element inside given array starting at given start position, null if no match was found.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param ? element
+ * @param Number start
+ *
+ * @return Number
+ *   pos
+ */
+function search(array, element, start) {}
+
+/**
+ * sendAll(Number type, ? params)
+ * Sends a message to all of your allies.
+ * The type of message to send (see MESSAGE_* constants).
+ * The parameters of the message, which can take any form.
+ *
+ * @level 69
+ * @cores 1
+ *
+ * @param Number type
+ * @param ? params
+ */
+function sendAll(type, params) {}
+
+/**
+ * sendTo(Number leek, Number type, ? params) : Boolean sent
+ * Sends a message to given leek.
+ * Message's addressee
+ * The type of message to send (see MESSAGE_* constants).
+ * The parameters of the message, which can take any form.
+ * documentation_func_sendTo_return
+ *
+ * @level 69
+ * @cores 1
+ *
+ * @param Number leek
+ * @param Number type
+ * @param ? params
+ *
+ * @return Boolean
+ *   sent
+ */
+function sendTo(leek, type, params) {}
+
+/**
+ * setRegister(String key, String value) : Boolean success
+ * documentation_func_setRegister
+ * documentation_func_setRegister_arg_1
+ * documentation_func_setRegister_arg_2
+ * documentation_func_setRegister_return
+ *
+ * @level 32
+ * @cores 1
+ *
+ * @param String key
+ * @param String value
+ *
+ * @return Boolean
+ *   success
+ */
+function setRegister(key, value) {}
+
+/**
+ * setWeapon(Number weapon)
+ * Equips given weapon on your leek.
+ * Weapon's id.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number weapon
+ */
+function setWeapon(weapon) {}
+
+/**
+ * shift(Array array) : ? element
+ * Removes the first cell of given array, and returns the corresponding element.
+ * The array to be truncated.
+ * The removed element.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ *
+ * @return ?
+ *   element
+ */
+function shift(array) {}
+
+/**
+ * show(Number cell) : ? 
+ * Shows all players given cell in black, for one turn. Costs one TP.
+ * Cell to be showned.
+ * true if all went well, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return ?
+ *   undefined
+ */
+function show(cell) {}
+
+/**
+ * show(Number cell, Number color) : ? 
+ * Shows all players given cell in given color, for one turn. Costs one TP.
+ * Cell to be showned.
+ * Marking's color (see getColor()).
+ * true if all went well, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number cell
+ * @param Number color
+ *
+ * @return ?
+ *   undefined
+ */
+function show(cell, color) {}
+
+/**
+ * shuffle(Array array)
+ * Shuffles the contents of given array.
+ * Array to be shuffled.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ */
+function shuffle(array) {}
+
+/**
+ * signum(Number number) : Number sign
+ * Checks the sign of given number.
+ * Input number.
+ * 1 if number is positive, 0 if it is 0 and -1 if it is negative.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number number
+ *
+ * @return Number
+ *   sign
+ */
+function signum(number) {}
+
+/**
+ * sin(Number angle) : Number sine
+ * Computes an angle's sine.
+ * A number.
+ * Given number's sine, within [-1, 1].
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number angle
+ *
+ * @return Number
+ *   sine
+ */
+function sin(angle) {}
+
+/**
+ * sort(Array array)
+ * Sorts given array, using the following order:
+
+Booleans (false then true)
+Numbers (least to greatest)
+Strings (sorted alphabetically)
+null elements
+
+ * Array that needs sorting.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ */
+function sort(array) {}
+
+/**
+ * sort(Array array, Number order)
+ * Sorts given array, using the given order.
+ * Array that needs sorting.
+ * SORT_ASC to sort from least to greatest, or SORT_DESC to sort from greatest to least. More details in sort (especially for multiple types arrays).
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param Number order
+ */
+function sort(array, order) {}
+
+/**
+ * split(String string, String delimiter) : ArrayOfStrings parts
+ * Splits given string into substrings separated by given delimiter.
+ * String that needs splitting.
+ * String that separates desired substrings.
+ * Array containing all substrings.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String string
+ * @param String delimiter
+ *
+ * @return ArrayOfStrings
+ *   parts
+ */
+function split(string, delimiter) {}
+
+/**
+ * split(String string, String delimiter, Number limit) : ArrayOfStrings parts
+ * Splits given string into substrings separated by given delimiter.
+ * String that needs splitting.
+ * String that separates desired substrings.
+ * Maximum size of output array.
+ * Array containing all substrings.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String string
+ * @param String delimiter
+ * @param Number limit
+ *
+ * @return ArrayOfStrings
+ *   parts
+ */
+function split(string, delimiter, limit) {}
+
+/**
+ * sqrt(Number number) : Number root
+ * Computes given number's square root.
+ * A number.
+ * Given number's square root.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number number
+ *
+ * @return Number
+ *   root
+ */
+function sqrt(number) {}
+
+/**
+ * startsWith(String string, String prefix) : Boolean startsWith
+ * Checks whether given string starts with given prefix.
+ * String to look into.
+ * Prefix to look for.
+ * true if given string starts with given prefix, false otherwise.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String string
+ * @param String prefix
+ *
+ * @return Boolean
+ *   startsWith
+ */
+function startsWith(string, prefix) {}
+
+/**
+ * string(? value) : String string
+ * Casts a value to a string container.Returns:
+value if it is a string
+"value" if it is a number
+"[key1: value1, key2: value2... ...]" if value is an array
+"true" or "false" if value is a boolean
+"null" if value is null
+.
+ * Value that needs conversion.
+ * Resulting string.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param ? value
+ *
+ * @return String
+ *   string
+ */
+function string(value) {}
+
+/**
+ * subArray(Array array, Number start, Number size) : Array array
+ * Extracts a sub-array, starting at start position and of given size, from given array.
+ * Source array.
+ * Starting position.
+ * Size of the output.
+ * The desired sub-array.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param Number start
+ * @param Number size
+ *
+ * @return Array
+ *   array
+ */
+function subArray(array, start, size) {}
+
+/**
+ * substring(String string, Number start) : String string
+ * Extracts a substring, starting at start position, from given string.
+ * Source string.
+ * Starting position.
+ * The desired substring.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String string
+ * @param Number start
+ *
+ * @return String
+ *   string
+ */
+function substring(string, start) {}
+
+/**
+ * substring(String string, Number start, Number length) : String string
+ * Extracts a substring, starting at start position and 
+of given length, from given string
+ * Source string.
+ * Starting position.
+ * Length of the output.
+ * The desired substring.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String string
+ * @param Number start
+ * @param Number length
+ *
+ * @return String
+ *   string
+ */
+function substring(string, start, length) {}
+
+/**
+ * sum(ArrayOfNumbers array) : Number sum
+ * Computes the sum of all elements within given array.
+ * Source array.
+ * Computed sum.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param ArrayOfNumbers array
+ *
+ * @return Number
+ *   sum
+ */
+function sum(array) {}
+
+/**
+ * tan(Number angle) : Number tangent
+ * Computes given angle's tangent.
+ * A number.
+ * Given angle's tangent.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number angle
+ *
+ * @return Number
+ *   tangent
+ */
+function tan(angle) {}
+
+/**
+ * toDegrees(Number radians) : Number degrees
+ * Converts given angle from radians to degrees.
+ * Angle's measure in radians.
+ * Angle's measure in degrees.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number radians
+ *
+ * @return Number
+ *   degrees
+ */
+function toDegrees(radians) {}
+
+/**
+ * toLower(String string) : String string
+ * Converts all capital letters from given string to lower characters.
+ * Input string.
+ * String in lower characters.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String string
+ *
+ * @return String
+ *   string
+ */
+function toLower(string) {}
+
+/**
+ * toRadians(Number degrees) : Number radians
+ * Converts given angle from degrees to radians.
+ * Angle's measure in degrees.
+ * Angle's measure in radians.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number degrees
+ *
+ * @return Number
+ *   radians
+ */
+function toRadians(degrees) {}
+
+/**
+ * toUpper(String string) : String string
+ * Converts all lower characters from given string to capital letters.
+ * Input string.
+ * String in upper characters.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param String string
+ *
+ * @return String
+ *   string
+ */
+function toUpper(string) {}
+
+/**
+ * typeOf(? value) : Number type
+ * Determines the type of give value, among: TYPE_NULL, TYPE_NUMBER, TYPE_BOOLEAN, TYPE_ARRAY, TYPE_FUNCTION.
+ * Value that needs testing.
+ * values's type.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param ? value
+ *
+ * @return Number
+ *   type
+ */
+function typeOf(value) {}
+
+/**
+ * unshift(Array array, ? element)
+ * Adds given element at the beginning of given array.
+ * Array.
+ * Additionnal element.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Array array
+ * @param ? element
+ */
+function unshift(array, element) {}
+
+/**
+ * useChip(Number chip, Number leek) : Number result
+ * Use given chip, targetting given leek.
+ * Chip to use.
+ * Targetted leek.
+ * 
+		USE_SUCCESS, in case of success
+		USE_FAILED, in case of failure
+		USE_INVALID_TARGET, if the target does not exist
+		USE_NOT_ENOUGH_TP, if your leek does not have enough TP
+		USE_INVALID_COOLDOWN, if given chip's cooldown is not expired
+		USE_INVALID_POSITION, if the chip's scope does not allow its use, or line of sight is not clear.
+	
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number chip
+ * @param Number leek
+ *
+ * @return Number
+ *   result
+ */
+function useChip(chip, leek) {}
+
+/**
+ * useChipOnCell(Number chip, Number cell) : Number result
+ * Use given chip, targetting given cell.
+ * Chip to use.
+ * Targetted cell.
+ * See useChip.
+ *
+ * @level 7
+ * @cores 1
+ *
+ * @param Number chip
+ * @param Number cell
+ *
+ * @return Number
+ *   result
+ */
+function useChipOnCell(chip, cell) {}
+
+/**
+ * useWeapon(Number leek) : Number result
+ * Fires your leek's weapon, targetting given leek.
+ * Targetted leek.
+ * 
+		USE_SUCCESS, in case of success
+		USE_FAILED, in case of failure
+		USE_INVALID_TARGET, if the target does not exist
+		USE_NOT_ENOUGH_TP, if your leek does not have enough TP
+USE_INVALID_POSITION, if the weapon's scope does not allow its use, or line of sight is not clear.
+	
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number leek
+ *
+ * @return Number
+ *   result
+ */
+function useWeapon(leek) {}
+
+/**
+ * useWeaponOnCell(Number cell) : Number result
+ * Fires your leek's weapon, targetting given cell.
+ * Targetted cell.
+ * See useWeapon.
+ *
+ * @level 7
+ * @cores 1
+ *
+ * @param Number cell
+ *
+ * @return Number
+ *   result
+ */
+function useWeaponOnCell(cell) {}
+
+/**
+ * AREA_CIRCLE_1 : Number
+ * documentation_const_AREA_CIRCLE_1
+ *
+ */
+global AREA_CIRCLE_1 = 3;
+
+/**
+ * AREA_CIRCLE_2 : Number
+ * documentation_const_AREA_CIRCLE_2
+ *
+ */
+global AREA_CIRCLE_2 = 4;
+
+/**
+ * AREA_CIRCLE_3 : Number
+ * documentation_const_AREA_CIRCLE_3
+ *
+ */
+global AREA_CIRCLE_3 = 5;
+
+/**
+ * AREA_LASER_LINE : Number
+ * documentation_const_AREA_LASER_LINE
+ *
+ */
+global AREA_LASER_LINE = 2;
+
+/**
+ * AREA_POINT : Number
+ * Single point area.
+ *
+ */
+global AREA_POINT = 1;
+
+/**
+ * CELL_EMPTY : Number
+ * documentation_const_CELL_EMPTY
+ *
+ */
+global CELL_EMPTY = 0;
+
+/**
+ * CELL_OBSTACLE : Number
+ * documentation_const_CELL_OBSTACLE
+ *
+ */
+global CELL_OBSTACLE = 2;
+
+/**
+ * CELL_PLAYER : Number
+ * documentation_const_CELL_PLAYER
+ *
+ */
+global CELL_PLAYER = 1;
+
+/**
+ * CHIP_ADRENALINE : Number
+ * documentation_const_CHIP_ADRENALINE
+ *
+ */
+global CHIP_ADRENALINE = 16;
+
+/**
+ * CHIP_ARMOR : Number
+ * documentation_const_CHIP_ARMOR
+ *
+ */
+global CHIP_ARMOR = 22;
+
+/**
+ * CHIP_ARMORING : Number
+ * documentation_const_CHIP_ARMORING
+ *
+ */
+global CHIP_ARMORING = 67;
+
+/**
+ * CHIP_BANDAGE : Number
+ * documentation_const_CHIP_BANDAGE
+ *
+ */
+global CHIP_BANDAGE = 3;
+
+/**
+ * CHIP_CURE : Number
+ * documentation_const_CHIP_CURE
+ *
+ */
+global CHIP_CURE = 4;
+
+/**
+ * CHIP_DOPING : Number
+ * documentation_const_CHIP_DOPING
+ *
+ */
+global CHIP_DOPING = 26;
+
+/**
+ * CHIP_DRIP : Number
+ * documentation_const_CHIP_DRIP
+ *
+ */
+global CHIP_DRIP = 10;
+
+/**
+ * CHIP_FLAME : Number
+ * documentation_const_CHIP_FLAME
+ *
+ */
+global CHIP_FLAME = 5;
+
+/**
+ * CHIP_FLASH : Number
+ * documentation_const_CHIP_FLASH
+ *
+ */
+global CHIP_FLASH = 6;
+
+/**
+ * CHIP_FORTRESS : Number
+ * documentation_const_CHIP_FORTRESS
+ *
+ */
+global CHIP_FORTRESS = 29;
+
+/**
+ * CHIP_HELMET : Number
+ * documentation_const_CHIP_HELMET
+ *
+ */
+global CHIP_HELMET = 21;
+
+/**
+ * CHIP_ICE : Number
+ * documentation_const_CHIP_ICE
+ *
+ */
+global CHIP_ICE = 2;
+
+/**
+ * CHIP_ICEBERG : Number
+ * documentation_const_CHIP_ICEBERG
+ *
+ */
+global CHIP_ICEBERG = 31;
+
+/**
+ * CHIP_INVERSION : Number
+ * documentation_const_CHIP_INVERSION
+ *
+ */
+global CHIP_INVERSION = 68;
+
+/**
+ * CHIP_LEATHER_BOOTS : Number
+ * documentation_const_CHIP_LEATHER_BOOTS
+ *
+ */
+global CHIP_LEATHER_BOOTS = 14;
+
+/**
+ * CHIP_LIBERATION : Number
+ * documentation_const_CHIP_LIBERATION
+ *
+ */
+global CHIP_LIBERATION = 34;
+
+/**
+ * CHIP_LIGHTNING : Number
+ * documentation_const_CHIP_LIGHTNING
+ *
+ */
+global CHIP_LIGHTNING = 33;
+
+/**
+ * CHIP_METEORITE : Number
+ * documentation_const_CHIP_METEORITE
+ *
+ */
+global CHIP_METEORITE = 36;
+
+/**
+ * CHIP_MOTIVATION : Number
+ * documentation_const_CHIP_MOTIVATION
+ *
+ */
+global CHIP_MOTIVATION = 15;
+
+/**
+ * CHIP_PEBBLE : Number
+ * documentation_const_CHIP_PEBBLE
+ *
+ */
+global CHIP_PEBBLE = 19;
+
+/**
+ * CHIP_PROTEIN : Number
+ * documentation_const_CHIP_PROTEIN
+ *
+ */
+global CHIP_PROTEIN = 8;
+
+/**
+ * CHIP_RAGE : Number
+ * documentation_const_CHIP_RAGE
+ *
+ */
+global CHIP_RAGE = 17;
+
+/**
+ * CHIP_RAMPART : Number
+ * documentation_const_CHIP_RAMPART
+ *
+ */
+global CHIP_RAMPART = 24;
+
+/**
+ * CHIP_REFLEXES : Number
+ * documentation_const_CHIP_REFLEXES
+ *
+ */
+global CHIP_REFLEXES = 28;
+
+/**
+ * CHIP_RESURRECTION : Number
+ * documentation_const_CHIP_RESURRECTION
+ *
+ */
+global CHIP_RESURRECTION = 35;
+
+/**
+ * CHIP_ROCK : Number
+ * documentation_const_CHIP_ROCK
+ *
+ */
+global CHIP_ROCK = 7;
+
+/**
+ * CHIP_ROCKFALL : Number
+ * documentation_const_CHIP_ROCKFALL
+ *
+ */
+global CHIP_ROCKFALL = 32;
+
+/**
+ * CHIP_SEVEN_LEAGUE_BOOTS : Number
+ * documentation_const_CHIP_SEVEN_LEAGUE_BOOTS
+ *
+ */
+global CHIP_SEVEN_LEAGUE_BOOTS = 13;
+
+/**
+ * CHIP_SHIELD : Number
+ * documentation_const_CHIP_SHIELD
+ *
+ */
+global CHIP_SHIELD = 20;
+
+/**
+ * CHIP_SHOCK : Number
+ * documentation_const_CHIP_SHOCK
+ *
+ */
+global CHIP_SHOCK = 1;
+
+/**
+ * CHIP_SPARK : Number
+ * documentation_const_CHIP_SPARK
+ *
+ */
+global CHIP_SPARK = 18;
+
+/**
+ * CHIP_STALACTITE : Number
+ * documentation_const_CHIP_STALACTITE
+ *
+ */
+global CHIP_STALACTITE = 30;
+
+/**
+ * CHIP_STEROID : Number
+ * documentation_const_CHIP_STEROID
+ *
+ */
+global CHIP_STEROID = 25;
+
+/**
+ * CHIP_STRETCHING : Number
+ * documentation_const_CHIP_STRETCHING
+ *
+ */
+global CHIP_STRETCHING = 9;
+
+/**
+ * CHIP_TELEPORTATION : Number
+ * documentation_const_CHIP_TELEPORTATION
+ *
+ */
+global CHIP_TELEPORTATION = 59;
+
+/**
+ * CHIP_VACCINE : Number
+ * documentation_const_CHIP_VACCINE
+ *
+ */
+global CHIP_VACCINE = 11;
+
+/**
+ * CHIP_WALL : Number
+ * documentation_const_CHIP_WALL
+ *
+ */
+global CHIP_WALL = 23;
+
+/**
+ * CHIP_WARM_UP : Number
+ * documentation_const_CHIP_WARM_UP
+ *
+ */
+global CHIP_WARM_UP = 27;
+
+/**
+ * CHIP_WINGED_BOOTS : Number
+ * documentation_const_CHIP_WINGED_BOOTS
+ *
+ */
+global CHIP_WINGED_BOOTS = 12;
+
+/**
+ * COLOR_BLUE : Number
+ * Integer corresponding to Blue color.
+ *
+ */
+global COLOR_BLUE = 255;
+
+/**
+ * COLOR_GREEN : Number
+ * Integer corresponding to Green color.
+ *
+ */
+global COLOR_GREEN = 65280;
+
+/**
+ * COLOR_RED : Number
+ * Integer corresponding to Red color.
+ *
+ */
+global COLOR_RED = 16711680;
+
+/**
+ * E : Number
+ * e number.
+ *
+ */
+global E = 2;
+
+/**
+ * EFFECT_ABSOLUTE_SHIELD : Number
+ * documentation_const_EFFECT_ABSOLUTE_SHIELD
+ *
+ */
+global EFFECT_ABSOLUTE_SHIELD = 5;
+
+/**
+ * EFFECT_BUFF_AGILITY : Number
+ * documentation_const_EFFECT_BUFF_AGILITY
+ *
+ */
+global EFFECT_BUFF_AGILITY = 4;
+
+/**
+ * EFFECT_BUFF_FORCE : Number
+ * documentation_const_EFFECT_BUFF_FORCE
+ *
+ */
+global EFFECT_BUFF_FORCE = 3;
+
+/**
+ * EFFECT_BUFF_MP : Number
+ * documentation_const_EFFECT_BUFF_MP
+ *
+ */
+global EFFECT_BUFF_MP = 7;
+
+/**
+ * EFFECT_BUFF_TP : Number
+ * documentation_const_EFFECT_BUFF_TP
+ *
+ */
+global EFFECT_BUFF_TP = 8;
+
+/**
+ * EFFECT_DAMAGE : Number
+ * documentation_const_EFFECT_DAMAGE
+ *
+ */
+global EFFECT_DAMAGE = 1;
+
+/**
+ * EFFECT_DEBUFF : Number
+ * documentation_const_EFFECT_DEBUFF
+ *
+ */
+global EFFECT_DEBUFF = 9;
+
+/**
+ * EFFECT_HEAL : Number
+ * documentation_const_EFFECT_HEAL
+ *
+ */
+global EFFECT_HEAL = 2;
+
+/**
+ * EFFECT_RELATIVE_SHIELD : Number
+ * documentation_const_EFFECT_RELATIVE_SHIELD
+ *
+ */
+global EFFECT_RELATIVE_SHIELD = 6;
+
+/**
+ * FIGHT_CONTEXT_CHALLENGE : Number
+ * Fight context for challenges.
+ *
+ */
+global FIGHT_CONTEXT_CHALLENGE = 2;
+
+/**
+ * FIGHT_CONTEXT_GARDEN : Number
+ * Fight context for garden fights.
+ *
+ */
+global FIGHT_CONTEXT_GARDEN = 1;
+
+/**
+ * FIGHT_CONTEXT_TEST : Number
+ * Fight context for test fights.
+ *
+ */
+global FIGHT_CONTEXT_TEST = 0;
+
+/**
+ * FIGHT_CONTEXT_TOURNAMENT : Number
+ * Fight context for tournament fights.
+ *
+ */
+global FIGHT_CONTEXT_TOURNAMENT = 3;
+
+/**
+ * FIGHT_TYPE_FARMER : Number
+ * Fight type of farmer fights.
+ *
+ */
+global FIGHT_TYPE_FARMER = 1;
+
+/**
+ * FIGHT_TYPE_SOLO : Number
+ * Fight type of of solo fights.
+ *
+ */
+global FIGHT_TYPE_SOLO = 0;
+
+/**
+ * FIGHT_TYPE_TEAM : Number
+ * Fight type of team fights.
+ *
+ */
+global FIGHT_TYPE_TEAM = 2;
+
+/**
+ * INSTRUCTIONS_LIMIT : Number
+ * documentation_const_INSTRUCTIONS_LIMIT
+ *
+ */
+global INSTRUCTIONS_LIMIT = 300000;
+
+/**
+ * MAX_TURNS : Number
+ * Maximum duration of a fight.
+ *
+ */
+global MAX_TURNS = 64;
+
+/**
+ * MESSAGE_ATTACK : Number
+ * documentation_const_MESSAGE_ATTACK
+ *
+ */
+global MESSAGE_ATTACK = 2;
+
+/**
+ * MESSAGE_BUFF_AGILITY : Number
+ * documentation_const_MESSAGE_BUFF_AGILITY
+ *
+ */
+global MESSAGE_BUFF_AGILITY = 8;
+
+/**
+ * MESSAGE_BUFF_FORCE : Number
+ * documentation_const_MESSAGE_BUFF_FORCE
+ *
+ */
+global MESSAGE_BUFF_FORCE = 7;
+
+/**
+ * MESSAGE_BUFF_MP : Number
+ * documentation_const_MESSAGE_BUFF_MP
+ *
+ */
+global MESSAGE_BUFF_MP = 5;
+
+/**
+ * MESSAGE_BUFF_TP : Number
+ * documentation_const_MESSAGE_BUFF_TP
+ *
+ */
+global MESSAGE_BUFF_TP = 6;
+
+/**
+ * MESSAGE_CUSTOM : Number
+ * documentation_const_MESSAGE_CUSTOM
+ *
+ */
+global MESSAGE_CUSTOM = 13;
+
+/**
+ * MESSAGE_DEBUFF : Number
+ * documentation_const_MESSAGE_DEBUFF
+ *
+ */
+global MESSAGE_DEBUFF = 3;
+
+/**
+ * MESSAGE_HEAL : Number
+ * documentation_const_MESSAGE_HEAL
+ *
+ */
+global MESSAGE_HEAL = 1;
+
+/**
+ * MESSAGE_MOVE_AWAY : Number
+ * documentation_const_MESSAGE_MOVE_AWAY
+ *
+ */
+global MESSAGE_MOVE_AWAY = 10;
+
+/**
+ * MESSAGE_MOVE_AWAY_CELL : Number
+ * documentation_const_MESSAGE_MOVE_AWAY_CELL
+ *
+ */
+global MESSAGE_MOVE_AWAY_CELL = 12;
+
+/**
+ * MESSAGE_MOVE_TOWARD : Number
+ * documentation_const_MESSAGE_MOVE_TOWARD
+ *
+ */
+global MESSAGE_MOVE_TOWARD = 9;
+
+/**
+ * MESSAGE_MOVE_TOWARD_CELL : Number
+ * documentation_const_MESSAGE_MOVE_TOWARD_CELL
+ *
+ */
+global MESSAGE_MOVE_TOWARD_CELL = 11;
+
+/**
+ * MESSAGE_SHIELD : Number
+ * documentation_const_MESSAGE_SHIELD
+ *
+ */
+global MESSAGE_SHIELD = 4;
+
+/**
+ * PI : Number
+ * Relation between a circle's circonference and its diameter.
+ *
+ */
+global PI = 3;
+
+/**
+ * SORT_ASC : Number
+ * Indicates a sorting function to use ascending order.
+ *
+ */
+global SORT_ASC = 0;
+
+/**
+ * SORT_DESC : Number
+ * Indicates a sorting function to use descending order.
+ *
+ */
+global SORT_DESC = 1;
+
+/**
+ * TYPE_ARRAY : Number
+ * array type.
+ *
+ */
+global TYPE_ARRAY = 4;
+
+/**
+ * TYPE_BOOLEAN : Number
+ * boolean type.
+ *
+ */
+global TYPE_BOOLEAN = 2;
+
+/**
+ * TYPE_FUNCTION : Number
+ * function type.
+ *
+ */
+global TYPE_FUNCTION = 5;
+
+/**
+ * TYPE_NULL : Number
+ * null type.
+ *
+ */
+global TYPE_NULL = 0;
+
+/**
+ * TYPE_NUMBER : Number
+ * number type.
+ *
+ */
+global TYPE_NUMBER = 1;
+
+/**
+ * TYPE_STRING : Number
+ * string type.
+ *
+ */
+global TYPE_STRING = 3;
+
+/**
+ * USE_FAILED : Number
+ * documentation_const_USE_FAILED
+ *
+ */
+global USE_FAILED = 0;
+
+/**
+ * USE_INVALID_COOLDOWN : Number
+ * documentation_const_USE_INVALID_COOLDOWN
+ *
+ */
+global USE_INVALID_COOLDOWN = -3;
+
+/**
+ * USE_INVALID_POSITION : Number
+ * documentation_const_USE_INVALID_POSITION
+ *
+ */
+global USE_INVALID_POSITION = -4;
+
+/**
+ * USE_INVALID_TARGET : Number
+ * documentation_const_USE_INVALID_TARGET
+ *
+ */
+global USE_INVALID_TARGET = -1;
+
+/**
+ * USE_NOT_ENOUGH_TP : Number
+ * documentation_const_USE_NOT_ENOUGH_TP
+ *
+ */
+global USE_NOT_ENOUGH_TP = -2;
+
+/**
+ * USE_SUCCESS : Number
+ * documentation_const_USE_SUCCESS
+ *
+ */
+global USE_SUCCESS = 1;
+
+/**
+ * WEAPON_B_LASER : Number
+ * documentation_const_WEAPON_B_LASER
+ *
+ */
+global WEAPON_B_LASER = 60;
+
+/**
+ * WEAPON_DESTROYER : Number
+ * documentation_const_WEAPON_DESTROYER
+ *
+ */
+global WEAPON_DESTROYER = 40;
+
+/**
+ * WEAPON_DOUBLE_GUN : Number
+ * documentation_const_WEAPON_DOUBLE_GUN
+ *
+ */
+global WEAPON_DOUBLE_GUN = 39;
+
+/**
+ * WEAPON_ELECTRISOR : Number
+ * documentation_const_WEAPON_ELECTRISOR
+ *
+ */
+global WEAPON_ELECTRISOR = 44;
+
+/**
+ * WEAPON_FLAME_THROWER : Number
+ * documentation_const_WEAPON_FLAME_THROWER
+ *
+ */
+global WEAPON_FLAME_THROWER = 46;
+
+/**
+ * WEAPON_GAZOR : Number
+ * documentation_const_WEAPON_GAZOR
+ *
+ */
+global WEAPON_GAZOR = 48;
+
+/**
+ * WEAPON_GRENADE_LAUNCHER : Number
+ * documentation_const_WEAPON_GRENADE_LAUNCHER
+ *
+ */
+global WEAPON_GRENADE_LAUNCHER = 43;
+
+/**
+ * WEAPON_LASER : Number
+ * documentation_const_WEAPON_LASER
+ *
+ */
+global WEAPON_LASER = 42;
+
+/**
+ * WEAPON_MACHINE_GUN : Number
+ * documentation_const_WEAPON_MACHINE_GUN
+ *
+ */
+global WEAPON_MACHINE_GUN = 38;
+
+/**
+ * WEAPON_MAGNUM : Number
+ * documentation_const_WEAPON_MAGNUM
+ *
+ */
+global WEAPON_MAGNUM = 45;
+
+/**
+ * WEAPON_M_LASER : Number
+ * documentation_const_WEAPON_M_LASER
+ *
+ */
+global WEAPON_M_LASER = 47;
+
+/**
+ * WEAPON_PISTOL : Number
+ * documentation_const_WEAPON_PISTOL
+ *
+ */
+global WEAPON_PISTOL = 37;
+
+/**
+ * WEAPON_SHOTGUN : Number
+ * documentation_const_WEAPON_SHOTGUN
+ *
+ */
+global WEAPON_SHOTGUN = 41;
+
