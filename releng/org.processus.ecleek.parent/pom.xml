@@ -36,9 +36,7 @@
   <modules>
     <module>../../plugins/org.processus.ecleek</module>
     <module>../../plugins/org.processus.ecleek.ui</module>
-    <!--
-      <module>../../tests/org.processus.ecleek.tests</module>
-    -->
+    <module>../../tests/org.processus.ecleek.tests</module>
     <module>../../releng/org.processus.ecleek.sdk</module>
     <module>../../releng/org.processus.ecleek.site</module>
   </modules>
