@@ -4,16 +4,27 @@
 package org.processus.ecleek.validation;
 
 import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.processus.ecleek.leek.BreakStatement;
 import org.processus.ecleek.leek.ContinueStatement;
+import org.processus.ecleek.leek.FunctionCall;
 import org.processus.ecleek.leek.FunctionDeclaration;
 import org.processus.ecleek.leek.GlobalDeclaration;
 import org.processus.ecleek.leek.Include;
 import org.processus.ecleek.leek.LeekPackage;
 import org.processus.ecleek.leek.ReturnStatement;
+import org.processus.ecleek.leek.Script;
+import org.processus.ecleek.leek.Statement;
+import org.processus.ecleek.leek.VariableDeclaration;
+import org.processus.ecleek.leek.VariableReference;
 import org.processus.ecleek.validation.AbstractLeekValidator;
 
 /**
@@ -34,6 +45,10 @@ public class LeekValidator extends AbstractLeekValidator {
   public final static String GLOBAL_DECLARATION_IS_IN_SCRIPT = "GlobalDeclarationIsInScript";
   
   public final static String FUNCTION_DECLARATION_IS_IN_SCRIPT = "FunctionDeclarationIsInScript";
+  
+  public final static String MISSING_INCLUDE_FOR_FUNCTION_CALL = "MissingIncludeForFunctionCall";
+  
+  public final static String MISSING_INCLUDE_FOR_VARIABLE_REFERENCE = "MissingIncludeForVariableReference";
   
   @Check
   public void checkReturnStatementIsInFunctionDeclaration(final ReturnStatement returnStatement) {
@@ -158,6 +173,104 @@ public class LeekValidator extends AbstractLeekValidator {
     }
     if (_or) {
       this.error("FunctionDeclaration must be at Script top level.", null, LeekValidator.FUNCTION_DECLARATION_IS_IN_SCRIPT);
+    }
+  }
+  
+  @Check
+  public void checkIncludeNeededFunctionCall(final FunctionCall functionCall) {
+    boolean _and = false;
+    FunctionDeclaration _function = functionCall.getFunction();
+    Resource _eResource = _function.eResource();
+    Resource _eResource_1 = functionCall.eResource();
+    boolean _notEquals = (!Objects.equal(_eResource, _eResource_1));
+    if (!_notEquals) {
+      _and = false;
+    } else {
+      FunctionDeclaration _function_1 = functionCall.getFunction();
+      Resource _eResource_2 = _function_1.eResource();
+      URI _uRI = _eResource_2.getURI();
+      String _lastSegment = _uRI.lastSegment();
+      boolean _equals = _lastSegment.equals("api.leek");
+      boolean _not = (!_equals);
+      _and = _not;
+    }
+    if (_and) {
+      FunctionDeclaration _function_2 = functionCall.getFunction();
+      Resource _eResource_3 = _function_2.eResource();
+      URI _uRI_1 = _eResource_3.getURI();
+      String _lastSegment_1 = _uRI_1.lastSegment();
+      FunctionDeclaration _function_3 = functionCall.getFunction();
+      Resource _eResource_4 = _function_3.eResource();
+      URI _uRI_2 = _eResource_4.getURI();
+      String _lastSegment_2 = _uRI_2.lastSegment();
+      int _lastIndexOf = _lastSegment_2.lastIndexOf(".");
+      final String toInclude = _lastSegment_1.substring(0, _lastIndexOf);
+      Resource _eResource_5 = functionCall.eResource();
+      EList<EObject> _contents = _eResource_5.getContents();
+      EObject _get = _contents.get(0);
+      EList<Statement> _statements = ((Script) _get).getStatements();
+      final Iterable<Include> includes = Iterables.<Include>filter(_statements, Include.class);
+      final Function1<Include, Boolean> _function_4 = new Function1<Include, Boolean>() {
+        public Boolean apply(final Include i) {
+          String _importURI = i.getImportURI();
+          return Boolean.valueOf(Objects.equal(_importURI, toInclude));
+        }
+      };
+      Iterable<Include> _filter = IterableExtensions.<Include>filter(includes, _function_4);
+      int _size = IterableExtensions.size(_filter);
+      boolean included = (_size > 0);
+      if ((!included)) {
+        this.error((("Missing include statement: \"" + toInclude) + "\""), null, LeekValidator.MISSING_INCLUDE_FOR_FUNCTION_CALL);
+      }
+    }
+  }
+  
+  @Check
+  public void checkIncludeNeededVariableReference(final VariableReference variableReference) {
+    boolean _and = false;
+    VariableDeclaration _variable = variableReference.getVariable();
+    Resource _eResource = _variable.eResource();
+    Resource _eResource_1 = variableReference.eResource();
+    boolean _notEquals = (!Objects.equal(_eResource, _eResource_1));
+    if (!_notEquals) {
+      _and = false;
+    } else {
+      VariableDeclaration _variable_1 = variableReference.getVariable();
+      Resource _eResource_2 = _variable_1.eResource();
+      URI _uRI = _eResource_2.getURI();
+      String _lastSegment = _uRI.lastSegment();
+      boolean _equals = _lastSegment.equals("api.leek");
+      boolean _not = (!_equals);
+      _and = _not;
+    }
+    if (_and) {
+      VariableDeclaration _variable_2 = variableReference.getVariable();
+      Resource _eResource_3 = _variable_2.eResource();
+      URI _uRI_1 = _eResource_3.getURI();
+      String _lastSegment_1 = _uRI_1.lastSegment();
+      VariableDeclaration _variable_3 = variableReference.getVariable();
+      Resource _eResource_4 = _variable_3.eResource();
+      URI _uRI_2 = _eResource_4.getURI();
+      String _lastSegment_2 = _uRI_2.lastSegment();
+      int _lastIndexOf = _lastSegment_2.lastIndexOf(".");
+      final String toInclude = _lastSegment_1.substring(0, _lastIndexOf);
+      Resource _eResource_5 = variableReference.eResource();
+      EList<EObject> _contents = _eResource_5.getContents();
+      EObject _get = _contents.get(0);
+      EList<Statement> _statements = ((Script) _get).getStatements();
+      final Iterable<Include> includes = Iterables.<Include>filter(_statements, Include.class);
+      final Function1<Include, Boolean> _function = new Function1<Include, Boolean>() {
+        public Boolean apply(final Include i) {
+          String _importURI = i.getImportURI();
+          return Boolean.valueOf(Objects.equal(_importURI, toInclude));
+        }
+      };
+      Iterable<Include> _filter = IterableExtensions.<Include>filter(includes, _function);
+      int _size = IterableExtensions.size(_filter);
+      boolean included = (_size > 0);
+      if ((!included)) {
+        this.error((("Missing include statement: \"" + toInclude) + "\""), null, LeekValidator.MISSING_INCLUDE_FOR_VARIABLE_REFERENCE);
+      }
     }
   }
   

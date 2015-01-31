@@ -8,11 +8,14 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.validation.Check
 import org.processus.ecleek.leek.BreakStatement
 import org.processus.ecleek.leek.ContinueStatement
+import org.processus.ecleek.leek.FunctionCall
 import org.processus.ecleek.leek.FunctionDeclaration
 import org.processus.ecleek.leek.GlobalDeclaration
 import org.processus.ecleek.leek.Include
 import org.processus.ecleek.leek.LeekPackage
 import org.processus.ecleek.leek.ReturnStatement
+import org.processus.ecleek.leek.Script
+import org.processus.ecleek.leek.VariableReference
 
 /**
  * Custom validation rules. 
@@ -32,6 +35,10 @@ class LeekValidator extends AbstractLeekValidator {
 	public static val GLOBAL_DECLARATION_IS_IN_SCRIPT = 'GlobalDeclarationIsInScript'
 
 	public static val FUNCTION_DECLARATION_IS_IN_SCRIPT = 'FunctionDeclarationIsInScript'
+
+	public static val MISSING_INCLUDE_FOR_FUNCTION_CALL = 'MissingIncludeForFunctionCall'
+
+	public static val MISSING_INCLUDE_FOR_VARIABLE_REFERENCE = 'MissingIncludeForVariableReference'
 
 	@Check
 	def checkReturnStatementIsInFunctionDeclaration(ReturnStatement returnStatement) {
@@ -78,6 +85,30 @@ class LeekValidator extends AbstractLeekValidator {
 	def checkFunctionDeclarationIsInScript(FunctionDeclaration function) {
 		if (function.eContainer == null || !function.eContainer.eClass.equals(LeekPackage.eINSTANCE.script)) {
 			error('FunctionDeclaration must be at Script top level.', null, FUNCTION_DECLARATION_IS_IN_SCRIPT);
+		}
+	}
+
+	@Check
+	def checkIncludeNeededFunctionCall(FunctionCall functionCall) {
+		if (functionCall.function.eResource != functionCall.eResource && !functionCall.function.eResource.URI.lastSegment.equals("api.leek")) {
+			val toInclude = functionCall.function.eResource.URI.lastSegment.substring(0, functionCall.function.eResource.URI.lastSegment.lastIndexOf("."));
+			val includes = (functionCall.eResource.contents.get(0) as Script).statements.filter(Include);
+			var included = includes.filter[i | i.importURI == toInclude].size > 0;
+			if (!included) {
+				error('Missing include statement: "' + toInclude + '"', null, MISSING_INCLUDE_FOR_FUNCTION_CALL);
+			}
+		}
+	}
+
+	@Check
+	def checkIncludeNeededVariableReference(VariableReference variableReference) {
+		if (variableReference.variable.eResource != variableReference.eResource && !variableReference.variable.eResource.URI.lastSegment.equals("api.leek")) {
+			val toInclude = variableReference.variable.eResource.URI.lastSegment.substring(0, variableReference.variable.eResource.URI.lastSegment.lastIndexOf("."));
+			val includes = (variableReference.eResource.contents.get(0) as Script).statements.filter(Include);
+			var included = includes.filter[i | i.importURI == toInclude].size > 0;
+			if (!included) {
+				error('Missing include statement: "' + toInclude + '"', null, MISSING_INCLUDE_FOR_VARIABLE_REFERENCE);
+			}
 		}
 	}
 
