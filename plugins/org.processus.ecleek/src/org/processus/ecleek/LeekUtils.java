@@ -22,6 +22,7 @@ public final class LeekUtils {
 			for (ILeafNode leaf : node.getLeafNodes()) {
 				if (leaf.getText().startsWith("/*")) {
 					comment  = leaf.getText();
+					break;
 				}
 			}
 			res = comment;
@@ -35,12 +36,13 @@ public final class LeekUtils {
 	public static String getComment(VariableDeclaration declaration) {
 		final String res;
 
-		final ICompositeNode node = NodeModelUtils.getNode(declaration);
+		final ICompositeNode node = NodeModelUtils.getNode(declaration).getParent().getParent();
 		if (node != null) {
 			String comment = null;
 			for (ILeafNode leaf : node.getLeafNodes()) {
 				if (leaf.getText().startsWith("/*")) {
 					comment  = leaf.getText();
+					break;
 				}
 			}
 			res = comment;
