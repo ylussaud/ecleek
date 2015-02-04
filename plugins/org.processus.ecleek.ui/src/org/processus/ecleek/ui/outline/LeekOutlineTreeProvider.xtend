@@ -3,11 +3,52 @@
 */
 package org.processus.ecleek.ui.outline
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider
+import org.eclipse.xtext.ui.editor.outline.impl.DocumentRootNode
+import org.processus.ecleek.leek.FunctionDeclaration
+import org.processus.ecleek.leek.GlobalDeclaration
+import org.processus.ecleek.leek.LocalDeclaration
+import org.processus.ecleek.leek.Script
+import org.processus.ecleek.leek.Statement
+import org.processus.ecleek.leek.VariableDeclaration
+import org.eclipse.xtext.ui.editor.outline.IOutlineNode
+
 /**
  * Customization of the default outline structure.
  *
  * see http://www.eclipse.org/Xtext/documentation.html#outline
  */
-class LeekOutlineTreeProvider extends org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider {
-	
+class LeekOutlineTreeProvider extends DefaultOutlineTreeProvider {
+
+	def void _createChildren(DocumentRootNode parentNode, Script script) {
+		for (Statement statement : script.statements) {
+			if (statement instanceof FunctionDeclaration) {
+				createNode(parentNode, statement);
+			} else if (statement instanceof  GlobalDeclaration) {
+				for (VariableDeclaration variable : statement.variables) {
+					createNode(parentNode, variable);
+				}
+			} else if (statement instanceof  LocalDeclaration) {
+				for (VariableDeclaration variable : statement.variables) {
+					createNode(parentNode, variable);
+				}
+			}
+		}
+	}
+
+	def void _createChildren(IOutlineNode parentNode, FunctionDeclaration function) {
+		for (EObject eObj : function.eAllContents.toIterable) {
+			if (eObj instanceof  LocalDeclaration) {
+				for (VariableDeclaration variable : eObj.variables) {
+					createNode(parentNode, variable);
+				}
+			}
+		}
+	}
+
+	def _isLeaf(VariableDeclaration modelElement) {
+		return true;
+	}
+
 }
