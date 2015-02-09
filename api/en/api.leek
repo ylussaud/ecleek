@@ -1,6 +1,6 @@
 
 /**
- * abs(Number number) : Number result
+ * abs(NumberÂ number) : NumberÂ result
  * Returns the absolute value of given number.
  * A number.
  * Given number's absolute value.
@@ -16,7 +16,7 @@
 function abs(number) {}
 
 /**
- * acos(Number argument) : Number result
+ * acos(NumberÂ argument) : NumberÂ result
  * Computes the arccos of argument, within [0, PI].
  * A number.
  * Given number's arccos.
@@ -32,7 +32,7 @@ function abs(number) {}
 function acos(argument) {}
 
 /**
- * arrayConcat(Array array1, Array array2) : Array new_array
+ * arrayConcat(ArrayÂ array1, ArrayÂ array2) : ArrayÂ new_array
  * documentation_func_arrayConcat
  * documentation_func_arrayConcat_arg_1
  * documentation_func_arrayConcat_arg_2
@@ -50,7 +50,7 @@ function acos(argument) {}
 function arrayConcat(array1, array2) {}
 
 /**
- * arrayFilter(Array array, Function callback) : Array new_array
+ * arrayFilter(ArrayÂ array, FunctionÂ callback) : ArrayÂ new_array
  * documentation_func_arrayFilter
  * documentation_func_arrayFilter_arg_1
  * documentation_func_arrayFilter_arg_2
@@ -68,7 +68,7 @@ function arrayConcat(array1, array2) {}
 function arrayFilter(array, callback) {}
 
 /**
- * arrayFlatten(Array array) : Array new_array
+ * arrayFlatten(ArrayÂ array) : ArrayÂ new_array
  * documentation_func_arrayFlatten
  * documentation_func_arrayFlatten_arg_1
  * documentation_func_arrayFlatten_return
@@ -84,7 +84,7 @@ function arrayFilter(array, callback) {}
 function arrayFlatten(array) {}
 
 /**
- * arrayFlatten(Array array, Number depth) : Array new_array
+ * arrayFlatten(ArrayÂ array, NumberÂ depth) : ArrayÂ new_array
  * documentation_func_arrayFlatten_2
  * documentation_func_arrayFlatten_2_arg_1
  * documentation_func_arrayFlatten_2_arg_2
@@ -102,7 +102,7 @@ function arrayFlatten(array) {}
 function arrayFlatten(array, depth) {}
 
 /**
- * arrayFoldLeft(Array array, Function f, ? v0) : ? result
+ * arrayFoldLeft(ArrayÂ array, FunctionÂ f, ?Â v0) : ?Â result
  * documentation_func_arrayFoldLeft
  * documentation_func_arrayFoldLeft_arg_1
  * documentation_func_arrayFoldLeft_arg_2
@@ -122,7 +122,7 @@ function arrayFlatten(array, depth) {}
 function arrayFoldLeft(array, f, v0) {}
 
 /**
- * arrayFoldRight(Array array, Function f, ? v0) : ? result
+ * arrayFoldRight(ArrayÂ array, FunctionÂ f, ?Â v0) : ?Â result
  * documentation_func_arrayFoldRight
  * documentation_func_arrayFoldRight_arg_1
  * documentation_func_arrayFoldRight_arg_2
@@ -142,7 +142,7 @@ function arrayFoldLeft(array, f, v0) {}
 function arrayFoldRight(array, f, v0) {}
 
 /**
- * arrayIter(Array array, Function callback)
+ * arrayIter(ArrayÂ array, FunctionÂ callback)
  * documentation_func_arrayIter
  * documentation_func_arrayIter_arg_1
  * documentation_func_arrayIter_arg_2
@@ -156,7 +156,7 @@ function arrayFoldRight(array, f, v0) {}
 function arrayIter(array, callback) {}
 
 /**
- * arrayMap(Array array, Function callback) : Array new_array
+ * arrayMap(ArrayÂ array, FunctionÂ callback) : ArrayÂ new_array
  * documentation_func_arrayMap
  * documentation_func_arrayMap_arg_1
  * documentation_func_arrayMap_arg_2
@@ -174,7 +174,7 @@ function arrayIter(array, callback) {}
 function arrayMap(array, callback) {}
 
 /**
- * arrayMax(Array array) : ? element
+ * arrayMax(ArrayÂ array) : ?Â element
  * Finds the greatest value within given array.See also: sort.
  * An array of numbers.
  * The greatest value contained in given array.
@@ -190,7 +190,7 @@ function arrayMap(array, callback) {}
 function arrayMax(array) {}
 
 /**
- * arrayMin(Array array) : ? element
+ * arrayMin(ArrayÂ array) : ?Â element
  * Finds the least value within given array.See also: sort.
  * An array of numbers.
  * The least value contained in given array.
@@ -206,7 +206,7 @@ function arrayMax(array) {}
 function arrayMin(array) {}
 
 /**
- * arrayPartition(Array array, Function callback) : ArrayOfArrays new_array
+ * arrayPartition(ArrayÂ array, FunctionÂ callback) : ArrayOfArraysÂ new_array
  * documentation_func_arrayPartition
  * documentation_func_arrayPartition_arg_1
  * documentation_func_arrayPartition_arg_2
@@ -224,7 +224,7 @@ function arrayMin(array) {}
 function arrayPartition(array, callback) {}
 
 /**
- * arraySort(Array array, Function callback) : Array sorted_array
+ * arraySort(ArrayÂ array, FunctionÂ callback) : ArrayÂ sorted_array
  * documentation_func_arraySort
  * documentation_func_arraySort_arg_1
  * documentation_func_arraySort_arg_2
@@ -242,7 +242,7 @@ function arrayPartition(array, callback) {}
 function arraySort(array, callback) {}
 
 /**
- * asin(Number argument) : Number result
+ * asin(NumberÂ argument) : NumberÂ result
  * Computes the arcsin of argument, within [0, PI].
  * A number.
  * Given number's arcsin.
@@ -258,7 +258,7 @@ function arraySort(array, callback) {}
 function asin(argument) {}
 
 /**
- * assocSort(Array array)
+ * assocSort(ArrayÂ array)
  * Sorts an array, while keeping the key: value coupling.
  * Array that needs sorting.
  *
@@ -270,7 +270,7 @@ function asin(argument) {}
 function assocSort(array) {}
 
 /**
- * assocSort(Array array, Number order)
+ * assocSort(ArrayÂ array, NumberÂ order)
  * Sorts an array, while keeping the key: value coupling, using given order.
  * Array that needs sorting.
  * Sorting order: SORT_ASC or SORT_DESC.
@@ -284,7 +284,7 @@ function assocSort(array) {}
 function assocSort(array, order) {}
 
 /**
- * atan(Number argument) : Number result
+ * atan(NumberÂ argument) : NumberÂ result
  * Computes the arctan of argument, within [0, PI].
  * A number.
  * Given number's arctan.
@@ -300,7 +300,7 @@ function assocSort(array, order) {}
 function atan(argument) {}
 
 /**
- * atan2(Number y, Number x) : Number result
+ * atan2(NumberÂ y, NumberÂ x) : NumberÂ result
  * Computes the azimuth of given point (x, y) in polar coordinates. Return value is between - PI and PI, depending on parameters' signs.
  * x coordinate.
  * y coordinate.
@@ -318,7 +318,7 @@ function atan(argument) {}
 function atan2(y, x) {}
 
 /**
- * average(ArrayOfNumbers array) : Number averageValue
+ * average(ArrayOfNumbersÂ array) : NumberÂ averageValue
  * Computes the average of an array's elements.
  * An array.
  * Average of given array's elements.
@@ -334,7 +334,7 @@ function atan2(y, x) {}
 function average(array) {}
 
 /**
- * canUseChip(Number chip, Number leek) : Boolean canUse
+ * canUseChip(NumberÂ chip, NumberÂ leek) : BooleanÂ canUse
  * Checks whether your leek can use given chip, targetting given leek.
  * The chip your leek wants to use.
  * Targetted leek.
@@ -352,7 +352,7 @@ function average(array) {}
 function canUseChip(chip, leek) {}
 
 /**
- * canUseChipOnCell(Number chip, Number cell) : Boolean canUse
+ * canUseChipOnCell(NumberÂ chip, NumberÂ cell) : BooleanÂ canUse
  * Checks whether your leek can use given chip, targetting given cell.
  * The chip your leek wants to use.
  * Targetted cell.
@@ -370,7 +370,7 @@ function canUseChip(chip, leek) {}
 function canUseChipOnCell(chip, cell) {}
 
 /**
- * canUseWeapon(Number leek) : Boolean canUse
+ * canUseWeapon(NumberÂ leek) : BooleanÂ canUse
  * Checks whether your leek can shoot its current weapon targetting given leek.
  * Targetted leek.
  * true if your leek can shoot, false otherwise.
@@ -386,7 +386,7 @@ function canUseChipOnCell(chip, cell) {}
 function canUseWeapon(leek) {}
 
 /**
- * canUseWeapon(Number weapon, Number leek) : Boolean canUse
+ * canUseWeapon(NumberÂ weapon, NumberÂ leek) : BooleanÂ canUse
  * Checks whether your leek can shoot given weapon, targetting given leek.
  * The weapon your leek wants to use.
  * Targetted leek.
@@ -404,7 +404,7 @@ function canUseWeapon(leek) {}
 function canUseWeapon(weapon, leek) {}
 
 /**
- * canUseWeaponOnCell(Number cell) : Boolean canUse
+ * canUseWeaponOnCell(NumberÂ cell) : BooleanÂ canUse
  * Checks whether your leek can shoot its current weapon targetting given cell.
  * Targetted cell.
  * true if your leek can shoot, false otherwise.
@@ -420,7 +420,7 @@ function canUseWeapon(weapon, leek) {}
 function canUseWeaponOnCell(cell) {}
 
 /**
- * canUseWeaponOnCell(Number weapon, Number cell) : Boolean canUse
+ * canUseWeaponOnCell(NumberÂ weapon, NumberÂ cell) : BooleanÂ canUse
  * Checks whether your leek can shoot given weapon, targetting given cell.
  * The weapon your leek wants to use.
  * Targetted cell.
@@ -438,7 +438,7 @@ function canUseWeaponOnCell(cell) {}
 function canUseWeaponOnCell(weapon, cell) {}
 
 /**
- * cbrt(Number number) : Number result
+ * cbrt(NumberÂ number) : NumberÂ result
  * Computes the cubic root of given number.
  * A number.
  * Given number's cubic root.
@@ -454,7 +454,7 @@ function canUseWeaponOnCell(weapon, cell) {}
 function cbrt(number) {}
 
 /**
- * ceil(Number number) : Number result
+ * ceil(NumberÂ number) : NumberÂ result
  * Computes the rounded up value of given number.The rounded down value can be computed using floor and the closest integer using round.
  * A number.
  * Number's value as an integer, rounded up.
@@ -470,7 +470,7 @@ function cbrt(number) {}
 function ceil(number) {}
 
 /**
- * charAt(String string, Number position) : String char
+ * charAt(StringÂ string, NumberÂ position) : StringÂ char
  * Returns the character at given position within given string.First character is at position 0.
  * A string.
  * Position of the character to return.
@@ -488,7 +488,7 @@ function ceil(number) {}
 function charAt(string, position) {}
 
 /**
- * contains(String string, String search) : Boolean contains
+ * contains(StringÂ string, StringÂ search) : BooleanÂ contains
  * Checks whether search string is contained within string.
  * String in which the search is performed.
  * String to be loooked for.
@@ -506,7 +506,7 @@ function charAt(string, position) {}
 function contains(string, search) {}
 
 /**
- * cos(Number angle) : Number cosine
+ * cos(NumberÂ angle) : NumberÂ cosine
  * Computes an angle's cosine.
  * A number.
  * Given number's cosine, within [-1, 1].
@@ -522,7 +522,7 @@ function contains(string, search) {}
 function cos(angle) {}
 
 /**
- * count(Array array) : Number numberOfElements
+ * count(ArrayÂ array) : NumberÂ numberOfElements
  * Counts the elements contained within an array.
  * An array.
  * Given array's number of elements.
@@ -538,7 +538,7 @@ function cos(angle) {}
 function count(array) {}
 
 /**
- * debug(? object)
+ * debug(?Â object)
  * Logs an object message into your personnal log, available at the end of a fight.
  * A message to log.
  *
@@ -550,8 +550,8 @@ function count(array) {}
 function debug(object) {}
 
 /**
- * debugE(? object)
- * Logs an object error message into your personnal log, available at the end of a fight.Error messages appear in red.
+ * debugE(?Â object)
+ * Logs an object error message into your personnal log, available at the end of a fight.Error messages appearÂ in red.
  * A message to log.
  *
  * @level 1
@@ -562,7 +562,7 @@ function debug(object) {}
 function debugE(object) {}
 
 /**
- * debugW(? object)
+ * debugW(?Â object)
  * Logs an object warning message into your personnal log, available at the end of a fight.Warning messages appear in orange.
  * A message to log.
  *
@@ -574,7 +574,7 @@ function debugE(object) {}
 function debugW(object) {}
 
 /**
- * deleteRegister(String key)
+ * deleteRegister(StringÂ key)
  * documentation_func_deleteRegister
  * documentation_func_deleteRegister_arg_1
  *
@@ -586,7 +586,7 @@ function debugW(object) {}
 function deleteRegister(key) {}
 
 /**
- * endsWith(String string, String suffix) : Boolean endsWith
+ * endsWith(StringÂ string, StringÂ suffix) : BooleanÂ endsWith
  * Checks whether given string ends with given suffix
  * String to be checked
  * Suffix to be found
@@ -604,7 +604,7 @@ function deleteRegister(key) {}
 function endsWith(string, suffix) {}
 
 /**
- * exp(Number number) : Number result
+ * exp(NumberÂ number) : NumberÂ result
  * Computes the exponential of number, by exponentiation of E.
  * A number.
  * E ** number.
@@ -620,7 +620,7 @@ function endsWith(string, suffix) {}
 function exp(number) {}
 
 /**
- * fill(Array array, ? value)
+ * fill(ArrayÂ array, ?Â value)
  * Fills an array with value, i.e replaces all existing elements with value.
  * Array to be filled.
  * Value to fill array with.
@@ -634,7 +634,7 @@ function exp(number) {}
 function fill(array, value) {}
 
 /**
- * fill(Array array, ? value, Number size)
+ * fill(ArrayÂ array, ?Â value, NumberÂ size)
  * Resizes array to given size and fills it with value.
  * Array to be filled.
  * Value to fill array with.
@@ -650,7 +650,7 @@ function fill(array, value) {}
 function fill(array, value, size) {}
 
 /**
- * floor(Number number) : Number result
+ * floor(NumberÂ number) : NumberÂ result
  * Computes the rounded down value of given number.The rounded up value can be computed using ceil and the closest integer using round.
  * A number.
  * Number's value as an integer, rounded down.
@@ -666,7 +666,7 @@ function fill(array, value, size) {}
 function floor(number) {}
 
 /**
- * getAbsoluteShield() : Number shield
+ * getAbsoluteShield() : NumberÂ shield
  * Returns your leek's absolute shield value.
  * Your leek's absolute shield value.
  *
@@ -679,7 +679,7 @@ function floor(number) {}
 function getAbsoluteShield() {}
 
 /**
- * getAbsoluteShield(Number leek) : Number shield
+ * getAbsoluteShield(NumberÂ leek) : NumberÂ shield
  * Return a leek's absolute shield value.For your leek, prefer getAbsoluteShield() with no input.
  * Leek whose absolute shield you want.
  * Leek's absolute shield value.
@@ -695,7 +695,7 @@ function getAbsoluteShield() {}
 function getAbsoluteShield(leek) {}
 
 /**
- * getAgility() : Number agility
+ * getAgility() : NumberÂ agility
  * Returns your leek's agility.
  * Your leek's agility.
  *
@@ -708,7 +708,7 @@ function getAbsoluteShield(leek) {}
 function getAgility() {}
 
 /**
- * getAgility(Number leek) : Number agility
+ * getAgility(NumberÂ leek) : NumberÂ agility
  * Returns given leek's agility.For your leek's agility, prefer getAgility() with no input.
  * Leek whose agility you want.
  * leek's agility.
@@ -724,7 +724,7 @@ function getAgility() {}
 function getAgility(leek) {}
 
 /**
- * getAIID() : Number id
+ * getAIID() : NumberÂ id
  * Returns the id of your AI.
  * The id of your leek's AI.
  *
@@ -737,7 +737,7 @@ function getAgility(leek) {}
 function getAIID() {}
 
 /**
- * getAIID(Number leek) : Number id
+ * getAIID(NumberÂ leek) : NumberÂ id
  * Returns the id of given leek's AI.
  * Leek whose AI ID you want.
  * The id of leek's AI.
@@ -753,7 +753,7 @@ function getAIID() {}
 function getAIID(leek) {}
 
 /**
- * getAIName() : String name
+ * getAIName() : StringÂ name
  * Returns the name of you AI.
  * The name of you AI.
  *
@@ -766,7 +766,7 @@ function getAIID(leek) {}
 function getAIName() {}
 
 /**
- * getAIName(Number leek) : String name
+ * getAIName(NumberÂ leek) : StringÂ name
  * Returns the name of given leek's AI.
  * Leek whose AI name you want.
  * The name of leek's AI.
@@ -782,7 +782,7 @@ function getAIName() {}
 function getAIName(leek) {}
 
 /**
- * getAliveAllies() : ArrayOfNumbers allies
+ * getAliveAllies() : ArrayOfNumbersÂ allies
  * Returns an array containing all of your alive allies in a fight.
  * An array containing all of your alive allies in a fight.
  *
@@ -795,7 +795,7 @@ function getAIName(leek) {}
 function getAliveAllies() {}
 
 /**
- * getAliveEnemies() : ArrayOfNumbers enemies
+ * getAliveEnemies() : ArrayOfNumbersÂ enemies
  * Returns an array containing all of your alive enemies in a fight.
  * An array containing all all of your alive enemies in a fight.
  *
@@ -808,7 +808,7 @@ function getAliveAllies() {}
 function getAliveEnemies() {}
 
 /**
- * getAliveEnemiesCount() : Number numAliveEnemies
+ * getAliveEnemiesCount() : NumberÂ numAliveEnemies
  * Counts the alive enemies in the fight.
  * The number of alive enemies.
  *
@@ -821,7 +821,7 @@ function getAliveEnemies() {}
 function getAliveEnemiesCount() {}
 
 /**
- * getAllies() : ArrayOfNumbers allies
+ * getAllies() : ArrayOfNumbersÂ allies
  * Returns an array containing all of your allies in a fight.
  * An array containing all of your allies in a fight.
  *
@@ -834,7 +834,7 @@ function getAliveEnemiesCount() {}
 function getAllies() {}
 
 /**
- * getAlliesCount() : Number numAllies
+ * getAlliesCount() : NumberÂ numAllies
  * Returns the number of allies in the fight.
  * Number of allies.
  *
@@ -847,7 +847,7 @@ function getAllies() {}
 function getAlliesCount() {}
 
 /**
- * getAlliesLife() : Number life
+ * getAlliesLife() : NumberÂ life
  * Returns the sum of all of your allies' HP
  * Sum of all of your allies' HP.
  *
@@ -860,7 +860,36 @@ function getAlliesCount() {}
 function getAlliesLife() {}
 
 /**
- * getBlue(Number color) : Number blue
+ * getBirthTurn() : NumberÂ turn
+ * documentation_func_getBirthTurn
+ * documentation_func_getBirthTurn_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   turn
+ */
+function getBirthTurn() {}
+
+/**
+ * getBirthTurn(NumberÂ entity) : NumberÂ turn
+ * documentation_func_getBirthTurn_2
+ * documentation_func_getBirthTurn_2_arg_1
+ * documentation_func_getBirthTurn_2_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number entity
+ *
+ * @return Number
+ *   turn
+ */
+function getBirthTurn(entity) {}
+
+/**
+ * getBlue(NumberÂ color) : NumberÂ blue
  * Returns the blue component of given color. For instance getBlue(COLOR_BLUE) = 255 and getBlue(COLOR_RED) = 0.
  * Color whose blue component is to be returned.
  * Blue component of given color
@@ -876,7 +905,7 @@ function getAlliesLife() {}
 function getBlue(color) {}
 
 /**
- * getCell() : Number cell
+ * getCell() : NumberÂ cell
  * Returns your leek's position, as a cell id.
  * Cell id of your leek's position.
  *
@@ -889,7 +918,7 @@ function getBlue(color) {}
 function getCell() {}
 
 /**
- * getCell(Number leek) : Number cell
+ * getCell(NumberÂ leek) : NumberÂ cell
  * Returns given leek's position, as a cell id.
  * Leek whose position is determined.
  * Cell id of given leek's position.
@@ -905,7 +934,7 @@ function getCell() {}
 function getCell(leek) {}
 
 /**
- * getCellContent(Number cell) : Number content
+ * getCellContent(NumberÂ cell) : NumberÂ content
  * Determines the content of given cell.
  * id of the cell to be tested.
  * Content of cell.
@@ -921,7 +950,7 @@ function getCell(leek) {}
 function getCellContent(cell) {}
 
 /**
- * getCellDistance(Number cell1, Number cell2) : Number distance
+ * getCellDistance(NumberÂ cell1, NumberÂ cell2) : NumberÂ distance
  * Computes the distance between cells cell1 and cell2.Distance is in amount of cells and does not take obstacles into account.For as a crow's flies distance, see getDistance and for an actual path (taking obstacles into account), see getPathLength.
  * Cell id of starting point.
  * Cell id of destination.
@@ -939,7 +968,7 @@ function getCellContent(cell) {}
 function getCellDistance(cell1, cell2) {}
 
 /**
- * getCellFromXY(Number x, Number y) : Number cell
+ * getCellFromXY(NumberÂ x, NumberÂ y) : NumberÂ cell
  * Returns the id of the cell at coordinates (x, y).
  * x-coordinate of the desired cell.
  * y-coordinate of the desired cell.
@@ -957,7 +986,7 @@ function getCellDistance(cell1, cell2) {}
 function getCellFromXY(x, y) {}
 
 /**
- * getCellsToUseChip(Number chip, Number leek) : ArrayOfNumbers cells
+ * getCellsToUseChip(NumberÂ chip, NumberÂ leek) : ArrayOfNumbersÂ cells
  * Lists all cells that allow your leek to use a given chip, targetting given leek.
  * The chip your leek wants to use.
  * Targetted leek.
@@ -975,7 +1004,7 @@ function getCellFromXY(x, y) {}
 function getCellsToUseChip(chip, leek) {}
 
 /**
- * getCellsToUseChip(Number chip, Number leek, ArrayOfNumbers ignoredCells) : ArrayOfNumbers cells
+ * getCellsToUseChip(NumberÂ chip, NumberÂ leek, ArrayOfNumbersÂ ignoredCells) : ArrayOfNumbersÂ cells
  * Lists all cells that allow your leek to use a given chip, targetting given leek.
  * The chip your leek wants to use.
  * Targetted leek.
@@ -995,7 +1024,7 @@ function getCellsToUseChip(chip, leek) {}
 function getCellsToUseChip(chip, leek, ignoredCells) {}
 
 /**
- * getCellsToUseChipOnCell(Number chip, Number cell) : ArrayOfNumbers cells
+ * getCellsToUseChipOnCell(NumberÂ chip, NumberÂ cell) : ArrayOfNumbersÂ cells
  * Lists all cells that allow your leek to use a given chip, targetting given cell.
  * The chip your leek wants to use.
  * Targetted cell.
@@ -1013,7 +1042,7 @@ function getCellsToUseChip(chip, leek, ignoredCells) {}
 function getCellsToUseChipOnCell(chip, cell) {}
 
 /**
- * getCellsToUseChipOnCell(Number chip, Number cell, ArrayOfNumbers ignoredCells) : ArrayOfNumbers cells
+ * getCellsToUseChipOnCell(NumberÂ chip, NumberÂ cell, ArrayOfNumbersÂ ignoredCells) : ArrayOfNumbersÂ cells
  * Lists all cells that allow your leek to use a given chip, targetting given cell.
  * The chip your leek wants to use.
  * Targetted cell.
@@ -1033,7 +1062,7 @@ function getCellsToUseChipOnCell(chip, cell) {}
 function getCellsToUseChipOnCell(chip, cell, ignoredCells) {}
 
 /**
- * getCellsToUseWeapon(Number leek) : ArrayOfNumbers cells
+ * getCellsToUseWeapon(NumberÂ leek) : ArrayOfNumbersÂ cells
  * Lists all cells that allow your leek to shoot its current weapon, targetting given leek.
  * Targetted leek.
  * List of all cells that allow your leek to shoot.
@@ -1049,7 +1078,7 @@ function getCellsToUseChipOnCell(chip, cell, ignoredCells) {}
 function getCellsToUseWeapon(leek) {}
 
 /**
- * getCellsToUseWeapon(Number weapon, Number leek) : ArrayOfNumbers cells
+ * getCellsToUseWeapon(NumberÂ weapon, NumberÂ leek) : ArrayOfNumbersÂ cells
  * Lists all cells that allow your leek to shoot given weapon, targetting given leek.
  * The weapon your leek wants to use.
  * Targetted leek.
@@ -1067,7 +1096,7 @@ function getCellsToUseWeapon(leek) {}
 function getCellsToUseWeapon(weapon, leek) {}
 
 /**
- * getCellsToUseWeapon(Number weapon, Number leek, ArrayOfNumbers ignoredCells) : ArrayOfNumbers cells
+ * getCellsToUseWeapon(NumberÂ weapon, NumberÂ leek, ArrayOfNumbersÂ ignoredCells) : ArrayOfNumbersÂ cells
  * Lists all cells that allow your leek to shoot a given weapon, targetting given leek.
  * The weapon your leek wants to use.
  * Targetted leek.
@@ -1087,7 +1116,7 @@ function getCellsToUseWeapon(weapon, leek) {}
 function getCellsToUseWeapon(weapon, leek, ignoredCells) {}
 
 /**
- * getCellsToUseWeaponOnCell(Number cell) : ArrayOfNumbers cells
+ * getCellsToUseWeaponOnCell(NumberÂ cell) : ArrayOfNumbersÂ cells
  * Lists all cells that allow your leek to shoot its current weapon, targetting given cell.
  * Targetted cell.
  * List of all cells that allow your leek to shoot.
@@ -1103,7 +1132,7 @@ function getCellsToUseWeapon(weapon, leek, ignoredCells) {}
 function getCellsToUseWeaponOnCell(cell) {}
 
 /**
- * getCellsToUseWeaponOnCell(Number weapon, Number cell) : ArrayOfNumbers cells
+ * getCellsToUseWeaponOnCell(NumberÂ weapon, NumberÂ cell) : ArrayOfNumbersÂ cells
  * Lists all cells that allow your leek to shoot given weapon, targetting given cell.
  * The weapon your leek wants to use.
  * Targetted cell.
@@ -1121,7 +1150,7 @@ function getCellsToUseWeaponOnCell(cell) {}
 function getCellsToUseWeaponOnCell(weapon, cell) {}
 
 /**
- * getCellsToUseWeaponOnCell(Number weapon, Number cell, ArrayOfNumbers ignoredCells) : ArrayOfNumbers cell
+ * getCellsToUseWeaponOnCell(NumberÂ weapon, NumberÂ cell, ArrayOfNumbersÂ ignoredCells) : ArrayOfNumbersÂ cell
  * Lists all cells that allow your leek to shoot a given weapon, targetting given cell.
  * The weapon your leek wants to use.
  * Targetted cell.
@@ -1141,7 +1170,7 @@ function getCellsToUseWeaponOnCell(weapon, cell) {}
 function getCellsToUseWeaponOnCell(weapon, cell, ignoredCells) {}
 
 /**
- * getCellToUseChip(Number chip, Number leek) : Number cell
+ * getCellToUseChip(NumberÂ chip, NumberÂ leek) : NumberÂ cell
  * Finds a cell that allows your leek to use a given chip, targetting given leek.
  * The chip your leek wants to use.
  * Targetted leek.
@@ -1159,7 +1188,7 @@ function getCellsToUseWeaponOnCell(weapon, cell, ignoredCells) {}
 function getCellToUseChip(chip, leek) {}
 
 /**
- * getCellToUseChip(Number chip, Number cell, ArrayOfNumbers ignoredCells) : Number cell
+ * getCellToUseChip(NumberÂ chip, NumberÂ cell, ArrayOfNumbersÂ ignoredCells) : NumberÂ cell
  * Finds a cell that allows your leek to use a given chip, targetting given leek.
  * The chip your leek wants to use.
  * Targetted leek.
@@ -1179,7 +1208,7 @@ function getCellToUseChip(chip, leek) {}
 function getCellToUseChip(chip, cell, ignoredCells) {}
 
 /**
- * getCellToUseChipOnCell(Number chip, Number cell, ArrayOfNumbers ignoredCells) : Number cell
+ * getCellToUseChipOnCell(NumberÂ chip, NumberÂ cell, ArrayOfNumbersÂ ignoredCells) : NumberÂ cell
  * Finds a cell that allows your leek to use a given chip, targetting given cell.
  * The chip your leek wants to use.
  * Targetted cell.
@@ -1199,7 +1228,7 @@ function getCellToUseChip(chip, cell, ignoredCells) {}
 function getCellToUseChipOnCell(chip, cell, ignoredCells) {}
 
 /**
- * getCellToUseChipOnCell(Number chip, Number cell) : Number cell
+ * getCellToUseChipOnCell(NumberÂ chip, NumberÂ cell) : NumberÂ cell
  * Finds a cell that allows your leek to use a given chip, targetting given cell.
  * The chip your leek wants to use.
  * Targetted cell.
@@ -1217,7 +1246,7 @@ function getCellToUseChipOnCell(chip, cell, ignoredCells) {}
 function getCellToUseChipOnCell(chip, cell) {}
 
 /**
- * getCellToUseWeapon(Number leek) : Number cell
+ * getCellToUseWeapon(NumberÂ leek) : NumberÂ cell
  * Finds a cell that allows your leek to shoot its current weapon, targetting given leek.
  * Targetted leek.
  * A cell that allows your leek to shoot.
@@ -1233,7 +1262,7 @@ function getCellToUseChipOnCell(chip, cell) {}
 function getCellToUseWeapon(leek) {}
 
 /**
- * getCellToUseWeapon(Number weapon, Number leek) : Number cell
+ * getCellToUseWeapon(NumberÂ weapon, NumberÂ leek) : NumberÂ cell
  * Finds a cell that allows your leek to shoot given weapon, targetting given leek.
  * The weapon your leek wants to use.
  * Targetted leek.
@@ -1251,7 +1280,7 @@ function getCellToUseWeapon(leek) {}
 function getCellToUseWeapon(weapon, leek) {}
 
 /**
- * getCellToUseWeapon(Number weapon, Number leek, ArrayOfNumbers ignoredCells) : Number cell
+ * getCellToUseWeapon(NumberÂ weapon, NumberÂ leek, ArrayOfNumbersÂ ignoredCells) : NumberÂ cell
  * Finds a cell that allows your leek to shoot given weapon, targetting given leek.
  * The weapon your leek wants to use.
  * Targetted leek.
@@ -1271,7 +1300,7 @@ function getCellToUseWeapon(weapon, leek) {}
 function getCellToUseWeapon(weapon, leek, ignoredCells) {}
 
 /**
- * getCellToUseWeaponOnCell(Number cell) : Number cell
+ * getCellToUseWeaponOnCell(NumberÂ cell) : NumberÂ cell
  * Finds a cell that allows your leek to shoot its current weapon, targetting given cell.
  * Targetted cell.
  * A cell that allows your leek to shoot.
@@ -1287,7 +1316,7 @@ function getCellToUseWeapon(weapon, leek, ignoredCells) {}
 function getCellToUseWeaponOnCell(cell) {}
 
 /**
- * getCellToUseWeaponOnCell(Number weapon, Number cell) : Number cell
+ * getCellToUseWeaponOnCell(NumberÂ weapon, NumberÂ cell) : NumberÂ cell
  * Finds a cell that allows your leek to shoot given weapon, targetting given leek.
  * The weapon your leek wants to use.
  * Targetted cell.
@@ -1305,7 +1334,7 @@ function getCellToUseWeaponOnCell(cell) {}
 function getCellToUseWeaponOnCell(weapon, cell) {}
 
 /**
- * getCellToUseWeaponOnCell(Number weapon, Number cell, ArrayOfNumbers ignoredCells) : Number cell
+ * getCellToUseWeaponOnCell(NumberÂ weapon, NumberÂ cell, ArrayOfNumbersÂ ignoredCells) : NumberÂ cell
  * Finds a cell that allows your leek to shoot given weapon, targetting given cell.
  * The weapon your leek wants to use.
  * Targetted cell.
@@ -1325,7 +1354,7 @@ function getCellToUseWeaponOnCell(weapon, cell) {}
 function getCellToUseWeaponOnCell(weapon, cell, ignoredCells) {}
 
 /**
- * getCellX(Number cell) : Number x
+ * getCellX(NumberÂ cell) : NumberÂ x
  * Computes the x-coordinate of given cell.
  * id of the cell.
  * Its x-coordinate/
@@ -1341,7 +1370,7 @@ function getCellToUseWeaponOnCell(weapon, cell, ignoredCells) {}
 function getCellX(cell) {}
 
 /**
- * getCellY(Number cell) : Number y
+ * getCellY(NumberÂ cell) : NumberÂ y
  * Computes the y-coordinate of given cell.
  * id of the cell.
  * Its y-coordinate/
@@ -1357,7 +1386,7 @@ function getCellX(cell) {}
 function getCellY(cell) {}
 
 /**
- * getChipArea(Number chip) : Number area
+ * getChipArea(NumberÂ chip) : NumberÂ area
  * documentation_func_getChipArea
  * documentation_func_getChipArea_arg_1
  * documentation_func_getChipArea_return
@@ -1373,7 +1402,7 @@ function getCellY(cell) {}
 function getChipArea(chip) {}
 
 /**
- * getChipCooldown(Number chip) : Number cooldown
+ * getChipCooldown(NumberÂ chip) : NumberÂ cooldown
  * Returns a chip's cooldown as shown in the market.
  * Desired chip.
  * Given chip's coolodwn
@@ -1389,7 +1418,7 @@ function getChipArea(chip) {}
 function getChipCooldown(chip) {}
 
 /**
- * getChipCost(Number chip) : Number cost
+ * getChipCost(NumberÂ chip) : NumberÂ cost
  * Returns a chip's cost, in TP.
  * Desired chip.
  * Given chip's cost, in TP.
@@ -1405,7 +1434,7 @@ function getChipCooldown(chip) {}
 function getChipCost(chip) {}
 
 /**
- * getChipEffectiveArea(Number chip, Number cell) : ArrayOfNumbers cells
+ * getChipEffectiveArea(NumberÂ chip, NumberÂ cell) : ArrayOfNumbersÂ cells
  * Lists the cells affected if given chip were used on given cell.
  * Chip to be used.
  * Targetted cell.
@@ -1423,7 +1452,7 @@ function getChipCost(chip) {}
 function getChipEffectiveArea(chip, cell) {}
 
 /**
- * getChipEffectiveArea(Number chip, Number cell, Number from) : ArrayOfNumbers cells
+ * getChipEffectiveArea(NumberÂ chip, NumberÂ cell, NumberÂ from) : ArrayOfNumbersÂ cells
  * Lists the cells affected if given chip were used on given cell from from cell.
  * Chip to be used.
  * Targetted cell.
@@ -1443,7 +1472,7 @@ function getChipEffectiveArea(chip, cell) {}
 function getChipEffectiveArea(chip, cell, from) {}
 
 /**
- * getChipEffects(Number chip) : ArrayOfNumbers effects
+ * getChipEffects(NumberÂ chip) : ArrayOfNumbersÂ effects
  * Lists a chip's effects.
  * Desired chip.
  * Given chip's effects. Format is the same as getWeaponEffects
@@ -1459,7 +1488,7 @@ function getChipEffectiveArea(chip, cell, from) {}
 function getChipEffects(chip) {}
 
 /**
- * getChipFailure(Number chip) : Number failure
+ * getChipFailure(NumberÂ chip) : NumberÂ failure
  * Returns a chip's failure rate.
  * Desired chip.
  * Given chip's failure rate, in percents, integer between 0 and 100.
@@ -1475,7 +1504,7 @@ function getChipEffects(chip) {}
 function getChipFailure(chip) {}
 
 /**
- * getChipMaxScope(Number chip) : Number maxScope
+ * getChipMaxScope(NumberÂ chip) : NumberÂ maxScope
  * Returns a chip's max scope.
  * Desired chip.
  * Given chip's maximum scope.
@@ -1491,7 +1520,7 @@ function getChipFailure(chip) {}
 function getChipMaxScope(chip) {}
 
 /**
- * getChipMinScope(Number chip) : Number minScope
+ * getChipMinScope(NumberÂ chip) : NumberÂ minScope
  * Returns a chip's min scope.
  * Desired chip.
  * Given chip's minimum scope.
@@ -1507,7 +1536,7 @@ function getChipMaxScope(chip) {}
 function getChipMinScope(chip) {}
 
 /**
- * getChipName(Number chip) : String name
+ * getChipName(NumberÂ chip) : StringÂ name
  * Returns a chip's name.
  * Desired chip.
  * Given chip's name
@@ -1523,7 +1552,7 @@ function getChipMinScope(chip) {}
 function getChipName(chip) {}
 
 /**
- * getChips() : ArrayOfNumbers chips
+ * getChips() : ArrayOfNumbersÂ chips
  * Lists your leek's chips.
  * Array containing all of your leek's chips.
  *
@@ -1536,7 +1565,7 @@ function getChipName(chip) {}
 function getChips() {}
 
 /**
- * getChips(Number leek) : ArrayOfNumbers chips
+ * getChips(NumberÂ leek) : ArrayOfNumbersÂ chips
  * Lists given leek's chips.
  * Desired leek.
  * Array containing all of given leek's chips.
@@ -1552,7 +1581,7 @@ function getChips() {}
 function getChips(leek) {}
 
 /**
- * getChipTargets(Number chip, Number cell) : ArrayOfNumbers targets
+ * getChipTargets(NumberÂ chip, NumberÂ cell) : ArrayOfNumbersÂ targets
  * Lists leeks that will be affected if given chip were used on given cell.
  * Chip to be used.
  * Targetted cell.
@@ -1570,7 +1599,7 @@ function getChips(leek) {}
 function getChipTargets(chip, cell) {}
 
 /**
- * getColor(Number red, Number green, Number blue) : Number color
+ * getColor(NumberÂ red, NumberÂ green, NumberÂ blue) : NumberÂ color
  * Gives an integer that corresponds to given color on a (red, green, blue) scale. See mark on how to use given integer.
  * Red value, between 0 and 255.
  * Green value, between 0 and 255.
@@ -1590,7 +1619,7 @@ function getChipTargets(chip, cell) {}
 function getColor(red, green, blue) {}
 
 /**
- * getCooldown(Number chip) : Number cooldown
+ * getCooldown(NumberÂ chip) : NumberÂ cooldown
  * Returns the current cooldown of given chip for your leek.
  * Desired chip.
  * Given chip's current cooldown.
@@ -1606,7 +1635,7 @@ function getColor(red, green, blue) {}
 function getCooldown(chip) {}
 
 /**
- * getCooldown(Number chip, Number leek) : Number cooldown
+ * getCooldown(NumberÂ chip, NumberÂ leek) : NumberÂ cooldown
  * Returns the current cooldown of given chip for given leek.
  * Desired chip.
  * Desired leek.
@@ -1624,7 +1653,7 @@ function getCooldown(chip) {}
 function getCooldown(chip, leek) {}
 
 /**
- * getCores() : Number cores
+ * getCores() : NumberÂ cores
  * Returns your leek's number of cores.
  * Your leek's number of cores.
  *
@@ -1637,7 +1666,7 @@ function getCooldown(chip, leek) {}
 function getCores() {}
 
 /**
- * getCores(Number leek) : Number cores
+ * getCores(NumberÂ leek) : NumberÂ cores
  * Returns given leek's number of cores.
  * Desired leek.
  * Given leek's number of cores.
@@ -1653,7 +1682,7 @@ function getCores() {}
 function getCores(leek) {}
 
 /**
- * getDeadAllies() : ArrayOfNumbers deadAllies
+ * getDeadAllies() : ArrayOfNumbersÂ deadAllies
  * Lists dead allies.
  * Array of dead allies.
  *
@@ -1666,7 +1695,7 @@ function getCores(leek) {}
 function getDeadAllies() {}
 
 /**
- * getDeadEnemies() : ArrayOfNumbers deadEnemies
+ * getDeadEnemies() : ArrayOfNumbersÂ deadEnemies
  * Lists dead enemies.
  * Array of dead enemies.
  *
@@ -1679,7 +1708,7 @@ function getDeadAllies() {}
 function getDeadEnemies() {}
 
 /**
- * getDeadEnemiesCount() : Number numDeadEnemies
+ * getDeadEnemiesCount() : NumberÂ numDeadEnemies
  * Counts the dead enemies in the fight.
  * The number of dead enemies.
  *
@@ -1692,7 +1721,7 @@ function getDeadEnemies() {}
 function getDeadEnemiesCount() {}
 
 /**
- * getDistance(Number cell1, Number cell2) : Number distance
+ * getDistance(NumberÂ cell1, NumberÂ cell2) : NumberÂ distance
  * Computes as a crow flies distance between cell1 and cell2.For distance in number of cells, see getCellDistance, and for an actual path (taking obstacles into account), see getPathLength.
  * Cell id of starting point.
  * Cell id of arrival.
@@ -1710,7 +1739,7 @@ function getDeadEnemiesCount() {}
 function getDistance(cell1, cell2) {}
 
 /**
- * getEffects() : ArrayOfArrays effects
+ * getEffects() : ArrayOfArraysÂ effects
  * Lists the effects affecting your leek.
  * Array of effects affecting your leek. More details in getEffects(leek).
  *
@@ -1723,7 +1752,7 @@ function getDistance(cell1, cell2) {}
 function getEffects() {}
 
 /**
- * getEffects(Number leek) : ArrayOfArrays effects
+ * getEffects(NumberÂ leek) : ArrayOfArraysÂ effects
  * Lists the effects affecting given leek. For your leek, prefer getEffects() with no input.
  * Leek whose effects are listed.
  * Array of effects affecting given leek.
@@ -1751,7 +1780,7 @@ An effect itself is a 2-cell array of the following form: [type, value], with ty
 function getEffects(leek) {}
 
 /**
- * getEnemies() : ArrayOfNumbers enemies
+ * getEnemies() : ArrayOfNumbersÂ enemies
  * Lists all enemies (dead and alive) within a fight.
  * Array containing leek ids of all enemies.
  *
@@ -1764,7 +1793,7 @@ function getEffects(leek) {}
 function getEnemies() {}
 
 /**
- * getEnemiesCount() : Number numEnemies
+ * getEnemiesCount() : NumberÂ numEnemies
  * Counts the enemies in the fight.
  * The number of enemies.
  *
@@ -1777,7 +1806,7 @@ function getEnemies() {}
 function getEnemiesCount() {}
 
 /**
- * getEnemiesLife() : Number life
+ * getEnemiesLife() : NumberÂ life
  * Returns the sum of all of your enemies' HP
  * Sum of all of your enemies' HP
  *
@@ -1790,7 +1819,7 @@ function getEnemiesCount() {}
 function getEnemiesLife() {}
 
 /**
- * getFarmerID() : Number id
+ * getFarmerID() : NumberÂ id
  * Returns your farmer's id.
  * Your farmer's id.
  *
@@ -1803,7 +1832,7 @@ function getEnemiesLife() {}
 function getFarmerID() {}
 
 /**
- * getFarmerID(Number leek) : Number id
+ * getFarmerID(NumberÂ leek) : NumberÂ id
  * Returns the id of given leek's farmer.
  * Desired leek.
  * The id of given leek's farmer.
@@ -1819,7 +1848,7 @@ function getFarmerID() {}
 function getFarmerID(leek) {}
 
 /**
- * getFarmerName() : String name
+ * getFarmerName() : StringÂ name
  * Returns your farmer's name.
  * Your farmer's name.
  *
@@ -1832,7 +1861,7 @@ function getFarmerID(leek) {}
 function getFarmerName() {}
 
 /**
- * getFarmerName(Number leek) : String name
+ * getFarmerName(NumberÂ leek) : StringÂ name
  * Returns the name of given leek's farmer.
  * Desired leek.
  * The name of given leek's farmer.
@@ -1848,7 +1877,7 @@ function getFarmerName() {}
 function getFarmerName(leek) {}
 
 /**
- * getFarthestAlly() : Number farthestAlly
+ * getFarthestAlly() : NumberÂ farthestAlly
  * Returns the farthest ally, using as a crow flies distance.
  * Farthest ally's leek id.
  *
@@ -1861,7 +1890,7 @@ function getFarmerName(leek) {}
 function getFarthestAlly() {}
 
 /**
- * getFarthestEnemy() : Number farthestEnemy
+ * getFarthestEnemy() : NumberÂ farthestEnemy
  * Returns the farthest enemy, using as a crow flies distance.
  * Farthest enemy's leek id.
  *
@@ -1874,7 +1903,7 @@ function getFarthestAlly() {}
 function getFarthestEnemy() {}
 
 /**
- * getFightContext() : Number context
+ * getFightContext() : NumberÂ context
  * Returns current fight's context
  * Depending on fight's context: Test fight (FIGHT_CONTEXT_TEST), Garden fight (FIGHT_CONTEXT_GARDEN), Tournament fight (FIGHT_CONTEXT_TOURNAMENT), Challenge fight (FIGHT_CONTECT_CHALLENGE).
  *
@@ -1887,7 +1916,7 @@ function getFarthestEnemy() {}
 function getFightContext() {}
 
 /**
- * getFightType() : Number fightType
+ * getFightType() : NumberÂ fightType
  * Returns current fight's type
  * Depending on fight's type: Solo fight (FIGHT_TYPE_SOLO), Farmer fight (FIGHT_TYPE_FARMER), Team fight (FIGHT_TYPE_TEAM).
  *
@@ -1900,7 +1929,7 @@ function getFightContext() {}
 function getFightType() {}
 
 /**
- * getForce() : Number force
+ * getForce() : NumberÂ force
  * Returns your leek's strength.
  * Your leek's strength.
  *
@@ -1913,7 +1942,7 @@ function getFightType() {}
 function getForce() {}
 
 /**
- * getForce(Number leek) : Number force
+ * getForce(NumberÂ leek) : NumberÂ force
  * Return's given leek's strength.
  * Desired leek.
  * Given leek's strength.
@@ -1929,7 +1958,7 @@ function getForce() {}
 function getForce(leek) {}
 
 /**
- * getFrequency() : Number frequency
+ * getFrequency() : NumberÂ frequency
  * Returns your leek's frequency.
  * Your leek's frequency.
  *
@@ -1942,7 +1971,7 @@ function getForce(leek) {}
 function getFrequency() {}
 
 /**
- * getFrequency(Number leek) : Number frequency
+ * getFrequency(NumberÂ leek) : NumberÂ frequency
  * Return's given leek's frequency.
  * Desired leek.
  * Given leek's frequency.
@@ -1958,7 +1987,7 @@ function getFrequency() {}
 function getFrequency(leek) {}
 
 /**
- * getGreen(Number color) : Number green
+ * getGreen(NumberÂ color) : NumberÂ green
  * Returns the green component of given color. For 
 instance getGreen(COLOR_GREEN) = 255 and getGreen(COLOR_BLUE) = 0.
  * Color whose green component is to be returned.
@@ -1975,7 +2004,7 @@ instance getGreen(COLOR_GREEN) = 255 and getGreen(COLOR_BLUE) = 0.
 function getGreen(color) {}
 
 /**
- * getInstructionsCount() : Number instructions
+ * getInstructionsCount() : NumberÂ instructions
  * Returns the number of instructions used by your leek this turn.
  * The number of instructions used by your leek this turn.
  *
@@ -1988,7 +2017,7 @@ function getGreen(color) {}
 function getInstructionsCount() {}
 
 /**
- * getLeek() : Number leek
+ * getLeek() : NumberÂ leek
  * Returns your leek's id.
  * Your leek's id.
  *
@@ -2001,7 +2030,7 @@ function getInstructionsCount() {}
 function getLeek() {}
 
 /**
- * getLeekID() : Number realID
+ * getLeekID() : NumberÂ realID
  * Returns your leek's absolute id (does not depend on fight).
  * Your leek's absolute id.
  *
@@ -2014,7 +2043,7 @@ function getLeek() {}
 function getLeekID() {}
 
 /**
- * getLeekID(Number leek) : Number realID
+ * getLeekID(NumberÂ leek) : NumberÂ realID
  * Returns given leek's absolute id.
  * Desired leek.
  * Given leek's absolute id.
@@ -2030,7 +2059,7 @@ function getLeekID() {}
 function getLeekID(leek) {}
 
 /**
- * getLeekOnCell(Number cell) : Number leek
+ * getLeekOnCell(NumberÂ cell) : NumberÂ leek
  * Returns the leek present on given cell, if any.
  * Desired cell.
  * The leek id of a leek that is currently occupying given cell, -1 if cell is not occupied by a leek.
@@ -2046,7 +2075,7 @@ function getLeekID(leek) {}
 function getLeekOnCell(cell) {}
 
 /**
- * getLevel() : Number level
+ * getLevel() : NumberÂ level
  * Returns your leek's level.
  * Your leek's level.
  *
@@ -2059,7 +2088,7 @@ function getLeekOnCell(cell) {}
 function getLevel() {}
 
 /**
- * getLevel(Number leek) : Number level
+ * getLevel(NumberÂ leek) : NumberÂ level
  * Returns given leek's level.
  * Desired leek.
  * Given leek's level.
@@ -2075,7 +2104,7 @@ function getLevel() {}
 function getLevel(leek) {}
 
 /**
- * getLife() : Number life
+ * getLife() : NumberÂ life
  * Returns your leek's HP count.
  * Your leek's HP count.
  *
@@ -2088,7 +2117,7 @@ function getLevel(leek) {}
 function getLife() {}
 
 /**
- * getLife(Number leek) : Number life
+ * getLife(NumberÂ leek) : NumberÂ life
  * Returns given leek's HP count.
  * Desired leek.
  * Given leek's HP count.
@@ -2104,7 +2133,7 @@ function getLife() {}
 function getLife(leek) {}
 
 /**
- * getMessageAuthor(Array message) : Number leek
+ * getMessageAuthor(ArrayÂ message) : NumberÂ leek
  * Returns given message's author (leek).
  * Message whose author is desired.
  * Given message's author.
@@ -2120,7 +2149,7 @@ function getLife(leek) {}
 function getMessageAuthor(message) {}
 
 /**
- * getMessageParams(Array message) : ? params
+ * getMessageParams(ArrayÂ message) : ?Â params
  * Returns given message's parameters.
  * Message whose parameters are desired.
  * Given message's parameters.
@@ -2136,7 +2165,7 @@ function getMessageAuthor(message) {}
 function getMessageParams(message) {}
 
 /**
- * getMessages() : ArrayOfArrays messages
+ * getMessages() : ArrayOfArraysÂ messages
  * Lists all messages addressed to you.
  * Array of messages.A message itself is a 3-cell array of the following form: [author, type, parameters]Message types are:
 
@@ -2155,7 +2184,7 @@ function getMessageParams(message) {}
 function getMessages() {}
 
 /**
- * getMessages(Number leek) : ArrayOfArrays messages
+ * getMessages(NumberÂ leek) : ArrayOfArraysÂ messages
  * Lists all messages addressed to given leek.
  * Leek whose messages are returned.
  * Array of messages addressed to given leek.
@@ -2171,7 +2200,7 @@ function getMessages() {}
 function getMessages(leek) {}
 
 /**
- * getMessageType(Array message) : Number type
+ * getMessageType(ArrayÂ message) : NumberÂ type
  * Returns given message's message type.
  * Message whose type is desired.
  * Given message's type.
@@ -2187,7 +2216,7 @@ function getMessages(leek) {}
 function getMessageType(message) {}
 
 /**
- * getMP() : Number mp
+ * getMP() : NumberÂ mp
  * Returns your leek's MP count.
  * Your leek's MP count.
  *
@@ -2200,7 +2229,7 @@ function getMessageType(message) {}
 function getMP() {}
 
 /**
- * getMP(Number leek) : Number mp
+ * getMP(NumberÂ leek) : NumberÂ mp
  * Returns given leek's MP count.
  * Desired leek.
  * Given leek's name.
@@ -2216,7 +2245,7 @@ function getMP() {}
 function getMP(leek) {}
 
 /**
- * getName() : String name
+ * getName() : StringÂ name
  * Returns your leek's name.
  * Your leek's name.
  *
@@ -2229,7 +2258,7 @@ function getMP(leek) {}
 function getName() {}
 
 /**
- * getName(Number leek) : String name
+ * getName(NumberÂ leek) : StringÂ name
  * Returns given leek's name.
  * Desired leek.
  * Given leek's name.
@@ -2245,7 +2274,7 @@ function getName() {}
 function getName(leek) {}
 
 /**
- * getNearestAlly() : Number nearestAlly
+ * getNearestAlly() : NumberÂ nearestAlly
  * Returns the allied leek closest to your leek.
  * id of the nearest ally
  *
@@ -2258,8 +2287,8 @@ function getName(leek) {}
 function getNearestAlly() {}
 
 /**
- * getNearestAllyTo(Number leek) : Number ally
- * Returns, among your allies, the closest one to given leek.
+ * getNearestAllyTo(NumberÂ leek) : NumberÂ ally
+ * Returns, among your allies, theÂ closest one to given leek.
  * Targetted leek.
  * Leek id of your ally that is closest to given leek.
  *
@@ -2274,8 +2303,8 @@ function getNearestAlly() {}
 function getNearestAllyTo(leek) {}
 
 /**
- * getNearestAllyToCell(Number cell) : Number ally
- * Returns, among your allies, the closest one to given cell.
+ * getNearestAllyToCell(NumberÂ cell) : NumberÂ ally
+ * Returns, among your allies, theÂ closest one to given cell.
  * Targetted cell.
  * Leek id of your ally that is closest to given cell.
  *
@@ -2290,7 +2319,7 @@ function getNearestAllyTo(leek) {}
 function getNearestAllyToCell(cell) {}
 
 /**
- * getNearestEnemy() : Number nearestEnemy
+ * getNearestEnemy() : NumberÂ nearestEnemy
  * Returns the enemy leek closest to your leek.
  * id of the nearest enemy.
  *
@@ -2303,8 +2332,8 @@ function getNearestAllyToCell(cell) {}
 function getNearestEnemy() {}
 
 /**
- * getNearestEnemyTo(Number leek) : Number enemy
- * Returns, among your enemies, the closest one to given leek.
+ * getNearestEnemyTo(NumberÂ leek) : NumberÂ enemy
+ * Returns, among your enemies, theÂ closest one to given leek.
  * Targetted leek.
  * Leek id of your enemy that is closest to given leek.
  *
@@ -2319,8 +2348,8 @@ function getNearestEnemy() {}
 function getNearestEnemyTo(leek) {}
 
 /**
- * getNearestEnemyToCell(Number cell) : Number enemy
- * Returns, among your enemies, the closest one to given cell.
+ * getNearestEnemyToCell(NumberÂ cell) : NumberÂ enemy
+ * Returns, among your enemies, theÂ closest one to given cell.
  * Targetted cell.
  * Leek id of your enemy that is closest to given cell.
  *
@@ -2335,7 +2364,7 @@ function getNearestEnemyTo(leek) {}
 function getNearestEnemyToCell(cell) {}
 
 /**
- * getNextPlayer() : Number player
+ * getNextPlayer() : NumberÂ player
  * Returns the leek id of the next leek to play.
  * Leek id of the next player.
  *
@@ -2348,7 +2377,7 @@ function getNearestEnemyToCell(cell) {}
 function getNextPlayer() {}
 
 /**
- * getObstacles() : ArrayOfNumbers obstacles
+ * getObstacles() : ArrayOfNumbersÂ obstacles
  * Lists all cells that are occupied by obstacles.
  * Array of cells occupied by obstacles.
  *
@@ -2361,7 +2390,7 @@ function getNextPlayer() {}
 function getObstacles() {}
 
 /**
- * getPath(Number cell1, Number cell2) : ArrayOfNumbers path
+ * getPath(NumberÂ cell1, NumberÂ cell2) : ArrayOfNumbersÂ path
  * Finds a path between cell1 and cell2, avoiding occupied cells.
  * Cell id of starting point.
  * Cell id of destination.
@@ -2379,7 +2408,7 @@ function getObstacles() {}
 function getPath(cell1, cell2) {}
 
 /**
- * getPath(Number start, Number end, ArrayOfNumbers ignoredCells) : ArrayOfNumbers path
+ * getPath(NumberÂ start, NumberÂ end, ArrayOfNumbersÂ ignoredCells) : ArrayOfNumbersÂ path
  * Finds a path between cell1 and cell2, avoiding occupied cells, except ignoredCells, which are considered empty even when a leek occupies them.
  * Cell id of starting point.
  * Cell id of destination.
@@ -2399,7 +2428,7 @@ function getPath(cell1, cell2) {}
 function getPath(start, end, ignoredCells) {}
 
 /**
- * getPathLength(Number cell1, Number cell2) : Number length
+ * getPathLength(NumberÂ cell1, NumberÂ cell2) : NumberÂ length
  * Returns the length of a path between cell1 and cell2 that avoids occupied cells. This function is equivalent to count(getPath(cell1, cell2)).For as a crow's flies distance, see getDistance and for distance in number of cells, see getCellDistance
  * Cell id of starting point.
  * Cell id of destination.
@@ -2417,7 +2446,7 @@ function getPath(start, end, ignoredCells) {}
 function getPathLength(cell1, cell2) {}
 
 /**
- * getPathLength(Number cell1, Number cell2, ArrayOfNumbers ignoredCells) : ArrayOfNumbers length
+ * getPathLength(NumberÂ cell1, NumberÂ cell2, ArrayOfNumbersÂ ignoredCells) : ArrayOfNumbersÂ length
  * Returns the length of a path between cell1 and cell2 that avoids occupied cells, except ignoredCells which are considered empty even when a leek is present.
  * Cell id of starting point.
  * Cell id of destination.
@@ -2437,7 +2466,7 @@ function getPathLength(cell1, cell2) {}
 function getPathLength(cell1, cell2, ignoredCells) {}
 
 /**
- * getPreviousPlayer() : Number player
+ * getPreviousPlayer() : NumberÂ player
  * Returns the leek id of the leek who just played.
  * Leek id of the leek who just played.
  *
@@ -2450,7 +2479,7 @@ function getPathLength(cell1, cell2, ignoredCells) {}
 function getPreviousPlayer() {}
 
 /**
- * getRed(Number color) : Number red
+ * getRed(NumberÂ color) : NumberÂ red
  * Returns the red component of given color. For 
 instance getRed(COLOR_RED) = 255 and getRed(COLOR_BLUE) = 0.
  * Color whose red component is to be returned.
@@ -2467,7 +2496,7 @@ instance getRed(COLOR_RED) = 255 and getRed(COLOR_BLUE) = 0.
 function getRed(color) {}
 
 /**
- * getRegister(String key) : String value
+ * getRegister(StringÂ key) : StringÂ value
  * documentation_func_getRegister
  * documentation_func_getRegister_arg_1
  * documentation_func_getRegister_return
@@ -2483,7 +2512,7 @@ function getRed(color) {}
 function getRegister(key) {}
 
 /**
- * getRegisters() : ArrayOfStrings registers
+ * getRegisters() : ArrayOfStringsÂ registers
  * documentation_func_getRegisters
  * documentation_func_getRegisters_return
  *
@@ -2496,7 +2525,7 @@ function getRegister(key) {}
 function getRegisters() {}
 
 /**
- * getRelativeShield() : Number shield
+ * getRelativeShield() : NumberÂ shield
  * Returns your leek's relative shield.
  * Your leek's relative shield, in percents: integer between 0 and 100.
  *
@@ -2509,7 +2538,7 @@ function getRegisters() {}
 function getRelativeShield() {}
 
 /**
- * getRelativeShield(Number leek) : Number shield
+ * getRelativeShield(NumberÂ leek) : NumberÂ shield
  * Returns given leek's relative shield. For your leek's relative shield, prefer getRelativeShield() with no input.
  * Desired leek.
  * Given leek's relative shield, in percents: integer between 0 and 100.
@@ -2525,7 +2554,36 @@ function getRelativeShield() {}
 function getRelativeShield(leek) {}
 
 /**
- * getTeamID() : Number id
+ * getSummoner() : NumberÂ summoner
+ * documentation_func_getSummoner
+ * documentation_func_getSummoner_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   summoner
+ */
+function getSummoner() {}
+
+/**
+ * getSummoner(NumberÂ entity) : NumberÂ summoner
+ * documentation_func_getSummoner_2
+ * documentation_func_getSummoner_2_arg_1
+ * documentation_func_getSummoner_2_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number entity
+ *
+ * @return Number
+ *   summoner
+ */
+function getSummoner(entity) {}
+
+/**
+ * getTeamID() : NumberÂ id
  * Returns your team's id.
  * Your team's id.
  *
@@ -2538,7 +2596,7 @@ function getRelativeShield(leek) {}
 function getTeamID() {}
 
 /**
- * getTeamID(Number leek) : Number id
+ * getTeamID(NumberÂ leek) : NumberÂ id
  * Returns the id of given leek's team.
  * Desired leek.
  * The id of given leek's team.
@@ -2554,7 +2612,7 @@ function getTeamID() {}
 function getTeamID(leek) {}
 
 /**
- * getTeamName() : String name
+ * getTeamName() : StringÂ name
  * Returns your team's name.
  * Your team's name.
  *
@@ -2567,7 +2625,7 @@ function getTeamID(leek) {}
 function getTeamName() {}
 
 /**
- * getTeamName(Number leek) : String name
+ * getTeamName(NumberÂ leek) : StringÂ name
  * Returns the name of given leek's team.
  * Desired leek.
  * The name of given leek's team.
@@ -2583,7 +2641,7 @@ function getTeamName() {}
 function getTeamName(leek) {}
 
 /**
- * getTotalLife() : Number life
+ * getTotalLife() : NumberÂ life
  * Returns your leek's maximum life.
  * Your leek's maximum life.
  *
@@ -2596,7 +2654,7 @@ function getTeamName(leek) {}
 function getTotalLife() {}
 
 /**
- * getTotalLife(Number leek) : Number life
+ * getTotalLife(NumberÂ leek) : NumberÂ life
  * Returns given leek's maximum life.
  * Desired leek.
  * Given leek's maximum life.
@@ -2612,7 +2670,7 @@ function getTotalLife() {}
 function getTotalLife(leek) {}
 
 /**
- * getTP() : Number tp
+ * getTP() : NumberÂ tp
  * Returns your leek's TP count.
  * Your leek's TP count.
  *
@@ -2625,7 +2683,7 @@ function getTotalLife(leek) {}
 function getTP() {}
 
 /**
- * getTP(Number leek) : Number tp
+ * getTP(NumberÂ leek) : NumberÂ tp
  * Returns given leek's TP count.
  * Desired leek.
  * Given leek's TP count.
@@ -2641,7 +2699,7 @@ function getTP() {}
 function getTP(leek) {}
 
 /**
- * getTurn() : Number turn
+ * getTurn() : NumberÂ turn
  * Returns current turn's count. Maximum duration of a fight is MAX_TURNS.
  * Current turn's count.
  *
@@ -2654,7 +2712,36 @@ function getTP(leek) {}
 function getTurn() {}
 
 /**
- * getWeapon() : Number weapon
+ * getType() : NumberÂ type
+ * documentation_func_getType
+ * documentation_func_getType_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Number
+ *   type
+ */
+function getType() {}
+
+/**
+ * getType(NumberÂ entity) : NumberÂ type
+ * documentation_func_getType_2
+ * documentation_func_getType_2_arg_1
+ * documentation_func_getType_2_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number entity
+ *
+ * @return Number
+ *   type
+ */
+function getType(entity) {}
+
+/**
+ * getWeapon() : NumberÂ weapon
  * Returns the weapon currently equipped by your leek.
  * The weapon's id, null if your leek has no equipped weapon.
  *
@@ -2667,7 +2754,7 @@ function getTurn() {}
 function getWeapon() {}
 
 /**
- * getWeapon(Number leek) : Number weapon
+ * getWeapon(NumberÂ leek) : NumberÂ weapon
  * Returns the weapon currently equipped by given leek.
  * Desired leek.
  * The weapon's id, null if given leek has no equipped weapon.
@@ -2683,7 +2770,7 @@ function getWeapon() {}
 function getWeapon(leek) {}
 
 /**
- * getWeaponArea(Number weapon) : Number area
+ * getWeaponArea(NumberÂ weapon) : NumberÂ area
  * documentation_func_getWeaponArea
  * documentation_func_getWeaponArea_arg_1
  * documentation_func_getWeaponArea_return
@@ -2699,7 +2786,7 @@ function getWeapon(leek) {}
 function getWeaponArea(weapon) {}
 
 /**
- * getWeaponCost(Number weapon) : Number cost
+ * getWeaponCost(NumberÂ weapon) : NumberÂ cost
  * Returns a weapon's cost, in TP.
  * Desired weapon.
  * Given weapon's cost, in TP.
@@ -2715,7 +2802,7 @@ function getWeaponArea(weapon) {}
 function getWeaponCost(weapon) {}
 
 /**
- * getWeaponEffectiveArea(Number cell) : ArrayOfNumbers cells
+ * getWeaponEffectiveArea(NumberÂ cell) : ArrayOfNumbersÂ cells
  * Lists the cells affected if your leek's current weapon were shot on given cell.
  * Targetted cell.
  * Array that contains the id of all affected cells.
@@ -2731,7 +2818,7 @@ function getWeaponCost(weapon) {}
 function getWeaponEffectiveArea(cell) {}
 
 /**
- * getWeaponEffectiveArea(Number weapon, Number cell) : ArrayOfNumbers cells
+ * getWeaponEffectiveArea(NumberÂ weapon, NumberÂ cell) : ArrayOfNumbersÂ cells
  * Lists the cells affected if given weapon were shot on given cell.
  * Weapon to be used.
  * Targetted cell.
@@ -2749,7 +2836,7 @@ function getWeaponEffectiveArea(cell) {}
 function getWeaponEffectiveArea(weapon, cell) {}
 
 /**
- * getWeaponEffectiveArea(Number weapon, Number cell, Number from) : ArrayOfNumbers cells
+ * getWeaponEffectiveArea(NumberÂ weapon, NumberÂ cell, NumberÂ from) : ArrayOfNumbersÂ cells
  * Lists the cells affected if given weapon were shot on given cell, from from cell.
  * Weapon to be used.
  * Targetted cell.
@@ -2769,7 +2856,7 @@ function getWeaponEffectiveArea(weapon, cell) {}
 function getWeaponEffectiveArea(weapon, cell, from) {}
 
 /**
- * getWeaponEffects(Number weapon) : ArrayOfNumbers effects
+ * getWeaponEffects(NumberÂ weapon) : ArrayOfNumbersÂ effects
  * Lists a weapon's effects.
  * Desired weapon.
  * Array containing given's weapon effects. An effect itself if an array, in the following format: [type, min, max, turns, targets].
@@ -2806,7 +2893,7 @@ if (targets & EFFECT_TARGET_NOT_CASTER) debug('Cannot affect caster');
 function getWeaponEffects(weapon) {}
 
 /**
- * getWeaponFailure(Number weapon) : Number failure
+ * getWeaponFailure(NumberÂ weapon) : NumberÂ failure
  * Returns a weapon's failure rate.
  * Desired weapon.
  * Given chip's failure rate, in percents, integer between 0 and 100.
@@ -2822,7 +2909,7 @@ function getWeaponEffects(weapon) {}
 function getWeaponFailure(weapon) {}
 
 /**
- * getWeaponMaxScope(Number weapon) : Number maxScope
+ * getWeaponMaxScope(NumberÂ weapon) : NumberÂ maxScope
  * Returns a weapon's max scope.
  * Desired weapon.
  * Given weapon's maximum scope.
@@ -2838,7 +2925,7 @@ function getWeaponFailure(weapon) {}
 function getWeaponMaxScope(weapon) {}
 
 /**
- * getWeaponMinScope(Number weapon) : Number minScope
+ * getWeaponMinScope(NumberÂ weapon) : NumberÂ minScope
  * Returns a weapon's min scope.
  * Desired weapon.
  * Given weapon's minimum scope.
@@ -2854,7 +2941,7 @@ function getWeaponMaxScope(weapon) {}
 function getWeaponMinScope(weapon) {}
 
 /**
- * getWeaponName(Number weapon) : String name
+ * getWeaponName(NumberÂ weapon) : StringÂ name
  * Returns a weapon's name.
  * Desired weapon.
  * Given weapon's name
@@ -2870,7 +2957,7 @@ function getWeaponMinScope(weapon) {}
 function getWeaponName(weapon) {}
 
 /**
- * getWeapons() : ArrayOfNumbers weapons
+ * getWeapons() : ArrayOfNumbersÂ weapons
  * Lists your leek's weapons.
  * Array containing all of your leek's weapons.
  *
@@ -2883,7 +2970,7 @@ function getWeaponName(weapon) {}
 function getWeapons() {}
 
 /**
- * getWeapons(Number leek) : ArrayOfNumbers weapon
+ * getWeapons(NumberÂ leek) : ArrayOfNumbersÂ weapon
  * Lists given leek's weapons.
  * Desired leek.
  * Array containing all of given leek's weapons.
@@ -2899,7 +2986,7 @@ function getWeapons() {}
 function getWeapons(leek) {}
 
 /**
- * getWeaponTargets(Number cell) : ArrayOfNumbers targets
+ * getWeaponTargets(NumberÂ cell) : ArrayOfNumbersÂ targets
  * Lists leeks that will be affected if your leek's current weapon were used on given cell.
  * Targetted cell.
  * Array containing the affected leeks.
@@ -2915,7 +3002,7 @@ function getWeapons(leek) {}
 function getWeaponTargets(cell) {}
 
 /**
- * getWeaponTargets(Number weapon, Number cell) : ArrayOfNumbers targets
+ * getWeaponTargets(NumberÂ weapon, NumberÂ cell) : ArrayOfNumbersÂ targets
  * Lists leeks that will be affected if given weapon were used on given cell.
  * Weapon to be used.
  * Targetted cell.
@@ -2933,8 +3020,8 @@ function getWeaponTargets(cell) {}
 function getWeaponTargets(weapon, cell) {}
 
 /**
- * hypot(Number x, Number y) : Number hypotenuse
- * Returns the hypothenuse of a right-angled triangle with sides x and y. Equivalent to sqrt(x**2 + y**2).
+ * hypot(NumberÂ x, NumberÂ y) : NumberÂ hypotenuse
+ * Returns the hypothenuse of a right-angled triangle with sides x and y. Equivalent to sqrt(x**2Â +Â y**2).
  * x value.
  * y value.
  * sqrt(x**2 + y**2).
@@ -2951,7 +3038,7 @@ function getWeaponTargets(weapon, cell) {}
 function hypot(x, y) {}
 
 /**
- * inArray(Array array, ? element) : Boolean inArray
+ * inArray(ArrayÂ array, ?Â element) : BooleanÂ inArray
  * Checks whether given element is inside given array.
  * Array in which search is performed.
  * Element to look for.
@@ -2969,7 +3056,7 @@ function hypot(x, y) {}
 function inArray(array, element) {}
 
 /**
- * include(String ai)
+ * include(StringÂ ai)
  * Icludes the AI whose name is ai inside current AI.Warning: include function shall only be called inside the main AI block, and its parameter shall NOT be a variable. More information in the tutorial: http://leekwars.com/tutorial#includes.
  * AI's name (hard-coded string only)
  *
@@ -2981,7 +3068,7 @@ function inArray(array, element) {}
 function __include(ai) {}
 
 /**
- * indexOf(String string, String search) : Number index
+ * indexOf(StringÂ string, StringÂ search) : NumberÂ index
  * Finds the first occurrence of search string within given string.
  * String to be looked into.
  * String to be looked for.
@@ -2999,7 +3086,7 @@ function __include(ai) {}
 function indexOf(string, search) {}
 
 /**
- * indexOf(String string, String search, Number start) : Number index
+ * indexOf(StringÂ string, StringÂ search, NumberÂ start) : NumberÂ index
  * Finds the first occurrence of search string within given string, starting at given position.
  * String to be looked into.
  * String to be looked for.
@@ -3019,7 +3106,7 @@ function indexOf(string, search) {}
 function indexOf(string, search, start) {}
 
 /**
- * insert(Array array, ? element, Number position)
+ * insert(ArrayÂ array, ?Â element, NumberÂ position)
  * Inserts an element in an array, at given position.
  * Array in which element is added.
  * Element to add.
@@ -3035,7 +3122,7 @@ function indexOf(string, search, start) {}
 function insert(array, element, position) {}
 
 /**
- * isAlive(Number leek) : Boolean alive
+ * isAlive(NumberÂ leek) : BooleanÂ alive
  * Checks whether a leek is alive. Equivalent to getLife(leek) > 0.
  * Desired leek.
  * true if leek is alive, false otherwise.
@@ -3051,7 +3138,7 @@ function insert(array, element, position) {}
 function isAlive(leek) {}
 
 /**
- * isAlly(Number leek) : Boolean isAlly
+ * isAlly(NumberÂ leek) : BooleanÂ isAlly
  * Checks whether a leek is your ally.
  * Desired leek.
  * true if leek is an ally (or you), false otherwise.
@@ -3067,7 +3154,7 @@ function isAlive(leek) {}
 function isAlly(leek) {}
 
 /**
- * isChip(Number value) : String chip
+ * isChip(NumberÂ value) : StringÂ chip
  * Checks whether given value can represent a chip.isChip(CHIP_RAGE) = true;isChip(WEAPON_PISTOL) = false.
  * Value to check.
  * true if value is a chip, false otherwise.
@@ -3083,7 +3170,7 @@ function isAlly(leek) {}
 function isChip(value) {}
 
 /**
- * isDead(Number leek) : Boolean dead
+ * isDead(NumberÂ leek) : BooleanÂ dead
  * Checks whether a leek is dead. Equivalent to getLife(leek) == 0.
  * Desired leek.
  * true if leek is dead, false otherwise.
@@ -3099,7 +3186,7 @@ function isChip(value) {}
 function isDead(leek) {}
 
 /**
- * isEmpty(Array array) : Boolean empty
+ * isEmpty(ArrayÂ array) : BooleanÂ empty
  * Checks whether given array is empty. Equivalent to count(array) == 0.
  * Array to check.
  * true if array is empty, false otherwise.
@@ -3115,7 +3202,7 @@ function isDead(leek) {}
 function isEmpty(array) {}
 
 /**
- * isEmptyCell(Number cell) : Boolean empty
+ * isEmptyCell(NumberÂ cell) : BooleanÂ empty
  * Checks whether given cell is empty.
  * Cell to check.
  * true if cell is empty, false otherwise.
@@ -3131,7 +3218,7 @@ function isEmpty(array) {}
 function isEmptyCell(cell) {}
 
 /**
- * isEnemy(Number leek) : Boolean isEnemy
+ * isEnemy(NumberÂ leek) : BooleanÂ isEnemy
  * Checks whether a leek is your enemy.
  * Desired leek.
  * true if leek is an enemy, false otherwise.
@@ -3147,7 +3234,7 @@ function isEmptyCell(cell) {}
 function isEnemy(leek) {}
 
 /**
- * isInlineChip(Number chip) : Boolean isInline
+ * isInlineChip(NumberÂ chip) : BooleanÂ isInline
  * Checks whether given chip is inline, i.e. only usable if the target is in the same line as the caster.
  * Desired chip.
  * true if chip is inline, false otherwise.
@@ -3163,7 +3250,7 @@ function isEnemy(leek) {}
 function isInlineChip(chip) {}
 
 /**
- * isInlineWeapon(Number weapon) : Boolean isInline
+ * isInlineWeapon(NumberÂ weapon) : BooleanÂ isInline
  * Checks whether given weapon is inline, i.e. only usable if the target is in the same line as the caster.
  * Desired weapon.
  * true if weapon is inline, false otherwise.
@@ -3179,7 +3266,7 @@ function isInlineChip(chip) {}
 function isInlineWeapon(weapon) {}
 
 /**
- * isLeek(Number cell) : Boolean isLeek
+ * isLeek(NumberÂ cell) : BooleanÂ isLeek
  * Checks whether given cell is occupied by a leek.
  * Cell to check.
  * true if cell is occupied by a leek, false otherwise.
@@ -3195,7 +3282,7 @@ function isInlineWeapon(weapon) {}
 function isLeek(cell) {}
 
 /**
- * isObstacle(Number cell) : Boolean isObstacle
+ * isObstacle(NumberÂ cell) : BooleanÂ isObstacle
  * Checks whether given cell is occupied by an obstacle.
  * Cell to check.
  * true if cell is occupied by an obstacle, false otherwise.
@@ -3211,7 +3298,7 @@ function isLeek(cell) {}
 function isObstacle(cell) {}
 
 /**
- * isOnSameLine(Number cell1, Number cell2) : Boolean sameLine
+ * isOnSameLine(NumberÂ cell1, NumberÂ cell2) : BooleanÂ sameLine
  * Checks whether cell1 and cell2 are on the same line.
  * First cell.
  * Second cell.
@@ -3229,7 +3316,36 @@ function isObstacle(cell) {}
 function isOnSameLine(cell1, cell2) {}
 
 /**
- * isWeapon(Number value) : String weapon
+ * isSummon() : StringÂ summon
+ * documentation_func_isSummon
+ * documentation_func_isSummon_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return String
+ *   summon
+ */
+function isSummon() {}
+
+/**
+ * isSummon(NumberÂ entity) : NumberÂ summon
+ * documentation_func_isSummon_2
+ * documentation_func_isSummon_2_arg_1
+ * documentation_func_isSummon_2_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number entity
+ *
+ * @return Number
+ *   summon
+ */
+function isSummon(entity) {}
+
+/**
+ * isWeapon(NumberÂ value) : StringÂ weapon
  * Checks whether given value can represent a weapon.isWeapon(WEAPON_LASER) = true;isWeapon(CHIP_TELEPORTATION) = false.
  * Value to check.
  * true if value is a weapon, false otherwise.
@@ -3245,7 +3361,7 @@ function isOnSameLine(cell1, cell2) {}
 function isWeapon(value) {}
 
 /**
- * join(Array array, String glue) : String string
+ * join(ArrayÂ array, StringÂ glue) : StringÂ string
  * Creates a single string containing all elements of given array, separated by glue delimiters.
  * An array of elements to be joined into a string.
  * A string that is inserted between consecutive elements of the array.
@@ -3263,7 +3379,7 @@ function isWeapon(value) {}
 function join(array, glue) {}
 
 /**
- * keySort(Array array)
+ * keySort(ArrayÂ array)
  * Sorts an array using key values.
  * Array that is sorted.
  *
@@ -3275,7 +3391,7 @@ function join(array, glue) {}
 function keySort(array) {}
 
 /**
- * keySort(Array array, Number order)
+ * keySort(ArrayÂ array, NumberÂ order)
  * Sorts an array using key values, using given sorting order.
  * Array that is sorted.
  * Sorting order: SORT_ASC or SORT_DESC.
@@ -3289,7 +3405,7 @@ function keySort(array) {}
 function keySort(array, order) {}
 
 /**
- * length(String string) : Number length
+ * length(StringÂ string) : NumberÂ length
  * Returns given string's length.
  * Desired string.
  * Given string's length
@@ -3305,7 +3421,7 @@ function keySort(array, order) {}
 function length(string) {}
 
 /**
- * lineOfSight(Number start, Number end) : Boolean los
+ * lineOfSight(NumberÂ start, NumberÂ end) : BooleanÂ los
  * Checks whether a leek on start cell can see end cell.
  * Cell id of starting point.
  * Cell id of target.
@@ -3323,7 +3439,7 @@ function length(string) {}
 function lineOfSight(start, end) {}
 
 /**
- * lineOfSight(Number start, Number end, Number leekToIgnore) : Boolean los
+ * lineOfSight(NumberÂ start, NumberÂ end, NumberÂ leekToIgnore) : BooleanÂ los
  * Checks whether a leek on start cell can see end cell, ignoring given leek.
  * Cell id of starting point.
  * Cell id of target.
@@ -3343,7 +3459,7 @@ function lineOfSight(start, end) {}
 function lineOfSight(start, end, leekToIgnore) {}
 
 /**
- * listen() : Array messages
+ * listen() : ArrayÂ messages
  * Lists say() performed by previous leeks, as [leek_id, message].
  * Array containing previous say().
  *
@@ -3356,9 +3472,9 @@ function lineOfSight(start, end, leekToIgnore) {}
 function listen() {}
 
 /**
- * log(Number number) : Number log
+ * log(NumberÂ number) : NumberÂ log
  * Computes the natural logarithm of given number.
- * A positive number (within ]0 ; +ˆž[ ).
+ * A positive number (within ]0 ; +âˆž[ ).
  * Given number's natural logarithm.
  *
  * @level 1
@@ -3372,9 +3488,9 @@ function listen() {}
 function log(number) {}
 
 /**
- * log10(Number number) : Number log10
+ * log10(NumberÂ number) : NumberÂ log10
  * Computes the decimal logarithm of given number.
- * A positive number (within ]0 ; +ˆž[ ).
+ * A positive number (within ]0 ; +âˆž[ ).
  * Given number's decimal logarithm.
  *
  * @level 1
@@ -3388,7 +3504,7 @@ function log(number) {}
 function log10(number) {}
 
 /**
- * mark(? cells) : Boolean success
+ * mark(?Â cells) : BooleanÂ success
  * Marks one or several cells on terrain in black, for one turn. The mark is only visible by the marking leek's farmer.
  * A cell or array of cells.
  * true if all went well, false otherwise.
@@ -3404,7 +3520,7 @@ function log10(number) {}
 function mark(cells) {}
 
 /**
- * mark(? cells, Number color) : Boolean success
+ * mark(?Â cells, NumberÂ color) : BooleanÂ success
  * Marks one or several cells on terrain in given color for one turn. The mark is only visible by the marking leek's farmer.
  * A cell or array of cells.
  * Marking's color (see getColor()).
@@ -3422,7 +3538,7 @@ function mark(cells) {}
 function mark(cells, color) {}
 
 /**
- * mark(? cells, Number color, Number duration) : Boolean success
+ * mark(?Â cells, NumberÂ color, NumberÂ duration) : BooleanÂ success
  * Marks one or several cells on terrain in given color 
 for the given duration. The mark is only visible by the marking leek's farmer.
  * A cell or array of cells.
@@ -3443,7 +3559,7 @@ for the given duration. The mark is only visible by the marking leek's farmer.
 function mark(cells, color, duration) {}
 
 /**
- * max(Number a, Number b) : Number max
+ * max(NumberÂ a, NumberÂ b) : NumberÂ max
  * Finds the greatest value among two numbers a and b.
  * A number.
  * Another number.
@@ -3461,7 +3577,7 @@ function mark(cells, color, duration) {}
 function max(a, b) {}
 
 /**
- * min(Number a, Number b) : Number min
+ * min(NumberÂ a, NumberÂ b) : NumberÂ min
  * Finds the least value among two numbers a and b.
  * A number.
  * Another number.
@@ -3479,7 +3595,7 @@ function max(a, b) {}
 function min(a, b) {}
 
 /**
- * moveAwayFrom(Number leek) : Number mp
+ * moveAwayFrom(NumberÂ leek) : NumberÂ mp
  * Moves your leek away from another leek.
  * The leek from which you want to flee.
  * The amount of MP spent doing so.
@@ -3495,7 +3611,7 @@ function min(a, b) {}
 function moveAwayFrom(leek) {}
 
 /**
- * moveAwayFrom(Number leek, Number mp) : Number mp
+ * moveAwayFrom(NumberÂ leek, NumberÂ mp) : NumberÂ mp
  * Moves your leek away from another leek, using at most mp Movement Points.
  * The leek from which you want to flee.
  * The maximum amount of MP to spend.
@@ -3513,7 +3629,7 @@ function moveAwayFrom(leek) {}
 function moveAwayFrom(leek, mp) {}
 
 /**
- * moveAwayFromCell(Number cell) : Number mp
+ * moveAwayFromCell(NumberÂ cell) : NumberÂ mp
  * Moves your leek away from given cell.
  * The cell from which you want to flee.
  * The amount of MP spent.
@@ -3529,7 +3645,7 @@ function moveAwayFrom(leek, mp) {}
 function moveAwayFromCell(cell) {}
 
 /**
- * moveAwayFromCell(Number cell, Number mp) : Number mp
+ * moveAwayFromCell(NumberÂ cell, NumberÂ mp) : NumberÂ mp
  * Moves your leek away from given cell, using at most mp Movement Points.
  * The cell from which you want to flee.
  * The maximum amount of MP to spend.
@@ -3547,7 +3663,7 @@ function moveAwayFromCell(cell) {}
 function moveAwayFromCell(cell, mp) {}
 
 /**
- * moveAwayFromCells(ArrayOfNumbers cells) : Number mp
+ * moveAwayFromCells(ArrayOfNumbersÂ cells) : NumberÂ mp
  * Moves your leek away from a given group of cells.
  * Array containig the cells from which you want to flee.
  * The amount of MP spent.
@@ -3563,7 +3679,7 @@ function moveAwayFromCell(cell, mp) {}
 function moveAwayFromCells(cells) {}
 
 /**
- * moveAwayFromCells(ArrayOfNumbers cells, Number mp) : Number mp
+ * moveAwayFromCells(ArrayOfNumbersÂ cells, NumberÂ mp) : NumberÂ mp
  * Moves your leek away from a given group of cells, using at most mp Movement Points.
  * Array containig the cells from which you want to flee.
  * The maximum amount of MP to spend.
@@ -3581,7 +3697,7 @@ function moveAwayFromCells(cells) {}
 function moveAwayFromCells(cells, mp) {}
 
 /**
- * moveAwayFromLeeks(ArrayOfNumbers leeks) : Number mp
+ * moveAwayFromLeeks(ArrayOfNumbersÂ leeks) : NumberÂ mp
  * Moves your leek away from a given group of leeks.
  * Array containig the leeks from which you want to flee.
  * The amount of MP spent.
@@ -3597,7 +3713,7 @@ function moveAwayFromCells(cells, mp) {}
 function moveAwayFromLeeks(leeks) {}
 
 /**
- * moveAwayFromLeeks(ArrayOfNumbers leeks, Number mp) : Number mp
+ * moveAwayFromLeeks(ArrayOfNumbersÂ leeks, NumberÂ mp) : NumberÂ mp
  * Moves your leek away from a given group of leeks, using at most mp Movement Points.
  * Array containig the leeks from which you want to flee.
  * The maximum amount of MP to spend.
@@ -3615,7 +3731,7 @@ function moveAwayFromLeeks(leeks) {}
 function moveAwayFromLeeks(leeks, mp) {}
 
 /**
- * moveAwayFromLine(Number cell1, Number cell2) : Number mp
+ * moveAwayFromLine(NumberÂ cell1, NumberÂ cell2) : NumberÂ mp
  * Moves your leek away from the line between cell1 and cell2.
  * The first cell of the line.
  * The final cell of the line.
@@ -3633,7 +3749,7 @@ function moveAwayFromLeeks(leeks, mp) {}
 function moveAwayFromLine(cell1, cell2) {}
 
 /**
- * moveAwayFromLine(Number cell1, Number cell2, Number mp) : Number mp
+ * moveAwayFromLine(NumberÂ cell1, NumberÂ cell2, NumberÂ mp) : NumberÂ mp
  * Moves your leek away from the line between cell1 
 and cell2, using at most mp 
 Movement Points.
@@ -3655,7 +3771,7 @@ Movement Points.
 function moveAwayFromLine(cell1, cell2, mp) {}
 
 /**
- * moveToward(Number leek) : Number mp
+ * moveToward(NumberÂ leek) : NumberÂ mp
  * Moves your leek closer to another leek.
  * The leek you want to get closer to.
  * The amount of MP spent.
@@ -3671,7 +3787,7 @@ function moveAwayFromLine(cell1, cell2, mp) {}
 function moveToward(leek) {}
 
 /**
- * moveToward(Number leek, Number mp) : Number mp
+ * moveToward(NumberÂ leek, NumberÂ mp) : NumberÂ mp
  * Moves your leek closer to another leek, using at most mp 
 Movement Points.
  * The leek you want to get closer to.
@@ -3690,7 +3806,7 @@ Movement Points.
 function moveToward(leek, mp) {}
 
 /**
- * moveTowardCell(Number cell) : Number mp
+ * moveTowardCell(NumberÂ cell) : NumberÂ mp
  * Moves your leek closer to given cell.
  * The cell you want to get closer to.
  * The amount of MP spent.
@@ -3706,7 +3822,7 @@ function moveToward(leek, mp) {}
 function moveTowardCell(cell) {}
 
 /**
- * moveTowardCell(Number cell, Number mp) : Number mp
+ * moveTowardCell(NumberÂ cell, NumberÂ mp) : NumberÂ mp
  * Moves your leek closer to given cell, using at most mp 
 Movement Points.
  * The cell you want to get closer to.
@@ -3725,7 +3841,7 @@ Movement Points.
 function moveTowardCell(cell, mp) {}
 
 /**
- * moveTowardCells(ArrayOfNumbers cells) : Number mp
+ * moveTowardCells(ArrayOfNumbersÂ cells) : NumberÂ mp
  * Moves your leek closer to a given group of cells.
  * Array containig the cells to which you want to get closer.
  * The amount of MP spent.
@@ -3741,7 +3857,7 @@ function moveTowardCell(cell, mp) {}
 function moveTowardCells(cells) {}
 
 /**
- * moveTowardCells(ArrayOfNumbers cells, Number mp) : Number mp
+ * moveTowardCells(ArrayOfNumbersÂ cells, NumberÂ mp) : NumberÂ mp
  * Moves your leek closer to a given group of cells, using at most mp 
 Movement Points.
  * Array containig the cells to which you want to get closer.
@@ -3760,7 +3876,7 @@ Movement Points.
 function moveTowardCells(cells, mp) {}
 
 /**
- * moveTowardLeeks(ArrayOfNumbers leeks) : Number mp
+ * moveTowardLeeks(ArrayOfNumbersÂ leeks) : NumberÂ mp
  * Moves your leek closer to a given group of leeks.
  * Array containig the leeks to which you want to get closer.
  * The amount of MP spent.
@@ -3776,7 +3892,7 @@ function moveTowardCells(cells, mp) {}
 function moveTowardLeeks(leeks) {}
 
 /**
- * moveTowardLeeks(ArrayOfNumbers leeks, Number mp) : Number mp
+ * moveTowardLeeks(ArrayOfNumbersÂ leeks, NumberÂ mp) : NumberÂ mp
  * Moves your leek closer to a given group of leeks, using at most mp 
 Movement Points.
  * Array containig the leeks to which you want to get closer.
@@ -3795,7 +3911,7 @@ Movement Points.
 function moveTowardLeeks(leeks, mp) {}
 
 /**
- * moveTowardLine(Number cell1, Number cell2) : Number mp
+ * moveTowardLine(NumberÂ cell1, NumberÂ cell2) : NumberÂ mp
  * Moves your leek towards the line between cell1 
 and cell2.
  * The first cell of the line.
@@ -3814,7 +3930,7 @@ and cell2.
 function moveTowardLine(cell1, cell2) {}
 
 /**
- * moveTowardLine(Number cell1, Number cell2, Number mp) : Number mp
+ * moveTowardLine(NumberÂ cell1, NumberÂ cell2, NumberÂ mp) : NumberÂ mp
  * Moves your leek towards the line between cell1 
 and cell2, using at most mp 
 Movement Points.
@@ -3836,7 +3952,7 @@ Movement Points.
 function moveTowardLine(cell1, cell2, mp) {}
 
 /**
- * number(? value) : Number number
+ * number(?Â value) : NumberÂ number
  * Casts a value into a number. If the value is a string, this function attempts to convert it into a number. If the value is a number, this function returns the number. For any other type, this function returns null
  * The value to convert.
  * The resulting number.
@@ -3861,7 +3977,7 @@ function number(value) {}
 function pause() {}
 
 /**
- * pop(Array array) : ? element
+ * pop(ArrayÂ array) : ?Â element
  * Removes the last element of an array, and returns this element.
  * The array to truncate.
  * The truncated element.
@@ -3877,7 +3993,7 @@ function pause() {}
 function pop(array) {}
 
 /**
- * pow(Number base, Number exp) : Number result
+ * pow(NumberÂ base, NumberÂ exp) : NumberÂ result
  * Exponentiates a base number to the exp power.
  * Number to exponentiate.
  * Exponant.
@@ -3895,7 +4011,7 @@ function pop(array) {}
 function pow(base, exp) {}
 
 /**
- * push(Array array, ? element)
+ * push(ArrayÂ array, ?Â element)
  * Adds given element at the end of given array.
  * Array which will be prolonged.
  * Additionnal element.
@@ -3909,7 +4025,7 @@ function pow(base, exp) {}
 function push(array, element) {}
 
 /**
- * pushAll(Array array, Array elements)
+ * pushAll(ArrayÂ array, ArrayÂ elements)
  * Adds all elements from elements array at the end of given array.
  * Array which will be prolonged.
  * Array containing elements to add.
@@ -3923,7 +4039,7 @@ function push(array, element) {}
 function pushAll(array, elements) {}
 
 /**
- * rand() : Number number
+ * rand() : NumberÂ number
  * Returns a random real number, between 0 (included) and 1 (excluded).
  * A random number within [0;1).
  *
@@ -3936,7 +4052,7 @@ function pushAll(array, elements) {}
 function rand() {}
 
 /**
- * randFloat(Number a, Number b) : Number number
+ * randFloat(NumberÂ a, NumberÂ b) : NumberÂ number
  * Returns a random real number, between a (included) and b (excluded).
  * The lower bound of the interval.
  * The upper bound of the interval.
@@ -3954,7 +4070,7 @@ function rand() {}
 function randFloat(a, b) {}
 
 /**
- * randInt(Number a, Number b) : Number number
+ * randInt(NumberÂ a, NumberÂ b) : NumberÂ number
  * Returns a random integer, between a (included) and b (excluded).
  * The lower bound of the interval.
  * The upper bound of the interval.
@@ -3972,7 +4088,7 @@ function randFloat(a, b) {}
 function randInt(a, b) {}
 
 /**
- * remove(Array array, Number position) : ? element
+ * remove(ArrayÂ array, NumberÂ position) : ?Â element
  * Removes the element at given position from given array, and returns this element.
  * The array from which an element is removed.
  * The position of the element to remove.
@@ -3990,7 +4106,7 @@ function randInt(a, b) {}
 function remove(array, position) {}
 
 /**
- * removeElement(Array array, ? element)
+ * removeElement(ArrayÂ array, ?Â element)
  * Removes the first occurrence of given element from given array. array is unchanged if element cannot be found.
  * The array from which an element is removed.
  * The element to look for and remove.
@@ -4004,7 +4120,7 @@ function remove(array, position) {}
 function removeElement(array, element) {}
 
 /**
- * removeKey(Array array, ? key)
+ * removeKey(ArrayÂ array, ?Â key)
  * Removes the element of given array associated with given key.
  * The array from which an element is removed.
  * The key of the element to remove.
@@ -4018,7 +4134,7 @@ function removeElement(array, element) {}
 function removeKey(array, key) {}
 
 /**
- * replace(String string, String search, String replace) : String string
+ * replace(StringÂ string, StringÂ search, StringÂ replace) : StringÂ string
  * Replaces all occurrence of search string with replace string, within given string.
  * String inside which substitutions are performed.
  * Substring to be replaced.
@@ -4038,7 +4154,7 @@ function removeKey(array, key) {}
 function replace(string, search, replace) {}
 
 /**
- * reverse(Array array)
+ * reverse(ArrayÂ array)
  * Reverses the given array.
  * Array that is reversed.
  *
@@ -4050,7 +4166,7 @@ function replace(string, search, replace) {}
 function reverse(array) {}
 
 /**
- * round(Number number) : Number number
+ * round(NumberÂ number) : NumberÂ number
  * Computes the integer closest to a given number.The rounded down value can be computed using floor and the rounded up value using ceil.
  * Number
  * Rounded value of number, to the closest integer.
@@ -4066,7 +4182,7 @@ function reverse(array) {}
 function round(number) {}
 
 /**
- * say(String message)
+ * say(StringÂ message)
  * Allows your leek to talk. Costs one TP.
  * Message your leek says, visible by all viewers of the fight.
  *
@@ -4078,7 +4194,7 @@ function round(number) {}
 function say(message) {}
 
 /**
- * search(Array array, ? element) : Number pos
+ * search(ArrayÂ array, ?Â element) : NumberÂ pos
  * Searches for given element inside given array.
  * The array to look into.
  * The element to look for.
@@ -4096,7 +4212,7 @@ function say(message) {}
 function search(array, element) {}
 
 /**
- * search(Array array, ? element, Number start) : Number pos
+ * search(ArrayÂ array, ?Â element, NumberÂ start) : NumberÂ pos
  * Searches for given element inside given array, starting at start position.
  * The array to look into.
  * The element to look for.
@@ -4116,7 +4232,7 @@ function search(array, element) {}
 function search(array, element, start) {}
 
 /**
- * sendAll(Number type, ? params)
+ * sendAll(NumberÂ type, ?Â params)
  * Sends a message to all of your allies.
  * The type of message to send (see MESSAGE_* constants).
  * The parameters of the message, which can take any form.
@@ -4130,7 +4246,7 @@ function search(array, element, start) {}
 function sendAll(type, params) {}
 
 /**
- * sendTo(Number leek, Number type, ? params) : Boolean sent
+ * sendTo(NumberÂ leek, NumberÂ type, ?Â params) : BooleanÂ sent
  * Sends a message to given leek.
  * Message's addressee
  * The type of message to send (see MESSAGE_* constants).
@@ -4150,7 +4266,7 @@ function sendAll(type, params) {}
 function sendTo(leek, type, params) {}
 
 /**
- * setRegister(String key, String value) : Boolean success
+ * setRegister(StringÂ key, StringÂ value) : BooleanÂ success
  * documentation_func_setRegister
  * documentation_func_setRegister_arg_1
  * documentation_func_setRegister_arg_2
@@ -4168,7 +4284,7 @@ function sendTo(leek, type, params) {}
 function setRegister(key, value) {}
 
 /**
- * setWeapon(Number weapon)
+ * setWeapon(NumberÂ weapon)
  * Equips given weapon on your leek.
  * Weapon's id.
  *
@@ -4180,7 +4296,7 @@ function setRegister(key, value) {}
 function setWeapon(weapon) {}
 
 /**
- * shift(Array array) : ? element
+ * shift(ArrayÂ array) : ?Â element
  * Removes the first cell of given array, and returns the corresponding element.
  * The array to be truncated.
  * The removed element.
@@ -4196,7 +4312,7 @@ function setWeapon(weapon) {}
 function shift(array) {}
 
 /**
- * show(Number cell) : ? 
+ * show(NumberÂ cell) : ?Â 
  * Shows all players given cell in black, for one turn. Costs one TP.
  * Cell to be showned.
  * true if all went well, false otherwise.
@@ -4212,7 +4328,7 @@ function shift(array) {}
 function show(cell) {}
 
 /**
- * show(Number cell, Number color) : ? 
+ * show(NumberÂ cell, NumberÂ color) : ?Â 
  * Shows all players given cell in given color, for one turn. Costs one TP.
  * Cell to be showned.
  * Marking's color (see getColor()).
@@ -4230,7 +4346,7 @@ function show(cell) {}
 function show(cell, color) {}
 
 /**
- * shuffle(Array array)
+ * shuffle(ArrayÂ array)
  * Shuffles the contents of given array.
  * Array to be shuffled.
  *
@@ -4242,7 +4358,7 @@ function show(cell, color) {}
 function shuffle(array) {}
 
 /**
- * signum(Number number) : Number sign
+ * signum(NumberÂ number) : NumberÂ sign
  * Checks the sign of given number.
  * Input number.
  * 1 if number is positive, 0 if it is 0 and -1 if it is negative.
@@ -4258,7 +4374,7 @@ function shuffle(array) {}
 function signum(number) {}
 
 /**
- * sin(Number angle) : Number sine
+ * sin(NumberÂ angle) : NumberÂ sine
  * Computes an angle's sine.
  * A number.
  * Given number's sine, within [-1, 1].
@@ -4274,7 +4390,7 @@ function signum(number) {}
 function sin(angle) {}
 
 /**
- * sort(Array array)
+ * sort(ArrayÂ array)
  * Sorts given array, using the following order:
 
 Booleans (false then true)
@@ -4292,7 +4408,7 @@ null elements
 function sort(array) {}
 
 /**
- * sort(Array array, Number order)
+ * sort(ArrayÂ array, NumberÂ order)
  * Sorts given array, using the given order.
  * Array that needs sorting.
  * SORT_ASC to sort from least to greatest, or SORT_DESC to sort from greatest to least. More details in sort (especially for multiple types arrays).
@@ -4306,7 +4422,7 @@ function sort(array) {}
 function sort(array, order) {}
 
 /**
- * split(String string, String delimiter) : ArrayOfStrings parts
+ * split(StringÂ string, StringÂ delimiter) : ArrayOfStringsÂ parts
  * Splits given string into substrings separated by given delimiter.
  * String that needs splitting.
  * String that separates desired substrings.
@@ -4324,7 +4440,7 @@ function sort(array, order) {}
 function split(string, delimiter) {}
 
 /**
- * split(String string, String delimiter, Number limit) : ArrayOfStrings parts
+ * split(StringÂ string, StringÂ delimiter, NumberÂ limit) : ArrayOfStringsÂ parts
  * Splits given string into substrings separated by given delimiter.
  * String that needs splitting.
  * String that separates desired substrings.
@@ -4344,7 +4460,7 @@ function split(string, delimiter) {}
 function split(string, delimiter, limit) {}
 
 /**
- * sqrt(Number number) : Number root
+ * sqrt(NumberÂ number) : NumberÂ root
  * Computes given number's square root.
  * A number.
  * Given number's square root.
@@ -4360,7 +4476,7 @@ function split(string, delimiter, limit) {}
 function sqrt(number) {}
 
 /**
- * startsWith(String string, String prefix) : Boolean startsWith
+ * startsWith(StringÂ string, StringÂ prefix) : BooleanÂ startsWith
  * Checks whether given string starts with given prefix.
  * String to look into.
  * Prefix to look for.
@@ -4378,7 +4494,7 @@ function sqrt(number) {}
 function startsWith(string, prefix) {}
 
 /**
- * string(? value) : String string
+ * string(?Â value) : StringÂ string
  * Casts a value to a string container.Returns:
 value if it is a string
 "value" if it is a number
@@ -4400,7 +4516,7 @@ value if it is a string
 function string(value) {}
 
 /**
- * subArray(Array array, Number start, Number size) : Array array
+ * subArray(ArrayÂ array, NumberÂ start, NumberÂ size) : ArrayÂ array
  * Extracts a sub-array, starting at start position and of given size, from given array.
  * Source array.
  * Starting position.
@@ -4420,7 +4536,7 @@ function string(value) {}
 function subArray(array, start, size) {}
 
 /**
- * substring(String string, Number start) : String string
+ * substring(StringÂ string, NumberÂ start) : StringÂ string
  * Extracts a substring, starting at start position, from given string.
  * Source string.
  * Starting position.
@@ -4438,7 +4554,7 @@ function subArray(array, start, size) {}
 function substring(string, start) {}
 
 /**
- * substring(String string, Number start, Number length) : String string
+ * substring(StringÂ string, NumberÂ start, NumberÂ length) : StringÂ string
  * Extracts a substring, starting at start position and 
 of given length, from given string
  * Source string.
@@ -4459,7 +4575,7 @@ of given length, from given string
 function substring(string, start, length) {}
 
 /**
- * sum(ArrayOfNumbers array) : Number sum
+ * sum(ArrayOfNumbersÂ array) : NumberÂ sum
  * Computes the sum of all elements within given array.
  * Source array.
  * Computed sum.
@@ -4475,7 +4591,27 @@ function substring(string, start, length) {}
 function sum(array) {}
 
 /**
- * tan(Number angle) : Number tangent
+ * summon(NumberÂ chipId, NumberÂ cellId, FunctionÂ AIFunction) : NumberÂ return
+ * documentation_func_summon
+ * documentation_func_summon_arg_1
+ * documentation_func_summon_arg_2
+ * documentation_func_summon_arg_3
+ * documentation_func_summon_return
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Number chipId
+ * @param Number cellId
+ * @param Function AIFunction
+ *
+ * @return Number
+ *   return
+ */
+function summon(chipId, cellId, AIFunction) {}
+
+/**
+ * tan(NumberÂ angle) : NumberÂ tangent
  * Computes given angle's tangent.
  * A number.
  * Given angle's tangent.
@@ -4491,7 +4627,7 @@ function sum(array) {}
 function tan(angle) {}
 
 /**
- * toDegrees(Number radians) : Number degrees
+ * toDegrees(NumberÂ radians) : NumberÂ degrees
  * Converts given angle from radians to degrees.
  * Angle's measure in radians.
  * Angle's measure in degrees.
@@ -4507,7 +4643,7 @@ function tan(angle) {}
 function toDegrees(radians) {}
 
 /**
- * toLower(String string) : String string
+ * toLower(StringÂ string) : StringÂ string
  * Converts all capital letters from given string to lower characters.
  * Input string.
  * String in lower characters.
@@ -4523,7 +4659,7 @@ function toDegrees(radians) {}
 function toLower(string) {}
 
 /**
- * toRadians(Number degrees) : Number radians
+ * toRadians(NumberÂ degrees) : NumberÂ radians
  * Converts given angle from degrees to radians.
  * Angle's measure in degrees.
  * Angle's measure in radians.
@@ -4539,7 +4675,7 @@ function toLower(string) {}
 function toRadians(degrees) {}
 
 /**
- * toUpper(String string) : String string
+ * toUpper(StringÂ string) : StringÂ string
  * Converts all lower characters from given string to capital letters.
  * Input string.
  * String in upper characters.
@@ -4555,7 +4691,7 @@ function toRadians(degrees) {}
 function toUpper(string) {}
 
 /**
- * typeOf(? value) : Number type
+ * typeOf(?Â value) : NumberÂ type
  * Determines the type of give value, among: TYPE_NULL, TYPE_NUMBER, TYPE_BOOLEAN, TYPE_ARRAY, TYPE_FUNCTION.
  * Value that needs testing.
  * values's type.
@@ -4571,7 +4707,7 @@ function toUpper(string) {}
 function typeOf(value) {}
 
 /**
- * unshift(Array array, ? element)
+ * unshift(ArrayÂ array, ?Â element)
  * Adds given element at the beginning of given array.
  * Array.
  * Additionnal element.
@@ -4585,7 +4721,7 @@ function typeOf(value) {}
 function unshift(array, element) {}
 
 /**
- * useChip(Number chip, Number leek) : Number result
+ * useChip(NumberÂ chip, NumberÂ leek) : NumberÂ result
  * Use given chip, targetting given leek.
  * Chip to use.
  * Targetted leek.
@@ -4610,7 +4746,7 @@ function unshift(array, element) {}
 function useChip(chip, leek) {}
 
 /**
- * useChipOnCell(Number chip, Number cell) : Number result
+ * useChipOnCell(NumberÂ chip, NumberÂ cell) : NumberÂ result
  * Use given chip, targetting given cell.
  * Chip to use.
  * Targetted cell.
@@ -4628,7 +4764,7 @@ function useChip(chip, leek) {}
 function useChipOnCell(chip, cell) {}
 
 /**
- * useWeapon(Number leek) : Number result
+ * useWeapon(NumberÂ leek) : NumberÂ result
  * Fires your leek's weapon, targetting given leek.
  * Targetted leek.
  * 
@@ -4650,7 +4786,7 @@ USE_INVALID_POSITION, if the weapon's scope does not allow its use, or line of s
 function useWeapon(leek) {}
 
 /**
- * useWeaponOnCell(Number cell) : Number result
+ * useWeaponOnCell(NumberÂ cell) : NumberÂ result
  * Fires your leek's weapon, targetting given cell.
  * Targetted cell.
  * See useWeapon.
@@ -4771,6 +4907,13 @@ global CHIP_DOPING = 26;
 global CHIP_DRIP = 10;
 
 /**
+ * CHIP_FIRE_BULB : Number
+ * documentation_const_CHIP_FIRE_BULB
+ *
+ */
+global CHIP_FIRE_BULB = 74;
+
+/**
  * CHIP_FLAME : Number
  * documentation_const_CHIP_FLAME
  *
@@ -4790,6 +4933,13 @@ global CHIP_FLASH = 6;
  *
  */
 global CHIP_FORTRESS = 29;
+
+/**
+ * CHIP_HEALER_BULB : Number
+ * documentation_const_CHIP_HEALER_BULB
+ *
+ */
+global CHIP_HEALER_BULB = 75;
 
 /**
  * CHIP_HELMET : Number
@@ -4867,6 +5017,13 @@ global CHIP_PEBBLE = 19;
  *
  */
 global CHIP_PROTEIN = 8;
+
+/**
+ * CHIP_PUNY_BULB : Number
+ * documentation_const_CHIP_PUNY_BULB
+ *
+ */
+global CHIP_PUNY_BULB = 73;
 
 /**
  * CHIP_RAGE : Number
@@ -5084,6 +5241,20 @@ global EFFECT_HEAL = 2;
  *
  */
 global EFFECT_RELATIVE_SHIELD = 6;
+
+/**
+ * ENTITY_BULB : Number
+ * documentation_const_ENTITY_BULB
+ *
+ */
+global ENTITY_BULB = 2;
+
+/**
+ * ENTITY_LEEK : Number
+ * documentation_const_ENTITY_LEEK
+ *
+ */
+global ENTITY_LEEK = 1;
 
 /**
  * FIGHT_CONTEXT_CHALLENGE : Number

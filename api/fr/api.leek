@@ -33,7 +33,7 @@ function acos(argument) {}
 
 /**
  * arrayConcat(Tableau array1, Tableau array2) : Tableau new_array
- * Ajoute les deux tableaux bout àbout. Les clés textuelles sont conservées et toutes les clés numériques sont réindexées.
+ * Ajoute les deux tableaux bout à bout. Les clés textuelles sont conservées et toutes les clés numériques sont réindexées.
  * Premier tableau.
  * Second tableau.
  * Somme des deux tableaux.
@@ -51,7 +51,7 @@ function arrayConcat(array1, array2) {}
 
 /**
  * arrayFilter(Tableau array, Fonction callback) : Tableau new_array
- * Retourne un nouveau tableau contenant tous les couples clé/valeur du tableau source pour lesquels la fonction callback a renvoyé true. Si la fonction callback prend un paramètre, c'est la valeur du tableau source qui sera envoyée, si elle prend deux paramètres c'est la clé et la valeur qui seront envoyées.
+ * Retourne un nouveau tableau contenant tous les couples clé/valeur du tableau source pour lesquels la fonction callback a renvoyé true. Si la fonction callback prend un paramêtre, c'est la valeur du tableau source qui sera envoyée, si elle prend deux paramêtres c'est la clé et la valeur qui seront envoyées.
  * Tableau d'origine.
  * Fonction appelée pour chaque élément.
  * Nouveau tableau.
@@ -87,7 +87,7 @@ function arrayFlatten(array) {}
 
 /**
  * arrayFlatten(Tableau array, Nombre depth) : Tableau new_array
- * Retourne un nouveau tableau contenant tous les éléments du tableau source. Tous les éléments contenus dans un sous tableau sont extraits dans le nouveau tableau.L'argument depth détermine la profondeur maximale de sous tableau àextraire.
+ * Retourne un nouveau tableau contenant tous les éléments du tableau source. Tous les éléments contenus dans un sous tableau sont extraits dans le nouveau tableau.L'argument depth détermine la profondeur maximale de sous tableau à extraire.
 12var tableau = [1, 2, [3, 4], 5, [6]];
 debug(arrayFlatten(tableau)); // [1,2,3,4,5,6]
  * Tableau d'origine.
@@ -107,10 +107,10 @@ function arrayFlatten(array, depth) {}
 
 /**
  * arrayFoldLeft(Tableau array, Fonction f, ? v0) : ? result
- * Réduit le tableau array [v1, v2, ..., vn] par la gauche en partant de la valeur v0 et en appliquant la fonction f. équivaut à:
+ * Réduit le tableau array [v1, v2, ..., vn] par la gauche en partant de la valeur v0 et en appliquant la fonction f. Ã‰quivaut à :
 1f(f(f(v0, v1), v2), ...)
  * Tableau d'origine.
- * Fonction àappliquer.
+ * Fonction à appliquer.
  * Valeur de départ.
  * Tableau réduit.
  *
@@ -128,10 +128,10 @@ function arrayFoldLeft(array, f, v0) {}
 
 /**
  * arrayFoldRight(Tableau array, Fonction f, ? v0) : ? result
- * Réduit le tableau array [v1, v2, ..., vn] par la droite en partant de la valeur v0 et en appliquant la fonction f. équivaut à:
+ * Réduit le tableau array [v1, v2, ..., vn] par la droite en partant de la valeur v0 et en appliquant la fonction f. Ã‰quivaut à :
 1f(v0, f(v1, f(v2, ...))).
  * Tableau d'origine.
- * Fonction àappliquer.
+ * Fonction à appliquer.
  * Valeur de départ.
  * Tableau réduit.
  *
@@ -149,7 +149,7 @@ function arrayFoldRight(array, f, v0) {}
 
 /**
  * arrayIter(Tableau array, Fonction callback)
- * Appelle la fonction callback pour chaque élément du tableau. Si la fonction callback prend un paramètre, c'est la valeur du tableau source qui sera envoyée, si elle prend deux paramètres c'est la clé et la valeur qui seront envoyées.
+ * Appelle la fonction callback pour chaque élément du tableau. Si la fonction callback prend un paramêtre, c'est la valeur du tableau source qui sera envoyée, si elle prend deux paramêtres c'est la clé et la valeur qui seront envoyées.
  * Tableau d'origine.
  * Fonction appelée pour chaque élément.
  *
@@ -163,7 +163,7 @@ function arrayIter(array, callback) {}
 
 /**
  * arrayMap(Tableau array, Fonction callback) : Tableau new_array
- * Retourne un nouveau tableau contenant pour chaque clé du tableau source, la valeur retournée par la fonction callback. Si la fonction callback prend un paramètre, c'est la valeur du tableau source qui sera envoyée, si elle prend deux paramètres c'est la clé et la valeur qui seront envoyées.
+ * Retourne un nouveau tableau contenant pour chaque clé du tableau source, la valeur retournée par la fonction callback. Si la fonction callback prend un paramêtre, c'est la valeur du tableau source qui sera envoyée, si elle prend deux paramêtres c'est la clé et la valeur qui seront envoyées.
  * Tableau d'origine.
  * Fonction appelée pour chaque élément.
  * Nouveau tableau.
@@ -213,7 +213,7 @@ function arrayMin(array) {}
 
 /**
  * arrayPartition(Tableau array, Fonction callback) : TableauDeTableaux new_array
- * Retourne un nouveau tableau contenant deux listes, dans la première se trouvent tous les couples clés/valeurs pour lesquels la fonction callback a renvoyé true, dans la seconde se trouvent tous les autres. Si la fonction callback prend un paramètre, c'est la valeur du tableau source qui sera envoyée, si elle prend deux paramètres c'est la clé et la valeur qui seront envoyées.
+ * Retourne un nouveau tableau contenant deux listes, dans la premiêre se trouvent tous les couples clés/valeurs pour lesquels la fonction callback a renvoyé true, dans la seconde se trouvent tous les autres. Si la fonction callback prend un paramêtre, c'est la valeur du tableau source qui sera envoyée, si elle prend deux paramêtres c'est la clé et la valeur qui seront envoyées.
  * Tableau d'origine.
  * Fonction appelée pour chaque élément.
  * Nouveau tableau.
@@ -231,7 +231,7 @@ function arrayPartition(array, callback) {}
 
 /**
  * arraySort(Tableau array, Fonction callback) : Tableau sorted_array
- * Trie le tableau selon l'ordre définit par la fonction callback. Les éléments sont comparés deux àdeux, la fonction callback doit renvoyer les valeurs -1, 0 ou 1 selon si la premiere valeur est avant, au même niveau ou après la seconde valeur. Si la fonction callback prend 2 paramètre, ce sont les deux valeurs qui sont envoyées, si elle en prend 4, ce sont les couples clé/valeur qui sont envoyés.
+ * Trie le tableau selon l'ordre définit par la fonction callback. Les éléments sont comparés deux à deux, la fonction callback doit renvoyer les valeurs -1, 0 ou 1 selon si la premiere valeur est avant, au même niveau ou aprês la seconde valeur. Si la fonction callback prend 2 paramêtre, ce sont les deux valeurs qui sont envoyées, si elle en prend 4, ce sont les couples clé/valeur qui sont envoyés.
  * Tableau d'origine.
  * Fonction de tri.
  * Tableau trié.
@@ -266,7 +266,7 @@ function asin(argument) {}
 /**
  * assocSort(Tableau array)
  * Trie le tableau array en conservant l'association clé : valeur.
- * Le tableau àtrier.
+ * Le tableau à trier.
  *
  * @level 1
  * @cores 1
@@ -278,7 +278,7 @@ function assocSort(array) {}
 /**
  * assocSort(Tableau array, Nombre order)
  * Trie le tableau array en conservant l'association clé : valeur selon l'order order.
- * Le tableau àtrier.
+ * Le tableau à trier.
  * L'ordre de tri : SORT_ASC ou SORT_DESC.
  *
  * @level 1
@@ -342,7 +342,7 @@ function average(array) {}
 /**
  * canUseChip(Nombre chip, Nombre leek) : Booléen canUse
  * Détermine si votre poireau peut utiliser la puce chip sur le poireau d'id leek.
- * Le numéro de la puce àtester.
+ * Le numéro de la puce à tester.
  * L'id du poireau sur lequel vous voulez utiliser la puce.
  * true si votre poireau peut utiliser la puce, false sinon.
  *
@@ -360,7 +360,7 @@ function canUseChip(chip, leek) {}
 /**
  * canUseChipOnCell(Nombre chip, Nombre cell) : Booléen canUse
  * Détermine si votre poireau peut utiliser la puce chip sur la cellule cell.
- * Le numéro de la puce àtester.
+ * Le numéro de la puce à tester.
  * Le numéro de la cellule sur laquelle vous voulez utliser la puce.
  * true si votre poireau peut utiliser la puce, false sinon.
  *
@@ -394,7 +394,7 @@ function canUseWeapon(leek) {}
 /**
  * canUseWeapon(Nombre weapon, Nombre leek) : Booléen canUse
  * Détermine si votre poireau peut tirer sur le poireau d'id leek avec l'arme weapon.
- * L'arme àtester.
+ * L'arme à tester.
  * L'id du poireau sur lequel vous voulez tirer.
  * true si votre poireau peut tirer, false sinon.
  *
@@ -428,7 +428,7 @@ function canUseWeaponOnCell(cell) {}
 /**
  * canUseWeaponOnCell(Nombre weapon, Nombre cell) : Booléen canUse
  * Détermine si votre poireau peut tirer sur la cellule cell avec l'arme weapon.
- * L'arme àtester.
+ * L'arme à tester.
  * Le numéro de la cellule sur laquelle vous voulez tirer.
  * true si votre poireau peut tirer, false sinon.
  *
@@ -461,9 +461,9 @@ function cbrt(number) {}
 
 /**
  * ceil(Nombre number) : Nombre result
- * Retourne l'arrondi àl'entier supérieur de number.Vous pouvez trouver l'arrondi àl'entier inférieur avec floor, et l'arrondi avec round.
+ * Retourne l'arrondi à l'entier supérieur de number.Vous pouvez trouver l'arrondi à l'entier inférieur avec floor, et l'arrondi avec round.
  * Nombre dont on veut trouver l'arrondi supérieur.
- * Arrondi àl'entier supérieur de number.
+ * Arrondi à l'entier supérieur de number.
  *
  * @level 1
  * @cores 1
@@ -477,10 +477,10 @@ function ceil(number) {}
 
 /**
  * charAt(Chaîne string, Nombre position) : Chaîne char
- * Retourne le caractère de la chaîne string situé àla position position.Le premier caractère de la chaîne se trouve àla position 0.
- * Chaîne dont on veut récupérer un caractère.
- * Position du caractère àtrouver.
- * chaîne contenant le caractère recherché, ou une chaîne vide si la position est invalide.
+ * Retourne le caractêre de la chaîne string situé à la position position.Le premier caractêre de la chaîne se trouve à la position 0.
+ * Chaîne dont on veut récupérer un caractêre.
+ * Position du caractêre à trouver.
+ * chaîne contenant le caractêre recherché, ou une chaîne vide si la position est invalide.
  *
  * @level 1
  * @cores 1
@@ -497,7 +497,7 @@ function charAt(string, position) {}
  * contains(Chaîne string, Chaîne search) : Booléen contains
  * Détermine si une chaîne search se trouve dans une chaîne string.
  * Chaîne dans laquelle la recherche sera effectuée.
- * Chaîne àrechercher.
+ * Chaîne à rechercher.
  * true si search est dans string, false sinon.
  *
  * @level 1
@@ -545,8 +545,8 @@ function count(array) {}
 
 /**
  * debug(? object)
- * Enregistre un message object dans le log personnel, disponible dans le rapport àla fin du combat.
- * Le message àenregistrer.
+ * Enregistre un message object dans le log personnel, disponible dans le rapport à la fin du combat.
+ * Le message à enregistrer.
  *
  * @level 1
  * @cores 1
@@ -557,8 +557,8 @@ function debug(object) {}
 
 /**
  * debugE(? object)
- * Enregistre un message d'erreur object dans le log personnel, disponible dans le rapport àla fin du combat.Les messages d'erreur apparaissent en rouge dans le rapport de combat.
- * Le message d'erreur àenregistrer.
+ * Enregistre un message d'erreur object dans le log personnel, disponible dans le rapport à la fin du combat.Les messages d'erreur apparaissent en rouge dans le rapport de combat.
+ * Le message d'erreur à enregistrer.
  *
  * @level 1
  * @cores 1
@@ -569,8 +569,8 @@ function debugE(object) {}
 
 /**
  * debugW(? object)
- * Enregistre un message d'avertissement object dans le log personnel, disponible dans le rapport àla fin du combat. Les messages d'avertissement apparaissent en orange dans le rapport de combat.
- * Le message d'avertissement àenregistrer.
+ * Enregistre un message d'avertissement object dans le log personnel, disponible dans le rapport à la fin du combat. Les messages d'avertissement apparaissent en orange dans le rapport de combat.
+ * Le message d'avertissement à enregistrer.
  *
  * @level 1
  * @cores 1
@@ -581,8 +581,8 @@ function debugW(object) {}
 
 /**
  * deleteRegister(Chaîne key)
- * Supprime le registre associé àla clé key s'il existe.
- * La clé du registre àsupprimer.
+ * Supprime le registre associé à la clé key s'il existe.
+ * La clé du registre à supprimer.
  *
  * @level 32
  * @cores 1
@@ -595,7 +595,7 @@ function deleteRegister(key) {}
  * endsWith(Chaîne string, Chaîne suffix) : Booléen endsWith
  * Détermine si une chaîne string se termine par une chaîne suffix.
  * Chaîne dans laquelle la recherche sera effectuée
- * Suffixe àrechercher
+ * Suffixe à rechercher
  * true si string se termine par suffix
  *
  * @level 1
@@ -611,7 +611,7 @@ function endsWith(string, suffix) {}
 
 /**
  * exp(Nombre number) : Nombre result
- * éleve le nombre d'Euler E àla puissance number.
+ * Ã‰leve le nombre d'Euler E à la puissance number.
  * L'exposant auquel E sera élevé.
  * E ** number.
  *
@@ -627,8 +627,8 @@ function exp(number) {}
 
 /**
  * fill(Tableau array, ? value)
- * Remplit le tableau array en remplaçant chaque élément déjàexistant par value.
- * Le tableau àremplir.
+ * Remplit le tableau array en remplaçant chaque élément déjà existant par value.
+ * Le tableau à remplir.
  * La valeur pour chaque case du tableau.
  *
  * @level 1
@@ -641,8 +641,8 @@ function fill(array, value) {}
 
 /**
  * fill(Tableau array, ? value, Nombre size)
- * Redimensionne le tableau array àla taille size et remplit toutes ses cases avec value.
- * Le tableau àremplir.
+ * Redimensionne le tableau array à la taille size et remplit toutes ses cases avec value.
+ * Le tableau à remplir.
  * La valeur pour chaque case du tableau.
  * Le nombre de cases.
  *
@@ -657,9 +657,9 @@ function fill(array, value, size) {}
 
 /**
  * floor(Nombre number) : Nombre result
- * Calcule l'arrondi àl'entier inférieur de number.Vous pouvez trouver l'arrondi àl'entier supérieur avec ceil, et l'arrondi avec round.
+ * Calcule l'arrondi à l'entier inférieur de number.Vous pouvez trouver l'arrondi à l'entier supérieur avec ceil, et l'arrondi avec round.
  * Nombre dont on veut trouver l'arrondi inférieur.
- * Arrondi àl'entier inférieur de number.
+ * Arrondi à l'entier inférieur de number.
  *
  * @level 1
  * @cores 1
@@ -686,7 +686,7 @@ function getAbsoluteShield() {}
 
 /**
  * getAbsoluteShield(Nombre leek) : Nombre shield
- * Retourne le bouclier absolu du poireau d'id leek. Pour récupérer directement le bouclier absolu de votre poireau, utilisez getAbsoluteShield() sans paramètre.
+ * Retourne le bouclier absolu du poireau d'id leek. Pour récupérer directement le bouclier absolu de votre poireau, utilisez getAbsoluteShield() sans paramêtre.
  * L'id du poireau dont le bouclier absolu sera retourné.
  * Le bouclier absolu du poireau leek.
  *
@@ -715,7 +715,7 @@ function getAgility() {}
 
 /**
  * getAgility(Nombre leek) : Nombre agility
- * Retourne l'agilité du poireau d'id leek. Pour récupérer directement l'agilité de votre poireau, utilisez getAgility() sans paramètre.
+ * Retourne l'agilité du poireau d'id leek. Pour récupérer directement l'agilité de votre poireau, utilisez getAgility() sans paramêtre.
  * L'id du poireau dont l'agilité sera retournée.
  * L'agilité du poireau leek.
  *
@@ -866,6 +866,35 @@ function getAlliesCount() {}
 function getAlliesLife() {}
 
 /**
+ * getBirthTurn() : Nombre turn
+ * Renvoie le numéro du tour de combat ou vous êtes apparu. Renvoie 1 si vous êtes un poireau par exemple, et 5 si vous êtes une invocation invoquée au tour 5.
+ * Le tour du combat oÃ¹ vous êtes apparu.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Nombre
+ *   turn
+ */
+function getBirthTurn() {}
+
+/**
+ * getBirthTurn(Nombre entity) : Nombre turn
+ * Renvoie le tour du combat oÃ¹ est apparue l'entité entity. Renvoie 1 s'il s'agit d'un poireau par exemple, et 5 s'il d'agit d'une invocation invoquée au tour 5.
+ * L'id de l'entité dont le tour d'apparition sera renvoyé.
+ * Le tour de combat oÃ¹ entity est apparue.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Nombre entity
+ *
+ * @return Nombre
+ *   turn
+ */
+function getBirthTurn(entity) {}
+
+/**
  * getBlue(Nombre color) : Nombre blue
  * Renvoie le taux de bleu dans la couleur color, entre 0 et 255. Par exemple, getBlue(COLOR_BLUE) = 255 et getBlue(COLOR_GREEN) = 0.
  * La couleur dont le taux de bleu sera renvoyé.
@@ -883,8 +912,8 @@ function getBlue(color) {}
 
 /**
  * getCell() : Nombre cell
- * Retourne la cellule où se trouve votre poireau.
- * Le numéro de la cellule où se trouve votre poireau.
+ * Retourne la cellule oÃ¹ se trouve votre poireau.
+ * Le numéro de la cellule oÃ¹ se trouve votre poireau.
  *
  * @level 1
  * @cores 1
@@ -896,9 +925,9 @@ function getCell() {}
 
 /**
  * getCell(Nombre leek) : Nombre cell
- * Retourne la cellule où se trouve le poireau d'id leek.
+ * Retourne la cellule oÃ¹ se trouve le poireau d'id leek.
  * L'id du poireau dont la cellule sera retournée.
- * Le numéro de la cellule où se trouve le poireau leek.
+ * Le numéro de la cellule oÃ¹ se trouve le poireau leek.
  *
  * @level 5
  * @cores 1
@@ -928,7 +957,7 @@ function getCellContent(cell) {}
 
 /**
  * getCellDistance(Nombre cell1, Nombre cell2) : Nombre distance
- * Retourne la distance entre deux cellules cell1 et cell2. La distance retournée est exprimée en nombre de cellules, et ne tient pas compte des divers obstacles entre les deux cellules. Pour obtenir la distance àvol d'oiseau, voir getDistance et pour obtenir la distance du chemin entre les deux cellules en évitant les obstacles, voir getPathLength.
+ * Retourne la distance entre deux cellules cell1 et cell2. La distance retournée est exprimée en nombre de cellules, et ne tient pas compte des divers obstacles entre les deux cellules. Pour obtenir la distance à vol d'oiseau, voir getDistance et pour obtenir la distance du chemin entre les deux cellules en évitant les obstacles, voir getPathLength.
  * L'id de la cellule de départ.
  * L'id de la cellule d'arrivée.
  * La distance entre les deux cellules cell1 et cell2.
@@ -946,10 +975,10 @@ function getCellDistance(cell1, cell2) {}
 
 /**
  * getCellFromXY(Nombre x, Nombre y) : Nombre cell
- * Retourne l'id de la cellule se trouvant àla position (x, y).
+ * Retourne l'id de la cellule se trouvant à la position (x, y).
  * La position en x de la cellule.
  * La position en y de la cellule.
- * L'id de la cellule àla position (x, y), null si la cellule n'existe pas.
+ * L'id de la cellule à la position (x, y), null si la cellule n'existe pas.
  *
  * @level 1
  * @cores 1
@@ -964,10 +993,10 @@ function getCellFromXY(x, y) {}
 
 /**
  * getCellsToUseChip(Nombre chip, Nombre leek) : TableauDeNombres cells
- * Retourne la liste des cellules à partir desquelles votre poireau pourra utiliser la puce chip sur le poireau leek.
+ * Retourne la liste des cellules à  partir desquelles votre poireau pourra utiliser la puce chip sur le poireau leek.
  * La puce que le poireau veut pouvoir utiliser.
  * Le poireau cible.
- * Liste des cellules d'où la puce pourra être utilisée.
+ * Liste des cellules d'oÃ¹ la puce pourra être utilisée.
  *
  * @level 31
  * @cores 1
@@ -982,11 +1011,11 @@ function getCellsToUseChip(chip, leek) {}
 
 /**
  * getCellsToUseChip(Nombre chip, Nombre leek, TableauDeNombres ignoredCells) : TableauDeNombres cells
- * Retourne la liste des cellules àpartir desquelles votre poireau pourra utiliser la puce chip sur le poireau leek.
+ * Retourne la liste des cellules à partir desquelles votre poireau pourra utiliser la puce chip sur le poireau leek.
  * La puce que le poireau veut pouvoir utiliser.
  * Le poireau cible.
- * Tableau de cellules àignorer.
- * Liste des cellules d'où la puce pourra être utilisée.
+ * Tableau de cellules à ignorer.
+ * Liste des cellules d'oÃ¹ la puce pourra être utilisée.
  *
  * @level 31
  * @cores 1
@@ -1002,10 +1031,10 @@ function getCellsToUseChip(chip, leek, ignoredCells) {}
 
 /**
  * getCellsToUseChipOnCell(Nombre chip, Nombre cell) : TableauDeNombres cells
- * Retourne la liste des cellules à partir desquelles votre poireau pourra utiliser la puce chip sur la cellule cell.
+ * Retourne la liste des cellules à  partir desquelles votre poireau pourra utiliser la puce chip sur la cellule cell.
  * La puce que le poireau veut pouvoir utiliser.
  * La cellule cible.
- * Liste des cellules d'où la puce pourra être utilisée.
+ * Liste des cellules d'oÃ¹ la puce pourra être utilisée.
  *
  * @level 31
  * @cores 1
@@ -1020,11 +1049,11 @@ function getCellsToUseChipOnCell(chip, cell) {}
 
 /**
  * getCellsToUseChipOnCell(Nombre chip, Nombre cell, TableauDeNombres ignoredCells) : TableauDeNombres cells
- * Retourne la liste des cellules àpartir desquelles votre poireau pourra utiliser la puce chip sur la cellule cell.
+ * Retourne la liste des cellules à partir desquelles votre poireau pourra utiliser la puce chip sur la cellule cell.
  * La puce que le poireau veut pouvoir utiliser.
  * La cellule cible.
- * Tableau de cellules àignorer.
- * Liste des cellules d'où la puce pourra être utilisée.
+ * Tableau de cellules à ignorer.
+ * Liste des cellules d'oÃ¹ la puce pourra être utilisée.
  *
  * @level 31
  * @cores 1
@@ -1040,9 +1069,9 @@ function getCellsToUseChipOnCell(chip, cell, ignoredCells) {}
 
 /**
  * getCellsToUseWeapon(Nombre leek) : TableauDeNombres cells
- * Retourne la liste des cellules à partir desquelles votre poireau pourra utiliser son arme sur le poireau leek.
+ * Retourne la liste des cellules à  partir desquelles votre poireau pourra utiliser son arme sur le poireau leek.
  * Le poireau cible.
- * Liste des cellules d'où l'arme pourra être utilisée.
+ * Liste des cellules d'oÃ¹ l'arme pourra être utilisée.
  *
  * @level 31
  * @cores 1
@@ -1056,10 +1085,10 @@ function getCellsToUseWeapon(leek) {}
 
 /**
  * getCellsToUseWeapon(Nombre weapon, Nombre leek) : TableauDeNombres cells
- * Retourne la liste des cellules à partir desquelles votre poireau pourra utiliser l'arme weapon sur le poireau leek.
- * L'arme àtester.
+ * Retourne la liste des cellules à  partir desquelles votre poireau pourra utiliser l'arme weapon sur le poireau leek.
+ * L'arme à tester.
  * Le poireau cible.
- * Liste des cellules d'où l'arme pourra être utilisée.
+ * Liste des cellules d'oÃ¹ l'arme pourra être utilisée.
  *
  * @level 31
  * @cores 1
@@ -1074,11 +1103,11 @@ function getCellsToUseWeapon(weapon, leek) {}
 
 /**
  * getCellsToUseWeapon(Nombre weapon, Nombre leek, TableauDeNombres ignoredCells) : TableauDeNombres cells
- * Retourne la liste des cellules àpartir desquelles votre poireau pourra utiliser l'arme weapon sur le poireau leek.
- * L'arme àtester.
+ * Retourne la liste des cellules à partir desquelles votre poireau pourra utiliser l'arme weapon sur le poireau leek.
+ * L'arme à tester.
  * Le poireau cible.
- * Tableau de cellules àignorer.
- * Liste des cellules d'où l'arme pourra être utilisée.
+ * Tableau de cellules à ignorer.
+ * Liste des cellules d'oÃ¹ l'arme pourra être utilisée.
  *
  * @level 31
  * @cores 1
@@ -1094,9 +1123,9 @@ function getCellsToUseWeapon(weapon, leek, ignoredCells) {}
 
 /**
  * getCellsToUseWeaponOnCell(Nombre cell) : TableauDeNombres cells
- * Retourne la liste des cellules à partir desquelles votre poireau pourra utiliser son arme sur une cellule cell.
+ * Retourne la liste des cellules à  partir desquelles votre poireau pourra utiliser son arme sur une cellule cell.
  * La cellule cible.
- * Liste des cellules d'où l'arme pourra être utilisée.
+ * Liste des cellules d'oÃ¹ l'arme pourra être utilisée.
  *
  * @level 31
  * @cores 1
@@ -1110,10 +1139,10 @@ function getCellsToUseWeaponOnCell(cell) {}
 
 /**
  * getCellsToUseWeaponOnCell(Nombre weapon, Nombre cell) : TableauDeNombres cells
- * Retourne la liste des cellules à partir desquelles votre poireau pourra utiliser l'arme weapon sur une cellule cell.
+ * Retourne la liste des cellules à  partir desquelles votre poireau pourra utiliser l'arme weapon sur une cellule cell.
  * L'arme à tester.
  * La cellule cible.
- * Liste des cellules d'où l'arme pourra être utilisée.
+ * Liste des cellules d'oÃ¹ l'arme pourra être utilisée.
  *
  * @level 31
  * @cores 1
@@ -1132,7 +1161,7 @@ function getCellsToUseWeaponOnCell(weapon, cell) {}
  * L'arme à tester.
  * La cellule cible.
  * Tableau de cellules à ignorer.
- * Liste des cellules d'où l'arme pourra être utilisée.
+ * Liste des cellules d'oÃ¹ l'arme pourra être utilisée.
  *
  * @level 31
  * @cores 1
@@ -1148,10 +1177,10 @@ function getCellsToUseWeaponOnCell(weapon, cell, ignoredCells) {}
 
 /**
  * getCellToUseChip(Nombre chip, Nombre leek) : Nombre cell
- * Détermine une cellule où votre poireau pourra utiliser la puce chip sur le poireau leek.
+ * Détermine une cellule oÃ¹ votre poireau pourra utiliser la puce chip sur le poireau leek.
  * La puce que le poireau veut pouvoir utiliser.
  * Le poireau cible.
- * La cellule d'où la puce pourra être utilisée.
+ * La cellule d'oÃ¹ la puce pourra être utilisée.
  *
  * @level 1
  * @cores 1
@@ -1166,11 +1195,11 @@ function getCellToUseChip(chip, leek) {}
 
 /**
  * getCellToUseChip(Nombre chip, Nombre cell, TableauDeNombres ignoredCells) : Nombre cell
- * Détermine une cellule où votre poireau pourra utiliser la puce chip sur le poireau leek.
+ * Détermine une cellule oÃ¹ votre poireau pourra utiliser la puce chip sur le poireau leek.
  * La puce que le poireau veut pouvoir utiliser.
  * Le poireau cible.
  * Tableau de cellules à ignorer.
- * La cellule d'où la puce pourra être utilisée.
+ * La cellule d'oÃ¹ la puce pourra être utilisée.
  *
  * @level 1
  * @cores 1
@@ -1186,11 +1215,11 @@ function getCellToUseChip(chip, cell, ignoredCells) {}
 
 /**
  * getCellToUseChipOnCell(Nombre chip, Nombre cell, TableauDeNombres ignoredCells) : Nombre cell
- * Détermine une cellule où votre poireau pourra utiliser la puce chip sur la cellule cell.
+ * Détermine une cellule oÃ¹ votre poireau pourra utiliser la puce chip sur la cellule cell.
  * La puce que le poireau veut pouvoir utiliser.
  * La cellule cible.
  * Tableau de cellules à ignorer.
- * La cellule d'où la puce pourra être utilisée.
+ * La cellule d'oÃ¹ la puce pourra être utilisée.
  *
  * @level 25
  * @cores 1
@@ -1206,10 +1235,10 @@ function getCellToUseChipOnCell(chip, cell, ignoredCells) {}
 
 /**
  * getCellToUseChipOnCell(Nombre chip, Nombre cell) : Nombre cell
- * Détermine une cellule où votre poireau pourra utiliser la puce chip sur la cellule cell.
+ * Détermine une cellule oÃ¹ votre poireau pourra utiliser la puce chip sur la cellule cell.
  * La puce que le poireau veut pouvoir utiliser.
  * La cellule cible.
- * La cellule d'où la puce pourra être utilisée.
+ * La cellule d'oÃ¹ la puce pourra être utilisée.
  *
  * @level 25
  * @cores 1
@@ -1224,9 +1253,9 @@ function getCellToUseChipOnCell(chip, cell) {}
 
 /**
  * getCellToUseWeapon(Nombre leek) : Nombre cell
- * Détermine une cellule où votre poireau pourra utiliser son arme sur le poireau leek.
+ * Détermine une cellule oÃ¹ votre poireau pourra utiliser son arme sur le poireau leek.
  * Le poireau cible.
- * La cellule d'où l'arme pourra être utilisée.
+ * La cellule d'oÃ¹ l'arme pourra être utilisée.
  *
  * @level 1
  * @cores 1
@@ -1240,10 +1269,10 @@ function getCellToUseWeapon(leek) {}
 
 /**
  * getCellToUseWeapon(Nombre weapon, Nombre leek) : Nombre cell
- * Détermine une cellule où votre poireau pourra utiliser l'arme weapon sur le poireau leek.
+ * Détermine une cellule oÃ¹ votre poireau pourra utiliser l'arme weapon sur le poireau leek.
  * L'arme à tester.
  * Le poireau cible.
- * La cellule d'où l'arme pourra être utilisée.
+ * La cellule d'oÃ¹ l'arme pourra être utilisée.
  *
  * @level 1
  * @cores 1
@@ -1258,11 +1287,11 @@ function getCellToUseWeapon(weapon, leek) {}
 
 /**
  * getCellToUseWeapon(Nombre weapon, Nombre leek, TableauDeNombres ignoredCells) : Nombre cell
- * Détermine une cellule où votre poireau pourra utiliser son arme sur le poireau leek.
+ * Détermine une cellule oÃ¹ votre poireau pourra utiliser son arme sur le poireau leek.
  * L'arme à tester.
  * Le poireau cible.
  * Tableau de cellules à ignorer.
- * La cellule d'où l'arme pourra être utilisée.
+ * La cellule d'oÃ¹ l'arme pourra être utilisée.
  *
  * @level 1
  * @cores 1
@@ -1278,9 +1307,9 @@ function getCellToUseWeapon(weapon, leek, ignoredCells) {}
 
 /**
  * getCellToUseWeaponOnCell(Nombre cell) : Nombre cell
- * Détermine une cellule où votre poireau pourra utiliser son arme sur une cellule cell.
+ * Détermine une cellule oÃ¹ votre poireau pourra utiliser son arme sur une cellule cell.
  * La cellule cible.
- * La cellule d'où l'arme pourra être utilisée.
+ * La cellule d'oÃ¹ l'arme pourra être utilisée.
  *
  * @level 25
  * @cores 1
@@ -1294,10 +1323,10 @@ function getCellToUseWeaponOnCell(cell) {}
 
 /**
  * getCellToUseWeaponOnCell(Nombre weapon, Nombre cell) : Nombre cell
- * Détermine une cellule où votre poireau pourra utiliser l'arme weapon sur une cellule cell.
+ * Détermine une cellule oÃ¹ votre poireau pourra utiliser l'arme weapon sur une cellule cell.
  * L'arme à tester.
  * La cellule cible.
- * La cellule d'où l'arme pourra être utilisée.
+ * La cellule d'oÃ¹ l'arme pourra être utilisée.
  *
  * @level 25
  * @cores 1
@@ -1312,11 +1341,11 @@ function getCellToUseWeaponOnCell(weapon, cell) {}
 
 /**
  * getCellToUseWeaponOnCell(Nombre weapon, Nombre cell, TableauDeNombres ignoredCells) : Nombre cell
- * Détermine une cellule où votre poireau pourra utiliser son arme sur une cellule cell.
+ * Détermine une cellule oÃ¹ votre poireau pourra utiliser son arme sur une cellule cell.
  * L'arme à tester.
  * La cellule cible.
  * Tableau de cellules à ignorer.
- * La cellule d'où l'arme pourra être utilisée.
+ * La cellule d'oÃ¹ l'arme pourra être utilisée.
  *
  * @level 25
  * @cores 1
@@ -1370,9 +1399,9 @@ function getCellY(cell) {}
 
 AREA_POINT : zone d'une seule case
 AREA_LASER_LINE : ligne d'un laser
-AREA_CIRCLE_1 : zone circulaire de 3 cases de diamètre
-AREA_CIRCLE_2 : zone circulaire de 5 cases de diamètre
-AREA_CIRCLE_3 : zone circulaire de 7 cases de diamètre
+AREA_CIRCLE_1 : zone circulaire de 3 cases de diamêtre
+AREA_CIRCLE_2 : zone circulaire de 5 cases de diamêtre
+AREA_CIRCLE_3 : zone circulaire de 7 cases de diamêtre
 
  *
  * @level 1
@@ -1584,11 +1613,11 @@ function getChipTargets(chip, cell) {}
 
 /**
  * getColor(Nombre red, Nombre green, Nombre blue) : Nombre color
- * Retourne l'entier correspondant à la couleur (red, green, blue) fournie en paramètres.
+ * Retourne l'entier correspondant à la couleur (red, green, blue) fournie en paramêtres.
  * Valeur du rouge entre 0 et 255.
  * Valeur du vert entre 0 et 255.
  * Valeur du bleu entre 0 et 255.
- * int correspondant à la couleur fournie en paramètre.
+ * int correspondant à la couleur fournie en paramêtre.
  *
  * @level 1
  * @cores 1
@@ -1737,11 +1766,11 @@ function getEffects() {}
 
 /**
  * getEffects(Nombre leek) : TableauDeTableaux effects
- * Retourne la liste des effets du poireau d'id leek. Pour récupérer directement la liste des effets de votre poireau, utilisez getEffects() sans paramètre.
+ * Retourne la liste des effets du poireau d'id leek. Pour récupérer directement la liste des effets de votre poireau, utilisez getEffects() sans paramêtre.
  * L'id du poireau dont la liste des effets sera retourné.
  * La liste des effets actuellement présents sur le poireau leek.
 	La liste des effets est un tableau contenant les effets.
-	Un effet est lui-même un tableau de 2 cases de la forme : [type, value], où type est le type de l'effet
+	Un effet est lui-même un tableau de 2 cases de la forme : [type, value], oÃ¹ type est le type de l'effet
 	parmis :
 	
 		EFFECT_DAMAGE, value est le nombre de dégÃ¢ts
@@ -1891,7 +1920,7 @@ function getFarthestEnemy() {}
 /**
  * getFightContext() : Nombre context
  * Retourne le contexte du combat actuel.
- * Selon le contexte du combat : Combat de test (FIGHT_CONTEXT_TEST), Combat en arène (FIGHT_CONTEXT_GARDEN), Combat en tournoi (FIGHT_CONTEXT_TOURNAMENT), Combat en défi (FIGHT_CONTEXT_CHALLENGE)
+ * Selon le contexte du combat : Combat de test (FIGHT_CONTEXT_TEST), Combat en arêne (FIGHT_CONTEXT_GARDEN), Combat en tournoi (FIGHT_CONTEXT_TOURNAMENT), Combat en défi (FIGHT_CONTEXT_CHALLENGE)
  *
  * @level 5
  * @cores 1
@@ -2135,9 +2164,9 @@ function getMessageAuthor(message) {}
 
 /**
  * getMessageParams(Tableau message) : ? params
- * Renvoie le tableau des paramètres du message message.
- * Le message dont les paramètres seront renvoyés.
- * Les paramètres du message message.
+ * Renvoie le tableau des paramêtres du message message.
+ * Le message dont les paramêtres seront renvoyés.
+ * Les paramêtres du message message.
  *
  * @level 41
  * @cores 1
@@ -2153,7 +2182,7 @@ function getMessageParams(message) {}
  * getMessages() : TableauDeTableaux messages
  * Renvoie le tableau de vos messages.
  * Le tableau de vos messages.Un message est représenté lui-même sous la forme d'un
-	tableau de la forme : [auteur, type, paramètres]
+	tableau de la forme : [auteur, type, paramêtres]
 	Les différents types de messages sont représentés par les constantes :
 	
 		MESSAGE_HEAL : demande de soins
@@ -2275,7 +2304,7 @@ function getNearestAlly() {}
 
 /**
  * getNearestAllyTo(Nombre leek) : Nombre ally
- * Renvoie le poireau allié le plus proche du poireau fourni en paramètre.
+ * Renvoie le poireau allié le plus proche du poireau fourni en paramêtre.
  * L'id du poireau dont on veut connaitre l'allié le plus proche.
  * L'id du poireau allié le plus proche.
  *
@@ -2291,7 +2320,7 @@ function getNearestAllyTo(leek) {}
 
 /**
  * getNearestAllyToCell(Nombre cell) : Nombre ally
- * Renvoie le poireau allié le plus proche de la cellule fournie en paramètre.
+ * Renvoie le poireau allié le plus proche de la cellule fournie en paramêtre.
  * L'id de la cellule dont on veut connaitre l'allié le plus proche.
  * L'id du poireau allié le plus proche.
  *
@@ -2320,7 +2349,7 @@ function getNearestEnemy() {}
 
 /**
  * getNearestEnemyTo(Nombre leek) : Nombre enemy
- * Renvoie le poireau ennemi le plus proche du poireau fourni en paramètre.
+ * Renvoie le poireau ennemi le plus proche du poireau fourni en paramêtre.
  * L'id du poireau dont on veut connaitre l'ennemi le plus proche.
  * L'id du poireau ennemi le plus proche.
  *
@@ -2336,7 +2365,7 @@ function getNearestEnemyTo(leek) {}
 
 /**
  * getNearestEnemyToCell(Nombre cell) : Nombre enemy
- * Renvoie le poireau ennemi le plus proche de la cellule fournie en paramètre.
+ * Renvoie le poireau ennemi le plus proche de la cellule fournie en paramêtre.
  * L'id de la cellule dont on veut connaitre l'ennemi le plus proche.
  * L'id du poireau ennemi le plus proche.
  *
@@ -2352,7 +2381,7 @@ function getNearestEnemyToCell(cell) {}
 
 /**
  * getNextPlayer() : Nombre player
- * Renvoie l'id du poireau qui jouera après le joueur actuel.
+ * Renvoie l'id du poireau qui jouera aprês le joueur actuel.
  * Le joueur suivant.
  *
  * @level 26
@@ -2527,7 +2556,7 @@ function getRelativeShield() {}
 
 /**
  * getRelativeShield(Nombre leek) : Nombre shield
- * Retourne le bouclier relatif du poireau d'id leek. Pour récupérer directement le bouclier relatif de votre poireau, utilisez getRelativeShield() sans paramètre.
+ * Retourne le bouclier relatif du poireau d'id leek. Pour récupérer directement le bouclier relatif de votre poireau, utilisez getRelativeShield() sans paramêtre.
  * L'id du poireau dont le bouclier relatif sera retourné.
  * Le bouclier relatif du poireau leek, un nombre entier entre 0 et 100.
  *
@@ -2540,6 +2569,35 @@ function getRelativeShield() {}
  *   shield
  */
 function getRelativeShield(leek) {}
+
+/**
+ * getSummoner() : Nombre summoner
+ * Renvoie l'entité qui vous a invoqué, si vous êtes une invocation.
+ * L'id de l'entité qui vous a invoqué si vous êtes une invocation, null sinon.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Nombre
+ *   summoner
+ */
+function getSummoner() {}
+
+/**
+ * getSummoner(Nombre entity) : Nombre summoner
+ * Renvoie l'entité a invoqué l'entité entity, s'il s'agit d'une invocation.
+ * L'id de l'entité dont l'invocateur sera renvoyé.
+ * L'id de l'entité a invoqué entity s'il s'agit d'une invocation, null sinon.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Nombre entity
+ *
+ * @return Nombre
+ *   summoner
+ */
+function getSummoner(entity) {}
 
 /**
  * getTeamID() : Nombre id
@@ -2671,6 +2729,39 @@ function getTP(leek) {}
 function getTurn() {}
 
 /**
+ * getType() : Nombre type
+ * Renvoie votre type d'entité.
+ * Votre type d'entité :
+
+ENTITY_LEEK si vous êtes un poireau.
+ENTITY_BULB si vous êtes un bulbe
+
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Nombre
+ *   type
+ */
+function getType() {}
+
+/**
+ * getType(Nombre entity) : Nombre type
+ * Renvoie le type d'entité de l'entité entity.
+ * L'id de l'entité dont le type sera renvoyé.
+ * Le type d'entité de entity :ENTITY_LEEK s'il s'agit d'un poireau.ENTITY_BULB s'il s'agit d'un bulbe
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Nombre entity
+ *
+ * @return Nombre
+ *   type
+ */
+function getType(entity) {}
+
+/**
  * getWeapon() : Nombre weapon
  * Renvoie l'arme actuellement équipée sur votre poireau.
  * L'id de l'arme actuellement équipée sur votre poireau, null si votre poireau n'a pas d'arme équipée.
@@ -2707,9 +2798,9 @@ function getWeapon(leek) {}
 
 AREA_POINT : zone d'une seule case
 AREA_LASER_LINE : ligne d'un laser
-AREA_CIRCLE_1 : zone circulaire de 3 cases de diamètre
-AREA_CIRCLE_2 : zone circulaire de 5 cases de diamètre
-AREA_CIRCLE_3 : zone circulaire de 7 cases de diamètre
+AREA_CIRCLE_1 : zone circulaire de 3 cases de diamêtre
+AREA_CIRCLE_2 : zone circulaire de 5 cases de diamêtre
+AREA_CIRCLE_3 : zone circulaire de 7 cases de diamêtre
 
  *
  * @level 1
@@ -2809,7 +2900,7 @@ function getWeaponEffectiveArea(weapon, cell, from) {}
 			 EFFECT_TARGET_CASTER : Touche toujours le lanceur
 			 EFFECT_TARGET_NOT_CASTER : Ne touche jamais le lanceur
 		
-		On peut lire cette valeur de la manière suivante :
+		On peut lire cette valeur de la maniêre suivante :
 		1234if (targets & EFFECT_TARGET_ALLIES) debug('Touche les alliés');
 if (targets & EFFECT_TARGET_ENEMIES) debug('Touche les ennemis');
 if (targets & EFFECT_TARGET_CASTER) debug('Touche toujours le lanceur');
@@ -2956,7 +3047,7 @@ function getWeaponTargets(weapon, cell) {}
 
 /**
  * hypot(Nombre x, Nombre y) : Nombre hypotenuse
- * Renvoie l'hypoténuse du triangle rectangle de cÃ´tés x et y. équivaut àsqrt(x**2 + y**2).
+ * Renvoie l'hypoténuse du triangle rectangle de cÃ´tés x et y. Ã‰quivaut à sqrt(x**2 + y**2).
  * La valeur x.
  * La valeur y.
  * sqrt(x**2 + y**2).
@@ -2992,7 +3083,7 @@ function inArray(array, element) {}
 
 /**
  * include(Chaîne ai)
- * Inclut l'IA de nom ai dans l'IA courante. Attention, la fonction include doit être appelée uniquement dans le bloc principal, et son paramètre doit être une chaîne écrite directement dans le code. Pour plus d'informations, voir la section dans le tutoriel : http://leekwars.com/tutorial#includes.
+ * Inclut l'IA de nom ai dans l'IA courante. Attention, la fonction include doit être appelée uniquement dans le bloc principal, et son paramêtre doit être une chaîne écrite directement dans le code. Pour plus d'informations, voir la section dans le tutoriel : http://leekwars.com/tutorial#includes.
  * Le nom de l'IA à inclure.
  *
  * @level 1
@@ -3004,10 +3095,10 @@ function __include(ai) {}
 
 /**
  * indexOf(Chaîne string, Chaîne search) : Nombre index
- * Détermine la position de la première occurrence de la chaîne search dans la chaîne string.
- * La chaîne où la recherche sera effectuée.
+ * Détermine la position de la premiêre occurrence de la chaîne search dans la chaîne string.
+ * La chaîne oÃ¹ la recherche sera effectuée.
  * La chaîne à rechercher.
- * La position de la première occurrence de search dans string, -1 si la chaîne n'a pas été trouvée.
+ * La position de la premiêre occurrence de search dans string, -1 si la chaîne n'a pas été trouvée.
  *
  * @level 1
  * @cores 1
@@ -3022,11 +3113,11 @@ function indexOf(string, search) {}
 
 /**
  * indexOf(Chaîne string, Chaîne search, Nombre start) : Nombre index
- * Détermine la position de la première occurrence de la chaîne search dans la chaîne string, à partir de la position start.
- * La chaîne où la recherche sera effectuée.
+ * Détermine la position de la premiêre occurrence de la chaîne search dans la chaîne string, à partir de la position start.
+ * La chaîne oÃ¹ la recherche sera effectuée.
  * La chaîne à rechercher.
  * La position de départ de la recherche.
- * La position de la première occurrence de search dans string à partir de start, -1 si la chaîne n'a pas été trouvée.
+ * La position de la premiêre occurrence de search dans string à partir de start, -1 si la chaîne n'a pas été trouvée.
  *
  * @level 1
  * @cores 1
@@ -3042,8 +3133,8 @@ function indexOf(string, search, start) {}
 
 /**
  * insert(Tableau array, ? element, Nombre position)
- * Insère un élément element dans le tableau array à la position position.
- * Le tableau où l'élément sera inséré.
+ * Insêre un élément element dans le tableau array à la position position.
+ * Le tableau oÃ¹ l'élément sera inséré.
  * L'élément à insérer.
  * La position de l'insertion.
  *
@@ -3058,7 +3149,7 @@ function insert(array, element, position) {}
 
 /**
  * isAlive(Nombre leek) : Booléen alive
- * Détermine si un poireau leek est vivant. équivalent à getLife(leek) > 0.
+ * Détermine si un poireau leek est vivant. Ã‰quivalent à getLife(leek) > 0.
  * L'id du poireau à tester.
  * vrai si le poireau leek est vivant, faux s'il est mort.
  *
@@ -3106,7 +3197,7 @@ function isChip(value) {}
 
 /**
  * isDead(Nombre leek) : Booléen dead
- * Détermine si le poireau leek est mort. équivalent à getLife(leek) == 0.
+ * Détermine si le poireau leek est mort. Ã‰quivalent à getLife(leek) == 0.
  * L'id du poireau à tester.
  * vrai si le poireau leek est mort, faux s'il est vivant.
  *
@@ -3122,7 +3213,7 @@ function isDead(leek) {}
 
 /**
  * isEmpty(Tableau array) : Booléen empty
- * Détermine si le tableau array est vide. équivalent à count(array) == 0.
+ * Détermine si le tableau array est vide. Ã‰quivalent à count(array) == 0.
  * Le tableau à tester.
  * vrai si le tableau est vide, faux sinon.
  *
@@ -3235,8 +3326,8 @@ function isObstacle(cell) {}
 /**
  * isOnSameLine(Nombre cell1, Nombre cell2) : Booléen sameLine
  * Détermine si deux cellules cell1 et cell2 sont sur la même ligne.
- * La première cellule.
- * La deuxième cellule.
+ * La premiêre cellule.
+ * La deuxiême cellule.
  * vrai si les deux cellules sont sur la même ligne, faux sinon.
  *
  * @level 5
@@ -3249,6 +3340,35 @@ function isObstacle(cell) {}
  *   sameLine
  */
 function isOnSameLine(cell1, cell2) {}
+
+/**
+ * isSummon() : Chaîne summon
+ * Renvoie si vous êtes une invocation ou non.
+ * true si vous êtes une invocation, false sinon.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @return Chaîne
+ *   summon
+ */
+function isSummon() {}
+
+/**
+ * isSummon(Nombre entity) : Nombre summon
+ * Renvoie si l'entité entity est une invocation ou non.
+ * true si entity est une invocation, false sinon.
+ * L'id de l'entité à tester.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Nombre entity
+ *
+ * @return Nombre
+ *   summon
+ */
+function isSummon(entity) {}
 
 /**
  * isWeapon(Nombre value) : Chaîne weapon
@@ -3268,10 +3388,10 @@ function isWeapon(value) {}
 
 /**
  * join(Tableau array, Chaîne glue) : Chaîne string
- * Fusionne plusieurs éléments en une chaîne de caractères, en les séparant par un délimiteur glue.
+ * Fusionne plusieurs éléments en une chaîne de caractêres, en les séparant par un délimiteur glue.
  * Un tableau d'éléments à fusionner.
  * Le délimiteur des éléments.
- * La chaîne de caractère résultante de la fusion.
+ * La chaîne de caractêre résultante de la fusion.
  *
  * @level 1
  * @cores 1
@@ -3427,7 +3547,7 @@ function mark(cells) {}
 
 /**
  * mark(? cells, Nombre color) : Booléen success
- * Marque une ou plusieurs cellules de la couleur indiquée en paramètre sur le terrain pour 1 tour. Ce marquage n'est visible que par l'éleveur du poireau.
+ * Marque une ou plusieurs cellules de la couleur indiquée en paramêtre sur le terrain pour 1 tour. Ce marquage n'est visible que par l'éleveur du poireau.
  * La cellule ou tableau de plusieurs cellules à marquer
  * Couleur du marquage
  * Retourne true si tout s'est bien déroulé
@@ -3445,7 +3565,7 @@ function mark(cells, color) {}
 
 /**
  * mark(? cells, Nombre color, Nombre duration) : Booléen success
- * Marque une ou plusieurs cellules de la couleur indiquée en paramètre sur le terrain pour le nombre de tour indiqué en paramètre. Ce marquage n'est visible que par l'éleveur du poireau.
+ * Marque une ou plusieurs cellules de la couleur indiquée en paramêtre sur le terrain pour le nombre de tour indiqué en paramêtre. Ce marquage n'est visible que par l'éleveur du poireau.
  * La cellule ou tableau de plusieurs cellules à marquer
  * Couleur du marquage
  * Durée du marquage
@@ -3501,7 +3621,7 @@ function min(a, b) {}
 
 /**
  * moveAwayFrom(Nombre leek) : Nombre mp
- * éloigne votre poireau d'un autre poireau leek.
+ * Ã‰loigne votre poireau d'un autre poireau leek.
  * Le poireau dont votre poireau doit s'éloigner.
  * Le nombre de points de mouvements utilisés.
  *
@@ -3517,7 +3637,7 @@ function moveAwayFrom(leek) {}
 
 /**
  * moveAwayFrom(Nombre leek, Nombre mp) : Nombre mp
- * éloigne votre poireau d'un autre poireau leek, en utilisant au maximum mp points de mouvement.
+ * Ã‰loigne votre poireau d'un autre poireau leek, en utilisant au maximum mp points de mouvement.
  * Le poireau dont votre poireau doit s'éloigner.
  * Le nombre maximum de PM à utiliser.
  * Le nombre de points de mouvements utilisés.
@@ -3535,7 +3655,7 @@ function moveAwayFrom(leek, mp) {}
 
 /**
  * moveAwayFromCell(Nombre cell) : Nombre mp
- * éloigne votre poireau d'une cellule cell.
+ * Ã‰loigne votre poireau d'une cellule cell.
  * La cellule dont votre poireau doit s'éloigner.
  * Le nombre de points de mouvements utilisés.
  *
@@ -3551,7 +3671,7 @@ function moveAwayFromCell(cell) {}
 
 /**
  * moveAwayFromCell(Nombre cell, Nombre mp) : Nombre mp
- * éloigne votre poireau d'une cellule cell, en utilisant au maximum mp points de mouvement.
+ * Ã‰loigne votre poireau d'une cellule cell, en utilisant au maximum mp points de mouvement.
  * La cellule dont votre poireau doit s'éloigner.
  * Le nombre maximum de PM à utiliser.
  * Le nombre de points de mouvements utilisés.
@@ -3569,7 +3689,7 @@ function moveAwayFromCell(cell, mp) {}
 
 /**
  * moveAwayFromCells(TableauDeNombres cells) : Nombre mp
- * éloigne votre poireau d'un ensemble de cellules cells.
+ * Ã‰loigne votre poireau d'un ensemble de cellules cells.
  * Le tableau contenant les cellules dont votre poireau doit s'éloigner.
  * Le nombre de points de mouvements utilisés.
  *
@@ -3585,7 +3705,7 @@ function moveAwayFromCells(cells) {}
 
 /**
  * moveAwayFromCells(TableauDeNombres cells, Nombre mp) : Nombre mp
- * éloigne votre poireau d'un ensemble de cellules cells, en utilisant au maximum mp points de mouvement.
+ * Ã‰loigne votre poireau d'un ensemble de cellules cells, en utilisant au maximum mp points de mouvement.
  * Le tableau contenant les cellules dont votre poireau doit s'éloigner.
  * Le nombre maximum de PM à utiliser.
  * Le nombre de points de mouvements utilisés.
@@ -3603,7 +3723,7 @@ function moveAwayFromCells(cells, mp) {}
 
 /**
  * moveAwayFromLeeks(TableauDeNombres leeks) : Nombre mp
- * éloigne votre poireau d'un ensemble de poireaux leeks.
+ * Ã‰loigne votre poireau d'un ensemble de poireaux leeks.
  * Le tableau contenant les ids des poireaux dont votre poireau doit s'éloigner.
  * Le nombre de points de mouvements utilisés.
  *
@@ -3619,7 +3739,7 @@ function moveAwayFromLeeks(leeks) {}
 
 /**
  * moveAwayFromLeeks(TableauDeNombres leeks, Nombre mp) : Nombre mp
- * éloigne votre poireau d'un ensemble de poireaux leeks, en utilisant au maximum mp points de mouvement.
+ * Ã‰loigne votre poireau d'un ensemble de poireaux leeks, en utilisant au maximum mp points de mouvement.
  * Le tableau contenant les ids des poireaux dont votre poireau doit s'éloigner.
  * Le nombre maximum de PM à utiliser.
  * Le nombre de points de mouvements utilisés.
@@ -3637,7 +3757,7 @@ function moveAwayFromLeeks(leeks, mp) {}
 
 /**
  * moveAwayFromLine(Nombre cell1, Nombre cell2) : Nombre mp
- * éloigne votre poireau d'une ligne définie par deux cellules cell1 et cell2.
+ * Ã‰loigne votre poireau d'une ligne définie par deux cellules cell1 et cell2.
  * La cellule 1.
  * La cellule 2.
  * Le nombre de points de mouvements utilisés.
@@ -3655,7 +3775,7 @@ function moveAwayFromLine(cell1, cell2) {}
 
 /**
  * moveAwayFromLine(Nombre cell1, Nombre cell2, Nombre mp) : Nombre mp
- * éloigne votre poireau d'une ligne définie par deux cellules cell1 et cell2, en utilisant au maximum mp points de mouvement.
+ * Ã‰loigne votre poireau d'une ligne définie par deux cellules cell1 et cell2, en utilisant au maximum mp points de mouvement.
  * La cellule 1.
  * La cellule 2.
  * Le nombre maximum de PM à utiliser.
@@ -3874,9 +3994,9 @@ function pause() {}
 
 /**
  * pop(Tableau array) : ? element
- * Supprime la dernière case du tableau array et renvoie l'élément correspondant.
- * Le tableau dont la dernière case sera supprimée.
- * L'élément qui était dans l'ancienne dernière case.
+ * Supprime la derniêre case du tableau array et renvoie l'élément correspondant.
+ * Le tableau dont la derniêre case sera supprimée.
+ * L'élément qui était dans l'ancienne derniêre case.
  *
  * @level 1
  * @cores 1
@@ -3890,7 +4010,7 @@ function pop(array) {}
 
 /**
  * pow(Nombre base, Nombre exp) : Nombre result
- * éleve le nombre base à la puissance exposant.
+ * Ã‰leve le nombre base à la puissance exposant.
  * La base.
  * L'exposant.
  * base élevée à la puissance exposant.
@@ -3908,8 +4028,8 @@ function pow(base, exp) {}
 
 /**
  * push(Tableau array, ? element)
- * Ajoute l'élément element àla fin du tableau array.
- * Le tableau où l'on veut ajouter l'élément.
+ * Ajoute l'élément element à la fin du tableau array.
+ * Le tableau oÃ¹ l'on veut ajouter l'élément.
  * L'élément à ajouter.
  *
  * @level 1
@@ -3923,7 +4043,7 @@ function push(array, element) {}
 /**
  * pushAll(Tableau array, Tableau elements)
  * Ajoute tous les éléments du tableau elements à la fin du tableau array.
- * Le tableau où l'on veut ajouter les éléments.
+ * Le tableau oÃ¹ l'on veut ajouter les éléments.
  * Les éléments à ajouter.
  *
  * @level 1
@@ -4003,9 +4123,9 @@ function remove(array, position) {}
 
 /**
  * removeElement(Tableau array, ? element)
- * Supprime la première occurrence d'un élément element dans le tableau array. Si l'élement n'est pas trouvé, le tableau n'est pas modifié.
+ * Supprime la premiêre occurrence d'un élément element dans le tableau array. Si l'élement n'est pas trouvé, le tableau n'est pas modifié.
  * Tableau dont on veut supprimer un élément.
- * élement à rechercher puis à supprimer.
+ * Ã‰lement à rechercher puis à supprimer.
  *
  * @level 1
  * @cores 1
@@ -4080,7 +4200,7 @@ function round(number) {}
 /**
  * say(Chaîne message)
  * Fait parler votre poireau.
- * Message qu'annonçera votre poireau dans l'arène.
+ * Message qu'annonçera votre poireau dans l'arêne.
  *
  * @level 1
  * @cores 1
@@ -4094,7 +4214,7 @@ function say(message) {}
  * Recherche l'élément element dans le tableau array.
  * Le tableau de recherche.
  * L'élément à rechercher.
- * La position de la première occurrence de l'élément dans le tableau, null si l'élément n'a pas été trouvé.
+ * La position de la premiêre occurrence de l'élément dans le tableau, null si l'élément n'a pas été trouvé.
  *
  * @level 1
  * @cores 1
@@ -4113,7 +4233,7 @@ function search(array, element) {}
  * Le tableau de recherche.
  * L'élément à rechercher.
  * La position du début de la recherche.
- * La position de la première occurrence de l'élément element dans le tableau array, à partir de start, null si l'élément n'a pas été trouvé.
+ * La position de la premiêre occurrence de l'élément element dans le tableau array, à partir de start, null si l'élément n'a pas été trouvé.
  *
  * @level 1
  * @cores 1
@@ -4131,7 +4251,7 @@ function search(array, element, start) {}
  * sendAll(Nombre type, ? params)
  * Envoie un message à toute votre équipe.
  * Le type du message à envoyer (voir les constantes MESSAGE_*).
- * Les paramètres du message, qui peuvent être n'importe quelle valeur.
+ * Les paramêtres du message, qui peuvent être n'importe quelle valeur.
  *
  * @level 69
  * @cores 1
@@ -4146,7 +4266,7 @@ function sendAll(type, params) {}
  * Envoie un message au poireau d'id leek.
  * L'id du poireau auquel sera envoyé le message.
  * Le type du message à envoyer (voir les constantes MESSAGE_*).
- * Les paramètres du message, qui peuvent être n'importe quelle valeur.
+ * Les paramêtres du message, qui peuvent être n'importe quelle valeur.
  * documentation_func_sendTo_return
  *
  * @level 69
@@ -4163,9 +4283,9 @@ function sendTo(leek, type, params) {}
 
 /**
  * setRegister(Chaîne key, Chaîne value) : Booléen success
- * Stocke la valeur value dans le registre de clé key. La clé et la valeur sont des chaînes qui doivent contenir respectivement 100 et 5000 caractères au maximum.
-Un poireau peut posséder au maximum 100 registres, le stockage dans un nouveau registre ne fonctionnera pas si tous les registres sont déjàoccupés.
- * La clé du registre où stocker la valeur.
+ * Stocke la valeur value dans le registre de clé key. La clé et la valeur sont des chaînes qui doivent contenir respectivement 100 et 5000 caractêres au maximum.
+Un poireau peut posséder au maximum 100 registres, le stockage dans un nouveau registre ne fonctionnera pas si tous les registres sont déjà occupés.
+ * La clé du registre oÃ¹ stocker la valeur.
  * La valeur à stocker.
  * true si l'opération s'est bien passée, false sinon.
  *
@@ -4182,7 +4302,7 @@ function setRegister(key, value) {}
 
 /**
  * setWeapon(Nombre weapon)
- * équipe l'arme weapon sur votre poireau.
+ * Ã‰quipe l'arme weapon sur votre poireau.
  * Id de l'arme à équiper.
  *
  * @level 1
@@ -4194,9 +4314,9 @@ function setWeapon(weapon) {}
 
 /**
  * shift(Tableau array) : ? element
- * Supprime la première case du tableau array et renvoie l'élément correspondant.
- * Le tableau dont la première case sera supprimée.
- * L'élément qui était dans l'ancienne première case.
+ * Supprime la premiêre case du tableau array et renvoie l'élément correspondant.
+ * Le tableau dont la premiêre case sera supprimée.
+ * L'élément qui était dans l'ancienne premiêre case.
  *
  * @level 1
  * @cores 1
@@ -4244,7 +4364,7 @@ function show(cell, color) {}
 
 /**
  * shuffle(Tableau array)
- * Mélange un tableau de manière aléatoire.
+ * Mélange un tableau de maniêre aléatoire.
  * Le tableau à mélanger.
  *
  * @level 1
@@ -4272,7 +4392,7 @@ function signum(number) {}
 
 /**
  * sin(Nombre angle) : Nombre sine
- * Calcule le sinus de l'angle angle passé en paramètre
+ * Calcule le sinus de l'angle angle passé en paramêtre
  * L'angle dont le sinus sera calculé
  * Retourne le sinus de l'angle angle
  *
@@ -4392,13 +4512,13 @@ function startsWith(string, prefix) {}
 
 /**
  * string(? value) : Chaîne string
- * Convertit une valeur en chaîne de caractères.
+ * Convertit une valeur en chaîne de caractêres.
 		Si la valeur est déjà une chaîne, elle est renvoyée.
 		Si la valeur est nombre x, "x" est renvoyé.
 		Si la valeur est un tableau, une chaîne sous la forme "[clé1 : valeur1, clé2 : valeur2, ...]" est renvoyée.
 		Si la valeur est un booléen, "true" et "false" sont respectivement renvoyées pour les valeurs true et false.
 		Si la valeur est null, "null" est renvoyée.
- * La valeur à convertir en chaîne de caractères.
+ * La valeur à convertir en chaîne de caractêres.
  * La chaîne convertie.
  *
  * @level 1
@@ -4433,9 +4553,9 @@ function subArray(array, start, size) {}
 
 /**
  * substring(Chaîne string, Nombre start) : Chaîne string
- * Retourne la sous-chaîne de la chaîne string à partir du caractère à l'indice start.
+ * Retourne la sous-chaîne de la chaîne string à partir du caractêre à l'indice start.
  * Chaîne source.
- * Indice du caractère de départ.
+ * Indice du caractêre de départ.
  * Sous-chaîne.
  *
  * @level 1
@@ -4451,9 +4571,9 @@ function substring(string, start) {}
 
 /**
  * substring(Chaîne string, Nombre start, Nombre length) : Chaîne string
- * Retourne la sous-chaîne de la chaîne string à partir du caractère à l'indice start et de taille length.
+ * Retourne la sous-chaîne de la chaîne string à partir du caractêre à l'indice start et de taille length.
  * Chaîne à découper.
- * Indice du caractère de départ.
+ * Indice du caractêre de départ.
  * Longueur de la sous-chaîne.
  * Sous-chaîne.
  *
@@ -4484,6 +4604,26 @@ function substring(string, start, length) {}
  *   sum
  */
 function sum(array) {}
+
+/**
+ * summon(Nombre chipId, Nombre cellId, Fonction AIFunction) : Nombre return
+ * Invoque une entité déterminée par la puce chip sur la cellule cell ayant pour IA la fonction ai.
+ * La puce utilisée pour l'invocation. La puce doit être une puce de type invocation et doit être équipée sur le poireau qui utilise la fonction summon.
+ * La cellule ou l'invocation doit apparaître.
+ * L'IA de l'invocation, sous la forme d'une fonction.
+ * La fonction summon a le même retour que la fonction useChip.
+ *
+ * @level 1
+ * @cores 1
+ *
+ * @param Nombre chipId
+ * @param Nombre cellId
+ * @param Fonction AIFunction
+ *
+ * @return Nombre
+ *   return
+ */
+function summon(chipId, cellId, AIFunction) {}
 
 /**
  * tan(Nombre angle) : Nombre tangent
@@ -4519,7 +4659,7 @@ function toDegrees(radians) {}
 
 /**
  * toLower(Chaîne string) : Chaîne string
- * Convertit les caractères majuscules de la chaîne string en minuscules.
+ * Convertit les caractêres majuscules de la chaîne string en minuscules.
  * Chaîne à transformer
  * Chaîne en minuscules
  *
@@ -4551,7 +4691,7 @@ function toRadians(degrees) {}
 
 /**
  * toUpper(Chaîne string) : Chaîne string
- * Convertit les caractères minuscules de la chaîne string par des majuscules.
+ * Convertit les caractêres minuscules de la chaîne string par des majuscules.
  * Chaîne à transformer.
  * Chaîne en majuscules.
  *
@@ -4680,28 +4820,28 @@ function useWeaponOnCell(cell) {}
 
 /**
  * AREA_CIRCLE_1 : Nombre
- * Zone circulaire de 3 cases de diamètre (croix).
+ * Zone circulaire de 3 cases de diamêtre (croix).
  *
  */
 global AREA_CIRCLE_1 = 3;
 
 /**
  * AREA_CIRCLE_2 : Nombre
- * Zone circulaire de 5 cases de diamètre.
+ * Zone circulaire de 5 cases de diamêtre.
  *
  */
 global AREA_CIRCLE_2 = 4;
 
 /**
  * AREA_CIRCLE_3 : Nombre
- * Zone circulaire de 7 cases de diamètre.
+ * Zone circulaire de 7 cases de diamêtre.
  *
  */
 global AREA_CIRCLE_3 = 5;
 
 /**
  * AREA_LASER_LINE : Nombre
- * Zone d'une laser, ligne depuis la portée minimum du laser jusqu'à sa portée maximum ou bien un obstacle.
+ * Zone d'une laser, ligne depuis la portée minimum du laser jusqu€™à sa portée maximum ou bien un obstacle.
  *
  */
 global AREA_LASER_LINE = 2;
@@ -4784,6 +4924,13 @@ global CHIP_DOPING = 26;
 global CHIP_DRIP = 10;
 
 /**
+ * CHIP_FIRE_BULB : Nombre
+ * documentation_const_CHIP_FIRE_BULB
+ *
+ */
+global CHIP_FIRE_BULB = 74;
+
+/**
  * CHIP_FLAME : Nombre
  * documentation_const_CHIP_FLAME
  *
@@ -4803,6 +4950,13 @@ global CHIP_FLASH = 6;
  *
  */
 global CHIP_FORTRESS = 29;
+
+/**
+ * CHIP_HEALER_BULB : Nombre
+ * documentation_const_CHIP_HEALER_BULB
+ *
+ */
+global CHIP_HEALER_BULB = 75;
 
 /**
  * CHIP_HELMET : Nombre
@@ -4880,6 +5034,13 @@ global CHIP_PEBBLE = 19;
  *
  */
 global CHIP_PROTEIN = 8;
+
+/**
+ * CHIP_PUNY_BULB : Nombre
+ * documentation_const_CHIP_PUNY_BULB
+ *
+ */
+global CHIP_PUNY_BULB = 73;
 
 /**
  * CHIP_RAGE : Nombre
@@ -5099,6 +5260,20 @@ global EFFECT_HEAL = 2;
 global EFFECT_RELATIVE_SHIELD = 6;
 
 /**
+ * ENTITY_BULB : Nombre
+ * Désigne une entité de type Bulbe.
+ *
+ */
+global ENTITY_BULB = 2;
+
+/**
+ * ENTITY_LEEK : Nombre
+ * Désigne une entité de type Poireau.
+ *
+ */
+global ENTITY_LEEK = 1;
+
+/**
  * FIGHT_CONTEXT_CHALLENGE : Nombre
  * Contexte de combat de type défi.
  *
@@ -5254,7 +5429,7 @@ global MESSAGE_SHIELD = 4;
 
 /**
  * PI : Nombre
- * Le rapport de la circonférence d'un cercle à son diamètre.
+ * Le rapport de la circonférence d€™un cercle à son diamêtre.
  *
  */
 global PI = 3;
@@ -5310,7 +5485,7 @@ global TYPE_NUMBER = 1;
 
 /**
  * TYPE_STRING : Nombre
- * Type de valeur chaîne de caractères
+ * Type de valeur chaîne de caractêres
  *
  */
 global TYPE_STRING = 3;
