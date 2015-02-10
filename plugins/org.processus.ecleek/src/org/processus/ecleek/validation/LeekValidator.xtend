@@ -16,6 +16,7 @@ import org.processus.ecleek.leek.LeekPackage
 import org.processus.ecleek.leek.ReturnStatement
 import org.processus.ecleek.leek.Script
 import org.processus.ecleek.leek.VariableReference
+import org.processus.ecleek.LeekUtils
 
 /**
  * Custom validation rules. 
@@ -90,7 +91,7 @@ class LeekValidator extends AbstractLeekValidator {
 
 	@Check
 	def checkIncludeNeededFunctionCall(FunctionCall functionCall) {
-		if (functionCall.function.eResource != functionCall.eResource && !functionCall.function.eResource.URI.lastSegment.equals("api.leek")) {
+		if (functionCall.function.eResource != functionCall.eResource && !functionCall.function.eResource.URI.lastSegment.equals(LeekUtils.API_FILE)) {
 			val toInclude = functionCall.function.eResource.URI.lastSegment.substring(0, functionCall.function.eResource.URI.lastSegment.lastIndexOf("."));
 			val includes = (functionCall.eResource.contents.get(0) as Script).statements.filter(Include);
 			var included = includes.filter[i | i.importURI == toInclude].size > 0;
@@ -102,7 +103,7 @@ class LeekValidator extends AbstractLeekValidator {
 
 	@Check
 	def checkIncludeNeededVariableReference(VariableReference variableReference) {
-		if (variableReference.variable.eResource != variableReference.eResource && !variableReference.variable.eResource.URI.lastSegment.equals("api.leek")) {
+		if (variableReference.variable.eResource != variableReference.eResource && !variableReference.variable.eResource.URI.lastSegment.equals(LeekUtils.API_FILE)) {
 			val toInclude = variableReference.variable.eResource.URI.lastSegment.substring(0, variableReference.variable.eResource.URI.lastSegment.lastIndexOf("."));
 			val includes = (variableReference.eResource.contents.get(0) as Script).statements.filter(Include);
 			var included = includes.filter[i | i.importURI == toInclude].size > 0;

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.processus.ecleek.LeekUtils;
 import org.processus.ecleek.leek.BreakStatement;
 import org.processus.ecleek.leek.ContinueStatement;
 import org.processus.ecleek.leek.FunctionCall;
@@ -190,7 +191,7 @@ public class LeekValidator extends AbstractLeekValidator {
       Resource _eResource_2 = _function_1.eResource();
       URI _uRI = _eResource_2.getURI();
       String _lastSegment = _uRI.lastSegment();
-      boolean _equals = _lastSegment.equals("api.leek");
+      boolean _equals = _lastSegment.equals(LeekUtils.API_FILE);
       boolean _not = (!_equals);
       _and = _not;
     }
@@ -239,7 +240,7 @@ public class LeekValidator extends AbstractLeekValidator {
       Resource _eResource_2 = _variable_1.eResource();
       URI _uRI = _eResource_2.getURI();
       String _lastSegment = _uRI.lastSegment();
-      boolean _equals = _lastSegment.equals("api.leek");
+      boolean _equals = _lastSegment.equals(LeekUtils.API_FILE);
       boolean _not = (!_equals);
       _and = _not;
     }

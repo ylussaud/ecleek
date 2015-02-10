@@ -26,9 +26,13 @@ public class LeekEObjectDocumentationProvider implements
 
 	private String format(String comment) {
 		String res;
-		
-		res = comment.replaceAll("\n", "<br>");
-		
+
+		if (comment != null) {
+			res = comment.replaceAll("\n", "<br>");
+		} else {
+			res = null;
+		}
+
 		return res;
 	}
 }
