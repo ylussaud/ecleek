@@ -8,6 +8,11 @@ location "http://download.eclipse.org/eclipse/updates/3.8" {
 	org.eclipse.pde.core 3.8.0
 }
 
+location "http://download.eclipse.org/jetty/updates/jetty-bundles-9.x/9.2.8.v20150217" {
+	org.eclipse.jetty.client
+	org.eclipse.jetty.websocket.client
+}
+
 location "http://download.eclipse.org/modeling/emf/emf/updates/2.10.x/" {
 	org.eclipse.emf.sdk.feature.group [2.10.0,3.0.0)
 	org.eclipse.emf.sdk.source.feature.group [2.10.0,3.0.0)

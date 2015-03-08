@@ -34,6 +34,7 @@
     <os-jvm-flags/>
   </properties>
   <modules>
+    <module>../../plugins/org.processus.leekwars</module>
     <module>../../plugins/org.processus.ecleek</module>
     <module>../../plugins/org.processus.ecleek.ui</module>
     <module>../../tests/org.processus.ecleek.tests</module>

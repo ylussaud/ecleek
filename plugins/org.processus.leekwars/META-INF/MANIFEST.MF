@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Leekwars
+Bundle-SymbolicName: org.processus.leekwars
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.jetty.client;bundle-version="9.2.8",
+ org.eclipse.jetty.util;bundle-version="9.2.8",
+ org.eclipse.jetty.io;bundle-version="9.2.8",
+ org.eclipse.jetty.http;bundle-version="9.2.8",
+ org.eclipse.jetty.websocket.client;bundle-version="9.2.8",
+ org.eclipse.jetty.websocket.api;bundle-version="9.2.8",
+ org.eclipse.jetty.websocket.common;bundle-version="9.2.8"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
